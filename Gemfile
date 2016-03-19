@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# use clearance for auth
+gem 'clearance'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a
   # debugger console
@@ -41,6 +44,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.5.0.beta1'
+  gem 'factory_girl_rails'
+  gem 'capybara'
 end
 
 group :development do
