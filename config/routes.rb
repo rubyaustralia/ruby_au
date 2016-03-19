@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   # mount ActionCable.server => '/cable'
   root to: 'welcome#index'
   resources :welcome, only: [:index]
+
+  get "/meetups/*id" => "meetups#show"
+
+  get  "/*id" => 'pages#show', as: :page, format: false,
+    constraints: RootRouteConstraints
 end
