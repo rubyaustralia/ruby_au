@@ -37,6 +37,10 @@ gem 'jbuilder', '~> 2.0'
 # use clearance for auth
 gem 'clearance'
 
+# markdown parsing
+gem 'redcarpet'
+gem 'pygmentize'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a
   # debugger console

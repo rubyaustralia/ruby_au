@@ -8,7 +8,8 @@ class RootRouteConstraints
   private
 
   def self.file_pattern(page_id)
-    "#{content_path}#{page_id}.html*"
+    base_page_id = page_id.sub(/\.html$/, '')
+    "#{content_path}#{base_page_id}.html*"
   end
 
   def self.content_path
