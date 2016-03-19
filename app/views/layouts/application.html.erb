@@ -1,15 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>RubyAu</title>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+    <title>Ruby Australia</title>
+    <meta content="Ruby Australia" name="description"/>
+    <meta content="ruby, rails, australia, melbourne, sydney, canberra, perth, central coast, brisbane, perth, western australia, sa, south australia, victoria, new south wales, nsw, vic, qld, queensland, wa, can, programming, meetup, group, user group, conferences, events" name="keywords"/>
+    <meta content="width=device-width" name="viewport"/>
+
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <header role="banner">
+      <a href="/">
+        <span class="logo">Ruby Australia</span>
+      </a>
+    </header>
+    <aside id="meta">
+      <nav role="navigation">
+        <h3>Association</h3>
+        <ul>
+          <li>
+            <a href="/committee-members.html">Committee Members</a>
+          </li>
+          <li>
+            <a href="/join-ruby-australia.html">Join Ruby Australia</a>
+          </li>
+          <li>
+            <a href="/association.html">Meeting Minutes</a>
+          </li>
+          <li>
+            <a href="/code-of-conduct.html">Code of Conduct</a>
+          </li>
+          <li>
+            <a href="/sponsorship.html">Sponsorship</a>
+          </li>
+          <li>
+            <a href="/#railscamp">Rails Camp</a>
+          </li>
+          <li>
+            <a href="/#rubyconf-au">RubyConf AU</a>
+          </li>
+          <li>
+            <a href="http://twitter.com/rubyaustralia">@rubyaustralia</a>
+          </li>
+        </ul>
+        <h3>Community</h3>
+        <ul>
+          <li>
+            <a href="/#meetups">Meetups</a>
+          </li>
+          <li>
+            <a href="/articles">Articles</a>
+          </li>
+          <li>
+            <a href="https://groups.google.com/forum/#!forum/rails-oceania">Mailing list</a>
+          </li>
+          <li>
+            <a href="https://rubyau-slack.herokuapp.com/">Slack</a>
+          </li>
+          <li>
+            <a href="http://kiwiirc.com/client/irc.freenode.net/roro">IRC (#roro)</a>
+          </li>
+          <li>
+            <a href="https://vimeo.com/rubyau/channels">Videos</a>
+          </li>
+          <li>
+            <a href="https://github.com/rails-oceania/roro/wiki/Mentoring">Mentoring</a>
+          </li>
+          <li>
+            <a href="https://github.com/rails-oceania/roro/wiki">Wiki</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <section role="main">
+      <div id="flash">
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+      </div>
+      <%= yield %>
+    </section>
+    <footer role="contentinfo">
+      <small>&copy; 2016 Ruby Australia</small>
+    </footer>
   </body>
 </html>
