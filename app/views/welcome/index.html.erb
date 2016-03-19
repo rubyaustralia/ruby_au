@@ -6,38 +6,41 @@
 
 <section id="meetups">
   <h3>Meetups</h3>
+
   <p>
     There are a number of regional Ruby-related meetups all over the country.
     Each group is organised independently by its members, and all are very
     welcoming to newcomers. The following groups meet regularly:
   </p>
+
   <ul class="meetup-locations">
     <li>
-      <a href="/meetups/adl.html" id="adl">Adelaide</a>
+      <%= link_to "Adelaide", "/meetups/adl", id: "adl" %>
     </li>
     <li>
-      <a href="/meetups/bne.html" id="bne">Brisbane</a>
+      <%= link_to "Brisbane", "/meetups/bne", id: "bne" %>
     </li>
     <li>
-      <a href="/meetups/can.html" id="can">Canberra</a>
+      <%= link_to "Canberra", "/meetups/can", id: "can" %>
     </li>
     <li>
-      <a href="/meetups/mel.html" id="mel">Melbourne</a>
+      <%= link_to "Melbourne", "/meetups/mel", id: "mel" %>
     </li>
     <li>
-      <a href="/meetups/per.html" id="per">Perth</a>
+      <%= link_to "Perth", "/meetups/per", id: "per" %>
     </li>
     <li>
-      <a href="/meetups/syd.html" id="syd">Sydney</a>
+      <%= link_to "Sydney", "/meetups/syd", id: "syd" %>
     </li>
   </ul>
 </section>
 
 <section id="railscamp">
   <h3>Rails Camp</h3>
+
   <p>
     Ruby Australia is the organising body of Australian Rails Camp events.
-    Please see the official <a href="http://railscamps.com">Rails Camp</a> site
+    Please see the official <%= link_to "Rails Camp", "http://railscamps.com" %> site
     for more details.
   </p>
 </section>
@@ -46,7 +49,7 @@
   <h3>RubyConf Australia</h3>
   <p>
     Ruby Australia is the organising body of RubyConf Australia.
-    Please see the official <a href="http://rubyconf.org.au">RubyConf AU</a> site
+    Please see the official <%= link_to "RubyConf AU", "http://rubyconf.org.au" %> site
     for more details.
   </p>
 </section>
@@ -55,6 +58,6 @@
   <h3>Contributing to the site</h3>
   <p>
     The site's source is hosted on GitHub:
-    <a href="https://github.com/rubyaustralia/ruby.org.au">https://github.com/rubyaustralia/ruby.org.au</a>.  Please refer to the <a href="https://github.com/rubyaustralia/ruby.org.au#readme">README</a> there for more details.
+    <%= link_to "https://github.com/rubyaustralia/ruby.org.au", "https://github.com/rubyaustralia/ruby.org.au" %>. Please refer to the <%= link_to "README", "https://github.com/rubyaustralia/ruby.org.au#readme" %> there for more details.
   </p>
 </section>

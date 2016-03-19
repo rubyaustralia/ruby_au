@@ -61,7 +61,7 @@ header[role='banner'] {
   padding-bottom: 40px;
   .logo {
     @include left-column;
-    @include replace-text("ruby-australia-logo.png");
+    @include replace-text(image-path("ruby-australia-logo.png"));
     width: 124px;
     height: 129px;
   }

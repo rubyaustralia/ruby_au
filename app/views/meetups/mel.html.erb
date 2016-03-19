@@ -1,27 +1,31 @@
 <section>
   <h3>Melbourne Ruby</h3>
+
   <article>
     <h4>When</h4>
     <p>Melbourne Ruby meetings happen on the last Wednesday of every month (with the exception of December which has a social event sometime in the middle of the month).</p>
     <p>Melbourne Ruby hack nights (where the focus is more on coding than talking) happen on the second Wednesday of every month.</p>
-    <p>All events are listed on <a href="http://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne/">Meetup.com</a>.</p>
+    <p>All events are listed on <%= link_to "Meetup.com", "http://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne/" %>.</p>
   </article>
+
   <article>
     <h4>Where</h4>
     <p>
-      <a href="https://www.google.com/maps/place/Teamsquare/@-37.815374,144.9562393,17z/data=!3m1!4b1!4m2!3m1!1s0x6ad642b34912aac5:0xd124a1025c95e39b?hl=en">Team Square</a><br>
+      <%= link_to "Team Square", "https://www.google.com/maps/place/Teamsquare/@-37.815374,144.9562393,17z/data=!3m1!4b1!4m2!3m1!1s0x6ad642b34912aac5:0xd124a1025c95e39b?hl=en" %><br>
       1/520 Bourke St<br>
       Melbourne<br>
       6:00pm for a 6:30pm start!
     </p>
   </article>
+
   <article>
     <h4>Organisers</h4>
     <ul>
-      <li>Gareth Townsend (<a href="http://twitter.com/quamen">@quamen</a>)</li>
-      <li>Matt Allen (<a href="http://twitter.com/mattallen">@mattallen</a>)</li>
+      <li>Gareth Townsend (<%= link_to "@quamen", "http://twitter.com/quamen" %>)</li>
+      <li>Matt Allen (<%= link_to "@mattallen", "http://twitter.com/mattallen" %>)</li>
     </ul>
   </article>
+
   <article>
     <h4>Meeting Format</h4>
     <ul>
@@ -31,17 +35,19 @@
       <li>Food and drinks provided</li>
     </ul>
   </article>
+
   <article>
     <h4>Sponsors</h4>
     <ul>
-      <li>Thanks to <a href="https://teamsquare.co">Team Square</a> for providing us with an awesome venue!</li>
-      <li>Thanks to <a href="http://envato.com">Envato</a>, <a href="http://www.lookahead.com.au">Lookahead Search</a> and <a href="http://www.redbubble.com">Redbubble</a> for filling us with delicious food!</li>
-      <li>Thanks to <a href="http://www.zendesk.com">ZenDesk</a> for providing us with tasty beverages!</li>
+      <li>Thanks to <%= link_to "Team Square", "https://teamsquare.co" %> for providing us with an awesome venue!</li>
+      <li>Thanks to <%= link_to "Envato", "http://envato.com" %>, <%= link_to "Lookahead Search", "http://www.lookahead.com.au" %> and <%= link_to "Redbubble", "http://www.redbubble.com" %> for filling us with delicious food!</li>
+      <li>Thanks to <%= link_to "ZenDesk", "http://www.zendesk.com" %> for providing us with tasty beverages!</li>
     </ul>
   </article>
+
   <article>
     <h4>Get Involved</h4>
-    <p>Chatter about upcoming meetings takes place <a href="http://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne/">on Meetup</a> and the <a href="https://groups.google.com/forum/?fromgroups#!forum/rails-oceania">Ruby or Rails Oceania</a> Google Group.</p>
+    <p>Chatter about upcoming meetings takes place <%= link_to "on Meetup", "http://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne/" %> and the <%= link_to "Ruby or Rails Oceania", "https://groups.google.com/forum/?fromgroups#!forum/rails-oceania" %> Google Group.</p>
     <p>Presenters, organisers and sponsors are always welcome, contact the organisers through the Google Group or on Twitter.</p>
   </article>
 </section>

@@ -14,70 +14,73 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   </head>
+
   <body>
     <header role="banner">
       <a href="/">
         <span class="logo">Ruby Australia</span>
       </a>
     </header>
+
     <aside id="meta">
       <nav role="navigation">
         <h3>Association</h3>
         <ul>
           <li>
-            <a href="/committee-members.html">Committee Members</a>
+            <%= link_to 'Committee Members', "/committee-members" %>
           </li>
           <li>
-            <a href="/join-ruby-australia.html">Join Ruby Australia</a>
+            <%= link_to 'Join Ruby Australia', "/join-ruby-australia" %>
           </li>
           <li>
-            <a href="/association.html">Meeting Minutes</a>
+            <%= link_to 'Meeting Minutes', "/association" %>
           </li>
           <li>
-            <a href="/code-of-conduct.html">Code of Conduct</a>
+            <%= link_to 'Code of Conduct', "/code-of-conduct" %>
           </li>
           <li>
-            <a href="/sponsorship.html">Sponsorship</a>
+            <%= link_to 'Sponsorship', "/sponsorship" %>
           </li>
           <li>
-            <a href="/#railscamp">Rails Camp</a>
+            <%= link_to 'Rails Camp', "/#railscamp" %>
           </li>
           <li>
-            <a href="/#rubyconf-au">RubyConf AU</a>
+            <%= link_to 'RubyConf AU', "/#rubyconf-au" %>
           </li>
           <li>
-            <a href="http://twitter.com/rubyaustralia">@rubyaustralia</a>
+            <%= link_to '@rubyaustralia', "http://twitter.com/rubyaustralia" %>
           </li>
         </ul>
         <h3>Community</h3>
         <ul>
           <li>
-            <a href="/#meetups">Meetups</a>
+            <%= link_to 'Meetups', "/#meetups" %>
           </li>
           <li>
-            <a href="/articles">Articles</a>
+            <%= link_to 'Articles', "/articles" %>
           </li>
           <li>
-            <a href="https://groups.google.com/forum/#!forum/rails-oceania">Mailing list</a>
+            <%= link_to 'Mailing list', "https://groups.google.com/forum/#!forum/rails-oceania" %>
           </li>
           <li>
-            <a href="https://rubyau-slack.herokuapp.com/">Slack</a>
+            <%= link_to 'Slack', "https://rubyau-slack.herokuapp.com/" %>
           </li>
           <li>
-            <a href="http://kiwiirc.com/client/irc.freenode.net/roro">IRC (#roro)</a>
+            <%= link_to 'IRC (#roro)', "http://kiwiirc.com/client/irc.freenode.net/roro" %>
           </li>
           <li>
-            <a href="https://vimeo.com/rubyau/channels">Videos</a>
+          <%= link_to 'Videos', "https://vimeo.com/rubyau/channels" %>
           </li>
           <li>
-            <a href="https://github.com/rails-oceania/roro/wiki/Mentoring">Mentoring</a>
+            <%= link_to 'Mentoring', "https://github.com/rails-oceania/roro/wiki/Mentoring" %>
           </li>
           <li>
-            <a href="https://github.com/rails-oceania/roro/wiki">Wiki</a>
+            <%= link_to 'Wiki', "https://github.com/rails-oceania/roro/wiki" %>
           </li>
         </ul>
       </nav>
     </aside>
+
     <section role="main">
       <% if signed_in? %>
         Signed in as: <%= current_user.email %>
@@ -93,8 +96,9 @@
       </div>
       <%= yield %>
     </section>
+
     <footer role="contentinfo">
-      <small>&copy; 2016 Ruby Australia</small>
+      <small>&copy; <%= Time.zone.now.year %> Ruby Australia</small>
     </footer>
   </body>
 </html>
