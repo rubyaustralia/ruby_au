@@ -1,24 +1,58 @@
-## README
+Ruby Australia Website
+=========================================================================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WIP website rebuild for Ruby Australia
 
-Things you may want to cover:
 
-* Ruby version
+Required Environment / Minimum Setup
+------------------------------------
 
-* System dependencies
+* Install the Ruby version: 2.3.0.
+* Install PostgreSQL.
+* Install Bundler.
+* `bundle install`
+* `cp config/database.yml.example config/database.yml` and modify as needed.
+* `rake db:setup`
 
-* Configuration
 
-* Database creation
+Configuration
+-------------
 
-* Database initialization
+None (yet).
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Testing
+-------
 
-* Deployment instructions
+`bin/rspec`
 
-* ...
+
+Staging Environment
+-------------------
+
+None (yet).
+
+
+Production Environment
+----------------------
+
+None (yet).
+
+
+Known Issues / Gotchas
+----------------------
+
+None (yet).
+
+
+Content licence
+---------------
+
+Content is Copyright 2016 by Ruby Australia, All rights reserved.
+
+
+Logotype licence
+----------------
+
+"Ruby Australia" 'Gem' and Typographic logo are Copyright 2016 by Ruby Australia,
+All rights reserved.
