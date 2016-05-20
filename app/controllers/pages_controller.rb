@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   rescue_from ActionView::MissingTemplate do |exception|
-    if exception.message =~ %r{Missing template pages#{request.path}}
+    if exception.message =~ /Missing template pages#{request.path}/
       raise ActionController::RoutingError, "No such page: #{params[:id]}"
     else
       raise exception
@@ -8,6 +8,6 @@ class PagesController < ApplicationController
   end
 
   def show
-    render template: "pages/#{params[:id]}"
+    render "pages/#{params[:id]}"
   end
 end

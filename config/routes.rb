@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   resources :welcome, only: [:index]
 
-  get  "/*id" => 'pages#show', as: :page, format: false,
+  get "/*id" => 'pages#show', as: :page, format: false,
     constraints: RootRouteConstraints
 end

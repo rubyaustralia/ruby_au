@@ -33,11 +33,13 @@ class MarkdownHandler
       output = add_code_tags(
         Pygmentize.process(code, lang), lang
       )
+      output
     end
 
     def add_code_tags(code, lang)
-      code = code.sub(/<pre>/,'<div class="lang">' + lang + '</div><pre><code class="' + lang + '">')
-      code = code.sub(/<\/pre>/,"</code></pre>")
+      code = code.sub(/<pre>/, '<div class="lang">' + lang + '</div><pre><code  class="' + lang + '">')
+      code = code.sub(/<\/pre>/, "</code></pre>")
+      code
     end
   end
 end
