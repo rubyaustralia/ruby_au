@@ -1,18 +1,24 @@
 class RootRouteConstraints
-  def self.matches?(request)
-    pattern = file_pattern(request.path)
+  class << self
+    def matches?(request)
+      page_id = clean_page_path(request.path)
+      pattern = file_pattern(page_id)
 
-    Dir.glob(pattern).any?
-  end
+      Dir.glob(pattern).any?
+    end
 
-  private
+    private
 
-  def self.file_pattern(page_id)
-    base_page_id = page_id.sub(/\.html$/, '')
-    "#{content_path}#{base_page_id}.html*"
-  end
+    def clean_page_path(request_path)
+      request_path.sub(/\.html$/, "")
+    end
 
-  def self.content_path
-    Rails.root.join('app', 'views', 'pages').to_s
+    def file_pattern(page_id)
+      "#{content_path}#{page_id}.html*"
+    end
+
+    def content_path
+      Rails.root.join('app', 'views', 'pages').to_s
+    end
   end
 end
