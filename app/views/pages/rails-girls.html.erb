@@ -1,0 +1,21 @@
+<h1>Rails Girls</h1>
+
+<p>
+  Join the Rails Girls Melbourne mailing list here.
+</p>
+
+<%= form_tag "http://rubyaustralia.createsend.com/t/j/s/qtheu/", id: "subForm" do %>
+  <p>
+    <%= label_tag "cm-name", "Name" %>
+    <br>
+    <%= text_field_tag "cm-name" %>
+  </p>
+
+  <p>
+    <%= label_tag "cm-qtheu-qtheu", "Email" %>
+    <br>
+    <%= text_field_tag "cm-qtheu-qtheu" %>
+  </p>
+
+  <%= submit_tag "Subscribe" %>
+<% end %>
