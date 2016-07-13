@@ -160,6 +160,11 @@ GEM
       nokogiri (~> 1.6.0)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.0.0)
       actionpack (= 5.0.0)
       activesupport (= 5.0.0)
@@ -252,6 +257,7 @@ DEPENDENCIES
   pygmentize
   rails (>= 5.0.0.rc1, < 5.1)
   rails-controller-testing
+  rails_12factor
   redcarpet
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
