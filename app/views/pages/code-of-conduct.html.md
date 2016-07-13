@@ -6,9 +6,9 @@ In the same way that Matz has written Ruby with a focus on developer happiness, 
 
 Whenever we come together as a community, our shared spaces are opportunities to showcase the best of what we can be. We are there to support our peers - to build each other up, to accept each other for who they are, and to encourage each other to become the people they want to be.
 
-With that in mind, if you are present at any Ruby Australia event, whether as an attendee, organiser, sponsor or speaker, we take it as given that you agree to follow this code of conduct:
+With that in mind, if you are present at any Ruby Australia event, whether as an attendee, organiser, sponsor or speaker, or if you are active in the Ruby Australia Slack, GitHub or Google group, we take it as given that you agree to follow this code of conduct:
 
-The Ruby Australia organisation is dedicated to providing harassment-free experiences at events and conferences for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, religion, or age. We do not tolerate harassment in any form.
+The Ruby Australia organisation is dedicated to providing harassment-free experiences at events and online spaces for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, religion, or age. We do not tolerate harassment in any form.
 
 All communication should be appropriate for a professional audience including people of many different backgrounds. Sexual language and imagery is not appropriate in any circumstance.
 
