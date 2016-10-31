@@ -4,3 +4,6 @@ before_script:
   - bundle exec rake db:create db:schema:load
 script:
   - bundle exec rspec
+addons:
+  code_climate:
+    repo_token: d0644fc725f8217ece88c82df6bafeaf46056d21b99ef073331827ba9e9a922f
