@@ -40,6 +40,19 @@ a {
 /* Header levels */
 h1 {
   line-height: 1;
+
+  a {
+    $link-color: #333333;
+    color: $link-color;
+    text-decoration: none;
+    border-bottom: none;
+    &:hover {
+      color: lighten($link-color, 15%);
+    }
+    &:active {
+      color: lighten($link-color, 25%);
+    }
+  }
 }
 
 h2, .h2 {

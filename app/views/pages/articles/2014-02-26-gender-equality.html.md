@@ -1,4 +1,5 @@
-# On Gender Equality in the Australian Ruby Community
+# <%= link_to 'On Gender Equality in the Australian Ruby Community',
+'articles/2014-02-26-gender-equality' %>
 
 
 Written by [Elle Meredith](https://twitter.com/aemeredith), one of the RubyConfAU 2014 organisers and a Ruby Australia committee member. It was reviewed by the other conference organisers and committee members before publication.
