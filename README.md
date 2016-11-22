@@ -1,13 +1,15 @@
 Ruby Australia Website
 =========================================================================
 
-WIP website rebuild for Ruby Australia
+Website for Ruby Australia
+The slack channel for the website working group can be found
+[here](https://rubyau.slack.com/messages/ruby-au-website/)
 
 
 Required Environment / Minimum Setup
 ------------------------------------
 
-* Install the Ruby version: 2.3.0.
+* Install the Ruby version: `~> 2.3.3`.
 * Install PostgreSQL.
 * Install Bundler.
 * `bundle install`
