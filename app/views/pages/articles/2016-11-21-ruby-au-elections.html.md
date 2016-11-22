@@ -25,7 +25,9 @@ Critical points are usually:
 - Turnover of the financial year
 
 
-## Open positions
+## Open Positions
+
+
 ### President
 The President guides the overall direction of the organisation.
 They make the final call on major decisions and delegate work to General Members.
