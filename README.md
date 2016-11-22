@@ -38,7 +38,7 @@ None (yet).
 Production Environment
 ----------------------
 
-None (yet).
+This website is hosted on Heroku
 
 
 Known Issues / Gotchas
