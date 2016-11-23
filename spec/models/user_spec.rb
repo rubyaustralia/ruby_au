@@ -11,6 +11,12 @@ RSpec.describe User, type: :model do
     expect(user).to_not be_valid
   end
 
+  it "is not valid with a duplicate email" do
+    User.new(email: 'test@example.com')
+    user = User.new(email: 'test@example.com')
+    expect(user).to_not be_valid
+  end
+
   it "is not valid without a password" do
     user = User.new(password: nil)
     expect(user).to_not be_valid
