@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# use Virtus for forms
+gem 'virtus'
+
 # use clearance for auth
 gem 'clearance'
 
