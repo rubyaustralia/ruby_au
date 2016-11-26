@@ -30,7 +30,7 @@ en:
         submit: Save this password
       session:
         submit: Sign in
-      user:
+      joining_member:
         create: Sign up
   layouts:
     application:
@@ -53,7 +53,7 @@ en:
       sign_up: Sign up
     new:
       title: Sign in
-  users:
+  joining_member:
     new:
       sign_in: Sign in
       title: Sign up
