@@ -29,20 +29,6 @@ ActiveRecord::Schema.define(version: 20161117044352) do
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 
-  create_table "user_profiles", force: :cascade do |t|
-    t.integer  "user_id",                         null: false
-    t.string   "preferred_name"
-    t.string   "full_name"
-    t.string   "twitter_url"
-    t.string   "github_url"
-    t.string   "website_url"
-    t.text     "biography"
-    t.boolean  "display_profile", default: false, null: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.index ["user_id"], name: "index_user_profiles_on_user_id", using: :btree
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                          null: false
     t.datetime "created_at",                     null: false
