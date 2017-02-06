@@ -25,9 +25,11 @@ module Features
 
     def sign_up_with(email, password)
       visit sign_up_path
-      fill_in "user_email", with: email
-      fill_in "user_password", with: password
-      click_button I18n.t("helpers.submit.user.create")
+      fill_in "joining_member_email", with: email
+      fill_in "joining_member_password", with: password
+      fill_in "joining_member_full_name", with: 'Jane Doe'
+      fill_in "joining_member_preferred_name", with: 'Jane'
+      click_button I18n.t("helpers.submit.joining_member.create")
     end
 
     def expect_user_to_be_signed_in
