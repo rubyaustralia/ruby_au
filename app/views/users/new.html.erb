@@ -5,11 +5,11 @@
     <%= render partial: '/users/form', object: form %>
 
     <div class="submit-field">
-      <%= form.submit %>
+      <%= form.submit class: 'btn' %>
     </div>
 
     <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
+      <%= link_to "Terms and Conditions", "/terms-and-conditions" %>
     </div>
   <% end %>
 </div>

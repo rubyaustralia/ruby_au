@@ -1,44 +1,37 @@
+<% if form.object.errors.any? %>
+  <div id="error_explanation" class="ui visible error message">
+    <h2><%= pluralize(form.object.errors.count, "error") %> prohibited this from being saved:</h2>
+
+    <ul>
+      <% form.object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="text-field">
-  <%= form.label :email %>
+  <%= form.label :email, class: 'required' %>
   <%= form.text_field :email, type: 'email' %>
 </div>
 
 <div class="text-field">
-  <%= form.label :full_name %>
+  <%= form.label :full_name, class: 'required' %>
   <%= form.text_field :full_name %>
 </div>
 
 <div class="text-field">
-  <%= form.label :preferred_name %>
+  <%= form.label :preferred_name, class: 'required' %>
   <%= form.text_field :preferred_name %>
 </div>
 
+
 <div class="password-field">
-  <%= form.label :password %>
+  <%= form.label :password, class: 'required' %>
   <%= form.password_field :password %>
 </div>
 
 <div class="text-field">
-  <%= form.label :github_url %>
-  <%= form.text_field :github_url, type: 'url' %>
-</div>
-
-<div class="text-field">
-  <%= form.label :twitter_url %>
-  <%= form.text_field :twitter_url, type: 'url' %>
-</div>
-
-<div class="text-field">
-  <%= form.label :website_url %>
-  <%= form.text_field :website_url, type: 'url' %>
-</div>
-
-<div class="text-field">
-  <%= form.label :biography %>
-  <%= form.text_area :biography, size: '35x5' %>
-</div>
-
-<div class="text-field">
-  <%= form.label :display_profile %>
-  <%= form.check_box :display_profile %>
+  <%= form.label :mailing_list %>
+  <%= form.check_box :mailing_list %>
 </div>
