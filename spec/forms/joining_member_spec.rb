@@ -7,7 +7,7 @@ RSpec.describe JoiningMember, type: :form do
       form = JoiningMember.new(user: User.new)
       form.attributes = {
         email: 'text@example.com', password: 'password', full_name: 'bob name',
-        preferred_name: 'bob', display_profile: true
+        preferred_name: 'bob', mailing_list: true
       }
 
       expect(form).to be_valid
@@ -29,8 +29,7 @@ RSpec.describe JoiningMember, type: :form do
     it 'persists the User and UserProfile when saved' do
       form_attrs = {
         email: 'test_persistence@example.com', password: 'password',
-        full_name: 'test name', preferred_name: 'test', display_profile: true,
-        biography: 'a fake signup'
+        full_name: 'test name', preferred_name: 'test', mailing_list: true
       }
 
       form = JoiningMember.new(user: User.new)
@@ -45,9 +44,7 @@ RSpec.describe JoiningMember, type: :form do
 
       profile = user.profile
       expect(profile).to be_persisted
-      expect(profile.biography).to eq form_attrs.fetch(:biography)
-      expect(profile.full_name).to eq form_attrs.fetch(:full_name)
-      expect(profile.display_profile).to eq form_attrs.fetch(:display_profile)
+      expect(profile.mailing_list).to eq form_attrs.fetch(:mailing_list)
     end
   end
 end

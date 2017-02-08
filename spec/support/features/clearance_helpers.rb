@@ -32,13 +32,12 @@ module Features
       click_button I18n.t("helpers.submit.joining_member.create")
     end
 
-    def expect_user_to_be_signed_in
-      visit root_path
-      expect(page).to have_button I18n.t("layouts.application.sign_out")
+    def expect_user_to_be_registered
+      expect(page).to have_content I18n.t("users.create.notice")
     end
 
-    def expect_user_to_be_signed_out
-      expect(page).to have_content I18n.t("layouts.application.sign_in")
+    def expect_user_not_to_be_registered
+      expect(page).to have_content I18n.t("helpers.submit.joining_member.create")
     end
 
     def user_with_reset_password

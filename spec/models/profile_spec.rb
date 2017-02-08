@@ -10,9 +10,4 @@ RSpec.describe Profile, type: :model do
     profile = Profile.new(user_id: nil)
     expect(profile).to_not be_valid
   end
-
-  it "is not valid without display profile" do
-    profile = Profile.new(display_profile: nil)
-    expect(profile).to_not be_valid
-  end
 end

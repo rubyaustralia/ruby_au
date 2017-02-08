@@ -24,18 +24,6 @@
 
     <aside id="meta">
       <nav role="navigation">
-        <h3>Website</h3>
-        <ul>
-          <li>
-            <% if signed_in? %>
-              Signed in as: <%= current_user.email %>
-              <%= button_to 'Sign out', sign_out_path, method: :delete %>
-            <% else %>
-              <%= link_to 'Sign in', sign_in_path %>
-            <% end %>
-          </li>
-        </ul>
-
         <h3>Association</h3>
         <ul>
           <li>

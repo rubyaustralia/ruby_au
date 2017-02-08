@@ -1,15 +1,18 @@
 <div id="clearance" class="sign-up">
-  <h2><%= t(".title") %></h2>
+
+  <header>
+    <h1><%= t(".title") %></h1>
+  </header>
 
   <%= form_for @joining_member, url: users_path do |form| %>
     <%= render partial: '/users/form', object: form %>
 
     <div class="submit-field">
-      <%= form.submit %>
+      <%= form.submit class: 'btn' %>
     </div>
 
     <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
+      <%= link_to "Terms and Conditions", "/terms-and-conditions" %>
     </div>
   <% end %>
 </div>

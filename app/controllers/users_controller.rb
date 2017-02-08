@@ -9,7 +9,7 @@ class UsersController < Clearance::UsersController
     @joining_member.attributes = form_params
 
     if @joining_member.save
-      sign_in @joining_member.user
+      flash[:notice] = t('.notice')
       redirect_back_or url_after_create
     else
       render "users/new"

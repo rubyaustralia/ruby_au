@@ -16,18 +16,13 @@ class JoiningMember
   # UserProfile Attributes
   attribute :preferred_name, String
   attribute :full_name, String
-  attribute :biography, String
-  attribute :github_url, String
-  attribute :twitter_url, String
-  attribute :website_url, String
-  attribute :display_profile, Boolean
+  attribute :mailing_list, Boolean
 
   # User Validations
-  validates :user, :email, :password, presence: true
-
+  validates :user, presence: true
   # UserProfile Validations
   validates :preferred_name, :full_name, presence: true
-  validates :display_profile, inclusion: { in: [true, false] }
+  validates :mailing_list, inclusion: { in: [true, false] }
 
   validate :validate_user
 
@@ -55,11 +50,7 @@ class JoiningMember
     @profile.attributes = {
       preferred_name: preferred_name,
       full_name: full_name,
-      biography: biography,
-      github_url: github_url,
-      twitter_url: twitter_url,
-      website_url: website_url,
-      display_profile: display_profile
+      mailing_list: mailing_list
     }
   end
 
