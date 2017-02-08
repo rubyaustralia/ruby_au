@@ -1,5 +1,8 @@
 <div id="clearance" class="sign-up">
-  <h2><%= t(".title") %></h2>
+
+  <header>
+    <h1><%= t(".title") %></h1>
+  </header>
 
   <%= form_for @joining_member, url: users_path do |form| %>
     <%= render partial: '/users/form', object: form %>
