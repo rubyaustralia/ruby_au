@@ -7,12 +7,14 @@
   <%= form_for @joining_member, url: users_path do |form| %>
     <%= render partial: '/users/form', object: form %>
 
+    <div class="other-links">
+      By signing up, you agree to the <%= link_to "Ruby Australia Terms and Conditions", "/terms-and-conditions" %>
+    </div>
+
     <div class="submit-field">
       <%= form.submit class: 'btn' %>
     </div>
 
-    <div class="other-links">
-      <%= link_to "Terms and Conditions", "/terms-and-conditions" %>
-    </div>
+
   <% end %>
 </div>
