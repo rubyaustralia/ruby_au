@@ -235,3 +235,12 @@ blockquote {
 .required:after {
   content:" *";
 }
+
+.flash {
+  padding: 15px;
+}
+
+.notice {
+  background: #EE3A37;
+  color: white;
+}
