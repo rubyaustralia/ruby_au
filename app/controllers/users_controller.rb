@@ -10,6 +10,7 @@ class UsersController < Clearance::UsersController
 
     if @joining_member.save
       flash[:notice] = t(".notice")
+      sign_in @joining_member.user
       redirect_to just_joined_path
     else
       render "users/new"
