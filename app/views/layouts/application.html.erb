@@ -29,11 +29,14 @@
           <li>
             <%= link_to 'Committee Members', "/committee-members" %>
           </li>
-          <li>
-            <% unless signed_in? %>
+          <% unless signed_in? %>
+            <li>
               <%= link_to 'Join Ruby Australia', sign_up_path %>
-            <% end %>
-          </li>
+            </li>
+            <li>
+              <%= link_to 'Sign in', sign_in_path %>
+            </li>
+          <% end %>
           <li>
             <%= link_to 'Meeting Minutes', "/association" %>
           </li>
@@ -63,6 +66,15 @@
             <%= link_to 'Rails Girls', "/rails-girls" %>
           </li>
         </ul>
+
+        <% if signed_in? %>
+          <h3>My Account</h3>
+          <ul>
+            <li>
+              <%= link_to 'Sign out', sign_out_path, method: :delete %>
+            </li>
+          </ul>
+        <% end %>
 
         <h3>Community</h3>
         <ul>
