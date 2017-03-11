@@ -31,15 +31,6 @@ describe PagesController do
       .to raise_error(ActionController::RoutingError)
   end
 
-  describe "on GET to /meetups/adl" do
-    before { get :show, params: { id: "meetups/adl" } }
-
-    it "responds with success and render template" do
-      expect(response).to be_success
-      expect(response).to render_template("adl")
-    end
-  end
-
   it "raises a routing error for an invalid page" do
     expect { get :show, params: { id: "invalid" } }
       .to raise_error(ActionController::RoutingError)
