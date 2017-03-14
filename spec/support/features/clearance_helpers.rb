@@ -40,6 +40,14 @@ module Features
       expect(page).to have_content I18n.t("helpers.submit.joining_member.create")
     end
 
+    def expect_user_to_be_signed_in
+      expect(page).to have_button I18n.t("layouts.application.sign_out")
+    end
+
+    def expect_user_to_be_signed_out
+      expect(page).to have_content I18n.t("layouts.application.sign_in")
+    end
+
     def user_with_reset_password
       user = FactoryGirl.create(:user)
       reset_password_for user.email

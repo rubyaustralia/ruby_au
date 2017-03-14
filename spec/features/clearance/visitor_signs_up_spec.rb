@@ -14,6 +14,7 @@ RSpec.feature "Visitor signs up" do
     sign_up_with "valid@example.com", "password"
 
     expect_user_to_be_registered
+    expect_user_to_be_signed_in
   end
 
   scenario "tries with invalid email" do

@@ -34,7 +34,7 @@
               <%= link_to 'Join Ruby Australia', sign_up_path %>
             </li>
             <li>
-              <%= link_to 'Sign in', sign_in_path %>
+              <%= link_to t('layouts.application.sign_in'), sign_in_path %>
             </li>
           <% end %>
           <li>
@@ -71,7 +71,7 @@
           <h3>My Account</h3>
           <ul>
             <li>
-              <%= link_to 'Sign out', sign_out_path, method: :delete %>
+              <%= button_to 'Sign out', sign_out_path, method: :delete %>
             </li>
           </ul>
         <% end %>
