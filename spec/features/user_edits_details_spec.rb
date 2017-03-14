@@ -1,6 +1,4 @@
 require "rails_helper"
-require "support/features/clearance_helpers"
-require "support/factory_girl"
 
 RSpec.describe "User edits profile details" do
   scenario "by filling in the form" do
@@ -9,7 +7,7 @@ RSpec.describe "User edits profile details" do
     new_email = 'bigbunnyfoofoo@gmail.com'
     sign_in_with(user.email, user.password)
 
-    fill_in "editing_member_email", with: new_email
+    fill_in "member_email", with: new_email
 
     click_button I18n.t("helpers.submit.editing_member.update")
 

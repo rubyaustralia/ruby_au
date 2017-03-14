@@ -4,8 +4,13 @@
     <h1><%= t(".title") %></h1>
   </header>
 
-  <%= form_for @joining_member, url: users_path do |form| %>
+  <%= form_for @joining_member, as: :member, url: users_path do |form| %>
     <%= render partial: '/users/form', object: form %>
+    <div class="password-field">
+      <%= form.label :password, class: 'required' %>
+      <%= form.password_field :password %>
+    </div>
+
 
     <div class="other-links">
       By signing up, you agree to the <%= link_to "Ruby Australia Terms and Conditions", "/terms-and-conditions" %>
@@ -14,7 +19,6 @@
     <div class="submit-field">
       <%= form.submit class: 'btn' %>
     </div>
-
 
   <% end %>
 </div>

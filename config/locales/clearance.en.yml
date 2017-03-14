@@ -19,8 +19,9 @@ en:
     failure_when_not_signed_in: Please sign in to continue.
   helpers:
     label:
-      joining_member:
+      member:
         email: Email address
+        visible: Publicly Visible Profile?
       password:
         email: Email address
       password_reset:
@@ -32,7 +33,7 @@ en:
         submit: Save this password
       session:
         submit: Sign in
-      joining_member:
+      member:
         create: Sign up
       editing_member:
         update: Update your details
@@ -58,7 +59,7 @@ en:
       sign_up: Sign up
     new:
       title: Sign in
-  joining_member:
+  member:
     new:
       sign_in: Sign in
       title: Sign up

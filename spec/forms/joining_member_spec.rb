@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe JoiningMember, type: :form do
   describe 'validations' do
-
     it 'is valid with all required attributes set' do
       form = JoiningMember.new(user: User.new)
       form.attributes = {

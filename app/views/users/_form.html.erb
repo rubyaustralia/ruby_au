@@ -25,13 +25,12 @@
   <%= form.text_field :preferred_name %>
 </div>
 
-
-<div class="password-field">
-  <%= form.label :password, class: 'required' %>
-  <%= form.password_field :password %>
-</div>
-
 <div class="text-field">
   <%= form.label :mailing_list %>
   <%= form.check_box :mailing_list %>
+</div>
+
+<div class="text-field">
+  <%= form.label :visible %>
+  <%= form.check_box :visible %>
 </div>

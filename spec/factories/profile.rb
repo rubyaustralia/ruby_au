@@ -7,5 +7,9 @@ FactoryGirl.define do
     sequence :full_name do |n|
       "full_name_#{n}"
     end
+    user
+    trait :visible do
+      visible true
+    end
   end
 end
