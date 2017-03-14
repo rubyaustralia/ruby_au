@@ -21,5 +21,7 @@
 
 en:
   users:
+    update:
+      notice: "Your details have been updated."
     create:
       notice: "Thanks for registering as a member!"

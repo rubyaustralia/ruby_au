@@ -1,0 +1,14 @@
+<header>
+  <h1><%= @user.profile.preferred_name %></h1>
+</header>
+
+<section>
+  <dl>
+    <dt>Email</dt>
+    <dt>Full Name</dt>
+    <dt>Mailing List</dt>
+    <dd><%= @user.email %></dd>
+    <dd><%= @user.profile.full_name %></dd>
+    <dd><%= @user.profile.mailing_list %></dd>
+  </dl>
+</section>

@@ -34,6 +34,9 @@ en:
         submit: Sign in
       joining_member:
         create: Sign up
+      editing_member:
+        update: Update your details
+  layouts:
   layouts:
     application:
       sign_in: Sign in

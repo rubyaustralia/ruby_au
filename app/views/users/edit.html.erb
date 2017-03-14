@@ -1,0 +1,16 @@
+<div id="clearance" class="sign-up">
+
+  <header>
+    <h1><%= t(".title") %></h1>
+  </header>
+
+  <%= form_for @editing_member, url: user_path(@editing_member.user), method: :patch do |form| %>
+    <%= render partial: '/users/form', object: form %>
+
+    <div class="submit-field">
+      <%= form.submit t('helpers.submit.editing_member.update'), class: 'btn' %>
+    </div>
+
+
+  <% end %>
+</div>
