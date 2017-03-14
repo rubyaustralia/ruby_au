@@ -1,4 +1,4 @@
-<%= link_to "https://www.lookahead.com.au/", style: "border: none;" do %>
+<%= link_to "https://www.lookahead.com.au/", class: "sponsor-logo-no-border" do %>
 <%= image_tag "sponsors/lookahead.jpg", class: "sponsor-logo" %>
 <% end %>
 <br>
