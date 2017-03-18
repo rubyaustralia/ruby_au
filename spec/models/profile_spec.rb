@@ -13,8 +13,8 @@ RSpec.describe Profile, type: :model do
 
   describe ".visible_for_user" do
     it "returns the matching users profile or visible profiles" do
-      current_user = create(:user)
-      current_user_profile = create(:profile, user: current_user)
+      current_user = FactoryGirl.create(:user)
+      current_user_profile = FactoryGirl.create(:profile, user: current_user)
 
       visible_profiles = create_list(:profile, 2, :visible)
       invisible_profiles = create_list(:profile, 2)
