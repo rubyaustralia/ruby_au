@@ -1,10 +1,10 @@
 class UsersController < Clearance::UsersController
   def show
     @user = User
-            .joins(:profile)
-            .merge(Profile.visible_for_user(current_user))
-            .includes(:profile)
-            .find(params[:id])
+      .joins(:profile)
+      .merge(Profile.visible_for_user(current_user))
+      .includes(:profile)
+      .find(params[:id])
   end
 
   def new

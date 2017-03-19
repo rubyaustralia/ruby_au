@@ -42,11 +42,12 @@ class MemberForm
   private
 
   def assign_profile_params
-    @profile.attributes = { full_name: full_name,
-                            mailing_list: mailing_list,
-                            preferred_name: preferred_name,
-                            visible: visible
-                          }
+    @profile.attributes = {
+      full_name: full_name,
+      mailing_list: mailing_list,
+      preferred_name: preferred_name,
+      visible: visible
+    }
   end
 
   def assign_user_params

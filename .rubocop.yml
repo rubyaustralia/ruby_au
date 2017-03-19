@@ -12,22 +12,32 @@ Metrics/LineLength:
   Enabled: false
   Max: 80
 
+# Allow both single-quoted and double-quoted string literals.
 Style/StringLiterals:
-  EnforcedStyle: double_quotes
   Enabled: false
 
 Style/Documentation:
   Enabled: false
 
-Style/BracesAroundHashParameters:
-  Enabled: false
-
 Style/FrozenStringLiteralComment:
-  Enabled: false
-
-Style/AlignHash:
-  # EnforcedStyle: with_fixed_indentation
   Enabled: false
 
 Style/AlignParameters:
   EnforcedStyle: with_fixed_indentation
+  Enabled: false
+
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# Allowing trailing commas decreases git churn
+Style/TrailingCommaInLiteral:
+  Enabled: false
+Style/TrailingCommaInArguments:
+  Enabled: false
+
+# Allow non-alphabetical Gemfiles.
+Bundler/OrderedGems:
+  Enabled: false
