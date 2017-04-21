@@ -20,6 +20,15 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   resources :welcome, only: [:index]
 
+  # URL backwards compatibility
+  # remove after July 2017 or so
+  get '/articles/2017-03-24-ruby-au-elections' =>
+    redirect('https://forum.ruby.org.au/t/may-2017-ruby-australia-committee-elections/186/5')
+  get '/articles/2016-11-21-ruby-au-elections' =>
+    redirect('https://forum.ruby.org.au/t/dec-2016-ruby-australia-committee-elections/185')
+  get '/articles/2014-02-26-gender-equality' =>
+    redirect('https://forum.ruby.org.au/t/on-gender-equality-in-the-australian-ruby-community/184')
+
   get "/*id" => 'pages#show', as: :page, format: false,
     constraints: RootRouteConstraints
 end
