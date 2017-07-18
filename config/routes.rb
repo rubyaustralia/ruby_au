@@ -12,13 +12,11 @@ Rails.application.routes.draw do
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "users#new", as: "sign_up"
   get "/just_joined" => "users#just_joined", as: "just_joined"
-  # For details on the DSL available within this file,
-  # see http://guides.rubyonrails.org/routing.html
 
-  # Serve websocket cable requests in-process
-  # mount ActionCable.server => '/cable'
   root to: 'welcome#index'
   resources :welcome, only: [:index]
+
+  get '/contact', to: "contact#us"
 
   # URL backwards compatibility
   # remove after July 2017 or so
