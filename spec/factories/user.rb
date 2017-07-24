@@ -1,13 +1,16 @@
 FactoryGirl.define do
-  factory :profile do
+  factory :user do
     sequence :preferred_name do |n|
       "preferred_name_#{n}"
     end
-
     sequence :full_name do |n|
       "full_name_#{n}"
     end
-    user
+    sequence :email do |n|
+      "user#{n}@example.com"
+    end
+
+    password "password"
     trait :visible do
       visible true
     end

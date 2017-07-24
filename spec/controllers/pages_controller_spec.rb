@@ -1,5 +1,4 @@
 require "rails_helper"
-require "support/clearance"
 
 describe PagesController do
   render_views

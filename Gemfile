@@ -9,7 +9,9 @@ gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'compass-rails'
-gem "compass-normalize"
+gem 'compass-normalize'
+gem 'validates_email_format_of'
+gem 'warden' # use for auth
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -28,16 +30,10 @@ gem 'jbuilder', '~> 2.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-# use Virtus for forms
-gem 'virtus'
-
-# use clearance for auth
-gem 'clearance'
 
 # markdown parsing
 gem 'redcarpet'
