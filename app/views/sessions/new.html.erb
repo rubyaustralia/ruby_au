@@ -1,8 +1,24 @@
-<div id="clearance" class="sign-in">
-  <header>
-    <h1><%= t('.title') %></h1>
-  </header>
+<header>
+  <h1>Sign in</h1>
+</header>
 
-  <%= render partial: '/sessions/form' %>
+<%= form_for :session, url: session_path do |form| %>
+  <div class="text-field">
+    <%= form.label :email %>
+    <%= form.text_field :email, type: 'email' %>
+  </div>
 
-</div>
+  <div class="password-field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="submit-field">
+    <%= form.submit %>
+  </div>
+
+  <div class="other-links">
+    <%= link_to 'Sign up', sign_up_path %>
+    <%= link_to 'Forgot password?', new_password_path %>
+  </div>
+<% end %>
