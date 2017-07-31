@@ -8,7 +8,7 @@ RSpec.describe "User edits profile details" do
     login_as user
     visit profile_path
 
-    click_on 'Update details'
+    click_on 'Edit'
 
     fill_in "user_email", with: new_email
     fill_in "user_preferred_name", with: "Big Bunny"

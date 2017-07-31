@@ -23,4 +23,12 @@ class ApplicationController < ActionController::Base
   def authenticate!
     warden.authenticate!
   end
+
+  def report_errors object, success_message = nil
+    if object.errors.any?
+      flash[:notice] = object.errors.full_messages.join('. ')
+    elsif success_message
+      flash[:notice] = success_message
+    end
+  end
 end

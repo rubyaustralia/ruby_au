@@ -1,16 +1,36 @@
-<header>
-  <h1><%= @user.preferred_name %>, welcome to Ruby Australia!</h1>
-</header>
+<section>
+  <header>
+    <h1><%= @user.preferred_name %>, welcome to Ruby Australia!</h1>
+  </header>
 
-<h2>Your details</h2>
-<ul>
-  <li>Email: <%= @user.email %></li>
-  <li>Full Name: <%= @user.full_name %></li>
-</ul>
-<%= link_to 'Update details', edit_profile_path %>
-
-<br>
-<br>
+  <h2>Your details <small>/ <%= link_to 'Edit', edit_profile_path %></small></h2>
+  <ul>
+    <li>
+      <b>Email</b>: <%= @user.email %>
+      <% unless @user.email_confirmed? %>
+        / <%= link_to 'verify', email_confirmation_path, method: :post %>
+      <% end %>
+    </li>
+    <li><b>Full Name</b>: <%= @user.full_name %></li>
+    <li>
+      <b>Mailing list</b>: <%= @user.mailing_list ? 'subscribed' : 'not subscribed' %>
+    </li>
+    <li>
+      <b>Profile status</b>: <%= @user.visible ? 'public' : 'private' %>
+    </li>
+    <li>
+      <b>Membership</b>:
+      <% if @user.is_member? %>
+        member since <%= @user.joined_at.strftime('%B %Y') %>
+        / <%= link_to 'cancel membership', membership_path, method: :delete,
+            data: {confirm: 'Are you sure you want to cancel?'} %>
+      <% else %>
+        not a member
+        / <%= link_to 'join', membership_path, method: :post %>
+      <% end %>
+    </li>
+  </ul>
+</section>
 
 <section>
   <header>

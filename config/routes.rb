@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resource :email_confirmation, only: [:show, :create]
+  resource :membership, only: [:create, :destroy]
   resources :passwords, only: [:create, :new]
   resource :profile, only: [:edit, :update, :show] do
     resource :password, only: [:edit, :update]
