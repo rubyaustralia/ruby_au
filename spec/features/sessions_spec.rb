@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "user can sign in" do
-  scenario "returns a 404 page" do
+RSpec.describe "Sign in" do
+  scenario "shows welcome page" do
     user = FactoryGirl.create(:user, email: 'littlebunnyfoofoo@gmail.com')
 
     visit sign_in_path

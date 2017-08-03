@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  # skip because new action is used by warden as a fallback
   skip_before_action :verify_authenticity_token, only: :new
 
   def new

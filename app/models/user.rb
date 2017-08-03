@@ -22,19 +22,21 @@ class User < ApplicationRecord
   end
 
   def create_membership
-    if !email_confirmed?
+    unless email_confirmed?
       errors.add :base, 'Please verify your email address'
-    elsif is_member?
-      errors.add :base, 'You are already a member'
-    elsif !update(joined_at: Time.now, left_at: nil)
-      errors.add :base, 'Your membership is not valid'
+      return
     end
+
+    if is_member?
+      errors.add :base, 'You are already a member'
+      return
+    end
+
+    update!(joined_at: Time.now, left_at: nil)
   end
 
   def cancel_membership
-    unless update(left_at: Time.now)
-      errors.add :base, 'Your membership could not be cancelled'
-    end
+    update!(left_at: Time.now)
   end
 
   def is_member?
