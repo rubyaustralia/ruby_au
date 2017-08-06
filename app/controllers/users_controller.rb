@@ -1,54 +1,31 @@
-class UsersController < Clearance::UsersController
-  def show
-    @user = User
-      .joins(:profile)
-      .merge(Profile.visible_for_user(current_user))
-      .includes(:profile)
-      .find(params[:id])
-  end
+class UsersController < ApplicationController
+
+  before_action :authenticate!, except: [:new, :create]
 
   def new
-    @joining_member = JoiningMember.new(user: User.new)
-    render "users/new"
+    @user = User.new
   end
 
   def create
-    @joining_member = JoiningMember.new(user: User.new)
-    @joining_member.attributes = member_form_params
+    @user = User.new(user_params)
 
-    if @joining_member.save
-      flash[:notice] = t(".notice")
-      sign_in @joining_member.user
-      redirect_to just_joined_path
+    if @user.save
+      warden.set_user(@user)
+      flash[:notice] = 'Thanks for registering as a member!'
+      redirect_to user_path(@user)
     else
-      render "users/new"
+      render :new
     end
   end
 
-  def edit
-    user = User.find(params[:id])
-    @editing_member = MemberForm.new(user: user)
-  end
-
-  def update
-    user = User.find(params[:id])
-    @editing_member = MemberForm.new(user: user)
-    @editing_member.attributes = member_form_params
-    if @editing_member.save
-      flash[:notice] = t(".notice")
-      redirect_to user_path(user)
-    else
-      render "users/edit"
-    end
+  def show
+    @user = User.visible_for_user(current_user).find(params[:id])
   end
 
   private
 
-  def member_form_params
-    params.require(:member).permit!.to_h
-  end
-
-  def user_visible?(_user)
-    @user.visible? || current_user == @user
+  def user_params
+    params.require(:user).permit(:email, :full_name, :preferred_name,
+      :mailing_list, :visible, :password)
   end
 end
