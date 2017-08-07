@@ -4,6 +4,8 @@ class AddPasswordDigestUsers < ActiveRecord::Migration[5.0]
     add_column :users, :token, :string
 
     User.find_each do |user|
+      user.full_name ||= '<Missing>'
+      user.preferred_name ||= '<Missing>'
       user.password = SecureRandom.hex
       user.regenerate_token
     end
