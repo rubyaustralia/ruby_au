@@ -1,0 +1,77 @@
+<%= link_to 'Imports', admins_imports_path %>
+
+<h1>Import #<%= @import.id %>: <%= @import.name %></h1>
+<p>Import status: <%= @import.status %></p>
+<p>When: <%= time_ago_in_words(@import.created_at) %> ago</p>
+
+<% if @import.status.uploaded? %>
+  <p>Import is processing. Please wait.</p>
+  <p>The page will reload in 5 sec</p>
+
+  <script type="text/javascript">
+    setTimeout(function() {
+      Turbolinks.visit(window.location.pathname, { action: "replace" })
+    }, 5000)
+  </script>
+
+<% else %>
+  <h2>Import issues: <%= @import.import_issues&.size.to_i %></h2>
+  <% if @import.import_issues.present? %>
+    <table class="table">
+      <thead>
+      <tr>
+        <td>Line no</td>
+        <td>Email</td>
+        <td>Error</td>
+      </tr>
+      </thead>
+      <% @import.import_issues&.each do |issue| %>
+        <tr>
+          <td><%= issue['line_no'] %></td>
+          <td><%= issue['email'] %></td>
+          <td><%= issue['messages'].to_sentence %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+
+  <h2>Imported new users: <%= @import.imported_users&.size.to_i %> </h2>
+  <% if @import.imported_users.present? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <td>User id</td>
+          <td>Email</td>
+          <td>Name</td>
+        </tr>
+      </thead>
+      <% @import.imported_users&.each do |user_data| %>
+        <tr>
+          <td><%= user_data['user_id'] %></td>
+          <td><%= user_data['email'] %></td>
+          <td><%= user_data['full_name'] %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+
+  <h2>Found existing users: <%= @import.existing_users&.size.to_i %> </h2>
+  <% if @import.existing_users.present? %>
+    <table class="table">
+      <thead>
+      <tr>
+        <td>User id</td>
+        <td>Email</td>
+        <td>Name</td>
+      </tr>
+      </thead>
+      <% @import.existing_users&.each do |user_data| %>
+        <tr>
+          <td><%= user_data['user_id'] %></td>
+          <td><%= user_data['email'] %></td>
+          <td><%= user_data['full_name'] %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+<% end %>

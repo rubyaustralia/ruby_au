@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe User do
+describe User do
   it "is valid by default" do
     user = build(:user)
     expect(user).to be_valid

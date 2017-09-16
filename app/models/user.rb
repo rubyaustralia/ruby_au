@@ -2,6 +2,8 @@ class User < ApplicationRecord
   scope :visible_for_user, ->(user) { where(visible: true).or(where(id: user&.id)) }
   scope :members, -> { where('joined_at IS NOT NULL AND left_at is NULL') }
 
+  has_many :imports
+
   validates :email,
     uniqueness: { case_sensitive: false },
     email_format: true

@@ -1,0 +1,22 @@
+<%= link_to "New Import", new_admins_import_path %>
+
+<h1>Listing imports</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Import Name</td>
+      <td>Imported By</td>
+      <td>When</td>
+    </tr>
+  </thead>
+  <% @imports.each do |import| %>
+    <tr>
+      <td><%= import.id %></td>
+      <td><%= link_to import.name, admins_import_path(import) %></td>
+      <td><%= import.user.full_name %></td>
+      <td><%= time_ago_in_words(import.created_at) %> ago</td>
+    </tr>
+  <% end %>
+</table>

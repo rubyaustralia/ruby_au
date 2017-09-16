@@ -1,0 +1,7 @@
+New import
+
+<%= form_for @import, url: admins_imports_path do |f| %>
+  <%= f.text_field :name %>
+  <%= f.file_field :csv %>
+  <%= f.submit %>
+<% end %>

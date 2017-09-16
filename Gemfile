@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0', '< 5.1'
 # Use postgresql as the database for Active Record
@@ -12,6 +16,8 @@ gem 'compass-rails'
 gem 'compass-normalize'
 gem 'validates_email_format_of'
 gem 'warden' # use for auth
+gem 'sucker_punch'
+gem 'enumerize'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -46,6 +52,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a
   # debugger console
+  gem 'dotenv-rails'
   gem 'byebug'
   gem 'pry-rails'
   gem 'pry-byebug'

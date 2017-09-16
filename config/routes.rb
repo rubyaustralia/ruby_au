@@ -15,6 +15,10 @@ Rails.application.routes.draw do
 
   root to: 'pages#show', defaults: { id: 'welcome' }
 
+  namespace :admins do
+    resources :imports
+  end
+
   get "/*id" => 'pages#show', as: :page, format: false,
     constraints: RootRouteConstraints
 end

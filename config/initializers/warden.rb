@@ -33,6 +33,7 @@ Warden::Strategies.add(:token) do
 end
 
 Rails.application.config.middleware.insert_after ActionDispatch::Flash, Warden::Manager do |config|
+  config.intercept_401 = false
   config.failure_app = lambda { |env| SessionsController.action(:new).call(env) }
   config.default_strategies :password
 end
