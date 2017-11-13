@@ -46,7 +46,9 @@
 
   <section class='sponsor-logos'>
     <h2>Amber Sponsors</h2>
-    <%= image_tag "sponsors/shippit.jpg", class: "sponsor-logo-amber" %>
+    <%= link_to "https://www.shippit.com", class: "sponsor-logo-no-border" do %>
+      <%= image_tag "sponsors/shippit.jpg", class: "sponsor-logo-amber" %>
+    <% end %>
   </section>
 
 </section>
