@@ -1,31 +1,19 @@
 Rails.application.routes.draw do
-  resources :passwords, controller: "clearance/passwords", only: [:create, :new]
-  resource :session, only: :create
 
-  resources :users, only: [:create, :edit, :update, :show] do
-    resource :password,
-      controller: "clearance/passwords",
-      only: [:create, :edit, :update]
+  resource :email_confirmation, only: [:show, :create]
+  resource :membership, only: [:create, :destroy]
+  resources :passwords, only: [:create, :new]
+  resource :profile, only: [:edit, :update, :show] do
+    resource :password, only: [:edit, :update]
   end
+  resource :session, only: :create
+  resources :users, only: [:create, :show]
 
-  get "/sign_in" => "clearance/sessions#new", as: "sign_in"
-  delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "users#new", as: "sign_up"
-  get "/just_joined" => "users#just_joined", as: "just_joined"
+  get "/sign_in" => "sessions#new", as: "sign_in"
+  delete "/sign_out" => "sessions#destroy", as: "sign_out"
 
-  root to: 'welcome#index'
-  resources :welcome, only: [:index]
-
-  get '/contact', to: "contact#us"
-
-  # URL backwards compatibility
-  # remove after July 2017 or so
-  get '/articles/2017-03-24-ruby-au-elections' =>
-    redirect('https://forum.ruby.org.au/t/may-2017-ruby-australia-committee-elections/186/5')
-  get '/articles/2016-11-21-ruby-au-elections' =>
-    redirect('https://forum.ruby.org.au/t/dec-2016-ruby-australia-committee-elections/185')
-  get '/articles/2014-02-26-gender-equality' =>
-    redirect('https://forum.ruby.org.au/t/on-gender-equality-in-the-australian-ruby-community/184')
+  root to: 'pages#show', defaults: { id: 'welcome' }
 
   get "/*id" => 'pages#show', as: :page, format: false,
     constraints: RootRouteConstraints

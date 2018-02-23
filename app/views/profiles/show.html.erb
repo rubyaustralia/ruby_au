@@ -1,0 +1,88 @@
+<section>
+  <header>
+    <h1><%= @user.preferred_name %>, welcome to Ruby Australia!</h1>
+  </header>
+
+  <h2>Your details <small>/ <%= link_to 'Edit', edit_profile_path %></small></h2>
+  <ul>
+    <li>
+      <b>Email</b>: <%= @user.email %>
+      <% unless @user.email_confirmed? %>
+        / <%= link_to 'verify', email_confirmation_path, method: :post %>
+      <% end %>
+    </li>
+    <li><b>Full Name</b>: <%= @user.full_name %></li>
+    <li>
+      <b>Mailing list</b>: <%= @user.mailing_list ? 'subscribed' : 'not subscribed' %>
+    </li>
+    <li>
+      <b>Profile status</b>: <%= @user.visible ? 'public' : 'private' %>
+    </li>
+    <li>
+      <b>Membership</b>:
+      <% if @user.is_member? %>
+        member since <%= @user.joined_at.strftime('%B %Y') %>
+        / <%= link_to 'cancel membership', membership_path, method: :delete,
+            data: {confirm: 'Are you sure you want to cancel?'} %>
+      <% else %>
+        not a member
+        / <%= link_to 'join', membership_path, method: :post %>
+      <% end %>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <header>
+    <h2>What does it mean to be a member?</h2>
+  </header>
+
+  <p>
+    As a member, you can choose to do as much or as little as you want to, it's up to you!
+  </p>
+
+  <p>
+    Membership gives you voting rights at general meetings and the ability to run for committee
+    positions. We will notify you by email of upcoming general meetings and you will have the
+    opportunity to add items to the meeting’s agenda.
+  </p>
+</section>
+
+<section>
+  <header>
+    <h2>Mailing List</h2>
+  </header>
+  <p>
+    If you signed up to our mailing list, you'll be notified of any upcoming major Ruby Australia
+    events -- such as Rails Camps and RubyConf. We'll also very occassionally send updates regarding
+    the goings on of Ruby Australia as a whole. We are committed to being light on these and you can
+    opt-out of them at any time.
+  </p>
+</section>
+
+<section>
+  <header>
+    <h2>The legals</h2>
+  </header>
+
+  <p>
+    The Constitution outlines how the Ruby Australia organisation runs, and covers in more detail
+    what your rights are as a member of the Ruby Australia organisation.
+    <a href='/constitution'>You can view the current version of the Ruby Australia
+      Constitution here</a>.
+  </p>
+
+  <p>
+    By law, members are entitled to inspect the member registry upon request. The purpose of this is
+    to empower the membership to coordinate with each other irrespective of the committee. We expect
+    this to be a very rare occurrence, with plenty of avenues for communication between members
+    outside of this allowance. Nonetheless, there are circumstances where we are obligated to share
+    your name and email with other members, and we suggest you choose your signup email with this in
+    mind.
+  </p>
+
+  <p>
+    Ruby Australia also has a <a href='/code-of-conduct'>Code of Conduct</a> which
+    members are required to follow.
+  </p>
+</section>

@@ -24,13 +24,35 @@
 
     <aside id="meta">
       <nav role="navigation">
+        <h3>My Account</h3>
+        <ul>
+          <% if signed_in? %>
+            <li>
+
+            </li>
+            <li>
+              <%= link_to 'My profile', profile_path %>
+            </li>
+            <li>
+              <%= button_to 'Sign out', sign_out_path,  { method: :delete, class: 'sign_out' } %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to 'Sign in', sign_in_path %>
+            </li>
+            <li>
+              <%= link_to 'Join Ruby Australia', sign_up_path %>
+            </li>
+          <% end %>
+        </ul>
+
         <h3>Association</h3>
         <ul>
           <li>
             <%= link_to 'Committee Members', "/committee-members" %>
           </li>
           <li>
-            <%= link_to 'Meeting Minutes', "/association" %>
+            <%= link_to 'Meeting Minutes', "https://forum.ruby.org.au/c/ruby-au/meetings" %>
           </li>
           <li>
             <%= link_to 'Code of Conduct', "/code-of-conduct" %>
@@ -57,22 +79,6 @@
           <li>
             <%= link_to 'Rails Girls', "/rails-girls" %>
           </li>
-        </ul>
-
-        <h3>My Account</h3>
-        <ul>
-          <% if signed_in? %>
-            <li>
-              <%= button_to 'Sign out', sign_out_path,  { method: :delete, class: 'sign_out' } %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to t('layouts.application.sign_in'), sign_in_path %>
-            </li>
-            <li>
-              <%= link_to 'Join Ruby Australia', sign_up_path %>
-            </li>
-          <% end %>
         </ul>
 
         <h3>Community</h3>
