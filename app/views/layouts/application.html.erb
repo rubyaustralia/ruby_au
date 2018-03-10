@@ -95,16 +95,20 @@
     </aside>
 
     <main class="pa0 w-100 ml7-l" id="main">
-      <div id="flash">
-        <% flash.each do |key, value| %>
-          <div class="flash <%= key %>"><%= value %></div>
-        <% end %>
-      </div>
-      <%= yield %>
+      <div class="pl2 pl4-ns pr2-ns">
+        <div id="flash">
+          <% flash.each do |key, value| %>
+            <div class="flash <%= key %>"><%= value %></div>
+          <% end %>
+        </div>
 
-      <footer role="contentinfo">
-        <small>&copy; <%= Time.zone.now.year %> Ruby Australia</small>
-      </footer>
+        <%= yield %>
+
+        <footer role="contentinfo">
+          <small>&copy; <%= Time.zone.now.year %> Ruby Australia</small>
+        </footer>
+      </div>
+
     </main>
   </body>
 </html>
