@@ -15,15 +15,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   </head>
 
-  <body class="flex">
-    <aside class="dn db-l h-100 z-0 overflow-x-hidden w5 shadow-4 bg-rb-white fixed">
-      <div class="flex justify-center pt3 h3 bg-rb-red">
-        <%= image_tag "inline-logo.png", alt: "Ruby Australia", class: "pl4 pr4 h2" %>
-      </div>
+  <body>
+    <header role="banner">
+      <a href="/">
+        <span class="logo">Ruby Australia</span>
+      </a>
+    </header>
 
-      <div class="pl4 pr4 anon-pro" id="toc">
-        <h3>Members</h3>
-
+    <aside id="meta">
+      <nav role="navigation">
+        <h3>My Account</h3>
         <ul>
           <% if signed_in? %>
             <li>
@@ -37,7 +38,7 @@
             </li>
           <% else %>
             <li>
-              <%= link_to 'Member sign in', sign_in_path %>
+              <%= link_to 'Sign in', sign_in_path %>
             </li>
             <li>
               <%= link_to 'Join Ruby Australia', sign_up_path %>
@@ -91,22 +92,26 @@
           <li>
             <%= link_to 'Videos', "https://www.youtube.com/channel/UCr38SHAvOKMDyX3-8lhvJHA", target: :blank %>
           </li>
+          <li>
+            <%= link_to 'Mailing list', "https://groups.google.com/forum/#!forum/rails-oceania", target: :blank %>
+          </li>
         </ul>
 
         <h3><%= link_to "Contact us", "/contact" %></h3>
+      </nav>
     </aside>
 
-    <main class="pa0 w-100 ml7-l" id="main">
+    <section role="main">
       <div id="flash">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>
       </div>
       <%= yield %>
+    </section>
 
-      <footer role="contentinfo">
-        <small>&copy; <%= Time.zone.now.year %> Ruby Australia</small>
-      </footer>
-    </main>
+    <footer role="contentinfo">
+      <small>&copy; <%= Time.zone.now.year %> Ruby Australia</small>
+    </footer>
   </body>
 </html>
