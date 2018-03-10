@@ -142,9 +142,9 @@ ul.bullet:before {
 }
 
 /*FORMS*/
-label {
-  border-style: none none solid none;
-}
+/*input.label {*/
+  /*border-style: none none solid none;*/
+/*}*/
 
 input:focus {
   border-bottom-color: #7D1EF0;
