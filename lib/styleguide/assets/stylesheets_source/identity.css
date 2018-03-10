@@ -1,15 +1,15 @@
 /* Identity.css - native html elements only, no class or ids */
 
-html{
+html {
   font-family: 'Poppins', sans-serif;
   font-size:  20px; /* 15pt */
 }
 
-body{
+body {
   line-height: 1.5;  /* == 30px == 1.5 rem */
 }
 
-section,.section{
+section,.section {
   /*margin-left:  15px;
   margin-right: 15px;
   margin: auto;*/
@@ -142,7 +142,7 @@ ul.bullet:before {
 }
 
 /*FORMS*/
-input.label{
+label {
   border-style: none none solid none;
 }
 
@@ -167,6 +167,6 @@ nav li a:visited {
   color: #FF0162;
 }
 
-pre{
+pre {
   display: block;
 }
