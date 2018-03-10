@@ -1,69 +1,92 @@
-<p id="mission-statement">
-  The founding purpose of Ruby Australia is to further the use and adoption of
-  the Ruby programming language in Australia, and to support and encourage a
-  vibrant community around the language and related technologies.
-</p>
+<div class="h5 w-100 flex flex-column bg-rb-red">
+  <!-- <span class="f2 pl3 rb-purple pointer:hover dn-m dn-l" id="openNav">&#9776;</span> -->
+  <section class="w-100 jumbotron">
+    <div class="fl w-25">
+      <%= image_tag "square-logo-white.png" %>
+    </div>
+    <div class="fl w-75">
+      <h1 class="tl ma0 pl2 pl4-ns white">
+        Ruby Australia is a friendly community of coders who meet semi-regularly, have fun, learn from each other and refine our craft.
+      </h1>
+    </div>
+  </section>
+</div>
 
-<section id="meetups">
-  <h3>Meetups</h3>
+<article class="pl2 pl4-ns pr2-ns">
 
-  <p>
-    There are a number of regional Ruby-related meetups all over the country.
-    Each group is organised independently by its members, and all are very
-    welcoming to newcomers. The following groups meet regularly:
+  <section class="pt5">
+    <p>The RubyAU Style guide is designed as a reference to review and implement styles on the Ruby AU homepage. The CSS styles are built using the tachyons library, and code can be copied and implemented into any HTML files.</p>
+  </section>
+
+  <p id="mission-statement">
+    The founding purpose of Ruby Australia is to further the use and adoption of
+    the Ruby programming language in Australia, and to support and encourage a
+    vibrant community around the language and related technologies.
   </p>
 
-  <ul class="meetup-locations">
-    <li>
-      <%= link_to "Adelaide", "https://www.meetup.com/adelaiderb/", id: "adl" %>
-    </li>
-    <li>
-      <%= link_to "Brisbane", "https://www.meetup.com/brisRuby/", id: "bne" %>
-    </li>
-    <li>
-      <%= link_to "Canberra", "https://www.meetup.com/canberra-ruby/", id: "can" %>
-    </li>
-    <li>
-      <%= link_to "Melbourne", "https://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne/", id: "mel" %>
-    </li>
-    <li>
-      <%= link_to "Perth", "https://www.meetup.com/roro-perth/", id: "per" %>
-    </li>
-    <li>
-      <%= link_to "Sydney", "https://www.meetup.com/Ruby-On-Rails-Oceania-Sydney/", id: "syd" %>
-    </li>
-  </ul>
-</section>
+  <section id="meetups">
+    <h3>Meetups</h3>
 
-<section id="railscamp">
-  <h3>Rails Camp</h3>
+    <p>
+      There are a number of regional Ruby-related meetups all over the country.
+      Each group is organised independently by its members, and all are very
+      welcoming to newcomers. The following groups meet regularly:
+    </p>
 
-  <p>
-    Ruby Australia is the organising body of Australian Rails Camp events.
-    Please see the official <%= link_to "Rails Camp", "http://railscamps.com" %>
-    site for more details.
-  </p>
-</section>
+    <ul class="meetup-locations">
+      <li>
+        <%= link_to "Adelaide", "https://www.meetup.com/adelaiderb/", id: "adl" %>
+      </li>
+      <li>
+        <%= link_to "Brisbane", "https://www.meetup.com/brisRuby/", id: "bne" %>
+      </li>
+      <li>
+        <%= link_to "Canberra", "https://www.meetup.com/canberra-ruby/", id: "can" %>
+      </li>
+      <li>
+        <%= link_to "Melbourne", "https://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne/", id: "mel" %>
+      </li>
+      <li>
+        <%= link_to "Perth", "https://www.meetup.com/roro-perth/", id: "per" %>
+      </li>
+      <li>
+        <%= link_to "Sydney", "https://www.meetup.com/Ruby-On-Rails-Oceania-Sydney/", id: "syd" %>
+      </li>
+    </ul>
+  </section>
 
-<section id="rubyconf-au">
-  <h3>RubyConf Australia</h3>
-  <p>
-    Ruby Australia is the organising body of RubyConf Australia.
-    Please see the official
-    <%= link_to "RubyConf AU", "http://rubyconf.org.au" %> site for more details.
-  </p>
-</section>
+  <section id="railscamp">
+    <h3>Rails Camp</h3>
 
-<section>
-  <h3>Contributing to the site</h3>
-  <p>
-    The site's source is hosted on GitHub:
-    <%= link_to "github.com/rubyaustralia/ruby_au",
-    "https://github.com/rubyaustralia/ruby_au" %>.
-    Please refer to the
-    <%= link_to "README", "https://github.com/rubyaustralia/ruby_au#readme" %>
-    there for more details,
-    or join our slack channel
-    <%= link_to "here", "https://ruby-au-join.herokuapp.com/" %>
-  </p>
-</section>
+    <p>
+      Ruby Australia is the organising body of Australian Rails Camp events.
+      Please see the official <%= link_to "Rails Camp", "http://railscamps.com" %>
+      site for more details.
+    </p>
+  </section>
+
+  <section id="rubyconf-au">
+    <h3>RubyConf Australia</h3>
+    <p>
+      Ruby Australia is the organising body of RubyConf Australia.
+      Please see the official
+      <%= link_to "RubyConf AU", "http://rubyconf.org.au" %> site for more details.
+    </p>
+  </section>
+
+  <section>
+    <h3>Contributing to the site</h3>
+    <p>
+      The site's source is hosted on GitHub:
+      <%= link_to "github.com/rubyaustralia/ruby_au",
+      "https://github.com/rubyaustralia/ruby_au" %>.
+      Please refer to the
+      <%= link_to "README", "https://github.com/rubyaustralia/ruby_au#readme" %>
+      there for more details,
+      or join our slack channel
+      <%= link_to "here", "https://ruby-au-join.herokuapp.com/" %>
+    </p>
+  </section>
+
+</article>
+
