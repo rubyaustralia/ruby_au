@@ -4,7 +4,7 @@
 
 <%= form_for :session, url: session_path do |form| %>
   <div class="text-field">
-    <%= form.label :email %>
+    <%= form.label :email, class: "label" %>
     <%= form.text_field :email, type: 'email' %>
   </div>
 
