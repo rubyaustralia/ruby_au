@@ -1,0 +1,22 @@
+{
+  "name": "ruby-australia-styleguide",
+  "version": "1.0.0",
+  "description": "Ruby Australia Styleguide",
+  "repository": "https://github.com/demingfactor/ruby-australia-styleguide",
+  "main": "index.js",
+  "dependencies": {
+    "dash-of-style": "^1.0.0"
+  },
+  "devDependencies": {
+    "postcss": "^6.0.14",
+    "postcss-cli": "^4.1.1",
+    "postcss-cssnext": "^3.0.2",
+    "tachyons": "^4.8.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "postcss assets/stylesheets_source/*.css --use postcss-cssnext --local-plugins --dir 'assets/stylesheets'"
+  },
+  "author": "",
+  "license": "ISC"
+}

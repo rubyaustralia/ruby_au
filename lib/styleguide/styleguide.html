@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Styleguide</title>
+    <link rel="stylesheet" href="node_modules/dash-of-style/scaffold.css">
+    <link rel="stylesheet" href="assets/stylesheets/animations.css">
+    <link rel="stylesheet" href="assets/stylesheets/identity.css">
+    <link rel="stylesheet" href="assets/stylesheets/functions.css">
+    <link rel="stylesheet" href="node_modules/tachyons/css/tachyons.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body class="flex">
+    <aside class="dn db-l h-100 z-0 overflow-x-hidden w5 shadow-4 bg-rb-white fixed">
+      <div class="flex justify-center pt3 h3 bg-rb-red">
+        <img class="pl4 pr4 h2" src="assets/images/inlineLogo.png" alt="Ruby_AU">
+      </div>
+      <div class="pl4 pr4 anon-pro" id="toc">
+      </div>
+    </aside>
+    <main class="pa0 w-100 ml7-l" id="main">
+      <div class="h6 w-100 flex flex-column bg-rb-red">
+        <!-- <span class="f2 pl3 rb-purple pointer:hover dn-m dn-l" id="openNav">&#9776;</span> -->
+        <section class="w-100">
+          <h1 class="tl ma0 pl2 pl4-ns white">RubyAU Style Guide</h1>
+        </section>
+      </div>
+      <article class="pl2 pl4-ns pr2-ns">
+        <section class="pt5">
+          <p>The RubyAU Style guide is designed as a reference to review and implement styles on the Ruby AU homepage. The CSS styles are built using the tachyons library, and code can be copied and implemented into any HTML files.</p>
+        </section>
+        <section class="ma pt4">
+          <h1>Typefaces</h1>
+          <div>
+            <p>
+              There are two typefaces used across the Ruby AU webpage;
+              <strong>Poppins</strong> &amp; <strong>Anonymous Pro</strong>
+            </p>
+            <h3>Poppins - primary</h3>
+            <p><strong>Poppins</strong>, is a geometric sans serif typeface. Each letterform is nearly monolinear, with optical corrections applied to stroke joints where necessary to maintain an even typographic colour.
+            </p>
+          </div>
+          <div class="anon-pro">
+            <h3>Anonymous Pro - secondary</h3>
+            <p>
+              <strong>Secondary Typeface Anonymous Pro</strong>, is a family of four fixed-width fonts designed especially with coding in mind. It is inspired by Anonymous 9, a freeware Macintosh bitmap font developed in the mid-'90s that was intended as
+              a more legible alternative to Monaco.
+            </p>
+          </div>
+          <div>
+            <h2>Typographic Measure - Line length</h2>
+            <p>An effective line length helps greatly in making text readable.</p>
+            <p>To help enforce a consistent measure on all body copy, we use the convention, that section tags provide this constraint.</p>
+            <p>Use a section tag around your body copy and any elements that you want to fit within the line measure. This approach is neutral to if you place a single section inside your body or define multiple sections.
+              <p>Just avoid nesting sections, to avoid the restriction applying twice, use a div or article tag instead.</p>
+              <p>Elements that you want to run edge-to-edge of the screen, like background images should be placed outside of section tags. Most elements, however, will likely be within this tag.</p>
+              <section class="example">
+                <p>Our measure is achieved with a max-width of 660px.</p>
+              </section>
+          </div>
+          </div>
+          <div>
+            <h1>Headings</h1>
+            <h2>Heading 1</h2>
+            <p class="anon-pro">47.372px/60 line height, set in Poppins Bold.</p>
+            <h1 class="example rb-grey80 pl3">Major Heading</h1>
+            <h2>Heading 2</h2>
+            <p class="anon-pro">26.66px/36 line height, set in Poppins Bold.</p>
+            <h2 class="example rb-grey80 pl3">Sub Heading</h2>
+            <h2>Heading 3</h2>
+            <p class="anon-pro">26.66px/45 line height, set in Poppins Bold.</p>
+            <h3 class="example rb-grey80 pl3">Article Lead</h3>
+            <h2>Heading 4</h2>
+            <p class="anon-pro">20px/30 line height, set in Poppins Bold.</p>
+            <h4 class="example rb-grey80 pl3">Minor Heading</h4>
+          </div>
+          <div>
+            <h1>Text Formatting</h1>
+            <h2>Paragraph text</h2>
+            <p class="anon-pro">20px/30 line height 30, set in Poppins Regular</p>
+            <p class="example">Ruby is a beautiful programming language that was created in Japan for the unique purpose of programmer happiness. We’re big on happiness and welcome you to join us; be you a beginner, pro or even if you don’t code or use ruby at all.</p>
+          </div>
+          <div>
+            <h2>Emphasised text</h2>
+            <p class="example">Why not add a little <em>emphasis?</em></p>
+          </div>
+          <div>
+            <h2>Strong text</h2>
+            <p class="example">Say it nice and <strong>strong</strong>.</p>
+          </div>
+          <div>
+            <h2>Code text</h2>
+            <p>Use the code tag to add inline code examples:</p>
+            <p>Like this example <code class="example prettyprint">def hello; puts "Hey there!"; end</code></p>
+            Combine with a pre tag to preserve significant whitespace:
+            <pre class="example pa3 bg-rb-grey30 b--rb-blue ba2"><code class="prettyprint"># example code with pre tag
+  def hello;
+    puts "Hey there!";
+  end</code></pre>
+          </div>
+          <div>
+            <h2>Block Quotes</h2>
+            <blockquote cite="http://ruby.org.au" class="example">
+              Matz is nice, so we are nice.
+            </blockquote>
+          </div>
+          <div>
+            <h1>Lists</h1>
+            <h2>Ordered</h2>
+            <ol class="example">
+              <li>Ordered List Item</li>
+              <li>Ordered List Item</li>
+              <li>Ordered List Item</li>
+            </ol>
+            <h2>Unordered</h2>
+            <h3>Standard</h3>
+            <ul class="example list">
+              <li>Unordered List Item</li>
+              <li>Unordered List Item</li>
+              <li>Unordered List Item</li>
+            </ul>
+            <h3>Bullets</h3>
+            <ul class="example bullet">
+              <li>Unordered List Item</li>
+              <li>Unordered List Item</li>
+              <li>Unordered List Item</li>
+            </ul>
+          </div>
+          <div>
+            <h1 class="rb-red">Links</h1>
+            <h2>Address Links</h2>
+            <a class="example" href="hello-world.html">I'm a link</a>
+            <h2>External Links</h2>
+            <a class="example" href="http://youtube.com">RubyAU YouTube Channel</a>
+            <h1 id="button">Buttons</h1>
+            <div class="example">
+              <a href="#button" class="anon-pro b h2 w4 pt1 pb1 pl4 pr4 tc b--solid bw175  b--rb-purple rb-purple rb-white-hover rb-purple-focus bg-rb-purple-hover shadow-4 no-underline">Primary</a>
+              <a class="anon-pro b tc w4 ma2 pt1 pb1 pl4 pr4 b--solid bw175 b--rb-grey50 rb-grey50 no-underline grow:hover">Disabled</a>
+            </div>
+          </div>
+          <div>
+            <h1 class="rb-red">Forms</h1>
+            <div>
+              <form class="example w5" action="" method="post">
+                <input class="label w5" type="text" name="Label" value="" placeholder="Label">
+                <textarea class="w5 mt4" name="text-area" rows="8" cols="80" placeholder="What's on your mind?"></textarea>
+                <button class=" anon-pro b h2 w4 mt3 pt1 pb1 pl4 pr4 tc b--solid bw175 b--rb-grey80 bg-rb-white rb-grey80 rb-white-hover b--rb-purple-hover bg-rb-purple-hover shadow-4 no-underline" type="button" name="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+          <div>
+            <h1 class="rb-red">Tables</h1>
+            <table class="example collapse w-60">
+              <thead>
+                <tr>
+                  <th class="bb-2 b--rb-grey50 tl pt2">Table Header</th>
+                  <th class="bb-2 b--rb-grey50 tl pt2 tr">Data</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="bt tl pt2">Table Data</td>
+                  <td class="bt tl pt2 tr">1000</td>
+                </tr>
+                <tr>
+                  <td class="bt tl pt2">Table Data</td>
+                  <td class="bt tl pt2 tr">2000</td>
+                </tr>
+                <tr>
+                  <td class="bt tl pt2">Table Data</td>
+                  <td class="bt tl pt2 tr">3000</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td class="bt-2 b--rb-grey50 tl pt2">Footer</td>
+                  <td class="bt-2 b--rb-grey50 tl pt2 tr">6000</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <div>
+            <h1 class="rb-red">Colour</h1>
+            <h4>Primary Palette</h4>
+            <div class="flex flex-wrap flex-wrap-left ">
+              <span class="w4 pr1">
+              <div class="h4 bg-rb-red"></div>
+              <strong>rb-red</strong>
+              <p>#FF0162</p>
+            </span>
+              <span class="w4 pr1">
+              <div class="h4 bg-rb-purple"></div>
+              <strong>rb-purple</strong>
+              <p>#7D1EF0</p>
+            </span>
+              <span class="w4 pr1">
+              <div class="h4 bg-rb-pink"></div>
+              <strong>rb-pink</strong>
+              <p>#F01E91</p>
+            </span>
+              <span class="w4 pr1">
+              <div class="h4 bg-rb-blue"></div>
+              <strong>rb-blue</strong>
+              <p>#1EF0E6</p>
+            </span>
+            </div>
+            <h4>Greys</h4>
+            <div class="flex flex-wrap flex-wrap-left ">
+              <span class="w4 pr1">
+              <div class="h4 bg-rb-grey"></div>
+              <strong>rb-grey</strong>
+              <p>#595859</p>
+            </span>
+              <span class="w4 pr1">
+              <div class="h4 bg-rb-grey80"></div>
+              <strong>rb-grey80</strong>
+              <p>#9B9B9B</p>
+            </span>
+              <span class="w4 pr1">
+              <div class="h4 bg-rb-grey50"></div>
+              <strong>rb-grey50</strong>
+              <p>#C9C7CA</p>
+            </span>
+              <span class="w4 pr1">
+              <div class="h4 bg-rb-grey30"></div>
+              <strong>rb-grey30</strong>
+              <p>#E8E5E9</p>
+            </span>
+              <span class="w4 pr1">
+              <div class="h4 bg-black"></div>
+              <strong>black</strong>
+              <p>#000000</p>
+            </span>
+              <span class="w4 pr1">
+              <div class="h4 white ba b--rb-grey50"></div>
+              <strong>white</strong>
+              <p>#FFFFFF</p>
+            </span>
+            </div>
+            <h4>Secondary Reds</h4>
+            <div class="flex flex-wrap flex-wrap-left ">
+              <span class="w4 pr1">
+              <div class="h4 bg-rb-dark-red"></div>
+              <strong>rb-dark-red</strong>
+              <span><p>#800131</p></span>
+              </span>
+              <span class="w4 pr1">
+              <div class="h4 bg-rb-dark-red50"></div>
+              <strong>rb-dark-red50</strong>
+              <p>#D8055A</p>
+            </span>
+              <span class="w4 pr1">
+              <div class="h4 bg-rb-light-red"></div>
+              <strong>rb-light-red</strong>
+              <p>#FF3481</p>
+            </span>
+              <span class="w4 pr1">
+              <div class="h4 bg-rb-light-red50"></div>
+              <strong>rb-light-red50</strong>
+              <p>#FF99C0</p>
+            </span>
+            </div>
+        </section>
+      </article>
+    </main>
+    <script src="node_modules/dash-of-style/dist/dash-of-style.js"></script>
+    <!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
+  </body>
+</html>
