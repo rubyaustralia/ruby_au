@@ -221,9 +221,12 @@
   border-width: 2px;
 }
 .bw175 {
+    border-width: 3.5px;
+    border-width: 2.88px;
     border-width: .18rem;
 }
 .left-28{
+  left: 448px;
   left: 28rem;
 }
 .flex-wrap-left:after {
@@ -236,12 +239,16 @@
   width: 0;
 }
 .w6{
+  width:192px;
   width:12rem;
+  width:242;
 }
 .h6{
+  height: 360px;
+  height: 22.5rem;
   height: 450px;
 }
 .shadow-6{
-  -webkit-box-shadow: 0 2px 4px #9B9B9B;
-          box-shadow: 0 2px 4px #9B9B9B;
+  -webkit-box-shadow: 0px 2px 4px #9B9B9B;
+          box-shadow: 0px 2px 4px #9B9B9B;
 }
