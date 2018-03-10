@@ -1,6 +1,6 @@
 <% if form.object.errors.any? %>
   <div id="error_explanation" class="ui visible error message">
-    <h2><%= pluralize(form.object.errors.count, "error") %> prohibited this from being saved:</h2>
+    <h2 class="rb-grey80 pl3"><%= pluralize(form.object.errors.count, "error") %> prohibited this from being saved:</h2>
 
     <ul>
       <% form.object.errors.full_messages.each do |message| %>
