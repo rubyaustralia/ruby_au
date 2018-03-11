@@ -41,11 +41,29 @@
 .rb-red {
   color: var(--rb-red);
 }
+.rb-red-hover:hover {
+  color: var(--rb-red);
+}
+.rb-red-focus {
+  color: var(--rb-red);
+}
+
 .bg-rb-red {
   background-color: var(--rb-red);
 }
+.bg-rb-red-hover:hover{
+  background-color: var(--rb-red);
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+
 .b--rb-red {
   border-color: var(--rb-red);
+}
+.b--rb-red-hover:hover {
+  border-color: var(--rb-red);
+  -webkit-transition: border-color 200ms linear;
+  transition: border-color 200ms linear;
 }
 
 /*--rb-white--*/
