@@ -1,4 +1,4 @@
-<% content_for :header do %>
+<%= content_for :header do %>
   <%= render "layouts/header" %>
 <% end %>
 
@@ -64,18 +64,8 @@
     </p>
   </section>
 
-  <section>
-    <h3 class="rb-grey80">Contributing to the site</h3>
-    <p>
-      The site's source is hosted on GitHub:
-      <%= link_to "github.com/rubyaustralia/ruby_au",
-      "https://github.com/rubyaustralia/ruby_au" %>.
-      Please refer to the
-      <%= link_to "README", "https://github.com/rubyaustralia/ruby_au#readme" %>
-      there for more details,
-      or join our slack channel
-      <%= link_to "here", "https://ruby-au-join.herokuapp.com/" %>
-    </p>
-  </section>
-
 </article>
+
+<%= content_for :contributing do %>
+  <%= render "layouts/contributing" %>
+<% end %>
