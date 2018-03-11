@@ -1,18 +1,8 @@
-<div class="h5 w-100 flex flex-column bg-rb-red">
-  <!-- <span class="f2 pl3 rb-purple pointer:hover dn-m dn-l" id="openNav">&#9776;</span> -->
-  <section class="w-100 jumbotron">
-    <div class="fl w-25">
-      <%= image_tag "square-logo-white.png" %>
-    </div>
-    <div class="fl w-75">
-      <h1 class="tl ma0 pl2 pl4-ns white">
-        Ruby Australia is a friendly community of coders who meet semi-regularly, have fun, learn from each other and refine our craft.
-      </h1>
-    </div>
-  </section>
-</div>
+<% content_for :header do %>
+  <%= render "layouts/header" %>
+<% end %>
 
-<article class="pl2 pl4-ns pr2-ns">
+<article>
 
   <section class="pt5">
     <p>The RubyAU Style guide is designed as a reference to review and implement styles on the Ruby AU homepage. The CSS styles are built using the tachyons library, and code can be copied and implemented into any HTML files.</p>
@@ -89,4 +79,3 @@
   </section>
 
 </article>
-

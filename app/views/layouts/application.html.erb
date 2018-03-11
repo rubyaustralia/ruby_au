@@ -95,6 +95,8 @@
     </aside>
 
     <main class="pa0 w-100 ml7-l" id="main">
+      <%= yield :header %>
+
       <div class="pl2 pl4-ns pr2-ns">
         <div id="flash">
           <% flash.each do |key, value| %>
