@@ -34,6 +34,16 @@ RSpec.describe User do
     end
   end
 
+  describe '.send_email_confirmation' do
+    let(:user) { FactoryGirl.build(:user) }
+
+    it 'regenerates token and send confirmation email' do
+      expect(user).to receive(:regenerate_token)
+      expect { user.send_email_confirmation }
+        .to change { ActionMailer::Base.deliveries.count }.by(1)
+    end
+  end
+
   describe '.create_membership' do
     context 'when email not confirmed' do
       let(:user) { User.new(email_confirmed: false) }
