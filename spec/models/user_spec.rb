@@ -34,6 +34,35 @@ RSpec.describe User do
     end
   end
 
+  describe '.create_membership' do
+    context 'when email not confirmed' do
+      let(:user) { User.new(email_confirmed: false) }
+      it 'returns with error' do
+        expect(user).to_not receive(:update!)
+        user.create_membership
+        expect(user.errors[:base]).to include(/verify your email/)
+      end
+    end
+
+    context 'when user is already a member' do
+      let(:user) { User.new(email_confirmed: true, joined_at: Time.now) }
+      it 'returns with error' do
+        expect(user).to_not receive(:update!)
+        user.create_membership
+        expect(user.errors[:base]).to include(/already a member/)
+      end
+    end
+
+    context 'when email confirmed' do
+      let(:user) { FactoryGirl.build(:user, email_confirmed: true) }
+      it 'turn user into member' do
+        user.create_membership
+        expect(user.errors[:base]).to be_empty
+        expect(user.reload.is_member?).to eq true
+      end
+    end
+  end
+
   describe '.cancel_membership' do
     let(:user) { FactoryGirl.create(:user) }
 
