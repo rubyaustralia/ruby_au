@@ -33,4 +33,24 @@ RSpec.describe User do
         match_array([*visible_profiles, current_user])
     end
   end
+
+  describe '.is_member?' do
+    context 'has not joined' do
+      it 'is a not member' do
+        expect(User.new(joined_at: nil).is_member?).to eq false
+      end
+    end
+
+    context 'joined user' do
+      it 'is a member' do
+        expect(User.new(joined_at: Time.now).is_member?).to eq true
+      end
+    end
+
+    context 'joined and left' do
+      it 'is a not member' do
+        expect(User.new(joined_at: Time.now, left_at: Time.now).is_member?).to eq false
+      end
+    end
+  end
 end
