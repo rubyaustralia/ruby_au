@@ -34,6 +34,15 @@ RSpec.describe User do
     end
   end
 
+  describe '.cancel_membership' do
+    let(:user) { FactoryGirl.create(:user) }
+
+    it 'cancals the membership of the user' do
+      user.cancel_membership
+      expect(user.is_member?).to eq false
+    end
+  end
+
   describe '.is_member?' do
     context 'has not joined' do
       it 'is a not member' do
