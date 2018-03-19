@@ -34,4 +34,15 @@ describe PasswordsController do
       end
     end
   end
+
+  describe 'update' do
+    let(:user) { FactoryGirl.create(:user) }
+    subject { put :update, params: { change_password: { password: 'new_password' } } }
+
+    it 'updates the password and redirects to profile page' do
+      sign_in user
+      subject
+      expect(response).to redirect_to profile_path
+    end
+  end
 end
