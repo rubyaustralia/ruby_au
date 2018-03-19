@@ -30,7 +30,7 @@ describe PasswordsController do
 
       it 'does nothing' do
         expect { subject }
-          .to_not change { ActionMailer::Base.deliveries.count }
+          .to_not(change { ActionMailer::Base.deliveries.count })
       end
     end
   end
