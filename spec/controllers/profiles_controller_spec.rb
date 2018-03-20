@@ -12,7 +12,7 @@ describe ProfilesController do
     end
   end
 
-  describe 'show' do
+  describe 'edit' do
     let(:user) { FactoryGirl.create(:user) }
     subject { get :edit }
 
