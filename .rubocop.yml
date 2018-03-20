@@ -5,12 +5,20 @@ AllCops:
     - 'db/**/*'
     - 'bin/**/*'
     - 'vendor/cache/**/*'
-
-  TargetRubyVersion: 2.3
+  DisplayCopNames: true
+  TargetRubyVersion: 2.4
 
 Metrics/LineLength:
   Enabled: false
   Max: 80
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
 
 # Allow both single-quoted and double-quoted string literals.
 Style/StringLiterals:

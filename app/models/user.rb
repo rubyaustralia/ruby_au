@@ -40,6 +40,6 @@ class User < ApplicationRecord
   end
 
   def is_member?
-    joined_at && left_at.nil?
+    joined_at.present? && left_at.nil?
   end
 end
