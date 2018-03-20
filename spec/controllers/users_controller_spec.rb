@@ -47,5 +47,13 @@ describe UsersController do
   end
 
   describe 'show' do
+    let(:user) { FactoryGirl.create(:user) }
+    subject { get :show, params: { id: user.id } }
+
+    it 'renders the user profile page' do
+      sign_in user
+      subject
+      expect(response).to render_template 'show'
+    end
   end
 end
