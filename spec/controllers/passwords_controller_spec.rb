@@ -37,12 +37,23 @@ describe PasswordsController do
 
   describe 'update' do
     let(:user) { FactoryGirl.create(:user) }
-    subject { put :update, params: { change_password: { password: 'new_password' } } }
+    subject { put :update, params: { change_password: { password: password } } }
 
-    it 'updates the password and redirects to profile page' do
-      sign_in user
-      subject
-      expect(response).to redirect_to profile_path
+    context 'when password is valid' do
+      let(:password) { 'new_password' }
+      it 'updates the password and redirects to profile page' do
+        sign_in user
+        expect { subject }.to(change { user.password })
+        expect(response).to redirect_to profile_path
+      end
+    end
+
+    context 'when password is nil' do
+      let(:password) { nil }
+      it 'does not update the password' do
+        sign_in user
+        expect { subject }.to_not(change { user.password })
+      end
     end
   end
 end
