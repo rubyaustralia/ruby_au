@@ -17,4 +17,13 @@ RSpec.describe 'Session' do
     expect(page).to have_content 'Logged out!'
     expect(page).to_not have_content user.preferred_name
   end
+
+  scenario 'Invalid credentials' do
+    visit sign_in_path
+    fill_in "session_email", with: 'invalid@email.com'
+    fill_in "session_password", with: 'randopassword'
+    click_button 'Sign in'
+
+    expect(page).to have_content 'Invalid email or password'
+  end
 end
