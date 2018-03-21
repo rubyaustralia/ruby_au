@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe 'Email Confirmation' do
   scenario 'valid credentials' do
-    user = FactoryGirl.create(:user, email: 'littlebunnyfoofoo@gmail.com')
+    user = FactoryGirl.create(:user)
     user.regenerate_token
 
     visit email_confirmation_path(token: user.token)
