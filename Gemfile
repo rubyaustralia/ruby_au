@@ -64,6 +64,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0'
   gem 'spring-commands-rspec'
   gem 'rubocop', '~> 0.49.0'
+  gem 'guard', require: false
+  gem 'guard-rspec', require: false
 end
 
 group :test do
