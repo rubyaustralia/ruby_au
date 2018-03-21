@@ -50,6 +50,12 @@ RSpec.feature "Visitor resets password" do
     expect(page).to have_content 'Your password was updated'
   end
 
+  scenario 'invalid edit password link' do
+    visit edit_profile_password_path(token: 'some_random_token')
+
+    expect(page).to have_content 'Link has expired'
+  end
+
   def expect_mailer_to_have_delivery(recipient, subject, body)
     expect(ActionMailer::Base.deliveries).not_to be_empty
 
