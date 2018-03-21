@@ -39,6 +39,17 @@ RSpec.feature "Visitor resets password" do
     expect(ActionMailer::Base.deliveries).to be_empty
   end
 
+  scenario 'editing the password' do
+    user = FactoryGirl.create(:user)
+    user.regenerate_token
+
+    visit edit_profile_password_path(token: user.token)
+    fill_in 'Password', with: 'password'
+    click_button 'Update password'
+
+    expect(page).to have_content 'Your password was updated'
+  end
+
   def expect_mailer_to_have_delivery(recipient, subject, body)
     expect(ActionMailer::Base.deliveries).not_to be_empty
 
