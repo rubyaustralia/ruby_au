@@ -29,8 +29,8 @@ RSpec.describe User do
       visible_profiles = create_list(:user, 2, :visible)
       invisible_profiles = create_list(:user, 2)
 
-      expect(User.visible_for_user(current_user)).to \
-        match_array([*visible_profiles, current_user])
+      expect(User.visible_for_user(current_user)).to match_array([*visible_profiles, current_user])
+      expect(User.visible_for_user(current_user)).to_not match_array(invisible_profiles)
     end
   end
 
