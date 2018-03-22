@@ -29,8 +29,8 @@ RSpec.describe User do
       visible_profiles = create_list(:user, 2, :visible)
       invisible_profiles = create_list(:user, 2)
 
-      expect(User.visible_for_user(current_user)).to \
-        match_array([*visible_profiles, current_user])
+      expect(User.visible_for_user(current_user)).to match_array([*visible_profiles, current_user])
+      expect(User.visible_for_user(current_user)).to_not match_array(invisible_profiles)
     end
   end
 
@@ -68,7 +68,7 @@ RSpec.describe User do
       it 'turn user into member' do
         user.create_membership
         expect(user.errors[:base]).to be_empty
-        expect(user.reload.is_member?).to eq true
+        expect(user.reload.member?).to eq true
       end
     end
   end
@@ -78,26 +78,26 @@ RSpec.describe User do
 
     it 'cancals the membership of the user' do
       user.cancel_membership
-      expect(user.is_member?).to eq false
+      expect(user.member?).to eq false
     end
   end
 
-  describe '.is_member?' do
+  describe '.member?' do
     context 'has not joined' do
       it 'is a not member' do
-        expect(User.new(joined_at: nil).is_member?).to eq false
+        expect(User.new(joined_at: nil).member?).to eq false
       end
     end
 
     context 'joined user' do
       it 'is a member' do
-        expect(User.new(joined_at: Time.now).is_member?).to eq true
+        expect(User.new(joined_at: Time.now).member?).to eq true
       end
     end
 
     context 'joined and left' do
       it 'is a not member' do
-        expect(User.new(joined_at: Time.now, left_at: Time.now).is_member?).to eq false
+        expect(User.new(joined_at: Time.now, left_at: Time.now).member?).to eq false
       end
     end
   end

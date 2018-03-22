@@ -4,7 +4,7 @@ AllCops:
   Exclude:
     - 'db/**/*'
     - 'bin/**/*'
-    - 'vendor/cache/**/*'
+    - 'vendor/**/*'
   DisplayCopNames: true
   TargetRubyVersion: 2.4
 
@@ -30,21 +30,24 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Style/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
-  Enabled: false
-
 Style/BracesAroundHashParameters:
   Enabled: false
 
-Style/MultilineMethodCallIndentation:
-  EnforcedStyle: indented
-
-# Allowing trailing commas decreases git churn
-Style/TrailingCommaInLiteral:
-  Enabled: false
 Style/TrailingCommaInArguments:
   Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/SignalException:
+  Exclude:
+    - 'config/initializers/warden.rb'
 
 # Allow non-alphabetical Gemfiles.
 Bundler/OrderedGems:
