@@ -27,7 +27,7 @@ class User < ApplicationRecord
       return
     end
 
-    if is_member?
+    if member?
       errors.add :base, 'You are already a member'
       return
     end
@@ -39,7 +39,7 @@ class User < ApplicationRecord
     update!(left_at: Time.now)
   end
 
-  def is_member?
+  def member?
     joined_at.present? && left_at.nil?
   end
 end
