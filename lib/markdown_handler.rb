@@ -29,7 +29,7 @@ class MarkdownHandler
 
   class HTMLWithPygments < Redcarpet::Render::HTML
     def block_code(code, lang)
-      lang = lang && lang.split.first || "text"
+      lang = lang&.split&.first || "text"
       output = add_code_tags(
         Pygmentize.process(code, lang), lang
       )

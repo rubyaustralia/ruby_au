@@ -1,6 +1,5 @@
 class PasswordsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     @user = User.find_by(email: params.dig(:change_password, :email))
@@ -34,5 +33,4 @@ class PasswordsController < ApplicationController
       render :edit
     end
   end
-
 end
