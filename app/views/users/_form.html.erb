@@ -12,25 +12,25 @@
 
 <div class="text-field">
   <%= form.label :email, class: 'required' %>
-  <%= form.text_field :email, type: 'email' %>
+  <%= form.text_field :email, type: 'email', class: "input w5" %>
 </div>
 
 <div class="text-field">
   <%= form.label :full_name, class: 'required' %>
-  <%= form.text_field :full_name %>
+  <%= form.text_field :full_name, class: "input w5" %>
 </div>
 
 <div class="text-field">
   <%= form.label :preferred_name, class: 'required' %>
-  <%= form.text_field :preferred_name %>
+  <%= form.text_field :preferred_name, class: "input w5" %>
 </div>
 
 <div class="text-field">
   <%= form.label :mailing_list, 'Mailing list' %>
-  <%= form.check_box :mailing_list %>
+  <%= form.check_box :mailing_list, class: "input w5" %>
 </div>
 
 <div class="text-field">
   <%= form.label :visible, 'Visible to public' %>
-  <%= form.check_box :visible %>
+  <%= form.check_box :visible, class: "input w5" %>
 </div>
