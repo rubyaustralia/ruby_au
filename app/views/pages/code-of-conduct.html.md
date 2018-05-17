@@ -53,15 +53,15 @@ Consumption of alcohol is not an excuse for unacceptable behaviour and anyone as
 
 If a community member engages in unacceptable behaviour, the community organisers may take any action they deem appropriate, up to and including a temporary ban or permanent expulsion from the community without warning (and without refund in the case of a paid event).
 
-## Reporting guidelines
+## Reporting an incident
 If you are subject to or witness unacceptable behaviour, or have any other concerns, please notify a community organiser as soon as possible.
 
-https://ruby.org.au/code-of-conduct-reporting
+<%= link_to 'Reporting Guidelines', "/code-of-conduct-reporting" %>
 
 Additionally, community organisers are available to help community members engage with local law enforcement or to otherwise help those experiencing unacceptable behaviour feel safe. In the context of in-person events, organisers will also provide escorts as desired by the person experiencing distress.
 
 ## Addressing grievances
-If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify Ruby Australia with a concise description of your grievance. Your grievance will be handled in accordance with our existing governing policies. https://ruby.org.au/constitution
+If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify Ruby Australia with a concise description of your grievance. Your grievance will be handled in accordance with our existing governing policies as listed in our <%= link_to 'constitution', "/constitution" %>.
 
 ## Scope
 We expect all community participants (contributors, paid or otherwise; sponsors; and other guests) to abide by this Code of Conduct in all community venues – online and in-person – as well as in all one-on-one communications pertaining to community business.
