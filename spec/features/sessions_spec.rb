@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Sign in" do
   scenario "shows welcome page" do
-    user = FactoryGirl.create(:user, email: 'littlebunnyfoofoo@gmail.com')
+    user = FactoryBot.create(:user, email: 'littlebunnyfoofoo@gmail.com')
 
     visit sign_in_path
     fill_in "session_email", with: user.email

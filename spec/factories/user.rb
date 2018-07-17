@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     sequence :preferred_name do |n|
       "preferred_name_#{n}"

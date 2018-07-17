@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   before_save do
     self.email_confirmed = false if email_changed?
+    true
   end
 
   has_secure_password

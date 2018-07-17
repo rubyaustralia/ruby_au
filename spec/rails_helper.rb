@@ -35,7 +35,7 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   config.include Warden::Test::Helpers
 
   config.after { Warden.test_reset! }
