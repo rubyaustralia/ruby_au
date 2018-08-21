@@ -12,6 +12,15 @@ Rails.application.routes.draw do
   get "/sign_in" => "sessions#new", as: "sign_in"
   delete "/sign_out" => "sessions#destroy", as: "sign_out"
 
+  get '/forum', to: redirect('https://forum.ruby.org.au'),
+    as: :forum
+  get '/roro', to: redirect('https://groups.google.com/forum/#!forum/rails-oceania'),
+    as: :roro_mailing_list
+  get '/slack', to: redirect('https://ruby-au-join.herokuapp.com/'),
+    as: :slack
+  get '/videos', to: redirect('https://www.youtube.com/channel/UCr38SHAvOKMDyX3-8lhvJHA'),
+    as: :videos
+
   root to: 'pages#show', defaults: { id: 'welcome' }
 
   get "/*id" => 'pages#show', as: :page, format: false,

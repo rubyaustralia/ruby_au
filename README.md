@@ -9,11 +9,11 @@ The slack channel for the website working group can be found
 Required Environment / Minimum Setup
 ------------------------------------
 
-* Install the Ruby version: `~> 2.3.3`.
+* Install the Ruby version: `~> 2.4.0`.
 * Install PostgreSQL.
 * Install Bundler.
 * `bundle install`
-* `cp config/database.yml.example config/database.yml` and modify as needed.
+* Modify `config/database.yml` as needed.
 * `rake db:setup`
 
 
