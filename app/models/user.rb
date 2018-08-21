@@ -3,8 +3,8 @@ class User < ApplicationRecord
   scope :members, -> { where('joined_at IS NOT NULL AND left_at is NULL') }
 
   validates :email,
-    uniqueness: { case_sensitive: false },
-    email_format: true
+            uniqueness: { case_sensitive: false },
+            email_format: true
   validates :preferred_name, presence: true
   validates :full_name, presence: true
 
@@ -27,7 +27,7 @@ class User < ApplicationRecord
       return
     end
 
-    if is_member?
+    if member?
       errors.add :base, 'You are already a member'
       return
     end
@@ -39,7 +39,7 @@ class User < ApplicationRecord
     update!(left_at: Time.now)
   end
 
-  def is_member?
-    joined_at && left_at.nil?
+  def member?
+    joined_at.present? && left_at.nil?
   end
 end
