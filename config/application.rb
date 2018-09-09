@@ -1,4 +1,4 @@
-require_relative 'boot'
+require File.expand_path('boot', __dir__)
 
 require "rails"
 # Pick the frameworks you want:

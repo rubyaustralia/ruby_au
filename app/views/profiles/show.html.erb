@@ -20,7 +20,7 @@
     </li>
     <li>
       <b>Membership</b>:
-      <% if @user.is_member? %>
+      <% if @user.member? %>
         member since <%= @user.joined_at.strftime('%B %Y') %>
         / <%= link_to 'cancel membership', membership_path, method: :delete,
             data: {confirm: 'Are you sure you want to cancel?'} %>
