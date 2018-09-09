@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PasswordMailer, type: :mailer do
   describe '.change_password' do
-    let(:user) { FactoryGirl.build(:user) }
+    let(:user) { FactoryBot.build(:user) }
     let(:mail) { PasswordMailer.change_password(user) }
 
     it 'renders the headers' do

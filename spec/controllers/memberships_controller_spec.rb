@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe MembershipsController do
   describe 'create' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     subject { post :create }
 
     it 'send confirmation email and redirect to profile page' do
@@ -14,7 +14,7 @@ describe MembershipsController do
   end
 
   describe 'destroy' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     subject { delete :destroy }
 
     it 'send confirmation email and redirect to profile page' do

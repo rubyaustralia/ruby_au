@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UserMailer, type: :mailer do
   describe '.confirm_email' do
-    let(:user) { FactoryGirl.build(:user) }
+    let(:user) { FactoryBot.build(:user) }
     let(:mail) { UserMailer.confirm_email(user) }
 
     it 'renders the headers' do

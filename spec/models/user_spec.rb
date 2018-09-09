@@ -24,7 +24,7 @@ RSpec.describe User do
 
   describe ".visible_for_user" do
     it "returns the matching users profile or visible profiles" do
-      current_user = FactoryGirl.create(:user)
+      current_user = FactoryBot.create(:user)
 
       visible_profiles = create_list(:user, 2, :visible)
       invisible_profiles = create_list(:user, 2)
@@ -35,7 +35,7 @@ RSpec.describe User do
   end
 
   describe '.send_email_confirmation' do
-    let(:user) { FactoryGirl.build(:user) }
+    let(:user) { FactoryBot.build(:user) }
 
     it 'regenerates token and send confirmation email' do
       expect(user).to receive(:regenerate_token)
@@ -64,7 +64,7 @@ RSpec.describe User do
     end
 
     context 'when email confirmed' do
-      let(:user) { FactoryGirl.build(:user, email_confirmed: true) }
+      let(:user) { FactoryBot.build(:user, email_confirmed: true) }
       it 'turn user into member' do
         user.create_membership
         expect(user.errors[:base]).to be_empty
@@ -74,7 +74,7 @@ RSpec.describe User do
   end
 
   describe '.cancel_membership' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
 
     it 'cancals the membership of the user' do
       user.cancel_membership

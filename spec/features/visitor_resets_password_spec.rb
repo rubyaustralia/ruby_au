@@ -19,7 +19,7 @@ RSpec.feature "Visitor resets password" do
   end
 
   scenario "with valid email" do
-    user = FactoryGirl.create(:user)
+    user = FactoryBot.create(:user)
     reset_password_for user.email
     user.reload
 
@@ -40,7 +40,7 @@ RSpec.feature "Visitor resets password" do
   end
 
   scenario 'editing the password' do
-    user = FactoryGirl.create(:user)
+    user = FactoryBot.create(:user)
     user.regenerate_token
 
     visit edit_profile_password_path(token: user.token)

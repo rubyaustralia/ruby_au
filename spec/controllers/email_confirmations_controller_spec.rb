@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe EmailConfirmationsController do
   describe 'create' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     subject { post :create }
 
     it 'send confirmation email and redirect to profile page' do

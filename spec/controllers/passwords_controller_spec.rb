@@ -13,7 +13,7 @@ describe PasswordsController do
     subject { post :create, params: { change_password: { email: email } } }
 
     context 'when user exists' do
-      let(:user) { FactoryGirl.create(:user) }
+      let(:user) { FactoryBot.create(:user) }
       let(:email) { user.email }
 
       it 'sends a change password email to the user' do
@@ -36,7 +36,7 @@ describe PasswordsController do
   end
 
   describe 'update' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     subject { put :update, params: { change_password: { password: password } } }
 
     context 'when password is valid' do

@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe ProfilesController do
   describe 'show' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     subject { get :show }
 
     it 'renders the profile page' do
@@ -13,7 +13,7 @@ describe ProfilesController do
   end
 
   describe 'edit' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     subject { get :edit }
 
     it 'renders the edit profile page' do
@@ -24,7 +24,7 @@ describe ProfilesController do
   end
 
   describe 'update' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     subject { put :update, params: { user: user_param } }
 
     context 'valid request' do

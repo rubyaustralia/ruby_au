@@ -47,7 +47,7 @@ describe UsersController do
   end
 
   describe 'show' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     subject { get :show, params: { id: user.id } }
 
     it 'renders the user profile page' do

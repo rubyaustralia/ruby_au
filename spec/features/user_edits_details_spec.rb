@@ -4,7 +4,7 @@ RSpec.describe "User edits profile details" do
   scenario "by filling in the form" do
     new_email = 'bigbunnyfoofoo@gmail.com'
 
-    user = FactoryGirl.create(:user, email: 'littlebunnyfoofoo@gmail.com')
+    user = FactoryBot.create(:user, email: 'littlebunnyfoofoo@gmail.com')
     login_as user
     visit profile_path
 
