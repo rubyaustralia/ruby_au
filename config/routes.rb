@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get '/videos', to: redirect('https://www.youtube.com/channel/UCr38SHAvOKMDyX3-8lhvJHA/videos'),
     as: :videos
 
+  get "/events/rubyconf_au_2020" => "events#rubyconf_au_2020"
+
   root to: 'pages#show', defaults: { id: 'welcome' }
 
   get "/*id" => 'pages#show', as: :page, format: false,
