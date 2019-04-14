@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     as: :videos
 
   get "/events/rubyconf_au_2020" => "events#rubyconf_au_2020"
+  get "/events/rails_camp_26" => "events#rails_camp_26"
 
   root to: 'pages#show', defaults: { id: 'welcome' }
 
