@@ -11,6 +11,16 @@ a {
   }
 }
 
+#meta {
+  nav {
+    header {
+      a {
+        border: none !important;
+      }
+    }
+  }
+}
+
 nav {
   .actions {
     a, button {
