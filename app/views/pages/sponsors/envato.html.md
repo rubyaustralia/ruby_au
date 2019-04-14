@@ -1,3 +1,6 @@
+# Envato
+## Emerald Sponsor
+
 <%= image_tag "sponsors/envato.png", class: "sponsor-logo" %>
 <%= image_tag "sponsors/envato-out.png", class: "sponsor-logo" %>
 
