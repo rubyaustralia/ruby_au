@@ -116,3 +116,14 @@ nav {
     }
   }
 }
+
+#previous {
+  article {
+    @apply rounded shadow-lg m-5 flex-no-shrink flex flex-col p-5;
+
+    img {
+      width: 120px;
+      align-self: flex-start;
+    }
+  }
+}
