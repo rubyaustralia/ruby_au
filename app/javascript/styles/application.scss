@@ -2,13 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-a {
-  @apply text-pink no-underline border-0;
-  transition: all 0.25s ease;
+p, li, div, span {
+  &> a {
+    @apply text-pink no-underline border-0;
 
-  &:hover {
-    @apply text-pink-darker border-b border-pink;
+    &:hover {
+      @apply text-pink-darker border-b border-pink;
+    }
   }
+}
+
+h1 {
+  @apply text-xl bg-pink text-white h-12 pt-1 mb-5 pl-5 pt-3;
+}
+
+h2 {
+  @apply text-xl text-pink-dark font-bold my-4 pl-5;
+}
+
+h3 {
+  @apply text-lg text-pink-dark font-bold my-3 pl-5;
+}
+
+h4 {
+  @apply text-lg text-pink-darkest font-bold mt-3 mb-2 pl-5;
+}
+
+p, li {
+  @apply leading-normal text-grey-darkest px-5;
 }
 
 #meta {
@@ -25,7 +46,7 @@ nav {
   .actions {
     a, button {
       @apply block mt-3 mx-3 px-5 py-2 border-2 shadow border-pink font-mono text-pink text-center no-underline;
-      transition: all 0.5s ease;
+      transition: background-color 0.5s ease;
 
       &:hover {
         @apply bg-pink-darker text-white;
@@ -36,7 +57,7 @@ nav {
 
 #nav-primary {
   h3 {
-    @apply mt-5 mb-2;
+    @apply mt-5 mb-2 p-0;
   }
 
   ul {
@@ -77,53 +98,6 @@ nav {
   }
 }
 
-#committee {
-  &> article {
-    @apply max-w-xs rounded shadow-lg m-5 flex-no-shrink flex flex-col;
-
-    figure {
-      @apply overflow-hidden;
-
-      max-height: 320px;
-    }
-
-    header {
-      @apply px-6 py-4;
-
-      div:first-child {
-        @apply font-bold text-xl mb-2;
-      }
-
-      div:nth-child(2) {
-        @apply font-bold text-grey-darkest mb-2;
-      }
-    }
-
-    main {
-      @apply px-6 py-2;
-
-      p {
-        @apply text-grey-darker text-base;
-      }
-    }
-
-    aside {
-      @apply flex flex-grow flex-col p-3 justify-end;
-
-      span {
-        @apply bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1;
-      }
-    }
-  }
-}
-
-#previous {
-  article {
-    @apply rounded shadow-lg m-5 flex-no-shrink flex flex-col p-5;
-
-    img {
-      width: 120px;
-      align-self: flex-start;
-    }
-  }
+#contributing {
+  @apply text-white;
 }
