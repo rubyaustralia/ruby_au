@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "jquery": "^3.4.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "tailwindcss": "^0.7.4",
+    "webpack-dev-server": "2.11.2"
+  }
+}

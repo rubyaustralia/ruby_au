@@ -1,117 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
-    <title>Ruby Australia</title>
-    <meta content="Ruby Australia" name="description"/>
-    <meta content="ruby, rails, australia, melbourne, sydney, canberra, perth, central coast, brisbane, perth, western australia, sa, south australia, victoria, new south wales, nsw, vic, qld, queensland, wa, can, programming, meetup, group, user group, conferences, events" name="keywords"/>
-    <meta content="width=device-width" name="viewport"/>
+<head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <title>Ruby Australia</title>
+  <meta content="Ruby Australia" name="description"/>
+  <meta content="ruby, rails, australia, melbourne, sydney, canberra, perth, central coast, brisbane, perth, western australia, sa, south australia, victoria, new south wales, nsw, vic, qld, queensland, wa, can, programming, meetup, group, user group, conferences, events" name="keywords"/>
+  <meta content="width=device-width" name="viewport"/>
 
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
-  </head>
+  <%= javascript_pack_tag 'application' %>
+  <%= stylesheet_pack_tag 'application' %>
+</head>
 
-  <body>
-    <header role="banner">
-      <a href="/">
-        <span class="logo">Ruby Australia</span>
-      </a>
-    </header>
+<body>
+<div id="wrap" class="flex flex-col md:flex-row">
+  <aside id="meta" class="md:w-64 sm:w-screen flex-no-shrink">
+    <nav role="navigation" class="flex items-center justify-between flex-wrap bg-pink text-white">
+      <header role="banner" class="bg-pink py-2 px-5 flex-no-shrink">
+        <a href="/" class="text-white no-underline flex flex-row">
+          <%= image_tag 'logo_standalone_tiny.png', width: 34, alt: 'Ruby Australia Logo' %>
+          <p class="md:invisible md:hidden small self-center ml-4">Ruby Australia</p>
+        </a>
+      </header>
+      <div id="mobile-menu-trigger" class="block md:hidden bg-pink">
+        <button class="flex items-center mr-4 px-3 py-2 border rounded text-pink-lightest border-pink-lighter hover:text-white hover:border-white">
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+        </button>
+      </div>
+      <% if false %>
+      <div class="search ml-2 mt-6">
+        <svg class="fill-current text-pink inline-block h-4 w-4" viewBox="0 0 20 20">
+          <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+        </svg>
+        <input type="text" placeholder="search..." class="border-solid text-pink-darkest border-pink border-b">
+      </div>
+      <% end %>
 
-    <aside id="meta">
-      <nav role="navigation">
-        <h3>My Account</h3>
-        <ul>
+      <div id="mobile-menu" class="w-full hidden md:visible flex-grow md:flex-col md:flex md:items-center md:w-auto bg-white text-pink">
+        <div class="actions ml-2 md:ml-0 mb-6 flex">
           <% if signed_in? %>
-            <li>
-
-            </li>
-            <li>
-              <%= link_to 'My profile', profile_path %>
-            </li>
-            <li>
-              <%= button_to 'Sign out', sign_out_path,  { method: :delete, class: 'sign_out' } %>
-            </li>
+            <%= link_to 'My profile', profile_path %>
+            <%= button_to 'Sign out', sign_out_path, { method: :delete, class: 'sign_out' } %>
           <% else %>
-            <li>
-              <%= link_to 'Sign in', sign_in_path %>
-            </li>
-            <li>
-              <%= link_to 'Join Ruby Australia', sign_up_path %>
-            </li>
+            <%= link_to 'Login', sign_in_path %>
+            <%= link_to 'Join', sign_up_path %>
           <% end %>
-        </ul>
+        </div>
 
-        <h3>Association</h3>
-        <ul>
-          <li>
-            <%= link_to 'Committee Members', "/committee-members" %>
-          </li>
-          <li>
-            <%= link_to 'Meeting Minutes', "https://forum.ruby.org.au/c/ruby-au/meetings" %>
-          </li>
-          <li>
-            <%= link_to 'Code of Conduct', "/code-of-conduct" %>
-          </li>
-          <li>
-            <%= link_to 'Constitution', "/constitution" %>
-          </li>
-          <li>
-            <%= link_to 'Sponsorship', "/sponsorship" %>
-          </li>
-        </ul>
+        <section id="nav-primary" class="ml-5 md:ml-0" aria-roledescription="primary navigation">
+          <h3>Association</h3>
+          <ul>
+            <li>
+              <%= link_to 'Committee Members', "/committee-members" %>
+            </li>
+            <li>
+              <%= link_to 'Meeting Minutes', "https://forum.ruby.org.au/c/ruby-au/meetings" %>
+            </li>
+            <li>
+              <%= link_to 'Code of Conduct', "/code-of-conduct" %>
+            </li>
+            <li>
+              <%= link_to 'Constitution', "/constitution" %>
+            </li>
+            <li>
+              <%= link_to 'Sponsorship', "/sponsorship" %>
+            </li>
+            <li>
+              <%= link_to "Contact us", "/contact" %>
+            </li>
+          </ul>
 
-        <h3>Events</h3>
-        <ul>
-          <li>
-            <%= link_to 'Rails Camp', "/#railscamp" %>
-          </li>
-          <li>
-            <%= link_to 'RubyConf AU', "/#rubyconf-au" %>
-          </li>
-          <li>
-            <%= link_to 'Meetups', "/#meetups" %>
-          </li>
-          <li>
-            <%= link_to 'Rails Girls', "/rails-girls" %>
-          </li>
-        </ul>
+          <h3>Events</h3>
+          <ul>
+            <li>
+              <%= link_to 'Rails Camp', "/#railscamp" %>
+            </li>
+            <li>
+              <%= link_to 'RubyConf AU', "/#rubyconf-au" %>
+            </li>
+            <li>
+              <%= link_to 'Meetups', "/#meetups" %>
+            </li>
+            <li>
+              <%= link_to 'Rails Girls', "/rails-girls" %>
+            </li>
+          </ul>
 
-        <h3>Community</h3>
-        <ul>
-          <li>
-            <%= link_to 'Forum (Ruby Down Under)', forum_path, target: :_blank %>
-          </li>
-          <li>
-            <%= link_to 'Chat (Slack)', slack_path, target: :_blank %>
-          </li>
-          <li>
-            <%= link_to 'Videos', videos_path, target: :_blank %>
-          </li>
-          <li>
-            <%= link_to 'Mailing list', roro_mailing_list_path, target: :_blank %>
-          </li>
-        </ul>
+          <h3>Community</h3>
+          <ul>
+            <li>
+              <%= link_to 'Forum (Ruby Down Under)', forum_path, target: :_blank %>
+            </li>
+            <li>
+              <%= link_to 'Chat (Slack)', slack_path, target: :_blank %>
+            </li>
+            <li>
+              <%= link_to 'Videos', videos_path, target: :_blank %>
+            </li>
+            <li>
+              <%= link_to 'Mailing list', roro_mailing_list_path, target: :_blank %>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </nav>
+  </aside>
 
-        <h3><%= link_to "Contact us", "/contact" %></h3>
-      </nav>
-    </aside>
-
-    <section role="main">
+  <section class="w-auto bg-transparent flex-auto flex-shrink flex-grow flex-col overflow-y-scroll">
+    <div id="body" role="main">
       <div id="flash">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>
       </div>
       <%= yield %>
-    </section>
+    </div>
 
-    <footer role="contentinfo">
+    <footer role="contentinfo" class="invisible hidden">
       <small>&copy; <%= Time.zone.now.year %> Ruby Australia</small>
     </footer>
-  </body>
+  </section>
+</div>
+</body>
 </html>

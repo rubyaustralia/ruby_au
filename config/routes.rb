@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     as: :roro_mailing_list
   get '/slack', to: redirect('https://ruby-au-join.herokuapp.com/'),
     as: :slack
-  get '/videos', to: redirect('https://www.youtube.com/channel/UCr38SHAvOKMDyX3-8lhvJHA'),
+  get '/videos', to: redirect('https://www.youtube.com/channel/UCr38SHAvOKMDyX3-8lhvJHA/videos'),
     as: :videos
 
   root to: 'pages#show', defaults: { id: 'welcome' }
