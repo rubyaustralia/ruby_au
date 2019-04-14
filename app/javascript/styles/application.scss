@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+a {
+  @apply text-pink no-underline border-0;
+  transition: all 0.25s ease;
+
+  &:hover {
+    @apply text-pink-darker border-b border-pink;
+  }
+}
+
 nav {
   .actions {
     a, button {
@@ -18,15 +27,6 @@ nav {
 #nav-primary {
   h3 {
     @apply mt-5 mb-2;
-  }
-
-  a {
-    @apply text-pink no-underline border-0;
-    transition: all 0.25s ease;
-
-    &:hover {
-      @apply text-pink-darker border-b border-pink;
-    }
   }
 
   ul {
@@ -63,6 +63,46 @@ nav {
 
     &:hover {
       @apply bg-purple-darker text-white;
+    }
+  }
+}
+
+#committee {
+  &> article {
+    @apply max-w-xs rounded shadow-lg m-5 flex-no-shrink flex flex-col;
+
+    figure {
+      @apply overflow-hidden;
+
+      max-height: 320px;
+    }
+
+    header {
+      @apply px-6 py-4;
+
+      div:first-child {
+        @apply font-bold text-xl mb-2;
+      }
+
+      div:nth-child(2) {
+        @apply font-bold text-grey-darkest mb-2;
+      }
+    }
+
+    main {
+      @apply px-6 py-2;
+
+      p {
+        @apply text-grey-darker text-base;
+      }
+    }
+
+    aside {
+      @apply flex flex-grow flex-col p-3 justify-end;
+
+      span {
+        @apply bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1;
+      }
     }
   }
 }
