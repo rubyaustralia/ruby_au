@@ -9,6 +9,11 @@ p, li, div, span {
     &:hover {
       @apply text-pink-darker border-b border-pink;
     }
+
+    svg {
+      fill: config('colors.pink');
+      opacity: 0.5;
+    }
   }
 }
 
