@@ -43,10 +43,13 @@
       </p>
     </article>
 
-    <article id="call-to-action" class="my-3 md:my-10 ml-10 max-w-xs md:max-w-md flex flex-col md:flex-row">
+    <article id="call-to-action" class="my-3 md:my-5 ml-10 max-w-xs md:max-w-md flex flex-col md:flex-row">
+    <% if false %>
+      <%# TODO implement these, or similar calls to action %>
       <a href="#new" class="cta">New to Ruby?</a>
       <a href="#getinvolved" class="cta">Get Involved</a>
       <a href="#educators" class="cta">Educators</a>
+    <% end %>
     </article>
 
     <%= inline_svg 'divider1.svg', class: "md:max-w-xl" %>
@@ -55,22 +58,40 @@
       <h2 class="ml-4 md:ml-10">Latest Events</h2>
       <ul id="meetup-locations" class="list-reset mx-4 md:ml-10">
         <li>
-          <%= link_to "Adelaide", "https://www.meetup.com/adelaiderb/", id: "adl" %>
+          <%= link_to "https://www.meetup.com/adelaiderb/",
+                      rel: 'external', target: '_blank' do %>
+            Adelaide<%= inline_svg "external-link.svg", height: 12 %>
+          <% end %>
         </li>
         <li>
-          <%= link_to "Brisbane", "https://www.meetup.com/brisRuby/", id: "bne" %>
+          <%= link_to "https://www.meetup.com/brisRuby/",
+                      rel: 'external', target: '_blank' do %>
+            Brisbane<%= inline_svg "external-link.svg", height: 12 %>
+          <% end %>
         </li>
         <li>
-          <%= link_to "Canberra", "https://www.meetup.com/canberra-ruby/", id: "can" %>
+          <%= link_to "https://www.meetup.com/canberra-ruby/",
+                      rel: 'external', target: '_blank' do %>
+            Canberra<%= inline_svg "external-link.svg", height: 12 %>
+          <% end %>
         </li>
         <li>
-          <%= link_to "Melbourne", "https://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne/", id: "mel" %>
+          <%= link_to "https://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne/",
+            rel: 'external', target: '_blank' do %>
+            Melbourne<%= inline_svg "external-link.svg", height: 12 %>
+          <% end %>
         </li>
         <li>
-          <%= link_to "Perth", "https://www.meetup.com/roro-perth/", id: "per" %>
+          <%= link_to "https://www.meetup.com/roro-perth/",
+            rel: 'external', target: '_blank' do %>
+            Perth<%= inline_svg "external-link.svg", height: 12 %>
+          <% end %>
         </li>
         <li>
-          <%= link_to "Sydney", "https://www.meetup.com/Ruby-On-Rails-Oceania-Sydney/", id: "syd" %>
+          <%= link_to "https://www.meetup.com/Ruby-On-Rails-Oceania-Sydney/",
+            rel: 'external', target: '_blank' do %>
+            Sydney<%= inline_svg "external-link.svg", height: 12 %>
+          <% end %>
         </li>
       </ul>
     </article>
