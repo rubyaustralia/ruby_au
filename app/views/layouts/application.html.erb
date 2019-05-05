@@ -101,7 +101,10 @@
           <h3>Community</h3>
           <ul>
             <li>
-              <%= link_to 'Forum (Ruby Down Under)', forum_path, target: :_blank %>
+              <%= link_to "https://forum.ruby.org.au/",
+                          rel: 'external', target: '_blank' do %>
+                Forum (Ruby Down Under)<%= inline_svg "external-link.svg", height: 12 %>
+              <% end %>
             </li>
             <li>
               <%= link_to 'Chat (Slack)', slack_path, target: :_blank %>
