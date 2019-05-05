@@ -56,7 +56,11 @@
               <%= link_to 'Committee Members', "/committee-members" %>
             </li>
             <li>
-              <%= link_to 'Meeting Minutes', "https://forum.ruby.org.au/c/ruby-au/meetings" %>
+              <%= link_to "https://forum.ruby.org.au/c/ruby-au/meetings",
+                          rel: 'external', target: '_blank',
+                          longdesc: 'Committee Meeting minutes hosted on RubyAU Forums' do %>
+                Meeting Minutes<%= inline_svg "external-link.svg", height: 12 %>
+              <% end %>
             </li>
             <li>
               <%= link_to 'Code of Conduct', "/code-of-conduct" %>
@@ -75,10 +79,14 @@
           <h3>Events</h3>
           <ul>
             <li>
-              <%= link_to 'Rails Camp', "https://rails.camp" %>
+              <%= link_to "https://rails.camp", rel: 'external', target: '_blank' do -%>
+                Rails Camp<%= inline_svg "external-link.svg", height: 12 %>
+              <% end %>
             </li>
             <li>
-              <%= link_to 'RubyConf AU', "https://rubyconf.org.au" %>
+              <%= link_to "https://rubyconf.org.au", rel: 'external', target: '_blank' do -%>
+                RubyConf AU<%= inline_svg "external-link.svg", height: 12 %>
+              <% end %>
             </li>
             <li>
               <%= link_to 'Meetups', "/#events" %>
