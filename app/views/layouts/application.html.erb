@@ -40,12 +40,14 @@
 
       <div id="mobile-menu" class="w-full hidden md:visible flex-grow md:flex-col md:flex md:items-center md:w-auto bg-white text-pink">
         <div class="actions ml-2 md:ml-0 mb-6 flex">
+          <% if false %>
           <% if signed_in? %>
             <%= link_to 'My profile', profile_path %>
             <%= button_to 'Sign out', sign_out_path, { method: :delete, class: 'sign_out' } %>
           <% else %>
             <%= link_to 'Login', sign_in_path %>
             <%= link_to 'Join', sign_up_path %>
+          <% end %>
           <% end %>
         </div>
 
