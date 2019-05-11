@@ -1,0 +1,60 @@
+- name: Pat Allan
+  photo: pat-allan-new.jpg
+  position: President
+  bio: |
+    Pat is a gelato connoisseur, pancake master, and occasional events organiser (including [RubyConf AU](https://rubyconf.org.au), [Rails Camps](https://rails.camp), and [Trampoline](https://trampolineday.com)). Mostly, though, he is a contracting Ruby developer based in Melbourne, and most recently has led the development efforts at [Limbr](https://limbr.org), a social enterprise focused on mental health.
+  twitter: pat
+  github: pat
+  website: https://freelancing-gods.com
+
+- name: Caitlin Palmer-Bright
+  photo: caitlin-palmer-bright.jpg
+  position: Vice President
+  bio: |
+    After a few years as a park ranger and then a few more as a high school teacher, Caitlin has now made the transition into tech. She is currently an intern with Two Red Kites in Brisbane and recently started the [Brisbane Tech Newbies meet up group](https://www.meetup.com/Brisbane-Tech-Newbies/). When she’s not coding you will probably find her watching videos of puppies on youtube and eating as many snacks as she can find.
+  twitter: CaitlinPB
+  website: http://cpalmerbright.com
+
+- name: Ryan Bigg
+  photo: ryan-bigg.png
+  position: Treasurer
+  bio: |
+    [Writer of Rails Guides](http://contributors.rubyonrails.org/contributors/ryan-bigg/commits), [Rails 4 in Action](https://www.manning.com/books/rails-4-in-action), [Super Hero](https://rubyheroes.com/heroes/2011) and [Answerer of Stack Overflow Questions](http://stackoverflow.com/users/15245/ryan-bigg). Works at Culture Amp as the Junior Engineering Program Lead. Continuously mistaken for Ryan Bates.
+  twitter: ryanbigg
+  github: radar
+
+- name: Rachael Goodenough
+  photo: rachael-goodenough.jpg
+  position: Secretary
+  bio: |
+    [@WWCodeMelbourne](https://twitter.com/WWCodeMelbourne) Co-Organiser<br />
+    [@NodeGirlsPerth](https://twitter.com/NodeGirlsPerth) Organizer<br />
+    [@rubyaustralia](https://twitter.com/rubyaustralia) secretary<br />
+    [@witqld](https://twitter.com/witqld) ICT Committee Member<br />
+    Lead Talent Acquisition Manager [@Readify](https://twitter.com/Readify)
+  twitter: RacheGoodo
+  linkedin: rachaelgoodenough
+
+- name: Sharon Vaughan
+  photo: sharon-vaughan.jpg
+  position: General Member
+  bio: |
+    Late last millenium Sharon completed a computer degree because her mum, in the mid-80s, said, “There is a future in computers.” Mum may have been right but Sharon went for a wander through academia and the arts ending up as a Film Projectionist. When Sharon was replaced by a digital projector, she took irony firmly in hand and decided, in June 2016, to become a Developer. Sharon now works at Envato.
+  twitter: Sharon_AV
+  github: sharonvaughan
+
+- name: Matt Stevenson
+  photo: matt-stevenson.JPG
+  position: General Member
+  bio: |
+    Longtime tech enthusiast - and armed with an emoji for every occasion - Matt is a developer at [Two Red Kites](https://2rk.co). With a love of expressive language he naturally fell for Ruby. When away from the modern he can be found enjoying the traditional; small-batch coffee ☕ rear-wheel drive 🏎️ and longbow archery 🏹.
+  twitter: mattoc
+  github: mattoc
+
+- name: Sonya Corcoran
+  photo: sonya-corcoran.jpg
+  position: General Member
+  bio: |
+    Laughing, learning, coding and growing these are a few of my favourite things. Aaaaaand...working as a Technical Recruiter at [Lookahead Search](https://twitter.com/LookaheadSearch).
+  twitter: soxyface
+  linkedin: sonyacorcoran

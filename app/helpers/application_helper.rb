@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def committee
+    YAML.load_file Rails.root.join('config', 'data', 'committee.yml')
+  end
+
   def link_to_external(name = nil, options = nil, html_options = {}, &block)
     svg = inline_svg "external-link.svg", height: 12
     html_options[:target] ||= "_blank"
@@ -9,5 +13,15 @@ module ApplicationHelper
     else
       link_to (name + svg).html_safe, options, html_options
     end
+  end
+
+  def markdown
+    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML.new)
+  end
+
+  def markdown_to_html(raw)
+    return nil if raw.nil?
+
+    markdown.render(raw).strip.html_safe
   end
 end
