@@ -1,114 +1,108 @@
-<% if ENV['RAILSCAMP_URL'] %>
-<section class="bg-purple text-white py-6 flex justify-center">
-  <a class="border-pink border-2 text-pink font-mono no-underline hover:bg-pink hover:text-white text-bold bg-white py-2 px-5 shadow-md" href="<%= ENV['RAILSCAMP_URL'] %>" title="View RailsCamp info and order tickets">
-    rails camp tickets on sale now!
-  </a>
-</section>
-<% elsif ENV['RUBYCONF_URL'] %>
- <section class="bg-purple text-white py-6 flex justify-center">
-  <a class="border-pink border-2 text-pink font-mono no-underline hover:bg-pink hover:text-white text-bold bg-white py-2 px-5 shadow-md" href="<%= ENV['RUBYCONF_URL'] %>" title="View RubyConfAU info and order tickets">
-    rubyconf tickets on sale now!
-  </a>
-</section>
-<% elsif ENV['SURVEY_URL'] %>
- <section class="bg-purple text-white py-6 flex justify-center">
-  <a class="border-pink border-2 text-pink font-mono no-underline hover:bg-pink hover:text-white text-bold bg-white py-2 px-5 shadow-md" href="/<%= Time.zone.now.year %>survey" title="Take the annual Ruby Australia survey">
-    take the <%= Time.zone.now.year %> ruby australia survey!
-  </a>
-</section>
-<% end %>
 
-<div class="md:max-w-xl">
+<div class="md:max-w-full">
   <section id="hero" class="hidden md:block bg-pink p-24 pl-0">
     <div class="flex">
       <div class="w-32 justify-center flex-no-shrink pl-12 mr-12 mt-2">
         <%= image_tag 'ruby_au_logo_new.png', height: 160, width: 160 %>
       </div>
       <article class="flex-grow md:max-w-md text-3xl text-white font-bold">
-        RubyAU is a friendly community of coders who meet regularly to
-        have fun, learn from each other, and refine our craft.
+        Ruby Australia is a friendly community of coders who meet regularly across the country to have fun, learn from each other, and refine our craft.
       </article>
     </div>
   </section>
 
+  <% if ENV['RAILSCAMP_URL'] %>
+    <section class="bg-purple text-white py-6 flex justify-center">
+      <a class="border-pink border-2 text-pink font-mono no-underline hover:bg-pink hover:text-white text-bold bg-white py-2 px-5 shadow-md" href="<%= ENV['RAILSCAMP_URL'] %>" title="View Rails Camp info and order tickets">
+        Rails Camp tickets on sale now!
+      </a>
+    </section>
+    <% elsif ENV['RUBYCONF_URL'] %>
+     <section class="bg-purple text-white py-6 flex justify-center">
+      <a class="border-pink border-2 text-pink font-mono no-underline hover:bg-pink hover:text-white text-bold bg-white py-2 px-5 shadow-md" href="<%= ENV['RUBYCONF_URL'] %>" title="View RubyConf AU info and order tickets">
+        RubyConf AU tickets on sale now!
+      </a>
+    </section>
+    <% elsif ENV['SURVEY_URL'] %>
+     <section class="bg-purple text-white py-6 flex justify-center">
+      <a class="border-pink border-2 text-pink font-mono no-underline hover:bg-pink hover:text-white text-bold bg-white py-2 px-5 shadow-md" href="/<%= Time.current.year %>survey" title="Take the annual Ruby Australia survey">
+        Take the <%= Time.current.year %> community survey!
+      </a>
+    </section>
+    <% end %>
+
   <section id="welcome" class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
-    <article class="text-xl max-w-md mx-4 md:ml-10">
-      <p class="mt-10">
-        Ruby is a beautiful programming language that was created in Japan
-        for the unique purpose of programmer happiness.
+    <article class="welcome md:ml-10">
+      <h2>Welcome</h2>
+
+      <p>
+        Ruby is a beautiful programming language that was created for the unique purpose of programmer happiness.
       </p>
-      <p class="mt-10">
-        We're big on happiness and welcome you to join us; be you a beginner, pro,
-        or even if you don't code or use Ruby at all.
+
+      <p>
+        We're big on happiness and welcome you to join us; be you a beginner, experienced professional, or even if you don't yet code or use Ruby at all.
       </p>
     </article>
 
     <article id="call-to-action" class="my-3 md:my-5 ml-10 max-w-xs md:max-w-md flex flex-col md:flex-row">
-    <% if false %>
-      <%# TODO implement these, or similar calls to action %>
-      <a href="#new" class="cta">New to Ruby?</a>
-      <a href="#getinvolved" class="cta">Get Involved</a>
-      <a href="#educators" class="cta">Educators</a>
-    <% end %>
+      <a href="#in-person" class="cta">Meet In Person</a>
+      <a href="#online" class="cta">Connect Online</a>
+      <a href="#about" class="cta">About Us</a>
     </article>
 
     <%= inline_svg 'divider1.svg', class: "md:max-w-xl" %>
 
-    <article id="events" class="my-10">
-      <h2 class="ml-4 md:ml-10">Upcoming City Meetups</h2>
-      <ul id="meetup-locations" class="list-reset mx-4 md:ml-10">
-        <li>
-          <%= link_to "https://www.meetup.com/adelaiderb/",
-                      rel: 'external', target: '_blank' do %>
-            Adelaide<%= inline_svg "external-link.svg", height: 12 %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "https://www.meetup.com/brisRuby/",
-                      rel: 'external', target: '_blank' do %>
-            Brisbane<%= inline_svg "external-link.svg", height: 12 %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "https://www.meetup.com/canberra-ruby/",
-                      rel: 'external', target: '_blank' do %>
-            Canberra<%= inline_svg "external-link.svg", height: 12 %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "https://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne/",
-            rel: 'external', target: '_blank' do %>
-            Melbourne<%= inline_svg "external-link.svg", height: 12 %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "https://www.meetup.com/roro-perth/",
-            rel: 'external', target: '_blank' do %>
-            Perth<%= inline_svg "external-link.svg", height: 12 %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "https://www.meetup.com/Ruby-On-Rails-Oceania-Sydney/",
-            rel: 'external', target: '_blank' do %>
-            Sydney<%= inline_svg "external-link.svg", height: 12 %>
-          <% end %>
-        </li>
+    <article id="in-person" class="welcome md:ml-10">
+      <h2>Meeting in Person</h2>
+
+      <p>
+        To meet up with other Rubyists and Ruby-curious folks in person, you could perhaps attend our yearly <%= link_to_external "RubyConf AU", "https://rubyconf.org.au" %> conference, our twice-yearly <%= link_to_external "Rails Camp", "https://rails.camp" %> social coding weekends, or our more <a href="#events">regular meetings</a> for talks and coding across the country.
+      </p>
+
+      <p>
+        Many cities and regions around Australia have regular meetings, often featuring presentations on a variety of Ruby and industry-related topics, and providing opportunities to socialise with other Rubyists.
+      </p>
+
+      <ul id="meetup-locations" class="list-reset mt-10 mx-4 md:ml-10">
+        <li><%= link_to_external "Adelaide", "https://www.meetup.com/adelaiderb/"%></li>
+        <li><%= link_to_external "Brisbane", "https://www.meetup.com/brisRuby/" %></li>
+        <li><%= link_to_external "Canberra", "https://www.meetup.com/canberra-ruby/" %></li>
+        <li><%= link_to_external "Melbourne", "https://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne/" %></li>
+        <li><%= link_to_external "Perth", "https://www.meetup.com/roro-perth/" %></li>
+        <li><%= link_to_external "Sydney", "https://www.meetup.com/Ruby-On-Rails-Oceania-Sydney/" %></li>
       </ul>
     </article>
 
     <%= inline_svg 'divider2.svg', class: "md:max-w-xl" %>
 
-    <article id="get-involved" class="mx-4 md:ml-10 my-10">
-      <p>The best way to get involved is to get along to one of our twice-yearly
-      <%= link_to 'railscamps', 'https://rails.camp' %>.
-      We also host an annual conference, as well as local meetups which are a great way to meet
-      other locals who love to code.</p>
+    <article id="online" class="welcome md:ml-10">
+      <h2>Connecting Online</h2>
 
-      <p>Ruby has a fascinating history and there have been many great talks over the years. We keep
-        many in our video section. There also many great camps and conferences around the world.</p>
+      <p>
+        There are many ways to get involved in the Australian Ruby community. If you're looking for something online - where you can ask questions and keep on top of the latest happenings - there's our <%= link_to_external "Slack workspace", "/slack" %> and our <%= link_to_external "forum", "https://forum.ruby.org.au" %>.
+      </p>
 
-      <p>We have a vibrant eco-system; check out our jobs board. We'd love to hear from companies
-        looking to use Ruby, and ways we can support you to sponsor the community.</p>
+      <p>
+        We also have talks from our previous events - both conferences and meetings - <%= link_to_external "available on YouTube", "/videos" %>. And you can <%= link_to_external "follow us on Twitter", "https://twitter.com/rubyaustralia" %>.
+      </p>
+    </article>
+
+    <%= inline_svg 'divider1.svg', class: "md:max-w-xl" %>
+
+    <article id="about" class="welcome md:ml-10">
+      <h2>About Us</h2>
+
+      <p>
+        Ruby Australia was set up as an organisation in 2011 to support the community and events around Australia focused on the Ruby programming language. All of our events are run with our <%= link_to "Code of Conduct", page_path("code-of-conduct") %>.
+      </p>
+
+      <p>
+        Our committee members are elected at our general meetings that occur twice a year, and they help with advising and supporting the logistics of our events and community spaces.
+      </p>
+
+      <p>
+        We are very grateful to <%= link_to "our sponsors", "/sponsorship" %> for their ongoing support to help make our events more affordable and accessible to a broader array of people across Australia.
+      </p>
     </article>
   </section>
 

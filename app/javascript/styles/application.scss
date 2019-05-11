@@ -74,9 +74,11 @@ nav {
   }
 }
 
-.events {
+#in-person {
   #meetup-locations {
     @apply mt-3;
+
+    list-style: disc outside none;
 
     li {
       @apply pb-2;
@@ -89,6 +91,16 @@ nav {
         }
       }
     }
+  }
+}
+
+.welcome {
+  @apply text-xl;
+  @apply max-w-md;
+  @apply mx-4;
+
+  p {
+    @apply mt-10;
   }
 }
 
