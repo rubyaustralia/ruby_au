@@ -12,24 +12,14 @@
   </section>
 
   <% if ENV['RAILSCAMP_URL'] %>
-    <section class="bg-purple text-white py-6 flex justify-center">
-      <a class="border-pink border-2 text-pink font-mono no-underline hover:bg-pink hover:text-white text-bold bg-white py-2 px-5 shadow-md" href="<%= ENV['RAILSCAMP_URL'] %>" title="View Rails Camp info and order tickets">
-        Rails Camp tickets on sale now!
-      </a>
-    </section>
-    <% elsif ENV['RUBYCONF_URL'] %>
-     <section class="bg-purple text-white py-6 flex justify-center">
-      <a class="border-pink border-2 text-pink font-mono no-underline hover:bg-pink hover:text-white text-bold bg-white py-2 px-5 shadow-md" href="<%= ENV['RUBYCONF_URL'] %>" title="View RubyConf AU info and order tickets">
-        RubyConf AU tickets on sale now!
-      </a>
-    </section>
-    <% elsif ENV['SURVEY_URL'] %>
-     <section class="bg-purple text-white py-6 flex justify-center">
-      <a class="border-pink border-2 text-pink font-mono no-underline hover:bg-pink hover:text-white text-bold bg-white py-2 px-5 shadow-md" href="/<%= Time.current.year %>survey" title="Take the annual Ruby Australia survey">
-        Take the <%= Time.current.year %> community survey!
-      </a>
-    </section>
-    <% end %>
+    <%= render :partial => "notice", :locals => {:url => ENV['RAILSCAMP_URL'], :title => "View Rails Camp information and order tickets", :text => "Rails Camp tickets on sale now!"} %>
+  <% end %>
+  <% if ENV['RUBYCONF_URL'] %>
+    <%= render :partial => "notice", :locals => {:url => ENV['RUBYCONF_URL'], :title => "View RubyConf AU information and order tickets", :text => "RubyConf AU tickets on sale now!"} %>
+  <% end %>
+  <% if ENV['SURVEY_URL'] %>
+    <%= render :partial => "notice", :locals => {:url => "/#{Time.current.year}survey", :title => "Take the annual Ruby Australia survey", :text => "Take the #{Time.current.year} community survey!"} %>
+  <% end %>
 
   <section id="welcome" class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
     <article class="welcome md:ml-10">
@@ -44,7 +34,7 @@
       </p>
     </article>
 
-    <article id="call-to-action" class="my-3 md:my-5 ml-10 max-w-xs md:max-w-md flex flex-col md:flex-row">
+    <article class="call-to-action my-3 md:my-5 ml-10 max-w-xs md:max-w-md flex flex-col md:flex-row">
       <a href="#in-person" class="cta">Meet In Person</a>
       <a href="#online" class="cta">Connect Online</a>
       <a href="#about" class="cta">About Us</a>

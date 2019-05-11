@@ -114,7 +114,7 @@ nav {
   }
 }
 
-#call-to-action {
+.call-to-action {
   a {
     @apply text-purple w-5/6 my-4 mr-3 px-5 py-2 border-2 shadow bg-white border-purple text-purple no-underline font-mono;
     transition: all 0.25s ease;
