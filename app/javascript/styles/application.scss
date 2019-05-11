@@ -133,3 +133,24 @@ nav {
 #contributing {
   @apply text-white;
 }
+
+.divider {
+  background-image: url('/assets/roro-pattern.png');
+  min-height: 70px;
+}
+
+.divider-1 {
+  background-position: 0 70px;
+}
+
+.divider-2 {
+  background-position: 0 10px;
+}
+
+.divider-3 {
+  background-position: 0 240px;
+}
+
+.divider-4 {
+  background-position: 0 180px;
+}
