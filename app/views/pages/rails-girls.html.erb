@@ -1,32 +1,42 @@
 <h1>Rails Girls</h1>
 
-<p>
-  Join the Rails Girls Melbourne mailing list here.
-</p>
+<div class="md:max-w-full">
+  <section id="welcome" class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
+    <article class="welcome">
+      <p>
+        Rails Girls is a global, non-profit volunteer community that provides tools and a community for women to understand technology and to build their ideas.
+      </p>
 
-<%= form_tag "http://rubyaustralia.createsend.com/t/j/s/qtheu/", id: "subForm", class: "mt-5 w-full max-w-xs" do %>
-  <div class="md:flex md:items-center mb-6">
-    <div class="md:w-1/3">
-      <%= label_tag "cm-name", "Name", class: "block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4" %>
-    </div>
-    <div class="md:w-2/3">
-      <%= text_field_tag "cm-name", "", class: "bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" %>
-    </div>
-  </div>
+      <p>
+        Australian editions of these events run regularly across the country - to stay on top of what's happening and to hear when an event is run near you, we recommend you sign up for our Rails Girls Australia announcements mailing list.
+      </p>
 
-  <div class="md:flex md:items-center mb-6">
-    <div class="md:w-1/3">
-      <%= label_tag "cm-qtheu-qtheu", "Email", class: "block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4" %>
-    </div>
-    <div class="md:w-2/3">
-      <%= text_field_tag "cm-qtheu-qtheu", "", class: "bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" %>
-    </div>
-  </div>
+      <%= form_tag "http://rubyaustralia.createsend.com/t/j/s/qtheu/", id: "subForm", class: "mt-5 w-full max-w-xs" do %>
+        <div class="md:flex md:items-center mb-6">
+          <div class="md:w-1/3">
+            <%= label_tag "cm-name", "Name", class: "block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4" %>
+          </div>
+          <div class="md:w-2/3">
+            <%= text_field_tag "cm-name", "", class: "bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" %>
+          </div>
+        </div>
 
-  <div class="md:flex md:items-center mb-6">
-    <div class="md:w-1/3"></div>
-    <div class="md:w-2/3">
-      <%= submit_tag "Subscribe", class: "shadow bg-purple hover:bg-purple-light focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" %>
-    </div>
-  </div>
-<% end %>
+        <div class="md:flex md:items-center mb-6">
+          <div class="md:w-1/3">
+            <%= label_tag "cm-qtheu-qtheu", "Email", class: "block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4" %>
+          </div>
+          <div class="md:w-2/3">
+            <%= text_field_tag "cm-qtheu-qtheu", "", class: "bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" %>
+          </div>
+        </div>
+
+        <div class="md:flex md:items-center mb-6">
+          <div class="md:w-1/3"></div>
+          <div class="md:w-2/3">
+            <%= submit_tag "Subscribe", class: "shadow bg-purple hover:bg-purple-light focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" %>
+          </div>
+        </div>
+      <% end %>
+    </article>
+  </section>
+</div>
