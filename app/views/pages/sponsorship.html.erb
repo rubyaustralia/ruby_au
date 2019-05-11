@@ -1,38 +1,49 @@
-<section>
-  <h1>Sponsorship</h1>
+<h1>Sponsorship</h1>
 
-  <p>
-    The founding purpose of Ruby Australia is to further the use and adoption of the Ruby programming
-    language in Australia, and to support and encourage a vibrant community around the language and related
-    technologies.
-  </p>
-  <p>
-    Ruby Australia organises RubyConf AU, Rails Camps, meet ups, hack days and Rails Girls events. We rely on
-    the support of both volunteers and companies in our community to be able to run these events.
-  </p>
-  <p>
-    If you are interested in becoming a Ruby AU sponsor for 2019-20, please
-    <%= link_to "download our prospectus", "/files/sponsorship_2019-2020.pdf" %>
-    and email us at
-    <%= mail_to "sponsorship@ruby.org.au" %>.
-  </p>
-</section>
+<div class="md:max-w-full">
+  <section id="welcome" class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
+    <article class="welcome">
+      <p>
+        The founding purpose of Ruby Australia is to further the use and adoption of the Ruby programming language in Australia, and to support and encourage a vibrant community around the language and related technologies.
+      </p>
 
-<section id="sponsors">
-  <section class="sponsor-logos flex flex-col">
-    <h2>Emerald Sponsors</h2>
-    <% %w(lookahead envato culture-amp).shuffle.each do |sponsor| %>
-      <%= link_to "/sponsors/#{sponsor}", class: "sponsor-logo-no-border" do %>
-        <%= image_tag "sponsors/#{sponsor}.png", class: "sponsor-logo-emerald" %>
-      <% end %>
-    <% end %>
+      <p>
+        We are very lucky to have many companies who have provided sponsorship over the years to help us achieve these goals, particularly through our <a href="/#in-person">regular events</a>: RubyConf AU, Rails Camp, ongoing city meetings, and Rails Girls. Their sponsorship support combined with the massive efforts of our volunteer organisers have created world-class conferences and gatherings.
+      </p>
+
+      <p>
+        If you are interested in becoming a Ruby AU sponsor for 2019-20, please
+        <%= link_to "download our prospectus", "/files/sponsorship_2019-2020.pdf" %>
+        and email us at
+        <%= mail_to "sponsorship@ruby.org.au" %>.
+      </p>
+    </article>
   </section>
 
-  <section class="sponsor-logos flex flex-col">
-    <h2>Opal Sponsors</h2>
-    <%= link_to "/sponsors/buildkite", class: "sponsor-logo-no-border" do %>
-      <%= image_tag "sponsors/buildkite.png", class: "sponsor-logo-opal" %>
-    <% end %>
-  </section>
+  <section class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
+    <article id="sponsors" class="welcome">
+      <section class="sponsor-logos flex flex-col">
+        <h2>Emerald Sponsors for 2018/2019</h2>
+        <% %w(lookahead envato culture-amp).shuffle.each do |sponsor| %>
+          <%= link_to "/sponsors/#{sponsor}", class: "sponsor-logo-no-border" do %>
+            <%= image_tag "sponsors/#{sponsor}.png", class: "sponsor-logo-emerald" %>
+          <% end %>
+        <% end %>
+      </section>
 
-</section>
+      <section class="sponsor-logos flex flex-col">
+        <h2>Sapphire Sponsors for 2018/2019</h2>
+        <%= link_to "/sponsors/twilio", class: "sponsor-logo-no-border" do %>
+          <%= image_tag "sponsors/twilio.png", class: "sponsor-logo-sapphire" %>
+        <% end %>
+      </section>
+
+      <section class="sponsor-logos flex flex-col">
+        <h2>Opal Sponsors for 2018/2019</h2>
+        <%= link_to "/sponsors/buildkite", class: "sponsor-logo-no-border" do %>
+          <%= image_tag "sponsors/buildkite.png", class: "sponsor-logo-opal" %>
+        <% end %>
+      </section>
+    </article>
+  </section>
+</div>
