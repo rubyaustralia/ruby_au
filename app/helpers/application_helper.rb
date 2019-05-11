@@ -5,7 +5,7 @@ module ApplicationHelper
 
   def document_markdown_to_html(name)
     input  = File.read Rails.root.join('app', 'documents', "#{name}.markdown")
-    markup = render :inline => input
+    markup = render inline: input
 
     markdown.render(markup).strip.html_safe
   end
