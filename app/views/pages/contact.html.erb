@@ -1,31 +1,30 @@
-<h1>Contact Ruby Australia</h1>
+<h1>Contact Us</h1>
 
-<ul>
-  <li>
-    <%= link_to 'Twitter (@rubyaustralia)', "http://twitter.com/rubyaustralia", class: "text-purple hover:text-purple-darker" %>
-  </li>
-  <li>
-    <%= link_to 'Email', "mailto:contact@ruby.org.au", class: "text-purple hover:text-purple-darker" %>
-  </li>
-</ul>
+<div class="md:max-w-full">
+  <section id="welcome" class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
+    <section class="welcome">
+      <h2>Contact Ruby Australia</h2>
 
-<p>Or via post:</p>
+      <p>You can find us on Twitter - we're <%= link_to_external "@rubyaustralia", "https://twitter.com/rubyaustralia" %> - and you can also send an email to us via <%= link_to "contact@ruby.org.au", "mailto:contact@ruby.org.au" %>.</p>
 
-<p class="text-grey-darkest leading-tight mt-3">
-Ruby Australia<br>
-PO Box 221<br>
-Collins Street West, VIC 8007, Australia
-</p>
+      <p>Our address, if you need to post something to us, is as follows:</p>
 
-<hr>
+      <p class="text-grey-darkest font-bold leading-tight mt-3">
+      Ruby Australia<br>
+      PO Box 221<br>
+      Collins Street West, VIC 8007, Australia
+      </p>
 
-<h2>Banking / ABN details</h2>
+      <p>And on the off-chance you need to send us some money (perhaps for event tickets, or because you're one of our wonderful sponsors), here are our business and bank details for funds transfers:</p>
 
-<p>
-  <strong>ABN:</strong> 58 789 561 496<br>
-  <strong>Bank name:</strong> Commonwealth Bank<br>
-  <strong>BSB:</strong> 063-000<br>
-  <strong>Account Number:</strong> 13217246<br>
-  <strong>Account Name:</strong> Ruby Australia Inc.<br>
-  <strong>SWIFT Code:</strong> CTBAAU2S or CTBAAU2SXXX
-</p>
+      <p>
+        <strong>ABN:</strong> 58 789 561 496<br>
+        <strong>Bank name:</strong> Commonwealth Bank<br>
+        <strong>BSB:</strong> 063-000<br>
+        <strong>Account Number:</strong> 13217246<br>
+        <strong>Account Name:</strong> Ruby Australia Inc.<br>
+        <strong>SWIFT Code:</strong> CTBAAU2S or CTBAAU2SXXX
+      </p>
+    </section>
+  </section>
+</div>
