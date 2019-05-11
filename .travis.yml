@@ -2,6 +2,7 @@ language: ruby
 cache: bundler
 before_script:
   - bundle exec rake db:create db:schema:load
+  - bundle exec rails webpacker:compile
 script:
   - bundle exec rspec
   - bundle exec rubocop
