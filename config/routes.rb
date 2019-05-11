@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#show', defaults: { id: 'welcome' }
 
+  get "/sponsors/*id" => 'sponsors#show'
   get "/*id" => 'pages#show', as: :page, format: false,
     constraints: RootRouteConstraints
 end

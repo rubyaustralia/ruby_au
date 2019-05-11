@@ -1,7 +1,7 @@
 # Envato
 ## Emerald Sponsor
 
-<%= image_tag "sponsors/envato.png", class: "sponsor-logo" %>
-<%= image_tag "sponsors/envato-out.png", class: "sponsor-logo" %>
+<img src="/assets/sponsors/envato.png" class="sponsor-logo" />
+<img src="/assets/sponsors/envato-out.png", class="sponsor-logo" />
 
 Headquartered in Melbourne, Australia, [Envato](http://www.envato.com) is the leading marketplace for creative assets and creative people. With more than 300 staff and contractors worldwide, we've helped a community of creative sellers earn more than [$400 Million](http://www.startupsmart.com.au/advice/growth/melbourne-startup-envato-reaches-a-major-milestone-how-it-got-there-and-what-comes-next/). Millions of people around the world choose our marketplace, studio and courses to buy files, hire freelancers, or learn the skills needed to build websites, videos, apps, graphics and more. Recently, JobAdvisor awarded us the title of Australia's Coolest Company for Women  ([2015](http://inside.envato.com/envato-coolest-company-for-women/) and [2016](http://www.searchparty.com/blog/coolest-companies-winners-2016/)). We were also named as one of the Best Places to Work in Australia in the [2015](http://press.envato.com/109596-envato-named-one-of-2015-s-best-places-to-work) and [2016](https://envato.com/blog/best-places-work-australia-2016-envatos-17/) BRW Awards. Envato have an LGBTI and Allies network group, called Out Envato, who promote inclusivity and awareness to our employees. We strive to be a champion for LGBTI in the global tech community and also run a regular meetup. Check out more about what it's like to work at Envato at [https://envato.com/careers/](https://envato.com/careers/)

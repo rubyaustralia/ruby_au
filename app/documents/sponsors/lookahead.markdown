@@ -1,10 +1,11 @@
 # Lookahead
 ## Emerald Sponsor
 
-<%= link_to "https://www.lookahead.com.au/", class: "sponsor-logo-no-border" do %>
-<%= image_tag "sponsors/lookahead.jpg", class: "sponsor-logo" %>
-<% end %>
-<br>
+<p>
+  <a href="https://www.lookahead.com.au/" class="sponsor-logo-no-border">
+    <img src="/assets/sponsors/lookahead.jpg" class="sponsor-logo" />
+  </a>
+</p>
 
 Technical recruiters who are actually technical.
 
