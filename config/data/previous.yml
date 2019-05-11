@@ -1,6 +1,6 @@
 - name: Toby Nieboer
   photo: toby-nieboer.jpg
-  position: President
+  position: President, Vice President
   bio: |
     Toby was a developer and dev manager for nine years before moving into recruitment. These days he hires software engineers for [Automattic](https://automattic.com), and is also the co-organiser of the [Melbourne Ruby meetup](https://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne). In his spare time he is a gadget hoarder, mac & cheese enthusiast and dad.
   twitter: tcn33
@@ -8,10 +8,12 @@
 
 - name: Nick Wolf
   photo: nick-wolf.jpg
-  position: Secretary
+  position: Secretary, General Member
   bio: |
     Nick is a Melbourne Junior Ruby Dev who is passionate about Community Media and how technology is changing what it is to be human. He formerly hosted "The Year in Geek", a radio show interviewing 24 Geeks over a marathon 24 hours on topics ranging from Anime, Behavioural Economics and Formula One.
   twitter: quintrino
+  github: quintrino
+  website: https://nickwolf.com.au
 
 - name: Rachelle LeQuesne
   photo: rachelle-lequesne.jpg
@@ -29,6 +31,16 @@
   twitter: lachlanhardy
   github: lachlanhardy
   website: http://lachstock.com.au
+
+- name: Lauren Hennessy
+  photo: lauren-hennessy.jpg
+  position: President, Vice President, General Member
+  bio: |
+    A junior developer and community evangelist, Lauren is a seasoned organiser of Ruby events both large and small. After a long while contributing to the community in her home town of Adelaide, she now resides in Melbourne and flounders around with code at [Culture Amp](http://www.cultureamp.com). She’s passionate about fostering diversity and growth in the Ruby community and is excited to be leading the committee in those pursuits.
+
+    In her spare time, Lauren likes to play boardgames and watch awkward sitcoms. She will love you forever if you bring her a coffee on a long day (or any day).
+  twitter: Zajakot
+  github: lkhennessy
 
 - name: Namibia Lebron Torres
   photo: namibia-torres.jpg
