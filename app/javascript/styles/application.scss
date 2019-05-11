@@ -99,8 +99,13 @@ nav {
   @apply max-w-md;
   @apply mx-4;
 
+  h2 {
+    @apply my-6;
+  }
+
   p {
     @apply mt-10;
+    @apply my-6;
   }
 }
 
