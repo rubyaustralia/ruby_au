@@ -3,6 +3,12 @@ module ApplicationHelper
     YAML.load_file Rails.root.join('config', 'data', 'committee.yml')
   end
 
+  def document_markdown_to_html(name)
+    markdown.render(
+      File.read(Rails.root.join('app', 'documents', "#{name}.markdown"))
+    ).strip.html_safe
+  end
+
   def link_to_external(name = nil, options = nil, html_options = {}, &block)
     svg = inline_svg "external-link.svg", height: 12
     html_options[:target] ||= "_blank"

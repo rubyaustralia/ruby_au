@@ -1,4 +1,4 @@
-# RUBY AUSTRALIA ASSOCIATION RULES
+# Ruby Australia Association Rules
 
 ## Part 1—Preliminary
 
@@ -614,9 +614,9 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 1. Notice of each committee meeting must be given to each committee member no later than 7 days before the date of the meeting.
 
-2.	Notice may be given of more than one committee meeting at the same time.
+2.  Notice may be given of more than one committee meeting at the same time.
 
-3.	The notice must state the date, time and place of the meeting.
+3.  The notice must state the date, time and place of the meeting.
 
 4. If a special committee meeting is convened, the Secretary must give Committee Members notice by way of email which must include the general nature of the business to be conducted.
 

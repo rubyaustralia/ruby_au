@@ -1,6 +1,7 @@
-# Ruby Australia Code of Conduct
+# Ruby Australia's Code of Conduct
 
 ## Matz is nice, and we are nice.
+
 In the same way that Matz has written Ruby with a focus on developer happiness, we are focused on community happiness. The Australian Ruby community is full of wonderful people from a diverse range of backgrounds, and we want to ensure it remains a welcoming and safe environment to all who wish to be a part of it.
 
 Whenever we come together as a community, our shared spaces are opportunities to showcase the best of what we can be. We are there to support our peers - to build each other up, to accept each other for who they are, and to encourage each other to become the people they want to be.
@@ -56,12 +57,12 @@ If a community member engages in unacceptable behaviour, the community organiser
 ## Reporting an incident
 If you are subject to or witness unacceptable behaviour, or have any other concerns, please notify a community organiser as soon as possible.
 
-<%= link_to 'Reporting Guidelines', "/code-of-conduct-reporting" %>
+[Reporting Guidelines](/code-of-conduct-reporting)
 
 Additionally, community organisers are available to help community members engage with local law enforcement or to otherwise help those experiencing unacceptable behaviour feel safe. In the context of in-person events, organisers will also provide escorts as desired by the person experiencing distress.
 
 ## Addressing grievances
-If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify Ruby Australia with a concise description of your grievance. Your grievance will be handled in accordance with our existing governing policies as listed in our <%= link_to 'constitution', "/constitution" %>.
+If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify Ruby Australia with a concise description of your grievance. Your grievance will be handled in accordance with our existing governing policies as listed in our [constitution](/constitution).
 
 ## Scope
 We expect all community participants (contributors, paid or otherwise; sponsors; and other guests) to abide by this Code of Conduct in all community venues – online and in-person – as well as in all one-on-one communications pertaining to community business.
