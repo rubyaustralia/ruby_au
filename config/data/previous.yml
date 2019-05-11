@@ -1,0 +1,305 @@
+- name: Toby Nieboer
+  photo: toby-nieboer.jpg
+  position: President
+  bio: |
+    Toby was a developer and dev manager for nine years before moving into recruitment. These days he hires software engineers for [Automattic](https://automattic.com), and is also the co-organiser of the [Melbourne Ruby meetup](https://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne). In his spare time he is a gadget hoarder, mac & cheese enthusiast and dad.
+  twitter: tcn33
+  website: https://tcn33.blog
+
+- name: Nick Wolf
+  photo: nick-wolf.jpg
+  position: Secretary
+  bio: |
+    Nick is a Melbourne Junior Ruby Dev who is passionate about Community Media and how technology is changing what it is to be human. He formerly hosted "The Year in Geek", a radio show interviewing 24 Geeks over a marathon 24 hours on topics ranging from Anime, Behavioural Economics and Formula One.
+  twitter: quintrino
+
+- name: Rachelle LeQuesne
+  photo: rachelle-lequesne.jpg
+  position: General Member
+  bio: |
+    Rachelle is an active member of [BrisRuby](https://www.meetup.com/BrisRuby/), one half of [Rails Girls BNE](http://railsgirlsbne.com/), and runs the Ruby on Rails [Installfests](http://railsinstallfest.org/) as part of her role as Community Manager for [reinteractive](https://reinteractive.com/). She is excited to be on the committee of Ruby Australia so that she can further serve the community.
+  twitter: RachelleOnRails
+  github: rachelleonrails
+
+- name: Lachlan Hardy
+  photo: lachlan-hardy.jpg
+  position: General Member
+  bio: |
+    Lachlan went to Sydney’s first Ruby on Rails meet up in 2006 and has been an active member of the Australian Ruby community ever since. He has been an engineering manager, a Rubyist, an ecosystem strategist, a startup mentor, a full-time JavaScripter, an IPTV developer, a front-end developer, and a web standards professional. Now he works at [Blackmill](https://blackmill.co), a consultancy focused on helping technology organisations improve their software engineering practices.
+  twitter: lachlanhardy
+  github: lachlanhardy
+  website: http://lachstock.com.au
+
+- name: Namibia Lebron Torres
+  photo: namibia-torres.jpg
+  position: General Member
+  linkedin: namibiatorres
+
+- name: Ana Djordjevic
+  photo: ana-djordjevic.jpg
+  position: General Member
+  bio: |
+    Ana has been a member of the tech community for a number of years.  Her Rails journey started in 2013 at Rails Girls Brisbane.  She moved to Melbourne in 2014 to work with [Marketplacer](http://marketplacer.com). Ana is passionate about code, though somewhat of a pedant.  She loves Ruby, and the community around it. Ana may be found at camps or meetups, or hiding at home with her cats.
+  twitter: anan0va
+  github: ananova
+
+- name: Tom Ridge
+  photo: tom-ridge.jpg
+  position: Vice President
+  bio: |
+    Tom is a developer, father of twins and dad joke connoisseur. He regularly speaks at [BrisRuby](http://www.meetup.com/Brisruby/) and is passionate about mentoring. He works for [tworedkites](http://tworedkites.com/) in Brisbane.
+  twitter: tjridge
+  github: ridget
+
+- name: Leonard Garvey
+  photo: leonard-garvey.jpg
+  position: President
+  bio: |
+    Len has been a part of the Sydney Ruby community for several years. He organised Rails Camp 17 at Broken Bay north of Sydney and recently moved to Melbourne to take up a Tech Lead position with [REA](http://www.rea-group.com/). He enjoys helping new people in the Ruby community and is working to make it a fun and welcoming place for all.
+
+- name: Andre Vidic
+  photo: andre-vidic.jpg
+  position: General Member
+  github: dreJ2k
+
+- name: Edward Tippett
+  photo: edward-tippett.jpg
+  position: General Member
+  bio: |
+    Software Developer. Rails Camp enthusiast. Co-organiser of [Rubyburgers Adelaide](http://rubyburgers.co/adelaide/).
+  twitter: cattekin
+  github: cattekin
+
+- name: Kylie Gusset
+  photo: kylie-gusset
+  position: General Member
+  bio: |
+    Kylie Gusset is a creative who started working with code when the internet was powered by website under construction gifs. After spending time in textiles, she is transitioning back to development, and is passionate about diversity in tech.
+  twitter: gusseting
+  github: gusseting
+
+- name: Melissa Kaulfuss
+  photo: melissa-kaulfuss
+  position: Vice President
+  bio: |
+    Mel is an internet enthusiast and polyglot amateur. She dreams of being a software developer, but at the moment is content helping the open source community continue to be a supportive, inclusive and welcoming place for everyone. Mel was on the organising team for Ruby Conf 2015, volunteers her time to help at numerous awesome tech conferences, and co-organises a Melbourne Meetup called [Code Kuma](http://codekuma.io/). She works at [Lookahead](http://www.lookahead.com.au/) in Melbourne.
+  twitter: MelissaKaulfuss
+  github: MelissaKaulfuss
+
+- name: Rebecca Skinner
+  photo: rebecca-skinner.jpg
+  position: Secretary
+  bio: |
+    Rebecca has been working with Ruby and Rails since making a fateful New Years Resolution to learn them at the end of 2010. She writes a lot, has Opinions about many things, and works for [reinteractive](http://reinteractive.net) from sunny Perth.
+  twitter: sevenseacat
+  website: http://sevensea.cat
+  github: sevenseacat
+
+- name: Rob Jacoby
+  photo: rob-jacoby.jpg
+  position: General Member
+  bio: |
+    Rob fell in love with Ruby in 2011 after fighting with PHP for a number of years. He loves bending rails to his will, and is terrible at front-end design - or at least that's what designers say. He works at Local Directories on the fabulous Gold Coast.
+  twitter: robjacoby
+  github: robjacoby
+
+- name: Amanda Neumann
+  photo: amanda-neumann.jpg
+  position: General Member
+  bio: |
+    In her previous career, Amanda spent many years in the education space harnessing technology to improve education. Realising her heart had always been in programming she took a leap and set out to make the jump permanently. Along the way she fell in love with the Ruby community and is now working as a Junior Ruby Developer for [Envato](http://www.envato.com) in Melbourne.
+  twitter: amandamelb
+  github: amanda08
+
+- name: Angus Scown
+  photo: angus-scown.jpg
+  position: General Member
+  bio: |
+    Angus is the Software Engineering manager at [UrbisPro](http://www.urbispro.com.au). As a land surveyor and software engineer Angus possesses the unique attributes of domain knowledge, skills and passion mixed with pioneering entrepreneurship. He has a passion for DevOps and has been using ruby for more years than he cares to recall.
+  twitter: angusscown
+  linkedin: angusscown
+
+- name: Sebastian von Conrad
+  photo: sebastian-avatar.jpg
+  position: President, Treasurer (2012)
+  bio: |
+    After growing up in Sweden, Sebastian escaped to the US in 2007 and moved down under in 2009. He now lives in Melbourne with his partner and two fur children, and works as a development manager at [Envato](http://www.envato.com). He is also a certified baseball nut. Having organised Rails Camp X, he is excited to continue working with the Australian Ruby community.
+  twitter: vonconrad
+  linkedin: vonconrad
+  github: vonconrad
+
+- name: Mikel Lindsaar
+  photo: mikel-lindsaar.jpg
+  position: Secretary (2015)
+  bio: |
+    Mikel has been involved with Ruby since 2007 after deciding to learn ruby by building the [mail gem](https://rubygems.org/gems/mail). Since then he founded [reinteractive](https://reinteractive.net/) in 2010 and co-founded [Flood.IO](https://flood.io/) in 2013. Mikel enjoys his RC Helicopter flying and Formula1, both of which involve expensive things going fast into walls at odd angles.
+  twitter: Lindsaar
+  github: mikel
+  website: https://reinteractive.net
+
+- name: Keith Pitt
+  photo: keith-pitt.jpg
+  position: General Member (2014-2015)
+  bio: |
+    Keith (also known as "Magic Keith") is a developer from Adelaide living in Perth, Western Australia. He is the founder of the Continuous Integration service [Buildkite](https://buildkite.com).
+
+    In Keith's spare time, he watches many scary movies, and wins Magic Competitions.
+  twitter: keithpitt
+  github: keithpitt
+
+- name: Luke Arndt
+  photo: luke-arndt.jpg
+  position: General Member (2014-2015)
+  bio: |
+    Luke is a developer from New Zealand who now lives in Melbourne, writing Ruby on Rails code at [Envato](http://www.envato.com) to help improve their digital Marketplaces. His interests include good food (such as bacon), cycling, video games and sword fighting.
+  twitter: luke_arndt
+  github: lukearndt
+
+- name: Melanie Sherrin
+  photo: melanie-sherrin.jpg
+  position: General Member (2014-2015)
+  bio: |
+    A lawyer with a burning ambition to be a dev, Mel is new to the world of both coding and Ruby. Cat herder, burner, unionist and enjoyer of wine.
+  twitter: melsherrin
+
+- name: Pat Allan
+  photo: pat-allan-new.jpg
+  position: Vice President (2014-2015)
+  bio: |
+    Pat is a gelato connoisseur, pancake master, and occasional events organiser (including [RubyConf AU](https://rubyconf.org.au), [Rails Camps](https://rails.camp), and [Trampoline](https://trampolineday.com)). Mostly, though, he is a contracting Ruby developer based in Melbourne, and most recently has led the development efforts at [Limbr](https://limbr.org), a social enterprise focused on mental health.
+  twitter: pat
+  github: pat
+  website: https://freelancing-gods.com
+
+- name: Jason Stirk
+  photo: jason-stirk.jpg
+  position: Treasurer (2013-2014)
+  bio: |
+    Jason met Ruby in late 2004, fell in love with its elegance, and met Rails not long after. He lives in Lismore and likes Rails Camp T's, game development and underscores.
+  twitter: j_stirk
+  linkedin: jasonstirk
+  github: jstirk
+
+- name: Luke Chadwick
+  photo: luke-chadwick.jpg
+  position: Secretary (2014)
+  bio: |
+    Geek since birth. Rubyist & DevOp. Lover. Idealist. Proud creator of [http://faxitforme.com](http://faxitforme.com) (RailsRumble2012)
+
+    Formerly at [realestate.com.au](http://realestate.com.au), Luke is now helping build a startup called [Pop!](http://popanything.com)
+  twitter: vertis
+  github: vertis
+  website: http://vertis.io
+
+- name: Josh Price
+  photo: josh-price.jpg
+  position: Vice President (2013)
+  bio: |
+    Ruby / Javascript / Java Agilist. Founder of Canoniq. Apple tragic. Hack Night organiser. Bon vivant. Enthusiast. Coffee lover. Proud father.
+  twitter: joshprice
+  github: joshprice
+  website: http://joshprice.com
+
+- name: Dylan Lacey
+  photo: dylan-lacey.jpg
+  position: General Member
+  bio: |
+    Dylan is a Ruby developer evangelist who thinks that computers will save the world - He's just not sure what from. He loves automating boring stuff, making software things and video games. He still can't fly.
+  twitter: DylanLacey
+  github: DylanLacey
+
+- name: Elle Meredith
+  photo: elle-meredith.jpg
+  position: General Member
+  bio: |
+    Elle is a full stack web developer with more than ten years experience, and a unique background that bridges the gap between the front- and back-end. She has been working with Ruby and Rails since 2007 and as a full time Rails developer since 2009.
+  twitter: aemeredith
+  github: elle
+  website: http://about.me/aemeredith
+
+- name: John Barton
+  photo: john-barton.jpg
+  position: General Member
+  bio: |
+    Bicycle, book, and booze enthusiast. Rubyist. Co-founder of [http://goodfil.ms](http://goodfil.ms).
+
+    Former development team lead for Envato across their Marketplace products, John has been a long time member of the Australian Ruby community and has helped organise a couple of the Melbourne Rails Camps.
+  twitter: johnbarton
+  github: joho
+  website: http://whoisjohnbarton.com
+
+- name: Lachie Cox
+  photo: lachie-cox.jpg
+  position: General Member
+  twitter: lachiecox
+  github: lachie
+
+- name: Ben Schwarz
+  photo: ben-avatar.jpg
+  position: President (2014), General Member (2012)
+  twitter: benschwarz
+  website: http://germanforblack.com
+
+- name: Martin Stannard
+  photo: martin-stannard.jpg
+  position: Vice President (2012-2013)
+  bio: |
+    Martin discovered Ruby in 2003 and his affair with it continues to this day. When not riding his bike he can be found as Team Lead at Blake eLearning, a company dedicated to helping children improve their literacy and numeracy skills.
+  twitter: _martinS_
+
+- name: Warren Seen
+  photo: warren-seen.jpg
+  position: General Member (2012-2013)
+  bio: |
+    Rails Developer. Reformed Freelancer. Mashing keyboards until ruby comes out for @envato.
+  twitter: warren_s
+
+- name: David Goodlad
+  photo: david-goodlad.jpg
+  position: General Member (2012-2013)
+  bio: |
+    A native of Canada, David now lives in Melbourne and is an active member of the local Ruby community. He enjoys both attending and speaking at Ruby-related events, having presented talks at RailsConf Europe 2006 in London, and at RubyConf 2008 in Orlando.
+
+    David is part of the development team behind the [Envato](http://www.envato.com/) marketplaces, building and maintaining one of the longest-running public Ruby on Rails-based apps in Australia.
+  twitter: dgoodlad
+  github: dgoodlad
+  website: http://d.goodlad.net
+
+- name: Keith Pitty
+  photo: keith-avatar.jpg
+  position: President (2012)
+  bio: |
+    A long-time participant, former convener of and occasional presenter at Sydney Ruby meetups, Keith led the organisation of Rails Camp 9 at Lake Ainsworth in 2011 and co-organised the inaugural [RubyConf AU](http://rubyconf.org.au) in Melbourne in 2013. He runs [Cockatoo Software](http://www.cockatoosoftware.com.au).
+
+    Away from computers, he loves sport, especially cricket, golf and Aussie Rules. And single malt whisky.
+  twitter: keithpitty
+  github: keithpitty
+  linkedin: keithpitty
+
+- name: Richie Khoo
+  photo: richie-avatar.jpg
+  position: Secretary (2012)
+  bio: |
+    Richie is a passionate Ruby Developer who recently moved to Adelaide but still moonlights in Melbourne.
+
+    A member of Inspire 9 CoWorking and co-founder of AngelCube.com Melbourne's first startup venture accelerator, he is currently working on his own startup, NakedInsights an automation tool for Financial Advisers, and has a passion for helping people bring projects to reality.
+  twitter: evolve2k
+  linkedin: richiekhoo
+  github: evolve2k
+  website: http://zerply.com/richie
+
+- name: Daniel Draper
+  photo: daniel-avatar.jpg
+  position: Secretary (2012), General Member (2012)
+  bio: |
+    Dan is CEO of Tech Startup, [Codehire](http://www.codehire.com/) and has been working with Rails since 2006. He is actively involved in Adelaide.rb and the Ruby community at large. Dan is passionate about promoting software and web development as a career choice for younger people and about open source software in business.
+  twitter: danieldraper
+  linkedin: ddraper
+
+- name: Nigel Rausch
+  photo: nigel-avatar.jpg
+  position: President (2012)
+  bio: |
+    Nigel has a strong community spirit and is heavily involved organising Brisbane's Ruby, Javascript and WorkAtJelly meetups as well as mentoring friends and ex-colleagues in their business ventures.
+
+    He is proud to be part of the Ruby Australia Association and is excited how it will make Ruby more visible to the wider community and to the Enterprise.

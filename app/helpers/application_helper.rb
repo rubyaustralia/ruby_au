@@ -24,4 +24,8 @@ module ApplicationHelper
 
     markdown.render(raw).strip.html_safe
   end
+
+  def previous
+    YAML.load_file Rails.root.join('config', 'data', 'previous.yml')
+  end
 end
