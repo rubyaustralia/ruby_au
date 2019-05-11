@@ -3,7 +3,7 @@
 
 <p>
   <a href="https://www.lookahead.com.au/" class="sponsor-logo-no-border">
-    <img src="/assets/sponsors/lookahead.jpg" class="sponsor-logo" />
+    <%= image_tag "sponsors/lookahead.jpg", :class => "sponsor-logo" %>
   </a>
 </p>
 

@@ -4,9 +4,10 @@ module ApplicationHelper
   end
 
   def document_markdown_to_html(name)
-    markdown.render(
-      File.read(Rails.root.join('app', 'documents', "#{name}.markdown"))
-    ).strip.html_safe
+    input  = File.read Rails.root.join('app', 'documents', "#{name}.markdown")
+    markup = render :inline => input
+
+    markdown.render(markup).strip.html_safe
   end
 
   def link_to_external(name = nil, options = nil, html_options = {}, &block)
