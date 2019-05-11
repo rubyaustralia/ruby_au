@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get '/forum', to: redirect('https://forum.ruby.org.au'),
     as: :forum
-  get '/roro', to: redirect('https://groups.google.com/forum/#!forum/rails-oceania'),
+  get '/mailing-list', to: redirect('https://confirmsubscription.com/h/j/3DDD74A0ACC3DB22'),
     as: :roro_mailing_list
   get '/slack', to: redirect('https://ruby-au-join.herokuapp.com/'),
     as: :slack

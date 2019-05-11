@@ -54,67 +54,29 @@
         <section id="nav-primary" class="ml-5 md:ml-0" aria-roledescription="primary navigation">
           <h3>Association</h3>
           <ul>
-            <li>
-              <%= link_to 'Committee Members', "/committee-members" %>
-            </li>
-            <li>
-              <%= link_to "https://forum.ruby.org.au/c/ruby-au/meetings",
-                          rel: 'external', target: '_blank',
-                          longdesc: 'Committee Meeting minutes hosted on RubyAU Forums' do %>
-                Meeting Minutes<%= inline_svg "external-link.svg", height: 12 %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to 'Code of Conduct', "/code-of-conduct" %>
-            </li>
-            <li>
-              <%= link_to 'Constitution', "/constitution" %>
-            </li>
-            <li>
-              <%= link_to 'Sponsorship', "/sponsorship" %>
-            </li>
-            <li>
-              <%= link_to "Contact us", "/contact" %>
-            </li>
+            <li><%= link_to "Welcome", "/" %></li>
+            <li><%= link_to 'Committee Members', "/committee-members" %></li>
+            <li><%= link_to_external "Meeting Minutes", "https://forum.ruby.org.au/c/ruby-au/meetings", longdesc: 'Committee Meeting minutes hosted on RubyAU Forums' %></li>
+            <li><%= link_to 'Code of Conduct', "/code-of-conduct" %></li>
+            <li><%= link_to 'Constitution', "/constitution" %></li>
+            <li><%= link_to 'Sponsorship', "/sponsorship" %></li>
+            <li><%= link_to "Contact us", "/contact" %></li>
           </ul>
 
           <h3>Events</h3>
           <ul>
-            <li>
-              <%= link_to "https://rails.camp", rel: 'external', target: '_blank' do -%>
-                Rails Camp<%= inline_svg "external-link.svg", height: 12 %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "https://rubyconf.org.au", rel: 'external', target: '_blank' do -%>
-                RubyConf AU<%= inline_svg "external-link.svg", height: 12 %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to 'Meetups', "/#events" %>
-            </li>
-            <li>
-              <%= link_to 'Rails Girls', "/rails-girls" %>
-            </li>
+            <li><%= link_to_external "Rails Camp" %></li>
+            <li><%= link_to_external "RubyConf AU", "https://rubyconf.org.au" %></li>
+            <li><%= link_to 'Meetups', "/#in-person" %></li>
+            <li><%= link_to 'Rails Girls', "/rails-girls" %></li>
           </ul>
 
           <h3>Community</h3>
           <ul>
-            <li>
-              <%= link_to "https://forum.ruby.org.au/",
-                          rel: 'external', target: '_blank' do %>
-                Forum (Ruby Down Under)<%= inline_svg "external-link.svg", height: 12 %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to 'Chat (Slack)', slack_path, target: :_blank %>
-            </li>
-            <li>
-              <%= link_to 'Videos', videos_path, target: :_blank %>
-            </li>
-            <li>
-              <%= link_to 'Mailing list', roro_mailing_list_path, target: :_blank %>
-            </li>
+            <li><%= link_to_external "Forum (Ruby Down Under)", "https://forum.ruby.org.au/" %></li>
+            <li><%= link_to_external "Chat (Slack)", slack_path %></li>
+            <li><%= link_to_external "Videos", videos_path %></li>
+            <li><%= link_to_external 'Mailing List', "/mailing-list" %></li>
           </ul>
         </section>
       </div>
@@ -122,7 +84,7 @@
   </aside>
 
   <section class="w-auto bg-transparent flex-auto flex-shrink flex-grow flex-col overflow-y-scroll">
-    <div id="body" role="main" class="md:max-w-xl pb-3">
+    <div id="body" role="main" class="md:max-w-full pb-3">
       <div id="flash">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
@@ -132,7 +94,7 @@
     </div>
 
     <footer role="contentinfo" class="invisible hidden">
-      <small>&copy; <%= Time.zone.now.year %> Ruby Australia</small>
+      <small>&copy; <%= Time.current.year %> Ruby Australia</small>
     </footer>
   </section>
 </div>
