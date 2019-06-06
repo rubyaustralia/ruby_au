@@ -12,7 +12,7 @@ gem 'puma'
 gem 'validates_email_format_of'
 gem 'warden' # use for auth
 
-gem 'webpacker', '~> 3.5'
+gem 'webpacker', '~> 4.0'
 gem 'inline_svg', '~> 1.3.1'
 
 # Use Uglifier as compressor for JavaScript assets

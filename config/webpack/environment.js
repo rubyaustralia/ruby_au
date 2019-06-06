@@ -11,3 +11,5 @@ environment.plugins.prepend(
     jquery: 'jquery'
   })
 )
+
+environment.loaders.delete('nodeModules')
