@@ -282,7 +282,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 #### 31 Special general meetings
 
 1. Any general meeting of the Association, other than an annual general meeting or a disciplinary appeal meeting, is a special general meeting.
-2. Special general meetings are held twice a year on the Sunday of the Association’s Rails Camp events, which include the ordinary business of electing some of the members of the Committee.
+2. Special general meetings are held once a year, roughly halfway between the yearly schedule of Annual General Meetings, and can include the ordinary business of electing some of the members of the Committee.
 3. The Committee may convene a special general meeting whenever it thinks fit.
 
 #### 32 Special general meeting held at request of members
@@ -335,11 +335,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 7. A form appointing a proxy sent by post or electronically is of no effect unless it is received by the Association no later than 72 hours before the commencement of the meeting.
 
-#### 35 Use of technology
-
-1. A member not physically present at a general meeting will not be able to participate in the meeting by the use of technology and must appoint a Proxy in order to cast a vote.
-
-#### 36 Quorum at general meetings
+#### 35 Quorum at general meetings
 
 1. No business may be conducted at a general meeting unless a quorum of members is present.
 
@@ -353,7 +349,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 4. If a quorum is not present within 30 minutes after the time to which a general meeting has been adjourned under subrule 3(ii), the members present at the meeting (if not fewer than 5) may proceed with the business of the meeting as if a quorum were present.
 
-#### 37 Adjournment of general meeting
+#### 36 Adjournment of general meeting
 
 1. The Chairperson of a general meeting at which a quorum is present may, with the consent of a majority of members present at the meeting, adjourn the meeting to another time at the same place or at another place.
 
@@ -368,7 +364,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 4. Notice of the adjournment of a meeting under this rule is not required unless the meeting is adjourned for 14 days or more, in which case notice of the meeting must be given in accordance with rule 33.
 
-#### 38 Voting at general meeting
+#### 37 Voting at general meeting
 
 1. On any question arising at a general meeting—
   1. subject to subrule 3, each member who is entitled to vote has one vote; and
@@ -381,7 +377,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 4. This rule does not apply to a vote at a disciplinary appeal meeting conducted under rule 24.
 
-#### 39 Special resolutions
+#### 38 Special resolutions
 
 1. A special resolution is passed if not less than three quarters of the members voting at a general meeting (whether in person or by proxy) vote in favour of the resolution.
 
@@ -391,7 +387,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
    1. to remove a committee member from office;
    2. to alter these Rules, including changing the name or any of the purposes of the Association.
 
-#### 40 Determining whether resolution carried
+#### 39 Determining whether resolution carried
 
 1. Subject to subsection 2, the Chairperson of a general meeting may, on the basis of a show of hands, declare that a resolution has been—
   1. carried; or
@@ -409,7 +405,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 4. A poll demanded on any other question must be taken before the close of the meeting at a time determined by the Chairperson.
 
-#### 41 Minutes of general meeting
+#### 40 Minutes of general meeting
 
 1. The Committee must ensure that minutes are taken and kept of each general meeting.
 
@@ -426,7 +422,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 ### Division 1—Powers of Committee
 
-#### 42 Role and powers
+#### 41 Role and powers
 
 1. The business of the Association must be managed by or under the direction of a Committee.
 
@@ -436,7 +432,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
   1. appoint and remove staff;
   2. establish subcommittees consisting of members with terms of reference it considers appropriate.
 
-#### 43 Delegation
+#### 42 Delegation
 
 1. The Committee may delegate to a member of the Committee, a subcommittee or staff, any of its powers and functions other than—
   1. this power of delegation; or
@@ -448,7 +444,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 ### Division 2—Composition of Committee and duties of members
 
-#### 44 Composition of Committee
+#### 43 Composition of Committee
 
 1. The Committee consists of—
   1. a President; and
@@ -457,7 +453,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
   4. a Treasurer; and
   5. four ordinary members (if any) elected under rule 53.
 
-#### 45 General Duties
+#### 44 General Duties
 
 1. As soon as practicable after being elected or appointed to the Committee, each committee member must become familiar with these Rules and the Act.
 
@@ -479,13 +475,13 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 7. In addition to any duties imposed by these Rules, a committee member must perform any other duties imposed from time to time by resolution at a general meeting.
 
-#### 46 President and Vice-President
+#### 45 President and Vice-President
 
 1. Subject to subrule 2, the President or, in the President's absence, the Vice-President is the Chairperson for any general meetings and for any committee meetings.
 
 2. If the President and the Vice-President are both absent, or are unable or unwilling to preside, the Chairperson of the meeting can be any person that the President or Vice-President delegates to the role or if they are unable to do so, then any person voted by the majority of the Committee.
 
-#### 47 Secretary
+#### 46 Secretary
 
 1. The Secretary must perform any duty or function required under the Act to be performed by the secretary of an incorporated association.
 
@@ -500,7 +496,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 3. The Secretary must give to the Registrar notice of their appointment within 14 days after the appointment.
 
-#### 48 Treasurer
+#### 47 Treasurer
 
 1. The Treasurer must—
   1. receive all moneys paid to or received by the Association and issue receipts for those moneys in the name of the Association; and
@@ -516,13 +512,13 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 ### Division 3—Election of Committee members and tenure of office
 
-#### 49 Who is eligible to be a Committee member
+#### 48 Who is eligible to be a Committee member
 
 1. A member is eligible to be elected or appointed as a committee member if the member—
   1. is 18 years or over; and
   2. is an Australian resident.
 
-#### 50 Positions to be declared vacant
+#### 49 Positions to be declared vacant
 
 1. This rule applies to—
   1. the first annual general meeting of the Association after its incorporation; or
@@ -530,7 +526,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 2. The Chairperson of the meeting must declare all positions on the Committee vacant and hold elections for those positions in accordance with rules 51 to 54.
 
-#### 51 Nominations
+#### 50 Nominations
 
 1. Prior to the election of each position, the Chairperson of the meeting must call for nominations to fill that position. Nominations may be voiced by completing the nomination form and returning it before the meeting.
 
@@ -542,7 +538,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 4. Nominations are held twice a year at the AGM and an SGM for each position that expires at that time.
 
-#### 52 Election of President etc.
+#### 51 Election of President etc.
 
 1. At the annual general meeting and SGM where nominations occur separate elections must be held for each of the following positions—
   1. President;
@@ -554,7 +550,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 3. If more than one member is nominated, a ballot must be held.
 
-#### 53 Election of ordinary members
+#### 52 Election of ordinary members
 
 1. The annual general meeting may by resolution decide the number of ordinary members of the Committee (if any) it wishes to hold office for the next year.
 
@@ -564,7 +560,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 4. If the number of members nominated exceeds the number to be elected, a ballot must be held.
 
-#### 54 Term of office
+#### 53 Term of office
 
 1. Subject to subrule 3 and rule 55, a committee member holds office until the positions of the Committee are declared vacant at the next annual general meeting or special general meeting whichever falls on the 12 month anniversary of the member’s appointment.
 
@@ -578,7 +574,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 5. The Secretary or the President may give a copy of the representations to each member of the Association or, if they are not so given, the member may require that they be read out at the meeting at which the special resolution is to be proposed.
 
-#### 55 Vacation of office
+#### 54 Vacation of office
 
 1. A committee member may resign from the Committee by written notice addressed to the Committee.
 
@@ -590,7 +586,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
   ##### Note
   A Committee member may not hold the office of secretary if they do not reside in Australia.
 
-#### 56 Filling casual vacancies
+#### 55 Filling casual vacancies
 
 1. The Committee may appoint an eligible member of the Association to fill a position on the Committee that—
   1. has become vacant under rule 55; or
@@ -604,13 +600,13 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 ### Division 4—Meetings of Committee
 
-#### 57 Meetings of Committee
+#### 56 Meetings of Committee
 
 1. The Committee meets once a month through the use of web video technology.
 
 2. Special committee meetings may be convened by the President or by any 4 members of the Committee.
 
-#### 58 Notice of meetings
+#### 57 Notice of meetings
 
 1. Notice of each committee meeting must be given to each committee member no later than 7 days before the date of the meeting.
 
@@ -622,7 +618,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 5. The only business that may be conducted at the meeting is the business for which the meeting is convened.
 
-#### 59 Urgent meetings
+#### 58 Urgent meetings
 
 1. In cases of urgency, a meeting can be held without notice being given in accordance with rule 58 provided that as much notice as practicable is given to each committee member by the quickest means practicable.
 
@@ -630,13 +626,13 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 3. The only business that may be conducted at an urgent meeting is the business for which the meeting is convened.
 
-#### 60 Procedure and order of business
+#### 59 Procedure and order of business
 
 1. The procedure to be followed at a meeting of a Committee must be determined from time to time by the Committee.
 
 2. The order of business may be determined by the members present at the meeting.
 
-#### 61 Quorum
+#### 60 Quorum
 
 1. No business may be conducted at a Committee meeting unless a quorum is present.
 
@@ -646,7 +642,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
   1. in the case of a special meeting—the meeting lapses;
   2. in any other case—the meeting must be adjourned to a date no later than 14 days after the adjournment and notice of the time, date and place to which the meeting is adjourned must be given in accordance with rule 58.
 
-#### 62 Voting
+#### 61 Voting
 
 1. On any question arising at a committee meeting, each committee member present at the meeting has one vote.
 
@@ -656,7 +652,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 4. If votes are divided equally on a question, the Chairperson of the meeting has a second or casting vote.
 
-#### 63 Conflict of interest
+#### 62 Conflict of interest
 
 1. A committee member who has a material personal interest in a matter being considered at a committee meeting must disclose the nature and extent of that interest to the Committee.
 
@@ -668,7 +664,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
   1. that exists only because the member belongs to a class of persons for whose benefit the Association is established; or
   2. that the member has in common with all, or a substantial proportion of, the members of the Association.
 
-#### 64 Minutes of meeting
+#### 63 Minutes of meeting
 
 1. The Committee must ensure that minutes are taken and kept of each committee meeting.
 
@@ -678,7 +674,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
   3. any resolution on which a vote is taken and the result of the vote;
   4. any material personal interest disclosed under rule 63.
 
-#### 65 Leave of absence
+#### 64 Leave of absence
 
 1. The Committee may grant a committee member leave of absence from committee meetings for a period not exceeding 3 months.
 
@@ -686,11 +682,11 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 ## Part 6—Financial Matters
 
-#### 66 Source of funds
+#### 65 Source of funds
 
 The funds of the Association may be derived from joining fees, annual subscriptions, donations, fund-raising activities, grants, interest and any other sources approved by the Committee.
 
-#### 67 Management of funds
+#### 66 Management of funds
 
 1. The Association must open an account with a financial institution from which all expenditure of the Association is made and into which all of the Association's revenue is deposited.
 
@@ -704,7 +700,7 @@ The funds of the Association may be derived from joining fees, annual subscripti
 
 6. With the approval of the Committee, the Treasurer may maintain a cash float provided that all money paid from or paid into the float is accurately recorded at the time of the transaction.
 
-#### 68 Financial records
+#### 67 Financial records
 
 1. The Association must keep financial records that—
   1. correctly record and explain its transactions, financial position and performance; and
@@ -716,7 +712,7 @@ The funds of the Association may be derived from joining fees, annual subscripti
   1. the financial records for the current financial year; and
   2. any other financial records as authorised by the Committee.
 
-#### 69 Financial statements
+#### 68 Financial statements
 
 1. For each financial year, the Committee must ensure that the requirements under the Act relating to the financial statements of the Association are met.
 
@@ -729,7 +725,7 @@ The funds of the Association may be derived from joining fees, annual subscripti
 
 ## Part 7—General Matters
 
-#### 70 Common seal
+#### 69 Common seal
 
 1. The Association may have a common seal.
 
@@ -742,17 +738,17 @@ The funds of the Association may be derived from joining fees, annual subscripti
   1. the financial records for the current financial year; and
   2. any other financial records as authorised by the Committee
 
-#### 71 Registered address
+#### 70 Registered address
 
 The registered address of the Association is—
   1. the address determined from time to time by resolution of the Committee; or
   2. if the Committee has not determined an address to be the registered address—the postal address of the Secretary.
 
-#### 72 Notice requirements
+#### 71 Notice requirements
 
 1. Any notice required to be given to a member or a committee member under these Rules will be given by email.
 
-#### 73 Custody and inspection of books and records
+#### 72 Custody and inspection of books and records
 
 1. Members may on request inspect free of charge—
   1. the register of members;
@@ -776,7 +772,7 @@ The registered address of the Association is—
   3. its financial records;
   4. records and documents relating to transactions, dealings, business or property of the Association.
 
-#### 74 Winding up and cancellation
+#### 73 Winding up and cancellation
 
 1. The Association may be wound up voluntarily by special resolution.
 
@@ -786,6 +782,6 @@ The registered address of the Association is—
 
 4. The body to which the surplus assets are to be given must be decided by special resolution.
 
-#### 75 Alteration of Rules
+#### 74 Alteration of Rules
 
 These Rules may only be altered by special resolution of a general meeting of the Association.
