@@ -10,12 +10,12 @@ FactoryBot.define do
       "user#{n}@example.com"
     end
 
-    password "password"
+    password { "password" }
     trait :visible do
-      visible true
+      visible { true }
     end
     trait :invisible do
-      visible false
+      visible { false }
     end
   end
 end

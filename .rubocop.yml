@@ -5,6 +5,7 @@ AllCops:
     - 'db/**/*'
     - 'bin/**/*'
     - 'vendor/**/*'
+    - 'node_modules/**/*'
   DisplayCopNames: true
   TargetRubyVersion: 2.4
 

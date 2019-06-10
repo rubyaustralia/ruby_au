@@ -1,0 +1,2 @@
+plugins:
+  tailwindcss: './app/javascript/src/tailwind.js'

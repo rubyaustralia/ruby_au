@@ -15,9 +15,7 @@ class EmailConfirmationsController < ApplicationController
   def create
     authenticate!
 
-    if current_user.send_email_confirmation
-      flash[:notice] = 'The email was sent, please check your mailbox'
-    end
+    flash[:notice] = 'The email was sent, please check your mailbox' if current_user.send_email_confirmation
 
     redirect_to profile_path
   end
