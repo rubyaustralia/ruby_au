@@ -2,7 +2,8 @@
   "dependencies": {
     "@rails/webpacker": "4.0",
     "jquery": "^3.4.0",
-    "tailwindcss": "^0.7.4"
+    "tailwindcss": "^0.7.4",
+    "yarn": "^1.16.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.5.1",
