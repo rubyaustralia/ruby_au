@@ -7,13 +7,13 @@
   github: pat
   website: https://freelancing-gods.com
 
-- name: Caitlin Palmer-Bright
-  photo: caitlin-palmer-bright.jpg
+- name: Caroline Bambrick
+  photo: caroline-bambrick.jpg
   position: Vice President
   bio: |
-    After a few years as a park ranger and then a few more as a high school teacher, Caitlin has now made the transition into tech. She is currently an intern with Two Red Kites in Brisbane and recently started the [Brisbane Tech Newbies meet up group](https://www.meetup.com/Brisbane-Tech-Newbies/). When she’s not coding you will probably find her watching videos of puppies on youtube and eating as many snacks as she can find.
-  twitter: CaitlinPB
-  website: http://cpalmerbright.com
+    Caroline left academia for a career in tech in 2017 and is currently a Software Engineer at Culture Amp. Outside of work you'll most likely find her playing boardgames, losing her voice in a karaoke booth, or visiting refugees in detention.
+  twitter: cazbambrick
+  github: carolinebambrick
 
 - name: Ryan Bigg
   photo: ryan-bigg.png
@@ -35,14 +35,6 @@
   twitter: RacheGoodo
   linkedin: rachaelgoodenough
 
-- name: Sharon Vaughan
-  photo: sharon-vaughan.jpg
-  position: General Member
-  bio: |
-    Late last millenium Sharon completed a computer degree because her mum, in the mid-80s, said, “There is a future in computers.” Mum may have been right but Sharon went for a wander through academia and the arts ending up as a Film Projectionist. When Sharon was replaced by a digital projector, she took irony firmly in hand and decided, in June 2016, to become a Developer. Sharon now works at Envato.
-  twitter: Sharon_AV
-  github: sharonvaughan
-
 - name: Matt Stevenson
   photo: matt-stevenson.JPG
   position: General Member
@@ -58,3 +50,22 @@
     Laughing, learning, coding and growing these are a few of my favourite things. Aaaaaand...working as a Technical Recruiter at [Lookahead Search](https://twitter.com/LookaheadSearch).
   twitter: soxyface
   linkedin: sonyacorcoran
+
+- name: Kieran Andrews
+  photo: kieran-andrews.jpg
+  position: General Member
+  bio: |
+    Kieran is a passionate Ruby Developer from Adelaide after discovering it 2011.
+
+    In his spare time Kieran enjoys making home-made pizza, playing board games and snowboarding around the world.
+  twitter: Kieran_Andy
+  github: TigerWolf
+
+- name: Cameo Langford
+  photo: cameo-langford.jpg
+  position: General Member
+  bio: |
+    Cameo is a Junior Developer at MYOB. She moved into a career in technology in early 2018 after six years of running dog sled tours and working in retail. When she's not coding you'll find her playing boardgames or entering sled dog races with her two Siberian Huskies.
+  twitter: cameocodes
+  github: cameocodes
+  website: https://cameocodes.com

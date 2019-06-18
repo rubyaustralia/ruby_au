@@ -1,3 +1,19 @@
+- name: Sharon Vaughan
+  photo: sharon-vaughan.jpg
+  position: General Member
+  bio: |
+    Late last millenium Sharon completed a computer degree because her mum, in the mid-80s, said, “There is a future in computers.” Mum may have been right but Sharon went for a wander through academia and the arts ending up as a Film Projectionist. When Sharon was replaced by a digital projector, she took irony firmly in hand and decided, in June 2016, to become a Developer. Sharon now works at Envato.
+  twitter: Sharon_AV
+  github: sharonvaughan
+
+- name: Caitlin Palmer-Bright
+  photo: caitlin-palmer-bright.jpg
+  position: Vice President
+  bio: |
+    After a few years as a park ranger and then a few more as a high school teacher, Caitlin has now made the transition into tech. She is currently an intern with Two Red Kites in Brisbane and recently started the [Brisbane Tech Newbies meet up group](https://www.meetup.com/Brisbane-Tech-Newbies/). When she’s not coding you will probably find her watching videos of puppies on youtube and eating as many snacks as she can find.
+  twitter: CaitlinPB
+  website: http://cpalmerbright.com
+
 - name: Toby Nieboer
   photo: toby-nieboer.jpg
   position: President, Vice President
