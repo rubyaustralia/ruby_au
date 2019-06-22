@@ -20,7 +20,7 @@ module ApplicationHelper
   def markdown_to_html(raw)
     return nil if raw.nil?
 
-    MarkdownHandler.render(raw).strip
+    MarkdownHandler.render(raw)
   end
 
   def previous
