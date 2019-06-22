@@ -1,9 +1,5 @@
-<h1>Sponsors</h1>
+<%= content_for :heading do %>
+  Sponsors
+<% end %>
 
-<div class="md:max-w-full">
-  <section id="welcome" class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
-    <article class="welcome">
-      <%= document_markdown_to_html "sponsors/#{params[:id]}" %>
-    </article>
-  </section>
-</div>
+<%= document_markdown_to_html "sponsors/#{params[:id]}" %>

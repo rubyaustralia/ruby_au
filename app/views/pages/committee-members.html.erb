@@ -1,4 +1,6 @@
-<h1>Committee Members</h1>
+<%= content_for :heading do %>
+  Committee Members
+<% end %>
 
 <div id="committee" class="flex flex-col md:flex-row flex-wrap">
   <% committee.each do |member| %>
