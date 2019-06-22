@@ -1,12 +1,10 @@
 require "rails_helper"
 
 RSpec.feature "Visitor signs up" do
-  before { skip }
-
   scenario "by navigating to the page" do
     visit sign_in_path
 
-    click_link 'Sign up'
+    click_link 'Join'
 
     expect(current_path).to eq sign_up_path
   end
