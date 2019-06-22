@@ -2,18 +2,26 @@
   <h1>Sign in</h1>
 </header>
 
-<%= form_for :session, url: session_path do |form| %>
-  <div class="text-field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
+<%= form_for :session, url: session_path, html: {class: 'standard'} do |form| %>
+  <div class="field">
+    <div class="label">
+      <%= form.label :email %>
+    </div>
+    <div class="input">
+      <%= form.text_field :email, type: 'email' %>
+    </div>
   </div>
 
-  <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+  <div class="field">
+    <div class="label">
+      <%= form.label :password %>
+    </div>
+    <div class="input">
+      <%= form.password_field :password %>
+    </div>
   </div>
 
-  <div class="submit-field">
+  <div class="buttons">
     <%= form.submit 'Sign in' %>
   </div>
 

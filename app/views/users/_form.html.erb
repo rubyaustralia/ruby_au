@@ -10,27 +10,47 @@
   </div>
 <% end %>
 
-<div class="text-field">
-  <%= form.label :email, class: 'required' %>
-  <%= form.text_field :email, type: 'email' %>
+<div class="field">
+  <div class="label">
+    <%= form.label :email, class: 'required' %>
+  </div>
+  <div class="input">
+    <%= form.text_field :email, type: 'email' %>
+  </div>
 </div>
 
-<div class="text-field">
-  <%= form.label :full_name, class: 'required' %>
-  <%= form.text_field :full_name %>
+<div class="field">
+  <div class="label">
+    <%= form.label :full_name, class: 'required' %>
+  </div>
+  <div class="input">
+    <%= form.text_field :full_name %>
+  </div>
 </div>
 
-<div class="text-field">
-  <%= form.label :preferred_name, class: 'required' %>
-  <%= form.text_field :preferred_name %>
+<div class="field">
+  <div class="label">
+    <%= form.label :preferred_name, class: 'required' %>
+  </div>
+  <div class="input">
+    <%= form.text_field :preferred_name %>
+  </div>
 </div>
 
-<div class="text-field">
-  <%= form.label :mailing_list, 'Mailing list' %>
-  <%= form.check_box :mailing_list %>
+<div class="field">
+  <div class="label">
+    <%= form.label :mailing_list, 'Mailing list' %>
+  </div>
+  <div class="input">
+    <%= form.check_box :mailing_list %>
+  </div>
 </div>
 
-<div class="text-field">
-  <%= form.label :visible, 'Visible to public' %>
-  <%= form.check_box :visible %>
+<div class="field">
+  <div class="label">
+    <%= form.label :visible, 'Visible to public' %>
+  </div>
+  <div class="input">
+    <%= form.check_box :visible %>
+  </div>
 </div>

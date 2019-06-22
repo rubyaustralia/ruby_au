@@ -10,6 +10,7 @@
 import "application.scss";
 import "committee.scss";
 import "sponsorship.scss";
+import "forms.scss";
 
 $(document).ready(() => {
   $('#mobile-menu-trigger').on('click', () => $('#mobile-menu').slideToggle());
