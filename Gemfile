@@ -52,6 +52,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.5'
+  gem 'rubocop'
   gem 'factory_bot_rails'
   gem 'capybara'
 end
@@ -65,7 +66,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen'
   gem 'spring-commands-rspec'
-  gem 'rubocop'
   gem 'guard', require: false
   gem 'guard-rspec', require: false
 end
