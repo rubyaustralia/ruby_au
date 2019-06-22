@@ -8,7 +8,9 @@ class MarkdownHandler
     def render(text)
       key = cache_key(text)
       Rails.cache.fetch key do
+        # rubocop:disable Rails/OutputSafety
         markdown.render(text).html_safe
+        # rubocop:enable Rails/OutputSafety
       end
     end
 

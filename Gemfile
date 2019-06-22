@@ -53,6 +53,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
   gem 'factory_bot_rails'
   gem 'capybara'
 end
