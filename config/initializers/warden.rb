@@ -9,8 +9,10 @@ Warden::Strategies.add(:password) do
 
   def authenticate!
     user = User.find_by(email: session['email'])
-    if user&.authenticate(session['password'])
+    if user&.authenticate(session['password']) && user&.email_confirmed?
       success! user
+    elsif user && !user.email_confirmed?
+      fail "You have not yet confirmed your email address."
     else
       fail "Invalid email or password"
     end

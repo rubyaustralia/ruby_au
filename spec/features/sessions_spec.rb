@@ -18,6 +18,19 @@ RSpec.describe 'Session' do
     expect(page).to_not have_content user.preferred_name
   end
 
+  scenario 'Unconfirmed account' do
+    user = FactoryBot.create(:user, email: 'littlebunnyfoofoo@gmail.com', email_confirmed: false)
+
+    visit sign_in_path
+    fill_in "session_email", with: user.email
+    fill_in "session_password", with: user.password
+    click_button 'Sign in'
+
+    expect(page).to have_content(
+      'You have not yet confirmed your email address.'
+    )
+  end
+
   scenario 'Invalid credentials' do
     visit sign_in_path
     fill_in "session_email", with: 'invalid@email.com'
