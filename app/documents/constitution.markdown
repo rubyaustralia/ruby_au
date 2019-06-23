@@ -22,7 +22,7 @@ In these Rules—
 
 **_associate member_** means a member referred to in rule 14(1);
 
-**_Chairperson_**, of a general meeting or committee meeting, means the person chairing the meeting as required under rule 46;
+**_Chairperson_**, of a general meeting or committee meeting, means the person chairing the meeting as required under rule 45;
 
 **_Committee_** means the Committee having management of the business of the Association;
 
@@ -118,7 +118,7 @@ Any person who supports the purposes of the Association is eligible for membersh
   2. to submit items of business for consideration at a general meeting; and
   3. to attend and be heard at general meetings; and
   4. to vote at a general meeting; and
-  5. to have access to the minutes of general meetings and other documents of the Association as provided under rule 75; and
+  5. to have access to the minutes of general meetings and other documents of the Association as provided under rule 72; and
   6. to inspect the register of members.
 
 2. A member is entitled to vote if—
@@ -453,7 +453,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
   2. a Vice-President; and
   3. a Secretary; and
   4. a Treasurer; and
-  5. four ordinary members (if any) elected under rule 53.
+  5. four ordinary members (if any) elected under rule 52.
 
 #### 44 General Duties
 
@@ -493,7 +493,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 2. The Secretary must—
   1. maintain the register of members in accordance with rule 18; and
-  2. keep custody of the common seal (if any) of the Association and, except for the financial records referred to in rule 70, subrule 3, all books, documents and securities of the Association in accordance with rules 72 and 75; and
+  2. keep custody of the common seal (if any) of the Association and, except for the financial records referred to in rule 67, subrule 3, all books, documents and securities of the Association in accordance with rules 69 and 72; and
   3. subject to the Act and these Rules, provide members with access to the register of members, the minutes of general meetings and other books and documents; and
   4. perform any other duty or function imposed on the Secretary by these Rules.
 
@@ -527,7 +527,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
   1. the first annual general meeting of the Association after its incorporation; or
   2. any subsequent annual general meeting of the Association, after the annual report and financial statements of the Association have been received.
 
-2. The Chairperson of the meeting must declare all positions on the Committee vacant and hold elections for those positions in accordance with rules 51 to 54.
+2. The Chairperson of the meeting must declare all positions on the Committee vacant and hold elections for those positions in accordance with rules 50 to 53.
 
 #### 50 Nominations
 
@@ -565,7 +565,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 #### 53 Term of office
 
-1. Subject to subrule 3 and rule 55, a committee member holds office until the positions of the Committee are declared vacant at the next annual general meeting or special general meeting whichever falls on the 12 month anniversary of the member’s appointment.
+1. Subject to subrule 3 and rule 54, a committee member holds office until the positions of the Committee are declared vacant at the next annual general meeting or special general meeting whichever falls on the 12 month anniversary of the member’s appointment.
 
 2. A committee member may be re-elected.
 
@@ -583,7 +583,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 2. A person ceases to be a committee member if they-
   1. ceases to be a member of the Association; or
-  2. fails to attend 3 consecutive committee meetings (other than special or urgent committee meetings) without leave of absence under rule 65; or
+  2. fails to attend 3 consecutive committee meetings (other than special or urgent committee meetings) without leave of absence under rule 64; or
   3. otherwise ceases to be a committee member by operation of section 78 of the Act.
 
 > ##### Note
@@ -593,12 +593,12 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 #### 55 Filling casual vacancies
 
 1. The Committee may appoint an eligible member of the Association to fill a position on the Committee that—
-  1. has become vacant under rule 55; or
+  1. has become vacant under rule 54; or
   2. was not filled by election at the last annual general meeting.
 
 2. If the position of Secretary becomes vacant, the Committee must appoint a member to the position within 14 days after the vacancy arises.
 
-3. Rule 55 also applies to any committee member appointed by the Committee to fill a vacant position under subrule 1 or 2.
+3. Rule 54 also applies to any committee member appointed by the Committee to fill a vacant position under subrule 1 or 2.
 
 4. The Committee may continue to act despite any vacancy in its membership.
 
@@ -624,7 +624,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 #### 58 Urgent meetings
 
-1. In cases of urgency, a meeting can be held without notice being given in accordance with rule 58 provided that as much notice as practicable is given to each committee member by the quickest means practicable.
+1. In cases of urgency, a meeting can be held without notice being given in accordance with rule 57 provided that as much notice as practicable is given to each committee member by the quickest means practicable.
 
 2. Any resolution made at the meeting must be passed by an absolute majority of the Committee.
 
@@ -644,7 +644,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 3. If a quorum is not present within 30 minutes after the notified commencement time of a committee meeting—
   1. in the case of a special meeting—the meeting lapses;
-  2. in any other case—the meeting must be adjourned to a date no later than 14 days after the adjournment and notice of the time, date and place to which the meeting is adjourned must be given in accordance with rule 58.
+  2. in any other case—the meeting must be adjourned to a date no later than 14 days after the adjournment and notice of the time, date and place to which the meeting is adjourned must be given in accordance with rule 59.
 
 #### 61 Voting
 
@@ -676,7 +676,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
   1. the names of the members in attendance at the meeting;
   2. the business considered at the meeting;
   3. any resolution on which a vote is taken and the result of the vote;
-  4. any material personal interest disclosed under rule 63.
+  4. any material personal interest disclosed under rule 62.
 
 #### 64 Leave of absence
 
