@@ -23,12 +23,14 @@ describe UsersController do
         }
       end
 
-      it 'saves the user and redirects to profile page' do
-        expect(request.env['warden']).to receive(:set_user)
+      it 'saves the user and redirects to home page' do
+        expect(request.env['warden']).to_not receive(:set_user)
+
         subject
+
         user = User.find_by(email: 'bruce@wayne.com')
         expect(user).to_not be_nil
-        expect(response).to redirect_to user_path(user)
+        expect(response).to redirect_to root_path
       end
     end
 

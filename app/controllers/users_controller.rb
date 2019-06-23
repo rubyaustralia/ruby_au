@@ -9,9 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      warden.set_user(@user)
-      flash[:notice] = 'Thank you for registering as a member!'
-      redirect_to user_path(@user)
+      redirect_to root_path, notice: 'Please confirm your account via the email we have just sent you.'
     else
       render :new
     end

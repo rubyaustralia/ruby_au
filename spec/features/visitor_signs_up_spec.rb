@@ -12,8 +12,8 @@ RSpec.feature "Visitor signs up" do
   scenario "with valid email and password" do
     sign_up_with "valid@example.com", "password"
 
-    expect(page).to have_content 'Thanks for registering as a member!'
-    expect(page).to have_button 'Sign out'
+    expect(page).to have_content 'Please confirm your account via the email we have just sent you.'
+    expect(page).to_not have_link('Sign out')
   end
 
   scenario "tries with invalid email" do
