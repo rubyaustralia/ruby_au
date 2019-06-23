@@ -2,11 +2,11 @@
   <h1>Update profile details</h1>
 </header>
 
-<%= form_for @user, url: profile_path do |form| %>
+<%= form_for @user, url: profile_path, html: {class: 'standard'} do |form| %>
   <%= render partial: '/users/form', object: form %>
 
-  <div class="submit-field">
-    <%= form.submit 'Update your details', class: 'btn' %>
+  <div class="buttons">
+    <%= form.submit 'Update your details' %>
   </div>
 
 <% end %>
