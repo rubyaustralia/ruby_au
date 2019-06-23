@@ -37,6 +37,12 @@ p, li {
   @apply leading-normal text-grey-darkest px-5;
 }
 
+.markdown {
+  blockquote {
+    @apply mx-8 my-3 p-2 bg-grey-lighter;
+  }
+}
+
 #meta {
   nav {
     header {

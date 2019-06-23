@@ -357,8 +357,9 @@ If the mediation process does not resolve the dispute, the parties may seek to r
   1. if there is insufficient time to deal with the business at hand; or
   2. to give the members more time to consider an item of business.
 
-  ##### Example
-  The members may wish to have more time to examine the financial statements submitted by the Committee at an annual general meeting.
+> ##### Example
+>
+> The members may wish to have more time to examine the financial statements submitted by the Committee at an annual general meeting.
 
 3. No business may be conducted on the resumption of an adjourned meeting other than the business that remained unfinished when the meeting was adjourned.
 
@@ -381,11 +382,12 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 1. A special resolution is passed if not less than three quarters of the members voting at a general meeting (whether in person or by proxy) vote in favour of the resolution.
 
-   ##### Note
-   In addition to certain matters specified in the Act, a special resolution is required—
-
-   1. to remove a committee member from office;
-   2. to alter these Rules, including changing the name or any of the purposes of the Association.
+> ##### Note
+>
+> In addition to certain matters specified in the Act, a special resolution is required—
+>
+> 1. to remove a committee member from office;
+> 2. to alter these Rules, including changing the name or any of the purposes of the Association.
 
 #### 39 Determining whether resolution carried
 
@@ -485,8 +487,9 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 1. The Secretary must perform any duty or function required under the Act to be performed by the secretary of an incorporated association.
 
-  ##### Example
-  Under the Act, the secretary of an incorporated association is responsible for lodging documents of the association with the Registrar.
+> ##### Example
+>
+> Under the Act, the secretary of an incorporated association is responsible for lodging documents of the association with the Registrar.
 
 2. The Secretary must—
   1. maintain the register of members in accordance with rule 18; and
@@ -583,8 +586,9 @@ If the mediation process does not resolve the dispute, the parties may seek to r
   2. fails to attend 3 consecutive committee meetings (other than special or urgent committee meetings) without leave of absence under rule 65; or
   3. otherwise ceases to be a committee member by operation of section 78 of the Act.
 
-  ##### Note
-  A Committee member may not hold the office of secretary if they do not reside in Australia.
+> ##### Note
+>
+> A Committee member may not hold the office of secretary if they do not reside in Australia.
 
 #### 55 Filling casual vacancies
 
@@ -755,8 +759,9 @@ The registered address of the Association is—
   2. the minutes of general meetings which are made available on the Association’s website;
   3. subject to subrule 2, the financial records, books, securities and any other relevant document of the Association, including minutes of Committee meetings.
 
-  ##### Note
-  See rule 18 for details of access to the register of members.
+> ##### Note
+>
+> See rule 18 for details of access to the register of members.
 
 2. The Committee may refuse to permit a member to inspect records of the Association that relate to confidential, personal, employment, commercial or legal matters or where to do so may be prejudicial to the interests of the Association.
 
