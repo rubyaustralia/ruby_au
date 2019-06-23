@@ -2,17 +2,17 @@ require "rails_helper"
 
 RSpec.feature "Visitor signs up" do
   scenario "by navigating to the page" do
-    visit sign_in_path
+    visit new_user_session_path
 
     click_link 'Join'
 
-    expect(current_path).to eq sign_up_path
+    expect(current_path).to eq new_user_registration_path
   end
 
   scenario "with valid email and password" do
     sign_up_with "valid@example.com", "password"
 
-    expect(page).to have_content 'Please confirm your account via the email we have just sent you.'
+    expect(page).to have_content 'A message with a confirmation link has been sent to your email address.'
     expect(page).to_not have_link('Sign out')
   end
 
@@ -29,11 +29,12 @@ RSpec.feature "Visitor signs up" do
   end
 
   def sign_up_with(email, password)
-    visit sign_up_path
-    fill_in "user_email", with: email
-    fill_in "user_password", with: password
-    fill_in "user_full_name", with: 'Jane Doe'
-    fill_in "user_preferred_name", with: 'Jane'
+    visit new_user_registration_path
+    fill_in "Email", with: email
+    fill_in "Password", with: password
+    fill_in "Confirm Password", with: password
+    fill_in "Full Name", with: 'Jane Doe'
+    fill_in "Preferred Name", with: 'Jane'
     click_button 'Sign up'
   end
 

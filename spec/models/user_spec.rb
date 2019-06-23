@@ -1,27 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User do
-  it "is valid by default" do
-    user = build(:user)
-    expect(user).to be_valid
-  end
-
-  it "is not valid without an email" do
-    user = User.new(email: nil)
-    expect(user).to_not be_valid
-  end
-
-  it "is not valid with a duplicate email" do
-    User.new(email: 'test@example.com')
-    user = User.new(email: 'test@example.com')
-    expect(user).to_not be_valid
-  end
-
-  it "is not valid without a password" do
-    user = User.new(password: nil)
-    expect(user).to_not be_valid
-  end
-
   describe ".visible_for_user" do
     it "returns the matching users profile or visible profiles" do
       current_user = FactoryBot.create(:user)
@@ -31,16 +10,6 @@ RSpec.describe User do
 
       expect(User.visible_for_user(current_user)).to match_array([*visible_profiles, current_user])
       expect(User.visible_for_user(current_user)).to_not match_array(invisible_profiles)
-    end
-  end
-
-  describe '.send_email_confirmation' do
-    let(:user) { FactoryBot.build(:user) }
-
-    it 'regenerates token and send confirmation email' do
-      expect(user).to receive(:regenerate_token)
-      expect { user.send_email_confirmation }
-        .to change { ActionMailer::Base.deliveries.count }.by(1)
     end
   end
 

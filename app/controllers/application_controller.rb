@@ -4,26 +4,15 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :signed_in?
-  helper_method :current_user
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name, :preferred_name])
+  end
 
   private
-
-  def signed_in?
-    warden&.authenticate && current_user
-  end
-
-  def warden
-    request.env['warden']
-  end
-
-  def current_user
-    warden.user
-  end
-
-  def authenticate!
-    warden.authenticate!
-  end
 
   def report_errors(object, success_message = nil)
     if object.errors.any?

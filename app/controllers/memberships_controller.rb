@@ -1,5 +1,5 @@
 class MembershipsController < ApplicationController
-  before_action :authenticate!
+  before_action :authenticate_user!
 
   def create
     current_user.create_membership

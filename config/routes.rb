@@ -1,16 +1,7 @@
 Rails.application.routes.draw do
-  resource :email_confirmation, only: [:show, :create]
-  resource :membership, only: [:create, :destroy]
-  resources :passwords, only: [:create, :new]
-  resource :profile, only: [:edit, :update, :show] do
-    resource :password, only: [:edit, :update]
-  end
-  resource :session, only: :create
-  resources :users, only: [:create, :show]
+  devise_for :users
 
-  get "/sign_up" => "users#new", as: "sign_up"
-  get "/sign_in" => "sessions#new", as: "sign_in"
-  delete "/sign_out" => "sessions#destroy", as: "sign_out"
+  resource :profile, only: [:edit, :update, :show]
 
   get '/forum', to: redirect('https://forum.ruby.org.au'),
     as: :forum

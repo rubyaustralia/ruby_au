@@ -7,9 +7,6 @@
   <ul>
     <li>
       <b>Email</b>: <%= @user.email %>
-      <% unless @user.email_confirmed? %>
-        / <%= link_to 'verify', email_confirmation_path, method: :post %>
-      <% end %>
     </li>
     <li><b>Full Name</b>: <%= @user.full_name %></li>
     <li>
@@ -17,17 +14,6 @@
     </li>
     <li>
       <b>Profile status</b>: <%= @user.visible ? 'public' : 'private' %>
-    </li>
-    <li>
-      <b>Membership</b>:
-      <% if @user.member? %>
-        member since <%= @user.joined_at.strftime('%B %Y') %>
-        / <%= link_to 'cancel membership', membership_path, method: :delete,
-            data: {confirm: 'Are you sure you want to cancel?'} %>
-      <% else %>
-        not a member
-        / <%= link_to 'join', membership_path, method: :post %>
-      <% end %>
     </li>
   </ul>
 </section>

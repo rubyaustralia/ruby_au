@@ -5,7 +5,7 @@ RSpec.describe "User edits profile details" do
     new_email = 'bigbunnyfoofoo@gmail.com'
 
     user = FactoryBot.create(:user, email: 'littlebunnyfoofoo@gmail.com')
-    login_as user
+    log_in_as user
     visit profile_path
 
     click_on 'Edit'
@@ -18,7 +18,18 @@ RSpec.describe "User edits profile details" do
     user.reload
     expect(page).to have_content 'Your details have been updated.'
     expect(user.preferred_name).to eq "Big Bunny"
-    expect(user.email).to eq new_email
+    expect(user.unconfirmed_email).to eq new_email
     expect(user.visible).to be_truthy
+  end
+
+  def log_in_as(user)
+    visit new_user_session_path
+
+    fill_in "Email",    with: user.email
+    fill_in "Password", with: user.password
+    click_button "Log in"
+
+    expect(page).to have_content("Signed in successfully")
+    expect(page).to have_content("Log out")
   end
 end

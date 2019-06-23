@@ -8,6 +8,7 @@ gem 'puma'
 
 gem 'bcrypt'
 gem 'decent_exposure'
+gem 'devise'
 gem 'inline_svg', '~> 1.3.1'
 gem 'jbuilder'
 gem 'pygmentize'

@@ -1,26 +1,14 @@
 class User < ApplicationRecord
+  # Include devise modules. Others available are:
+  # :lockable, :timeoutable, and :omniauthable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
+         :validatable, :confirmable, :trackable
+
   scope :visible_for_user, ->(user) { where(visible: true).or(where(id: user&.id)) }
   scope :members, -> { where('joined_at IS NOT NULL AND left_at is NULL') }
 
-  validates :email,
-            uniqueness: { case_sensitive: false },
-            email_format: true
   validates :preferred_name, presence: true
   validates :full_name, presence: true
-
-  before_save do
-    self.email_confirmed = false if email_changed?
-    true
-  end
-
-  has_secure_password
-  has_secure_token
-
-  def send_email_confirmation
-    regenerate_token
-    UserMailer.confirm_email(self).deliver_now
-    true
-  end
 
   def create_membership
     unless email_confirmed?

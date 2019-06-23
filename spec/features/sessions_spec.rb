@@ -4,39 +4,37 @@ RSpec.describe 'Session' do
   scenario 'Sign in and out' do
     user = FactoryBot.create(:user, email: 'littlebunnyfoofoo@gmail.com')
 
-    visit sign_in_path
-    fill_in "session_email", with: user.email
-    fill_in "session_password", with: user.password
-    click_button 'Sign in'
+    visit new_user_session_path
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button 'Log in'
 
-    expect(page).to have_content 'welcome to Ruby Australia'
-    expect(page).to have_content user.preferred_name
+    expect(page).to have_content 'Signed in successfully.'
 
-    click_link 'Sign out'
+    click_link 'Log out'
 
-    expect(page).to have_content 'You are now logged out.'
-    expect(page).to_not have_content user.preferred_name
+    expect(page).to have_content 'Signed out successfully.'
   end
 
   scenario 'Unconfirmed account' do
-    user = FactoryBot.create(:user, email: 'littlebunnyfoofoo@gmail.com', email_confirmed: false)
+    user = FactoryBot.create(:user, email: 'littlebunnyfoofoo@gmail.com', confirmed_at: nil)
 
-    visit sign_in_path
-    fill_in "session_email", with: user.email
-    fill_in "session_password", with: user.password
-    click_button 'Sign in'
+    visit new_user_session_path
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button 'Log in'
 
     expect(page).to have_content(
-      'You have not yet confirmed your email address.'
+      'You have to confirm your email address before continuing.'
     )
   end
 
   scenario 'Invalid credentials' do
-    visit sign_in_path
-    fill_in "session_email", with: 'invalid@email.com'
-    fill_in "session_password", with: 'randopassword'
-    click_button 'Sign in'
+    visit new_user_session_path
+    fill_in "Email", with: 'invalid@email.com'
+    fill_in "Password", with: 'randopassword'
+    click_button 'Log in'
 
-    expect(page).to have_content 'Invalid email or password'
+    expect(page).to have_content 'Invalid Email or password.'
   end
 end
