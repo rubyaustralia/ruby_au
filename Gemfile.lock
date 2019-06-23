@@ -48,6 +48,8 @@ GEM
     ast (2.4.0)
     bcrypt (3.1.12)
     bindex (0.5.0)
+    bugsnag (6.11.1)
+      concurrent-ruby (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
     capybara (3.7.1)
@@ -263,6 +265,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
+  bugsnag
   byebug
   capybara
   codeclimate-test-reporter
@@ -297,4 +300,4 @@ RUBY VERSION
    ruby 2.5.4p155
 
 BUNDLED WITH
-   2.0.1
+   2.0.2
