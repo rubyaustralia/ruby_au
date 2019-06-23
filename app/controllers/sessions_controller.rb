@@ -8,11 +8,11 @@ class SessionsController < ApplicationController
 
   def create
     warden.authenticate!(:password)
-    redirect_to profile_path, notice: "Logged in!"
+    redirect_to profile_path, notice: "You are now logged in."
   end
 
   def destroy
     warden.logout
-    redirect_to root_url, notice: "Logged out!"
+    redirect_to root_url, notice: "You are now logged out."
   end
 end

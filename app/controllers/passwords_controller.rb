@@ -15,7 +15,7 @@ class PasswordsController < ApplicationController
     @user = warden.user
 
     if @user.nil?
-      flash[:notice] = 'Link has expired'
+      flash[:notice] = 'The link to reset your password has expired.'
       redirect_to root_path
     end
   end
@@ -26,10 +26,10 @@ class PasswordsController < ApplicationController
     user_params = params.require(:change_password).permit(:password)
 
     if @user.update(user_params)
-      flash[:notice] = 'Your password was updated'
+      flash[:notice] = 'Your password has been updated.'
       redirect_to profile_path
     else
-      flash.now[:notice] = 'Could not update your password'
+      flash.now[:notice] = 'We were not able to update your password.'
       render :edit
     end
   end

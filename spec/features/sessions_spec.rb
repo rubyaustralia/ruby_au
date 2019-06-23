@@ -12,9 +12,9 @@ RSpec.describe 'Session' do
     expect(page).to have_content 'welcome to Ruby Australia'
     expect(page).to have_content user.preferred_name
 
-    click_button 'Sign out'
+    click_link 'Sign out'
 
-    expect(page).to have_content 'Logged out!'
+    expect(page).to have_content 'You are now logged out.'
     expect(page).to_not have_content user.preferred_name
   end
 

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save
       warden.set_user(@user)
-      flash[:notice] = 'Thanks for registering as a member!'
+      flash[:notice] = 'Thank you for registering as a member!'
       redirect_to user_path(@user)
     else
       render :new

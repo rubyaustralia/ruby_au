@@ -3,10 +3,10 @@ class EmailConfirmationsController < ApplicationController
     user = warden.authenticate(:token)
 
     if user.nil?
-      flash[:notice] = 'Could not confirm your email address. Invalid token.'
+      flash[:notice] = 'We could not confirm your email address - the supplied token is invalid.'
     else
       user.update email_confirmed: true
-      flash[:notice] = 'You email address is confirmed'
+      flash[:notice] = 'Your email address is now confirmed.'
     end
 
     redirect_to profile_path
@@ -15,7 +15,7 @@ class EmailConfirmationsController < ApplicationController
   def create
     authenticate!
 
-    flash[:notice] = 'The email was sent, please check your mailbox' if current_user.send_email_confirmation
+    flash[:notice] = 'A confirmation email has been sent. Please check your inbox.' if current_user.send_email_confirmation
 
     redirect_to profile_path
   end
