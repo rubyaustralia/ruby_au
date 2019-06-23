@@ -1,8 +1,5 @@
 FactoryBot.define do
   factory :user do
-    sequence :preferred_name do |n|
-      "preferred_name_#{n}"
-    end
     sequence :full_name do |n|
       "full_name_#{n}"
     end
@@ -12,6 +9,7 @@ FactoryBot.define do
 
     password { "password" }
     confirmed_at { 1.minute.ago }
+    address { '42 Wallaby Way, Sydney' }
 
     trait :visible do
       visible { true }

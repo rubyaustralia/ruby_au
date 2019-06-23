@@ -3,61 +3,65 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "standard"}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <div class="label">
-      <%= f.label :email %>
-    </div>
-    <div class="input">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-  </div>
+  <fieldset>
+    <legend>Authentication Details</legend>
 
-  <div class="field">
-    <div class="label">
-      <%= f.label :password %>
-    </div>
-    <div class="input">
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-    <% if @minimum_password_length %>
-      <div class="hint">
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <div class="field">
+      <div class="label">
+        <%= f.label :email %>
       </div>
-    <% end %>
-  </div>
+      <div class="input">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+    </div>
 
-  <div class="field">
-    <div class="label">
-      <%= f.label :password_confirmation %>
+    <div class="field">
+      <div class="label">
+        <%= f.label :password %>
+      </div>
+      <div class="input">
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+      <% if @minimum_password_length %>
+        <div class="hint">
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        </div>
+      <% end %>
     </div>
-    <div class="input">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-  </div>
 
-  <div class="field">
-    <div class="label">
-      <%= f.label :full_name, class: 'required' %>
+    <div class="field">
+      <div class="label">
+        <%= f.label :password_confirmation %>
+      </div>
+      <div class="input">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
     </div>
-    <div class="input">
-      <%= f.text_field :full_name %>
-    </div>
-    <div class="hint">
-      <em>We have a legal requirement to have all members' names.</em>
-    </div>
-  </div>
+  </fieldset>
 
-  <div class="field">
-    <div class="label">
-      <%= f.label :preferred_name, class: 'required' %>
+  <fieldset>
+    <legend>Membership Details</legend>
+
+    <p class="info">We have a <%= link_to_external "legal requirement", "https://www.consumer.vic.gov.au/clubs-and-fundraising/incorporated-associations/running-an-incorporated-association/membership" %> to have all members' names and addresses on file. Other members can request to review them, but we have a strict process around this.</p>
+
+    <div class="field">
+      <div class="label">
+        <%= f.label :full_name, class: 'required' %>
+      </div>
+      <div class="input">
+        <%= f.text_field :full_name %>
+      </div>
     </div>
-    <div class="input">
-      <%= f.text_field :preferred_name %>
+
+    <div class="field">
+      <div class="label">
+        <%= f.label :address, class: 'required' %>
+      </div>
+      <div class="input">
+        <%= f.text_area :address %>
+      </div>
     </div>
-    <div class="hint">
-      <em>This is how you'd prefer us to refer to you.</em>
-    </div>
-  </div>
+  </fieldset>
 
   <div class="buttons">
     <%= f.submit "Sign up" %>
