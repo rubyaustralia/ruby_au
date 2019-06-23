@@ -38,6 +38,10 @@ p, li {
 }
 
 .markdown {
+  h1 {
+    @apply bg-white text-pink-darkest;
+  }
+
   blockquote {
     @apply mx-8 my-3 p-2 bg-grey-lighter;
   }
