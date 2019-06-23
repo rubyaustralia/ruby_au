@@ -152,3 +152,28 @@ nav {
 .divider-4 {
   min-height: 70px;
 }
+
+.announcement {
+  @apply divider-1 text-white py-6 justify-center;
+
+  div {
+    @apply max-w-md mx-4 justify-center text-center;
+  }
+
+  a, p {
+    @apply inline-block border-pink border-2 text-pink font-mono no-underline font-bold bg-white py-2 px-5 shadow-md;
+
+    &:hover {
+      @apply bg-pink text-white;
+    }
+  }
+}
+
+#flash {
+  @apply max-w-md text-center my-8;
+
+  .flash {
+    @apply text-purple w-5/6 my-4 px-5 py-2 border-2 shadow bg-white border-purple font-mono;
+    transition: all 0.25s ease;
+  }
+}

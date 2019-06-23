@@ -83,15 +83,21 @@
 
   <section class="w-auto bg-transparent flex-auto flex-shrink flex-grow flex-col overflow-y-scroll">
     <div id="body" role="main" class="md:max-w-full pb-3">
-      <div id="flash">
-        <% flash.each do |key, value| %>
-          <div class="flash <%= key %>"><%= value %></div>
-        <% end %>
-      </div>
+      <% if content_for?(:heading) || !content_for?(:banner) %>
+        <h1><%= yield :heading %></h1>
+      <% end %>
 
-      <h1><%= yield :heading %></h1>
+      <% if content_for?(:banner) %>
+        <%= yield :banner %>
+      <% end %>
 
       <div class="md:max-w-full">
+        <div id="flash">
+          <% flash.each do |key, value| %>
+            <span class="flash <%= key %>"><%= value %></div>
+          <% end %>
+        </div>
+
         <% if complex_view? %>
           <%= yield %>
         <% else %>
