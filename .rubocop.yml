@@ -1,5 +1,9 @@
 inherit_from: .rubocop_todo.yml
 
+require:
+  - 'rubocop-performance'
+  - 'rubocop-rails'
+
 AllCops:
   Exclude:
     - 'db/**/*'
@@ -7,7 +11,7 @@ AllCops:
     - 'vendor/**/*'
     - 'node_modules/**/*'
   DisplayCopNames: true
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.6
 
 Metrics/LineLength:
   Enabled: false

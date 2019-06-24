@@ -6,7 +6,7 @@ before_script:
   - yarn install
   - bundle exec rails webpacker:compile
 script:
-  - bundle exec rspec
   - bundle exec rubocop
+  - bundle exec rspec
 services:
   - postgresql
