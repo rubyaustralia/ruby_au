@@ -1,6 +1,4 @@
-class ProfilesController < ApplicationController
-  before_action :authenticate_user!
-
+class My::DetailsController < My::ApplicationController
   def show
     @user = current_user
   end
@@ -14,7 +12,7 @@ class ProfilesController < ApplicationController
 
     if @user.update(user_params)
       flash[:notice] = 'Your details have been updated.'
-      redirect_to profile_path
+      redirect_to my_details_path
     else
       render :edit
     end
@@ -23,7 +21,6 @@ class ProfilesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :full_name, :preferred_name,
-                                 :mailing_list, :visible)
+    params.require(:user).permit(:email, :full_name, :address, :visible)
   end
 end

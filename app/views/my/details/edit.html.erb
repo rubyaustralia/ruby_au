@@ -1,0 +1,114 @@
+<%= content_for :heading do %>
+  Update Details
+<% end %>
+
+<h2>Update Membership</h2>
+
+<%= form_for @user, url: my_details_path, html: {class: 'standard'} do |form| %>
+  <% if @user.errors.any? && !password_errors?(@user) %>
+    <div id="error_explanation" class="ui visible error message">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this from being saved:</h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="label">
+      <%= form.label :email, class: 'required' %>
+    </div>
+    <div class="input">
+      <%= form.text_field :email, type: 'email' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
+      <%= form.label :full_name, class: 'required' %>
+    </div>
+    <div class="input">
+      <%= form.text_field :full_name %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
+      <%= form.label :address, class: 'required' %>
+    </div>
+    <div class="input">
+      <%= form.text_area :address %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
+      <%= form.label :visible, 'Visible on Members Registry' %>
+    </div>
+    <div class="input">
+      <%= form.check_box :visible %>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <%= form.submit 'Update my details' %>
+  </div>
+<% end %>
+
+<h2>Change Password</h2>
+
+<%= form_for(@user, url: my_password_path, html: { method: :put, class: "standard" }) do |f| %>
+  <% if @user.errors.any? && password_errors?(@user) %>
+    <div id="error_explanation" class="ui visible error message">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this from being saved:</h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="label">
+      <%= f.label :password, "New password" %>
+    </div>
+
+    <div class="input">
+      <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+    </div>
+
+    <div class="hint">
+      <em>(<%= User.password_length.min %> characters minimum)</em>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
+      <%= f.label :password_confirmation, "Confirm new password" %>
+    </div>
+    <div class="input">
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
+      <%= f.label :current_password %>
+    </div>
+    <div class="input">
+      <%= f.password_field :current_password, autocomplete: "current-password" %>
+    </div>
+    <div class="hint">
+      <em>(we need your current password to confirm your changes)</em>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <%= f.submit "Change my password" %>
+  </div>
+<% end %>

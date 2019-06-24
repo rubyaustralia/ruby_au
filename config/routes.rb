@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resource :profile, only: [:edit, :update, :show]
+  namespace :my do
+    resource :details, only: [:show, :edit, :update]
+    resource :password, only: [:update]
+  end
 
   get '/forum', to: redirect('https://forum.ruby.org.au'),
     as: :forum

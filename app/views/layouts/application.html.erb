@@ -41,7 +41,7 @@
       <div id="mobile-menu" class="w-full hidden md:visible flex-grow md:flex-col md:flex md:items-center md:w-auto bg-white text-pink">
         <div class="actions ml-2 md:ml-0 mb-6">
           <% if user_signed_in? %>
-            <%= link_to 'My Profile', profile_path %>
+            <%= link_to 'My Details', my_details_path %>
             <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
           <% else %>
             <%= link_to 'Join', new_user_registration_path %>

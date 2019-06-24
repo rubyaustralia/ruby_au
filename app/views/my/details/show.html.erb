@@ -1,19 +1,22 @@
-<section>
-  <header>
-    <h1><%= @user.preferred_name %>, welcome to Ruby Australia!</h1>
-  </header>
+<%= content_for(:heading) do %>
+  My Details
+<% end %>
 
-  <h2>Your details <small>/ <%= link_to 'Edit', edit_profile_path %></small></h2>
+<section>
+  <h2>
+    Membership Details
+    <small>( <%= link_to 'Edit', edit_my_details_path %> )</small>
+  </h2>
   <ul>
+    <li>
+      <b>Full Name</b>: <%= @user.full_name %>
+    </li>
     <li>
       <b>Email</b>: <%= @user.email %>
     </li>
-    <li><b>Full Name</b>: <%= @user.full_name %></li>
     <li>
-      <b>Mailing list</b>: <%= @user.mailing_list ? 'subscribed' : 'not subscribed' %>
-    </li>
-    <li>
-      <b>Profile status</b>: <%= @user.visible ? 'public' : 'private' %>
+      <b>Postal Address</b>:<br />
+      <%= escape_once(@user.address.to_s).gsub("\n", "<br />").html_safe %>
     </li>
   </ul>
 </section>
