@@ -9,6 +9,12 @@ class User < ApplicationRecord
   validates :full_name, presence: true
   validates :address, presence: true
 
+  def active_for_authentication?
+    super && deactivated_at.nil?
+  end
+
+  protected
+
   def after_confirmation
     return if memberships.current.any?
 

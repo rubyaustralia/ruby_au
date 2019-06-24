@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Visitor signs up" do
+RSpec.feature "Visitor signs up", type: :feature do
   scenario "by navigating to the page" do
     visit new_user_session_path
 

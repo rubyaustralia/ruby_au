@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe 'Session' do
+RSpec.describe 'Session', type: :feature do
   scenario 'Sign in and out' do
     user = FactoryBot.create(:user, email: 'littlebunnyfoofoo@gmail.com')
 

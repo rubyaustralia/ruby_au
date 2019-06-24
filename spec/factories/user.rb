@@ -17,5 +17,9 @@ FactoryBot.define do
     trait :invisible do
       visible { false }
     end
+
+    after(:create) do |user, _evaluator|
+      user.memberships.create joined_at: Time.current if user.confirmed_at
+    end
   end
 end

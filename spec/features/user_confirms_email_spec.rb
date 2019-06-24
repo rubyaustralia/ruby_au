@@ -1,13 +1,13 @@
 require "rails_helper"
 
-RSpec.feature "Visitor signs up" do
+RSpec.feature "User confirms account", type: :feature do
   let(:user) { create :user, confirmed_at: nil }
 
   before :each do
     ActionMailer::Base.deliveries.clear
   end
 
-  scenario "by navigating to the page" do
+  scenario "by clicking the link in an email" do
     user
 
     email = ActionMailer::Base.deliveries.detect do |mail|

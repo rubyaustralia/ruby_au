@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :my do
     resource :details, only: [:show, :edit, :update]
     resource :password, only: [:update]
+    resource :membership, only: [:destroy]
   end
 
   get '/forum', to: redirect('https://forum.ruby.org.au'),

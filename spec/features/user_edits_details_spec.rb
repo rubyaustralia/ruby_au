@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "User edits profile details" do
+RSpec.describe "User edits profile details", type: :feature do
   let(:user) { FactoryBot.create(:user, email: 'littlebunnyfoofoo@gmail.com') }
 
   before do
@@ -36,16 +36,5 @@ RSpec.describe "User edits profile details" do
     user.reload
     expect(page).to have_content 'Your password has been updated. You will need to sign in again to continue.'
     expect(user.valid_password?('newpassword')).to eq(true)
-  end
-
-  def log_in_as(user)
-    visit new_user_session_path
-
-    fill_in "Email",    with: user.email
-    fill_in "Password", with: user.password
-    click_button "Log in"
-
-    expect(page).to have_content("Signed in successfully")
-    expect(page).to have_content("Log out")
   end
 end
