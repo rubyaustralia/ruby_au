@@ -37,4 +37,15 @@ RSpec.describe 'Session', type: :feature do
 
     expect(page).to have_content 'Invalid Email or password.'
   end
+
+  scenario "Deactivated account" do
+    user = FactoryBot.create(:user, email: 'littlebunnyfoofoo@gmail.com', deactivated_at: 1.minute.ago)
+
+    visit new_user_session_path
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button 'Log in'
+
+    expect(page).to have_content("Your membership has been deactivated.")
+  end
 end

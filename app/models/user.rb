@@ -13,6 +13,10 @@ class User < ApplicationRecord
     super && deactivated_at.nil?
   end
 
+  def deactivated?
+    deactivated_at.present?
+  end
+
   protected
 
   def after_confirmation

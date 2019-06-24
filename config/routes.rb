@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resource :membership, only: [:destroy]
   end
 
+  resources :reactivations, only: [:new, :create]
+
   get '/forum', to: redirect('https://forum.ruby.org.au'),
     as: :forum
   get '/mailing-list', to: redirect('https://confirmsubscription.com/h/j/3DDD74A0ACC3DB22'),

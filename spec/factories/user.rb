@@ -19,7 +19,12 @@ FactoryBot.define do
     end
 
     after(:create) do |user, _evaluator|
-      user.memberships.create joined_at: Time.current if user.confirmed_at
+      if user.confirmed_at
+        user.memberships.create(
+          joined_at: Time.current,
+          left_at: (user.deactivated_at ? 1.minute.ago : nil)
+        )
+      end
     end
   end
 end
