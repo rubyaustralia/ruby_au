@@ -23,31 +23,23 @@
 
 <section>
   <header>
-    <h2>Resigning Your Membership</h2>
-  </header>
-
-  <p>If you wish to resign from being a member of Ruby Australia, please use the link below. You will be able to re-activate your membership at any point if you so desire.</p>
-
-  <p><%= link_to "Resign from Ruby Australia", my_membership_path, data: { confirm: "Are you sure? You will no longer be able to log in to this site, and your membership will cease immediately." }, method: :delete %></p>
-</section>
-
-<section>
-  <header>
-    <h2>What does it mean to be a member?</h2>
+    <h2>Membership Rights and Requirements</h2>
   </header>
 
   <p>
-    As a member, you can choose to do as much or as little as you want to, it's up to you!
+    As a member, you are free to participate in Ruby Australia events and platforms as much or as little as you wish. It is a requirement that through all of these interactions, though, you follow our <%= link_to "Code of Conduct", "/code-of-conduct" %>.
   </p>
 
   <p>
-    Membership gives you voting rights at general meetings and the ability to run for committee
-    positions. We will notify you by email of upcoming general meetings and you will have the
-    opportunity to add items to the meeting’s agenda.
+    Membership gives you voting rights at general meetings and the ability to run for committee positions. We will notify you by email of upcoming general meetings and you will have the opportunity to add items to the meeting’s agenda.
+  </p>
+
+  <p>
+    The association's <%= link_to "Constitution", "/constitution" %> has all the details on how it (and the committee) operates, and your full rights as a member.
   </p>
 </section>
 
-<section>
+<!-- <section>
   <header>
     <h2>Mailing List</h2>
   </header>
@@ -57,31 +49,14 @@
     the goings on of Ruby Australia as a whole. We are committed to being light on these and you can
     opt-out of them at any time.
   </p>
-</section>
+</section> -->
 
 <section>
   <header>
-    <h2>The legals</h2>
+    <h2>Resigning Your Membership</h2>
   </header>
 
-  <p>
-    The Constitution outlines how the Ruby Australia organisation runs, and covers in more detail
-    what your rights are as a member of the Ruby Australia organisation.
-    <a href='/constitution'>You can view the current version of the Ruby Australia
-      Constitution here</a>.
-  </p>
+  <p>If you wish to resign from being a member of Ruby Australia, please use the link below. You will be able to re-activate your membership at any point if you so desire.</p>
 
-  <p>
-    By law, members are entitled to inspect the member registry upon request. The purpose of this is
-    to empower the membership to coordinate with each other irrespective of the committee. We expect
-    this to be a very rare occurrence, with plenty of avenues for communication between members
-    outside of this allowance. Nonetheless, there are circumstances where we are obligated to share
-    your name and email with other members, and we suggest you choose your signup email with this in
-    mind.
-  </p>
-
-  <p>
-    Ruby Australia also has a <a href='/code-of-conduct'>Code of Conduct</a> which
-    members are required to follow.
-  </p>
+  <p><%= link_to "Resign from Ruby Australia", my_membership_path, data: { confirm: "Are you sure? You will no longer be able to log in to this site, and your membership will cease immediately." }, method: :delete %></p>
 </section>

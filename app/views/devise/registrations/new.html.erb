@@ -1,7 +1,13 @@
-<h2>Sign up</h2>
+<%= content_for :heading do %>
+  Register for Membership
+<% end %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "standard"}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+
+  <p class="info">To become a member of Ruby Australia we ask for both authentication details (to ensure only you can update your details later), and membership details (as required by law).</p>
+
+  <p class="info">While membership details can be accessed by other members (again, it's a legal requirement), this is only for purposes related directly to the association. Your details <em>will not</em> be shared with anyone else, and will not be used for spam, undesired marketing, etc.</p>
 
   <fieldset>
     <legend>Authentication Details</legend>

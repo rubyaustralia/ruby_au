@@ -43,6 +43,6 @@ RSpec.feature "Visitor signs up", type: :feature do
   end
 
   def expect_user_not_to_be_registered
-    expect(page).to have_content 'Sign up'
+    expect(page).to have_content 'Register for Membership'
   end
 end
