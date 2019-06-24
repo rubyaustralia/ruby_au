@@ -35,7 +35,7 @@ RSpec.feature "Visitor signs up" do
     fill_in "Confirm Password", with: password
     fill_in "Full Name", with: 'Jane Doe'
     fill_in "Postal Address", with: '1 High Street'
-    click_button 'Sign up'
+    click_button 'Register'
   end
 
   def expect_user_not_to_be_registered

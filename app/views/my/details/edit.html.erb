@@ -44,12 +44,15 @@
     </div>
   </div>
 
-  <div class="field">
+  <div class="field flipped">
+    <div class="input">
+      <%= form.check_box :visible %>
+    </div>
     <div class="label">
       <%= form.label :visible, 'Visible on Members Registry' %>
     </div>
-    <div class="input">
-      <%= form.check_box :visible %>
+    <div class="hint">
+      The registry is only viewable to other members on request, and with supervision from a committee member. Still, we can <%= link_to_external "retract your details", "https://www.consumer.vic.gov.au/clubs-and-fundraising/incorporated-associations/running-an-incorporated-association/membership#restricting-access-to-personal-information" %> if you wish.
     </div>
   </div>
 

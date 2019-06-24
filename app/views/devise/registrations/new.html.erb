@@ -42,7 +42,7 @@
   <fieldset>
     <legend>Membership Details</legend>
 
-    <p class="info">We have a <%= link_to_external "legal requirement", "https://www.consumer.vic.gov.au/clubs-and-fundraising/incorporated-associations/running-an-incorporated-association/membership" %> to have all members' names and addresses on file. Other members can request to review them, but we have a strict process around this.</p>
+    <p class="info">We have a <%= link_to_external "legal requirement", "https://www.consumer.vic.gov.au/clubs-and-fundraising/incorporated-associations/running-an-incorporated-association/membership" %> to have all members' names and addresses on file. Other members can request to review them, but we have a strict process around this to avoid abuse.</p>
 
     <div class="field">
       <div class="label">
@@ -61,13 +61,25 @@
         <%= f.text_area :address %>
       </div>
     </div>
+
+    <div class="field flipped">
+      <div class="input">
+        <%= f.check_box :visible %>
+      </div>
+      <div class="label">
+        <%= f.label :visible, 'Visible on Members Registry' %>
+      </div>
+      <div class="hint">
+        The registry is only viewable to other members on request, and with supervision from a committee member. Still, we can <%= link_to_external "retract your details", "https://www.consumer.vic.gov.au/clubs-and-fundraising/incorporated-associations/running-an-incorporated-association/membership#restricting-access-to-personal-information" %> if you wish.
+      </div>
+    </div>
   </fieldset>
 
   <p class="links">By signing up, you agree to
     the <%= link_to "Ruby Australia Terms and Conditions", "/terms-and-conditions" %>.</p>
 
   <div class="buttons">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Register" %>
   </div>
 <% end %>
 
