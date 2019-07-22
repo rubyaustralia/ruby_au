@@ -5,7 +5,7 @@ class EmailConfirmationsController < ApplicationController
     if user.nil?
       flash[:notice] = 'Could not confirm your email address. Invalid token.'
     else
-      user.update_attribute :email_confirmed, true
+      user.update email_confirmed: true
       flash[:notice] = 'You email address is confirmed'
     end
 
