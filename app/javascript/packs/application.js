@@ -7,9 +7,12 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+require("@rails/ujs").start()
+
 import "application.scss";
 import "committee.scss";
 import "sponsorship.scss";
+import "forms.scss";
 
 $(document).ready(() => {
   $('#mobile-menu-trigger').on('click', () => $('#mobile-menu').slideToggle());

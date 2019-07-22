@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  helpers:
+    label:
+      user:
+        address: 'Postal Address'
+        full_name: 'Full Name'
+        password_confirmation: 'Confirm Password'
+        preferred_name: 'Preferred Name'

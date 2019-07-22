@@ -1,46 +1,27 @@
 class User < ApplicationRecord
-  scope :visible_for_user, ->(user) { where(visible: true).or(where(id: user&.id)) }
-  scope :members, -> { where('joined_at IS NOT NULL AND left_at is NULL') }
+  # Include devise modules. Others available are:
+  # :lockable, :timeoutable, and :omniauthable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
+         :validatable, :confirmable, :trackable
 
-  validates :email,
-            uniqueness: { case_sensitive: false },
-            email_format: true
-  validates :preferred_name, presence: true
+  has_many :memberships, dependent: :destroy
+
   validates :full_name, presence: true
+  validates :address, presence: true
 
-  before_save do
-    self.email_confirmed = false if email_changed?
-    true
+  def active_for_authentication?
+    super && deactivated_at.nil?
   end
 
-  has_secure_password
-  has_secure_token
-
-  def send_email_confirmation
-    regenerate_token
-    UserMailer.confirm_email(self).deliver_now
-    true
+  def deactivated?
+    deactivated_at.present?
   end
 
-  def create_membership
-    unless email_confirmed?
-      errors.add :base, 'Please verify your email address'
-      return
-    end
+  protected
 
-    if member?
-      errors.add :base, 'You are already a member'
-      return
-    end
+  def after_confirmation
+    return if memberships.current.any?
 
-    update!(joined_at: Time.current, left_at: nil)
-  end
-
-  def cancel_membership
-    update!(left_at: Time.current)
-  end
-
-  def member?
-    joined_at.present? && left_at.nil?
+    memberships.create joined_at: Time.current
   end
 end

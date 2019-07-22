@@ -39,15 +39,13 @@
       <% end %>
 
       <div id="mobile-menu" class="w-full hidden md:visible flex-grow md:flex-col md:flex md:items-center md:w-auto bg-white text-pink">
-        <div class="actions ml-2 md:ml-0 mb-6 flex">
-          <% if false %>
-          <% if signed_in? %>
-            <%= link_to 'My profile', profile_path %>
-            <%= button_to 'Sign out', sign_out_path, { method: :delete, class: 'sign_out' } %>
+        <div class="actions ml-2 md:ml-0 mb-6">
+          <% if user_signed_in? %>
+            <%= link_to 'My Details', my_details_path %>
+            <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
           <% else %>
-            <%= link_to 'Login', sign_in_path %>
-            <%= link_to 'Join', sign_up_path %>
-          <% end %>
+            <%= link_to 'Join', new_user_registration_path %>
+            <%= link_to 'Log in', new_user_session_path %>
           <% end %>
         </div>
 
@@ -85,12 +83,31 @@
 
   <section class="w-auto bg-transparent flex-auto flex-shrink flex-grow flex-col overflow-y-scroll">
     <div id="body" role="main" class="md:max-w-full pb-3">
-      <div id="flash">
-        <% flash.each do |key, value| %>
-          <div class="flash <%= key %>"><%= value %></div>
+      <% if content_for?(:heading) || !content_for?(:banner) %>
+        <h1><%= yield :heading %></h1>
+      <% end %>
+
+      <% if content_for?(:banner) %>
+        <%= yield :banner %>
+      <% end %>
+
+      <div class="md:max-w-full">
+        <div id="flash">
+          <% flash.each do |key, value| %>
+            <p class="flash <%= key %>"><%= value %></p>
+          <% end %>
+        </div>
+
+        <% if complex_view? %>
+          <%= yield %>
+        <% else %>
+          <section id="welcome" class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
+            <section class="welcome">
+              <%= yield %>
+            </section>
+          </section>
         <% end %>
       </div>
-      <%= yield %>
     </div>
 
     <footer role="contentinfo" class="invisible hidden">

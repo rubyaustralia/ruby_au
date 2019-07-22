@@ -1,0 +1,92 @@
+<%= content_for :heading do %>
+  Register for Membership
+<% end %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "standard"}) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <p class="info">To become a member of Ruby Australia we ask for both authentication details (to ensure only you can update your details later), and membership details (as required by law).</p>
+
+  <p class="info">While membership details can be accessed by other members (again, it's a legal requirement), this is only for purposes related directly to the association. Your details <em>will not</em> be shared with anyone else, and will not be used for spam, undesired marketing, etc.</p>
+
+  <fieldset>
+    <legend>Authentication Details</legend>
+
+    <div class="field">
+      <div class="label">
+        <%= f.label :email %>
+      </div>
+      <div class="input">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">
+        <%= f.label :password %>
+      </div>
+      <div class="input">
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+      <% if @minimum_password_length %>
+        <div class="hint">
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <div class="label">
+        <%= f.label :password_confirmation %>
+      </div>
+      <div class="input">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Membership Details</legend>
+
+    <p class="info">We have a <%= link_to_external "legal requirement", "https://www.consumer.vic.gov.au/clubs-and-fundraising/incorporated-associations/running-an-incorporated-association/membership" %> to have all members' names and addresses on file. Other members can request to review them, but we have a strict process around this to avoid abuse.</p>
+
+    <div class="field">
+      <div class="label">
+        <%= f.label :full_name, class: 'required' %>
+      </div>
+      <div class="input">
+        <%= f.text_field :full_name %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">
+        <%= f.label :address, class: 'required' %>
+      </div>
+      <div class="input">
+        <%= f.text_area :address %>
+      </div>
+    </div>
+
+    <div class="field flipped">
+      <div class="input">
+        <%= f.check_box :visible %>
+      </div>
+      <div class="label">
+        <%= f.label :visible, 'Visible on Members Registry' %>
+      </div>
+      <div class="hint">
+        The registry is only viewable to other members on request, and with supervision from a committee member. Still, we can <%= link_to_external "retract your details", "https://www.consumer.vic.gov.au/clubs-and-fundraising/incorporated-associations/running-an-incorporated-association/membership#restricting-access-to-personal-information" %> if you wish.
+      </div>
+    </div>
+  </fieldset>
+
+  <p class="links">By signing up, you agree to
+    the <%= link_to "Ruby Australia Terms and Conditions", "/terms-and-conditions" %>.</p>
+
+  <div class="buttons">
+    <%= f.submit "Register" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

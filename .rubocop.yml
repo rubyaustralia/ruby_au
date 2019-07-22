@@ -29,6 +29,9 @@ Metrics/BlockLength:
 Style/StringLiterals:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
 

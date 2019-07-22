@@ -1,21 +1,23 @@
 require "rails_helper"
 
-RSpec.feature "Visitor signs up" do
-  before { skip }
-
+RSpec.feature "Visitor signs up", type: :feature do
   scenario "by navigating to the page" do
-    visit sign_in_path
+    visit new_user_session_path
 
-    click_link 'Sign up'
+    click_link 'Join'
 
-    expect(current_path).to eq sign_up_path
+    expect(current_path).to eq new_user_registration_path
   end
 
   scenario "with valid email and password" do
     sign_up_with "valid@example.com", "password"
 
-    expect(page).to have_content 'Thanks for registering as a member!'
-    expect(page).to have_button 'Sign out'
+    expect(page).to have_content 'A message with a confirmation link has been sent to your email address.'
+    expect(page).to_not have_link('Sign out')
+
+    user = User.find_by email: "valid@example.com"
+    expect(user).to be_present
+    expect(user.memberships.count).to be_zero
   end
 
   scenario "tries with invalid email" do
@@ -31,15 +33,16 @@ RSpec.feature "Visitor signs up" do
   end
 
   def sign_up_with(email, password)
-    visit sign_up_path
-    fill_in "user_email", with: email
-    fill_in "user_password", with: password
-    fill_in "user_full_name", with: 'Jane Doe'
-    fill_in "user_preferred_name", with: 'Jane'
-    click_button 'Sign up'
+    visit new_user_registration_path
+    fill_in "Email", with: email
+    fill_in "Password", with: password
+    fill_in "Confirm Password", with: password
+    fill_in "Full Name", with: 'Jane Doe'
+    fill_in "Postal Address", with: '1 High Street'
+    click_button 'Register'
   end
 
   def expect_user_not_to_be_registered
-    expect(page).to have_content 'Sign up'
+    expect(page).to have_content 'Register for Membership'
   end
 end

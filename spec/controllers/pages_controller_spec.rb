@@ -7,7 +7,7 @@ describe PagesController do
     before { get :show, params: { id: "committee-members" } }
 
     it "responds with success and render template" do
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to render_template("committee-members")
     end
   end
@@ -16,7 +16,7 @@ describe PagesController do
     before { get :show, params: { id: "committee-members.html" } }
 
     it "responds with success and render template" do
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to render_template("committee-members.html")
     end
   end

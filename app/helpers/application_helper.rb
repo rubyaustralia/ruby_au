@@ -23,6 +23,10 @@ module ApplicationHelper
     MarkdownHandler.render(raw)
   end
 
+  def password_errors?(user)
+    user.errors.keys.grep(/password/).any?
+  end
+
   def previous
     YAML.load_file Rails.root.join('config', 'data', 'previous.yml')
   end

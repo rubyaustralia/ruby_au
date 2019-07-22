@@ -1,0 +1,31 @@
+<%= content_for :heading do %>
+  Reactivation
+<% end %>
+
+<h2>Reactivate Membership</h2>
+
+<%= form_for(user, url: reactivations_path, html: {class: "standard"}) do |f| %>
+  <p class="info">To reactivate your membership, you must provide the email address and password you had used when you were previously a member.</p>
+
+  <div class="field">
+    <div class="label">
+      <%= f.label :email %>
+    </div>
+    <div class="input">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
+      <%= f.label :password %>
+    </div>
+    <div class="input">
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <%= f.submit "Reactivate" %>
+  </div>
+<% end %>

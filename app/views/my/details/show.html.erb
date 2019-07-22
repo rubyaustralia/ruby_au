@@ -1,0 +1,62 @@
+<%= content_for(:heading) do %>
+  My Details
+<% end %>
+
+<section>
+  <h2>
+    Membership Details
+    <small>( <%= link_to 'Edit', edit_my_details_path %> )</small>
+  </h2>
+  <ul>
+    <li>
+      <b>Full Name</b>: <%= @user.full_name %>
+    </li>
+    <li>
+      <b>Email</b>: <%= @user.email %>
+    </li>
+    <li>
+      <b>Postal Address</b>:<br />
+      <%= escape_once(@user.address.to_s).gsub("\n", "<br />").html_safe %>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <header>
+    <h2>Membership Rights and Requirements</h2>
+  </header>
+
+  <p>
+    As a member, you are free to participate in Ruby Australia events and platforms as much or as little as you wish. It is a requirement that through all of these interactions, though, you follow our <%= link_to "Code of Conduct", "/code-of-conduct" %>.
+  </p>
+
+  <p>
+    Membership gives you voting rights at general meetings and the ability to run for committee positions. We will notify you by email of upcoming general meetings and you will have the opportunity to add items to the meeting’s agenda.
+  </p>
+
+  <p>
+    The association's <%= link_to "Constitution", "/constitution" %> has all the details on how it (and the committee) operates, and your full rights as a member.
+  </p>
+</section>
+
+<!-- <section>
+  <header>
+    <h2>Mailing List</h2>
+  </header>
+  <p>
+    If you signed up to our mailing list, you'll be notified of any upcoming major Ruby Australia
+    events -- such as Rails Camps and RubyConf. We'll also very occassionally send updates regarding
+    the goings on of Ruby Australia as a whole. We are committed to being light on these and you can
+    opt-out of them at any time.
+  </p>
+</section> -->
+
+<section>
+  <header>
+    <h2>Resigning Your Membership</h2>
+  </header>
+
+  <p>If you wish to resign from being a member of Ruby Australia, please use the link below. You will be able to re-activate your membership at any point if you so desire.</p>
+
+  <p><%= link_to "Resign from Ruby Australia", my_membership_path, data: { confirm: "Are you sure? You will no longer be able to log in to this site, and your membership will cease immediately." }, method: :delete %></p>
+</section>
