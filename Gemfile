@@ -7,6 +7,7 @@ gem 'pg'
 gem 'puma'
 
 gem 'bcrypt'
+gem 'bugsnag'
 gem 'decent_exposure'
 gem 'devise'
 gem 'inline_svg', '~> 1.3.1'
