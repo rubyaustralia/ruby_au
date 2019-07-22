@@ -6,6 +6,8 @@ class Membership < ApplicationRecord
 
   scope :current, -> { where(left_at: nil) }
 
+  delegate :full_name, to: :user
+
   private
 
   def single_current_membership
