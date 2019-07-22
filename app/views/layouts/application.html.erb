@@ -76,6 +76,13 @@
             <li><%= link_to_external "Videos", videos_path %></li>
             <li><%= link_to_external 'Mailing List', "/mailing-list" %></li>
           </ul>
+
+          <% if current_committee? %>
+            <h3>Committee</h3>
+            <ul>
+              <li><%= link_to "Members", admin_memberships_path %></li>
+            </ul>
+          <% end %>
         </section>
       </div>
     </nav>

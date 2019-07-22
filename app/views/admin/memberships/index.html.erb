@@ -1,0 +1,13 @@
+<%= content_for :heading do %>
+  Current Memberships
+<% end %>
+
+<h2>Ruby Australia Members</h2>
+
+<article>
+  <ul>
+    <% members.each do |member| %>
+      <li><%= member.full_name %> (since <%= member.joined_at.to_date.to_s(:db) %>)</li>
+    <% end %>
+  </ul>
+</article>

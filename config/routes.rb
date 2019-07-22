@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   resources :reactivations, only: [:new, :create]
 
+  namespace :admin do
+    resources :memberships, only: [:index]
+  end
+
   get '/forum', to: redirect('https://forum.ruby.org.au'),
     as: :forum
   get '/mailing-list', to: redirect('https://confirmsubscription.com/h/j/3DDD74A0ACC3DB22'),
