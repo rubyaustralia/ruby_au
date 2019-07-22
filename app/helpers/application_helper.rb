@@ -4,32 +4,23 @@ module ApplicationHelper
   end
 
   def document_markdown_to_html(name)
-    input  = File.read Rails.root.join('app', 'documents', "#{name}.markdown")
-    markup = render inline: input
+    input = File.read Rails.root.join('app', 'documents', "#{name}.markdown")
 
-    markdown.render(markup).strip.html_safe
+    markdown_to_html render(inline: input)
   end
 
-  def link_to_external(name = nil, options = nil, html_options = {}, &block)
+  def link_to_external(name = nil, options = nil, html_options = {})
     svg = inline_svg "external-link.svg", height: 12
     html_options[:target] ||= "_blank"
     html_options[:rel]    ||= "external"
 
-    if block_given?
-      link_to capture(&block).strip.html_safe + svg, options, html_options
-    else
-      link_to (name + svg).html_safe, options, html_options
-    end
-  end
-
-  def markdown
-    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML.new)
+    link_to safe_join([name, svg]), options, html_options
   end
 
   def markdown_to_html(raw)
     return nil if raw.nil?
 
-    markdown.render(raw).strip.html_safe
+    MarkdownHandler.render(raw)
   end
 
   def previous

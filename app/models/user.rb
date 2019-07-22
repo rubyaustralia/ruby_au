@@ -33,11 +33,11 @@ class User < ApplicationRecord
       return
     end
 
-    update!(joined_at: Time.now, left_at: nil)
+    update!(joined_at: Time.current, left_at: nil)
   end
 
   def cancel_membership
-    update!(left_at: Time.now)
+    update!(left_at: Time.current)
   end
 
   def member?

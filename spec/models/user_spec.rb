@@ -55,7 +55,7 @@ RSpec.describe User do
     end
 
     context 'when user is already a member' do
-      let(:user) { User.new(email_confirmed: true, joined_at: Time.now) }
+      let(:user) { User.new(email_confirmed: true, joined_at: Time.current) }
       it 'returns with error' do
         expect(user).to_not receive(:update!)
         user.create_membership
@@ -91,13 +91,13 @@ RSpec.describe User do
 
     context 'joined user' do
       it 'is a member' do
-        expect(User.new(joined_at: Time.now).member?).to eq true
+        expect(User.new(joined_at: Time.current).member?).to eq true
       end
     end
 
     context 'joined and left' do
       it 'is a not member' do
-        expect(User.new(joined_at: Time.now, left_at: Time.now).member?).to eq false
+        expect(User.new(joined_at: Time.current, left_at: Time.current).member?).to eq false
       end
     end
   end
