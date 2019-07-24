@@ -15,7 +15,12 @@ RSpec.describe "Committee importing members", type: :feature do
       csv << ["Alex", "alex@ruby.test"]
       csv << ["Jules", "jules@ruby.test"]
       csv << ["Riley", "riley@ruby.test"]
+      csv << ["Lindsay", "lindsay@ruby.test"]
     end
+
+    FactoryBot.create(:user, email: "lindsay@ruby.test")
+    jules = FactoryBot.create(:user, email: "jules@ruby.test")
+    jules.memberships.current.update left_at: 1.minute.ago
 
     camp = Tempfile.new("camp")
     camp.write output
@@ -28,8 +33,9 @@ RSpec.describe "Committee importing members", type: :feature do
     click_button "Upload"
 
     expect(page).to have_content("Alex")
-    expect(page).to have_content("Jules")
     expect(page).to have_content("Riley")
+    expect(page).to_not have_content("Jules")
+    expect(page).to_not have_content("Lindsay")
 
     camp.close
 

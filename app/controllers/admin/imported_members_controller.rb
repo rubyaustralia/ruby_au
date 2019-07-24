@@ -16,6 +16,8 @@ class Admin::ImportedMembersController < Admin::ApplicationController
   end
 
   def add_import(row)
+    return if User.where(email: row[:email]).any?
+
     member = ImportedMember.find_or_initialize_by(email: row[:email])
     member.data_will_change!
 
