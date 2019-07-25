@@ -14,6 +14,13 @@ Rails.application.routes.draw do
     resources :imported_members, only: [:index, :create]
   end
 
+  resources :invitations, only: [] do
+    member do
+      get :unsubscribe, :new
+      post :create
+    end
+  end
+
   get '/forum', to: redirect('https://forum.ruby.org.au'),
     as: :forum
   get '/mailing-list', to: redirect('https://confirmsubscription.com/h/j/3DDD74A0ACC3DB22'),

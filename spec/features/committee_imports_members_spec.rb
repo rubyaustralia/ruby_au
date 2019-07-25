@@ -5,11 +5,9 @@ require "csv"
 RSpec.describe "Committee importing members", type: :feature do
   let(:user) { FactoryBot.create(:user, committee: true) }
 
-  before do
-    log_in_as user
-  end
-
   scenario "via CSV file" do
+    log_in_as user
+
     output = CSV.generate do |csv|
       csv << %w[name email]
       csv << ["Alex", "alex@ruby.test"]
@@ -56,5 +54,52 @@ RSpec.describe "Committee importing members", type: :feature do
     expect(page).to have_content("Dylan")
 
     conf.close
+  end
+
+  context "sending invitations" do
+    before :each do
+      clear_emails
+
+      FactoryBot.create :imported_member, email: "riley@ruby.test"
+      FactoryBot.create :imported_member, email: "dylan@ruby.test"
+
+      SendInvitations.call
+    end
+
+    scenario "accepts an invitation" do
+      self.current_email = emails_sent_to("riley@ruby.test").detect do |mail|
+        mail.subject == "Ruby Australia Membership"
+      end
+      expect(current_email).to be_present
+
+      current_email.click_link 'Confirm Membership'
+      fill_in "Password", with: "rubyrubyruby"
+      fill_in "Confirm Password", with: "rubyrubyruby"
+      fill_in "Postal Address", with: "1 High Street"
+      click_button "Register"
+
+      expect(page).to have_link("Log out")
+      expect(page).to have_content("Your membership to Ruby Australia has been confirmed")
+
+      user = User.find_by(email: "riley@ruby.test")
+      expect(user).to be_present
+      expect(user).to be_confirmed
+      expect(user.valid_password?("rubyrubyruby")).to eq(true)
+    end
+
+    scenario "declines an invitation" do
+      self.current_email = emails_sent_to("dylan@ruby.test").detect do |mail|
+        mail.subject == "Ruby Australia Membership"
+      end
+      expect(current_email).to be_present
+
+      current_email.click_link "unsubscribe"
+
+      user = User.find_by(email: "dylan@ruby.test")
+      expect(user).to_not be_present
+
+      member = ImportedMember.find_by(email: "dylan@ruby.test")
+      expect(member.unsubscribed_at).to be_present
+    end
   end
 end
