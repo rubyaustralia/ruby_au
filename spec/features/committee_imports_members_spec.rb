@@ -101,5 +101,18 @@ RSpec.describe "Committee importing members", type: :feature do
       member = ImportedMember.find_by(email: "dylan@ruby.test")
       expect(member.unsubscribed_at).to be_present
     end
+
+    scenario "respects unsubscribes" do
+      ImportedMember.find_each { |member| member.update contacted_at: nil }
+      ImportedMember.find_by(email: "dylan@ruby.test").update(
+        unsubscribed_at: Time.current
+      )
+
+      clear_emails
+      SendInvitations.call
+
+      expect(emails_sent_to("riley@ruby.test")).to_not be_empty
+      expect(emails_sent_to("dylan@ruby.test")).to be_empty
+    end
   end
 end

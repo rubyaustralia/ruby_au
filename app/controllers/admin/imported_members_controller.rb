@@ -22,6 +22,7 @@ class Admin::ImportedMembersController < Admin::ApplicationController
     member.data_will_change!
 
     member.full_name ||= row[:name]
+    member.contacted_at = nil
     member.data['sources'] ||= []
     member.data['sources'] << create_params[:source]
     member.save!
