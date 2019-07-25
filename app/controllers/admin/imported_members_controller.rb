@@ -1,5 +1,5 @@
 class Admin::ImportedMembersController < Admin::ApplicationController
-  expose(:members) { ImportedMember.uncontacted }
+  expose(:members) { ImportedMember.contactable }
 
   def create
     CSV.read(create_params[:file].tempfile, headers: true, header_converters: :symbol).each do |row|

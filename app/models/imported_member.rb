@@ -1,5 +1,7 @@
 class ImportedMember < ApplicationRecord
   scope :uncontacted, -> { where(contacted_at: nil) }
+  scope :subscribed,  -> { where(unsubscribed_at: nil) }
+  scope :contactable, -> { uncontacted.subscribed }
 
   validates :full_name, presence: true
   validates :email, presence: true
