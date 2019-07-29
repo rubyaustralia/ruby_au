@@ -10,6 +10,7 @@ FactoryBot.define do
     password { "password" }
     confirmed_at { 1.minute.ago }
     address { '42 Wallaby Way, Sydney' }
+    visible { true }
 
     trait :visible do
       visible { true }
