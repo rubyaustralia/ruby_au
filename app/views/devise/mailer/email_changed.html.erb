@@ -1,3 +1,7 @@
-<p>Hello <%= @resource.full_name %>!</p>
+<%= content_for :preheader do %>
+The email address on file for your membership has changed.
+<% end %>
 
-<p>This is just a quick email to let you know that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
+<h1>Hello <%= @resource.full_name %>!</h1>
+
+<p>This is just a quick email to let you know that your email is being changed to <strong><%= @resource.unconfirmed_email %></strong>. We expect you know this, because you made the change - but if it wasn't you, please let us know as soon as possible!</p>
