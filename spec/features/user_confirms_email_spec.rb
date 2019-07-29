@@ -16,7 +16,7 @@ RSpec.feature "User confirms account", type: :feature do
     end
     expect(email).to be_present
 
-    visit email.body.raw_source.match(/href="(?<url>.+?)">/)[:url]
+    visit email.body.raw_source.match(/href="(?<url>.+?)">Confirm my membership/)[:url]
 
     expect(page).to have_content("Your email address has been successfully confirmed.")
     expect(user.memberships.current.count).to eq(1)
