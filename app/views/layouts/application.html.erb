@@ -77,6 +77,14 @@
             <li><%= link_to_external 'Mailing List', "/mailing-list" %></li>
           </ul>
 
+          <% if user_signed_in? %>
+            <h3>Members</h3>
+            <ul>
+              <li><%= link_to "My Details", my_details_path %></li>
+              <li><%= link_to "Register Access", my_access_requests_path %></li>
+            </ul>
+          <% end %>
+
           <% if current_committee? %>
             <h3>Committee</h3>
             <ul>
