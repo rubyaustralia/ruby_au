@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :memberships, only: [:index]
+    resources :access_requests, except: [:destroy]
   end
 
   get '/forum', to: redirect('https://forum.ruby.org.au'),
