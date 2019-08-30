@@ -9,7 +9,7 @@ RSpec.describe "User edits profile details", type: :feature do
   end
 
   scenario "by filling in the form" do
-    user.update mailing_lists: {"RubyConf AU" => "true"}
+    user.update mailing_lists: { "RubyConf AU" => "true" }
     new_email = 'bigbunnyfoofoo@gmail.com'
     stub_request(
       :put, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
@@ -36,9 +36,11 @@ RSpec.describe "User edits profile details", type: :feature do
 
     visit email.body.raw_source.match(/href="(?<url>.+?)">Confirm my membership/)[:url]
 
-    expect(a_request(
-      :put, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
-    )).to have_been_made
+    expect(
+      a_request(
+        :put, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
+      )
+    ).to have_been_made
   end
 
   scenario "subscribing to a mailing list" do
@@ -54,13 +56,15 @@ RSpec.describe "User edits profile details", type: :feature do
     user.reload
     expect(user.mailing_lists["RailsGirls"]).to eq("true")
 
-    expect(a_request(
-      :post, "https://api.createsend.com/api/v3.2/subscribers/girls-key.json"
-    )).to have_been_made.once
+    expect(
+      a_request(
+        :post, "https://api.createsend.com/api/v3.2/subscribers/girls-key.json"
+      )
+    ).to have_been_made.once
   end
 
   scenario "unsubscribing from a mailing list" do
-    user.update mailing_lists: {"RailsGirls" => "true"}
+    user.update mailing_lists: { "RailsGirls" => "true" }
     stub_request(
       :post, "https://api.createsend.com/api/v3.2/subscribers/girls-key/unsubscribe.json"
     )
@@ -73,9 +77,11 @@ RSpec.describe "User edits profile details", type: :feature do
     user.reload
     expect(user.mailing_lists["RailsGirls"]).to eq("false")
 
-    expect(a_request(
-      :post, "https://api.createsend.com/api/v3.2/subscribers/girls-key/unsubscribe.json"
-    )).to have_been_made.once
+    expect(
+      a_request(
+        :post, "https://api.createsend.com/api/v3.2/subscribers/girls-key/unsubscribe.json"
+      )
+    ).to have_been_made.once
   end
 
   scenario "updating password" do

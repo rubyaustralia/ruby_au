@@ -29,29 +29,30 @@ class MailingList::Sync
   attr_reader :list
 
   def cm_auth
-    {api_key: ENV['CAMPAIGN_MONITOR_API_KEY']}
+    { api_key: ENV['CAMPAIGN_MONITOR_API_KEY'] }
   end
 
   def cm_list
     @cm_list ||= CreateSend::List.new cm_auth, list.api_id
   end
 
-  def each_subscriber(&block)
+  def each_subscriber
     page = 1
 
     loop do
       results = cm_list.active('', page)
-      results['Results'].each { |result| block.call result }
+      results['Results'].each { |result| yield result }
 
       break if results['PageNumber'] >= results['NumberOfPages']
+
       page += 1
     end
   end
 
   def mark_users_as_unsubscribed
     User.connection.execute <<~SQL
-    UPDATE USERS
-    SET mailing_lists = jsonb_set(mailing_lists::jsonb, '{#{list.name}}', '"false"')::json
+      UPDATE USERS
+      SET mailing_lists = jsonb_set(mailing_lists::jsonb, '{#{list.name}}', '"false"')::json
     SQL
   end
 end

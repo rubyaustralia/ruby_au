@@ -23,6 +23,6 @@ class MailingList::Unsubscribe
   attr_reader :user, :list
 
   def cm_auth
-    {api_key: ENV['CAMPAIGN_MONITOR_API_KEY']}
+    { api_key: ENV['CAMPAIGN_MONITOR_API_KEY'] }
   end
 end

@@ -28,10 +28,12 @@ class User < ApplicationRecord
   end
 
   def update_mailing_list_email_addresses
+    # rubocop:disable Rails/FindEach
     MailingList.all.each do |list|
       next unless mailing_lists[list.name] == "true"
 
       MailingList::Update.call self, list
     end
+    # rubocop:enable Rails/FindEach
   end
 end

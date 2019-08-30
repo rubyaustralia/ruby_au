@@ -12,9 +12,7 @@ class MailingList::Update
 
   def call
     CreateSend::Subscriber.new(
-      cm_auth,
-      list.api_id,
-      user.email_before_last_save
+      cm_auth, list.api_id, user.email_before_last_save
     ).update(
       user.email,
       user.full_name,
@@ -29,6 +27,6 @@ class MailingList::Update
   attr_reader :user, :list
 
   def cm_auth
-    {api_key: ENV['CAMPAIGN_MONITOR_API_KEY']}
+    { api_key: ENV['CAMPAIGN_MONITOR_API_KEY'] }
   end
 end

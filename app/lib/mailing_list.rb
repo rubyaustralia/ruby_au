@@ -5,7 +5,7 @@ class MailingList
     "Rails Camp",
     "RubyConf AU",
     "RailsGirls"
-  ]
+  ].freeze
 
   attr_reader :name
 
