@@ -20,11 +20,19 @@ class User < ApplicationRecord
   protected
 
   def after_confirmation
-    update_mailing_list_email_addresses if email_previously_changed?
+    if email_previously_changed?
+      update_mailing_list_email_addresses
+    else
+      set_up_mailing_list_flags
+    end
 
     return if memberships.current.any?
 
     memberships.create joined_at: Time.current
+  end
+
+  def set_up_mailing_list_flags
+    MailingList::Setup.call self
   end
 
   def update_mailing_list_email_addresses

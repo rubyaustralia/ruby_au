@@ -8,6 +8,28 @@ RSpec.feature "User confirms account", type: :feature do
   end
 
   scenario "by clicking the link in an email" do
+    stub_request(
+      :get, %r{https://api.createsend.com/api/v3.2/subscribers/camp-key.json}
+    ).and_return(
+      body: JSON.dump("State" => "Active"),
+      headers: { "Content-Type" => "application/json" }
+    )
+
+    stub_request(
+      :get, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
+    ).and_return(
+      body: JSON.dump("State" => "Unsubscribed"),
+      headers: { "Content-Type" => "application/json" }
+    )
+
+    stub_request(
+      :get, %r{https://api.createsend.com/api/v3.2/subscribers/girls-key.json}
+    ).and_return(
+      status: 400,
+      body: JSON.dump("Code" => 203, "Message" => "Subscriber not in list"),
+      headers: { "Content-Type" => "application/json" }
+    )
+
     user
 
     email = ActionMailer::Base.deliveries.detect do |mail|
@@ -19,6 +41,11 @@ RSpec.feature "User confirms account", type: :feature do
     visit email.body.raw_source.match(/href="(?<url>.+?)">Confirm my membership/)[:url]
 
     expect(page).to have_content("Your email address has been successfully confirmed.")
+
+    user.reload
     expect(user.memberships.current.count).to eq(1)
+    expect(user.mailing_lists["Rails Camp"]).to eq("true")
+    expect(user.mailing_lists["RubyConf AU"]).to eq("false")
+    expect(user.mailing_lists["RailsGirls"]).to eq("false")
   end
 end
