@@ -41,6 +41,19 @@ RSpec.describe "Committee synchonising mailing lists", type: :feature do
       headers: { 'Content-Type' => 'application/json' }
     )
 
+    stub_request(
+      :get, %r{https://api.createsend.com/api/v3.2/lists/camp-key/active.json}
+    ).to_return(
+      body: JSON.dump(
+        {
+          'Results' => [],
+          'PageNumber' => 1,
+          'NumberOfPages' => 1
+        }
+      ),
+      headers: { 'Content-Type' => 'application/json' }
+    )
+
     MailingList::Sync.call
 
     alex.reload
