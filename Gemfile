@@ -8,6 +8,7 @@ gem 'puma'
 
 gem 'bcrypt'
 gem 'bugsnag'
+gem 'createsend'
 gem 'decent_exposure'
 gem 'devise'
 gem 'inline_svg', '~> 1.3.1'
@@ -57,6 +58,7 @@ group :test do
   gem 'rails-controller-testing'
   gem "codeclimate-test-reporter", require: nil
   gem "simplecov", require: nil
+  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

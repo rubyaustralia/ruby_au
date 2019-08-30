@@ -20,8 +20,20 @@ class User < ApplicationRecord
   protected
 
   def after_confirmation
+    update_mailing_list_email_addresses if email_previously_changed?
+
     return if memberships.current.any?
 
     memberships.create joined_at: Time.current
+  end
+
+  def update_mailing_list_email_addresses
+    # rubocop:disable Rails/FindEach
+    MailingList.all.each do |list|
+      next unless mailing_lists[list.name] == "true"
+
+      MailingList::Update.call self, list
+    end
+    # rubocop:enable Rails/FindEach
   end
 end
