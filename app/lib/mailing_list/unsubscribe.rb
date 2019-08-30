@@ -11,6 +11,8 @@ class MailingList::Unsubscribe
   end
 
   def call
+    return if Rails.env.development? && cm_auth[:api_key].blank?
+
     CreateSend::Subscriber.new(
       cm_auth,
       list.api_id,
