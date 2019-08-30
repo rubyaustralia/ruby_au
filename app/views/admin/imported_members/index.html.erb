@@ -1,0 +1,42 @@
+<%= content_for :heading do %>
+  Imported Members
+<% end %>
+
+<h2>Imported Members</h2>
+
+<%= form_tag admin_imported_members_path, method: :post, multipart: true, class: "standard" do %>
+  <div class="field">
+    <div class="label">
+      <%= label_tag :source, "Source", class: "required" %>
+    </div>
+    <div class="input">
+      <%= text_field_tag :source %>
+    </div>
+    <div class="hint">
+      When we send an email to confirm the membership, we use this text to indicate where the details were sourced from. An example: "Rails Camp 25".
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
+      <%= label_tag :file, "CSV File", class: "required" %>
+    </div>
+    <div class="input">
+      <%= file_field_tag :file %>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <%= submit_tag "Upload" %>
+  </div>
+<% end %>
+
+<article>
+  <p>These people are not yet confirmed Ruby Australia members. Their details have been imported from an event attendee list.</p>
+
+  <ul>
+    <% members.each do |member| %>
+      <li><%= member.full_name %></li>
+    <% end %>
+  </ul>
+</article>

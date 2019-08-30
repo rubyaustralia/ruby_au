@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'no-reply@ruby.org.au'
+  default from: 'online@ruby.org.au'
   layout 'mailer'
 end

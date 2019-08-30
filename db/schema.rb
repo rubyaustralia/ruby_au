@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_041810) do
+ActiveRecord::Schema.define(version: 2019_07_25_061631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "imported_members", force: :cascade do |t|
+    t.string "full_name", null: false
+    t.string "email", null: false
+    t.json "data", default: {}, null: false
+    t.datetime "contacted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "token", null: false
+    t.datetime "unsubscribed_at"
+    t.index ["contacted_at"], name: "index_imported_members_on_contacted_at"
+    t.index ["email"], name: "index_imported_members_on_email"
+    t.index ["token"], name: "index_imported_members_on_token", unique: true
+    t.index ["unsubscribed_at"], name: "index_imported_members_on_unsubscribed_at"
+  end
 
   create_table "memberships", force: :cascade do |t|
     t.bigint "user_id", null: false

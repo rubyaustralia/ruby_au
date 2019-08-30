@@ -11,6 +11,14 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :memberships, only: [:index]
+    resources :imported_members, only: [:index, :create]
+  end
+
+  resources :invitations, only: [] do
+    member do
+      get :unsubscribe, :new
+      post :create
+    end
   end
 
   get '/forum', to: redirect('https://forum.ruby.org.au'),
