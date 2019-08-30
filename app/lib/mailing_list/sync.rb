@@ -19,7 +19,7 @@ class MailingList::Sync
       next if user.nil?
 
       user.mailing_lists_will_change!
-      user.mailing_lists[list.name] = true
+      user.mailing_lists[list.name] = "true"
       user.save
     end
   end
@@ -51,7 +51,7 @@ class MailingList::Sync
   def mark_users_as_unsubscribed
     User.connection.execute <<~SQL
     UPDATE USERS
-    SET mailing_lists = jsonb_set(mailing_lists::jsonb, '{#{list.name}}', 'false')::json
+    SET mailing_lists = jsonb_set(mailing_lists::jsonb, '{#{list.name}}', '"false"')::json
     SQL
   end
 end

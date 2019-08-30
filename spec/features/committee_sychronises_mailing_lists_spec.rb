@@ -9,7 +9,7 @@ RSpec.describe "Committee synchonising mailing lists", type: :feature do
 
   it "updates user flags" do
     alex = FactoryBot.create(
-      :user, mailing_lists: {'RubyConf AU' => false, 'RailsGirls' => true}
+      :user, mailing_lists: {'RubyConf AU' => "false", 'RailsGirls' => "true"}
     )
     jules = FactoryBot.create :user
 
@@ -46,9 +46,9 @@ RSpec.describe "Committee synchonising mailing lists", type: :feature do
     alex.reload
     jules.reload
 
-    expect(alex.mailing_lists['RubyConf AU']).to eq(true)
-    expect(alex.mailing_lists['RailsGirls']).to eq(false)
-    expect(jules.mailing_lists['RailsGirls']).to eq(true)
-    expect(jules.mailing_lists['RubyConf AU']).to eq(false)
+    expect(alex.mailing_lists['RubyConf AU']).to eq("true")
+    expect(alex.mailing_lists['RailsGirls']).to eq("false")
+    expect(jules.mailing_lists['RailsGirls']).to eq("true")
+    expect(jules.mailing_lists['RubyConf AU']).to eq("false")
   end
 end
