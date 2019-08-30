@@ -1,0 +1,53 @@
+<%= form_for [:admin, access_request], html: {class: "standard"} do |form| %>
+  <% if access_request.errors.any? %>
+    <div id="error_explanation" class="ui visible error message">
+      <h2><%= pluralize(access_request.errors.count, "error") %> prohibited this from being saved:</h2>
+
+      <ul>
+        <% access_request.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="label">
+      <%= form.label :name, class: "required" %>
+    </div>
+    <div class="input">
+      <%= form.text_field :name %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
+      <%= form.label :reason %>
+    </div>
+    <div class="input">
+      <%= form.text_area :reason %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
+      <%= form.label :requested_on %>
+    </div>
+    <div class="input">
+      <%= form.date_select :requested_on %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
+      <%= form.label :viewed_on %>
+    </div>
+    <div class="input">
+      <%= form.date_select :viewed_on, include_blank: true %>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <%= form.submit "Save" %>
+  </div>
+<% end %>

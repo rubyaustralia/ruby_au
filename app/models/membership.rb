@@ -5,8 +5,9 @@ class Membership < ApplicationRecord
   validate :single_current_membership
 
   scope :current, -> { where(left_at: nil) }
+  scope :visible, -> { joins(:user).where(users: { visible: true }) }
 
-  delegate :full_name, to: :user
+  delegate :full_name, :email, :address, to: :user
 
   private
 
