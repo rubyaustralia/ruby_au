@@ -1,7 +1,7 @@
 name: Membership Register Access Policy
 key: register-access
 status: published
-version: 2019-07-29
+version: "2019-07-29"
 ---
 ## Why We Need It
 
