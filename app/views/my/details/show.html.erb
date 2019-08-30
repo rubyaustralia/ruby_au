@@ -15,6 +15,9 @@
       <b>Email</b>: <%= @user.email %>
     </li>
     <li>
+      <b>Mailing Lists</b>: <%= subscribed_mailing_lists(@user) %>
+    </li>
+    <li>
       <b>Postal Address</b>:<br />
       <%= escape_once(@user.address.to_s).gsub("\n", "<br />").html_safe %>
     </li>
