@@ -10,15 +10,11 @@ class MailingList
   attr_reader :name
 
   def self.all
-    LISTS.collect { |name| new name }
+    @all ||= LISTS.collect { |name| new name }
   end
 
   def initialize(name)
     @name = name
-  end
-
-  def ===(other)
-    other.name == name
   end
 
   def api_id

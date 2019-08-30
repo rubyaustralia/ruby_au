@@ -9,7 +9,11 @@ RSpec.describe "User edits profile details", type: :feature do
   end
 
   scenario "by filling in the form" do
+    user.update mailing_lists: {"RubyConf AU" => "true"}
     new_email = 'bigbunnyfoofoo@gmail.com'
+    stub_request(
+      :put, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
+    )
 
     click_on 'Edit'
 
@@ -23,6 +27,18 @@ RSpec.describe "User edits profile details", type: :feature do
     expect(user.full_name).to eq "Big Bunny"
     expect(user.unconfirmed_email).to eq new_email
     expect(user.visible).to eq(true)
+
+    email = ActionMailer::Base.deliveries.detect do |mail|
+      mail.to.include?(user.unconfirmed_email) &&
+        mail.subject == "Confirmation instructions"
+    end
+    expect(email).to be_present
+
+    visit email.body.raw_source.match(/href="(?<url>.+?)">Confirm my membership/)[:url]
+
+    expect(a_request(
+      :put, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
+    )).to have_been_made
   end
 
   scenario "subscribing to a mailing list" do
