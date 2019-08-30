@@ -1,0 +1,11 @@
+<%= content_for :heading do %>
+  <%= policy.context['name'] %>
+<% end %>
+
+<div class="markdown">
+  <h1>Ruby Australia's <%= policy.context['name'] %></h1>
+
+  <p>Version: <strong><%= policy.context['version'] %></strong></p>
+
+  <%= markdown_to_html policy.document %>
+</div>
