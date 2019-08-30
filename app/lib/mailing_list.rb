@@ -2,7 +2,7 @@
 
 class MailingList
   LISTS = [
-    # "Rails Camp",
+    "Rails Camp",
     "RubyConf AU",
     "RailsGirls"
   ]
