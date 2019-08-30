@@ -1,0 +1,21 @@
+<p>Hi <%= @imported_member.full_name %>,</p>
+
+<p><strong>If you're not sure what Ruby Australia is, please read the details below!</strong> We at Ruby Australia are in the process of validating our records of members, and we're keen to confirm people's interest in being a member. From our records, you have attended the following events, which have given you implicit membership of Ruby Australia:</p>
+
+<ul>
+  <% @imported_member.data["sources"].each do |source| %>
+    <li><%= source %></li>
+  <% end %>
+</ul>
+
+<p>If you wish to continue being a member of Ruby Australia (it doesn't cost anything!), we need to confirm your details for our records:</p>
+
+<p class="confirm"><%= link_to "Confirm Membership", invitation_url(@imported_member.token) %></p>
+
+<p>Ruby Australia is the organisation behind many Ruby-related events across Australia, including Rails Camps, RubyConf AU, RailsGirls, and monthly meets in many cities. We provide financial and logistical support to event organisers, and seek to grow and improve the Ruby community across the country. As a confirmed member, you get to attend and vote at our general meetings, and be nominated (by yourself or others) for a position in the association's committee.</p>
+
+<p>You do not need to be a member of Ruby Australia to attend any of our events, though by attending you are agreeing to behave in accordance with our <%= link_to "Code of Conduct", page_url("code-of-conduct") %>. If you do not wish to receive any of these membership invitation emails for future events you may attend, you can <%= link_to "unsubscribe", unsubscribe_invitation_url(@imported_member.token) %>. If you change your mind at any point, you're able to <%= link_to "sign up as a member", new_user_registration_url %> on our website without needing to attend any events.</p>
+
+<p>Take care and have fun,</p>
+
+<p>-- <br />The Ruby Australia Committee</p>

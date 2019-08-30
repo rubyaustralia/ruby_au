@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/cgunther/capybara-email.git
+  revision: d97947d5e705e537f9875a9ec44c0de3457be6ba
+  branch: capybara-3.17-click_on-disabled
+  specs:
+    capybara-email (3.0.1)
+      capybara (>= 2.4, < 4.0)
+      mail
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -140,7 +149,7 @@ GEM
     multi_json (1.13.1)
     nenv (0.3.0)
     nio4r (2.3.1)
-    nokogiri (1.10.3)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -295,6 +304,7 @@ DEPENDENCIES
   bugsnag
   byebug
   capybara
+  capybara-email!
   codeclimate-test-reporter
   decent_exposure
   devise

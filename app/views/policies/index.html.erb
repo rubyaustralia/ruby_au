@@ -1,0 +1,13 @@
+<%= content_for :heading do %>
+  Policies
+<% end %>
+
+<h2>Published Policies</h2>
+
+<ul>
+  <% policies.each do |policy| %>
+    <li><%= link_to policy.context['name'], policy_path(policy.context['key']) %></li>
+  <% end %>
+</ul>
+
+<p>All published policies are listed above. Draft policies can be found (or proposed) in the GitHub repository.</p>

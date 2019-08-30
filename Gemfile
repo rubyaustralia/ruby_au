@@ -51,6 +51,9 @@ group :development do
 end
 
 group :test do
+  gem 'capybara-email',
+      git: 'https://github.com/cgunther/capybara-email.git',
+      branch: 'capybara-3.17-click_on-disabled'
   gem 'rails-controller-testing'
   gem "codeclimate-test-reporter", require: nil
   gem "simplecov", require: nil

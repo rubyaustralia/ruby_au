@@ -13,6 +13,14 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :memberships, only: [:index]
     resources :access_requests, except: [:destroy]
+    resources :imported_members, only: [:index, :create]
+  end
+
+  resources :invitations, only: [] do
+    member do
+      get :unsubscribe, :new
+      post :create
+    end
   end
 
   get '/forum', to: redirect('https://forum.ruby.org.au'),
@@ -29,6 +37,8 @@ Rails.application.routes.draw do
 
   root to: 'pages#show', defaults: { id: 'welcome' }
 
+  get "/policies" => "policies#index", as: :policies
+  get "/policies/*id" => "policies#show", as: :policy
   get "/sponsors/*id" => 'sponsors#show'
   get "/*id" => 'pages#show', as: :page, format: false,
     constraints: RootRouteConstraints
