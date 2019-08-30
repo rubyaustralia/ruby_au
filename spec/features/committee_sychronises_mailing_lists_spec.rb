@@ -2,11 +2,6 @@
 require "rails_helper"
 
 RSpec.describe "Committee synchonising mailing lists", type: :feature do
-  before do
-    ENV["RUBYCONF_AU_LIST_ID"] ||= "conf-key"
-    ENV["RAILSGIRLS_LIST_ID"]  ||= "girls-key"
-  end
-
   it "updates user flags" do
     alex = FactoryBot.create(
       :user, mailing_lists: {'RubyConf AU' => "false", 'RailsGirls' => "true"}

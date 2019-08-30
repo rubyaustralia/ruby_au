@@ -17,6 +17,10 @@ class MailingList
     @name = name
   end
 
+  def ===(other)
+    other.name == name
+  end
+
   def api_id
     ENV["#{normalised_name.upcase}_LIST_ID"]
   end

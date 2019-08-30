@@ -12,6 +12,8 @@ class My::DetailsController < My::ApplicationController
     @user.mailing_lists_will_change!
 
     if @user.update(user_params)
+      MailingList::Apply.call(@user)
+
       flash[:notice] = 'Your details have been updated.'
       redirect_to my_details_path
     else
