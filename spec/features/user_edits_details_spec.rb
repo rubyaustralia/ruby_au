@@ -25,6 +25,16 @@ RSpec.describe "User edits profile details", type: :feature do
     expect(user.visible).to eq(true)
   end
 
+  scenario "subscribing to a mailing list" do
+    click_on "Edit"
+
+    check "RailsGirls"
+    click_button "Update my details"
+
+    user.reload
+    expect(user.mailing_lists["RailsGirls"]).to eq("true")
+  end
+
   scenario "updating password" do
     click_on 'Edit'
 

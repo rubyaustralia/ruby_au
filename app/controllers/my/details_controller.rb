@@ -9,6 +9,7 @@ class My::DetailsController < My::ApplicationController
 
   def update
     @user = current_user
+    @user.mailing_lists_will_change!
 
     if @user.update(user_params)
       flash[:notice] = 'Your details have been updated.'
@@ -21,6 +22,9 @@ class My::DetailsController < My::ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :full_name, :address, :visible)
+    params.require(:user).permit(\
+      :email, :full_name, :address, :visible,
+      mailing_lists: MailingList.all.collect(&:name)
+    )
   end
 end

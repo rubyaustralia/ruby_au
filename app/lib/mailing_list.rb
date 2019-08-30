@@ -18,12 +18,10 @@ class MailingList
   end
 
   def api_id
-    ENV["#{normalised_name}_LIST_ID"]
+    ENV["#{normalised_name.upcase}_LIST_ID"]
   end
 
-  private
-
   def normalised_name
-    name.parameterize(separator: '_').upcase
+    name.parameterize(separator: '_')
   end
 end

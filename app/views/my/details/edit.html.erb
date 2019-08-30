@@ -56,6 +56,22 @@
     </div>
   </div>
 
+  <fieldset>
+    <legend>Mailing Lists</legend>
+
+    <% MailingList.all.each do |list| %>
+      <div class="field flipped">
+        <div class="input">
+          <%= hidden_field_tag "user[mailing_lists][#{list.name}]", "false" %>
+          <%= check_box_tag "user[mailing_lists][#{list.name}]", "true", @user.mailing_lists[list.name], id: list.normalised_name %>
+        </div>
+        <div class="label">
+          <%= label_tag list.normalised_name, list.name %>
+        </div>
+      </div>
+    <% end %>
+  </fieldset>
+
   <div class="buttons">
     <%= form.submit 'Update my details' %>
   </div>
