@@ -1,0 +1,32 @@
+<%= content_for :heading do %>
+  Access Requests
+<% end %>
+
+<h2>Member Registry Access</h2>
+
+<article>
+  <p>This page details requests to view the register of association members.</p>
+
+  <p>Access to the register by members is legally required - <%= link_to "our policy", policy_path("register-access") %> outlines how requests are made and the manner in which access is granted.</p>
+
+  <table class="member-list">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Requested</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% access_requests.each do |request| %>
+        <tr>
+          <td><%= request.name %></td>
+          <td><%= request.requested_on %></td>
+          <td><%= request.reason %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate access_requests %>
+</article>

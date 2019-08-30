@@ -13,6 +13,7 @@ import "application.scss";
 import "committee.scss";
 import "sponsorship.scss";
 import "forms.scss";
+import "admin.scss";
 
 $(document).ready(() => {
   $('#mobile-menu-trigger').on('click', () => $('#mobile-menu').slideToggle());

@@ -13,6 +13,7 @@ gem 'decent_exposure'
 gem 'devise'
 gem 'inline_svg', '~> 1.3.1'
 gem 'jbuilder'
+gem 'kaminari'
 gem 'pygmentize'
 gem 'redcarpet'
 gem 'validates_email_format_of'
@@ -51,6 +52,9 @@ group :development do
 end
 
 group :test do
+  gem 'capybara-email',
+      git: 'https://github.com/cgunther/capybara-email.git',
+      branch: 'capybara-3.17-click_on-disabled'
   gem 'rails-controller-testing'
   gem "codeclimate-test-reporter", require: nil
   gem "simplecov", require: nil

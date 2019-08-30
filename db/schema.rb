@@ -15,6 +15,32 @@ ActiveRecord::Schema.define(version: 2019_08_28_060555) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "access_requests", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "reason"
+    t.date "requested_on", null: false
+    t.date "viewed_on"
+    t.bigint "recorder_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recorder_id"], name: "index_access_requests_on_recorder_id"
+  end
+
+  create_table "imported_members", force: :cascade do |t|
+    t.string "full_name", null: false
+    t.string "email", null: false
+    t.json "data", default: {}, null: false
+    t.datetime "contacted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "token", null: false
+    t.datetime "unsubscribed_at"
+    t.index ["contacted_at"], name: "index_imported_members_on_contacted_at"
+    t.index ["email"], name: "index_imported_members_on_email"
+    t.index ["token"], name: "index_imported_members_on_token", unique: true
+    t.index ["unsubscribed_at"], name: "index_imported_members_on_unsubscribed_at"
+  end
+
   create_table "memberships", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "joined_at", null: false
@@ -56,5 +82,6 @@ ActiveRecord::Schema.define(version: 2019_08_28_060555) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "access_requests", "users", column: "recorder_id"
   add_foreign_key "memberships", "users"
 end

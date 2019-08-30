@@ -1,0 +1,32 @@
+<%= content_for :heading do %>
+  Access Requests
+<% end %>
+
+<h2>Member Registry Access</h2>
+
+<article>
+  <p class="button"><%= link_to "Add", new_admin_access_request_path %></p>
+
+  <table class="member-list">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Requested</th>
+        <th>Viewed</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% access_requests.each do |request| %>
+        <tr>
+          <td><%= request.name %></td>
+          <td><%= request.requested_on %></td>
+          <td><%= request.viewed_on || "Not yet" %></td>
+          <td><%= link_to "Edit", edit_admin_access_request_path(request) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate access_requests %>
+</article>

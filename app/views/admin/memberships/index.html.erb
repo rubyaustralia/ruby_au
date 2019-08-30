@@ -5,9 +5,24 @@
 <h2>Ruby Australia Members</h2>
 
 <article>
-  <ul>
-    <% members.each do |member| %>
-      <li><%= member.full_name %> (since <%= member.joined_at.to_date.to_s(:db) %>)</li>
-    <% end %>
-  </ul>
+  <table class="member-list">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% members.each do |member| %>
+        <tr>
+          <td><%= member.full_name %></td>
+          <td><%= member.email %></td>
+          <td><%= escape_once(member.address.to_s).gsub("\n", "<br />").html_safe %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate members %>
 </article>
