@@ -23,6 +23,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :mailing_lists, only: [] do
+    member { post :hook }
+  end
+
   get '/forum', to: redirect('https://forum.ruby.org.au'),
     as: :forum
   get '/mailing-list', to: redirect('https://confirmsubscription.com/h/j/3DDD74A0ACC3DB22'),

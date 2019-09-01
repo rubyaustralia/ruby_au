@@ -2,8 +2,8 @@
 
 require "rails_helper"
 
-RSpec.describe "Committee synchonising mailing lists", type: :feature do
-  it "updates user flags" do
+RSpec.feature "Committee synchonising mailing lists", type: :feature do
+  scenario "updates user flags" do
     alex = FactoryBot.create(
       :user, mailing_lists: { 'RubyConf AU' => "false", 'RailsGirls' => "true" }
     )
