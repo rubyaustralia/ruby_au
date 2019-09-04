@@ -49,7 +49,7 @@ table {
 }
 .layout,
 div.header {
-  max-width: 400px !important;
+  max-width: 600px !important;
   -fallback-width: 95% !important;
   width: calc(100% - 20px) !important;
 }
@@ -63,7 +63,7 @@ div.preheader {
   Float: none !important;
 }
 .column {
-  max-width: 400px !important;
+  max-width: 600px !important;
   width: 100% !important;
 }
 .fixed-width.has-border {
@@ -191,6 +191,14 @@ div.preheader {
 .layout-fixed-width,
 .mso .layout-full-width {
   background-color: #ffffff;
+}
+@media only screen and (max-width: 619px) {
+  div.header,
+  .layout,
+  .one-col .column {
+    max-width: 400px !important;
+    width: 400px !important;
+  }
 }
 @media only screen and (min-width: 620px) {
   .column,
