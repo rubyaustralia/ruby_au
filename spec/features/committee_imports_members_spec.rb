@@ -93,7 +93,7 @@ RSpec.describe "Committee importing members", type: :feature do
       end
       expect(current_email).to be_present
 
-      current_email.click_link "unsubscribe"
+      current_email.click_link "unsubscribing"
 
       user = User.find_by(email: "dylan@ruby.test")
       expect(user).to_not be_present
