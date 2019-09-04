@@ -32,13 +32,12 @@ RSpec.feature "User confirms account", type: :feature do
 
     user
 
-    email = ActionMailer::Base.deliveries.detect do |mail|
-      mail.to.include?(user.email) &&
-        mail.subject == "Confirmation instructions"
+    email = emails_sent_to(user.email).detect do |mail|
+      mail.subject == "Confirmation instructions"
     end
     expect(email).to be_present
 
-    visit email.body.raw_source.match(/href="(?<url>.+?)">Confirm my membership/)[:url]
+    email.click_link 'Confirm my membership'
 
     expect(page).to have_content("Your email address has been successfully confirmed.")
 

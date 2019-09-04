@@ -28,13 +28,12 @@ RSpec.describe "User edits profile details", type: :feature do
     expect(user.unconfirmed_email).to eq new_email
     expect(user.visible).to eq(true)
 
-    email = ActionMailer::Base.deliveries.detect do |mail|
-      mail.to.include?(user.unconfirmed_email) &&
-        mail.subject == "Confirmation instructions"
+    email = emails_sent_to(user.unconfirmed_email).detect do |mail|
+      mail.subject == "Confirmation instructions"
     end
     expect(email).to be_present
 
-    visit email.body.raw_source.match(/href="(?<url>.+?)">Confirm my membership/)[:url]
+    email.click_link "Confirm my membership"
 
     expect(
       a_request(
