@@ -9,7 +9,7 @@ RSpec.describe "Committee importing members", type: :feature do
     log_in_as user
 
     output = CSV.generate do |csv|
-      csv << %w[name email]
+      csv << %w[ticket_full_name ticket_email]
       csv << ["Alex", "alex@ruby.test"]
       csv << ["Jules", "jules@ruby.test"]
       csv << ["Riley", "riley@ruby.test"]
@@ -38,7 +38,7 @@ RSpec.describe "Committee importing members", type: :feature do
     camp.close
 
     output = CSV.generate do |csv|
-      csv << %w[name email]
+      csv << %w[ticket_full_name ticket_email]
       csv << ["Riley", "riley@ruby.test"]
       csv << ["Dylan", "dylan@ruby.test"]
     end
