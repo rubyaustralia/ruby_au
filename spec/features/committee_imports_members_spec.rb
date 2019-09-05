@@ -67,6 +67,13 @@ RSpec.describe "Committee importing members", type: :feature do
     end
 
     scenario "accepts an invitation" do
+      stub_request(
+        :get, %r{https://api.createsend.com/api/v3.2/subscribers/.*\.json}
+      ).and_return(
+        body: JSON.dump("State" => "Active"),
+        headers: { "Content-Type" => "application/json" }
+      )
+
       self.current_email = emails_sent_to("riley@ruby.test").detect do |mail|
         mail.subject == "Ruby Australia Membership"
       end
@@ -85,6 +92,7 @@ RSpec.describe "Committee importing members", type: :feature do
       expect(user).to be_present
       expect(user).to be_confirmed
       expect(user.valid_password?("rubyrubyruby")).to eq(true)
+      expect(user.memberships.current.count).to eq(1)
     end
 
     scenario "declines an invitation" do

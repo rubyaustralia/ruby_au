@@ -4,8 +4,8 @@ class InvitationsController < ApplicationController
 
   def create
     if user.valid?
-      user.confirmed_at = Time.current
       user.save!
+      user.manual_confirmation!
 
       sign_in user
 

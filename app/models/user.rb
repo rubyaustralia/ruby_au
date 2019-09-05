@@ -17,6 +17,13 @@ class User < ApplicationRecord
     deactivated_at.present?
   end
 
+  def manual_confirmation!
+    self.confirmed_at ||= Time.current
+    save!
+
+    after_confirmation
+  end
+
   protected
 
   def after_confirmation
