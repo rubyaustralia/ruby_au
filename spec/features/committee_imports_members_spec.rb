@@ -85,6 +85,17 @@ RSpec.describe "Committee importing members", type: :feature do
       fill_in "Postal Address", with: "1 High Street"
       click_button "Register"
 
+      email = emails_sent_to("riley@ruby.test").detect do |mail|
+        mail.subject == "Confirmation instructions"
+      end
+      expect(email).to be_nil
+
+      expect(
+        a_request(
+          :get, %r{https://api.createsend.com/api/v3.2/subscribers/.*\.json}
+        )
+      ).to have_been_made.times(MailingList.all.length)
+
       expect(page).to have_link("Log out")
       expect(page).to have_content("Your membership to Ruby Australia has been confirmed")
 

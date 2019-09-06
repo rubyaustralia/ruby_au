@@ -17,7 +17,7 @@ class User < ApplicationRecord
     deactivated_at.present?
   end
 
-  def manual_confirmation!
+  def save_as_confirmed!
     self.confirmed_at ||= Time.current
     save!
 
@@ -27,7 +27,7 @@ class User < ApplicationRecord
   protected
 
   def after_confirmation
-    if email_previously_changed?
+    if email_previously_changed? && previous_changes["email"].first.present?
       update_mailing_list_email_addresses
     else
       set_up_mailing_list_flags
