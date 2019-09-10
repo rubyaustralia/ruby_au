@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :access_requests, only: [:index]
   end
 
+  resources :rsvps, only: [:show] do
+    member { get :confirm, :decline }
+  end
+
   resources :reactivations, only: [:new, :create]
 
   namespace :admin do

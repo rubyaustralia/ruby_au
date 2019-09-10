@@ -1,0 +1,19 @@
+<%= content_for :heading do %>
+  RSVP: <%= rsvp.rsvp_event.title %>
+<% end %>
+
+<h2>RSVP for <%= rsvp.rsvp_event.title %></h2>
+
+<p>This event will be taking place on <strong><%= rsvp.rsvp_event.happens_at.to_formatted_s(:date_only) %></strong> with the starting time across Australia:</p>
+
+<ul>
+  <% time_zones.each do |zone, locations| %>
+    <li><%= rsvp.rsvp_event.happens_at.in_time_zone(zone).to_formatted_s(:time_only) %> (<%= locations %>)</li>
+  <% end %>
+</ul>
+
+<% if rsvp.status == "yes" %>
+  <p>You are currently <strong>confirmed to attend</strong> this event. If that's no longer the case, please <%= link_to "change your status", decline_rsvp_path(rsvp.token) %>.</p>
+<% else %>
+  <p>You are currently marked as <strong>unable to attend</strong> this event. If instead you can now make it, please <%= link_to "change your status", confirm_rsvp_path(rsvp.token) %>.</p>
+<% end %>
