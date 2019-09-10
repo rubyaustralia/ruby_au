@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_060555) do
+ActiveRecord::Schema.define(version: 2019_09_10_112358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,25 @@ ActiveRecord::Schema.define(version: 2019_08_28_060555) do
     t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
+  create_table "rsvp_events", force: :cascade do |t|
+    t.string "title", null: false
+    t.datetime "happens_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rsvps", force: :cascade do |t|
+    t.bigint "rsvp_event_id", null: false
+    t.bigint "membership_id", null: false
+    t.string "status", default: "unknown", null: false
+    t.string "token", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["membership_id"], name: "index_rsvps_on_membership_id"
+    t.index ["rsvp_event_id"], name: "index_rsvps_on_rsvp_event_id"
+    t.index ["token"], name: "index_rsvps_on_token", unique: true
+  end
+
   create_table "users", id: :serial, force: :cascade do |t|
     t.string "email", null: false
     t.datetime "created_at", null: false
@@ -84,4 +103,6 @@ ActiveRecord::Schema.define(version: 2019_08_28_060555) do
 
   add_foreign_key "access_requests", "users", column: "recorder_id"
   add_foreign_key "memberships", "users"
+  add_foreign_key "rsvps", "memberships"
+  add_foreign_key "rsvps", "rsvp_events"
 end
