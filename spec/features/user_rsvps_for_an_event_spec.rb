@@ -28,4 +28,14 @@ RSpec.feature "User RSVPs for an event", type: :feature do
     rsvp.reload
     expect(rsvp.status).to eq("no")
   end
+
+  scenario "assigns a proxy" do
+    visit rsvp_path(rsvp.token)
+
+    fill_in "Your Proxy's Name", with: "Frankie Nguyen"
+    click_button "Assign Proxy"
+
+    expect(page).to have_content("your proxy representative has been recorded")
+    expect(page).to have_content("Frankie Nguyen")
+  end
 end

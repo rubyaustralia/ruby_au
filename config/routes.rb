@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :access_requests, only: [:index]
   end
 
-  resources :rsvps, only: [:show] do
+  resources :rsvps, only: [:show, :update, :destroy] do
     member { get :confirm, :decline }
   end
 
