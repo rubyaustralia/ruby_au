@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resource :details, only: [:show, :edit, :update]
     resource :password, only: [:update]
     resource :membership, only: [:destroy]
+    resources :meetings, only: [:index]
     resources :access_requests, only: [:index]
   end
 

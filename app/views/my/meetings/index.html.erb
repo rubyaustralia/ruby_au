@@ -1,0 +1,15 @@
+<%= content_for :heading do %>
+  Upcoming Meetings
+<% end %>
+
+<h2>Upcoming Meetings</h2>
+
+<article>
+  <p>Here is a list of upcoming Ruby Australia meetings. For each meeting you can RSVP and/or assign a proxy representative to vote on your behalf.</p>
+
+  <ul>
+    <% meetings.each do |meeting| %>
+      <li><%= link_to meeting.title, rsvp_path(rsvp_for(meeting).token) %></li>
+    <% end %>
+  </ul>
+</article>
