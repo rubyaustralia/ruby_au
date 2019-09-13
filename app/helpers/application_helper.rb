@@ -1,4 +1,14 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
+  TIME_ZONES = {
+    "Melbourne" => "NSW, Victoria, Tasmania, ACT",
+    "Brisbane" => "Queensland",
+    "Adelaide" => "South Australia",
+    "Darwin" => "Northern Territory",
+    "Perth" => "Western Australia"
+  }.freeze
+
   def committee
     YAML.load_file Rails.root.join('config', 'data', 'committee.yml')
   end
@@ -29,5 +39,9 @@ module ApplicationHelper
 
   def previous
     YAML.load_file Rails.root.join('config', 'data', 'previous.yml')
+  end
+
+  def time_zones
+    TIME_ZONES
   end
 end

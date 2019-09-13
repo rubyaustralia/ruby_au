@@ -1,0 +1,57 @@
+<%= content_for :preheader do %>
+Upcoming AGM on <%= @event.happens_at.to_formatted_s(:date_only_short) %>
+<% end %>
+
+<p>Hi <%= @membership.full_name %>,</p>
+
+<h2>Annual General Meeting (AGM) for 2019</h2>
+
+<p>On <%= @event.happens_at.to_formatted_s(:date_only) %>, Ruby Australia will be holding our Annual General Meeting (AGM) for 2019, and as a member you are very welcome to attend and participate.</p>
+
+<p>The meeting will occur at the time outlined below, depending on your time-zone, and should last for around 90 minutes. It will be conducted online, likely via a group video call on Zoom.</p>
+
+<ul>
+  <% time_zones.each do |zone, locations| %>
+    <li><%= @event.happens_at.in_time_zone(zone).to_formatted_s(:time_only) %> (<%= locations %>)</li>
+  <% end %>
+</ul>
+
+<p>To assist us with our planning, please indicate whether you can attend:</p>
+
+<p class="button">
+  <%= link_to "Yes", confirm_rsvp_url(@rsvp.token) %>
+  <%= link_to "No", decline_rsvp_url(@rsvp.token) %>
+</p>
+
+<p>Please note that these RSVPs are not binding. Much closer to the date, we'll provide details to <em>all</em> members about how to attend.</p>
+
+<p>And on the topic of planning: if you have any items you wish to add to the agenda of the meeting, please do let us know as soon as possible by replying to this email.</p>
+
+<h3>Committee Elections</h3>
+
+<p>During the AGM, we will be conducting elections for five positions on the committee:</p>
+
+<ul>
+  <li>President</li>
+  <li>Treasurer</li>
+  <li>Secretary</li>
+  <li>General Member x 2</li>
+</ul>
+
+<p>All terms are for one year (with the exception of Treasurer, which is for two years), and all office-holders can be located anywhere in Australia (with the exception of the Secretary, who must be in Victoria).</p>
+
+<p>More details on each of these roles and nomination processes can be found on our forum, where you can also ask questions. We encourage all members to consider <%= link_to "nominating themselves or other peers within the community", "https://docs.google.com/forms/d/e/1FAIpQLSfNfgY8VRQX8wq68RWfnkIAWOE5_bZJLrEykhMfLps5UL5zxQ/viewform" %>. You do not need to be extremely experienced at Ruby, nor to have had significant community involvement in the past. If you're interested in contributing, we'd love to have you on board.</p>
+
+<h3>Voting by Proxy</h3>
+
+<p>If you cannot attend the AGM but would like your vote to be counted, you can <%= link_to "sign a proxy form", rsvp_url(@rsvp.token) %> so that someone who is present can cast a vote on your behalf.</p>
+
+<h2>EOI for Rails Camp 27 (mid-2020)</h2>
+
+<p>Separate from the AGM, we are currently seeking expressions of interest for community members to run the first Rails Camp of next year.</p>
+
+<p>You can <%= link_to "read more about this on our website", events_rails_camp_27_url %> - and don't be frightened to put your hand up! The committee and past organisers are very happy to provide advice, and the finances of the events are supported by the organisation and our sponsors.</p>
+
+<h2>Rails Camp 26</h2>
+
+<p>Speaking of Rails Camps, the next one to occur in Australia will be from the 15th to 18th of November, just outside Melbourne. <a href="http://www.railscamp.com.au">Tickets are still available!</a></p>
