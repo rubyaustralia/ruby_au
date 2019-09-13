@@ -73,5 +73,5 @@
 <% else %>
   <p>You have assigned <%= rsvp.proxy_name %> as your proxy representative, as of <%= rsvp.proxy_assigned_at.to_formatted_s(:rfc822) %>.</p>
 
-  <p>If you wish, you can <%= link_to "unassign", rsvp_path(rsvp.token), method: :delete %> your recorded proxy representative.</p>
+  <p>If you wish, you can <%= link_to "unassign", rsvp_path(rsvp.token), method: :delete, data: { confirm: 'Are you sure?' } %> your recorded proxy representative.</p>
 <% end %>
