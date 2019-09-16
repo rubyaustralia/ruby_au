@@ -11,6 +11,7 @@ FactoryBot.define do
     confirmed_at { 1.minute.ago }
     address { '42 Wallaby Way, Sydney' }
     visible { true }
+    skip_subscriptions { true }
 
     trait :visible do
       visible { true }

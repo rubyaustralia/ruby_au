@@ -6,8 +6,12 @@ class User < ApplicationRecord
 
   has_many :memberships, dependent: :destroy
 
+  attr_accessor :skip_subscriptions
+
   validates :full_name, presence: true
   validates :address, presence: true
+
+  after_create :subscribe_to_lists
 
   def active_for_authentication?
     super && deactivated_at.nil?
@@ -38,8 +42,22 @@ class User < ApplicationRecord
     memberships.create joined_at: Time.current
   end
 
+  private
+
   def set_up_mailing_list_flags
     MailingList::Setup.call self
+  end
+
+  def subscribe_to_lists
+    return if skip_subscriptions
+
+    # rubocop:disable Rails/FindEach
+    MailingList.all.each do |list|
+      next unless mailing_lists[list.name] == "true"
+
+      MailingList::Subscribe.call self, list
+    end
+    # rubocop:enable Rails/FindEach
   end
 
   def update_mailing_list_email_addresses

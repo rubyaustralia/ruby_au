@@ -79,6 +79,24 @@
         The registry is only viewable to other members, and <em>only</em> with <%= link_to "supervision from a committee member", policy_path("register-access") %>. Still, you can retract your details if you wish.
       </div>
     </div>
+
+    <fieldset>
+      <legend>Mailing Lists</legend>
+
+      <div class="hint">You can choose to subscribe to news about each of our major events. If you are already subscribed to any of these lists, those subscriptions will be honoured.</div>
+
+      <% MailingList.all.each do |list| %>
+        <div class="field flipped">
+          <div class="input">
+            <%= hidden_field_tag "user[mailing_lists][#{list.name}]", "false" %>
+            <%= check_box_tag "user[mailing_lists][#{list.name}]", "true", @user.mailing_lists[list.name] == "true", id: list.normalised_name %>
+          </div>
+          <div class="label">
+            <%= label_tag list.normalised_name, list.name %>
+          </div>
+        </div>
+      <% end %>
+    </fieldset>
   </fieldset>
 
   <p class="links">By signing up, you agree to
