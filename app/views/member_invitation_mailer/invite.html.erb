@@ -4,7 +4,7 @@ Confirm your membership with Ruby Australia.
 
 <p>Hi <%= @imported_member.full_name %>,</p>
 
-<p>We're just getting in touch to confirm if you wish to continue being a member of Ruby Australia (and we want to reassure you that this is a once-off email, unless you attend another one of our events in the future).</p>
+<p>We're just getting in touch to check if you wish to be a member of Ruby Australia, given your recent attendance at <strong><%= @imported_member.data["sources"].join(", ") %></strong>.</p>
 
 <h2>What is Ruby Australia?</h2>
 
@@ -12,17 +12,9 @@ Confirm your membership with Ruby Australia.
 
 <h2>Why am I receiving this email?</h2>
 
-<p>We at Ruby Australia are in the process of validating our records of members, and we're keen to confirm people's interest in being a member.</p>
+<p>According to our records, you have attended a recent Ruby Australia event (<%= @imported_member.data["sources"].join(", ") %>) - and everyone who attends one of our events is invited to become a member.</p>
 
-<p>According to our records, you have attended the following recent events, which has given you implicit membership of Ruby Australia:</p>
-
-<ul>
-  <% @imported_member.data["sources"].each do |source| %>
-    <li><%= source %></li>
-  <% end %>
-</ul>
-
-<p>If you wish to continue being a member of Ruby Australia (it doesn't cost anything!), we need to confirm your details for our records:</p>
+<p>If you're interested - <strong>it doesn't cost anything!</strong> - we need to confirm your details for our records:</p>
 
 <p class="button"><%= link_to "Confirm Membership", invitation_url(@imported_member.token) %></p>
 
@@ -36,6 +28,6 @@ Confirm your membership with Ruby Australia.
 
 <h2>What if I don't want to be a member?</h2>
 
-<p>If you do not confirm your membership (using the above link), you will no longer be considered a member of Ruby Australia. You do not need to be a member to attend any of our events, though by attending you are agreeing to behave in accordance with our <%= link_to "Code of Conduct", page_url("code-of-conduct") %>.</p>
+<p>If you do not confirm your membership (using the above link), you will not be considered a member of Ruby Australia - which is completely fine. You do not need to be a member to attend any of our events, though of course by attending any events you are agreeing to behave in accordance with our <%= link_to "Code of Conduct", page_url("policies/code-of-conduct") %>.</p>
 
 <p>If you plan to attend any future events, you can avoid being sent additional membership invitation emails related to those events by <%= link_to "unsubscribing", unsubscribe_invitation_url(@imported_member.token) %>. If you change your mind at any point, you're able to <%= link_to "sign up as a member", new_user_registration_url %> on our website without needing to attend any events.</p>
