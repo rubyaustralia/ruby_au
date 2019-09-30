@@ -20,8 +20,8 @@
   <section class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
     <article id="sponsors" class="welcome">
       <section class="sponsor-logos flex flex-col">
-        <h2>Emerald Sponsors for 2018/2019</h2>
-        <% %w(lookahead envato culture-amp).shuffle.each do |sponsor| %>
+        <h2>Emerald Sponsors for 2019/2020</h2>
+        <% %w(envato culture-amp twilio).each do |sponsor| %>
           <%= link_to "/sponsors/#{sponsor}", class: "sponsor-logo-no-border" do %>
             <%= image_tag "sponsors/#{sponsor}.png", class: "sponsor-logo-emerald" %>
           <% end %>
@@ -29,16 +29,20 @@
       </section>
 
       <section class="sponsor-logos flex flex-col">
-        <h2>Sapphire Sponsors for 2018/2019</h2>
-        <%= link_to "/sponsors/twilio", class: "sponsor-logo-no-border" do %>
-          <%= image_tag "sponsors/twilio.png", class: "sponsor-logo-sapphire" %>
+        <h2>Sapphire Sponsors for 2019/2020</h2>
+        <% %w(buildkite).each do |sponsor| %>
+          <%= link_to "/sponsors/#{sponsor}", class: "sponsor-logo-no-border" do %>
+            <%= image_tag "sponsors/#{sponsor}.png", class: "sponsor-logo-sapphire" %>
+          <% end %>
         <% end %>
       </section>
 
       <section class="sponsor-logos flex flex-col">
-        <h2>Opal Sponsors for 2018/2019</h2>
-        <%= link_to "/sponsors/buildkite", class: "sponsor-logo-no-border" do %>
-          <%= image_tag "sponsors/buildkite.png", class: "sponsor-logo-opal" %>
+        <h2>Opal Sponsors for 2019/2020</h2>
+        <% %w(lookahead).each do |sponsor| %>
+          <%= link_to "/sponsors/#{sponsor}", class: "sponsor-logo-no-border" do %>
+            <%= image_tag "sponsors/#{sponsor}.png", class: "sponsor-logo-opal" %>
+          <% end %>
         <% end %>
       </section>
     </article>
