@@ -1,5 +1,8 @@
-# Code of Conduct - Reporting Guide
-
+name: Code of Conduct - Reporting Guide
+key: code-of-conduct-reporting
+status: published
+version: "0.4 (2018-05-17)"
+---
 ## Making a report
 If you believe someone is violating the code of conduct we ask that you report it to:
 
@@ -59,5 +62,3 @@ Only permanent resolutions (such as bans) may be appealed. To appeal a decision 
 This reporting guide is distributed under a Creative Commons Attribution-ShareAlike license.
 
 Portions of text derived from the Django Code of Conduct Reporting Guide.
-
-_Revision 0.4, 17 May 2018._

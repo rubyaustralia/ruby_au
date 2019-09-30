@@ -1,5 +1,8 @@
-# Ruby Australia's Code of Conduct
-
+name: Code of Conduct
+key: code-of-conduct
+status: published
+version: "0.7 (2018-05-17)"
+---
 ## Matz is nice, and we are nice.
 
 In the same way that Matz has written Ruby with a focus on developer happiness, we are focused on community happiness. The Australian Ruby community is full of wonderful people from a diverse range of backgrounds, and we want to ensure it remains a welcoming and safe environment to all who wish to be a part of it.
@@ -76,5 +79,3 @@ conduct@ruby.org.au
 This Code of Conduct is distributed under a Creative Commons Attribution-ShareAlike license.
 
 Portions of text derived from the Django Code of Conduct, the Geek Feminism Anti-Harassment Policy and the Ruby New Zealand Code of Conduct.
-
-_Revision 0.7, 17 May 2018._
