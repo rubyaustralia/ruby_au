@@ -23,6 +23,7 @@
           <td><%= campaign.rsvp_event&.title %></td>
           <td><%= campaign.delivered_at || "Not yet" %></td>
           <td>
+            <%= link_to "Preview", admin_campaign_path(campaign), target: "_blank" %>
             <% unless campaign.delivered? %>
               <%= link_to "Edit", edit_admin_campaign_path(campaign) %>
               <%= link_to "Delete", admin_campaign_path(campaign), method: :delete, data: {confirm: "Are you sure? Deletion is permanent."} %>

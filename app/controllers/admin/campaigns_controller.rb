@@ -9,6 +9,15 @@ class Admin::CampaignsController < Admin::ApplicationController
 
   before_action :deny_if_sent, only: %i[update destroy]
 
+  def show
+    membership = current_user.memberships.current.first
+    mail = CampaignsMailer.campaign_email campaign, membership
+
+    # rubocop:disable Rails/OutputSafety
+    render html: mail.body.to_s.html_safe, layout: nil
+    # rubocop:enable Rails/OutputSafety
+  end
+
   def create
     if campaign.save
       redirect_to admin_campaigns_path, notice: "Your campaign has been created."
