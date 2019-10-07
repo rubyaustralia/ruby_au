@@ -7,6 +7,8 @@ RSpec.describe "Committee manages email campaigns", type: :feature do
 
   before :each do
     log_in_as user
+
+    clear_emails
   end
 
   scenario "create a new stand-alone campaign" do
@@ -43,7 +45,7 @@ RSpec.describe "Committee manages email campaigns", type: :feature do
     select "AGM", from: "Event"
     fill_in "Subject", with: "Random News"
     fill_in "Pre-Header", with: "Please read me"
-    fill_in "Content", with: "Here's the latest from Ruby Australia"
+    fill_in "Content", with: "Can you make it?\n\n{{ rsvp_links }}"
     click_button "Save"
 
     Campaigns::Send.call Campaign.first
@@ -52,6 +54,9 @@ RSpec.describe "Committee manages email campaigns", type: :feature do
       mail.subject == "Random News"
     end
     expect(current_email).to be_present
+
+    current_email.click_link "Yes"
+    expect(page).to have_content("Thanks for confirming your attendance")
   end
 
   scenario "editing a campaign" do

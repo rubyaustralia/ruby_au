@@ -2,6 +2,7 @@
 
 class CampaignsMailer < ApplicationMailer
   helper :application
+  helper :campaigns
 
   def campaign_email(campaign, membership)
     @membership = membership

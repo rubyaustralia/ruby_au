@@ -2,4 +2,4 @@
 <%= @campaign.preheader %>
 <% end %>
 
-<%= markdown_to_html @campaign.content %>
+<%= substituted_content @campaign, @rsvp %>
