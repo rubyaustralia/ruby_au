@@ -6,6 +6,8 @@ class Admin::CampaignsController < Admin::ApplicationController
     params[:id] ? Campaign.find(params[:id]) : Campaign.new(campaign_params)
   end
 
+  before_action :deny_if_sent, only: %i[update destroy]
+
   def create
     if campaign.save
       redirect_to admin_campaigns_path, notice: "Your campaign has been created."
@@ -22,9 +24,21 @@ class Admin::CampaignsController < Admin::ApplicationController
     end
   end
 
+  def destroy
+    campaign.destroy
+
+    redirect_to admin_campaigns_path, notice: "Your campaign has been deleted."
+  end
+
   private
 
   def campaign_params
     params.fetch(:campaign, {}).permit(:subject, :preheader, :content, :rsvp_event_id)
+  end
+
+  def deny_if_sent
+    return unless campaign.delivered?
+
+    redirect_to admin_campaigns_path, notice: "This campaign has already been sent."
   end
 end

@@ -26,6 +26,11 @@ RSpec.describe "Committee manages email campaigns", type: :feature do
       mail.subject == "Random News"
     end
     expect(current_email).to be_present
+
+    click_link "Campaigns"
+    expect(page).to have_content("Random News")
+    expect(page).to_not have_content("Edit")
+    expect(page).to_not have_content("Delete")
   end
 
   scenario "editing a campaign" do
@@ -38,6 +43,16 @@ RSpec.describe "Committee manages email campaigns", type: :feature do
     click_button "Save"
 
     expect(page).to have_content("Random News")
-    expect(page).to_not have_content("Lates News")
+    expect(page).to_not have_content("Latest News")
+  end
+
+  scenario "deleting a campaign" do
+    FactoryBot.create(:campaign, subject: "Latest News")
+
+    click_link "Campaigns"
+    click_link "Delete"
+
+    expect(page).to have_content("Your campaign has been deleted.")
+    expect(page).to_not have_content("Latest News")
   end
 end
