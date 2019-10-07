@@ -1,0 +1,53 @@
+<%= form_for [:admin, campaign], html: {class: "standard"} do |form| %>
+  <% if campaign.errors.any? %>
+    <div id="error_explanation" class="ui visible error message">
+      <h2><%= pluralize(campaign.errors.count, "error") %> prohibited this from being saved:</h2>
+
+      <ul>
+        <% campaign.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="label">
+      <%= form.label :rsvp_event_id %>
+    </div>
+    <div class="input">
+      <%= form.select :rsvp_event_id, events.collect { |event| [event.title, event.id] }, include_blank: true %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
+      <%= form.label :subject, class: "required" %>
+    </div>
+    <div class="input">
+      <%= form.text_field :subject %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
+      <%= form.label :preheader, class: "required" %>
+    </div>
+    <div class="input">
+      <%= form.text_field :preheader %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
+      <%= form.label :content, class: "required" %>
+    </div>
+    <div class="input">
+      <%= form.text_area :content %>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <%= form.submit "Save" %>
+  </div>
+<% end %>

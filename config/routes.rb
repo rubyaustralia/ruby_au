@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :memberships, only: [:index]
     resources :access_requests, except: [:destroy]
     resources :imported_members, only: [:index, :create]
+    resources :campaigns
   end
 
   resources :invitations, only: [] do

@@ -22,11 +22,14 @@
 en:
   helpers:
     label:
+      campaign:
+        preheader: "Pre-Header"
+        rsvp_event_id: "Event"
+      rsvp:
+        proxy_name: "Your Proxy's Name"
+        proxy_signature: "Your Signature"
       user:
         address: 'Postal Address'
         full_name: 'Full Name'
         password_confirmation: 'Confirm Password'
         preferred_name: 'Preferred Name'
-      rsvp:
-        proxy_name: "Your Proxy's Name"
-        proxy_signature: "Your Signature"
