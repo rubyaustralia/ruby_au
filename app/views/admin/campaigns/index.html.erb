@@ -1,0 +1,32 @@
+<%= content_for :heading do %>
+  Email Campaigns
+<% end %>
+
+<h2>Campaigns</h2>
+
+<article>
+  <p class="button"><%= link_to "Add", new_admin_campaign_path %></p>
+
+  <table class="member-list">
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Event</th>
+        <th>Sent At</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% campaigns.each do |campaign| %>
+        <tr>
+          <td><%= campaign.subject %></td>
+          <td><%= campaign.rsvp_event&.title %></td>
+          <td><%= campaign.delivered_at || "Not yet" %></td>
+          <td><%= link_to "Edit", edit_admin_campaign_path(campaign) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate campaigns %>
+</article>
