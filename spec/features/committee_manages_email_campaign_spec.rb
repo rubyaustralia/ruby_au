@@ -81,4 +81,18 @@ RSpec.describe "Committee manages email campaigns", type: :feature do
     expect(page).to have_content("Your campaign has been deleted.")
     expect(page).to_not have_content("Latest News")
   end
+
+  scenario "sending campaigns" do
+    user = FactoryBot.create(:user, email: "alex@ruby.test")
+    campaign = FactoryBot.create(:campaign)
+
+    Campaigns::Send.call campaign
+    Campaigns::Send.call campaign
+
+    emails = emails_sent_to(user.email).select do |mail|
+      mail.subject == campaign.subject
+    end
+
+    expect(emails.length).to eq(1)
+  end
 end

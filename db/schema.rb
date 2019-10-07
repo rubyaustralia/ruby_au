@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_07_082552) do
+ActiveRecord::Schema.define(version: 2019_10_07_111808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2019_10_07_082552) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recorder_id"], name: "index_access_requests_on_recorder_id"
+  end
+
+  create_table "campaign_deliveries", force: :cascade do |t|
+    t.bigint "campaign_id"
+    t.bigint "membership_id"
+    t.datetime "delivered_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_campaign_deliveries_on_campaign_id"
+    t.index ["membership_id"], name: "index_campaign_deliveries_on_membership_id"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -116,6 +126,8 @@ ActiveRecord::Schema.define(version: 2019_10_07_082552) do
   end
 
   add_foreign_key "access_requests", "users", column: "recorder_id"
+  add_foreign_key "campaign_deliveries", "campaigns"
+  add_foreign_key "campaign_deliveries", "memberships"
   add_foreign_key "campaigns", "rsvp_events"
   add_foreign_key "memberships", "users"
   add_foreign_key "rsvps", "memberships"
