@@ -5,6 +5,7 @@ class Admin::CampaignsController < Admin::ApplicationController
   expose(:campaign) do
     params[:id] ? Campaign.find(params[:id]) : Campaign.new(campaign_params)
   end
+  expose(:events) { RsvpEvent.order(happens_at: :desc) }
 
   before_action :deny_if_sent, only: %i[update destroy]
 

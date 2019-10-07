@@ -13,6 +13,15 @@
 
   <div class="field">
     <div class="label">
+      <%= form.label :rsvp_event_id %>
+    </div>
+    <div class="input">
+      <%= form.select :rsvp_event_id, events.collect { |event| [event.title, event.id] }, include_blank: true %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">
       <%= form.label :subject, class: "required" %>
     </div>
     <div class="input">

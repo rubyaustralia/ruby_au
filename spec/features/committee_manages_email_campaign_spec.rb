@@ -33,6 +33,27 @@ RSpec.describe "Committee manages email campaigns", type: :feature do
     expect(page).to_not have_content("Delete")
   end
 
+  scenario "create a new campaign with an event" do
+    FactoryBot.create(:user, full_name: "Alex", email: "alex@ruby.test")
+    FactoryBot.create(:rsvp_event, title: "AGM")
+
+    click_link "Campaigns"
+    click_link "Add"
+
+    select "AGM", from: "Event"
+    fill_in "Subject", with: "Random News"
+    fill_in "Pre-Header", with: "Please read me"
+    fill_in "Content", with: "Here's the latest from Ruby Australia"
+    click_button "Save"
+
+    Campaigns::Send.call Campaign.first
+
+    self.current_email = emails_sent_to("alex@ruby.test").detect do |mail|
+      mail.subject == "Random News"
+    end
+    expect(current_email).to be_present
+  end
+
   scenario "editing a campaign" do
     FactoryBot.create(:campaign, subject: "Latest News")
 

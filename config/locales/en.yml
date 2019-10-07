@@ -24,6 +24,7 @@ en:
     label:
       campaign:
         preheader: "Pre-Header"
+        rsvp_event_id: "Event"
       rsvp:
         proxy_name: "Your Proxy's Name"
         proxy_signature: "Your Signature"
