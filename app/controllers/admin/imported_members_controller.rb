@@ -28,8 +28,6 @@ class Admin::ImportedMembersController < Admin::ApplicationController
   end
 
   def skip_row?(row)
-    row[:ticket_email].blank? ||
-      row[:ticket_full_name].blank? ||
-      User.where(email: row[:ticket_email]).any?
+    row[:ticket_email].blank? || User.where(email: row[:ticket_email]).any?
   end
 end

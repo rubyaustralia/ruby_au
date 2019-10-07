@@ -3,7 +3,7 @@ class ImportedMember < ApplicationRecord
   scope :subscribed,  -> { where(unsubscribed_at: nil) }
   scope :contactable, -> { uncontacted.subscribed }
 
-  validates :full_name, presence: true
+  validates :full_name, presence: {allow_blank: true, allow_nil: false}
   validates :email, presence: true
   validates :token, presence: true, uniqueness: true
 

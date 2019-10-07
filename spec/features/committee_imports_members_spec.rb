@@ -14,6 +14,7 @@ RSpec.describe "Committee importing members", type: :feature do
       csv << ["Jules", "jules@ruby.test"]
       csv << ["Riley", "riley@ruby.test"]
       csv << ["Lindsay", "lindsay@ruby.test"]
+      csv << ["", "charlie@ruby.test"]
     end
 
     FactoryBot.create(:user, email: "lindsay@ruby.test")
@@ -32,6 +33,7 @@ RSpec.describe "Committee importing members", type: :feature do
 
     expect(page).to have_content("Alex")
     expect(page).to have_content("Riley")
+    expect(page).to have_content("charlie@ruby.test")
     expect(page).to_not have_content("Jules")
     expect(page).to_not have_content("Lindsay")
 
@@ -62,6 +64,9 @@ RSpec.describe "Committee importing members", type: :feature do
 
       FactoryBot.create :imported_member, email: "riley@ruby.test"
       FactoryBot.create :imported_member, email: "dylan@ruby.test"
+      FactoryBot.create(
+        :imported_member, email: "charlie@ruby.test", full_name: ''
+      )
 
       SendInvitations.call
     end
@@ -100,6 +105,47 @@ RSpec.describe "Committee importing members", type: :feature do
       expect(page).to have_content("Your membership to Ruby Australia has been confirmed")
 
       user = User.find_by(email: "riley@ruby.test")
+      expect(user).to be_present
+      expect(user).to be_confirmed
+      expect(user.valid_password?("rubyrubyruby")).to eq(true)
+      expect(user.memberships.current.count).to eq(1)
+    end
+
+    scenario "accepts an invitation without a provided name" do
+      stub_request(
+        :get, %r{https://api.createsend.com/api/v3.2/subscribers/.*\.json}
+      ).and_return(
+        body: JSON.dump("State" => "Active"),
+        headers: { "Content-Type" => "application/json" }
+      )
+
+      self.current_email = emails_sent_to("charlie@ruby.test").detect do |mail|
+        mail.subject == "Ruby Australia Membership"
+      end
+      expect(current_email).to be_present
+
+      current_email.click_link 'Confirm Membership'
+      fill_in "Full Name", with: "Charlotte"
+      fill_in "Password", with: "rubyrubyruby"
+      fill_in "Confirm Password", with: "rubyrubyruby"
+      fill_in "Postal Address", with: "1 High Street"
+      click_button "Register"
+
+      email = emails_sent_to("charlie@ruby.test").detect do |mail|
+        mail.subject == "Confirmation instructions"
+      end
+      expect(email).to be_nil
+
+      expect(
+        a_request(
+          :get, %r{https://api.createsend.com/api/v3.2/subscribers/.*\.json}
+        )
+      ).to have_been_made.times(MailingList.all.length)
+
+      expect(page).to have_link("Log out")
+      expect(page).to have_content("Your membership to Ruby Australia has been confirmed")
+
+      user = User.find_by(email: "charlie@ruby.test")
       expect(user).to be_present
       expect(user).to be_confirmed
       expect(user.valid_password?("rubyrubyruby")).to eq(true)

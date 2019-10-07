@@ -36,7 +36,7 @@
 
   <ul>
     <% members.each do |member| %>
-      <li><%= member.full_name %></li>
+      <li><%= member.full_name.blank? ? member.email : member.full_name %></li>
     <% end %>
   </ul>
 </article>
