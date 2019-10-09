@@ -1,7 +1,15 @@
 class SponsorsController < ApplicationController
-  rescue_from ActionView::MissingTemplate do |exception|
-    raise ActionController::RoutingError, "No such page: #{params[:id]}" if exception.message.match?(/Missing template pages#{request.path}/)
+  expose(:sponsors) do
+    YAML.load_file Rails.root.join('config', 'data', 'sponsors.yml')
+  end
 
-    raise exception
+  expose(:sponsor) do
+    sponsors.detect { |hash| hash['key'] == params[:id] }
+  end
+
+  def show
+    return unless sponsor.nil?
+
+    raise ActionController::RoutingError, "No such page: #{params[:id]}"
   end
 end

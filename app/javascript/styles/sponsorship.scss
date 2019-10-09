@@ -32,4 +32,14 @@
       margin: 0 0 16px 0;
     }
   }
+
+  .sponsor-logo-standalone {
+    width: 400px;
+  }
+}
+
+.sponsor-standalone {
+  h1 a {
+    @apply text-pink-darkest no-underline text-2xl;
+  }
 }

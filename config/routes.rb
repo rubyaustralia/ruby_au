@@ -49,7 +49,10 @@ Rails.application.routes.draw do
 
   get "/policies" => "policies#index", as: :policies
   get "/policies/*id" => "policies#show", as: :policy
+
+  get "/sponsorship" => 'sponsors#index'
   get "/sponsors/*id" => 'sponsors#show'
+
   get "/*id" => 'pages#show', as: :page, format: false,
     constraints: RootRouteConstraints
 end
