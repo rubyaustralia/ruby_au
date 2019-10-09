@@ -11,12 +11,15 @@ require("@rails/ujs").start()
 
 const SignaturePad = require("signature_pad").default;
 
+import "./2019_survey";
+
 import "application.scss";
 import "committee.scss";
 import "sponsorship.scss";
 import "forms.scss";
 import "admin.scss";
 import "signatures.scss";
+import "surveys.scss";
 
 $(document).ready(() => {
   $('#mobile-menu-trigger').on('click', () => $('#mobile-menu').slideToggle());
