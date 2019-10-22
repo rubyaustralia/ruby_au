@@ -10,6 +10,9 @@
 
   <%= csrf_meta_tags %>
 
+  <meta property="og:title" content="Ruby Australia - <%= yield :heading %>" />
+  <meta property="og:description" content="We are an organisation that is dedicated to supporting the community and events around Australia focused on the Ruby programming language. Providing financial and institutional support for RubyConf AU, Rails Camps, RailsGirls, and the meetups across the country." />
+
   <%= javascript_pack_tag 'application' %>
   <%= stylesheet_pack_tag 'application' %>
 </head>
