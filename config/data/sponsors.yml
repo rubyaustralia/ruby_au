@@ -28,6 +28,15 @@
 
     By making communications a part of every software developer’s toolkit, Twilio is enabling innovators across every industry — from emerging leaders to the world’s largest organizations — to reinvent how companies engage with their customers.
 
+- name: Up
+  key: up
+  url: https://up.com.au
+  images:
+    - up.gif
+  tier: Emerald
+  bio: |
+    Up is a digital bank designed to help you organise your money and simplify your life.
+
 - name: Buildkite
   key: buildkite
   url: https://buildkite.com
