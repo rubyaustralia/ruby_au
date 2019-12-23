@@ -35,7 +35,13 @@
     - up.png
   tier: Emerald
   bio: |
-    [Up](https://up.com.au) is a digital bank designed to help you organise your money and simplify your life.
+    [Up](https://up.com.au) is a digital bank that helps you save effortlessly and spend wisely. Written primarily in Ruby/Rails and React Native, Up is designed and developed by Ferocia in Melbourne in collaboration with Bendigo Bank.
+
+    What's good about Up? Well, lots of things. Up lets you map out your financial goals using interest-earning Up Savers that can have custom names, targets and emojis. It helps you understand your spending through auto-spend categorisation and gives you the ability to add custom tags to transactions. You can easily see how much you're spending at each merchant over time and automate your saving with pay-splitting, auto-transfers and round-ups. Up also helps you stay on top of your bills by predicting when they are due next.
+
+    Super easy to try, Up takes minutes to join from your phone. There are no monthly fees and you can use Apple Pay, Google Pay or Samsung Pay straight away (full pricing info at https://up.com.au/pricing).
+
+    If you'd like to try Up, use the code RUBY (or click the link https://link.up.com.au/ruby) to get $10 give Up a try.
 
 - name: Buildkite
   key: buildkite
@@ -48,7 +54,7 @@
 
 - name: Lookahead Search
   key: lookahead
-  url: https://www.lookahead.com.au/
+  url: https://www.lookahead.com.au
   images:
     - lookahead.png
   tier: Opal
@@ -56,3 +62,12 @@
     Technical recruiters who are actually technical.
 
     We help [Ruby | Elixir | Javascript] developers and technical leaders find challenging work with inclusive teams. The companies we hire for work in Sydney, Melbourne and remotely around Australia.
+
+- name: Flood
+  key: flood
+  url: https://flood.io
+  images:
+    - tricentis-flood.svg
+  tier: Opal
+  bio: |
+    [Flood](https://flood.io) is a distributed, cloud load testing platform that helps teams test, analyze and improve the way their applications scale.
