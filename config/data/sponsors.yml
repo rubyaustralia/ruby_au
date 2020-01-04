@@ -1,6 +1,6 @@
 - name: Envato
   key: envato
-  url: http://www.envato.com
+  url: https://www.envato.com
   images:
     - envato.png
     - envato-out.png
