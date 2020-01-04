@@ -32,7 +32,7 @@
   key: up
   url: https://up.com.au
   images:
-    - up.png
+    - up.gif
   tier: Emerald
   bio: |
     [Up](https://up.com.au) is a digital bank that helps you save effortlessly and spend wisely. Written primarily in Ruby/Rails and React Native, Up is designed and developed by Ferocia in Melbourne in collaboration with Bendigo Bank.
