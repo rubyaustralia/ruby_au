@@ -1,7 +1,8 @@
 GIT
-  remote: https://github.com/cgunther/capybara-email.git
-  revision: d97947d5e705e537f9875a9ec44c0de3457be6ba
-  branch: capybara-3.17-click_on-disabled
+  remote: https://github.com/DavyJonesLocker/capybara-email.git
+  revision: e1f61aa9b486da6a8485dd6a18a4221e78cda6e7
+  ref: e1f61aa9b4
+  branch: master
   specs:
     capybara-email (3.0.1)
       capybara (>= 2.4, < 4.0)
