@@ -7,7 +7,7 @@
     "jquery": "^3.4.0",
     "signature_pad": "^3.0.0-beta.3",
     "tailwindcss": "^0.7.4",
-    "yarn": "^1.17.3"
+    "yarn": "^1.22.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.5.1",
