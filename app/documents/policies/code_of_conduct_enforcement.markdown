@@ -1,4 +1,8 @@
-# Code of Conduct Enforcement
+name: Code of Conduct - Enforcement Policy
+key: code-of-conduct-enforcement
+status: published
+version: "0.3 (2018-05-17)"
+---
 
 This is the enforcement manual followed by Ruby Australia's Disciplinary Subcommittee. It's used when we respond to an issue to make sure we're consistent and fair. It should be considered an internal document.
 
@@ -15,7 +19,7 @@ See the reporting guidelines for details of what reports should contain. If a re
 The subcommittee will then review the incident and determine, to the best of their ability:
 
 - what happened,
-- whether this event constitutes a code of conduct violation, 
+- whether this event constitutes a code of conduct violation,
 - who, if anyone, was the bad actor, and
 - whether this is an ongoing situation, and there is a threat to anyone's physical safety.
 
@@ -58,5 +62,3 @@ In the event of any conflict of interest a subcommittee member must immediately 
 This enforcement manual is distributed under a Creative Commons Attribution-ShareAlike license.
 
 Portions of text derived from the Django Enforcement Manual.
-
-_Revision 0.3, 17 May 2018._
