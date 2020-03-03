@@ -5,6 +5,10 @@ version: "0.7 (2018-05-17)"
 ---
 ## Matz is nice, and we are nice.
 
+> To report an incident, please review the [reporting guide](/policies/code-of-conduct-reporting) and email conduct@ruby.org.au.
+>
+> Reports will be handled with the process outlined in our [enforcement policy](/policies/code-of-conduct-enforcement).
+
 In the same way that Matz has written Ruby with a focus on developer happiness, we are focused on community happiness. The Australian Ruby community is full of wonderful people from a diverse range of backgrounds, and we want to ensure it remains a welcoming and safe environment to all who wish to be a part of it.
 
 Whenever we come together as a community, our shared spaces are opportunities to showcase the best of what we can be. We are there to support our peers - to build each other up, to accept each other for who they are, and to encourage each other to become the people they want to be.
