@@ -1,4 +1,4 @@
-name: Code of Conduct Enforcement Policy
+name: Code of Conduct - Enforcement Policy
 key: code-of-conduct-enforcement
 status: published
 version: "0.3 (2018-05-17)"
