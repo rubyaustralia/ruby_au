@@ -12,8 +12,8 @@ namespace :users do
 
       begin
         MailingList::Apply.call(user)
-      rescue CreateSend::BadRequest => error
-        raise error unless error.message[/Subscriber not in list/]
+      rescue CreateSend::BadRequest => e
+        raise e unless e.message[/Subscriber not in list/]
       end
     end
   end

@@ -8,11 +8,11 @@ class User < ApplicationRecord
 
   scope :unconfirmed, -> { where(confirmed_at: nil) }
   scope :old, -> { where('created_at < ?', 2.weeks.ago) }
-  scope :subscribed_to_any_list, -> {
+  scope :subscribed_to_any_list, lambda {
     where(
-      MailingList::LISTS.collect { |list|
+      MailingList::LISTS.collect do |list|
         "mailing_lists->>'#{list}' = 'true'"
-      }.join(" OR ")
+      end.join(" OR ")
     )
   }
 
