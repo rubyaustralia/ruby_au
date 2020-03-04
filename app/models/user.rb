@@ -6,6 +6,16 @@ class User < ApplicationRecord
 
   has_many :memberships, dependent: :destroy
 
+  scope :unconfirmed, -> { where(confirmed_at: nil) }
+  scope :old, -> { where('created_at < ?', 2.weeks.ago) }
+  scope :subscribed_to_any_list, -> {
+    where(
+      MailingList::LISTS.collect { |list|
+        "mailing_lists->>'#{list}' = 'true'"
+      }.join(" OR ")
+    )
+  }
+
   attr_accessor :skip_subscriptions
 
   validates :full_name, presence: true
