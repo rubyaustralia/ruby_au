@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.6.3'
 
-gem 'rails', '~> 5.2'
+gem 'rails', '~> 6.0.2'
 gem 'pg'
 gem 'puma'
 
@@ -17,6 +17,7 @@ gem 'kaminari'
 gem 'premailer-rails'
 gem 'pygmentize'
 gem 'redcarpet'
+gem 'sassc'
 gem 'validates_email_format_of'
 gem 'warden' # use for auth
 gem 'webpacker', '~> 4.0'
