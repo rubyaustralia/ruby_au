@@ -10,11 +10,11 @@ module ApplicationHelper
   }.freeze
 
   def committee
-    YAML.load_file Rails.root.join('config', 'data', 'committee.yml')
+    YAML.load_file Rails.root.join('config/data/committee.yml')
   end
 
   def document_markdown_to_html(name)
-    input = File.read Rails.root.join('app', 'documents', "#{name}.markdown")
+    input = File.read Rails.root.join("app/documents/#{name}.markdown")
 
     content_tag :div, markdown_to_html(input), class: 'markdown'
   end
@@ -38,7 +38,7 @@ module ApplicationHelper
   end
 
   def previous
-    YAML.load_file Rails.root.join('config', 'data', 'previous.yml')
+    YAML.load_file Rails.root.join('config/data/previous.yml')
   end
 
   def time_zones

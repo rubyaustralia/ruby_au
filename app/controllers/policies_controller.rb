@@ -16,7 +16,7 @@ class PoliciesController < ApplicationController
 
   def documents
     ContextDocument.all_within(
-      Rails.root.join("app", "documents", "policies")
+      Rails.root.join("app/documents/policies")
     ).sort_by { |document| document.context['name'] }
   end
 end

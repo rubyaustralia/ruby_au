@@ -1,6 +1,6 @@
 class SponsorsController < ApplicationController
   expose(:sponsors) do
-    YAML.load_file Rails.root.join('config', 'data', 'sponsors.yml')
+    YAML.load_file Rails.root.join('config/data/sponsors.yml')
   end
 
   expose(:sponsor) do

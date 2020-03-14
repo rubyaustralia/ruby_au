@@ -13,7 +13,7 @@ AllCops:
   DisplayCopNames: true
   TargetRubyVersion: 2.6
 
-Metrics/LineLength:
+Layout/LineLength:
   Enabled: false
   Max: 80
 
@@ -36,9 +36,6 @@ Style/Documentation:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
-  Enabled: false
-
-Style/BracesAroundHashParameters:
   Enabled: false
 
 Style/TrailingCommaInArguments:

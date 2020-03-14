@@ -18,7 +18,7 @@ class RootRouteConstraints
     end
 
     def content_path
-      Rails.root.join('app', 'views', 'pages').to_s
+      Rails.root.join('app/views/pages').to_s
     end
   end
 end

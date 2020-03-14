@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# rubocop:disable Lint/HandleExceptions
+# rubocop:disable Lint/SuppressedException
 begin
   require "rubocop/rake_task"
 
@@ -8,4 +8,4 @@ begin
   RuboCop::RakeTask.new(:rubocop)
 rescue LoadError
 end
-# rubocop:enable Lint/HandleExceptions
+# rubocop:enable Lint/SuppressedException
