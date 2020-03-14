@@ -1,10 +1,5 @@
 class MarkdownHandler
   class << self
-    def call(template)
-      compiled_source = erb.call(template)
-      "MarkdownHandler.render(begin;#{compiled_source};end)"
-    end
-
     def render(text)
       key = cache_key(text)
       Rails.cache.fetch key do
@@ -22,10 +17,6 @@ class MarkdownHandler
 
     def markdown
       @markdown ||= Redcarpet::Markdown.new(HTMLWithPygments, fenced_code_blocks: true, autolink: true, space_after_headers: true)
-    end
-
-    def erb
-      @erb ||= ActionView::Template.registered_template_handler(:erb)
     end
   end
 
