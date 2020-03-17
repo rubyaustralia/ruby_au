@@ -9,10 +9,12 @@ The slack channel for the website working group can be found
 Required Environment / Minimum Setup
 ------------------------------------
 
-* Install the Ruby version: `~> 2.5.4`.
+* Install the Ruby version: `~> 2.6.5`.
 * Install PostgreSQL.
 * Install Bundler.
 * `bundle install`
+* Install yarn.
+* `yarn install`
 * Modify `config/database.yml` as needed.
 * `rake db:setup`
 
@@ -39,6 +41,9 @@ Production Environment
 ----------------------
 
 This website is hosted on Heroku
+
+You can see it in action here:
+[ruby australia](https://ruby.org.au)
 
 
 Known Issues / Gotchas
