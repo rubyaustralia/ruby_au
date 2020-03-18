@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "markdown_handler"
+
 module ApplicationHelper
   TIME_ZONES = {
     "Melbourne" => "NSW, Victoria, Tasmania, ACT",
