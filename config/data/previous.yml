@@ -1,3 +1,19 @@
+- name: Matt Stevenson
+  photo: matt-stevenson.JPG
+  position: General Member
+  bio: |
+    Longtime tech enthusiast - and armed with an emoji for every occasion. With a love of expressive language he naturally fell for Ruby. When away from the modern he can be found enjoying the traditional; small-batch coffee ☕ rear-wheel drive 🏎️ and longbow archery 🏹.
+  twitter: mattoc
+  github: mattoc
+
+- name: Sonya Corcoran
+  photo: sonya-corcoran.jpg
+  position: General Member
+  bio: |
+    Laughing, learning, coding and growing these are a few of my favourite things. Aaaaaand...working as a Technical Recruiter at [Lookahead Search](https://twitter.com/LookaheadSearch).
+  twitter: soxyface
+  linkedin: sonyacorcoran
+
 - name: Sharon Vaughan
   photo: sharon-vaughan.jpg
   position: General Member
