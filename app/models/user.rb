@@ -21,8 +21,6 @@ class User < ApplicationRecord
   validates :full_name, presence: true
   validates :address, presence: true
 
-  after_create :subscribe_to_lists
-
   def active_for_authentication?
     super && deactivated_at.nil?
   end
@@ -41,6 +39,8 @@ class User < ApplicationRecord
   protected
 
   def after_confirmation
+    subscribe_to_lists
+
     if email_previously_changed? && previous_changes["email"].first.present?
       update_mailing_list_email_addresses
     else

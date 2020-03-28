@@ -10,23 +10,14 @@ RSpec.feature "Visitor signs up", type: :feature do
   end
 
   scenario "with valid email and password" do
-    stub_request(
-      :post, "https://api.createsend.com/api/v3.2/subscribers/camp-key.json"
-    )
-
     sign_up_with "valid@example.com", "password"
 
     expect(page).to have_content 'A message with a confirmation link has been sent to your email address.'
     expect(page).to_not have_link('Sign out')
 
-    expect(
-      a_request(
-        :post, "https://api.createsend.com/api/v3.2/subscribers/camp-key.json"
-      )
-    ).to have_been_made.once
-
     user = User.find_by email: "valid@example.com"
     expect(user).to be_present
+    expect(user).to_not be_confirmed
     expect(user.memberships.count).to be_zero
   end
 

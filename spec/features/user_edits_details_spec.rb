@@ -12,6 +12,9 @@ RSpec.describe "User edits profile details", type: :feature do
     user.update mailing_lists: { "RubyConf AU" => "true" }
     new_email = 'bigbunnyfoofoo@gmail.com'
     stub_request(
+      :post, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
+    )
+    stub_request(
       :put, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
     )
 
@@ -37,7 +40,7 @@ RSpec.describe "User edits profile details", type: :feature do
 
     expect(
       a_request(
-        :put, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
+        :post, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
       )
     ).to have_been_made
   end
