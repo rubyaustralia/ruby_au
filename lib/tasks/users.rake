@@ -2,7 +2,7 @@
 
 namespace :users do
   task unsubscribe_spammers: :environment do
-    User.unconfirmed.old.subscribed_to_any_list.each do |user|
+    User.unconfirmed.subscribed_to_any_list.each do |user|
       user.mailing_lists_will_change!
 
       MailingList::LISTS.each do |list|
