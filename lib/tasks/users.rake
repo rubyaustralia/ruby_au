@@ -3,17 +3,14 @@
 namespace :users do
   task unsubscribe_spammers: :environment do
     User.unconfirmed.subscribed_to_any_list.each do |user|
-      user.mailing_lists_will_change!
+      MailingList.all.each do |list|
+        next unless user.mailing_lists[list.name] == "true"
 
-      MailingList::LISTS.each do |list|
-        user.mailing_lists[list] = "false"
-      end
-      user.save
-
-      begin
-        MailingList::Apply.call(user)
-      rescue CreateSend::BadRequest => e
-        raise e unless e.message[/Subscriber not in list/]
+        begin
+          MailingList::Unsubscribe.call user, list
+        rescue CreateSend::BadRequest => e
+          raise e unless e.message[/Subscriber not in list/]
+        end
       end
     end
   end
