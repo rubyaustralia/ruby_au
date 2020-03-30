@@ -32,7 +32,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'pry-byebug'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 4.0'
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
