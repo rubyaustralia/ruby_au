@@ -51,6 +51,14 @@
   twitter: leesheppard
   website: https://leesheppard.com
 
+- name: Aaron Moodie
+  photo: aaron-moodie.jpg
+  position: General Member
+  bio: |
+    Designer who codes. Passionate about music, cleantech and the open web.
+  twitter: aaronmoodie
+  website: https://aaronmoodie.com
+
 - name: Mark Glossop
   photo: mark-glossop.jpg
   position: General Member
@@ -68,3 +76,8 @@
     Also [Perth Ruby Meetup](https://www.meetup.com/roro-perth/members/?op=leaders) co-organizer.
   twitter: cueball_au
   github: cueball
+
+- name: Mathew Button
+  photo: mat-button.jpg
+  position: General Member
+  twitter: matpushbuttons
