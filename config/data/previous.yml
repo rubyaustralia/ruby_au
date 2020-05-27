@@ -1,3 +1,20 @@
+- name: Caroline Bambrick
+  photo: caroline-bambrick.jpg
+  position: Vice President
+  bio: |
+    Caroline left academia for a career in tech in 2017 and is currently a Software Engineer at Culture Amp. Outside of work you'll most likely find her playing boardgames, losing her voice in a karaoke booth, or visiting refugees in detention.
+  twitter: cazbambrick
+  github: carolinebambrick
+
+- name: Cameo Langford
+  photo: cameo-langford.jpg
+  position: General Member
+  bio: |
+    Cameo is a Junior Developer at MYOB. She moved into a career in technology in early 2018 after six years of running dog sled tours and working in retail. When she's not coding you'll find her playing boardgames or entering sled dog races with her two Siberian Huskies.
+  twitter: cameocodes
+  github: cameocodes
+  website: https://cameocodes.com
+
 - name: Matt Stevenson
   photo: matt-stevenson.JPG
   position: General Member

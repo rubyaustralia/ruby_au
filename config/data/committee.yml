@@ -7,13 +7,15 @@
   github: pat
   website: https://freelancing-gods.com
 
-- name: Caroline Bambrick
-  photo: caroline-bambrick.jpg
+- name: Kieran Andrews
+  photo: kieran-andrews.jpg
   position: Vice President
   bio: |
-    Caroline left academia for a career in tech in 2017 and is currently a Software Engineer at Culture Amp. Outside of work you'll most likely find her playing boardgames, losing her voice in a karaoke booth, or visiting refugees in detention.
-  twitter: cazbambrick
-  github: carolinebambrick
+    Kieran is a passionate Ruby Developer from Adelaide after discovering it 2011.
+
+    In his spare time Kieran enjoys making home-made pizza, playing board games and snowboarding around the world.
+  twitter: Kieran_Andy
+  github: TigerWolf
 
 - name: Ryan Bigg
   photo: ryan-bigg.png
@@ -35,25 +37,6 @@
   twitter: RacheGoodo
   linkedin: rachaelgoodenough
 
-- name: Kieran Andrews
-  photo: kieran-andrews.jpg
-  position: General Member
-  bio: |
-    Kieran is a passionate Ruby Developer from Adelaide after discovering it 2011.
-
-    In his spare time Kieran enjoys making home-made pizza, playing board games and snowboarding around the world.
-  twitter: Kieran_Andy
-  github: TigerWolf
-
-- name: Cameo Langford
-  photo: cameo-langford.jpg
-  position: General Member
-  bio: |
-    Cameo is a Junior Developer at MYOB. She moved into a career in technology in early 2018 after six years of running dog sled tours and working in retail. When she's not coding you'll find her playing boardgames or entering sled dog races with her two Siberian Huskies.
-  twitter: cameocodes
-  github: cameocodes
-  website: https://cameocodes.com
-
 - name: Lee Sheppard
   photo: lee-sheppard.jpg
   position: General Member
@@ -63,9 +46,9 @@
     spent many years previously working in animation and as a syndicated cartoonist. He has been a past Vice President for the
     [Australian Cartoonists Association](https://cartoonists.org.au) and is a member of the
     [Society of Children’s Book Writers and Illustrators](https://www.scbwi.org).
-  github: https://github.com/leesheppard
+  github: leesheppard
   linkedin: https://www.linkedin.com/in/leesheppard/
-  twitter: https://twitter.com/leesheppard
+  twitter: leesheppard
   website: https://leesheppard.com
 
 - name: Mark Glossop
