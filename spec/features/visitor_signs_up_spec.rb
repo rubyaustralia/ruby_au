@@ -33,6 +33,25 @@ RSpec.feature "Visitor signs up", type: :feature do
     expect_user_not_to_be_registered
   end
 
+  scenario "as a bot" do
+    visit new_user_registration_path
+
+    fill_in "Email", with: "valid@example.com"
+    fill_in "Password", with: "password"
+    fill_in "Confirm Password", with: "password"
+    fill_in "Full Name", with: 'Jane Doe'
+    fill_in "Postal Address", with: '1 High Street'
+
+    check "Rails Camp"
+
+    fill_in "Ruby?", with: "Random bot generated string"
+
+    click_button 'Register'
+
+    expect_user_not_to_be_registered
+    expect(User.count).to be_zero
+  end
+
   def sign_up_with(email, password)
     visit new_user_registration_path
 
@@ -43,6 +62,8 @@ RSpec.feature "Visitor signs up", type: :feature do
     fill_in "Postal Address", with: '1 High Street'
 
     check "Rails Camp"
+
+    fill_in "Ruby?", with: "Ruby"
 
     click_button 'Register'
   end
