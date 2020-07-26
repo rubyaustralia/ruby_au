@@ -99,6 +99,21 @@
     </fieldset>
   </fieldset>
 
+  <fieldset>
+    <legend>One last thing…</legend>
+
+    <div class="hint">Please enter the text 'Ruby' in the text field below. This is just to avoid spambots signing up. 😅</div>
+
+    <div class="field">
+      <div class="label">
+        <%= label_tag :human_verification, "Ruby?", class: 'required' %>
+      </div>
+      <div class="input">
+        <%= text_field_tag :human_verification %>
+      </div>
+    </div>
+  </fieldset>
+
   <p class="links">By signing up, you agree to
     the <%= link_to "Ruby Australia Terms and Conditions", "/terms-and-conditions" %>.</p>
 
