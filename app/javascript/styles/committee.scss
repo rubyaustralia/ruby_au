@@ -2,7 +2,7 @@
 
 #committee {
   & > article {
-    @apply max-w-xs rounded shadow-lg m-5 flex-no-shrink flex flex-col;
+    @apply max-w-xs rounded shadow-lg m-5 flex-shrink-0 flex flex-col;
 
     figure {
       @apply overflow-hidden;
@@ -36,6 +36,8 @@
       span {
         @apply bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1;
 
+        svg { display: inline; }
+
         a {
           @apply text-purple;
 
@@ -50,7 +52,7 @@
 
 #previous {
   article {
-    @apply rounded shadow-lg m-5 flex-no-shrink flex flex-col p-5;
+    @apply rounded shadow-lg m-5 flex-shrink-0 flex flex-col p-5;
 
     img {
       width: 120px;

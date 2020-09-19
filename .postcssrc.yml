@@ -1,2 +1,2 @@
 plugins:
-  tailwindcss: './app/javascript/src/tailwind.js'
+  tailwindcss: './app/javascript/src/tailwind.config.js'

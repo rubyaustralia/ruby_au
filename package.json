@@ -6,7 +6,7 @@
     "@rails/webpacker": "^5.2.1",
     "jquery": "^3.5.0",
     "signature_pad": "^3.0.0-beta.3",
-    "tailwindcss": "^0.7.4",
+    "tailwindcss": "^1.8.10",
     "yarn": "^1.22.5"
   },
   "devDependencies": {

@@ -1,4 +1,10 @@
-@tailwind preflight;
+@tailwind base;
+
+body {
+  font-family: sans-serif;
+  line-height: 1.15;
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -11,14 +17,20 @@ p, li, div, span {
     }
 
     svg {
-      fill: config('colors.pink');
+      fill: theme('colors.pink');
       opacity: 0.5;
     }
   }
 }
 
+a {
+  @apply text-blue underline;
+
+  svg { display: inline; }
+}
+
 h1 {
-  @apply text-xl bg-pink text-white h-12 pt-1 mb-5 pl-5 pt-3;
+  @apply text-xl bg-pink text-white h-12 pt-1 mb-5 pl-5 pt-3 font-bold;
 }
 
 h2 {
@@ -44,6 +56,28 @@ p, li {
 
   blockquote {
     @apply mx-8 my-3 p-2 bg-grey-lighter;
+  }
+
+  ol {
+    @apply list-decimal list-inside;
+
+    ol, ul {
+      @apply ml-3;
+    }
+  }
+
+  ul {
+    @apply list-disc list-inside;
+
+    ol, ul {
+      @apply ml-3;
+    }
+  }
+
+  li {
+    p {
+      @apply mx-0 px-0;
+    }
   }
 }
 
@@ -76,8 +110,6 @@ nav {
   }
 
   ul {
-    @apply list-reset;
-
     li {
       @apply px-0 pb-2;
     }
