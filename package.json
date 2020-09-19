@@ -1,17 +1,20 @@
 {
   "dependencies": {
-    "@amcharts/amcharts4": "^4.6.8",
-    "@amcharts/amcharts4-geodata": "^4.1.7",
-    "@rails/ujs": "^6.0.0-rc1",
-    "@rails/webpacker": "4.2.2",
+    "@amcharts/amcharts4": "^4.10.2",
+    "@amcharts/amcharts4-geodata": "^4.1.17",
+    "@rails/ujs": "^6.0.3-3",
+    "@rails/webpacker": "^5.2.1",
     "jquery": "^3.5.0",
     "signature_pad": "^3.0.0-beta.3",
     "tailwindcss": "^0.7.4",
-    "yarn": "^1.22.0"
+    "yarn": "^1.22.5"
   },
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
-    "webpack-dev-server": "^3.10.3"
+    "autoprefixer": "^10.0.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "engines": {
+    "node": "12.x"
   },
   "license": "MIT"
 }
