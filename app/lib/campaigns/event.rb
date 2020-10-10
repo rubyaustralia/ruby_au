@@ -27,6 +27,7 @@ class Campaigns::Event
       event.dtstart = datetime(rsvp_event.happens_at)
       event.dtend = datetime(rsvp_event.happens_at + 90.minutes)
       event.summary = title
+      event.description = rsvp_event.link
 
       event.alarm do |alarm|
         alarm.summary = "#{title} Reminder"
