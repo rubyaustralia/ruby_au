@@ -16,7 +16,7 @@ class Campaigns::Send
       delivery = delivery_for membership
       next if delivery.delivered_at.present?
 
-      CampaignsMailer.campaign_email(campaign, membership).deliver_now
+      CampaignsMailer.campaign_email(campaign, membership, ics).deliver_now
 
       delivery.delivered_at = Time.current
       delivery.save!
@@ -29,10 +29,18 @@ class Campaigns::Send
 
   attr_reader :campaign
 
+  delegate :rsvp_event, to: :campaign
+
   def delivery_for(membership)
     CampaignDelivery.find_or_initialize_by(
       campaign: campaign,
       membership: membership
     )
+  end
+
+  def ics
+    return nil if rsvp_event.nil?
+
+    @ics ||= Campaigns::Event.call(rsvp_event)
   end
 end
