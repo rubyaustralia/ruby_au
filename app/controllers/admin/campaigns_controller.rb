@@ -11,10 +11,11 @@ class Admin::CampaignsController < Admin::ApplicationController
 
   def show
     membership = current_user.memberships.current.first
-    mail = CampaignsMailer.campaign_email campaign, membership
+    mail = CampaignsMailer.campaign_email campaign, membership, ics
+    html = mail.parts.detect { |part| part.content_type["text/html"] }
 
     # rubocop:disable Rails/OutputSafety
-    render html: mail.body.to_s.html_safe, layout: nil
+    render html: html.body.to_s.html_safe, layout: nil
     # rubocop:enable Rails/OutputSafety
   end
 
@@ -50,5 +51,11 @@ class Admin::CampaignsController < Admin::ApplicationController
     return unless campaign.delivered?
 
     redirect_to admin_campaigns_path, notice: "This campaign has already been sent."
+  end
+
+  def ics
+    return nil if campaign.rsvp_event.nil?
+
+    Campaigns::Event.call(campaign.rsvp_event)
   end
 end
