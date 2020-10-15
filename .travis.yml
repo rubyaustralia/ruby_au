@@ -3,7 +3,7 @@ cache: bundler
 before_script:
   - psql -c 'create database ruby_au_test;' -U postgres >/dev/null
   - bundle exec rake db:create db:schema:load
-  - nvm install 10.15
+  - nvm install 12.18
   - yarn install
   - bundle exec rails webpacker:compile
 script:
