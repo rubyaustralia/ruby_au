@@ -1,78 +1,79 @@
 - name: Nick Wolf
-photo: nick-wolf.jpg
-position: President
-bio: |
+  photo: nick-wolf.jpg
+  position: President
+  bio: |
 
-twitter: quintrino
-github: quintrino
-website: https://nickwolf.com.au
+  twitter: quintrino
+  github: quintrino
+  website: https://nickwolf.com.au
 
 - name: Kieran Andrews
-photo: kieran-andrews.jpg
-position: Vice President
-bio: |
-  Kieran is a passionate Ruby Developer from Adelaide after discovering it 2011.
+  photo: kieran-andrews.jpg
+  position: Vice President
+  bio: |
+    Kieran is a passionate Ruby Developer from Adelaide after discovering it 2011.
 
-  In his spare time Kieran enjoys making home-made pizza, playing board games and snowboarding around the world.
-twitter: Kieran_Andy
-github: TigerWolf
+    In his spare time Kieran enjoys making home-made pizza, playing board games and snowboarding around the world.
+  twitter: Kieran_Andy
+  github: TigerWolf
 
 - name: Ryan Bigg
-photo: ryan-bigg.png
-position: Treasurer
-bio: |
-  [Writer of Rails Guides](http://contributors.rubyonrails.org/contributors/ryan-bigg/commits), [Rails 4 in Action](https://www.manning.com/books/rails-4-in-action), [Super Hero](https://rubyheroes.com/heroes/2011) and [Answerer of Stack Overflow Questions](http://stackoverflow.com/users/15245/ryan-bigg). Works at Culture Amp as the Junior Engineering Program Lead. Continuously mistaken for Ryan Bates.
-twitter: ryanbigg
-github: radar
+  photo: ryan-bigg.png
+  position: Treasurer
+  bio: |
+    [Writer of Rails Guides](http://contributors.rubyonrails.org/contributors/ryan-bigg/commits), [Rails 4 in Action](https://www.manning.com/books/rails-4-in-action), [Super Hero](https://rubyheroes.com/heroes/2011) and [Answerer of Stack Overflow Questions](http://stackoverflow.com/users/15245/ryan-bigg). Works at Culture Amp as the Junior Engineering Program Lead. Continuously mistaken for Ryan Bates.
+  twitter: ryanbigg
+  github: radar
 
 - name: Toby Nieboer
-photo: toby-nieboer.jpg
-position: Secretary
-bio: |
-  Previously: President/Vice President/General Member of the Ruby AU committee, co-organiser of [RubyConf AU 2019](https://rubyconf.org.au/2019), [RailsCamps](https://rails.camp) [22](https://railscamp22.wordpress.com/) and [24](https://railscamp24.wordpress.com/), and the [Melbourne Ruby meetup](https://www.meetup.com/en-AU/Ruby-On-Rails-Oceania-Melbourne/), technical recruiter at [Lookahead](https://lookahead.com.au) and Automattic. 
-  Currently: Technical recruiter at [A Cloud Guru](https://acloud.guru) and [Crew Talent Advisory](https://wearecrew.io)
-twitter: tcn33
-linkedin: tobynieboer
-website: https://tcn33.blog
+  photo: toby-nieboer.jpg
+  position: Secretary
+  bio: |
+    Previously: President/Vice President/General Member of the Ruby AU committee, co-organiser of [RubyConf AU 2019](https://rubyconf.org.au/2019), [RailsCamps](https://rails.camp) [22](https://railscamp22.wordpress.com/) and [24](https://railscamp24.wordpress.com/), and the [Melbourne Ruby meetup](https://www.meetup.com/en-AU/Ruby-On-Rails-Oceania-Melbourne/), technical recruiter at [Lookahead](https://lookahead.com.au) and Automattic. 
+    Currently: Technical recruiter at [A Cloud Guru](https://acloud.guru) and [Crew Talent Advisory](https://wearecrew.io)
+  twitter: tcn33
+  linkedin: tobynieboer
+  website: https://tcn33.blog
 
 - name: Lee Sheppard
-photo: lee-sheppard.jpg
-position: General Member
-bio: |
-  [Lee](https://en.wikipedia.org/wiki/Lee_Sheppard_(cartoonist)) is currently a Rails Front End Developer, and part
-  of the organising committee for [Rails Girls Sydney](https://railsgirls.com/sydney). Lee
-  spent many years previously working in animation and as a syndicated cartoonist. He has been a past Vice President for the
-  [Australian Cartoonists Association](https://cartoonists.org.au) and is a member of the
-  [Society of Children’s Book Writers and Illustrators](https://www.scbwi.org).
-github: leesheppard
-linkedin: https://www.linkedin.com/in/leesheppard/
-twitter: leesheppard
-website: https://leesheppard.com
+  photo: lee-sheppard.jpg
+  position: General Member
+  bio: |
+    [Lee](https://en.wikipedia.org/wiki/Lee_Sheppard_(cartoonist)) is currently a Rails Front End Developer, and part
+    of the organising committee for [Rails Girls Sydney](https://railsgirls.com/sydney). Lee
+    spent many years previously working in animation and as a syndicated cartoonist. He has been a past Vice President for the
+    [Australian Cartoonists Association](https://cartoonists.org.au) and is a member of the
+    [Society of Children’s Book Writers and Illustrators](https://www.scbwi.org).
+  github: leesheppard
+  linkedin: https://www.linkedin.com/in/leesheppard/
+  twitter: leesheppard
+  website: https://leesheppard.com
 
 - name: Mark Glossop
-photo: mark-glossop.jpg
-position: General Member
-bio: |
-  Mark is a former-sysadmin-turned-developer with a lifelong interest in tech,
-  science and maths. He started his Ruby journey in 2008 with Rails. These
-  days, he uses Ruby and a handful of other languages - but Ruby is his staple
-  language, because of both the language itself and the community around it.
-  He is also keen to help the tech industry be a better and more inclusive
-  place, particularly for people with disabilities.
+  photo: mark-glossop.jpg
+  position: General Member
+  bio: |
+    Mark is a former-sysadmin-turned-developer with a lifelong interest in tech,
+    science and maths. He started his Ruby journey in 2008 with Rails. These
+    days, he uses Ruby and a handful of other languages - but Ruby is his staple
+    language, because of both the language itself and the community around it.
+    He is also keen to help the tech industry be a better and more inclusive
+    place, particularly for people with disabilities.
 
-  Outside of tech, he watches more TV than is probably healthy, manages to be
-  a halfway-decent home cook, and is keen to do more travelling.
+    Outside of tech, he watches more TV than is probably healthy, manages to be
+    a halfway-decent home cook, and is keen to do more travelling.
 
-  Also [Perth Ruby Meetup](https://www.meetup.com/roro-perth/members/?op=leaders) co-organizer.
-twitter: cueball_au
-github: cueball
+    Also [Perth Ruby Meetup](https://www.meetup.com/roro-perth/members/?op=leaders) co-organizer.
+  twitter: cueball_au
+  github: cueball
 
 - name: Mathew Button
-photo: mat-button.jpg
-position: General Member
-twitter: matpushbuttons
-github: mathewdbutton
-bio: |
-  Mat is a Ruby Developer based in Sydney. When he's not trying to remember
-  the Rails Migration syntax, you can find him encouraging his plants to grow,
-  playing ultimate frisbee or co-organizing [@rorosyd](https://twitter.com/rorosyd)
+  photo: mat-button.jpg
+  position: General Member
+  bio: |
+    Mat is a Ruby Developer based in Sydney. When he's not trying to remember
+    the Rails Migration syntax, you can find him encouraging his plants to grow,
+    playing ultimate frisbee or co-organizing [@rorosyd](https://twitter.com/rorosyd)
+  twitter: matpushbuttons
+  github: mathewdbutton
+  
