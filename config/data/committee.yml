@@ -1,11 +1,11 @@
-- name: Pat Allan
-  photo: pat-allan-new.jpg
+- name: Nick Wolf
+  photo: nick-wolf.jpg
   position: President
   bio: |
-    Pat is a gelato connoisseur, pancake master, and occasional events organiser (including [RubyConf AU](https://rubyconf.org.au), [Rails Camps](https://rails.camp), and [Trampoline](https://trampolineday.com)). Mostly, though, he is a contracting Ruby developer based in Melbourne, and most recently has led the development efforts at [Limbr](https://limbr.org), a social enterprise focused on mental health.
-  twitter: pat
-  github: pat
-  website: https://freelancing-gods.com
+
+  twitter: quintrino
+  github: quintrino
+  website: https://nickwolf.com.au
 
 - name: Kieran Andrews
   photo: kieran-andrews.jpg
@@ -25,17 +25,15 @@
   twitter: ryanbigg
   github: radar
 
-- name: Rachael Goodenough
-  photo: rachael-goodenough.jpg
+- name: Toby Nieboer
+  photo: toby-nieboer.jpg
   position: Secretary
   bio: |
-    [@WWCodeMelbourne](https://twitter.com/WWCodeMelbourne) Co-Organiser<br />
-    [@NodeGirlsPerth](https://twitter.com/NodeGirlsPerth) Organizer<br />
-    [@rubyaustralia](https://twitter.com/rubyaustralia) secretary<br />
-    [@witqld](https://twitter.com/witqld) ICT Committee Member<br />
-    Lead Talent Acquisition Manager [@Readify](https://twitter.com/Readify)
-  twitter: RacheGoodo
-  linkedin: rachaelgoodenough
+    Previously: President/Vice President/General Member of the Ruby AU committee, co-organiser of [RubyConf AU 2019](https://rubyconf.org.au/2019), [RailsCamps](https://rails.camp) [22](https://railscamp22.wordpress.com/) and [24](https://railscamp24.wordpress.com/), and the [Melbourne Ruby meetup](https://www.meetup.com/en-AU/Ruby-On-Rails-Oceania-Melbourne/), technical recruiter at [Lookahead](https://lookahead.com.au) and Automattic. 
+    Currently: Technical recruiter at [A Cloud Guru](https://acloud.guru) and [Crew Talent Advisory](https://wearecrew.io)
+  twitter: tcn33
+  linkedin: tobynieboer
+  website: https://tcn33.blog
 
 - name: Lee Sheppard
   photo: lee-sheppard.jpg
@@ -50,14 +48,6 @@
   linkedin: https://www.linkedin.com/in/leesheppard/
   twitter: leesheppard
   website: https://leesheppard.com
-
-- name: Aaron Moodie
-  photo: aaron-moodie.jpg
-  position: General Member
-  bio: |
-    Designer who codes. Passionate about music, cleantech and the open web.
-  twitter: aaronmoodie
-  website: https://aaronmoodie.com
 
 - name: Mark Glossop
   photo: mark-glossop.jpg
@@ -80,9 +70,10 @@
 - name: Mathew Button
   photo: mat-button.jpg
   position: General Member
-  twitter: matpushbuttons
-  github: mathewdbutton
   bio: |
     Mat is a Ruby Developer based in Sydney. When he's not trying to remember
     the Rails Migration syntax, you can find him encouraging his plants to grow,
     playing ultimate frisbee or co-organizing [@rorosyd](https://twitter.com/rorosyd)
+  twitter: matpushbuttons
+  github: mathewdbutton
+  
