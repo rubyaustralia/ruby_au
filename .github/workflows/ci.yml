@@ -1,0 +1,44 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_USER: ruby_au
+          POSTGRES_PASSWORD: ruby_au
+          POSTGRES_DB: ruby_au_test
+        ports:
+          - 5432/tcp
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Set up ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6.5
+          bundler-cache: true
+      - name: Set up node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.18
+      - name: Prepare Yarn cache
+        uses: c-hive/gha-yarn-cache@v1
+      - name: Install Yarn dependencies
+        run: |
+          yarn install
+          bundle exec rails webpacker:compile
+      - name: Rubocop
+        run: bundle exec rubocop
+      - name: Test
+        env:
+          DATABASE_URL: postgres://ruby_au:ruby_au@127.0.0.1:${{ job.services.postgres.ports[5432] }}/ruby_au_test
+        run: bundle exec rspec
