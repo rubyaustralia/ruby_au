@@ -18,7 +18,7 @@ module ApplicationHelper
   def document_markdown_to_html(name)
     input = File.read Rails.root.join("app/documents/#{name}.markdown")
 
-    content_tag :div, markdown_to_html(input), class: 'markdown'
+    tag :div, markdown_to_html(input), class: 'markdown'
   end
 
   def link_to_external(name = nil, options = nil, html_options = {})

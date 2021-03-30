@@ -22,6 +22,13 @@ class Campaigns::Event
 
   delegate :to_ical, to: :calendar
 
+  def add_alarm(event)
+    event.alarm do |alarm|
+      alarm.summary = "#{title} Reminder"
+      alarm.trigger = '-P0DT1H0M0S' # 1 hour before
+    end
+  end
+
   def add_event
     calendar.event do |event|
       event.dtstart = datetime(rsvp_event.happens_at)
@@ -29,10 +36,7 @@ class Campaigns::Event
       event.summary = title
       event.description = rsvp_event.link
 
-      event.alarm do |alarm|
-        alarm.summary = "#{title} Reminder"
-        alarm.trigger = '-P0DT1H0M0S' # 1 hour before
-      end
+      add_alarm(event)
     end
   end
 

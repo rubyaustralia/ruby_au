@@ -4,7 +4,7 @@ class ReactivationsController < ApplicationController
   end
 
   def create
-    if user.deactivated? && user.valid_password?(user_params[:password])
+    if reactivate?
       user.update deactivated_at: nil
       user.memberships.create joined_at: Time.current
 
@@ -18,6 +18,10 @@ class ReactivationsController < ApplicationController
   end
 
   private
+
+  def reactivate?
+    user.deactivated? && user.valid_password?(user_params[:password])
+  end
 
   def user_params
     params.require(:user).permit(:email, :password)

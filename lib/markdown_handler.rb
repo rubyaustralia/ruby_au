@@ -23,16 +23,14 @@ class MarkdownHandler
   class HTMLWithPygments < Redcarpet::Render::HTML
     def block_code(code, lang)
       lang = lang&.split&.first || "text"
-      output = add_code_tags(
+      add_code_tags(
         Pygmentize.process(code, lang), lang
       )
-      output
     end
 
     def add_code_tags(code, lang)
-      code = code.sub(/<pre>/, '<div class="lang">' + lang + '</div><pre><code  class="' + lang + '">')
-      code = code.sub(/<\/pre>/, "</code></pre>")
-      code
+      code = code.sub(/<pre>/, %{<div class="lang">#{lang}</div><pre><code  class="' + lang + '">})
+      code.sub(/<\/pre>/, "</code></pre>")
     end
   end
 end

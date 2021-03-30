@@ -36,12 +36,12 @@ class MailingList::Sync
     @cm_list ||= CreateSend::List.new cm_auth, list.api_id
   end
 
-  def each_subscriber
+  def each_subscriber(&block)
     page = 1
 
     loop do
       results = cm_list.active('', page)
-      results['Results'].each { |result| yield result }
+      results['Results'].each(&block)
 
       break if results['PageNumber'] >= results['NumberOfPages']
 
