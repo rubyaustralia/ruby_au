@@ -24,7 +24,7 @@ form.standard {
     @apply shadow bg-purple text-white font-bold py-2 px-4 rounded;
 
     &:focus {
-      @apply shadow-outline outline-none;
+      @apply ring outline-none;
     }
 
     &:hover {

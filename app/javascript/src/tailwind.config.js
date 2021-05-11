@@ -291,8 +291,8 @@ module.exports = {
     */
 
     fontWeight: {
-      'hairline': 100,
-      'thin': 200,
+      'thin': 100,
+      'extralight': 200,
       'light': 300,
       'normal': 400,
       'medium': 500,
@@ -408,7 +408,7 @@ module.exports = {
     */
 
     borderWidth: {
-      default: '1px',
+      DEFAULT: '1px',
       '0': '0',
       '2': '2px',
       '4': '4px',
@@ -455,7 +455,7 @@ module.exports = {
     borderRadius: {
       'none': '0',
       'sm': '.125rem',
-      default: '.25rem',
+      DEFAULT: '.25rem',
       'lg': '.5rem',
       'full': '9999px',
     },
@@ -747,7 +747,7 @@ module.exports = {
     */
 
     boxShadow: {
-      default: '0 2px 4px 0 rgba(0,0,0,0.10)',
+      DEFAULT: '0 2px 4px 0 rgba(0,0,0,0.10)',
       'md': '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
       'lg': '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
       'inner': 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
@@ -898,6 +898,7 @@ module.exports = {
     visibility: ['responsive'],
     whitespace: ['responsive'],
     wordBreak: ['responsive'],
+    textOverflow: ['responsive'],
     width: ['responsive'],
     zIndex: ['responsive'],
   },

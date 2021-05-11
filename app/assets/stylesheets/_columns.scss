@@ -3,7 +3,7 @@
     margin-left: 20px;
     float: left;
     clear: both;
-    @include clearfix;
+    @include flow-root;
 }
 
 @mixin right-column {
@@ -11,7 +11,7 @@
     margin-left: 10px;
     margin-right: 20px;
     float: right;
-    @include clearfix;
+    @include flow-root;
 }
 
 @mixin both-columns {
