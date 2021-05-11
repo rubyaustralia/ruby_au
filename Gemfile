@@ -21,7 +21,7 @@ gem 'redcarpet'
 gem 'sassc'
 gem 'validates_email_format_of'
 gem 'warden' # use for auth
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 5.0'
 
 group :production do
   gem 'rails_12factor'
