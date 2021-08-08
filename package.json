@@ -12,8 +12,7 @@
     "yarn": "^1.22.5"
   },
   "devDependencies": {
-    "autoprefixer": "^10.0.0",
-    "webpack-dev-server": "^3.11.0"
+    "autoprefixer": "^10.0.0"
   },
   "engines": {
     "node": "12.x"
