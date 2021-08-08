@@ -7,19 +7,22 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+
 require("@rails/ujs").start()
 
 const SignaturePad = require("signature_pad").default;
 
 import "./2019_survey";
 
-import "application.scss";
-import "committee.scss";
-import "sponsorship.scss";
-import "forms.scss";
-import "admin.scss";
-import "signatures.scss";
-import "surveys.scss";
+import "../styles/application.scss";
+import "../styles/committee.scss";
+import "../styles/sponsorship.scss";
+import "../styles/forms.scss";
+import "../styles/admin.scss";
+import "../styles/signatures.scss";
+import "../styles/surveys.scss";
 
 $(document).ready(() => {
   $('#mobile-menu-trigger').on('click', () => $('#mobile-menu').slideToggle());
