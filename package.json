@@ -8,12 +8,10 @@
     "jquery": "^3.6.0",
     "postcss": "^8.3.6",
     "signature_pad": "^3.0.0-beta.4",
-    "tailwindcss": "^2.1.2",
+    "tailwindcss": "^2.2.7",
     "yarn": "^1.22.5"
   },
-  "devDependencies": {
-    "autoprefixer": "^10.0.0"
-  },
+  "devDependencies": {},
   "engines": {
     "node": "12.x"
   },
