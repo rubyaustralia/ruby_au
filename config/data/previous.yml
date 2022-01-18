@@ -1,3 +1,11 @@
+- name: Ryan Bigg
+  photo: ryan-bigg.png
+  position: Treasurer
+  bio: |
+    [Writer of Rails Guides](http://contributors.rubyonrails.org/contributors/ryan-bigg/commits), [Rails 4 in Action](https://www.manning.com/books/rails-4-in-action), [Super Hero](https://rubyheroes.com/heroes/2011) and [Answerer of Stack Overflow Questions](http://stackoverflow.com/users/15245/ryan-bigg). Works at Culture Amp as the Junior Engineering Program Lead. Continuously mistaken for Ryan Bates.
+  twitter: ryanbigg
+  github: radar
+  
 - name: Rachael Goodenough
   photo: rachael-goodenough.jpg
   position: Secretary
