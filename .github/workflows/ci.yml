@@ -24,12 +24,12 @@ jobs:
       - name: Set up ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6.6
+          ruby-version: 2.6.9
           bundler-cache: true
       - name: Set up node
         uses: actions/setup-node@v1
         with:
-          node-version: 12.18
+          node-version: 16.13.1
       - name: Prepare Yarn cache
         uses: c-hive/gha-yarn-cache@v1
       - name: Install Yarn dependencies

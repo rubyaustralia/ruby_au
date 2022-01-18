@@ -112,7 +112,7 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
-    ffi (1.15.0)
+    ffi (1.15.5)
     formatador (0.2.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -402,7 +402,7 @@ DEPENDENCIES
   webpacker (= 6.0.0.beta.7)
 
 RUBY VERSION
-   ruby 2.6.6p146
+   ruby 2.6.9p207
 
 BUNDLED WITH
-   2.1.4
+   2.3.5

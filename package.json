@@ -25,7 +25,7 @@
     "@webpack-cli/serve": "^1.5.1"
   },
   "engines": {
-    "node": "12.x"
+    "node": "16.13.x"
   },
   "license": "MIT",
   "babel": {
