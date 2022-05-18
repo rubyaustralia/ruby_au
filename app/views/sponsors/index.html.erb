@@ -11,7 +11,7 @@
 </p>
 
 <p>
-  If you are interested in becoming a Ruby AU sponsor for 2019-20, please
+  If you are interested in becoming a Ruby AU sponsor, please
   <%= link_to "download our prospectus", "/files/sponsorship_2019-2020.pdf" %>
   and email us at
   <%= mail_to "sponsorship@ruby.org.au" %>.
@@ -21,7 +21,7 @@
   <article id="sponsors" class="welcome">
     <% sponsors.group_by { |sponsor| sponsor['tier'] }.each do |tier, sponsors| %>
       <section class="sponsor-logos flex flex-col">
-        <h2><%= tier %> Sponsors for 2019/2020</h2>
+        <h2><%= tier %> Sponsors </h2>
         <% sponsors.each do |sponsor| %>
           <%= link_to "/sponsors/#{sponsor['key']}", class: "sponsor-logo-no-border" do %>
             <%= image_tag "sponsors/#{sponsor['images'].first}", class: "sponsor-logo-#{tier.underscore}", alt: sponsor['name'] %>

@@ -32,7 +32,7 @@
   key: up
   url: https://up.com.au
   images:
-    - up.gif
+    - up.png
   tier: Emerald
   bio: |
     [Up](https://up.com.au) is a digital bank that helps you save effortlessly and spend wisely. Written primarily in Ruby/Rails and React Native, Up is designed and developed by Ferocia in Melbourne in collaboration with Bendigo Bank.
@@ -42,6 +42,16 @@
     Super easy to try, Up takes minutes to join from your phone. There are no monthly fees and you can use Apple Pay, Google Pay or Samsung Pay straight away (full pricing info at https://up.com.au/pricing).
 
     If you'd like to try Up, use the code RUBY (or click the link https://link.up.com.au/ruby) to get $10 give Up a try.
+
+- name: HotDoc
+  key: hotdoc
+  url: https://www.hotdoc.com.au/
+  images:
+    - hotdoc.png
+  tier: Emerald
+  bio: |
+    [HotDoc](https://www.hotdoc.com.au/) is Australia's largest and most trusted patient engagement platform.
+    🚧 Bio under construction 🚧
 
 - name: Buildkite
   key: buildkite
