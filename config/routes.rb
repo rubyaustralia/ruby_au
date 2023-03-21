@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     as: :forum
   get '/mailing-list', to: redirect('https://confirmsubscription.com/h/j/3DDD74A0ACC3DB22'),
     as: :roro_mailing_list
-  get '/slack', to: redirect('https://ruby-au-join.herokuapp.com/'),
+  get '/slack', to: redirect('https://join.slack.com/t/rubyau/shared_invite/zt-1pewt4vi8-TtrM~UoIJmuH9Niy0Ela6w'),
     as: :slack
   get '/videos', to: redirect('https://www.youtube.com/channel/UCr38SHAvOKMDyX3-8lhvJHA/videos'),
     as: :videos
