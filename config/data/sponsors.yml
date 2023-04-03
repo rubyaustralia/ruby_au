@@ -97,8 +97,7 @@
     - 2023/cipherstash-500x111.png
   tier: Amber
   bio: |
-    🚧 Bio under construction 🚧
-
+    CipherStash is the ultimate in data security. Our products use advanced queryable encryption technology that keeps data encrypted-in-use, rather than just at-rest. This ensures that access controls are always applied and guarantees that every data access is logged. CipherStash shows you the who, what, where, and when of how sensitive data is accessed - even when it leaves core systems. CipherStash works in your existing databases, data lakes, and data warehouses via a drop-in driver replacement. An SDK is also available to support more sophisticated use cases.
 
 - name: Lookahead
   key: lookahead
