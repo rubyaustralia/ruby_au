@@ -9,7 +9,7 @@ The slack channel for the website working group can be found
 Required Environment / Minimum Setup
 ------------------------------------
 
-* Install the Ruby version: `~> 2.6.6`.
+* Install the Ruby version (`3.0.6`).
 * Install PostgreSQL.
 * Install Bundler.
 * `bundle install`
