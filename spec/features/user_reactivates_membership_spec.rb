@@ -30,7 +30,7 @@ RSpec.feature "User reactivates their membership", type: :feature do
 
     click_link "Reactivate Membership"
 
-    fill_in "Email",    with: user.email
+    fill_in "Email",    with: "email"
     fill_in "Password", with: "not-the-password"
     click_button "Reactivate"
 
