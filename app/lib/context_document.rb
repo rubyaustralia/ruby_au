@@ -1,5 +1,5 @@
 class ContextDocument
-  MARKER = /---\s*/.freeze
+  MARKER = /---\s*/
 
   def self.all_within(directory)
     Dir["#{directory}/*"].collect { |path| new(path) }
