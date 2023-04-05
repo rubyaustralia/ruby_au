@@ -166,6 +166,10 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    launchy (2.5.2)
+      addressable (~> 2.8)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -393,6 +397,7 @@ DEPENDENCIES
   inline_svg (~> 1.7.2)
   jbuilder
   kaminari
+  letter_opener
   listen
   pg
   premailer-rails
