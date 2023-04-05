@@ -5,7 +5,7 @@ class SendInvitations
 
   def call
     imported_members.each do |member|
-      MemberInvitationMailer.invite(member).deliver_now
+      InvitationMailer.invite_member(member).deliver_now
 
       member.update contacted_at: Time.current
     end
