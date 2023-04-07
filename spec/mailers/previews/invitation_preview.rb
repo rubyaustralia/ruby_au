@@ -1,7 +1,7 @@
 # Preview all emails at http://localhost:3000/rails/mailers/invitation
 class InvitationPreview < ActionMailer::Preview
   def invite
-    InvitationMailer.with(email: 'test@test.com', first_name: 'John').invite
+    InvitationMailer.with(email: 'test@test.com', name: 'John Doe').invite
   end
 
   def invite_member

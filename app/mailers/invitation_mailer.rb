@@ -1,8 +1,7 @@
 class InvitationMailer < ApplicationMailer
   def invite
     @email = params[:email]
-    @first_name = params[:first_name]
-    @last_name = params[:last_name]
+    @name = params[:name]
 
     mail(
       to: @email,
