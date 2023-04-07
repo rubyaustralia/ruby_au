@@ -1,6 +1,3 @@
-# Class for handling Slack Events via the API https://api.slack.com/apis/connections/events-api
-# Each supported event is represented by a class that matches the event type, and that class
-# must implement the Event "interface" to be called when a request is sent to the Slack Controller
 module Slack
   class EventHandler
     def self.call(event_data:)
