@@ -22,7 +22,7 @@ module ApplicationHelper
   end
 
   def link_to_external(name = nil, options = nil, html_options = {})
-    svg = inline_svg "external-link.svg", height: 12
+    svg = inline_svg_tag "external-link.svg", height: 12
     html_options[:target] ||= "_blank"
     html_options[:rel]    ||= "external"
 
