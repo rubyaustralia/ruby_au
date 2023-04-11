@@ -18,25 +18,25 @@
       <aside>
         <% if member['twitter'] %>
           <span>
-            <%= inline_svg "twitter.svg", height: 16 %>
+            <%= inline_svg_tag "twitter.svg", height: 16 %>
             <%= link_to "@#{ member['twitter']}", "https://twitter.com/#{ member['twitter']}" %>
           </span>
         <% end %>
         <% if member['github'] %>
           <span>
-            <%= inline_svg "github.svg", height: 16 %>
+            <%= inline_svg_tag "github.svg", height: 16 %>
             <%= link_to member['github'], "https://github.com/#{ member['github']}", title: 'GitHub' %>
           </span>
         <% end %>
         <% if member['linkedin'] %>
           <span>
-            <%= inline_svg "linkedin.svg", height: 16 %>
+            <%= inline_svg_tag "linkedin.svg", height: 16 %>
             <%= link_to "LinkedIn", "https://www.linkedin.com/in/#{member['linkedin']}/" %>
           </span>
         <% end %>
         <% if member['website'] %>
           <span>
-            <%= inline_svg "rss.svg", height: 16 %>
+            <%= inline_svg_tag "rss.svg", height: 16 %>
             <%= link_to member['website'].gsub(%r{^https?://}, ''), member['website'] %>
           </span>
         <% end %>
