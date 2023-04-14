@@ -10,7 +10,7 @@ module Slack
 
         InvitationMailer.with(email: email, name: name)
                         .invite
-                        .deliver_later
+                        .deliver_now
       end
     end
   end

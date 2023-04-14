@@ -1,12 +1,13 @@
 module Slack
   class EventHandler
     def self.call(event_data:)
-      event_class = "Slack::Events::#{event_data[:type]&.classify}".constantize
-
-      event_class.call(event_data)
-    rescue NameError, NotImplementedError
-      Rails.logger.error "Unknown Slack event"
-      false
+      case event_data[:type]
+      when "team_join"
+        Slack::Events::TeamJoin.call(event_data)
+      else
+        Rails.logger.debug "Unhandled Slack event: #{event_data[:type]}"
+        false
+      end
     end
   end
 end

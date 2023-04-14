@@ -5,11 +5,11 @@ class InvitationPreview < ActionMailer::Preview
   end
 
   def invite_member
-    InvitationMailer.invite_member ImportedMember.new(
-      full_name: 'Yukihiro Matsumoto',
-      email: 'matz@ruby.local',
-      token: SecureRandom.uuid,
-      data: { sources: ['RubyConf AU 2012', 'Rails Camp 0'] }
-    )
+    InvitationMailer.with(
+      email: 'john.doe@test.com',
+      name: 'John Doe',
+      sources: ["Some Conference"],
+      token: 'some-token'
+    ).invite
   end
 end

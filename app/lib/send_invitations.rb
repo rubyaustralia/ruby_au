@@ -5,7 +5,12 @@ class SendInvitations
 
   def call
     imported_members.each do |member|
-      InvitationMailer.invite_member(member).deliver_now
+      InvitationMailer.with(
+        name: member.full_name,
+        email: member.email,
+        sources: member.data['sources'],
+        token: member.token
+      ).invite.deliver_now
 
       member.update contacted_at: Time.current
     end
