@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.0.6'
+ruby '3.2.2'
 
 gem 'rails', '~> 6.1.7'
 gem 'pg'
@@ -21,7 +21,7 @@ gem 'redcarpet'
 gem 'sassc'
 gem 'validates_email_format_of'
 gem 'warden' # use for auth
-gem 'webpacker', '6.0.0.beta.7'
+gem 'webpacker', '6.0.0.rc.6'
 
 group :production do
   gem 'rails_12factor'
