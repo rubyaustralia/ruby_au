@@ -73,7 +73,7 @@ RSpec.describe "Committee importing members", type: :feature do
 
     scenario "accepts an invitation" do
       stub_request(
-        :get, %r{https://api.createsend.com/api/v3.2/subscribers/.*\.json}
+        :get, %r{https://api.createsend.com/api/v3.3/subscribers/.*\.json}
       ).and_return(
         body: JSON.dump("State" => "Active"),
         headers: { "Content-Type" => "application/json" }
@@ -97,7 +97,7 @@ RSpec.describe "Committee importing members", type: :feature do
 
       expect(
         a_request(
-          :get, %r{https://api.createsend.com/api/v3.2/subscribers/.*\.json}
+          :get, %r{https://api.createsend.com/api/v3.3/subscribers/.*\.json}
         )
       ).to have_been_made.times(MailingList.all.length)
 
@@ -113,7 +113,7 @@ RSpec.describe "Committee importing members", type: :feature do
 
     scenario "accepts an invitation without a provided name" do
       stub_request(
-        :get, %r{https://api.createsend.com/api/v3.2/subscribers/.*\.json}
+        :get, %r{https://api.createsend.com/api/v3.3/subscribers/.*\.json}
       ).and_return(
         body: JSON.dump("State" => "Active"),
         headers: { "Content-Type" => "application/json" }
@@ -138,7 +138,7 @@ RSpec.describe "Committee importing members", type: :feature do
 
       expect(
         a_request(
-          :get, %r{https://api.createsend.com/api/v3.2/subscribers/.*\.json}
+          :get, %r{https://api.createsend.com/api/v3.3/subscribers/.*\.json}
         )
       ).to have_been_made.times(MailingList.all.length)
 

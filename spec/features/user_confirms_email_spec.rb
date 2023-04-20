@@ -11,21 +11,21 @@ RSpec.feature "User confirms account", type: :feature do
 
   scenario "by clicking the link in an email" do
     stub_request(
-      :get, %r{https://api.createsend.com/api/v3.2/subscribers/camp-key.json}
+      :get, %r{https://api.createsend.com/api/v3.3/subscribers/camp-key.json}
     ).and_return(
       body: JSON.dump("State" => "Active"),
       headers: { "Content-Type" => "application/json" }
     )
 
     stub_request(
-      :get, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
+      :get, %r{https://api.createsend.com/api/v3.3/subscribers/conf-key.json}
     ).and_return(
       body: JSON.dump("State" => "Unsubscribed"),
       headers: { "Content-Type" => "application/json" }
     )
 
     stub_request(
-      :get, %r{https://api.createsend.com/api/v3.2/subscribers/girls-key.json}
+      :get, %r{https://api.createsend.com/api/v3.3/subscribers/girls-key.json}
     ).and_return(
       status: 400,
       body: JSON.dump("Code" => 203, "Message" => "Subscriber not in list"),
@@ -33,7 +33,7 @@ RSpec.feature "User confirms account", type: :feature do
     )
 
     stub_request(
-      :post, "https://api.createsend.com/api/v3.2/subscribers/camp-key.json"
+      :post, "https://api.createsend.com/api/v3.3/subscribers/camp-key.json"
     )
 
     user
@@ -56,7 +56,7 @@ RSpec.feature "User confirms account", type: :feature do
 
     expect(
       a_request(
-        :post, "https://api.createsend.com/api/v3.2/subscribers/camp-key.json"
+        :post, "https://api.createsend.com/api/v3.3/subscribers/camp-key.json"
       )
     ).to have_been_made.once
   end
