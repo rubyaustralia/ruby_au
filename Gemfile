@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 ruby '3.2.2'
 
-gem 'rails', '~> 6.1.7'
+gem 'rails', '~> 7.0.4'
+gem 'sprockets-rails'
 gem 'pg'
 gem 'puma'
 
@@ -47,8 +48,8 @@ group :development do
   gem 'listen'
   # Spring speeds up development by keeping your application running in the
   # background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen'
+  gem 'spring', '~> 4.1'
+ # gem 'spring-watcher-listen'
   gem 'spring-commands-rspec'
   gem 'guard', require: false
   gem 'guard-rspec', require: false

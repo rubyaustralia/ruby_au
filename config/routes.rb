@@ -59,5 +59,5 @@ Rails.application.routes.draw do
   get "/code-of-conduct-enforcement", to: redirect("/policies/code-of-conduct-enforcement")
   get "/code-of-conduct-reporting", to: redirect("/policies/code-of-conduct-reporting")
 
-  get "/*id" => 'pages#show', as: :page, format: false, constraints: RootRouteConstraints
+  get "/*id" => 'pages#show', as: :page, format: false # constraints: RootRouteConstraints
 end
