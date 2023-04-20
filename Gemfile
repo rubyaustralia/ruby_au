@@ -49,7 +49,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the
   # background. Read more: https://github.com/rails/spring
   gem 'spring', '~> 4.1'
- # gem 'spring-watcher-listen'
   gem 'spring-commands-rspec'
   gem 'guard', require: false
   gem 'guard-rspec', require: false
