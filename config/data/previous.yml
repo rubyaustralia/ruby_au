@@ -1,3 +1,13 @@
+- name: Mathew Button
+  photo: mat-button.jpg
+  position: General Member
+  bio: |
+    Mat is a Ruby Developer based in Sydney. When he's not trying to remember
+    the Rails Migration syntax, you can find him encouraging his plants to grow,
+    playing ultimate frisbee or co-organizing [@rorosyd](https://twitter.com/rorosyd)
+  twitter: matpushbuttons
+  github: mathewdbutton
+
 - name: Ryan Bigg
   photo: ryan-bigg.png
   position: Treasurer
@@ -5,7 +15,7 @@
     [Writer of Rails Guides](http://contributors.rubyonrails.org/contributors/ryan-bigg/commits), [Rails 4 in Action](https://www.manning.com/books/rails-4-in-action), [Super Hero](https://rubyheroes.com/heroes/2011) and [Answerer of Stack Overflow Questions](http://stackoverflow.com/users/15245/ryan-bigg). Works at Culture Amp as the Junior Engineering Program Lead. Continuously mistaken for Ryan Bates.
   twitter: ryanbigg
   github: radar
-  
+
 - name: Rachael Goodenough
   photo: rachael-goodenough.jpg
   position: Secretary

@@ -7,9 +7,9 @@
   github: quintrino
   website: https://nickwolf.com.au
   bio: |
-    Nick is a Ruby Software Engineer but has previously dabbled as a Radio and Television Host, Community Manager, Flashmob Coordinator, Board Game Designer, Effective Altruist and Sex Educator. 
-    
-    He is eager to facilitate Ruby Australia continuing to grow into an eclectic, diverse and supportive community and is always eager to hear suggestions on how to do so. 
+    Nick is a Ruby Software Engineer but has previously dabbled as a Radio and Television Host, Community Manager, Flashmob Coordinator, Board Game Designer, Effective Altruist and Sex Educator.
+
+    He is eager to facilitate Ruby Australia continuing to grow into an eclectic, diverse and supportive community and is always eager to hear suggestions on how to do so.
 
 - name: Kieran Andrews
   photo: kieran-andrews.jpg
@@ -25,7 +25,7 @@
   photo: toby-nieboer.jpg
   position: Secretary
   bio: |
-    Previously: President/Vice President/General Member of the Ruby AU committee, co-organiser of [RubyConf AU 2019](https://rubyconf.org.au/2019), [RailsCamps](https://rails.camp) [22](https://railscamp22.wordpress.com/) and [24](https://railscamp24.wordpress.com/), and the [Melbourne Ruby meetup](https://www.meetup.com/en-AU/Ruby-On-Rails-Oceania-Melbourne/), technical recruiter at [Lookahead](https://lookahead.com.au), Automattic, and elsewhere. 
+    Previously: President/Vice President/General Member of the Ruby AU committee, co-organiser of [RubyConf AU 2019](https://rubyconf.org.au/2019), [RailsCamps](https://rails.camp) [22](https://railscamp22.wordpress.com/) and [24](https://railscamp24.wordpress.com/), and the [Melbourne Ruby meetup](https://www.meetup.com/en-AU/Ruby-On-Rails-Oceania-Melbourne/), technical recruiter at [Lookahead](https://lookahead.com.au), Automattic, and elsewhere.
     Currently: Talent acquisition manager at [Linktree](https://linktr.ee).
   twitter: tcn33
   linkedin: tobynieboer
@@ -63,16 +63,6 @@
   twitter: cueball_au
   github: cueball
 
-- name: Mathew Button
-  photo: mat-button.jpg
-  position: General Member
-  bio: |
-    Mat is a Ruby Developer based in Sydney. When he's not trying to remember
-    the Rails Migration syntax, you can find him encouraging his plants to grow,
-    playing ultimate frisbee or co-organizing [@rorosyd](https://twitter.com/rorosyd)
-  twitter: matpushbuttons
-  github: mathewdbutton
-
 - name: Sharon Vaughan
   photo: sharon-vaughan.jpg
   position: General Member
@@ -80,3 +70,13 @@
     Late last millenium Sharon completed a computer degree because her mum, in the mid-80s, said, “There is a future in computers.” Mum may have been right but Sharon went for a wander through academia and the arts ending up as a Film Projectionist. When Sharon was replaced by a digital projector, she took irony firmly in hand and decided, in June 2016, to become a Developer.
   twitter: Sharon_AV
   github: sharonvaughan
+
+- name: Ben Greig
+  photo: ben-greig.jpg
+  position: General Member
+  bio: |
+    A baker in a former life Ben had done a bit of Game modding in his spare time when he decided to do some more formal training in 2022, after discovering Ruby he hasn't looked back.
+
+    He loves of Ruby, Boardgames and a good cup of Tea.
+  github: aquillo-au
+  linkedin: benjamin-greig
