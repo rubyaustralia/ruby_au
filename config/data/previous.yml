@@ -8,6 +8,34 @@
   twitter: matpushbuttons
   github: mathewdbutton
 
+- name: Sharon Vaughan
+  photo: sharon-vaughan.jpg
+  position: General Member
+  bio: |
+    Late last millenium Sharon completed a computer degree because her mum, in the mid-80s, said, “There is a future in computers.” Mum may have been right but Sharon went for a wander through academia and the arts ending up as a Film Projectionist. When Sharon was replaced by a digital projector, she took irony firmly in hand and decided, in June 2016, to become a Developer.
+  twitter: Sharon_AV
+  github: sharonvaughan
+
+- name: Kieran Andrews
+  photo: kieran-andrews.jpg
+  position: Vice President
+  bio: |
+    Kieran is a passionate Ruby Developer from Adelaide after discovering it 2011.
+
+    In his spare time Kieran enjoys making home-made pizza, playing board games and snowboarding around the world.
+  twitter: Kieran_Andy
+  github: TigerWolf
+
+- name: Toby Nieboer
+  photo: toby-nieboer.jpg
+  position: Secretary
+  bio: |
+    Previously: President/Vice President/General Member of the Ruby AU committee, co-organiser of [RubyConf AU 2019](https://rubyconf.org.au/2019), [RailsCamps](https://rails.camp) [22](https://railscamp22.wordpress.com/) and [24](https://railscamp24.wordpress.com/), and the [Melbourne Ruby meetup](https://www.meetup.com/en-AU/Ruby-On-Rails-Oceania-Melbourne/), technical recruiter at [Lookahead](https://lookahead.com.au), Automattic, and elsewhere. 
+    Currently: Talent acquisition manager at [Linktree](https://linktr.ee).
+  twitter: tcn33
+  linkedin: tobynieboer
+  website: https://tcn33.blog
+
 - name: Ryan Bigg
   photo: ryan-bigg.png
   position: Treasurer
