@@ -57,11 +57,24 @@
   photo: daniel-nguyen.jpg
   position: General Member
   bio: |
-    Dan is a Ruby developer currently based in Gadigal (Sydney). After 
-    originally studying classical music at uni, Dan made the career-change in 
-    2021 through a coding bootcamp. When he's not scraping fantasy AFL stats, 
+    Dan is a Ruby developer currently based in Gadigal (Sydney). After
+    originally studying classical music at uni, Dan made the career-change in
+    2021 through a coding bootcamp. When he's not scraping fantasy AFL stats,
     you can find him playing futsal or netball, doing a pub trivia or
     co-organising ROROSyd.
   github: cheddachedda
   linkedin: daniel-nguyen-ror
   twitter: _cheddachedda
+
+- name: Claire Fernandes
+  photo: claire-fernandes.jpeg
+  position: General Member
+  bio: |
+    Claire is relatively new to Ruby development having recently completed a full
+    stack web development bootcamp. She's been working in Tech for the last 5 years in
+    the Support and Customer Experience space and decided to make the move to development
+    because building things is fun 😎
+
+    Outside of coding she loves getting out into nature, playing music and bouldering.
+  github: cnandes
+  linkedin: https://www.linkedin.com/in/claire-fernandes-a6b6a2169/
