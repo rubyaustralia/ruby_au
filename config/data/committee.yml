@@ -1,15 +1,15 @@
 - name: Nick Wolf
   photo: nick-wolf.jpg
   position: President
-  bio: |
-
   twitter: quintrino
   github: quintrino
   website: https://nickwolf.com.au
   bio: |
-    Nick is a Ruby Software Engineer but has previously dabbled as a Radio and Television Host, Community Manager, Flashmob Coordinator, Board Game Designer, Effective Altruist and Sex Educator.
+    Nick is a Ruby Software Engineer but has previously dabbled as a Radio and Television Host, 
+    Community Manager, Flashmob Coordinator, Board Game Designer, Effective Altruist and Sex Educator.
 
-    He is eager to facilitate Ruby Australia continuing to grow into an eclectic, diverse and supportive community and is always eager to hear suggestions on how to do so.
+    He is eager to facilitate Ruby Australia continuing to grow into an eclectic, diverse and 
+    supportive community and is always eager to hear suggestions on how to do so.
 
 - name: Lee Sheppard
   photo: lee-sheppard.jpg
@@ -19,7 +19,7 @@
     of the organising committee for [Rails Girls Sydney](https://railsgirls.com/sydney). Lee
     spent many years previously working in animation and as a syndicated cartoonist. He has been a past Vice President for the
     [Australian Cartoonists Association](https://cartoonists.org.au) and is a member of the
-    [Society of Children’s Book Writers and Illustrators](https://www.scbwi.org).
+    [Society of Children's Book Writers and Illustrators](https://www.scbwi.org).
   github: leesheppard
   linkedin: https://www.linkedin.com/in/leesheppard/
   twitter: leesheppard
@@ -39,7 +39,7 @@
     Outside of tech, he watches more TV than is probably healthy, manages to be
     a halfway-decent home cook, and is keen to do more travelling.
 
-    Also [Perth Ruby Meetup](https://www.meetup.com/roro-perth/members/?op=leaders) co-organizer.
+    Also [Perth Ruby Meetup](https://www.meetup.com/roro-perth/members/?op=leaders) co-organiser.
   twitter: cueball_au
   github: cueball
 
@@ -47,7 +47,8 @@
   photo: ben-greig.jpg
   position: General Member
   bio: |
-    A baker in a former life Ben had done a bit of Game modding in his spare time when he decided to do some more formal training in 2022, after discovering Ruby he hasn't looked back.
+    A baker in a former life Ben had done a bit of Game modding in his spare time 
+    when he decided to do some more formal training in 2022, after discovering Ruby he hasn't looked back.
 
     He loves of Ruby, Boardgames and a good cup of Tea.
   github: aquillo-au
