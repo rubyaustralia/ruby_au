@@ -5,6 +5,10 @@ class PagesController < ApplicationController
 
   expose(:complex_view?) { COMPLEX_VIEWS.include? params[:id] }
 
+  expose(:sponsors) do
+    YAML.load_file Rails.root.join('config/data/sponsors.yml')
+  end
+
   rescue_from ActionView::MissingTemplate do |exception|
     if exception.message.match?(/Missing template pages#{request.path}/)
       raise ActionController::RoutingError, "No such page: #{params[:id]}"
