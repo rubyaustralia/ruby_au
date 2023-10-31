@@ -1,6 +1,7 @@
 class ReactivationsController < ApplicationController
   expose(:user) do
-    params[:user].present? ? User.find_by(email: user_params[:email]) : User.new
+    user = User.find_by(email: user_params[:email]) if params[:user].present?
+    user || User.new
   end
 
   def create
