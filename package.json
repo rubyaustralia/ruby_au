@@ -22,10 +22,11 @@
     "yarn": "^1.22.5"
   },
   "devDependencies": {
-    "@webpack-cli/serve": "^1.5.1"
+    "@webpack-cli/serve": "^1.5.1",
+    "webpack-dev-server": "^4.15.1"
   },
   "engines": {
-    "node": "16.x.x"
+    "node": "20.x.x"
   },
   "license": "MIT",
   "babel": {
@@ -35,5 +36,8 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "scripts": {
+    "start": "NODE_OPTIONS=--openssl-legacy-provider bin/webpack-dev-server"
+  }
 }
