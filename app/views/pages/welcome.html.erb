@@ -80,13 +80,21 @@
 
   <article id="sponsors" class="welcome md:ml-10">
     <h2>Sponsors</h2>
-      <div class="flex flex-wrap">
+      <div class="flex flex-wrap justify-center">
         <% sponsors.each do |sponsor| %>
-          <div class="m-6">
+          <% if sponsor['key'] == 'up' %>
+            <div class="m-1">
+                <%= link_to "/sponsors/#{sponsor['key']}" do %>
+                  <%= image_tag "sponsors/#{sponsor['images'].first}", alt: sponsor['name'], style: "width: 190px" %>
+                <% end %>
+            </div>
+          <% else %>
+            <div class="m-6">
               <%= link_to "/sponsors/#{sponsor['key']}" do %>
                 <%= image_tag "sponsors/#{sponsor['images'].first}", alt: sponsor['name'], style: "width: 150px" %>
               <% end %>
-          </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
   </article>
