@@ -23,9 +23,11 @@ None (yet).
 
 `bin/rspec`
 
-## Staging Environment
+## Development Environment
 
-None (yet).
+This command will run using Foreman and start the app using both webpack and puma.
+
+$ bin/dev
 
 ## Production Environment
 

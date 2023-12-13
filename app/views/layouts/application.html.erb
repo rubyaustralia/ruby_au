@@ -1,146 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ruby Australia</title>
-  <meta content="Ruby Australia" name="description"/>
-  <meta content="ruby, rails, australia, melbourne, sydney, canberra, perth, central coast, brisbane, perth, western australia, sa, south australia, victoria, new south wales, nsw, vic, qld, queensland, wa, can, programming, meetup, group, user group, conferences, events" name="keywords"/>
-  <meta content="width=device-width" name="viewport"/>
-
-  <%= csrf_meta_tags %>
-
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="canonical" href="https://ruby.org.au" />
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="Ruby Australia, an organisation that is dedicated to supporting the community and
+  events around Australia focused on the Ruby programming language. Providing financial and institutional support for
+  RubyConf AU, Rails Camps, RailsGirls, and the meetups across the country." />
+  <meta name="keywords" content="ruby, rails, australia, melbourne, sydney, canberra, perth, central coast, brisbane, perth,
+  western australia, sa, south australia, victoria, new south wales, nsw, vic, qld, queensland, wa, can,
+  programming, meetup, group, user group, conferences, events" />
   <meta property="og:title" content="Ruby Australia - <%= yield :heading %>" />
-  <meta property="og:description" content="We are an organisation that is dedicated to supporting the community and events around Australia focused on the Ruby programming language. Providing financial and institutional support for RubyConf AU, Rails Camps, RailsGirls, and the meetups across the country." />
-
+  <meta property="og:description" content="We are an organisation that is dedicated to supporting the community and
+  events around Australia focused on the Ruby programming language. Providing financial and institutional support for
+  RubyConf AU, Rails Camps, RailsGirls, and the meetups across the country." />
+  <meta property="og:url" content="https://ruby.org.au"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="https://ruby.org.au/preview.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:locale" content="en_EN"/>
+  <meta property="og:site_name" content="Ruby Australia"/>
+  <meta name="twitter:site" content="ruby.org.au" />
+  <meta name="twitter:creator" content="@rubyaustralia" />
+  <meta name="twitter:image" content="https://ruby.org.au/preview.jpg" />
+  <meta name="twitter:title" content="Ruby Australia" />
+  <meta name="twitter:description" content="An organisation supporting the community and
+  events around Australia focused on the Ruby programming language." />
+  <%= csrf_meta_tags %>
   <%= javascript_pack_tag 'application' %>
   <%= stylesheet_pack_tag 'application' %>
 </head>
-
-<body>
-<div id="wrap" class="flex flex-col md:flex-row">
-  <aside id="meta" class="md:w-64 sm:w-screen flex-shrink-0">
-    <nav role="navigation" class="flex items-center justify-between flex-wrap bg-pink text-white">
-      <header role="banner" class="bg-pink py-2 px-5 flex-shrink-0 h-12">
-        <a href="/" class="text-white no-underline flex flex-row">
-          <%= image_tag 'logo_standalone_tiny.png', width: 34, alt: 'Ruby Australia Logo' %>
-          <p class="self-center ml-4 text-white text-lg md:text-xl">Ruby Australia</p>
-        </a>
-      </header>
-      <div id="mobile-menu-trigger" class="block md:hidden bg-pink">
-        <button class="flex items-center mr-4 px-3 py-2 border rounded text-pink-lightest border-pink-lighter hover:text-white hover:border-white">
-          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-        </button>
-      </div>
-      <% if false %>
-      <div class="search ml-2 mt-6">
-        <svg class="fill-current text-pink inline-block h-4 w-4" viewBox="0 0 20 20">
-          <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
-        </svg>
-        <input type="text" placeholder="search..." class="border-solid text-pink-darkest border-pink border-b">
-      </div>
-      <% end %>
-
-      <div id="mobile-menu" class="w-full hidden md:visible flex-grow md:flex-col md:flex md:items-center md:w-auto bg-white text-pink">
-        <div class="actions ml-2 md:ml-0 mb-6">
-          <% if user_signed_in? %>
-            <%= link_to 'My Details', my_details_path %>
-            <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-          <% else %>
-            <%= link_to 'Join', new_user_registration_path %>
-            <%= link_to 'Log in', new_user_session_path %>
+  <body>
+    <div id="wrap" class="flex flex-col md:flex-row">
+      <aside id="meta" class="md:w-64 sm:w-screen flex-shrink-0">
+        <%= render "shared/navigation" %>
+      </aside>
+      <div class="w-auto bg-transparent flex-auto flex-shrink flex-grow flex-col overflow-y-scroll">
+        <main>
+          <div id="body" role="main" class="md:max-w-full">
+          <% if content_for?(:heading) || !content_for?(:banner) %>
+            <h1><%= yield :heading %></h1>
           <% end %>
-        </div>
 
-        <section id="nav-primary" class="ml-5 md:ml-0" aria-roledescription="primary navigation">
-          <nav role="navigation">
-            <h3>Association</h3>
-            <ul>
-              <li><%= link_to "Welcome", "/" %></li>
-              <li><%= link_to 'Committee Members', "/committee-members" %></li>
-              <li><%= link_to_external "Meeting Minutes", "https://forum.ruby.org.au/c/ruby-au/meetings", longdesc: 'Committee Meeting minutes hosted on RubyAU Forums' %></li>
-              <li><%= link_to 'Code of Conduct', "/policies/code-of-conduct" %></li>
-              <li><%= link_to 'Constitution', "/constitution" %></li>
-              <li><%= link_to 'Policies', "/policies" %></li>
-              <li><%= link_to 'Sponsorship', "/sponsorship" %></li>
-              <li><%= link_to "Contact us", "/contact" %></li>
-            </ul>
-
-            <h3>Events</h3>
-            <ul>
-              <li><%= link_to_external "Rails Camp", "https://rails.camp" %></li>
-              <li><%= link_to_external "RubyConf AU", "https://rubyconf.org.au" %></li>
-              <li><%= link_to 'Meetups', "/#in-person" %></li>
-              <li><%= link_to 'Rails Girls', "/rails-girls" %></li>
-            </ul>
-
-            <h3>Community</h3>
-            <ul>
-              <li><%= link_to_external "Forum (Ruby Down Under)", "https://forum.ruby.org.au/" %></li>
-              <li><%= link_to_external "Chat (Slack)", slack_path %></li>
-              <li><%= link_to_external "Jobs: positions available", "https://forum.ruby.org.au/c/jobs/10", longdesc: 'Jobs posted on RubyAU Forums' %></li>
-              <li><%= link_to_external "Videos", videos_path %></li>
-              <li><%= link_to_external 'Mailing List', "/mailing-list" %></li>
-            </ul>
-
-            <% if user_signed_in? %>
-              <h3>Members</h3>
-              <ul>
-                <li><%= link_to "My Details", my_details_path %></li>
-                <li><%= link_to "Upcoming Meetings", my_meetings_path %></li>
-                <li><%= link_to "Register Access", my_access_requests_path %></li>
-              </ul>
-            <% end %>
-
-            <% if current_committee? %>
-              <h3>Committee</h3>
-              <ul>
-                <li><%= link_to "Members", admin_memberships_path %></li>
-                <li><%= link_to "Access Requests", admin_access_requests_path %></li>
-                <li><%= link_to "Imported Members", admin_imported_members_path %></li>
-                <li><%= link_to "Campaigns", admin_campaigns_path %></li>
-              </ul>
-            <% end %>
-          </nav>
-        </section>
-      </div>
-    </nav>
-  </aside>
-
-  <section class="w-auto bg-transparent flex-auto flex-shrink flex-grow flex-col overflow-y-scroll">
-    <main>
-      <div id="body" role="main" class="md:max-w-full pb-3">
-      <% if content_for?(:heading) || !content_for?(:banner) %>
-        <h1><%= yield :heading %></h1>
-      <% end %>
-
-      <% if content_for?(:banner) %>
-        <%= yield :banner %>
-      <% end %>
-
-      <div class="md:max-w-full">
-        <div id="flash">
-          <% flash.each do |key, value| %>
-            <p class="flash <%= key %>"><%= value %></p>
+          <% if content_for?(:banner) %>
+            <%= yield :banner %>
           <% end %>
-        </div>
 
-        <% if complex_view? %>
-          <%= yield %>
-        <% else %>
-          <section id="welcome" class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
-            <section class="welcome">
+          <div class="md:max-w-full">
+            <div id="flash">
+              <% flash.each do |key, value| %>
+                <p class="flash <%= key %>"><%= value %></p>
+              <% end %>
+            </div>
+
+            <% if complex_view? %>
               <%= yield %>
-            </section>
-          </section>
-        <% end %>
+            <% else %>
+              <section id="welcome" class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
+                <section class="welcome">
+                  <%= yield %>
+                </section>
+              </section>
+            <% end %>
+          </div>
+        </div>
+        </main>
+        <%= render "shared/footer" %>
       </div>
     </div>
-    </main>
-    <footer role="contentinfo" class="invisible hidden">
-      <small>&copy; <%= Time.current.year %> Ruby Australia</small>
-    </footer>
-  </section>
-</div>
-</body>
+  </body>
 </html>
