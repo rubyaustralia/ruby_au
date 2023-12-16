@@ -29,3 +29,5 @@ yarn-debug.log*
 
 # Ignore any local gitignore files
 .gitignore_local
+
+/config/master.key
