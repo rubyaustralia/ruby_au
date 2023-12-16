@@ -113,7 +113,7 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
-    createsend (5.1.1)
+    createsend (6.1.0)
       hashie (~> 3.0)
       httparty (~> 0.14)
       json (>= 1.0)
@@ -439,7 +439,7 @@ DEPENDENCIES
   capybara
   capybara-email!
   codeclimate-test-reporter
-  createsend (~> 5.1.1)
+  createsend
   decent_exposure
   devise
   factory_bot_rails
@@ -482,4 +482,4 @@ RUBY VERSION
    ruby 3.2.2p53
 
 BUNDLED WITH
-   2.4.22
+   2.5.1

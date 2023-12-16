@@ -8,7 +8,7 @@ gem 'puma'
 
 gem 'bcrypt'
 gem 'bugsnag'
-gem 'createsend', '~> 5.1.1'
+gem 'createsend'
 gem 'decent_exposure'
 gem 'devise'
 gem 'icalendar'
