@@ -12,10 +12,10 @@ RSpec.describe "User edits profile details", type: :feature do
     user.update mailing_lists: { "RubyConf AU" => "true" }
     new_email = 'bigbunnyfoofoo@gmail.com'
     stub_request(
-      :post, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
+      :post, %r{https://api.createsend.com/api/v3.3/subscribers/conf-key.json}
     )
     stub_request(
-      :put, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
+      :put, %r{https://api.createsend.com/api/v3.3/subscribers/conf-key.json}
     )
 
     click_on 'Edit'
@@ -40,14 +40,14 @@ RSpec.describe "User edits profile details", type: :feature do
 
     expect(
       a_request(
-        :post, %r{https://api.createsend.com/api/v3.2/subscribers/conf-key.json}
+        :post, %r{https://api.createsend.com/api/v3.3/subscribers/conf-key.json}
       )
     ).to have_been_made
   end
 
   scenario "subscribing to a mailing list" do
     stub_request(
-      :post, "https://api.createsend.com/api/v3.2/subscribers/girls-key.json"
+      :post, "https://api.createsend.com/api/v3.3/subscribers/girls-key.json"
     )
 
     click_on "Edit"
@@ -60,7 +60,7 @@ RSpec.describe "User edits profile details", type: :feature do
 
     expect(
       a_request(
-        :post, "https://api.createsend.com/api/v3.2/subscribers/girls-key.json"
+        :post, "https://api.createsend.com/api/v3.3/subscribers/girls-key.json"
       )
     ).to have_been_made.once
   end
@@ -68,7 +68,7 @@ RSpec.describe "User edits profile details", type: :feature do
   scenario "unsubscribing from a mailing list" do
     user.update mailing_lists: { "RailsGirls" => "true" }
     stub_request(
-      :post, "https://api.createsend.com/api/v3.2/subscribers/girls-key/unsubscribe.json"
+      :post, "https://api.createsend.com/api/v3.3/subscribers/girls-key/unsubscribe.json"
     )
 
     click_on "Edit"
@@ -81,7 +81,7 @@ RSpec.describe "User edits profile details", type: :feature do
 
     expect(
       a_request(
-        :post, "https://api.createsend.com/api/v3.2/subscribers/girls-key/unsubscribe.json"
+        :post, "https://api.createsend.com/api/v3.3/subscribers/girls-key/unsubscribe.json"
       )
     ).to have_been_made.once
   end

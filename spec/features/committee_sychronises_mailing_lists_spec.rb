@@ -10,7 +10,7 @@ RSpec.feature "Committee synchonising mailing lists", type: :feature do
     jules = FactoryBot.create :user
 
     stub_request(
-      :get, %r{https://api.createsend.com/api/v3.2/lists/conf-key/active.json}
+      :get, %r{https://api.createsend.com/api/v3.3/lists/conf-key/active.json}
     ).to_return(
       body: JSON.dump(
         {
@@ -26,7 +26,7 @@ RSpec.feature "Committee synchonising mailing lists", type: :feature do
     )
 
     stub_request(
-      :get, %r{https://api.createsend.com/api/v3.2/lists/girls-key/active.json}
+      :get, %r{https://api.createsend.com/api/v3.3/lists/girls-key/active.json}
     ).to_return(
       body: JSON.dump(
         {
@@ -42,7 +42,7 @@ RSpec.feature "Committee synchonising mailing lists", type: :feature do
     )
 
     stub_request(
-      :get, %r{https://api.createsend.com/api/v3.2/lists/camp-key/active.json}
+      :get, %r{https://api.createsend.com/api/v3.3/lists/camp-key/active.json}
     ).to_return(
       body: JSON.dump(
         {
