@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '3.2.2'
 
-gem 'rails', '~> 6.1.7'
+gem 'rails', '~> 7.0'
 gem 'pg'
 gem 'puma'
 
@@ -22,6 +22,7 @@ gem 'sassc'
 gem 'validates_email_format_of'
 gem 'warden' # use for auth
 gem 'webpacker', '6.0.0.rc.6'
+gem 'sprockets-rails' #as of Rails 7.0, this is optional
 
 group :production do
   gem 'rails_12factor'
