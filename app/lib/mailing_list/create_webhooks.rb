@@ -2,7 +2,7 @@
 
 class MailingList::CreateWebhooks
   def self.call
-    MailingList.all.each do |list|
+    MailingList.all.find_each do |list|
       new(list).call
     end
   end

@@ -42,7 +42,6 @@ module RubyAu
 
     config.generators.javascript_engine = :js
 
-    #
     config.time_zone = "Australia/Melbourne"
     # config.eager_load_paths << Rails.root.join("extras")
 

@@ -2,7 +2,7 @@
 
 class MailingList::Setup
   def self.call(user)
-    MailingList.all.each do |list|
+    MailingList.all.find_each do |list|
       new(user, list).call
     end
   end

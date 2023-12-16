@@ -4,13 +4,13 @@ require "rails_helper"
 
 RSpec.feature "Committee manages list webhooks", type: :request do
   scenario "registering webhooks" do
-    MailingList.all.each do |list|
+    MailingList.all.find_each do |list|
       stub_request(:post, "https://api.createsend.com/api/v3.2/lists/#{list.api_id}/webhooks.json")
     end
 
     MailingList::CreateWebhooks.call
 
-    MailingList.all.each do |list|
+    MailingList.all.find_each do |list|
       expect(
         a_request(:post, "https://api.createsend.com/api/v3.2/lists/#{list.api_id}/webhooks.json")
       ).to have_been_made
