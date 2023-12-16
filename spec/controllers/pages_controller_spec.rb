@@ -13,11 +13,11 @@ describe PagesController do
   end
 
   describe "on GET to /committee-members" do
-    before { get :show, params: { id: "committee-members.html" } }
+    before { get :show, params: { id: "committee-members" } }
 
     it "responds with success and render template" do
       expect(response).to be_successful
-      expect(response).to render_template("committee-members.html")
+      expect(response).to render_template("committee-members")
     end
   end
 
