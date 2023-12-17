@@ -31,3 +31,6 @@ yarn-debug.log*
 .gitignore_local
 
 /config/master.key
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
