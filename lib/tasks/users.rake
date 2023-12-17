@@ -3,7 +3,7 @@
 namespace :users do
   task unsubscribe_spammers: :environment do
     User.unconfirmed.subscribed_to_any_list.each do |user|
-      MailingList.all.find do |list|
+      MailingList.each do |list|
         next unless user.mailing_lists[list.name] == "true"
 
         begin

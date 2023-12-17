@@ -59,7 +59,7 @@
   <fieldset>
     <legend>Mailing Lists</legend>
 
-    <% MailingList.all.each do |list| %>
+    <% MailingList.each do |list| %>
       <div class="field flipped">
         <div class="input">
           <%= hidden_field_tag "user[mailing_lists][#{list.name}]", "false" %>

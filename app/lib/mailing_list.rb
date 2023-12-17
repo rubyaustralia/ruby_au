@@ -13,6 +13,10 @@ class MailingList
     @all ||= LISTS.collect { |name| new name }
   end
 
+  def self.each(...)
+    all.each(...)
+  end
+
   def initialize(name)
     @name = name
   end
