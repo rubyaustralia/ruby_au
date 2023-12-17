@@ -61,22 +61,18 @@ class User < ApplicationRecord
   def subscribe_to_lists
     return if skip_subscriptions
 
-    # rubocop:disable Rails/FindEach
-    MailingList.all.each do |list|
+    MailingList.each do |list|
       next unless mailing_lists[list.name] == "true"
 
       MailingList::Subscribe.call self, list
     end
-    # rubocop:enable Rails/FindEach
   end
 
   def update_mailing_list_email_addresses
-    # rubocop:disable Rails/FindEach
-    MailingList.all.each do |list|
+    MailingList.each do |list|
       next unless mailing_lists[list.name] == "true"
 
       MailingList::Update.call self, list
     end
-    # rubocop:enable Rails/FindEach
   end
 end

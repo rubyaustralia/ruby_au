@@ -12,6 +12,7 @@ AllCops:
     - 'node_modules/**/*'
   DisplayCopNames: true
   TargetRubyVersion: 3.0
+  NewCops: disable
 
 Layout/LineLength:
   Enabled: false
