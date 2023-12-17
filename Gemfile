@@ -18,7 +18,7 @@ gem 'kaminari'
 gem 'premailer-rails'
 gem 'pygmentize'
 gem 'redcarpet'
-gem 'sassc'
+gem "dartsass-rails", "~> 0.5.0"
 gem 'validates_email_format_of'
 gem 'warden' # use for auth
 gem 'webpacker', '6.0.0.rc.6'
