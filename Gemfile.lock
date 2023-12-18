@@ -177,7 +177,7 @@ GEM
     inline_svg (1.9.0)
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
-    io-console (0.7.0)
+    io-console (0.7.1)
     irb (1.10.1)
       rdoc
       reline (>= 0.3.8)
@@ -327,7 +327,7 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rdoc (6.6.1)
+    rdoc (6.6.2)
       psych (>= 4.0.0)
     redcarpet (3.6.0)
     regexp_parser (2.8.3)
