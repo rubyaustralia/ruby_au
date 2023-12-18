@@ -119,6 +119,9 @@ GEM
       json (>= 1.0)
     css_parser (1.16.0)
       addressable
+    dartsass-rails (0.5.0)
+      railties (>= 6.0.0)
+      sass-embedded (~> 1.63)
     date (3.3.4)
     decent_exposure (3.0.4)
       activesupport (>= 4.0)
@@ -142,6 +145,10 @@ GEM
     formatador (1.1.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    google-protobuf (3.25.1)
+    google-protobuf (3.25.1-aarch64-linux)
+    google-protobuf (3.25.1-arm64-darwin)
+    google-protobuf (3.25.1-x86_64-linux)
     guard (2.18.1)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -228,6 +235,8 @@ GEM
     nio4r (2.7.0)
     nokogiri (1.15.5)
       mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
+    nokogiri (1.15.5-aarch64-linux)
       racc (~> 1.4)
     nokogiri (1.15.5-arm64-darwin)
       racc (~> 1.4)
@@ -372,8 +381,15 @@ GEM
       rubocop-ast (>= 1.30.0, < 2.0)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
-    sassc (2.4.0)
-      ffi (~> 1.9)
+    sass-embedded (1.69.5)
+      google-protobuf (~> 3.23)
+      rake (>= 13.0.0)
+    sass-embedded (1.69.5-aarch64-linux-gnu)
+      google-protobuf (~> 3.23)
+    sass-embedded (1.69.5-arm64-darwin)
+      google-protobuf (~> 3.23)
+    sass-embedded (1.69.5-x86_64-linux-gnu)
+      google-protobuf (~> 3.23)
     semantic_range (3.0.0)
     shellany (0.0.1)
     simplecov (0.22.0)
@@ -428,6 +444,7 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
+  aarch64-linux
   arm64-darwin-22
   ruby
   x86_64-linux
@@ -440,6 +457,7 @@ DEPENDENCIES
   capybara-email!
   codeclimate-test-reporter
   createsend
+  dartsass-rails (~> 0.5.0)
   decent_exposure
   devise
   factory_bot_rails
@@ -465,7 +483,6 @@ DEPENDENCIES
   rubocop
   rubocop-performance
   rubocop-rails
-  sassc
   simplecov
   spring
   spring-commands-rspec

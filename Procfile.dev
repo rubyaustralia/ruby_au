@@ -1,2 +1,3 @@
-web: bin/webpack-dev-server
-api: bundle exec rails server -p 3000
+js: bin/webpack-dev-server
+web: bundle exec rails server -p 3000
+css: bin/rails dartsass:watch
