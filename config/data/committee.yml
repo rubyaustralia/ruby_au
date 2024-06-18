@@ -21,7 +21,15 @@
     [Australian Cartoonists Association](https://cartoonists.org.au) and is a member of the
     [Society of Children's Book Writers and Illustrators](https://www.scbwi.org).
   github: leesheppard
-  linkedin: https://www.linkedin.com/in/leesheppard/
+  linkedin: leesheppard
+
+- name: Tarun Mookhey
+  photo: tarun-mookhey.jpg
+  position: Treasurer
+  bio: |
+    Tarun is Ruby developer based in Sydney.
+  github: tarun-pacifica
+  linkedin: tarunmookhey
 
 - name: Mark Glossop
   photo: mark-glossop.jpg
@@ -76,7 +84,7 @@
 
     Outside of coding she loves getting out into nature, playing music and bouldering.
   github: cnandes
-  linkedin: https://www.linkedin.com/in/claire-fernandes-a6b6a2169/
+  linkedin: claire-fernandes-a6b6a2169
 
 - name: Sophie Daley
   photo: sophie-daley.jpg
@@ -91,4 +99,4 @@
     When she's not immersed in code, Sophie loves to connect with nature,
     spend quality time with her family, and unleash her creativity through paper crafting.
   github: SophieRoseMcDonald
-  linkedin: https://www.linkedin.com/in/sophrosyne/
+  linkedin: sophrosyne
