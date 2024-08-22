@@ -43,6 +43,9 @@ Rails.application.routes.draw do
     as: :slack
   get '/videos', to: redirect('https://www.youtube.com/channel/UCr38SHAvOKMDyX3-8lhvJHA/videos'),
     as: :videos
+  get '/merch', to: redirect('https://www.redbubble.com/people/ruby-au/explore'),
+    as: :merch
+
 
   get "/events/rubyconf_au_2021" => "events#rubyconf_au_2021"
   get "/events/rails_camp_27" => "events#rails_camp_27"
