@@ -17,7 +17,7 @@
     "sass-loader": "^12.1.0",
     "signature_pad": "^3.0.0-beta.4",
     "tailwindcss": "^2.2.7",
-    "webpack": "^5.79.0",
+    "webpack": "^5.94.0",
     "webpack-cli": "^4.2.0",
     "yarn": "^1.22.5"
   },
