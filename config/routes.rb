@@ -35,14 +35,12 @@ Rails.application.routes.draw do
 
   post '/slack/hook' => 'slack#hook'
 
-  get '/forum', to: redirect('https://forum.ruby.org.au'),
-    as: :forum
-  get '/mailing-list', to: redirect('https://confirmsubscription.com/h/j/3DDD74A0ACC3DB22'),
-    as: :roro_mailing_list
-  get '/slack', to: redirect('https://join.slack.com/t/rubyau/shared_invite/zt-1pewt4vi8-TtrM~UoIJmuH9Niy0Ela6w'),
-    as: :slack
-  get '/videos', to: redirect('https://www.youtube.com/channel/UCr38SHAvOKMDyX3-8lhvJHA/videos'),
-    as: :videos
+  # Off-site Redirection routes
+  get '/forum', to: redirect('https://forum.ruby.org.au'), as: :forum
+  get '/mailing-list', to: redirect('https://confirmsubscription.com/h/j/3DDD74A0ACC3DB22'), as: :roro_mailing_list
+  get '/slack', to: redirect('https://join.slack.com/t/rubyau/shared_invite/zt-1pewt4vi8-TtrM~UoIJmuH9Niy0Ela6w'), as: :slack
+  get '/videos', to: redirect('https://www.youtube.com/channel/UCr38SHAvOKMDyX3-8lhvJHA/videos'), as: :videos
+  get '/merch', to: redirect('https://www.redbubble.com/people/ruby-au/explore'), as: :merch
 
   get "/events/rubyconf_au_2021" => "events#rubyconf_au_2021"
   get "/events/rails_camp_27" => "events#rails_camp_27"
