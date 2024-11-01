@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resource :membership, only: [:destroy]
     resources :meetings, only: [:index]
     resources :access_requests, only: [:index]
+    resource :slack_invite, only: [:show]
   end
 
   resources :rsvps, only: [:show, :update, :destroy] do
@@ -38,7 +39,6 @@ Rails.application.routes.draw do
   # Off-site Redirection routes
   get '/forum', to: redirect('https://forum.ruby.org.au'), as: :forum
   get '/mailing-list', to: redirect('https://confirmsubscription.com/h/j/3DDD74A0ACC3DB22'), as: :roro_mailing_list
-  get '/slack', to: redirect('https://join.slack.com/t/rubyau/shared_invite/zt-1pewt4vi8-TtrM~UoIJmuH9Niy0Ela6w'), as: :slack
   get '/videos', to: redirect('https://www.youtube.com/@RubyAustralia'), as: :videos
   get '/merch', to: redirect('https://www.redbubble.com/people/ruby-au/explore'), as: :merch
 
