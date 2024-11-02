@@ -14,6 +14,7 @@ RSpec.describe Campaigns::Test do
     non_committee_membership
     allow(CampaignsMailer).to receive_message_chain(:campaign_email, :deliver_now)
   end
+
   describe '.call' do
     it 'delivers campaign delivery for committee users' do
       expect do
@@ -24,7 +25,7 @@ RSpec.describe Campaigns::Test do
     it 'does not deliver campaign delivery for non-committee users' do
       expect do
         subject.call(campaign)
-      end.to change { CampaignDelivery.where(membership: non_committee_membership).count }.by(0)
+      end.not_to(change { CampaignDelivery.where(membership: non_committee_membership).count })
     end
   end
 end

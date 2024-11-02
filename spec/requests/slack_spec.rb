@@ -35,7 +35,7 @@ RSpec.describe "Slack Controller", type: :request do
     end
 
     describe 'with authorized request' do
-      before(:each) do
+      before do
         with_slack_app_token
         @params = {
           token: 'some-token',

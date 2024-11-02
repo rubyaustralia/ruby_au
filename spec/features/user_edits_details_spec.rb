@@ -29,7 +29,7 @@ RSpec.describe "User edits profile details", type: :feature do
     expect(page).to have_content 'Your details have been updated.'
     expect(user.full_name).to eq "Big Bunny"
     expect(user.unconfirmed_email).to eq new_email
-    expect(user.visible).to eq(true)
+    expect(user.visible).to be(true)
 
     email = emails_sent_to(user.unconfirmed_email).detect do |mail|
       mail.subject == "Confirmation instructions"
@@ -96,6 +96,6 @@ RSpec.describe "User edits profile details", type: :feature do
 
     user.reload
     expect(page).to have_content 'Your password has been updated. You will need to sign in again to continue.'
-    expect(user.valid_password?('newpassword')).to eq(true)
+    expect(user.valid_password?('newpassword')).to be(true)
   end
 end

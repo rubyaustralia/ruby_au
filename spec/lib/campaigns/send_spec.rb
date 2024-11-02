@@ -38,7 +38,7 @@ RSpec.describe Campaigns::Send do
         end
 
         it 'generate the delivery' do
-          expect { subject }.to change { CampaignDelivery.count }.by(1)
+          expect { subject }.to change(CampaignDelivery, :count).by(1)
         end
 
         it 'updates the campaign delivery time' do

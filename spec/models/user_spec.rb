@@ -9,9 +9,10 @@ RSpec.describe User, type: :model do
       committee_user
       unconfirmed_user
     end
+
     it 'returns users who are part of the committee' do
-      expect(User.committee).to include(committee_user)
-      expect(User.committee).not_to include(unconfirmed_user)
+      expect(described_class.committee).to include(committee_user)
+      expect(described_class.committee).not_to include(unconfirmed_user)
     end
   end
 end
