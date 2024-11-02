@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "[ bin/tests ] Running migrations for Test env 🚨"
+bin/rails db:migrate RAILS_ENV=test
+
+echo "[ bin/tests ] Running Rspec tests 🚨🚨"
+bundle exec rspec
+
+echo "[ bin/tests ] Running Rubocop 👮"
+bundle exec rubocop
+
+echo "[ bin/tests ] Done"

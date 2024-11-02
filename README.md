@@ -21,6 +21,12 @@ None (yet).
 
 ## Testing
 
+A full test (Rspec and Rubocop) including database migrations can be run with:
+
+`bin/rails test`
+
+Tests are written in RSpec. They are located in the `spec` directory and can be run with:
+
 `bin/rspec`
 
 ## Development Environment
@@ -31,22 +37,22 @@ $ bin/dev
 
 ## Production Environment
 
-This website is hosted on Heroku
+This website is hosted on Heroku and is deployed automatically when a new commit is pushed to the main branch.
 
 You can see it in action here:
 [ruby australia](https://ruby.org.au)
 
 ## Known Issues / Gotchas
 
-None (yet).
+None (yet) but please see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Code of Conduct
 
-See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## Content licence
 
