@@ -12,7 +12,7 @@ class Campaigns::Send
   def call
     return if campaign.delivered_at.present?
 
-    Membership.current.each do |membership|
+    memberships.each do |membership|
       delivery = delivery_for membership
       next if delivery.delivered_at.present?
 
@@ -36,6 +36,10 @@ class Campaigns::Send
       campaign: campaign,
       membership: membership
     )
+  end
+
+  def memberships
+    Membership.current
   end
 
   def ics

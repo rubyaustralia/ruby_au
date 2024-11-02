@@ -15,6 +15,7 @@ class User < ApplicationRecord
       end.join(" OR ")
     )
   }
+  scope :committee, -> { where(committee: true) }
 
   attr_accessor :skip_subscriptions
 

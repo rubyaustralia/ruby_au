@@ -20,6 +20,10 @@ FactoryBot.define do
       visible { false }
     end
 
+    trait :committee do
+      committee { true }
+    end
+
     after(:create) do |user, _evaluator|
       if user.confirmed_at
         user.memberships.create(
