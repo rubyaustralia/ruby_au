@@ -1,39 +1,63 @@
-# Ruby Australia Website
+[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)  
 
-Website for Ruby Australia
+# Ruby Australia Website
+[![CI](https://github.com/rubyaustralia/ruby_au/actions/workflows/ci.yml/badge.svg)](https://github.com/rubyaustralia/ruby_au/actions/workflows/ci.yml)
+
+Welcome to the Ruby Australia website repository. All contributions are encouraged.
+
 The slack channel for the website working group can be found
-[here](https://rubyau.slack.com/messages/ruby-au-website/)
+[here](https://rubyau.slack.com/messages/ruby-au-website/).
 
 ## Required Environment / Minimum Setup
 
-- Install the Ruby version (`3.3.5`).
-- Install PostgreSQL.
-- Install Bundler.
-- `bundle install`
-- Install yarn.
-- `yarn install`
-- Modify `config/database.yml` as needed.
-- `rake db:setup`
+- [Ruby version (`3.3.5`)](https://www.ruby-lang.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Bundler](https://bundler.io/)
+- [Yarn](https://yarnpkg.com/)
 
 ## Configuration
 
-None (yet).
+Clone the project, run the following commands:
 
-## Testing
+```bash
+$ git clone https://github.com/rubyaustralia/ruby_au.git
+$ cd ruby_au
+```
 
-A full test (Rspec and Rubocop) including database migrations can be run with:
+First time set up of the environment, this will bundle gems and install the JS dependencies as well as prepare the database:
 
-`bin/rails test`
+```bash
+$ bin/rails db:setup
+```
 
-Tests are written in RSpec. They are located in the `spec` directory and can be run with:
+Installing dependencies post set up (after each `git pull`):
 
-`bin/rspec`
+```bash
+$ bundle install
+$ yarn install
+```
 
-## Development Environment
+## Running the Development Environment
 
 This command will run using Foreman and start the app using both webpack and puma.
 
+```bash
 $ bin/dev
+```
+
+## Running the Test Environment
+
+A full test (Rspec and Rubocop) including preparing the database and running migrations can be run with:
+
+```bash
+$ bin/tests
+```
+
+Tests are written in RSpec. They are located in the `spec` directory and can be run with:
+
+```bash
+$ bin/rspec
+```
 
 ## Production Environment
 
@@ -60,5 +84,8 @@ Content is Copyright 2016 by Ruby Australia, All rights reserved.
 
 ## Logotype licence
 
-"Ruby Australia" 'Gem' and Typographic logo are Copyright 2016 by Ruby Australia,
-All rights reserved.
+"Ruby Australia" 'Gem' and Typographic logo are Copyright 2016 by Ruby Australia, all rights reserved.
+
+## Contact
+
+For any questions or feedback, please contact the website working group on [Slack](https://rubyau.slack.com/).
