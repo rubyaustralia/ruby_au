@@ -6,7 +6,7 @@
 Welcome to the Ruby Australia website repository. All contributions are encouraged.
 
 The slack channel for the website working group can be found
-[here](https://rubyau.slack.com/messages/ruby-au-website/).
+[here](https://rubyau.slack.com/archives/C34D3DCUX).
 
 ## Required Environment / Minimum Setup
 
@@ -88,4 +88,4 @@ Content is Copyright 2016 by Ruby Australia, All rights reserved.
 
 ## Contact
 
-For any questions or feedback, please contact the website working group on [Slack](https://rubyau.slack.com/).
+For any questions or feedback, please contact the website working group on [Slack](https://rubyau.slack.com/archives/C34D3DCUX).
