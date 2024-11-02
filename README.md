@@ -27,7 +27,7 @@ $ cd ruby_au
 First time set up of the environment, this will bundle gems and install the JS dependencies as well as prepare the database:
 
 ```bash
-$ bin/rails db:setup
+$ bin/setup
 ```
 
 Installing dependencies post set up (after each `git pull`):
