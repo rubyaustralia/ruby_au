@@ -40,6 +40,14 @@ You can see it in action here:
 
 None (yet).
 
+## Code of Conduct
+
+See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md)
+
 ## Content licence
 
 Content is Copyright 2016 by Ruby Australia, All rights reserved.
