@@ -1,9 +1,24 @@
+- name: HotDoc
+  key: hotdoc
+  url: https://www.hotdoc.com.au/
+  images:
+    - 2024/hotdoc-500x143.png
+  tier: Ruby
+  bio: |
+    [HotDoc](https://www.hotdoc.com.au/) is Australia's largest and most trusted patient engagement platform, with over 21,000 listed doctors, 10 million active patients and 1.4M appointments made each month.
+
+    With 1 in 3 Australians using HotDoc to connect with their preferred healthcare provider, we are the No. 1 app in the Medical category in the Apple Store. We are now also helping physios, dentists, specialists, and other allied health professionals deliver an exceptional experience for their patients. Partnering with the industry's most respected Practice Management Software, HotDoc seamlessly integrates with Cliniko and Nookal.
+
+    Our mission is to improve the healthcare experience for everyone in Australia. We do this by providing clinics access to online bookings, appointment reminders, digital patient registration forms, and many more tools to foster relationships between healthcare providers and patients. We double down on this by creating an easy to use, platform where patients can take charge of their health creating a more robust and fulfilling journey.
+
+    Care to join us?
+
 - name: Assembly Four
   key: assemblyfour
   url: https://assemblyfour.com/
   images:
-    - 2023/assembly-four-500x143.png
-  tier: Ruby
+    - 2024/assembly-four-500x143.png
+  tier: Sapphire
   bio: |
     [Assembly Four](https://assemblyfour.com) is a collective of sex workers and technologists on a mission to empower sex workers through technology. Sex workers are among the most marginalised, stigmatised groups in the world, and our goal is to create platforms where sex workers thrive, not just survive.
 
@@ -11,110 +26,37 @@
 
     Our other project is [Tryst.link](https://tryst.link) (WARNING: adult content), the first LGBTQI+ friendly adult advertising platform, and is becoming the ethically-run platform of choice for independent sex workers in Australasia, North America and Europe.
 
-- name: Culture Amp
-  key: culture-amp
-  url: https://www.cultureamp.com
+- name: ReInteractive
+  key: reinteractive
+  url: https://reinteractive.com/
   images:
-    - 2023/culture-amp-500x75.png
-  tier: Emerald
-  bio: |
-    [Culture Amp](https://www.cultureamp.com/) is a Melbourne-based people analytics platform that uses data to drive change in company cultures, helping some of the world's most innovative companies including Airbnb, Slack, Adobe, Warby Parker, Eventbrite and Etsy. Culture Amp was founded by four engineers in 2011, and was bootstrapped before it took series A funding in February 2015, growing from 15 to 50 people in that time. We have offices in Melbourne, San Francisco and New York. We're also a culture-first company, which means we try and "sample our own home brew" using our own platform to put culture and people at the heart of all our decisions.
-
-- name: HotDoc
-  key: hotdoc
-  url: https://www.hotdoc.com.au/
-  images:
-    - 2023/hotdoc-500x143.png
-  tier: Emerald
-  bio: |
-    [HotDoc](https://www.hotdoc.com.au/) is Australia's largest and most trusted patient engagement platform.
-    🚧 Bio under construction 🚧
-
-- name: Buildkite
-  key: buildkite
-  url: https://buildkite.com
-  images:
-    - 2023/buildkite-500x83.png
-  tier: Sapphire
-  bio: |
-    [Buildkite](https://buildkite.com/) is a platform for running fast, secure, and scalable continuous integration pipelines on your own infrastructure. It helps the best software teams stay happy and productive.
-
-- name: Blackmill
-  key: blackmill
-  url: https://www.blackmill.co/
-  images:
-    - 2023/blackmill-418x150.png
+    - 2024/reinteractive.png
   tier: Opal
   bio: |
-    With decades of leadership and consultancy experience, Blackmill helps technology companies build stronger teams, leaders, and cultures to deliver results. Through thoughtful engineering practices, they enable systems, processes, and people to align with company core values and goals.
-    
-    Team members at Blackmill have been active members of the Australian Ruby community since 2006; also serving as President, Vice President, Treasurer, and general members of the Ruby Australia committee. They have helped organise Ruby conferences, Rails Girls events, and Rails Camps in both Australia and the US.
-    
-    Blackmill is dedicated to improving the engineering culture in our industry. Their popular workshop [Leading Engineering Teams](https://blackmill.co/workshops/leading-engineering-teams) has helped many engineering managers learn new tools, explore best practices, solve problems, enhance their leadership skills, and nurture healthy team cultures.
-    
-    Blackmill has helped startups and tech companies with talent retention and acquisition, scaling teams, improving company culture, defining goals and values, improving engineering processes and systems, and developing solid leadership.
+    reinteractive is the region's leader in Ruby on Rails development for large, complex and customised solutions. We provide our professional services to start-ups, small business, large enterprise and legacy applications all running Ruby.
 
-    Whether it be [workshop training](https://blackmill.co/workshops), [leadership coaching](https://blackmill.co/do/tech-leadership-coaching), or [consulting](https://blackmill.co/do/consulting), Blackmill can support you through change and growth. We're a small but powerful team that aims to make the industry better. Talk to Blackmill at [gday@blackmill.co](mailto:gday@blackmill.co)
+    Our services include security and code reviews of existing code bases, UX and design, feature scoping and development, large and small scale upgrades, ongoing maintenance for code and infrastructure on (AWS and Heroku) all for web based and mobile applications.
 
-- name: Envato
-  key: envato
-  url: https://www.envato.com
+    reinteractive was founded many years ago by Mikel Lindsaar, famous in the Rails community for authoring and maintaining the Mail gem (with hundreds of millions of downloads to date) and early contributions to the framework itself.
+
+    Today we deliver our high-quality services around to clients around the world with our growing team of Senior Developers, while continuing to support the Rails community at large.
+
+- name: Bluethumb
+  key: bluethumb
+  url: https://tech.bluet.hm/senior-software-engineer-ruby-on-rails
   images:
-    - 2023/envato-500x95.png
-    - envato-out.png
+    - 2024/bluethumb-500x109.png
   tier: Opal
   bio: |
-    Headquartered in Melbourne, Australia, [Envato](http://www.envato.com) is the leading marketplace for creative assets and creative people. With more than 300 staff and contractors worldwide, we've helped a community of creative sellers earn more than [$400 Million](http://www.startupsmart.com.au/advice/growth/melbourne-startup-envato-reaches-a-major-milestone-how-it-got-there-and-what-comes-next/). Millions of people around the world choose our marketplace, studio and courses to buy files, hire freelancers, or learn the skills needed to build websites, videos, apps, graphics and more. Recently, JobAdvisor awarded us the title of Australia's Coolest Company for Women  ([2015](http://inside.envato.com/envato-coolest-company-for-women/) and [2016](http://www.searchparty.com/blog/coolest-companies-winners-2016/)). We were also named as one of the Best Places to Work in Australia in the [2015](http://press.envato.com/109596-envato-named-one-of-2015-s-best-places-to-work) and [2016](https://envato.com/blog/best-places-work-australia-2016-envatos-17/) BRW Awards. Envato have an LGBTI and Allies network group, called Out Envato, who promote inclusivity and awareness to our employees. We strive to be a champion for LGBTI in the global tech community and also run a regular meetup. Check out more about what it's like to work at Envato at [https://envato.com/careers/](https://envato.com/careers/)
-
-- name: Tanda
-  key: tanda
-  url: https://www.tanda.co/
-  images:
-    - 2023/tanda-500x111.png
-  tier: Opal
-  bio: |
-    🚧 Bio under construction 🚧
-
-- name: Up
-  key: up
-  url: https://up.com.au
-  images:
-    - 2023/up-500x150.png
-  tier: Opal
-  bio: |
-    [Up](https://up.com.au) is a digital bank that helps you save effortlessly and spend wisely. Written primarily in Ruby/Rails and React Native, Up is designed and developed by Ferocia in Melbourne in collaboration with Bendigo Bank.
-
-    What's good about Up? Well, lots of things. Up lets you map out your financial goals using interest-earning Up Savers that can have custom names, targets and emojis. It helps you understand your spending through auto-spend categorisation and gives you the ability to add custom tags to transactions. You can easily see how much you're spending at each merchant over time and automate your saving with pay-splitting, auto-transfers and round-ups. Up also helps you stay on top of your bills by predicting when they are due next.
-
-    Super easy to try, Up takes minutes to join from your phone. There are no monthly fees and you can use Apple Pay, Google Pay or Samsung Pay straight away (full pricing info at https://up.com.au/pricing).
-
-    If you'd like to try Up, use the code RUBY (or click the link https://link.up.com.au/ruby) to get $10 give Up a try.
-
-- name: CipherStash
-  key: cipherstash
-  url: https://www.cipherstash.com/
-  images:
-    - 2023/cipherstash-500x111.png
-  tier: Amber
-  bio: |
-    CipherStash is the ultimate in data security. Our products use advanced queryable encryption technology that keeps data encrypted-in-use, rather than just at-rest. This ensures that access controls are always applied and guarantees that every data access is logged. CipherStash shows you the who, what, where, and when of how sensitive data is accessed - even when it leaves core systems. CipherStash works in your existing databases, data lakes, and data warehouses via a drop-in driver replacement. An SDK is also available to support more sophisticated use cases.
+    Bluethumb's mission is to create the world's largest online art marketplace by transforming the way art is bought and sold. We connect artists with collectors nationwide and have recently expanded our platform to the US.
 
 - name: Lookahead
   key: lookahead
   url: https://www.lookahead.com.au
   images:
-    - 2023/lookahead-500x85.png
+    - 2024/lookahead-500x85.png
   tier: Amber
   bio: |
     Technical recruiters who are actually technical.
 
     We help [Ruby | Elixir | Javascript] developers and technical leaders find challenging work with inclusive teams. The companies we hire for work in Sydney, Melbourne and remotely around Australia.
-
-- name: Pin Payments
-  key: pinpayments
-  url: https://www.pinpayments.com
-  images:
-    - 2023/pin-payments-500x93.png
-  tier: Amber
-  bio: |
-    🚧 Bio under construction 🚧
