@@ -21,7 +21,7 @@ gem 'redcarpet'
 gem "dartsass-rails", "~> 0.5.0"
 gem 'validates_email_format_of'
 gem 'warden' # use for auth
-gem 'webpacker', '6.0.0.rc.6'
+gem 'vite_rails'
 gem 'sprockets-rails' # as of Rails 7.0, this is optional
 
 group :production do
