@@ -6,7 +6,7 @@ module Slack
         email = event_data.dig(:user, :profile, :email)
         name = event_data.dig(:user, :real_name)
 
-        return if !email || User.exists?(email: email)
+        return if !email || Email.exists?(email: email)
 
         InvitationMailer.with(email: email, name: name)
                         .invite

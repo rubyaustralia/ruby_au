@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
 
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
   namespace :my do
     resource :details, only: [:show, :edit, :update]
     resource :password, only: [:update]
@@ -8,6 +10,11 @@ Rails.application.routes.draw do
     resources :meetings, only: [:index]
     resources :access_requests, only: [:index]
     resource :slack_invite, only: [:show]
+    resources :emails, only: [:new, :create, :destroy] do
+      member do
+        put :set_primary
+      end
+    end
   end
 
   resources :rsvps, only: [:show, :update, :destroy] do

@@ -2,7 +2,7 @@ class Membership < ApplicationRecord
   belongs_to :user
 
   validates :joined_at, presence: true
-  validate :single_current_membership
+  validate :single_current_membership, on: :create
 
   scope :current, -> { where(left_at: nil) }
   scope :visible, -> { joins(:user).where(users: { visible: true }) }
