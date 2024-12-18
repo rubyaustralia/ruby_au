@@ -15,7 +15,7 @@ class My::EmailsController < My::ApplicationController
   def set_primary
     email = Email.find(params[:id])
     ActiveRecord::Base.transaction do
-      current_user.emails.where(primary: true).update_all(primary: false)
+      current_user.emails.where(primary: true).find_each { |email| email.update!(primary: false) }
       email.update!(primary: true)
     end
 

@@ -29,9 +29,9 @@ RSpec.describe "Reactivations", type: :request do
       end
 
       it "does not create a new membership" do
-        expect {
+        expect do
           post "/reactivations", params: { user: { email: user.email, password: "wrong_password" } }
-        }.not_to change(Membership, :count)
+        end.not_to change(Membership, :count)
       end
 
       it "does not sign in the user" do

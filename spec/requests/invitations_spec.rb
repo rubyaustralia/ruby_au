@@ -19,7 +19,6 @@ RSpec.describe "Invitations", type: :request do
 
         post "/invitations/#{imported_member.token}", params: { user: user_params }
 
-
         expect(response).to redirect_to(root_path)
         expect(flash[:notice]).to eq("Your membership to Ruby Australia has been confirmed.")
         user = User.last
@@ -32,7 +31,7 @@ RSpec.describe "Invitations", type: :request do
     end
 
     context "with invalid user params" do
-       let(:user_params) { { full_name: "", email: imported_member.email, password: "password", password_confirmation: "wrong_password" } }
+      let(:user_params) { { full_name: "", email: imported_member.email, password: "password", password_confirmation: "wrong_password" } }
 
       it "renders the new template" do
         post "/invitations/#{imported_member.token}", params: { user: user_params }

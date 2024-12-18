@@ -4,7 +4,7 @@ FactoryBot.define do
     email { Faker::Internet.email }
 
     trait :confirmed do
-      confirmed_at { Time.now }
+      confirmed_at { Time.current }
     end
   end
 end

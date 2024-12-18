@@ -12,9 +12,9 @@ RSpec.describe "Admin::ImportedMembers", type: :request do
 
     context "with valid parameters" do
       it "creates new imported members" do
-        expect {
+        expect do
           post admin_imported_members_path, params: { source: source, file: file }
-        }.to change(ImportedMember, :count).by(2)
+        end.to change(ImportedMember, :count).by(2)
 
         expect(response).to redirect_to(admin_imported_members_path)
         follow_redirect!
@@ -45,9 +45,9 @@ RSpec.describe "Admin::ImportedMembers", type: :request do
       it "updates the existing imported member" do
         existing_member = create(:imported_member, email: 'member1@example.com', full_name: 'Old Name', data: { sources: ['old_source'] })
 
-        expect {
+        expect do
           post admin_imported_members_path, params: { source: source, file: file }
-        }.to change(ImportedMember, :count).by(1)
+        end.to change(ImportedMember, :count).by(1)
 
         existing_member.reload
         expect(existing_member.full_name).to eq('Old Name')
@@ -59,9 +59,9 @@ RSpec.describe "Admin::ImportedMembers", type: :request do
       it "skips the row" do
         create(:email, email: 'member1@example.com')
 
-        expect {
+        expect do
           post admin_imported_members_path, params: { source: source, file: file }
-        }.to change(ImportedMember, :count).by(1)
+        end.to change(ImportedMember, :count).by(1)
 
         expect(ImportedMember.find_by(email: 'member1@example.com')).to be_nil
       end
@@ -71,9 +71,9 @@ RSpec.describe "Admin::ImportedMembers", type: :request do
       let(:file) { fixture_file_upload('imported_members_blank_email.csv', 'text/csv') }
 
       it "skips the row" do
-        expect {
+        expect do
           post admin_imported_members_path, params: { source: source, file: file }
-        }.to change(ImportedMember, :count).by(1)
+        end.to change(ImportedMember, :count).by(1)
 
         expect(ImportedMember.find_by(email: '')).to be_nil
       end
