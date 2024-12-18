@@ -1,0 +1,32 @@
+<%= content_for :heading do %>
+  Add New Email
+<% end %>
+
+<h2>Add New Email</h2>
+
+<%= form_for @email, url: my_emails_path, html:  { class: 'standard' } do |form| %>
+  <% if @email.errors.any? %>
+    <div id="error_explanation" class="ui visible error message">
+      <h2><%= pluralize(@email.errors.count, "error") %> prohibited this from being saved:</h2>
+
+      <ul>
+        <% @email.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="label">
+      <%= form.label :email, class: 'required' %>
+    </div>
+    <div class="input">
+      <%= form.email_field :email, type: 'email' %>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <%= form.submit 'Add New Email', class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -15,7 +15,7 @@ class MailingList::Sync
     mark_users_as_unsubscribed
 
     each_subscriber do |subscriber|
-      user = User.find_by email: subscriber['EmailAddress']
+      user = Email.find_by(email: subscriber['EmailAddress'])&.user
       next if user.nil?
 
       user.mailing_lists_will_change!

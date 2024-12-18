@@ -11,6 +11,7 @@ gem 'bugsnag'
 gem 'createsend'
 gem 'decent_exposure'
 gem 'devise'
+gem 'devise-multi_email'
 gem 'icalendar'
 gem 'inline_svg', '~> 1.9.0'
 gem 'jbuilder'
@@ -32,6 +33,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a
   # debugger console
   gem 'byebug'
+  gem 'faker'
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 6.1.0'
@@ -54,6 +56,7 @@ group :development do
   gem 'guard', require: false
   gem 'guard-rspec', require: false
   gem 'letter_opener'
+  gem 'letter_opener_web', '~> 3.0'
 end
 
 group :test do
