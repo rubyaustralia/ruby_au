@@ -45,4 +45,48 @@ RSpec.describe User, type: :model do
       expect(user.deactivated?).to be_truthy
     end
   end
+
+  describe '.without_emails' do
+    let(:user_with_email_field) do
+      create(:user).tap do |user|
+        user[:email] = user.email
+        user.save!
+        user.emails.destroy_all
+      end
+    end
+    let(:user_with_emails_association) { create(:user) }
+
+    it 'does not return users with email and associated Email record' do
+      user_with_email_field
+      user_with_emails_association
+      expect(User.without_emails).to eq([user_with_email_field])
+    end
+  end
+
+  describe '#update_emails' do
+    let(:user_with_email_field) do
+      create(:user, email: 'hello@world.com').tap do |user|
+        user[:email] = user.email
+        user.save!
+        user.emails.destroy_all
+      end
+    end
+    let(:user_with_emails_association) { create(:user) }
+
+    it 'creates a new Email record for users with email but no associated Email record' do
+      user_with_email_field
+
+      expect { user_with_email_field.update_emails }.to change(Email, :count).by(1)
+      expect(user_with_email_field.reload.read_attribute_before_type_cast('email')).to eq('hello@world.com')
+      expect(user_with_email_field.emails.first).to have_attributes(
+        email: 'hello@world.com',
+        primary: true,
+      )
+    end
+
+    it 'does not create a new Email record for users with email and associated Email record' do
+      user_with_emails_association
+      expect { user_with_emails_association.update_emails }.not_to change(Email, :count)
+    end
+  end
 end

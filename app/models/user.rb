@@ -23,6 +23,11 @@ class User < ApplicationRecord
     )
   }
   scope :committee, -> { where(committee: true) }
+  scope :without_emails, -> {
+    left_outer_joins(:emails)
+      .where(emails: { id: nil })
+      .where.not(email: nil)
+  }
 
   attr_accessor :skip_subscriptions
 
@@ -44,17 +49,16 @@ class User < ApplicationRecord
 
   def update_emails
     # fetch the email attribute directly from the table
-    existing_email = self.read_attribute_before_type_cast('email')
-    if email == nil && existing_email != ''
-      email = Email.new(email: existing_email, user: self, primary: true)
-      email.skip_confirmation!
-      email.save
-      if email.errors.present?
-        return errors
-      end
-      logger.info 'Email Updated!'
+    existing_email = read_attribute_before_type_cast('email')
+    return if existing_email.blank? || email.present?
+
+    new_email = Email.new(email: existing_email, user: self, primary: true)
+    new_email.skip_confirmation!
+
+    if new_email.save
+      logger.info "Email updated for user #{id}: #{existing_email}"
     else
-      logger.info 'Email already exists or no email saved on record'
+      logger.error "Failed to update email for user #{id}: #{new_email.errors.full_messages.join(', ')}"
     end
   end
 
