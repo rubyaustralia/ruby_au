@@ -23,7 +23,7 @@ class User < ApplicationRecord
     )
   }
   scope :committee, -> { where(committee: true) }
-  scope :without_emails, -> {
+  scope :without_emails, lambda {
     left_outer_joins(:emails)
       .where(emails: { id: nil })
       .where.not(email: nil)

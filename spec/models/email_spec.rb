@@ -27,7 +27,7 @@ RSpec.describe Email, type: :model do
 
     context 'uniqueness' do
       it 'requires a unique email address regardless of case' do
-        existing_email = create(:email, email: 'TEST@example.com')
+        create(:email, email: 'TEST@example.com')
         new_email = build(:email, email: 'test@example.com')
 
         expect(new_email).not_to be_valid

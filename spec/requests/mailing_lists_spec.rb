@@ -15,7 +15,7 @@ RSpec.describe MailingListsController, type: :request do
               "Type" => "Subscribe",
               "EmailAddress" => user.email,
               "ListId" => list.api_id,
-            },
+            }
           ],
         }.to_json
       end
@@ -36,7 +36,7 @@ RSpec.describe MailingListsController, type: :request do
               "Type" => "Deactivate",
               "EmailAddress" => user.email,
               "ListId" => list.api_id,
-            },
+            }
           ],
         }.to_json
       end
@@ -72,7 +72,7 @@ RSpec.describe MailingListsController, type: :request do
               "Type" => "Subscribe",
               "EmailAddress" => "nonexistent@example.com",
               "ListId" => list.api_id,
-            },
+            }
           ],
         }.to_json
       end

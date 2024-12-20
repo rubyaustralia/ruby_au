@@ -17,18 +17,18 @@ RSpec.describe "My::Emails", type: :request do
   describe "POST /create" do
     context "with valid parameters" do
       it "creates a new email and redirects to my_details_path" do
-        expect {
+        expect do
           post my_emails_path, params: { email: { email: "test@example.com" } }
-        }.to change(Email, :count).by(1)
+        end.to change(Email, :count).by(1)
         expect(response).to redirect_to(my_details_path)
       end
     end
 
     context "with invalid parameters" do
       it "re-renders the new template" do
-        expect {
+        expect do
           post my_emails_path, params: { email: { email: "" } }
-        }.not_to change(Email, :count)
+        end.not_to change(Email, :count)
         expect(response).to render_template(:new)
       end
     end
@@ -51,9 +51,9 @@ RSpec.describe "My::Emails", type: :request do
     let!(:email) { create(:email, user: user) }
 
     it "deletes the specified email and redirects to my_details_path" do
-      expect {
+      expect do
         delete my_email_path(email)
-      }.to change(Email, :count).by(-1)
+      end.to change(Email, :count).by(-1)
       expect(response).to redirect_to(my_details_path)
     end
   end
