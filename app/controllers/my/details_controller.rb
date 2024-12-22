@@ -9,6 +9,7 @@ class My::DetailsController < My::ApplicationController
 
   def update
     @user = current_user
+    # TODO: do we need below code?
     @user.mailing_lists_will_change!
 
     if @user.update(user_params)

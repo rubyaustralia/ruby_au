@@ -6,6 +6,7 @@ class My::EmailsController < My::ApplicationController
   def create
     @email = current_user.emails.new(email_params)
     if @email.save
+      flash[:notice] = "Your email #{@email.email} has been added."
       redirect_to my_details_path
     else
       render :new

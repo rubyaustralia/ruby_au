@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "User reactivates their membership", type: :feature do
-  let(:user) { create :user, deactivated_at: 1.minute.ago }
+  let(:user) { create :user, :deactivated }
 
   scenario "with their credentials" do
     expect(user.memberships.count).to eq(1)

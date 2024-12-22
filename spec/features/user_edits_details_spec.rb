@@ -8,8 +8,19 @@ RSpec.describe "User edits profile details", type: :feature do
     visit my_details_path
   end
 
-  scenario "by filling in the form" do
-    user.update mailing_lists: { "RubyConf AU" => "true" }
+  scenario "updating full name" do
+    click_on 'Edit'
+
+    fill_in "Full Name", with: "Big Bunny"
+    find(:css, "#user_visible").set(true)
+    click_button 'Update my details'
+
+    expect(page).to have_content 'Your details have been updated.'
+    expect(page).to have_content 'Big Bunny'
+  end
+
+  scenario "adding a new email" do
+    user.update! mailing_lists: { "RubyConf AU" => "true" }
     new_email = 'bigbunnyfoofoo@gmail.com'
     stub_request(
       :post, %r{https://api.createsend.com/api/v3.3/subscribers/conf-key.json}
@@ -18,20 +29,14 @@ RSpec.describe "User edits profile details", type: :feature do
       :put, %r{https://api.createsend.com/api/v3.3/subscribers/conf-key.json}
     )
 
-    click_on 'Edit'
+    click_on 'Add Email'
 
     fill_in "Email", with: new_email
-    fill_in "Full Name", with: "Big Bunny"
-    find(:css, "#user_visible").set(true)
-    click_button 'Update my details'
+    click_button 'Add New Email'
 
-    user.reload
-    expect(page).to have_content 'Your details have been updated.'
-    expect(user.full_name).to eq "Big Bunny"
-    expect(user.unconfirmed_email).to eq new_email
-    expect(user.visible).to eq(true)
+    expect(page).to have_content "Your email #{new_email} has been added."
 
-    email = emails_sent_to(user.unconfirmed_email).detect do |mail|
+    email = emails_sent_to(new_email).detect do |mail|
       mail.subject == "Confirmation instructions"
     end
     expect(email).to be_present
@@ -46,6 +51,7 @@ RSpec.describe "User edits profile details", type: :feature do
   end
 
   scenario "subscribing to a mailing list" do
+    user.update! mailing_lists: { "RubyConf AU" => "true" }
     stub_request(
       :post, "https://api.createsend.com/api/v3.3/subscribers/girls-key.json"
     )
@@ -66,7 +72,7 @@ RSpec.describe "User edits profile details", type: :feature do
   end
 
   scenario "unsubscribing from a mailing list" do
-    user.update mailing_lists: { "RailsGirls" => "true" }
+    user.update! mailing_lists: { "RailsGirls" => "true" }
     stub_request(
       :post, "https://api.createsend.com/api/v3.3/subscribers/girls-key/unsubscribe.json"
     )

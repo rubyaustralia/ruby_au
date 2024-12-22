@@ -27,6 +27,10 @@ FactoryBot.define do
 
     trait :deactivated do
       deactivated_at { Time.current }
+
+      after :create do |user, _options|
+        user.memberships.current.first&.update! left_at: Time.current
+      end
     end
   end
 end

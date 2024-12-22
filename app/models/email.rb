@@ -1,9 +1,12 @@
 class Email < ApplicationRecord
   belongs_to :user
 
-  validates :email, presence: true, uniqueness: true
+  validates :email,
+            presence: true,
+            uniqueness: true,
+            format: { with: Devise.email_regexp }
 
-  after_save :trigger_after_confirmation, if: :saved_change_to_confirmed_at?
+  after_save :trigger_after_confirmation
 
   delegate :full_name, :address, to: :user
 
@@ -14,6 +17,8 @@ class Email < ApplicationRecord
   end
 
   def trigger_after_confirmation
+    return unless saved_change_to_confirmed_at?
+
     email_update = saved_change_to_email? && email_before_last_save.present?
     user.update_mailing_list_and_memberships(email_update: email_update)
   end
