@@ -1,3 +1,5 @@
+require 'csv'
+
 class Admin::ImportedMembersController < Admin::ApplicationController
   expose(:members) { ImportedMember.contactable }
 
@@ -28,6 +30,6 @@ class Admin::ImportedMembersController < Admin::ApplicationController
   end
 
   def skip_row?(row)
-    row[:ticket_email].blank? || User.where(email: row[:ticket_email]).any?
+    row[:ticket_email].blank? || Email.where(email: row[:ticket_email]).any?
   end
 end

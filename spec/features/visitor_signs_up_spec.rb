@@ -15,7 +15,7 @@ RSpec.feature "Visitor signs up", type: :feature do
     expect(page).to have_content 'A message with a confirmation link has been sent to your email address.'
     expect(page).to_not have_link('Sign out')
 
-    user = User.find_by email: "valid@example.com"
+    user = Email.find_by(email: "valid@example.com").user
     expect(user).to be_present
     expect(user).to_not be_confirmed
     expect(user.memberships.count).to be_zero

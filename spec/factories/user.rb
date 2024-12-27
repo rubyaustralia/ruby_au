@@ -12,6 +12,7 @@ FactoryBot.define do
     address { '42 Wallaby Way, Sydney' }
     visible { true }
     skip_subscriptions { true }
+    mailing_lists { {} }
 
     trait :visible do
       visible { true }
@@ -24,12 +25,11 @@ FactoryBot.define do
       committee { true }
     end
 
-    after(:create) do |user, _evaluator|
-      if user.confirmed_at
-        user.memberships.create(
-          joined_at: Time.current,
-          left_at: (user.deactivated_at ? 1.minute.ago : nil)
-        )
+    trait :deactivated do
+      deactivated_at { Time.current }
+
+      after :create do |user, _options|
+        user.memberships.current.first&.update! left_at: Time.current
       end
     end
   end

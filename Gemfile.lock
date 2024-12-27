@@ -131,6 +131,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-multi_email (3.0.1)
+      devise
     diff-lcs (1.5.1)
     docile (1.4.1)
     drb (2.2.1)
@@ -140,6 +142,8 @@ GEM
     factory_bot_rails (6.4.4)
       factory_bot (~> 6.5)
       railties (>= 5.0.0)
+    faker (3.5.1)
+      i18n (>= 1.8.11, < 2)
     ffi (1.17.0)
     ffi (1.17.0-aarch64-linux-gnu)
     ffi (1.17.0-arm64-darwin)
@@ -214,6 +218,11 @@ GEM
       addressable (~> 2.8)
     letter_opener (1.10.0)
       launchy (>= 2.2, < 4)
+    letter_opener_web (3.0.0)
+      actionmailer (>= 6.1)
+      letter_opener (~> 1.9)
+      railties (>= 6.1)
+      rexml
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -476,7 +485,9 @@ DEPENDENCIES
   dartsass-rails (~> 0.5.0)
   decent_exposure
   devise
+  devise-multi_email
   factory_bot_rails
+  faker
   guard
   guard-rspec
   icalendar
@@ -484,6 +495,7 @@ DEPENDENCIES
   jbuilder
   kaminari
   letter_opener
+  letter_opener_web (~> 3.0)
   listen
   pg
   premailer-rails

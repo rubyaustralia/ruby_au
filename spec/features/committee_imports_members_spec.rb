@@ -104,7 +104,7 @@ RSpec.describe "Committee importing members", type: :feature do
       expect(page).to have_link("Log out")
       expect(page).to have_content("Your membership to Ruby Australia has been confirmed")
 
-      user = User.find_by(email: "riley@ruby.test")
+      user = Email.find_by(email: "riley@ruby.test")&.user
       expect(user).to be_present
       expect(user).to be_confirmed
       expect(user.valid_password?("rubyrubyruby")).to eq(true)
@@ -145,7 +145,7 @@ RSpec.describe "Committee importing members", type: :feature do
       expect(page).to have_link("Log out")
       expect(page).to have_content("Your membership to Ruby Australia has been confirmed")
 
-      user = User.find_by(email: "charlie@ruby.test")
+      user = Email.find_by(email: "charlie@ruby.test")&.user
       expect(user).to be_present
       expect(user).to be_confirmed
       expect(user.valid_password?("rubyrubyruby")).to eq(true)
@@ -160,7 +160,7 @@ RSpec.describe "Committee importing members", type: :feature do
 
       current_email.click_link "unsubscribing"
 
-      user = User.find_by(email: "dylan@ruby.test")
+      user = Email.find_by(email: "dylan@ruby.test")&.user
       expect(user).to_not be_present
 
       member = ImportedMember.find_by(email: "dylan@ruby.test")

@@ -1,8 +1,15 @@
 class User < ApplicationRecord
+  has_many :emails, dependent: :destroy # must be declared before devise :multi_email_authenticatable
+
   # Include devise modules. Others available are:
   # :lockable, :timeoutable, and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
-         :validatable, :confirmable, :trackable
+  devise :multi_email_authenticatable,
+         :multi_email_confirmable,
+         :multi_email_validatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable
 
   has_many :memberships, dependent: :destroy
 
@@ -16,6 +23,11 @@ class User < ApplicationRecord
     )
   }
   scope :committee, -> { where(committee: true) }
+  scope :without_emails, lambda {
+    left_outer_joins(:emails)
+      .where(emails: { id: nil })
+      .where.not(email: nil)
+  }
 
   attr_accessor :skip_subscriptions
 
@@ -33,16 +45,27 @@ class User < ApplicationRecord
   def save_as_confirmed!
     self.confirmed_at ||= Time.current
     save!
-
-    after_confirmation
   end
 
-  protected
+  def update_emails
+    # fetch the email attribute directly from the table
+    existing_email = read_attribute_before_type_cast('email')
+    return if existing_email.blank? || email.present?
 
-  def after_confirmation
+    new_email = Email.new(email: existing_email, user: self, primary: true)
+    new_email.skip_confirmation!
+
+    if new_email.save
+      logger.info "Email updated for user #{id}: #{existing_email}"
+    else
+      logger.error "Failed to update email for user #{id}: #{new_email.errors.full_messages.join(', ')}"
+    end
+  end
+
+  def update_mailing_list_and_memberships(email_update: false)
     subscribe_to_lists
 
-    if email_previously_changed? && previous_changes["email"].first.present?
+    if email_update
       update_mailing_list_email_addresses
     else
       set_up_mailing_list_flags

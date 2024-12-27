@@ -14,7 +14,7 @@ class MailingListsController < ApplicationController
   end
 
   def handle_list_event(event)
-    user = User.find_by email: event["EmailAddress"]
+    user = Email.find_by(email: event["EmailAddress"])&.user
     return if user.nil?
 
     user.mailing_lists_will_change!

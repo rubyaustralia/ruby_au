@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2020_10_10_015538) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_15_005718) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -44,6 +44,20 @@ ActiveRecord::Schema[8.0].define(version: 2020_10_10_015538) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["rsvp_event_id"], name: "index_campaigns_on_rsvp_event_id"
+  end
+
+  create_table "emails", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "email", null: false
+    t.boolean "primary", default: false, null: false
+    t.string "unconfirmed_email"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_emails_on_email", unique: true
+    t.index ["user_id"], name: "index_emails_on_user_id"
   end
 
   create_table "imported_members", force: :cascade do |t|
@@ -94,7 +108,7 @@ ActiveRecord::Schema[8.0].define(version: 2020_10_10_015538) do
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
-    t.string "email", null: false
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "preferred_name"
@@ -129,6 +143,7 @@ ActiveRecord::Schema[8.0].define(version: 2020_10_10_015538) do
   add_foreign_key "campaign_deliveries", "campaigns"
   add_foreign_key "campaign_deliveries", "memberships"
   add_foreign_key "campaigns", "rsvp_events"
+  add_foreign_key "emails", "users"
   add_foreign_key "memberships", "users"
   add_foreign_key "rsvps", "memberships"
   add_foreign_key "rsvps", "rsvp_events"

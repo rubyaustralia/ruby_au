@@ -225,3 +225,7 @@ nav {
     @apply pl-1/3;
   }
 }
+
+.badge {
+  @apply inline-flex items-center rounded bg-green px-2 py-1 text-xs font-medium text-white ring-1 ring-inset;
+}

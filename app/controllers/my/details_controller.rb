@@ -9,6 +9,7 @@ class My::DetailsController < My::ApplicationController
 
   def update
     @user = current_user
+    # TODO: do we need below code?
     @user.mailing_lists_will_change!
 
     if @user.update(user_params)
@@ -25,7 +26,7 @@ class My::DetailsController < My::ApplicationController
 
   def user_params
     params.require(:user).permit(\
-      :email, :full_name, :address, :visible,
+      :full_name, :address, :visible,
       mailing_lists: MailingList.all.collect(&:name)
     )
   end
