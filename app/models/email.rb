@@ -1,4 +1,6 @@
 class Email < ApplicationRecord
+  attr_accessor :skip_trigger_after_confirmation
+
   belongs_to :user
 
   validates :email,
@@ -17,7 +19,7 @@ class Email < ApplicationRecord
   end
 
   def trigger_after_confirmation
-    return unless saved_change_to_confirmed_at?
+    return unless !skip_trigger_after_confirmation && saved_change_to_confirmed_at?
 
     email_update = saved_change_to_email? && email_before_last_save.present?
     user.update_mailing_list_and_memberships(email_update: email_update)
