@@ -1,9 +1,13 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
+import Rails from '@rails/ujs';
+import $ from 'jquery';
+window.$ = $;
+window.jQuery = $;
 
-require("@rails/ujs").start()
+Rails.start();
 
-const SignaturePad = require("signature_pad").default;
+import SignaturePad from "signature_pad";
 
 import "./styles/application.scss";
 import "./styles/committee.scss";
