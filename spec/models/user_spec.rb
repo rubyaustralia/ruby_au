@@ -84,6 +84,11 @@ RSpec.describe User, type: :model do
       )
     end
 
+    it 'does not trigger update_mailing_list_and_memberships method' do
+      expect(user_with_email_field).to_not receive(:update_mailing_list_and_memberships)
+      user_with_email_field.update_emails
+    end
+
     it 'does not create a new Email record for users with email and associated Email record' do
       user_with_emails_association
       expect { user_with_emails_association.update_emails }.not_to change(Email, :count)

@@ -52,7 +52,7 @@ class User < ApplicationRecord
     existing_email = read_attribute_before_type_cast('email')
     return if existing_email.blank? || email.present?
 
-    new_email = Email.new(email: existing_email, user: self, primary: true)
+    new_email = Email.new(email: existing_email, user: self, primary: true, skip_trigger_after_confirmation: true)
     new_email.skip_confirmation!
 
     if new_email.save
