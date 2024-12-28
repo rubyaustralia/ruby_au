@@ -34,7 +34,8 @@ jobs:
       - name: Install Yarn dependencies
         run: |
           yarn install
-          bundle exec rails webpacker:compile
+          bin/vite build
+          bundle exec rails assets:precompile
       - name: Rubocop
         run: bundle exec rubocop
       - name: Test
