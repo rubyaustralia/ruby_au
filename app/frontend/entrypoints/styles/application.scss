@@ -1,0 +1,228 @@
+@tailwind base;
+
+body {
+  font-family: sans-serif;
+  line-height: 1.15;
+  background-color: white;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+p, li, div, span {
+  & > a {
+    @apply text-pink no-underline border-0;
+
+    &:hover {
+      @apply text-pink-darker border-b border-pink-500;
+    }
+
+    svg {
+      fill: theme('colors.pink.DEFAULT');
+      opacity: 0.5;
+    }
+  }
+}
+
+a {
+  @apply text-blue underline;
+
+  svg { display: inline; }
+}
+
+h1 {
+  @apply text-xl bg-pink text-white h-12 pt-1 mb-5 pl-5 pt-3 font-bold;
+}
+
+h2 {
+  @apply text-xl text-pink-dark font-bold my-4 pl-5;
+}
+
+h3 {
+  @apply text-lg text-pink-dark font-bold my-3 pl-5;
+}
+
+h4 {
+  @apply text-lg text-pink-darkest font-bold mt-3 mb-2 pl-5;
+}
+
+p, li {
+  @apply leading-normal text-grey-darkest px-5;
+}
+
+.markdown {
+  h1 {
+    @apply bg-white text-pink-darkest;
+  }
+
+  blockquote {
+    @apply mx-8 my-3 p-2 bg-grey-lighter;
+  }
+
+  ol {
+    @apply list-decimal list-inside;
+
+    ol, ul {
+      @apply ml-3;
+    }
+  }
+
+  ul {
+    @apply list-disc list-inside;
+
+    ol, ul {
+      @apply ml-3;
+    }
+  }
+
+  li {
+    p {
+      @apply mx-0 px-0;
+    }
+  }
+}
+
+#meta {
+  nav {
+    header {
+      a {
+        border: none !important;
+      }
+    }
+  }
+}
+
+nav {
+  .actions {
+    a, button {
+      @apply block mt-3 mx-3 px-5 py-2 border-2 shadow border-pink-500 font-mono text-pink text-center no-underline;
+      transition: background-color 0.5s ease;
+
+      &:hover {
+        @apply bg-pink-darker text-white;
+      }
+    }
+  }
+}
+
+#nav-primary {
+  h3 {
+    @apply mt-5 mb-2 p-0;
+  }
+
+  ul {
+    li {
+      @apply px-0 pb-2;
+    }
+  }
+}
+
+#in-person {
+  #meetup-locations {
+    @apply mt-3;
+
+    list-style: disc outside none;
+
+    li {
+      @apply pb-2;
+
+      a {
+        @apply no-underline border-cyan border-b;
+
+        &:hover {
+          @apply border-purple-500;
+        }
+      }
+    }
+  }
+}
+
+.welcome {
+  @apply text-xl;
+  @apply max-w-md;
+  @apply mx-4;
+
+  h2 {
+    @apply my-6;
+  }
+
+  p, ul {
+    @apply mt-10;
+    @apply my-6;
+  }
+}
+
+#body {
+  p {
+    @apply mt-4;
+  }
+
+  li {
+    @apply mt-1;
+  }
+}
+
+.call-to-action {
+  a {
+    @apply text-purple w-6 my-4 mr-3 px-5 py-2 border-2 shadow bg-white border-purple-500 text-purple-500 no-underline font-mono;
+    transition: all 0.25s ease;
+
+    &:hover {
+      @apply bg-purple-darker text-white;
+    }
+  }
+}
+
+#contributing {
+  @apply text-white;
+}
+
+.divider-1 {
+  background-position: 0 70px;
+  min-height: 70px;
+}
+
+.divider-2 {
+  background-position: 0 100px;
+  min-height: 70px;
+}
+
+.divider-3 {
+  background-position: 0 240px;
+  min-height: 70px;
+}
+
+.divider-4 {
+  min-height: 70px;
+}
+
+.announcement {
+  @apply divider-1 text-white py-6 justify-center;
+
+  div {
+    @apply max-w-md mx-4 justify-center text-center;
+  }
+
+  a, p {
+    @apply inline-block border-pink-500 border-2 text-pink-500 font-mono no-underline font-bold bg-white py-2 px-5 shadow-md;
+
+    &:hover {
+      @apply bg-pink text-white;
+    }
+  }
+}
+
+#flash {
+  @apply max-w-md text-center my-4;
+
+  .flash {
+    @apply text-purple w-6 my-4 px-5 py-2 border-2 shadow bg-white border-purple-500 font-mono mx-auto text-sm;
+    transition: all 0.25s ease;
+  }
+}
+
+@screen md {
+  .devise-links {
+    @apply pl-4;
+  }
+}

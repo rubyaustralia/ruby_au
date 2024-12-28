@@ -1,0 +1,104 @@
+form.standard {
+  @apply mt-5 w-full max-w-md;
+
+  legend {
+    @apply text-purple-dark font-bold mt-12 mb-2;
+  }
+
+  label {
+    @apply block text-black font-bold mb-1 pr-4;
+  }
+
+  input[type=text],
+  input[type=email],
+  input[type=password],
+  textarea {
+    @apply bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-black leading-tight;
+
+    &:focus {
+      @apply outline-none bg-white border-purple;
+    }
+  }
+
+  input[type=submit] {
+    @apply shadow bg-purple text-white font-bold py-2 px-4 rounded;
+
+    &:focus {
+      @apply ring outline-none;
+    }
+
+    &:hover {
+      @apply bg-purple-light;
+    }
+  }
+
+  .field {
+    @apply mb-6;
+    @apply mt-6;
+  }
+
+  .buttons {
+    @apply mb-6;
+  }
+
+  .hint {
+    @apply text-base pt-2;
+  }
+
+  .info {
+    @apply text-base;
+  }
+
+  @screen md {
+    legend {
+      @apply pl-1 w-2;
+    }
+
+    label {
+      @apply text-right mb-0;
+    }
+
+    .field {
+      @apply flex items-center;
+      flex-wrap: wrap;
+    }
+
+    .label {
+      @apply w-1 flex-auto;
+    }
+
+    .input {
+      @apply w-2 flex-auto;
+    }
+
+    .flipped {
+      label {
+        @apply text-left;
+      }
+
+      .label {
+        @apply w-2 flex-auto;
+      }
+
+      .input {
+        @apply w-1 flex-auto text-right pr-3;
+      }
+    }
+
+    .hint {
+      @apply w-2 ml-1;
+    }
+
+    .buttons {
+      @apply flex items-center pl-1 w-2;
+    }
+
+    .links {
+      @apply pl-1;
+    }
+
+    .info {
+      @apply pl-1;
+    }
+  }
+}
