@@ -11,14 +11,14 @@ body {
 
 p, li, div, span {
   & > a {
-    @apply text-pink no-underline border-0;
+    @apply text-red no-underline border-0;
 
     &:hover {
-      @apply text-pink-darker border-b border-pink-500;
+      @apply text-red-darker border-b border-red;
     }
 
     svg {
-      fill: theme('colors.pink.DEFAULT');
+      fill: theme('colors.red');
       opacity: 0.5;
     }
   }
@@ -31,19 +31,19 @@ a {
 }
 
 h1 {
-  @apply text-xl bg-pink text-white h-12 pt-1 mb-5 pl-5 pt-3 font-bold;
+  @apply text-xl bg-red text-white h-12 pt-1 mb-5 pl-5 pt-3 font-bold;
 }
 
 h2 {
-  @apply text-xl text-pink-dark font-bold my-4 pl-5;
+  @apply text-xl text-red-dark font-bold my-4 pl-5;
 }
 
 h3 {
-  @apply text-lg text-pink-dark font-bold my-3 pl-5;
+  @apply text-lg text-red-dark font-bold my-3 pl-5;
 }
 
 h4 {
-  @apply text-lg text-pink-darkest font-bold mt-3 mb-2 pl-5;
+  @apply text-lg text-red-darkest font-bold mt-3 mb-2 pl-5;
 }
 
 p, li {
@@ -52,7 +52,7 @@ p, li {
 
 .markdown {
   h1 {
-    @apply bg-white text-pink-darkest;
+    @apply bg-white text-red;
   }
 
   blockquote {
@@ -95,11 +95,11 @@ p, li {
 nav {
   .actions {
     a, button {
-      @apply block mt-3 mx-3 px-5 py-2 border-2 shadow border-pink-500 font-mono text-pink text-center no-underline;
+      @apply block mt-3 mx-3 px-5 py-2 border-2 shadow border-red font-mono text-red text-center no-underline;
       transition: background-color 0.5s ease;
 
       &:hover {
-        @apply bg-pink-darker text-white;
+        @apply bg-red-darker text-white;
       }
     }
   }
@@ -164,11 +164,11 @@ nav {
 
 .call-to-action {
   a {
-    @apply text-purple w-6 my-4 mr-3 px-5 py-2 border-2 shadow bg-white border-purple-500 text-purple-500 no-underline font-mono;
+    @apply text-red-dark my-4 mr-3 px-5 py-2 border-2 shadow bg-white border-red no-underline font-mono;
     transition: all 0.25s ease;
 
     &:hover {
-      @apply bg-purple-darker text-white;
+      @apply bg-red-darker text-white;
     }
   }
 }
@@ -204,10 +204,10 @@ nav {
   }
 
   a, p {
-    @apply inline-block border-pink-500 border-2 text-pink-500 font-mono no-underline font-bold bg-white py-2 px-5 shadow-md;
+    @apply inline-block border-red border-2 text-red font-mono no-underline font-bold bg-white py-2 px-5 shadow-md;
 
     &:hover {
-      @apply bg-pink text-white;
+      @apply bg-red text-white;
     }
   }
 }
