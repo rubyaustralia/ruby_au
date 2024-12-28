@@ -1,2 +1,0 @@
-plugins:
-  tailwindcss: './app/packs/src/tailwind.config.js'
