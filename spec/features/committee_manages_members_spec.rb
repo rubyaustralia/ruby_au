@@ -39,13 +39,15 @@ RSpec.describe "Committee managing members", type: :feature do
     expect(page).to have_content("Alex")
     expect(page).to have_content("Not yet")
 
+    last_year = Time.zone.today.year - 1
+
     click_link "Edit"
-    select "2019", from: "access_request_viewed_on_1i"
+    select last_year.to_s, from: "access_request_viewed_on_1i"
     select "December", from: "access_request_viewed_on_2i"
     select "31", from: "access_request_viewed_on_3i"
     click_button "Save"
 
     expect(page).to have_content("Alex")
-    expect(page).to have_content("2019-12-31")
+    expect(page).to have_content("#{last_year}-12-31")
   end
 end
