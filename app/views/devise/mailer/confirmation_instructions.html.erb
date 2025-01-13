@@ -7,3 +7,5 @@ Confirm your membership with Ruby Australia.
 <p>To confirm both your email address and your membership for Ruby Australia, please follow the link below:</p>
 
 <p class="button"><%= link_to 'Confirm my membership', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>Once you've completed the confirmation above, be sure to join our Slack community at <%= link_to 'Slack', slack_url %>.</p>
