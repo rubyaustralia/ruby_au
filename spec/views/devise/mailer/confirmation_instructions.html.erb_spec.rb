@@ -26,7 +26,7 @@ RSpec.describe "devise/mailer/confirmation_instructions.html.erb", type: :view d
   end
 
   it "displays the confirmation link" do
-    expect(rendered).to have_link('Confirm my membership', href: confirmation_url(user, confirmation_token: token))
+    expect(rendered).to have_link('Confirm my membership', href: user_confirmation_url(confirmation_token: token))
   end
 
   it "displays the Slack community invitation" do
