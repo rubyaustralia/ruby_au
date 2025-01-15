@@ -119,9 +119,6 @@ GEM
     css_parser (1.21.0)
       addressable
     csv (3.3.2)
-    dartsass-rails (0.5.1)
-      railties (>= 6.0.0)
-      sass-embedded (~> 1.63)
     date (3.4.1)
     decent_exposure (3.0.4)
       activesupport (>= 4.0)
@@ -136,6 +133,7 @@ GEM
     diff-lcs (1.5.1)
     docile (1.4.1)
     drb (2.2.1)
+    dry-cli (1.2.0)
     erubi (1.13.1)
     factory_bot (6.5.0)
       activesupport (>= 5.0.0)
@@ -151,18 +149,6 @@ GEM
     formatador (1.1.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    google-protobuf (4.29.2)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.29.2-aarch64-linux)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.29.2-arm64-darwin)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.29.2-x86_64-linux)
-      bigdecimal
-      rake (>= 13)
     guard (2.19.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -244,6 +230,7 @@ GEM
     minitest (5.25.4)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
+    mutex_m (0.3.0)
     nenv (0.3.0)
     net-imap (0.5.4)
       date
@@ -402,17 +389,7 @@ GEM
       rubocop (>= 1.52.0, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
     ruby-progressbar (1.13.0)
-    sass-embedded (1.83.0)
-      google-protobuf (~> 4.28)
-      rake (>= 13)
-    sass-embedded (1.83.0-aarch64-linux-gnu)
-      google-protobuf (~> 4.28)
-    sass-embedded (1.83.0-arm64-darwin)
-      google-protobuf (~> 4.28)
-    sass-embedded (1.83.0-x86_64-linux-gnu)
-      google-protobuf (~> 4.28)
     securerandom (0.4.1)
-    semantic_range (3.1.0)
     shellany (0.0.1)
     simplecov (0.22.0)
       docile (~> 1.1)
@@ -445,6 +422,15 @@ GEM
     validates_email_format_of (1.8.2)
       i18n (>= 0.8.0)
       simpleidn
+    vite_rails (3.0.19)
+      railties (>= 5.1, < 9)
+      vite_ruby (~> 3.0, >= 3.2.2)
+    vite_ruby (3.9.1)
+      dry-cli (>= 0.7, < 2)
+      logger (~> 1.6)
+      mutex_m
+      rack-proxy (~> 0.6, >= 0.6.1)
+      zeitwerk (~> 2.2)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -456,11 +442,6 @@ GEM
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
-    webpacker (6.0.0.rc.6)
-      activesupport (>= 5.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 5.2)
-      semantic_range (>= 2.3.0)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -482,7 +463,6 @@ DEPENDENCIES
   capybara-email!
   codeclimate-test-reporter
   createsend
-  dartsass-rails (~> 0.5.0)
   decent_exposure
   devise
   devise-multi_email
@@ -518,10 +498,10 @@ DEPENDENCIES
   sprockets-rails
   tzinfo-data
   validates_email_format_of
+  vite_rails
   warden
   web-console
   webmock
-  webpacker (= 6.0.0.rc.6)
 
 RUBY VERSION
    ruby 3.3.5p100
