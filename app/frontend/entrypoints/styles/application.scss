@@ -3,21 +3,22 @@
 body {
   font-family: sans-serif;
   line-height: 1.15;
+  background-color: white;
 }
 
 @tailwind components;
 @tailwind utilities;
 
 p, li, div, span {
-  &> a {
-    @apply text-pink no-underline border-0;
+  & > a {
+    @apply text-red no-underline border-0;
 
     &:hover {
-      @apply text-pink-darker border-b border-pink;
+      @apply text-red-darker border-b border-red;
     }
 
     svg {
-      fill: theme('colors.pink');
+      fill: theme('colors.red');
       opacity: 0.5;
     }
   }
@@ -30,19 +31,19 @@ a {
 }
 
 h1 {
-  @apply text-xl bg-pink text-white h-12 pt-1 mb-5 pl-5 pt-3 font-bold;
+  @apply text-xl bg-red text-white h-12 pt-1 mb-5 pl-5 pt-3 font-bold;
 }
 
 h2 {
-  @apply text-xl text-pink-dark font-bold my-4 pl-5;
+  @apply text-xl text-red-dark font-bold my-4 pl-5;
 }
 
 h3 {
-  @apply text-lg text-pink-dark font-bold my-3 pl-5;
+  @apply text-lg text-red-dark font-bold my-3 pl-5;
 }
 
 h4 {
-  @apply text-lg text-pink-darkest font-bold mt-3 mb-2 pl-5;
+  @apply text-lg text-red-darkest font-bold mt-3 mb-2 pl-5;
 }
 
 p, li {
@@ -51,7 +52,7 @@ p, li {
 
 .markdown {
   h1 {
-    @apply bg-white text-pink-darkest;
+    @apply bg-white text-red;
   }
 
   blockquote {
@@ -94,11 +95,11 @@ p, li {
 nav {
   .actions {
     a, button {
-      @apply block mt-3 mx-3 px-5 py-2 border-2 shadow border-pink font-mono text-pink text-center no-underline;
+      @apply block mt-3 mx-3 px-5 py-2 border-2 shadow border-red font-mono text-red text-center no-underline;
       transition: background-color 0.5s ease;
 
       &:hover {
-        @apply bg-pink-darker text-white;
+        @apply bg-red-darker text-white;
       }
     }
   }
@@ -129,7 +130,7 @@ nav {
         @apply no-underline border-cyan border-b;
 
         &:hover {
-          @apply border-purple;
+          @apply border-purple-500;
         }
       }
     }
@@ -163,11 +164,11 @@ nav {
 
 .call-to-action {
   a {
-    @apply text-purple w-5/6 my-4 mr-3 px-5 py-2 border-2 shadow bg-white border-purple text-purple no-underline font-mono;
+    @apply text-red-dark my-4 mr-3 px-5 py-2 border-2 shadow bg-white border-red no-underline font-mono;
     transition: all 0.25s ease;
 
     &:hover {
-      @apply bg-purple-darker text-white;
+      @apply bg-red-darker text-white;
     }
   }
 }
@@ -203,10 +204,10 @@ nav {
   }
 
   a, p {
-    @apply inline-block border-pink border-2 text-pink font-mono no-underline font-bold bg-white py-2 px-5 shadow-md;
+    @apply inline-block border-red border-2 text-red font-mono no-underline font-bold bg-white py-2 px-5 shadow-md;
 
     &:hover {
-      @apply bg-pink text-white;
+      @apply bg-red text-white;
     }
   }
 }
@@ -215,17 +216,13 @@ nav {
   @apply max-w-md text-center my-4;
 
   .flash {
-    @apply text-purple w-5/6 my-4 px-5 py-2 border-2 shadow bg-white border-purple font-mono mx-auto text-sm;
+    @apply text-purple w-6 my-4 px-5 py-2 border-2 shadow bg-white border-purple-500 font-mono mx-auto text-sm;
     transition: all 0.25s ease;
   }
 }
 
 @screen md {
   .devise-links {
-    @apply pl-1/3;
+    @apply pl-4;
   }
-}
-
-.badge {
-  @apply inline-flex items-center rounded bg-green px-2 py-1 text-xs font-medium text-white ring-1 ring-inset;
 }

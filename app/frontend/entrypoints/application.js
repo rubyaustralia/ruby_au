@@ -1,29 +1,21 @@
-/* eslint no-console:0 */
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-//
-// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
-// layout file, like app/views/layouts/application.html.erb
-
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
+import Rails from '@rails/ujs';
+import $ from 'jquery';
+window.$ = $;
+window.jQuery = $;
 
-import Rails from "@rails/ujs"
-Rails.start()
+Rails.start();
 
-const SignaturePad = require("signature_pad").default;
+import SignaturePad from "signature_pad";
 
-import "./2019_survey";
-
-import "../styles/application.scss";
-import "../styles/committee.scss";
-import "../styles/sponsorship.scss";
-import "../styles/forms.scss";
-import "../styles/admin.scss";
-import "../styles/signatures.scss";
-import "../styles/surveys.scss";
+import "./styles/application.scss";
+import "./styles/committee.scss";
+import "./styles/sponsorship.scss";
+import "./styles/forms.scss";
+import "./styles/admin.scss";
+import "./styles/signatures.scss";
+import "./styles/surveys.scss";
 
 $(document).ready(() => {
   $('#mobile-menu-trigger').on('click', () => $('#mobile-menu').slideToggle());
