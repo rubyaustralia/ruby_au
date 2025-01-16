@@ -5,10 +5,10 @@
   github: quintrino
   website: https://nickwolf.com.au
   bio: |
-    Nick is a Ruby Software Engineer but has previously dabbled as a Radio and Television Host, 
+    Nick is a Ruby Software Engineer but has previously dabbled as a Radio and Television Host,
     Community Manager, Flashmob Coordinator, Board Game Designer, Effective Altruist and Sex Educator.
 
-    He is eager to facilitate Ruby Australia continuing to grow into an eclectic, diverse and 
+    He is eager to facilitate Ruby Australia continuing to grow into an eclectic, diverse and
     supportive community and is always eager to hear suggestions on how to do so.
 
 - name: Lee Sheppard
@@ -49,17 +49,6 @@
   twitter: cueball_au
   github: cueball
 
-- name: Ben Greig
-  photo: ben-greig.jpg
-  position: General Member
-  bio: |
-    A baker in a former life Ben had done a bit of Game modding in his spare time 
-    when he decided to do some more formal training in 2022, after discovering Ruby he hasn't looked back.
-
-    He loves of Ruby, Boardgames and a good cup of Tea.
-  github: aquillo-au
-  linkedin: benjamin-greig
-
 - name: Daniel Nguyen
   photo: daniel-nguyen.jpg
   position: General Member
@@ -86,17 +75,17 @@
   github: cnandes
   linkedin: claire-fernandes-a6b6a2169
 
-- name: Sophie Daley
-  photo: sophie-daley.jpg
+- name: Helen Stonehouse
+  photo: helen-stonehouse.jpg
   position: General Member
   bio: |
-    Sophie is a Ruby engineer hailing from the beautiful Macedon Ranges in Victoria.
-    She brings her passion and expertise to the tech community as the organiser for [Rails Girls Melbourne](https://railsgirls.com/melbourne).
-    Her journey into tech began in 2016, after a fulfilling career in the beauty industry,
-    and she hasn't looked back since.
-    Sophie's dedication to coding is matched only by her commitment to empowering women in technology.
+    Helen spent 6 years helping attorneys file patents before she discovered how much she loved
+    programming during lockdown. After completing a software engineering bootcamp, she landed
+    a role working with Ruby on Rails and has been working with Rails ever since.
+    She mentored at [Rails Girls Melbourne](https://railsgirls.com/melbourne) and is passionate about making tech a more welcoming
+    space for women and gender-diverse individuals.
 
-    When she's not immersed in code, Sophie loves to connect with nature,
-    spend quality time with her family, and unleash her creativity through paper crafting.
-  github: SophieRoseMcDonald
-  linkedin: sophrosyne
+    In her free time Helen enjoys going to the movies, propagating houseplants, and a bit of
+    gaming. Her 2025 personal goal is to do more sewing.
+  github: hstonehouse
+  linkedin: helen-stonehouse

@@ -1,3 +1,29 @@
+- name: Sophie Daley
+  photo: sophie-daley.jpg
+  position: General Member
+  bio: |
+    Sophie is a Ruby engineer hailing from the beautiful Macedon Ranges in Victoria.
+    She brings her passion and expertise to the tech community as the organiser for [Rails Girls Melbourne](https://railsgirls.com/melbourne).
+    Her journey into tech began in 2016, after a fulfilling career in the beauty industry,
+    and she hasn't looked back since.
+    Sophie's dedication to coding is matched only by her commitment to empowering women in technology.
+
+    When she's not immersed in code, Sophie loves to connect with nature,
+    spend quality time with her family, and unleash her creativity through paper crafting.
+  github: SophieRoseMcDonald
+  linkedin: sophrosyne
+
+- name: Ben Greig
+  photo: ben-greig.jpg
+  position: General Member
+  bio: |
+    A baker in a former life Ben had done a bit of Game modding in his spare time
+    when he decided to do some more formal training in 2022, after discovering Ruby he hasn't looked back.
+
+    He loves of Ruby, Boardgames and a good cup of Tea.
+  github: aquillo-au
+  linkedin: benjamin-greig
+
 - name: Mathew Button
   photo: mat-button.jpg
   position: General Member
@@ -30,7 +56,7 @@
   photo: toby-nieboer.jpg
   position: Secretary
   bio: |
-    Previously: President/Vice President/General Member of the Ruby AU committee, co-organiser of [RubyConf AU 2019](https://rubyconf.org.au/2019), [RailsCamps](https://rails.camp) [22](https://railscamp22.wordpress.com/) and [24](https://railscamp24.wordpress.com/), and the [Melbourne Ruby meetup](https://www.meetup.com/en-AU/Ruby-On-Rails-Oceania-Melbourne/), technical recruiter at [Lookahead](https://lookahead.com.au), Automattic, and elsewhere. 
+    Previously: President/Vice President/General Member of the Ruby AU committee, co-organiser of [RubyConf AU 2019](https://rubyconf.org.au/2019), [RailsCamps](https://rails.camp) [22](https://railscamp22.wordpress.com/) and [24](https://railscamp24.wordpress.com/), and the [Melbourne Ruby meetup](https://www.meetup.com/en-AU/Ruby-On-Rails-Oceania-Melbourne/), technical recruiter at [Lookahead](https://lookahead.com.au), Automattic, and elsewhere.
     Currently: Talent acquisition manager at [Linktree](https://linktr.ee).
   twitter: tcn33
   linkedin: tobynieboer
