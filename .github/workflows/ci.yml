@@ -1,44 +1,69 @@
-name: CI
+name: Continuous Integration
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   build:
+    name: Build and Test
     runs-on: ubuntu-latest
 
     services:
       postgres:
-        image: postgres:12
+        image: postgres:latest
         env:
           POSTGRES_USER: ruby_au
           POSTGRES_PASSWORD: ruby_au
           POSTGRES_DB: ruby_au_test
         ports:
-          - 5432/tcp
-        # needed because the postgres container does not provide a healthcheck
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+          - 5432:5432
+        options: >
+          --health-cmd "pg_isready -U ruby_au"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-      - name: Set up ruby
+
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.3.5
+          ruby-version: .ruby-version
           bundler-cache: true
-      - name: Set up node
-        uses: actions/setup-node@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 22.11.0
-          cache: "yarn"
-      - name: Install Yarn dependencies
+          node-version-file: .tool-versions
+          cache: yarn
+
+      - name: Install dependencies
         run: |
           yarn install
+          bundle install
+
+      - name: Prepare assets
+        run: |
           bin/vite build
           bundle exec rails assets:precompile
-      - name: Rubocop
+
+      - name: Lint Ruby code
         run: bundle exec rubocop
-      - name: Test
+
+      - name: Wait for Database
+        run: |
+          until pg_isready -h 127.0.0.1 -p 5432 -U ruby_au; do
+            echo "Waiting for database..."
+            sleep 1
+          done
+          echo "Database is ready!"
+
+      - name: Run Tests
         env:
-          DATABASE_URL: postgres://ruby_au:ruby_au@127.0.0.1:${{ job.services.postgres.ports[5432] }}/ruby_au_test
+          DATABASE_URL: postgres://ruby_au:ruby_au@127.0.0.1:5432/ruby_au_test
         run: bundle exec rspec
