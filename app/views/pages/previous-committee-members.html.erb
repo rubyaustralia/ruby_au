@@ -4,7 +4,7 @@
 
 <div id="committee" class="flex flex-col md:flex-row flex-wrap">
   <% previous.each do |member| %>
-    <article class="max-w-xs rounded-lg shadow-lg m-5 flex-shrink-0 flex flex-col">
+    <article class="bg-white max-w-xs rounded-lg shadow-lg m-5 flex-shrink-0 flex flex-col">
       <figure class="overflow-hidden max-h-80">
         <%= image_tag "committee-members/#{member['photo']}", class: "w-full overflow-hidden rounded-t-lg", alt: "Photo of #{member['name']}" %>
       </figure>
