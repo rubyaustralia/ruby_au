@@ -1,13 +1,11 @@
 @tailwind base;
-
-body {
-  font-family: sans-serif;
-  line-height: 1.15;
-  background-color: white;
-}
-
 @tailwind components;
 @tailwind utilities;
+
+.turbo-progress-bar {
+  height: 5px;
+  background-color: green;
+}
 
 p, li, div, span {
   & > a {

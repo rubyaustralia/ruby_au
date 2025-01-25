@@ -17,6 +17,9 @@
   <meta property="og:description" content="We are an organisation that is dedicated to supporting the community and
   events around Australia focused on the Ruby programming language. Providing financial and institutional support for
   RubyConf AU, Rails Camps, RailsGirls, and the meetups across the country." />
+  <meta name="view-transition" content="same-origin" />
+  <meta name="turbo-refresh-method" content="morph">
+  <meta name="turbo-refresh-scroll" content="preserve">
   <meta property="og:url" content="https://ruby.org.au"/>
   <meta property="og:type" content="website"/>
   <meta property="og:image" content="https://ruby.org.au/preview.jpg"/>
@@ -61,7 +64,7 @@
             <% if complex_view? %>
               <%= yield %>
             <% else %>
-              <section id="welcome" class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
+              <section id="welcome" class="bg-white flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
                 <section class="welcome">
                   <%= yield %>
                 </section>
