@@ -1,14 +1,15 @@
 module.exports = {
-  purge: [
+  content: [
     './app/views/**/*.html.erb',
     './app/helpers/**/*.rb',
     './app/frontend/**/*.{js,ts}',
   ],
-  darkMode: false,
+  plugins: [],
   theme: {
     extend: {
       colors: {
         'transparent': 'transparent',
+        'pearl': '#F0F0F0',
 
         /* RubyAU Custom colours generated via https://javisperez.github.io/tailwindcolorshades/ */
         'pink-darkest' : '#4A051E',
@@ -124,13 +125,4 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-  content: [
-    "./app/views/**/*.html.erb",
-    "./app/helpers/**/*.rb",
-    "./app/javascript/**/*.js",
-  ],
 }
