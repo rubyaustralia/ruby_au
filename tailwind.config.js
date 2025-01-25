@@ -1,10 +1,10 @@
 module.exports = {
-  purge: [
+  content: [
     './app/views/**/*.html.erb',
     './app/helpers/**/*.rb',
     './app/frontend/**/*.{js,ts}',
   ],
-  darkMode: false,
+  plugins: [],
   theme: {
     extend: {
       colors: {
@@ -125,13 +125,4 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-  content: [
-    "./app/views/**/*.html.erb",
-    "./app/helpers/**/*.rb",
-    "./app/javascript/**/*.js",
-  ],
 }
