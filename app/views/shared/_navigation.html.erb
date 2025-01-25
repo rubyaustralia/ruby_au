@@ -23,14 +23,14 @@
     </div>
   <% end %>
 
-  <div id="mobile-menu" class="w-full hidden md:visible flex-grow md:flex-col md:flex md:items-center md:w-auto bg-white text-red">
+  <div id="mobile-menu" class="w-full hidden md:visible flex-grow md:flex-col md:flex md:items-center md:w-auto bg-pearl text-red">
     <div class="actions ml-2 md:ml-0 mb-6">
       <% if user_signed_in? %>
-        <%= link_to 'My Details', my_details_path %>
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+        <%= link_to 'My Details', my_details_path, class: "bg-white" %>
+        <%= link_to 'Log out', destroy_user_session_path, class: "bg-white", method: :delete %>
       <% else %>
-        <%= link_to 'Join', new_user_registration_path %>
-        <%= link_to 'Log in', new_user_session_path %>
+        <%= link_to 'Join', new_user_registration_path, class: "bg-white" %>
+        <%= link_to 'Log in', new_user_session_path, class: "bg-white" %>
       <% end %>
     </div>
 
@@ -58,9 +58,7 @@
 
         <h3>Community</h3>
         <ul>
-          <li><%= link_to_external "Forum (Ruby Down Under)", "https://forum.ruby.org.au/" %></li>
           <li><%= link_to_external "Chat (Slack)", my_slack_invite_path %></li>
-          <li><%= link_to_external "Jobs: positions available", "https://forum.ruby.org.au/c/jobs/10", longdesc: 'Jobs posted on RubyAU Forums' %></li>
           <li><%= link_to_external "Videos", videos_path %></li>
           <li><%= link_to_external 'Mailing List', "/mailing-list" %></li>
         </ul>
