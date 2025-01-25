@@ -4,39 +4,39 @@
 
 <div id="committee" class="flex flex-col md:flex-row flex-wrap">
   <% committee.each do |member| %>
-    <article>
-      <figure>
-        <%= image_tag "committee-members/#{member['photo']}", class: "w-full overflow-hidden", alt: "Photo of #{member['name']}" %>
+    <article class="max-w-xs rounded-lg shadow-lg m-5 flex-shrink-0 flex flex-col">
+      <figure class="overflow-hidden max-h-80">
+        <%= image_tag "committee-members/#{member['photo']}", class: "w-full overflow-hidden rounded-t-lg", alt: "Photo of #{member['name']}" %>
       </figure>
-      <header>
+      <header class="px-6 py-4">
         <div><%= member['name'] %></div>
         <div><%= member['position'] %></div>
       </header>
-      <main>
+      <main class="px-1 py-2">
         <%= markdown_to_html member['bio'] %>
       </main>
-      <aside>
+      <aside class="flex flex-grow flex-col p-3 justify-end">
         <% if member['twitter'] %>
-          <span>
-            <%= inline_svg_tag "twitter.svg", height: 16 %>
+          <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
+            <%= inline_svg_tag "twitter.svg", height: 16, class: "inline" %>
             <%= link_to "@#{ member['twitter']}", "https://twitter.com/#{ member['twitter']}" %>
           </span>
         <% end %>
         <% if member['github'] %>
-          <span>
-            <%= inline_svg_tag "github.svg", height: 16 %>
+          <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
+            <%= inline_svg_tag "github.svg", height: 16, class: "inline" %>
             <%= link_to member['github'], "https://github.com/#{ member['github']}", title: 'GitHub' %>
           </span>
         <% end %>
         <% if member['linkedin'] %>
-          <span>
-            <%= inline_svg_tag "linkedin.svg", height: 16 %>
+          <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
+            <%= inline_svg_tag "linkedin.svg", height: 16, class: "inline" %>
             <%= link_to "LinkedIn", "https://www.linkedin.com/in/#{member['linkedin']}/" %>
           </span>
         <% end %>
         <% if member['website'] %>
-          <span>
-            <%= inline_svg_tag "rss.svg", height: 16 %>
+          <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
+            <%= inline_svg_tag "rss.svg", height: 16, class: "inline" %>
             <%= link_to member['website'].gsub(%r{^https?://}, ''), member['website'] %>
           </span>
         <% end %>
@@ -45,6 +45,6 @@
   <% end %>
 </div>
 
-<p class="px-5">
+<p class="text-grey-darker text-base px-5">
   <%= link_to "Previous Committee Members", "/previous-committee-members" %>
 </p>
