@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         'transparent': 'transparent',
+        'pearl': '#F0F0F0',
 
         /* RubyAU Custom colours generated via https://javisperez.github.io/tailwindcolorshades/ */
         'pink-darkest' : '#4A051E',
