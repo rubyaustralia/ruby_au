@@ -13,9 +13,13 @@ Dir[Rails.root.join('spec/support/**/*.rb')].sort.each do |file|
   require file
 end
 
-# Checks for pending migration and applies them before tests are run.
-# If you are not using ActiveRecord, you can remove this line.
-ActiveRecord::Migration.maintain_test_schema!
+# Checks for pending migrations and applies them before tests are run.
+# If you are not using ActiveRecord, you can remove these lines.
+begin
+  ActiveRecord::Migration.maintain_test_schema!
+rescue ActiveRecord::PendingMigrationError => e
+  abort e.to_s.strip
+end
 
 ENV["RUBYCONF_AU_LIST_ID"] ||= "conf-key"
 ENV["RAILSGIRLS_LIST_ID"]  ||= "girls-key"
@@ -23,16 +27,22 @@ ENV["RAILS_CAMP_LIST_ID"]  ||= "camp-key"
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_paths = "#{::Rails.root}/spec/fixtures"
+  config.fixture_paths = [
+    Rails.root.join('spec/fixtures')
+  ]
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
 
+  # Include Factory Bot syntax methods
   config.include FactoryBot::Syntax::Methods
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::IntegrationHelpers, type: :request
+
+  # Include ActiveSupport::Testing::TimeHelpers for time manipulation in tests
+  config.include ActiveSupport::Testing::TimeHelpers
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
@@ -41,7 +51,7 @@ RSpec.configure do |config|
   # You can disable this behaviour by removing the line below, and instead
   # explicitly tag your specs with their type, e.g.:
   #
-  #     RSpec.describe UsersController, :type => :controller do
+  #     RSpec.describe UsersController, type: :controller do
   #       # ...
   #     end
   #

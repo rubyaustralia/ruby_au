@@ -7,8 +7,10 @@ window.jQuery = $;
 
 Rails.start();
 
+import "trix";
 import SignaturePad from "signature_pad";
 
+import "./styles/actiontext.css";
 import "./styles/application.scss";
 import "./styles/committee.scss";
 import "./styles/sponsorship.scss";
