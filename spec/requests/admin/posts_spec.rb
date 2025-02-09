@@ -65,9 +65,9 @@ RSpec.describe 'Admin::PostsController', type: :request do
   describe 'POST /admin/posts' do
     context 'with valid parameters' do
       it 'creates a new post' do
-        expect {
+        expect do
           post admin_posts_path, params: { post: post_attributes }
-        }.to change(Post, :count).by(1)
+        end.to change(Post, :count).by(1)
 
         expect(response).to redirect_to(admin_post_path(Post.last))
         expect(flash[:notice]).to eq('Post was successfully created.')
@@ -79,9 +79,9 @@ RSpec.describe 'Admin::PostsController', type: :request do
       let(:invalid_attributes) { post_attributes.merge(title: '') }
 
       it 'does not create a post' do
-        expect {
+        expect do
           post admin_posts_path, params: { post: invalid_attributes }
-        }.not_to change(Post, :count)
+        end.not_to change(Post, :count)
 
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response).to render_template(:new)

@@ -48,11 +48,11 @@ RSpec.describe Post, type: :model do
     describe 'status' do
       it 'defines the correct statuses' do
         expect(Post.statuses).to eq({
-          "draft" => 0,
-          "scheduled" => 1,
-          "published" => 2,
-          "archived" => 3
-        })
+                                      "draft" => 0,
+                                      "scheduled" => 1,
+                                      "published" => 2,
+                                      "archived" => 3
+                                    })
       end
 
       it 'defaults to draft' do
@@ -65,9 +65,9 @@ RSpec.describe Post, type: :model do
     describe 'category' do
       it 'defines the correct categories' do
         expect(Post.categories).to eq({
-          "news" => 0,
-          "announcements" => 1
-        })
+                                        "news" => 0,
+                                        "announcements" => 1
+                                      })
       end
     end
   end
@@ -100,10 +100,9 @@ RSpec.describe Post, type: :model do
       it 'generates a slug with date and normalized title' do
         travel_to Time.zone.local(2024, 2, 8) do
           post = create(:post,
-            title: 'Sample Blog Post Title!',
-            published_at: Time.current,
-            user: user
-          )
+                        title: 'Sample Blog Post Title!',
+                        published_at: Time.current,
+                        user: user)
 
           expect(post.reload.slug).to eq('2024/2/8/sample-blog-post-title')
         end
@@ -113,9 +112,8 @@ RSpec.describe Post, type: :model do
     context 'with a very long title' do
       it 'limits slug to first 10 words' do
         post = create(:post,
-          title: 'This is a very long title that should be truncated to only ten words and the rest ignored',
-          user: user
-        )
+                      title: 'This is a very long title that should be truncated to only ten words and the rest ignored',
+                      user: user)
         expect(post.reload.slug).to eq('this-is-a-very-long-title-that-should-be-truncated')
       end
     end
@@ -123,9 +121,8 @@ RSpec.describe Post, type: :model do
     context 'when title has special characters' do
       it 'removes special characters and normalizes spacing' do
         post = create(:post,
-          title: 'Special @#$% Characters & Spaces!!!',
-          user: user
-        )
+                      title: 'Special @#$% Characters & Spaces!!!',
+                      user: user)
         expect(post.reload.slug).to eq('special-characters-spaces')
       end
     end

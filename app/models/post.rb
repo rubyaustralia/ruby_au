@@ -8,7 +8,6 @@ class Post < ApplicationRecord
   enum :category, { news: 0, announcements: 1 }, default: :news
 
   validates :title, :content, :category, :user, presence: true
-  validates :slug, uniqueness: true, allow_nil: true
 
   belongs_to :user
 
