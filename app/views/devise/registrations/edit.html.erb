@@ -23,13 +23,6 @@
     <div class="input">
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>
-
-    <div class="hint">
-      <em>(leave blank if you don't want to change it)</em>
-      <% if @minimum_password_length %>
-        <em><%= @minimum_password_length %> characters minimum</em>
-      <% end %>
-    </div>
   </div>
 
   <div class="field">

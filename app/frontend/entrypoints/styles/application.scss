@@ -214,7 +214,7 @@ nav {
   @apply max-w-md text-center my-4;
 
   .flash {
-    @apply text-purple w-6 my-4 px-5 py-2 border-2 shadow bg-white border-purple-500 font-mono mx-auto text-sm;
+    @apply text-purple my-4 px-5 py-2 border-2 shadow bg-white border-purple-500 font-mono mx-auto text-sm;
     transition: all 0.25s ease;
   }
 }

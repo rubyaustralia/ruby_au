@@ -51,20 +51,16 @@ form.standard {
 
   @screen md {
     legend {
-      @apply pl-1 w-2;
+      @apply pl-1;
     }
 
     label {
-      @apply text-right mb-0;
+      @apply mb-0;
     }
 
     .field {
       @apply flex items-center;
       flex-wrap: wrap;
-    }
-
-    .label {
-      @apply w-1 flex-auto;
     }
 
     .input {
@@ -76,17 +72,13 @@ form.standard {
         @apply text-left;
       }
 
-      .label {
-        @apply w-2 flex-auto;
-      }
-
       .input {
         @apply w-1 flex-auto text-right pr-3;
       }
     }
 
     .hint {
-      @apply w-2 ml-1;
+      @apply ml-1;
     }
 
     .buttons {
