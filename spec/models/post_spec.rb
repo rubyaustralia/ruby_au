@@ -56,7 +56,7 @@ RSpec.describe Post, type: :model do
       end
 
       it 'defaults to draft' do
-        expect(post.status).to eq("scheduled") # based on factory default
+        expect(post.status).to eq("draft") # based on factory default
         new_post = Post.new
         expect(new_post.status).to eq("draft") # model default
       end
