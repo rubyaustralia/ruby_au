@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :access_requests, except: [:destroy]
     resources :imported_members, only: [:index, :create]
     resources :campaigns
+    resources :posts, only: [:index, :new, :show, :create, :edit, :update]
   end
 
   resources :invitations, only: [] do

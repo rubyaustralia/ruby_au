@@ -1,0 +1,37 @@
+<%= form_with(model: [:admin, post], class: "standard !max-w-5xl") do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field !block">
+    <%= form.label :content, class: "!text-left" %>
+    <%= form.rich_textarea :content %>
+  </div>
+
+ <div class="field">
+    <%= form.label :category %>
+    <%= form.select :category, Post.categories.keys.map{ |key| [key.humanize, key] } %>
+  </div>
+
+ <div class="field">
+    <%= form.label :publish_scheduled_at %>
+    <%= form.datetime_field :publish_scheduled_at %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

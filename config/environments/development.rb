@@ -89,4 +89,7 @@ Rails.application.configure do
 
   # config.action_controller.asset_host = "http://localhost:3036"
   config.assets.debug = true
+
+  # Store files locally.
+  config.active_storage.service = :local
 end
