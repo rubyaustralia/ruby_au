@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Running Vite build..."
+./bin/vite build
