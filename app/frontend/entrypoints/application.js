@@ -1,16 +1,18 @@
-import 'core-js/stable'
-import 'regenerator-runtime/runtime'
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 import Rails from '@rails/ujs';
 import $ from 'jquery';
+import "trix";
+import "@rails/actiontext";
+import SignaturePad from "signature_pad";
+
+// Expose jQuery globally
 window.$ = $;
 window.jQuery = $;
 
 Rails.start();
 
-import "trix";
-import "@rails/actiontext"
-import SignaturePad from "signature_pad";
-
+// Import Styles
 import "./styles/actiontext.css";
 import "./styles/application.scss";
 import "./styles/committee.scss";
@@ -20,61 +22,62 @@ import "./styles/admin.scss";
 import "./styles/signatures.scss";
 import "./styles/surveys.scss";
 
-$(function() {
+/**
+ * Initializes mobile menu toggle
+ */
+$(document).ready(() => {
   $('#mobile-menu-trigger').on('click', () => $('#mobile-menu').slideToggle());
 });
 
+/**
+ * Initializes the signature pad and related interactions.
+ */
 window.setupSignature = function() {
-  var wrapper = document.getElementById("signature-pad");
-  var clearButton = wrapper.querySelector("[data-action=clear]");
-  var undoButton = wrapper.querySelector("[data-action=undo]");
-  var canvas = wrapper.querySelector("canvas");
-  var signaturePad = new SignaturePad(canvas, {
+  const wrapper = document.getElementById("signature-pad");
+  if (!wrapper) return;
+
+  const clearButton = wrapper.querySelector("[data-action=clear]");
+  const undoButton = wrapper.querySelector("[data-action=undo]");
+  const canvas = wrapper.querySelector("canvas");
+  
+  if (!canvas) return;
+
+  const signaturePad = new SignaturePad(canvas, {
     backgroundColor: 'rgb(255, 255, 255)'
   });
 
-  // Adjust canvas coordinate space taking into account pixel ratio,
-  // to make it look crisp on mobile devices.
-  // This also causes canvas to be cleared.
+  /**
+   * Resizes the canvas to match device pixel ratio for better rendering.
+   */
   function resizeCanvas() {
-    // When zoomed out to less than 100%, for some very strange reason,
-    // some browsers report devicePixelRatio as less than 1
-    // and only part of the canvas is cleared then.
-    var ratio =  Math.max(window.devicePixelRatio || 1, 1);
+    const ratio = Math.max(window.devicePixelRatio || 1, 1);
 
-    // This part causes the canvas to be cleared
     canvas.width = canvas.offsetWidth * ratio;
     canvas.height = canvas.offsetHeight * ratio;
     canvas.getContext("2d").scale(ratio, ratio);
 
-    // This library does not listen for canvas changes, so after the canvas is automatically
-    // cleared by the browser, SignaturePad#isEmpty might still return false, even though the
-    // canvas looks empty, because the internal data of this library wasn't cleared. To make sure
-    // that the state of this library is consistent with visual state of the canvas, you
-    // have to clear it manually.
     signaturePad.clear();
   }
 
-  // On mobile devices it might make more sense to listen to orientation change,
-  // rather than window resize events.
-  window.onresize = resizeCanvas;
+  // Resize canvas on window resize
+  window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
 
-  clearButton.addEventListener("click", function (event) {
-    signaturePad.clear();
-  });
+  // Clear button event
+  clearButton?.addEventListener("click", () => signaturePad.clear());
 
-  undoButton.addEventListener("click", function (event) {
-    var data = signaturePad.toData();
-
-    if (data) {
-      data.pop(); // remove the last dot or line
+  // Undo last stroke event
+  undoButton?.addEventListener("click", () => {
+    const data = signaturePad.toData();
+    if (data.length > 0) {
+      data.pop();
       signaturePad.fromData(data);
     }
   });
 
-  $('#set-proxy-form').on('submit', function(event) {
-    if ($("#rsvp_proxy_name").val().length == 0) {
+  // Form submission validation
+  $(document).on('submit', '#set-proxy-form', function(event) {
+    if ($("#rsvp_proxy_name").val().trim() === "") {
       alert("Please provide the name of your proxy representative.");
       return false;
     }
@@ -82,7 +85,6 @@ window.setupSignature = function() {
       alert("Please provide a signature.");
       return false;
     }
-
     $('#rsvp_proxy_signature').val(signaturePad.toDataURL());
   });
-}
+};
