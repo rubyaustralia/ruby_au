@@ -4,10 +4,11 @@ import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [
-    ViteRails(
-      ['config/routes.rb', 'app/views/**/*'],
-      { delay: 200 },
-    ),
+    ViteRails({
+      fullReload: {
+        additionalPaths: ['config/routes.rb', 'app/views/**/*']
+      }
+    }),
   ],
   server: {
     host: 'localhost', // Match the Vite dev server host
