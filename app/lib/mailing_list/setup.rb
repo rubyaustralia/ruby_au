@@ -29,12 +29,25 @@ class MailingList::Setup
   end
 
   def subscribed?
+    return true if Rails.env.development? && ENV['CAMPAIGN_MONITOR_API_KEY'].blank?
+
     CreateSend::Subscriber.get(
       cm_auth,
       list.api_id,
       user.email
     )["State"] == "Active"
-  rescue CreateSend::BadRequest
+  rescue CreateSend::BadRequest => br
+    Rails.logger.error "Campaign Monitor Bad Request: #{br}"
+    Rails.logger.error "Error Code: #{br.data.Code}"
+    Rails.logger.error "Error Message: #{br.data.Message}"
+    false
+  rescue CreateSend::Unauthorized => ua
+    Rails.logger.error "Campaign Monitor Unauthorized: #{ua}"
+    Rails.logger.error "Error Code: #{ua.data.Code}"
+    Rails.logger.error "Error Message: #{ua.data.Message}"
+    false
+  rescue StandardError => e
+    Rails.logger.error "Campaign Monitor Error: #{e}"
     false
   end
 end
