@@ -8,6 +8,7 @@ window.jQuery = $;
 Rails.start();
 
 import "trix";
+import "@rails/actiontext"
 import SignaturePad from "signature_pad";
 
 import "./styles/actiontext.css";
@@ -19,7 +20,7 @@ import "./styles/admin.scss";
 import "./styles/signatures.scss";
 import "./styles/surveys.scss";
 
-$(document).ready(() => {
+$(function() {
   $('#mobile-menu-trigger').on('click', () => $('#mobile-menu').slideToggle());
 });
 
