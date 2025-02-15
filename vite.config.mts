@@ -37,6 +37,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: ['jquery']
-    }
+    },
+    sourcemap: false, // Disable source maps in production
   }
 })
