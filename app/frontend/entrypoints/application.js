@@ -1,14 +1,9 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import Rails from '@rails/ujs';
-import $ from 'jquery';
 import "trix";
 import "@rails/actiontext";
 import SignaturePad from "signature_pad";
-
-// Expose jQuery globally
-window.$ = $;
-window.jQuery = $;
 
 Rails.start();
 
@@ -83,15 +78,21 @@ window.setupSignature = function() {
   });
 
   // Form submission validation
-  $(document).on('submit', '#set-proxy-form', function(event) {
-    if ($("#rsvp_proxy_name").val().trim() === "") {
+  document.getElementById('set-proxy-form')?.addEventListener('submit', function(event) {
+    const proxyName = document.getElementById('rsvp_proxy_name');
+    const proxySignature = document.getElementById('rsvp_proxy_signature');
+
+    if (proxyName?.value.trim() === "") {
       alert("Please provide the name of your proxy representative.");
-      return false;
+      event.preventDefault();
+      return;
     }
     if (signaturePad.isEmpty()) {
       alert("Please provide a signature.");
-      return false;
+      event.preventDefault();
+      return;
     }
-    $('#rsvp_proxy_signature').val(signaturePad.toDataURL());
+    
+    proxySignature.value = signaturePad.toDataURL();
   });
 };
