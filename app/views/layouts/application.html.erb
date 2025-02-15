@@ -36,6 +36,8 @@
   <%= csrf_meta_tags %>
   <%= vite_client_tag %>
   <%= vite_javascript_tag 'application' %>
+  <%# hack to use cdn since failed to import trix from production, no issue in dev, remove it once the issue is fixed %>
+  <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/trix@2.1.12/dist/trix.umd.min.js" %>
 
 </head>
   <body class="bg-pearl">
