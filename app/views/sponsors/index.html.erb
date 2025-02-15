@@ -31,9 +31,19 @@ You should also feel free to contact our sponsorship representatives via email: 
       <section class="sponsor-logos flex flex-col">
         <h2><%= tier %> Sponsors </h2>
         <% sponsors.each do |sponsor| %>
-          <%= link_to "/sponsors/#{sponsor['key']}", class: "sponsor-logo-no-border" do %>
-            <%= image_tag "sponsors/#{sponsor['images'].first}", class: "sponsor-logo-#{tier.underscore}", alt: sponsor['name'] %>
-          <% end %>
+          <div class="markdown sponsor-standalone">
+            <h1><%= link_to sponsor['name'], sponsor['url'] %></h1>
+
+            <p class="sponsor-logos">
+              <% sponsor['images'].each do |image| %>
+                <%= link_to sponsor['url'], :class => "sponsor-logo-no-border" do %>
+                  <%= image_tag "sponsors/#{image}", :class => "sponsor-logo sponsor-logo-standalone" %>
+                <% end %>
+              <% end %>
+            </p>
+
+            <%= markdown_to_html sponsor['bio'] %>
+          </div>
         <% end %>
       </section>
     <% end %>
