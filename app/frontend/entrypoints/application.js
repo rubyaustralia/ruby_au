@@ -24,9 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuTrigger = document.querySelector('.mobile-menu-trigger');
   const mobileMenu = document.querySelector('.mobile-menu');
   
+  if (window.innerWidth < 768) {
+    mobileMenu?.classList.add('hidden');
+  }
+  
   menuTrigger?.addEventListener('click', () => {
     if (mobileMenu) {
-      mobileMenu.classList.toggle('show');
+      mobileMenu.classList.toggle('hidden');
     }
   });
 });
