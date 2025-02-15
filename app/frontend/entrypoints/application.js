@@ -25,8 +25,15 @@ import "./styles/surveys.scss";
 /**
  * Initializes mobile menu toggle
  */
-$(document).ready(() => {
-  $('#mobile-menu-trigger').on('click', () => $('#mobile-menu').slideToggle());
+document.addEventListener('DOMContentLoaded', () => {
+  const menuTrigger = document.querySelector('.mobile-menu-trigger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  
+  menuTrigger?.addEventListener('click', () => {
+    if (mobileMenu) {
+      mobileMenu.classList.toggle('show');
+    }
+  });
 });
 
 /**
