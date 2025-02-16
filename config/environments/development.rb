@@ -93,5 +93,5 @@ Rails.application.configure do
   # Store files locally.
   config.active_storage.service = :local
 
-  config.solid_queue.logger = ActiveSupport::Logger.new(STDOUT)
+  config.solid_queue.logger = ActiveSupport::Logger.new($stdout)
 end

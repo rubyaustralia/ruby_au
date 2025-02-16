@@ -83,11 +83,11 @@ RSpec.describe Post, type: :model do
     describe 'status' do
       it 'defines the correct statuses' do
         expect(Post.statuses).to eq({
-                                    "draft" => 0,
-                                    "scheduled" => 1,
-                                    "published" => 2,
-                                    "archived" => 3
-                                  })
+                                      "draft" => 0,
+                                      "scheduled" => 1,
+                                      "published" => 2,
+                                      "archived" => 3
+                                    })
       end
 
       it 'defaults to draft' do
@@ -100,9 +100,9 @@ RSpec.describe Post, type: :model do
     describe 'category' do
       it 'defines the correct categories' do
         expect(Post.categories).to eq({
-                                      "news" => 0,
-                                      "announcements" => 1
-                                    })
+                                        "news" => 0,
+                                        "announcements" => 1
+                                      })
       end
     end
   end

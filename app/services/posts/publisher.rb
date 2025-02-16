@@ -17,6 +17,6 @@ class Posts::Publisher
 
   def should_publish?
     @post.publishable? &&
-    (@post.status_before_last_save.blank? || @post.publish_scheduled_at_before_last_save.blank?)
+      (@post.status_before_last_save.blank? || @post.publish_scheduled_at_before_last_save.blank?)
   end
 end
