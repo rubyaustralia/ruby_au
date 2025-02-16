@@ -2,7 +2,7 @@ class Posts::Publisher
   def self.call(post)
     new(post).call
   end
-private
+
   def initialize(post)
     @post = post
   end

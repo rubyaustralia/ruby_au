@@ -93,7 +93,5 @@ Rails.application.configure do
   # Store files locally.
   config.active_storage.service = :local
 
-  # Use Solid Queue in Development.
-  config.active_job.queue_adapter = :solid_queue
   config.solid_queue.logger = ActiveSupport::Logger.new(STDOUT)
 end
