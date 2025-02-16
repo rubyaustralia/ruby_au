@@ -8,8 +8,17 @@ class Post < ApplicationRecord
   enum :category, { news: 0, announcements: 1 }, default: :news
 
   validates :title, :content, :category, :user, presence: true
+  validate :prevent_duplicated_slug
 
   belongs_to :user
+
+  def publishable?
+    draft? && publish_scheduled_at.present?
+  end
+
+  def editable?
+    draft? && publish_scheduled_at.blank?
+  end
 
   def publish!
     update!(status: :published, published_at: Time.current)
@@ -21,9 +30,15 @@ class Post < ApplicationRecord
 
   private
 
+  def prevent_duplicated_slug
+    return unless self.class.where(slug: normalize_title).or(self.class.where("slug ILIKE ?", "%/#{normalize_title}")).where.not(id: id).exists?
+
+    errors.add(:slug, 'is already taken')
+  end
+
   def slug_candidate
     if published_at.present?
-      formatted_date = "#{published_at.year}/#{published_at.month}/#{published_at.day}"
+      formatted_date = published_at.strftime("%Y/%-m/%-d")
       [
         "#{formatted_date}/#{normalize_title}"
       ]
@@ -33,7 +48,8 @@ class Post < ApplicationRecord
   end
 
   def normalize_title
-    title.downcase
+    title.to_s
+         .downcase
          .gsub(/[^a-z0-9\s-]/, '')
          .strip
          .gsub(/\s+/, ' ')

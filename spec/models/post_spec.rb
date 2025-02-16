@@ -32,6 +32,41 @@ RSpec.describe Post, type: :model do
       expect(post).not_to be_valid
       expect(post.errors[:user]).to include("must exist")
     end
+
+    describe 'prevent_duplicated_slug validation' do
+      let(:existing_post) { create(:post, title: 'Existing Title') }
+
+      before do
+        existing_post
+      end
+
+      it 'prevents duplicate slugs' do
+        new_post = build(:post, title: 'Existing Title')
+        expect(new_post).not_to be_valid
+        expect(new_post.errors[:slug]).to include('is already taken')
+      end
+
+      it 'prevents duplicate slugs with different casing' do
+        new_post = build(:post, title: 'EXISTING TITLE')
+        new_post.save
+        expect(new_post).not_to be_valid
+        expect(new_post.errors[:slug]).to include('is already taken')
+      end
+
+      it 'prevents duplicate slugs in dated format' do
+        travel_to Time.zone.local(2024, 2, 8) do
+          existing_post.update!(published_at: Time.current)
+          new_post = build(:post, title: 'Existing Title', published_at: Time.current)
+          expect(new_post).not_to be_valid
+          expect(new_post.errors[:slug]).to include('is already taken')
+        end
+      end
+
+      it 'allows same title for the same post (on update)' do
+        existing_post.title = 'Existing Title'
+        expect(existing_post).to be_valid
+      end
+    end
   end
 
   describe 'associations' do
@@ -48,11 +83,11 @@ RSpec.describe Post, type: :model do
     describe 'status' do
       it 'defines the correct statuses' do
         expect(Post.statuses).to eq({
-                                      "draft" => 0,
-                                      "scheduled" => 1,
-                                      "published" => 2,
-                                      "archived" => 3
-                                    })
+                                    "draft" => 0,
+                                    "scheduled" => 1,
+                                    "published" => 2,
+                                    "archived" => 3
+                                  })
       end
 
       it 'defaults to draft' do
@@ -65,10 +100,54 @@ RSpec.describe Post, type: :model do
     describe 'category' do
       it 'defines the correct categories' do
         expect(Post.categories).to eq({
-                                        "news" => 0,
-                                        "announcements" => 1
-                                      })
+                                      "news" => 0,
+                                      "announcements" => 1
+                                    })
       end
+    end
+  end
+
+  describe '#publishable?' do
+    let(:post) { build(:post) }
+
+    it 'returns true when post is draft and has publish_scheduled_at' do
+      post.status = :draft
+      post.publish_scheduled_at = 1.day.from_now
+      expect(post).to be_publishable
+    end
+
+    it 'returns false when post is not draft' do
+      post.status = :published
+      post.publish_scheduled_at = 1.day.from_now
+      expect(post).not_to be_publishable
+    end
+
+    it 'returns false when post has no publish_scheduled_at' do
+      post.status = :draft
+      post.publish_scheduled_at = nil
+      expect(post).not_to be_publishable
+    end
+  end
+
+  describe '#editable?' do
+    let(:post) { build(:post) }
+
+    it 'returns true when post is draft and has no publish_scheduled_at' do
+      post.status = :draft
+      post.publish_scheduled_at = nil
+      expect(post).to be_editable
+    end
+
+    it 'returns false when post is not draft' do
+      post.status = :published
+      post.publish_scheduled_at = nil
+      expect(post).not_to be_editable
+    end
+
+    it 'returns false when post has publish_scheduled_at' do
+      post.status = :draft
+      post.publish_scheduled_at = 1.day.from_now
+      expect(post).not_to be_editable
     end
   end
 

@@ -27,6 +27,9 @@ gem 'validates_email_format_of'
 gem 'warden' # use for auth
 gem 'vite_rails'
 
+# background jobs
+gem 'solid_queue'
+
 group :production do
   gem 'rails_12factor'
 end

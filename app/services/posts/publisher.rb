@@ -2,7 +2,7 @@ class Posts::Publisher
   def self.call(post)
     new(post).call
   end
-
+private
   def initialize(post)
     @post = post
   end
@@ -10,12 +10,13 @@ class Posts::Publisher
   def call
     return unless should_publish?
 
-    @post.publish!
+    PublishPostJob.set(wait_until: @post.publish_scheduled_at).perform_later(@post)
   end
 
   private
 
   def should_publish?
-    @post.draft? && @post.publish_scheduled_at.present? && @post.publish_scheduled_at <= Time.current
+    @post.publishable? &&
+    (@post.status_before_last_save.blank? || @post.publish_scheduled_at_before_last_save.blank?)
   end
 end

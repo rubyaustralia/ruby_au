@@ -1,9 +1,9 @@
 <% content_for :heading, "Post" %>
 <h2>Post</h2>
-
 <%= render @post %>
-
 <div>
-  <%= link_to "Edit this post", edit_admin_post_path(@post) %> |
+  <% if @post.editable? %>
+    <%= link_to "Edit", admin_edit_post_path(@post) %>
+  <% end %>
   <%= link_to "Back to posts", admin_posts_path %>
 </div>

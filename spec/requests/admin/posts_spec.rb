@@ -42,6 +42,11 @@ RSpec.describe 'Admin::PostsController', type: :request do
       expect(response).to have_http_status(:ok)
       expect(assigns(:post)).to eq(post)
     end
+
+    it 'redirects to index when post not found' do
+      get admin_post_path('non-existent')
+      expect(response).to redirect_to(admin_posts_path)
+    end
   end
 
   describe 'GET /admin/posts/new' do
@@ -56,9 +61,20 @@ RSpec.describe 'Admin::PostsController', type: :request do
     let(:post) { create(:post) }
 
     it 'shows edit form' do
-      get edit_admin_post_path(post)
+      get admin_edit_post_path(post)
       expect(response).to have_http_status(:ok)
       expect(assigns(:post)).to eq(post)
+    end
+
+    context 'when post is not editable' do
+      let(:post) { create(:post, published_at: 1.day.ago) }
+
+      it 'redirects with alert' do
+        allow_any_instance_of(Post).to receive(:editable?).and_return(false)
+        get admin_edit_post_path(post)
+        expect(response).to redirect_to(admin_post_path(post))
+        expect(flash[:alert]).to eq('Post can only be edited before scheduled.')
+      end
     end
   end
 
@@ -72,6 +88,11 @@ RSpec.describe 'Admin::PostsController', type: :request do
         expect(response).to redirect_to(admin_post_path(Post.last))
         expect(flash[:notice]).to eq('Post was successfully created.')
         expect(Post.last.user).to eq(admin)
+      end
+
+      it 'calls the publisher service' do
+        expect(Posts::Publisher).to receive(:call)
+        post admin_posts_path, params: { post: post_attributes }
       end
     end
 
@@ -102,6 +123,11 @@ RSpec.describe 'Admin::PostsController', type: :request do
         expect(response).to redirect_to(admin_post_path(post))
         expect(flash[:notice]).to eq('Post was successfully updated.')
       end
+
+      it 'calls the publisher service' do
+        expect(Posts::Publisher).to receive(:call)
+        patch admin_post_path(post), params: { post: new_attributes }
+      end
     end
 
     context 'with invalid parameters' do
@@ -115,6 +141,18 @@ RSpec.describe 'Admin::PostsController', type: :request do
         expect(post.title).to eq(original_title)
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response).to render_template(:edit)
+      end
+    end
+
+    context 'when post is not editable' do
+      before do
+        allow_any_instance_of(Post).to receive(:editable?).and_return(false)
+      end
+
+      it 'redirects without updating' do
+        patch admin_post_path(post), params: { post: new_attributes }
+        expect(response).to redirect_to(admin_post_path(post))
+        expect(flash[:alert]).to eq('Post can only be edited before scheduled.')
       end
     end
   end
