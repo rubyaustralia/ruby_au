@@ -28,7 +28,10 @@ Rails.application.routes.draw do
     resources :access_requests, except: [:destroy]
     resources :imported_members, only: [:index, :create]
     resources :campaigns
-    resources :posts, only: [:index, :new, :show, :create, :edit, :update]
+    resources :posts, only: [:index, :new, :create]
+    get 'posts/*slug/edit', to: 'posts#edit', as: :edit_post
+    get 'posts/*slug', to: 'posts#show', as: :post
+    patch 'posts/*slug', to: 'posts#update', as: :update_post
   end
 
   resources :invitations, only: [] do

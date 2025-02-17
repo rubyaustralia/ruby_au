@@ -1,65 +1,47 @@
 require 'rails_helper'
 
 RSpec.describe Posts::Publisher do
-  let(:user) { create(:user) }
-
   describe '.call' do
-    context 'when post is draft and publish_scheduled_at is in the past' do
-      let(:post) do
-        create(:post,
-               status: :draft,
-               publish_scheduled_at: 1.hour.ago,
-               user: user)
-      end
+    subject(:publish) { described_class.call(post) }
 
-      it 'publishes the post' do
-        described_class.call(post)
-        expect(post.reload).to be_published
-        expect(post.published_at).to be_present
+    context 'when post is not publishable' do
+      let(:post) { create(:post, :draft) }
+
+      it 'does not schedule a publish job' do
+        expect { publish }.not_to have_enqueued_job(PublishPostJob)
       end
     end
 
-    context 'when post is draft but publish_scheduled_at is in the future' do
-      let(:post) do
-        create(:post,
-               status: :draft,
-               publish_scheduled_at: 1.hour.from_now,
-               user: user)
-      end
+    context 'when post is already scheduled' do
+      let(:post) { create(:post, :scheduled) }
 
-      it 'does not publish the post' do
-        described_class.call(post)
-        expect(post.reload).to be_draft
-        expect(post.published_at).to be_nil
+      it 'does not schedule another publish job' do
+        expect { publish }.not_to have_enqueued_job(PublishPostJob)
       end
     end
 
-    context 'when post is not draft' do
-      let(:post) do
-        create(:post,
-               status: :published,
-               publish_scheduled_at: 1.hour.ago,
-               user: user)
-      end
+    context 'with a publishable post' do
+      let(:post) { create(:post, :publishable) }
+      let(:scheduled_time) { post.publish_scheduled_at }
 
-      it 'does not modify the post' do
-        expect { described_class.call(post) }
-          .not_to(change { post.reload.updated_at })
+      it 'schedules a publish job' do
+        expect { publish }
+          .to have_enqueued_job(PublishPostJob)
+          .with(post)
+          .at(scheduled_time)
       end
     end
 
-    context 'when post is draft but publish_scheduled_at is not set' do
-      let(:post) do
-        create(:post,
-               status: :draft,
-               publish_scheduled_at: nil,
-               user: user)
+    context 'when rescheduling a post' do
+      let(:post) { create(:post, :scheduled) }
+      let(:new_time) { 2.days.from_now }
+
+      before do
+        post.publish_scheduled_at = new_time
       end
 
-      it 'does not publish the post' do
-        described_class.call(post)
-        expect(post.reload).to be_draft
-        expect(post.published_at).to be_nil
+      it 'does not schedule a new job' do
+        expect { publish }.not_to have_enqueued_job(PublishPostJob)
       end
     end
   end
