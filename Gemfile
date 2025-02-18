@@ -30,6 +30,8 @@ gem 'vite_rails'
 # background jobs
 gem 'solid_queue'
 
+gem 'rails_icons'
+
 group :production do
   gem 'rails_12factor'
 end

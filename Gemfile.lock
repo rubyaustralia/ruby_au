@@ -347,6 +347,9 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_icons (1.1.0)
+      nokogiri (~> 1.16, >= 1.16.4)
+      rails (> 6.1)
     rails_serve_static_assets (0.0.5)
     rails_stdout_logging (0.0.5)
     railties (8.0.1)
@@ -529,6 +532,7 @@ DEPENDENCIES
   rails (>= 8.0.0)
   rails-controller-testing
   rails_12factor
+  rails_icons
   redcarpet
   rspec-rails (~> 6.1.0)
   rubocop
