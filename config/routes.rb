@@ -41,6 +41,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :posts, only: [:index]
+  get 'posts/*slug', to: 'posts#show', as: :post
+
   resources :mailing_lists, only: [] do
     member { post :hook }
   end

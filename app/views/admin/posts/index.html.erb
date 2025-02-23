@@ -1,5 +1,5 @@
 <% content_for :heading, "Blog" %>
-<h2>Posts</h2>
+
 <article>
   <table class="min-w-full divide-y divide-gray-200 text-sm text-left bg-white rounded shadow-sm ml-5">
     <thead class="bg-gray-50">
@@ -16,7 +16,7 @@
         <th></th>
       </tr>
     </thead>
-    <tbody class="divide-y divide-gray-200">
+    <tbody class="divide-y divide-gray-100">
       <% @posts.each do |post| %>
         <tr class="hover:bg-gray-100">
           <td><%= post.id %></td>

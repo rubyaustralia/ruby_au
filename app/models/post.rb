@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  paginates_per 10
+
   extend FriendlyId
   friendly_id :slug_candidate, use: :slugged
 
@@ -11,6 +13,16 @@ class Post < ApplicationRecord
   validate :prevent_duplicated_slug
 
   belongs_to :user
+
+  scope :published_with_associations, lambda {
+    published
+      .includes(:user, :rich_text_content)
+      .order(published_at: :desc)
+  }
+
+  scope :filter_by_category, lambda { |category|
+    category.present? ? where(category: category) : all
+  }
 
   def publishable?
     draft? && publish_scheduled_at.present?
