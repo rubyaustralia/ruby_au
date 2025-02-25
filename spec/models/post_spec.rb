@@ -107,6 +107,45 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe 'scopes' do
+    let(:user) { create(:user) }
+
+    describe '.published_with_associations' do
+      let(:published_post1) { create(:post, user: user, status: :published, published_at: 2.days.ago) }
+      let(:published_post2) { create(:post, user: user, status: :published, published_at: 1.day.ago) }
+      let(:draft_post) { create(:post, user: user, status: :draft) }
+
+      before do
+        published_post1
+        published_post2
+        draft_post
+      end
+
+      it 'returns only published posts in descending order' do
+        expect(Post.published_with_associations).to eq([published_post2, published_post1])
+      end
+    end
+
+    describe '.filter_by_category' do
+      let(:news_post) { create(:post, user: user, category: :news) }
+      let(:announcement_post) { create(:post, user: user, category: :announcements) }
+
+      before do
+        news_post
+        announcement_post
+      end
+      it 'filters posts by category when category is provided' do
+        results = Post.filter_by_category(:news)
+        expect(results).to include(news_post)
+        expect(results).not_to include(announcement_post)
+      end
+
+      it 'returns nil when category is not provided' do
+        expect(Post.filter_by_category(nil)).to match_array([news_post, announcement_post])
+      end
+    end
+  end
+
   describe '#publishable?' do
     let(:post) { build(:post) }
 
