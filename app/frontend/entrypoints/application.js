@@ -9,6 +9,7 @@ Rails.start();
 
 // Import Styles
 import "./styles/actiontext.css";
+import "./styles/custom_actiontext.scss";
 import "./styles/application.scss";
 import "./styles/committee.scss";
 import "./styles/sponsorship.scss";
@@ -23,11 +24,11 @@ import "./styles/surveys.scss";
 document.addEventListener('DOMContentLoaded', () => {
   const menuTrigger = document.querySelector('.mobile-menu-trigger');
   const mobileMenu = document.querySelector('.mobile-menu');
-  
+
   if (window.innerWidth < 768) {
     mobileMenu?.classList.add('hidden');
   }
-  
+
   menuTrigger?.addEventListener('click', () => {
     if (mobileMenu) {
       mobileMenu.classList.toggle('hidden');
@@ -45,7 +46,7 @@ window.setupSignature = function() {
   const clearButton = wrapper.querySelector("[data-action=clear]");
   const undoButton = wrapper.querySelector("[data-action=undo]");
   const canvas = wrapper.querySelector("canvas");
-  
+
   if (!canvas) return;
 
   const signaturePad = new SignaturePad(canvas, {
@@ -96,7 +97,7 @@ window.setupSignature = function() {
       event.preventDefault();
       return;
     }
-    
+
     proxySignature.value = signaturePad.toDataURL();
   });
 };
