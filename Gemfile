@@ -64,6 +64,7 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'letter_opener'
   gem 'letter_opener_web', '~> 3.0'
+  gem 'brakeman', require: false
 end
 
 group :test do
