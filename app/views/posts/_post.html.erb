@@ -5,6 +5,9 @@
     </h4>
     <h2 class="text-5xl font-bold my-3 p-0"><%= post.title %></h2>
     <div class="">Posted by <%= post.user&.full_name || "Ruby Australia" %></div>
+    <div class="mt-5">
+      <%= social_share_button_tag(@post.title) %>
+    </div>
   </div>
   <article class="prose max-w-none">
     <%= post.content %>
