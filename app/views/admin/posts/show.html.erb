@@ -1,7 +1,9 @@
 <% content_for :heading, "Post" %>
-
+<div class="pl-5 mt-5">
+  <%= social_share_button_tag(@post.title) %>
+</div>
 <%= render @post %>
-<div>
+<div class="pl-5 mb-5">
   <% if @post.editable? %>
     <%= link_to "Edit", admin_edit_post_path(@post) %>
   <% end %>

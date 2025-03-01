@@ -31,6 +31,7 @@ gem 'vite_rails'
 gem 'solid_queue'
 
 gem 'rails_icons'
+gem 'social-share-button'
 
 group :production do
   gem 'rails_12factor'
