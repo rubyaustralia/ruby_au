@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_15_145614) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_08_055515) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_stat_statements"
@@ -132,7 +132,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_15_145614) do
     t.datetime "published_at"
     t.integer "category"
     t.datetime "publish_scheduled_at"
-    t.datetime "archieved_at"
+    t.datetime "archived_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"

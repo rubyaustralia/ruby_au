@@ -168,25 +168,12 @@ RSpec.describe Post, type: :model do
     end
   end
 
-  describe '#editable?' do
-    let(:post) { build(:post) }
+  describe '#archive' do
+    let(:post) { create(:post) }
 
-    it 'returns true when post is draft and has no publish_scheduled_at' do
-      post.status = :draft
-      post.publish_scheduled_at = nil
-      expect(post).to be_editable
-    end
-
-    it 'returns false when post is not draft' do
-      post.status = :published
-      post.publish_scheduled_at = nil
-      expect(post).not_to be_editable
-    end
-
-    it 'returns false when post has publish_scheduled_at' do
-      post.status = :draft
-      post.publish_scheduled_at = 1.day.from_now
-      expect(post).not_to be_editable
+    it 'changes post status to archived' do
+      expect { post.archive }.to change { post.status }.from('draft').to('archived')
+                                                       .and change { post.archived_at }.from(nil).to(Time)
     end
   end
 

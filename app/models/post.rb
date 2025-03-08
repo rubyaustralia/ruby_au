@@ -28,8 +28,8 @@ class Post < ApplicationRecord
     draft? && publish_scheduled_at.present?
   end
 
-  def editable?
-    draft? && publish_scheduled_at.blank?
+  def archive
+    update(status: :archived, archived_at: Time.current)
   end
 
   def publish!

@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     resources :campaigns
     resources :posts, only: [:index, :new, :create]
     get 'posts/*slug/edit', to: 'posts#edit', as: :edit_post
+    delete 'posts/*slug/edit', to: 'posts#destroy', as: :delete_post
+    post 'posts/*slug/archive', to: 'posts#archive', as: :archive_post
     get 'posts/*slug', to: 'posts#show', as: :post
     patch 'posts/*slug', to: 'posts#update', as: :update_post
   end

@@ -26,6 +26,15 @@ RSpec.describe 'Admin::PostsController', type: :request do
       get admin_posts_path
       expect(assigns(:posts).size).to be <= 25 # default page size
     end
+
+    context 'when not authenticated' do
+      before { sign_out admin }
+
+      it 'redirects to sign in' do
+        get admin_posts_path
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
   end
 
   describe 'GET /admin/posts/:id' do
@@ -64,17 +73,6 @@ RSpec.describe 'Admin::PostsController', type: :request do
       get admin_edit_post_path(post)
       expect(response).to have_http_status(:ok)
       expect(assigns(:post)).to eq(post)
-    end
-
-    context 'when post is not editable' do
-      let(:post) { create(:post, published_at: 1.day.ago) }
-
-      it 'redirects with alert' do
-        allow_any_instance_of(Post).to receive(:editable?).and_return(false)
-        get admin_edit_post_path(post)
-        expect(response).to redirect_to(admin_post_path(post))
-        expect(flash[:alert]).to eq('Post can only be edited before scheduled.')
-      end
     end
   end
 
@@ -143,26 +141,26 @@ RSpec.describe 'Admin::PostsController', type: :request do
         expect(response).to render_template(:edit)
       end
     end
+  end
 
-    context 'when post is not editable' do
-      before do
-        allow_any_instance_of(Post).to receive(:editable?).and_return(false)
-      end
+  describe 'DELETE /admin/posts/:id' do
+    let(:post) { create(:post) }
 
-      it 'redirects without updating' do
-        patch admin_post_path(post), params: { post: new_attributes }
-        expect(response).to redirect_to(admin_post_path(post))
-        expect(flash[:alert]).to eq('Post can only be edited before scheduled.')
-      end
+    it 'deletes the post' do
+      delete admin_delete_post_path(post)
+      expect(response).to redirect_to(admin_posts_path)
+      expect(flash[:notice]).to eq('Post was successfully deleted.')
+      expect(Post.find_by(id: post.id)).to be_nil
     end
   end
 
-  context 'when not authenticated' do
-    before { sign_out admin }
+  describe 'POST /admin/posts/:id/archive' do
+    let(:post1) { create(:post) }
 
-    it 'redirects to sign in' do
-      get admin_posts_path
-      expect(response).to redirect_to(new_user_session_path)
+    it 'archives the post' do
+      post admin_archive_post_path(post1)
+      expect(response).to redirect_to(admin_posts_path)
+      expect(flash[:notice]).to eq('Post was successfully archived.')
     end
   end
 end

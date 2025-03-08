@@ -1,6 +1,5 @@
 class Admin::PostsController < Admin::ApplicationController
-  before_action :set_post, only: %i[show edit update]
-  before_action :ensure_post_editable?, only: %i[edit update]
+  before_action :set_post, only: %i[show edit update archive destroy]
 
   def index
     @posts = Post.order(Arel.sql("COALESCE(published_at, publish_scheduled_at) DESC NULLS LAST"))
@@ -32,7 +31,25 @@ class Admin::PostsController < Admin::ApplicationController
       Posts::Publisher.call(@post)
       redirect_to admin_post_path(@post), notice: "Post was successfully updated."
     else
-      render :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity, alert: "Post could not be updated due to #{@post.errors.full_messages.to_sentence}."
+    end
+  end
+
+  def archive
+    if @post.archive
+      redirect_to admin_posts_path, notice: "Post was successfully archived."
+    else
+      flash[:alter] = "Post could not be archived due to #{@post.errors.full_messages.to_sentence}."
+      redirect_back fallback_location: admin_posts_path
+    end
+  end
+
+  def destroy
+    if @post.destroy
+      redirect_to admin_posts_path, notice: "Post was successfully deleted."
+    else
+      flash[:alter] = "Post could not be deleted due to #{@post.errors.full_messages.to_sentence}."
+      redirect_back fallback_location: admin_posts_path
     end
   end
 
@@ -42,17 +59,11 @@ class Admin::PostsController < Admin::ApplicationController
   def set_post
     @post = Post.friendly.find(params.expect(:slug))
   rescue ActiveRecord::RecordNotFound
-    redirect_to admin_posts_path
+    redirect_to admin_posts_path, alert: "Post '#{params[:slug]}' is not found"
   end
 
   # Only allow a list of trusted parameters through.
   def post_params
     params.expect(post: [:title, :slug, :content, :status, :published_at, :category, :publish_scheduled_at])
-  end
-
-  def ensure_post_editable?
-    return if @post.editable?
-
-    redirect_to admin_post_path(@post), alert: "Post can only be edited before scheduled."
   end
 end
