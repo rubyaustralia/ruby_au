@@ -1,10 +1,10 @@
-<div id="<%= dom_id post %>" class="max-w-7xl mx-auto py-12 px-12">
+<div id="<%= dom_id post %>" class="max-w-7xl mx-auto pt-4 pb-12 px-12">
   <div class="text-center my-8 pb-8 border-b-2 border-gray-300">
-    <h4 class="">
+    <h4 class="p-0">
       <%= post.published_at.strftime("%B %d, %Y") %>
     </h4>
-    <h2 class="text-5xl font-bold my-3"><%= post.title %></h2>
-    <div class="">Posted by <%= post.user.full_name %></div>
+    <h2 class="text-5xl font-bold my-3 p-0"><%= post.title %></h2>
+    <div class="">Posted by <%= post.user&.full_name || "Ruby Australia" %></div>
   </div>
   <article class="prose max-w-none">
     <%= post.content %>

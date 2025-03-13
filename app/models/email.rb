@@ -1,3 +1,27 @@
+# == Schema Information
+#
+# Table name: emails
+#
+#  id                   :bigint           not null, primary key
+#  confirmation_sent_at :datetime
+#  confirmation_token   :string
+#  confirmed_at         :datetime
+#  email                :string           not null
+#  primary              :boolean          default(FALSE), not null
+#  unconfirmed_email    :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  user_id              :bigint
+#
+# Indexes
+#
+#  index_emails_on_email    (email) UNIQUE
+#  index_emails_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
+#
 class Email < ApplicationRecord
   attr_accessor :skip_trigger_after_confirmation
 

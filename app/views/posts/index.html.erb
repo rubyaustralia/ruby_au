@@ -12,10 +12,10 @@
 <div class="posts flex flex-col divide-y-2 divide-gray-300 border-y-2 border-gray-300 mx-5">
   <% @posts.each do |post| %>
     <div class="post flex py-6">
-      <h2 class="published-date w-[20%] shrink-0 font-semibold text-gray-600 pl-0"><%= post.published_at.strftime("%B %d, %Y") %></h2>
+      <h3 class="published-date w-[20%] shrink-0 font-semibold text-gray-600 pl-0"><%= post.published_at.strftime("%B %d, %Y") %></h3>
       <div class="w-[80%]">
         <h3 class="text-xl font-bold text-red-700 underline mt-2 p">
-          <%= link_to post.title, post_path(post) %>
+          <%= link_to post.title, post_path(post), class: "text-red no-underline" %>
         </h3>
         <p class="text-gray-700 mt-2"><%= post.content.to_plain_text.truncate(500) %></p>
       </div>

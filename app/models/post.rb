@@ -1,3 +1,24 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id                   :bigint           not null, primary key
+#  archieved_at         :datetime
+#  category             :integer
+#  content              :text
+#  publish_scheduled_at :datetime
+#  published_at         :datetime
+#  slug                 :string
+#  status               :integer
+#  title                :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  user_id              :bigint
+#
+# Indexes
+#
+#  index_posts_on_user_id  (user_id)
+#
 class Post < ApplicationRecord
   paginates_per 10
 
