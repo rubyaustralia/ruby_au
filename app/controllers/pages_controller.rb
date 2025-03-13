@@ -3,21 +3,24 @@ class PagesController < ApplicationController
     welcome committee-members previous-committee-members
   ].freeze
 
-  expose(:complex_view?) { COMPLEX_VIEWS.include? params[:id] }
+  def complex_view?
+    COMPLEX_VIEWS.include?(params[:id])
+  end
 
   expose(:sponsors) do
     YAML.load_file Rails.root.join('config/data/sponsors.yml')
   end
 
-  rescue_from ActionView::MissingTemplate do |exception|
+  def show
+    if params[:id] == 'welcome'
+      @posts = Post.published_with_associations.order(published_at: :desc).limit(5)
+    end
+    render "pages/#{params[:id]}"
+  rescue ActionView::MissingTemplate => exception
     if exception.message.match?(/Missing template pages#{request.path}/)
       raise ActionController::RoutingError, "No such page: #{params[:id]}"
     else
       raise exception
     end
-  end
-
-  def show
-    render "pages/#{params[:id]}"
   end
 end

@@ -42,6 +42,28 @@
 
   <div class="divider-1 bg-red">&nbsp;</div>
 
+  <% if @posts.present? %>
+    <article class="welcome md:ml-10 py-6">
+      <h2>News</h2>
+      <% @posts.each do |post| %>
+        <div class="post flex py-2">
+          <div class="w-[80%]">
+            <h3 class="text-xl font-bold text-red my-0">
+              <span class="published-date text-lg font-light md:mr-9 w-[20%] shrink-0 text-gray-600 pl-0">
+                <%= post.published_at.strftime("%B %d, %Y") %>
+              </span>
+              <%= link_to post.title, post_path(post), class: "text-red no-underline" %>
+            </h3>
+          </div>
+        </div>
+      <% end %>
+    </article>
+    <div class="divider-1 bg-red">&nbsp;</div>
+  <% else %>
+    <p class="welcome md:ml-10 md:my-10">No news posts available at the moment.</p>
+    <div class="divider-1 bg-red">&nbsp;</div>
+  <% end %>
+
   <article id="in-person" class="welcome md:ml-10">
     <h2>Meeting in Person</h2>
 
@@ -78,7 +100,7 @@
 
   <div class="divider-3 bg-red">&nbsp;</div>
 
-  <article id="sponsors" class="bg-white">
+  <article id="sponsors" class="bg-white md:ml-10 py-6">
     <h2>Sponsors</h2>
       <div class="flex flex-wrap justify-center welcome">
         <% sponsors.each do |sponsor| %>
