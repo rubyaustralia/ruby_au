@@ -7,11 +7,14 @@ export default defineConfig({
     ViteRails({
       fullReload: {
         additionalPaths: ['config/routes.rb', 'app/views/**/*']
+      },
+      stimulus: {
+        hmr: true,
       }
     }),
   ],
   server: {
-    host: 'localhost', // Match the Vite dev server host
+    host: 'localhost',
     port: 3036,
     strictPort: true,
     watch: {
@@ -23,7 +26,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'app/javascript')
+      '@': resolve(__dirname, 'app/frontend')
     }
   },
   css: {
@@ -38,6 +41,6 @@ export default defineConfig({
     rollupOptions: {
       external: ['jquery']
     },
-    sourcemap: false, // Disable source maps in production
+    sourcemap: false,
   }
 })
