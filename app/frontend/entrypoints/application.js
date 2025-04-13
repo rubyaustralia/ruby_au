@@ -1,3 +1,5 @@
+import "@hotwired/turbo-rails"
+import "~/controllers"
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import Rails from '@rails/ujs';
@@ -7,7 +9,6 @@ import SignaturePad from "signature_pad";
 
 Rails.start();
 
-// Import Styles
 import "~/stylesheets/actiontext.css";
 import "~/stylesheets/custom_actiontext.scss";
 import "~/stylesheets/application.scss";
