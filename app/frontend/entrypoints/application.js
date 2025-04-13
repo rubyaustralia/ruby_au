@@ -8,15 +8,15 @@ import SignaturePad from "signature_pad";
 Rails.start();
 
 // Import Styles
-import "./styles/actiontext.css";
-import "./styles/custom_actiontext.scss";
-import "./styles/application.scss";
-import "./styles/committee.scss";
-import "./styles/sponsorship.scss";
-import "./styles/forms.scss";
-import "./styles/admin.scss";
-import "./styles/signatures.scss";
-import "./styles/surveys.scss";
+import "~/stylesheets/actiontext.css";
+import "~/stylesheets/custom_actiontext.scss";
+import "~/stylesheets/application.scss";
+import "~/stylesheets/committee.scss";
+import "~/stylesheets/sponsorship.scss";
+import "~/stylesheets/forms.scss";
+import "~/stylesheets/admin.scss";
+import "~/stylesheets/signatures.scss";
+import "~/stylesheets/surveys.scss";
 
 /**
  * Initializes mobile menu toggle
