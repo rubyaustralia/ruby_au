@@ -123,7 +123,7 @@ GEM
       json (>= 1.0)
     css_parser (1.21.1)
       addressable
-    csv (3.3.3)
+    csv (3.3.4)
     date (3.4.1)
     decent_exposure (3.0.4)
       activesupport (>= 4.0)
@@ -195,7 +195,7 @@ GEM
     image_processing (1.14.0)
       mini_magick (>= 4.9.5, < 6)
       ruby-vips (>= 2.0.17, < 3)
-    inline_svg (1.9.0)
+    inline_svg (1.10.0)
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
     io-console (0.8.0)
@@ -316,7 +316,7 @@ GEM
     pygmentize (0.0.3)
     raabro (1.4.0)
     racc (1.8.1)
-    rack (3.1.12)
+    rack (3.1.13)
     rack-proxy (0.7.7)
       rack
     rack-session (2.1.0)
@@ -530,7 +530,7 @@ DEPENDENCIES
   guard-rspec
   icalendar
   image_processing (~> 1.13)
-  inline_svg (~> 1.9.0)
+  inline_svg (~> 1.10.0)
   jbuilder
   kaminari
   letter_opener
