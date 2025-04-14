@@ -283,7 +283,7 @@ GEM
     orm_adapter (0.5.0)
     ostruct (0.6.1)
     parallel (1.26.3)
-    parser (3.3.7.4)
+    parser (3.3.7.5)
       ast (~> 2.4.1)
       racc
     pg (1.5.9)
@@ -394,10 +394,10 @@ GEM
     rspec-mocks (3.13.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-rails (6.1.5)
-      actionpack (>= 6.1)
-      activesupport (>= 6.1)
-      railties (>= 6.1)
+    rspec-rails (7.1.1)
+      actionpack (>= 7.0)
+      activesupport (>= 7.0)
+      railties (>= 7.0)
       rspec-core (~> 3.13)
       rspec-expectations (~> 3.13)
       rspec-mocks (~> 3.13)
@@ -547,7 +547,7 @@ DEPENDENCIES
   rails_12factor
   rails_icons
   redcarpet
-  rspec-rails (~> 6.1.0)
+  rspec-rails
   rubocop
   rubocop-performance
   rubocop-rails
