@@ -39,10 +39,10 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: 'yarn.lock'
 
-      - name: Enable Corepack for Yarn 4
+      - name: Set up Yarn 4
         run: |
           corepack enable
-          yarn --version
+          yarn set version 4.9.1
 
       - name: Install dependencies
         run: |
