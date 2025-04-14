@@ -36,7 +36,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
-          cache: yarn
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
+
+      - name: Enable Corepack for Yarn 4
+        run: |
+          corepack enable
+          yarn --version
 
       - name: Install dependencies
         run: |
