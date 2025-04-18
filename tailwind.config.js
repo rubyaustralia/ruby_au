@@ -2,7 +2,7 @@ module.exports = {
   content: [
     './app/views/**/*.{html,html.erb}',
     './app/helpers/**/*.rb',
-    './app/frontend/**/*.{js,ts}',
+    './app/frontend/**/*.{js,ts,css,scss}',
     './app/components/**/*.{html.erb,rb}',
   ],
   theme: {
