@@ -1,12 +1,14 @@
 import "@hotwired/turbo-rails";
 import { Application } from "@hotwired/stimulus";
 import { registerControllers } from "stimulus-vite-helpers";
+import "~/controllers";
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import Rails from '@rails/ujs';
 import "trix";
 import "@rails/actiontext";
 import SignaturePad from "signature_pad";
+import '~/icons';
 
 const application = Application.start();
 const controllers = import.meta.glob("../controllers/**/*_controller.js", { eager: true });
