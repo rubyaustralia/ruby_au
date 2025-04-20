@@ -48,5 +48,8 @@ module RubyAu
     config.generators.system_tests = nil
 
     config.active_job.queue_adapter = :solid_queue
+
+    # Disable the asset pipeline
+    # config.assets.enabled = false
   end
 end
