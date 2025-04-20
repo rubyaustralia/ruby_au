@@ -21,7 +21,6 @@ gem 'kaminari'
 gem 'premailer-rails'
 gem 'pygmentize'
 gem 'redcarpet'
-gem 'sprockets-rails'
 gem 'turbo-rails'
 gem 'validates_email_format_of'
 gem 'warden' # use for auth
@@ -29,8 +28,6 @@ gem 'vite_rails'
 
 # background jobs
 gem 'solid_queue'
-
-gem 'rails_icons'
 
 group :production do
   gem 'rails_12factor'
