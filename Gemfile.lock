@@ -179,6 +179,10 @@ GEM
       rspec (>= 2.99.0, < 4.0)
     hashdiff (1.1.2)
     hashie (5.0.0)
+    herb (0.1.1)
+    herb (0.1.1-aarch64-linux-gnu)
+    herb (0.1.1-arm64-darwin)
+    herb (0.1.1-x86_64-linux-gnu)
     htmlentities (4.3.4)
     httparty (0.23.1)
       csv
@@ -529,6 +533,7 @@ DEPENDENCIES
   friendly_id (~> 5.5.0)
   guard
   guard-rspec
+  herb
   icalendar
   image_processing (~> 1.13)
   inline_svg (~> 1.10.0)
