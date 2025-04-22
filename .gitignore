@@ -52,3 +52,11 @@ node_modules
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Ignore dotenv environment variables files
+.env
+.env.*
+
+# Ignore IDE config files
+.idea
+.VSCode
