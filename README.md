@@ -1,4 +1,4 @@
-[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)  
+[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
 
 # Ruby Australia Website
 [![CI](https://github.com/rubyaustralia/ruby_au/actions/workflows/ci.yml/badge.svg)](https://github.com/rubyaustralia/ruby_au/actions/workflows/ci.yml)
@@ -10,7 +10,7 @@ The slack channel for the website working group can be found
 
 ## Required Environment / Minimum Setup
 
-- [Ruby version (`3.3.5`)](https://www.ruby-lang.org/)
+- [Ruby](https://www.ruby-lang.org/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Bundler](https://bundler.io/)
 - [Yarn](https://yarnpkg.com/)
