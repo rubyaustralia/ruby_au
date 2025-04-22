@@ -1,6 +1,7 @@
 require_relative "boot"
 
 require "rails"
+require "herb/rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
@@ -17,6 +18,8 @@ require "action_view/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+
+ActionView::Template.register_template_handler(:herb, Herb::Rails::TemplateHandler.new)
 
 module RubyAu
   class Application < Rails::Application
