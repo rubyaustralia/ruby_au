@@ -1,46 +1,3 @@
-- name: HotDoc
-  key: hotdoc
-  url: https://www.hotdoc.com.au/
-  images:
-    - 2024/hotdoc-500x143.png
-  tier: Ruby
-  bio: |
-    [HotDoc](https://www.hotdoc.com.au/) is Australia's largest and most trusted patient engagement platform, with over 21,000 listed doctors, 10 million active patients and 1.4M appointments made each month.
-
-    With 1 in 3 Australians using HotDoc to connect with their preferred healthcare provider, we are the No. 1 app in the Medical category in the Apple Store. We are now also helping physios, dentists, specialists, and other allied health professionals deliver an exceptional experience for their patients. Partnering with the industry's most respected Practice Management Software, HotDoc seamlessly integrates with Cliniko and Nookal.
-
-    Our mission is to improve the healthcare experience for everyone in Australia. We do this by providing clinics access to online bookings, appointment reminders, digital patient registration forms, and many more tools to foster relationships between healthcare providers and patients. We double down on this by creating an easy to use, platform where patients can take charge of their health creating a more robust and fulfilling journey.
-
-    Care to join us?
-
-- name: Assembly Four
-  key: assemblyfour
-  url: https://assemblyfour.com/
-  images:
-    - 2024/assembly-four-500x143.png
-  tier: Sapphire
-  bio: |
-    [Assembly Four](https://assemblyfour.com) is a collective of sex workers and technologists on a mission to empower sex workers through technology. Sex workers are among the most marginalised, stigmatised groups in the world, and our goal is to create platforms where sex workers thrive, not just survive.
-
-    We were invited to speak at RubyConf AU in 2019 on the topic of [Internet Legislation is Eating the World](https://youtu.be/MDBm6_udqLg), covering how laws are being passed to erode digital rights and how we founded [Switter](https://switter.at/about), a sex worker-friendly social network, in an attempt to fight back.
-
-    Our other project is [Tryst.link](https://tryst.link) (WARNING: adult content), the first LGBTQI+ friendly adult advertising platform, and is becoming the ethically-run platform of choice for independent sex workers in Australasia, North America and Europe.
-
-- name: ReInteractive
-  key: reinteractive
-  url: https://reinteractive.com/
-  images:
-    - 2024/reinteractive.png
-  tier: Opal
-  bio: |
-    reinteractive is the region's leader in Ruby on Rails development for large, complex and customised solutions. We provide our professional services to start-ups, small business, large enterprise and legacy applications all running Ruby.
-
-    Our services include security and code reviews of existing code bases, UX and design, feature scoping and development, large and small scale upgrades, ongoing maintenance for code and infrastructure on (AWS and Heroku) all for web based and mobile applications.
-
-    reinteractive was founded many years ago by Mikel Lindsaar, famous in the Rails community for authoring and maintaining the Mail gem (with hundreds of millions of downloads to date) and early contributions to the framework itself.
-
-    Today we deliver our high-quality services around to clients around the world with our growing team of Senior Developers, while continuing to support the Rails community at large.
-
 - name: Bluethumb
   key: bluethumb
   url: https://tech.bluet.hm/senior-software-engineer-ruby-on-rails
@@ -49,14 +6,3 @@
   tier: Opal
   bio: |
     Bluethumb's mission is to create the world's largest online art marketplace by transforming the way art is bought and sold. We connect artists with collectors nationwide and have recently expanded our platform to the US.
-
-- name: Lookahead
-  key: lookahead
-  url: https://www.lookahead.com.au
-  images:
-    - 2024/lookahead-500x85.png
-  tier: Amber
-  bio: |
-    Technical recruiters who are actually technical.
-
-    We help [Ruby | Elixir | Javascript] developers and technical leaders find challenging work with inclusive teams. The companies we hire for work in Sydney, Melbourne and remotely around Australia.
