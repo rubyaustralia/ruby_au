@@ -106,13 +106,13 @@
         <% sponsors.each do |sponsor| %>
           <% if sponsor['key'] == 'up' %>
             <div class="m-1">
-                <%= link_to "/sponsors/#{sponsor['key']}" do %>
+                <%= link_to "#{sponsor['url']}" do %>
                   <%= image_tag "sponsors/#{sponsor['images'].first}", alt: sponsor['name'], style: "width: 190px" %>
                 <% end %>
             </div>
           <% else %>
             <div class="m-6">
-              <%= link_to "/sponsors/#{sponsor['key']}" do %>
+              <%= link_to "#{sponsor['url']}" do %>
                 <%= image_tag "sponsors/#{sponsor['images'].first}", alt: sponsor['name'], style: "width: 150px" %>
               <% end %>
             </div>
