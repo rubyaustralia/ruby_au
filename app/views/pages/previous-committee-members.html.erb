@@ -6,7 +6,7 @@
   <% previous.each do |member| %>
     <article class="bg-white max-w-xs rounded-lg shadow-lg m-5 flex-shrink-0 flex flex-col">
       <figure class="overflow-hidden max-h-80">
-        <%= image_tag "committee-members/#{member['photo']}", class: "w-full overflow-hidden rounded-t-lg", alt: "Photo of #{member['name']}" %>
+        <%= vite_image_tag "images/committee-members/#{member['photo']}", class: "w-full overflow-hidden rounded-t-lg", alt: "Photo of #{member['name']}" %>
       </figure>
       <header class="px-6 py-4">
         <div><%= member['name'] %></div>
@@ -18,25 +18,25 @@
       <aside class="flex flex-grow flex-col p-3 justify-end">
         <% if member['twitter'] %>
           <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
-            <%= inline_svg_tag "twitter.svg", height: 16, class: "inline" %>
+            <%= vite_inline_svg "twitter.svg", height: 16, class: "inline" %>
             <%= link_to "@#{ member['twitter']}", "https://twitter.com/#{ member['twitter']}" %>
           </span>
         <% end %>
         <% if member['github'] %>
           <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
-            <%= inline_svg_tag "github.svg", height: 16, class: "inline" %>
+            <%= vite_inline_svg "github.svg", height: 16, class: "inline" %>
             <%= link_to member['github'], "https://github.com/#{ member['github']}", title: 'GitHub' %>
           </span>
         <% end %>
         <% if member['linkedin'] %>
           <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
-            <%= inline_svg_tag "linkedin.svg", height: 16, class: "inline" %>
+            <%= vite_inline_svg "linkedin.svg", height: 16, class: "inline" %>
             <%= link_to "LinkedIn", "https://www.linkedin.com/in/#{member['linkedin']}/" %>
           </span>
         <% end %>
         <% if member['website'] %>
           <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
-            <%= inline_svg_tag "rss.svg", height: 16, class: "inline" %>
+            <%= vite_inline_svg "rss.svg", height: 16, class: "inline" %>
             <%= link_to member['website'].gsub(%r{^https?://}, ''), member['website'] %>
           </span>
         <% end %>
