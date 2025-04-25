@@ -26,8 +26,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      '@images': resolve(__dirname, 'app/frontend/images'),
       '@': resolve(__dirname, 'app/frontend')
-    }
+    },
+    dedupe: ['lucide']
   },
   css: {
     devSourcemap: true,
@@ -39,8 +41,13 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
+      input: {
+        application: './app/frontend/entrypoints/application.js',
+        styles: './app/frontend/entrypoints/application.css'
+      },
       external: ['jquery']
     },
     sourcemap: false,
   }
+
 })
