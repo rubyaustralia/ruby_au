@@ -21,14 +21,6 @@ module ApplicationHelper
     tag.div markdown_to_html(input), class: 'markdown'
   end
 
-  def link_to_external(name = nil, options = nil, html_options = {})
-    svg = inline_svg_tag "external-link.svg", height: 12
-    html_options[:target] ||= "_blank"
-    html_options[:rel]    ||= "external"
-
-    link_to safe_join([name, svg]), options, html_options
-  end
-
   def markdown_to_html(raw)
     return nil if raw.nil?
 
