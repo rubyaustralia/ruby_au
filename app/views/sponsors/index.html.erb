@@ -37,7 +37,7 @@ You should also feel free to contact our sponsorship representatives via email: 
             <p class="sponsor-logos">
               <% sponsor['images'].each do |image| %>
                 <%= link_to sponsor['url'], :class => "sponsor-logo-no-border" do %>
-                  <%= image_tag "sponsors/#{image}", :class => "sponsor-logo sponsor-logo-standalone" %>
+                  <%= vite_image_tag "images/sponsors/#{image}", :class => "sponsor-logo sponsor-logo-standalone" %>
                 <% end %>
               <% end %>
             </p>
