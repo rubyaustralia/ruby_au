@@ -1,12 +1,16 @@
 import "@hotwired/turbo-rails";
-import "~/controllers";
+import { Application } from "@hotwired/stimulus";
+import { registerControllers } from "stimulus-vite-helpers";
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import Rails from '@rails/ujs';
 import "trix";
 import "@rails/actiontext";
 import SignaturePad from "signature_pad";
-import '~/icons';
+
+const application = Application.start();
+const controllers = import.meta.glob("../controllers/**/*_controller.js", { eager: true });
+registerControllers(application, controllers);
 
 Rails.start();
 
@@ -15,20 +19,17 @@ import "~/stylesheets/custom_actiontext.scss";
 import "~/stylesheets/application.scss";
 import "~/stylesheets/signatures.scss";
 
-// Import the icons you need
-import { createIcons, User, LogIn } from 'lucide';
+import { createIcons, icons } from 'lucide';
 
-// Initialize icons when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   createIcons({
-    icons: {
-      'circle-user': User,
-      'log-in': LogIn,
-      // Add other icons you need
+    icons,
+    attrs: {
+      class: "",
+      stroke: "currentColor"
     }
   });
 });
-
 
 /**
  * Initializes the signature pad and related interactions.
@@ -47,7 +48,18 @@ window.setupSignature = function() {
     backgroundColor: 'rgb(255, 255, 255)'
   });
 
-  // Form submission validation
+  clearButton?.addEventListener("click", () => {
+    signaturePad.clear();
+  });
+
+  undoButton?.addEventListener("click", () => {
+    const data = signaturePad.toData();
+    if (data) {
+      data.pop(); // remove the last dot or line
+      signaturePad.fromData(data);
+    }
+  });
+
   document.getElementById('set-proxy-form')?.addEventListener('submit', function(event) {
     const proxyName = document.getElementById('rsvp_proxy_name');
     const proxySignature = document.getElementById('rsvp_proxy_signature');
@@ -66,3 +78,7 @@ window.setupSignature = function() {
     proxySignature.value = signaturePad.toDataURL();
   });
 };
+
+document.addEventListener('turbo:load', () => {
+  window.setupSignature();
+});
