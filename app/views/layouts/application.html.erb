@@ -35,19 +35,19 @@
   events around Australia focused on the Ruby programming language." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <%= csrf_meta_tags %>
   <%= vite_client_tag %>
   <%= vite_javascript_tag 'application' %>
   <!-- hack to use cdn since failed to import trix from production, no issue in dev, remove it once the issue is fixed -->
   <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/trix@2.1.12/dist/trix.umd.min.js" %>
 </head>
-  <body class="bg-pearl">
-  <%= render "shared/navigation" %>
-  <%= render "shared/flash-notice" %>
-    <main>
-      <%= yield %>
-    </main>
-    <%= render "shared/footer" %>
-  </body>
+<body class="bg-pearl">
+<%= render "shared/navigation" %>
+<%= render "shared/flash-notice" %>
+<main>
+  <%= yield %>
+</main>
+<%= render "shared/footer" %>
+</body>
 </html>
