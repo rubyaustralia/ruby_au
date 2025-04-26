@@ -1,20 +1,64 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "standard" }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <div class="label">
-      <%= f.label :email %>
+<div class="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8 bg-gray-50">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="text-center">
+      <%= link_to root_path do %>
+        <%= vite_image_tag 'images/ruby_au_icon.svg', class: "mx-auto h-12 w-auto", alt: "Ruby Australia Logo" %>
+      <% end %>
+      <h2 class="mt-6 text-center text-2xl sm:text-3xl font-bold text-gray-900">Forgot your password?</h2>
+      <p class="mt-2 text-center text-sm text-gray-600">
+        Enter your email below and we'll send you instructions to reset your password.
+      </p>
     </div>
-    <div class="input">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div class="bg-white py-8 px-4 sm:rounded-lg sm:px-10 shadow-md">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "space-y-6" }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div>
+            <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+            <div class="mt-1">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                                class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-ruby-red focus:border-ruby-red text-sm" %>
+            </div>
+          </div>
+
+          <div>
+            <%= f.submit "Send Reset Instructions",
+                         class: "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-ruby-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" %>
+          </div>
+        <% end %>
+
+        <div class="mt-6">
+          <div class="relative">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-gray-300"></div>
+            </div>
+            <div class="relative flex justify-center text-sm">
+              <span class="px-2 bg-white text-gray-500">Or</span>
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 gap-3">
+            <div class="text-center">
+              <%= link_to "Back to login", new_session_path(resource_name),
+                          class: "text-sm font-medium text-ruby-red hover:text-red-700 transition-colors" %>
+            </div>
+            <div class="text-center">
+              <%= link_to "Sign up instead", new_registration_path(resource_name),
+                          class: "text-sm font-medium text-ruby-red hover:text-red-700 transition-colors" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center text-xs sm:text-sm text-gray-500">
+      <p>
+        If you continue to have trouble accessing your account,
+        <br class="hidden sm:inline">
+        please contact <%= mail_to "support@rubyaustralia.org", "support@rubyaustralia.org", class: "text-ruby-red hover:text-red-700 transition-colors" %>
+      </p>
     </div>
   </div>
-
-  <div class="buttons">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
