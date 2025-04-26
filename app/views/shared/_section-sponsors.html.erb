@@ -1,0 +1,38 @@
+<section id="sponsors" class="bg-white py-12 sm:py-16 md:py-20">
+  <div class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 text-center">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8">Sponsors</h1>
+
+    <p class="text-sm sm:text-base md:text-lg max-w-prose mx-auto mb-8 sm:mb-10 md:mb-12">
+      We are very grateful to our sponsors for their ongoing support to help make Ruby Australia events more affordable and
+      accessible to a broader array of people across Australia. If you are interested in sponsoring Ruby Australia,
+      please <%= link_to "get in touch", "/contact", class: "text-ruby-red hover:text-red-700 underline transition-colors" %>, you can also find out more about our sponsorship opportunities on our
+      <%= link_to "Sponsorship page", "/sponsorship", class: "text-ruby-red hover:text-red-700 underline transition-colors" %>.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
+      <% sponsors.each do |sponsor| %>
+        <% if sponsor['key'] == 'up' %>
+          <div class="p-2 sm:p-3 md:p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <%= link_to "/sponsors/#{sponsor['key']}" do %>
+              <%= vite_image_tag "images/sponsors/#{sponsor['images'].first}",
+                                 alt: sponsor['name'],
+                                 class: "w-[120px] sm:w-[150px] md:w-[190px] h-auto object-contain" %>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="p-2 sm:p-3 md:p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <%= link_to "/sponsors/#{sponsor['key']}" do %>
+              <%= vite_image_tag "images/sponsors/#{sponsor['images'].first}",
+                                 alt: sponsor['name'],
+                                 class: "w-[90px] sm:w-[120px] md:w-[150px] h-auto object-contain" %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="mt-8 sm:mt-10 md:mt-12 flex justify-center">
+      <%= link_to "Become a Sponsor", "/sponsorship", class: "inline-flex items-center justify-center bg-ruby-red hover:bg-red-700 text-white font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-colors shadow-md text-sm sm:text-base" %>
+    </div>
+  </div>
+</section>
