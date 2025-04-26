@@ -1,52 +1,69 @@
-<%= content_for :heading do %>
-  Sponsorship
-<% end %>
+<div class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+  <section class="prose prose-sm sm:prose md:prose-lg max-w-none mb-8 sm:mb-10 md:mb-12">
+    <p>
+      The founding purpose of Ruby Australia is to further the use and adoption of the Ruby programming language in Australia,
+      and to support and encourage a vibrant community around the language and related technologies.
+    </p>
 
-<p>
-  The founding purpose of Ruby Australia is to further the use and adoption of the Ruby programming language in Australia,
-  and to support and encourage a vibrant community around the language and related technologies.
-</p>
+    <p>
+      We are very lucky to have many companies who have provided sponsorship over the years to help us achieve these goals,
+      particularly through our <a href="/#in-person" class="text-ruby-red hover:text-red-700 transition-colors">regular events</a>: RubyConf AU, Rails Camp, ongoing city meetups,
+      and Rails Girls. Their sponsorship support combined with the massive efforts of our volunteer organisers have created
+      world-class conferences and gatherings.
+    </p>
 
-<p>
-  We are very lucky to have many companies who have provided sponsorship over the years to help us achieve these goals,
-  particularly through our <a href="/#in-person">regular events</a>: RubyConf AU, Rails Camp, ongoing city meetups,
-  and Rails Girls. Their sponsorship support combined with the massive efforts of our volunteer organisers have created
-  world-class conferences and gatherings.
-</p>
+    <p>If you are interested in becoming a Ruby AU sponsor, please download our current Sponsorship Prospectus:</p>
 
-<p>If you are interested in becoming a Ruby AU sponsor, please download our current Sponsorship Prospectus:</p>
+    <ul class="space-y-2 pl-4 sm:pl-6">
+      <li>
+        <%= link_to "2025 Sponsorship - Prospectus [PDF]", "/files/pdfs/RubyAU-Sponsorship-Prospectus-2025.pdf",
+                    class: "text-ruby-red hover:text-red-700 transition-colors inline-flex items-center" %>
+      </li>
+      <li>
+        <%= link_to "2025 Sponsorship - Executive Summary [PDF]", "/files/pdfs/RubyAU-Sponsorship-Prospectus-2025-Exec-Summary.pdf",
+                    class: "text-ruby-red hover:text-red-700 transition-colors inline-flex items-center" %>
+      </li>
+    </ul>
 
-<ul style="padding: 0; padding-left: 2rem; list-style-type: disc; list-style-position: inside">
-  <li><%= link_to "2025 Sponsorship - Prospectus [PDF]", "/files/pdfs/RubyAU-Sponsorship-Prospectus-2025.pdf" %></li>
-  <li><%= link_to "2025 Sponsorship - Executive Summary [PDF]", "/files/pdfs/RubyAU-Sponsorship-Prospectus-2025-Exec-Summary.pdf" %></li>
-</ul>
+    <p>
+      You should also feel free to contact our sponsorship representatives via email:
+      <%= mail_to "sponsorship@ruby.org.au", class: "text-ruby-red hover:text-red-700 transition-colors font-medium" %>.
+    </p>
+  </section>
 
-<p>
-You should also feel free to contact our sponsorship representatives via email: <%= mail_to "sponsorship@ruby.org.au" %>.
-</p>
-
-<section class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
-  <article id="sponsors" class="welcome">
-    <% @sponsors.group_by { |sponsor| sponsor['tier'] }.each do |tier, sponsors| %>
-      <section class="sponsor-logos flex flex-col">
-        <h2><%= tier %> Sponsors </h2>
-        <% sponsors.each do |sponsor| %>
-          <div class="markdown sponsor-standalone">
-            <h1><%= link_to sponsor['name'], sponsor['url'] %></h1>
-
-            <p class="sponsor-logos">
-              <% sponsor['images'].each do |image| %>
-                <%= link_to sponsor['url'], :class => "sponsor-logo-no-border" do %>
-                  <%= vite_image_tag "images/sponsors/#{image}", :class => "sponsor-logo sponsor-logo-standalone" %>
-                <% end %>
-              <% end %>
-            </p>
-
-            <%= markdown_to_html sponsor['bio'] %>
+  <section id="sponsors" class="border-t border-gray-200 pt-8 sm:pt-10 md:pt-12">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-8 sm:mb-10 md:mb-12 text-center sm:text-left">
+      Our Sponsors
+    </h2>
+    <div class="space-y-12 sm:space-y-16 md:space-y-20">
+      <% @sponsors.group_by { |sponsor| sponsor['tier'] }.each do |tier, sponsors| %>
+        <div class="sponsor-tier">
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-700 mb-6 sm:mb-8 pb-2 border-b border-gray-200">
+            <%= tier %> Sponsors
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
+            <% sponsors.each do |sponsor| %>
+              <div class="sponsor-card bg-white rounded-lg shadow-md p-6 sm:p-8">
+                <h4 class="text-lg sm:text-xl font-bold text-ruby-red mb-4">
+                  <%= link_to sponsor['name'], sponsor['url'],
+                              class: "hover:text-red-700 transition-colors" %>
+                </h4>
+                <div class="sponsor-logos flex flex-wrap gap-4 items-center justify-center sm:justify-start mb-4 sm:mb-6">
+                  <% sponsor['images'].each do |image| %>
+                    <%= link_to sponsor['url'], class: "block" do %>
+                      <%= vite_image_tag "images/sponsors/#{image}",
+                                         class: "max-h-16 sm:max-h-20 md:max-h-24 w-auto object-contain" %>
+                    <% end %>
+                  <% end %>
+                </div>
+                <div class="prose prose-sm max-w-none">
+                  <%= markdown_to_html sponsor['bio'] %>
+                </div>
+              </div>
+            <% end %>
           </div>
-        <% end %>
-      </section>
-    <% end %>
-  </article>
-</section>
-
+        </div>
+      <% end %>
+    </div>
+  </section>
+</div>
