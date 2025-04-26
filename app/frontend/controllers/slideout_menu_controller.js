@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { createIcons, icons } from 'lucide';
 
 export default class extends Controller {
   static targets = ["menu", "overlay"]
@@ -29,6 +30,15 @@ export default class extends Controller {
     this.menuTarget.style.right = "0"
     document.body.classList.add("overflow-hidden")
     this.isMenuOpen = true
+
+    createIcons({
+      icons,
+      attrs: {
+        class: "",
+        stroke: "currentColor"
+      },
+      elements: this.menuTarget.querySelectorAll('[data-lucide]')
+    });
   }
 
   close() {
