@@ -33,49 +33,21 @@
   <meta name="twitter:title" content="Ruby Australia" />
   <meta name="twitter:description" content="An organisation supporting the community and
   events around Australia focused on the Ruby programming language." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <%= csrf_meta_tags %>
   <%= vite_client_tag %>
   <%= vite_javascript_tag 'application' %>
   <!-- hack to use cdn since failed to import trix from production, no issue in dev, remove it once the issue is fixed -->
   <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/trix@2.1.12/dist/trix.umd.min.js" %>
 </head>
-  <body class="bg-pearl" data-controller="ahoy">
-    <div id="wrap" class="flex flex-col md:flex-row">
-      <aside id="meta" class="md:w-64 sm:w-screen flex-shrink-0">
-        <%= render "shared/navigation" %>
-      </aside>
-      <div class="w-auto bg-transparent flex-auto flex-shrink flex-grow flex-col overflow-y-scroll">
-        <main>
-          <div id="body" role="main" class="md:max-w-full">
-          <% if content_for?(:heading) || !content_for?(:banner) %>
-            <h1><%= yield :heading %></h1>
-          <% end %>
-
-          <% if content_for?(:banner) %>
-            <%= yield :banner %>
-          <% end %>
-
-          <div class="md:max-w-full">
-            <div id="flash">
-              <% flash.each do |key, value| %>
-                <p class="flash <%= key %>"><%= value %></p>
-              <% end %>
-            </div>
-
-            <% if complex_view? %>
-              <%= yield %>
-            <% else %>
-              <section id="welcome" class="bg-white flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
-                <section class="welcome">
-                  <%= yield %>
-                </section>
-              </section>
-            <% end %>
-          </div>
-        </div>
-        </main>
-        <%= render "shared/footer" %>
-      </div>
-    </div>
+  <body class="bg-pearl">
+  <%= render "shared/navigation" %>
+  <%= render "shared/flash-notice" %>
+    <main>
+      <%= yield %>
+    </main>
+    <%= render "shared/footer" %>
   </body>
 </html>
