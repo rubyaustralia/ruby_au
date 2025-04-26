@@ -1,0 +1,27 @@
+<section id="contributing" class="bg-black text-white py-12 sm:py-16 md:py-24">
+  <div class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8">
+    <div class="flex flex-col items-center text-center">
+      <div class="mb-6 sm:mb-8 md:mb-10">
+        <%= vite_image_tag 'images/ruby_au_logo_new.png',
+                           alt: "Ruby Australia Logo",
+                           class: 'w-20 sm:w-24 md:w-28 lg:w-32 h-auto' %>
+      </div>
+
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 text-white">Contributing to the site</h1>
+
+      <div class="space-y-4 sm:space-y-5 md:space-y-6 max-w-prose mx-auto">
+        <p class="text-sm sm:text-base md:text-lg text-white/90">
+          Please refer to the README there for more details, or join our Slack channel.
+        </p>
+      </div>
+
+      <div class="mt-8 sm:mt-10 md:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6">
+        <%= link_to "View on GitHub", "https://github.com/rubyaustralia/ruby_au",
+                    class: "inline-flex items-center justify-center bg-white text-black hover:bg-gray-200 font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-colors shadow-md text-sm sm:text-base" %>
+
+        <%= link_to "Join our Slack", "/slack",
+                    class: "inline-flex items-center justify-center bg-ruby-red hover:bg-red-700 text-white font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-colors shadow-md text-sm sm:text-base" %>
+      </div>
+    </div>
+  </div>
+</section>

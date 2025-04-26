@@ -1,0 +1,21 @@
+<section id="rubyconf" class="min-h-screen md:h-screen bg-rubyconf-sydney relative">
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <article class="relative z-10 px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-0 h-full flex flex-col justify-center">
+    <div class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto w-full">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 md:mb-8">RubyConf AU</h1>
+
+      <p class="text-white text-base sm:text-lg md:text-xl max-w-full sm:max-w-xl md:max-w-2xl text-shadow mb-6 sm:mb-8 md:mb-10">
+        RubyConf AU is the premier Ruby conference in Australia, bringing together Rubyists from all over the country
+        and beyond. The conference features talks from industry leaders, workshops, and opportunities to network
+        with other Ruby enthusiasts.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+        <%= link_to "Visit the site", "https://rubyconf.org.au", class: "inline-flex items-center justify-center bg-ruby-red hover:bg-red-700 text-white font-medium py-3 px-6 sm:py-3 sm:px-8 rounded-lg transition-colors shadow-lg text-base sm:text-lg" %>
+
+        <%= link_to "View past events", "/videos", class: "inline-flex items-center justify-center border-2 border-white text-white hover:bg-white/20 font-medium py-3 px-6 sm:py-3 sm:px-8 rounded-lg transition-colors text-base sm:text-lg" %>
+      </div>
+    </div>
+  </article>
+</section>

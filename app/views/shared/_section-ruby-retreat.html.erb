@@ -1,0 +1,23 @@
+<section id="ruby-retreat" class="min-h-screen bg-ruby-retreat relative">
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <div class="relative z-10 px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-0 h-full flex flex-col justify-center">
+    <div class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto w-full">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 md:mb-8">Ruby Retreat</h1>
+
+      <p class="text-white text-base sm:text-lg md:text-xl max-w-full sm:max-w-xl md:max-w-2xl text-shadow mb-6 sm:mb-8 md:mb-10">
+        Ruby Retreat - previously known as Rails Camp - is a unique event that brings together Rubyists for a weekend of coding, learning, and
+        collaboration. The event is designed to foster a sense of community and provide an opportunity for Rubyists
+        to work together on projects, share knowledge, and learn from each other.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+        <%= link_to "Visit the site", "https://retreat.ruby.org.au",
+                    class: "inline-flex items-center justify-center bg-ruby-red hover:bg-red-700 text-white font-medium py-3 px-6 sm:py-3 sm:px-8 rounded-lg transition-colors shadow-lg text-base sm:text-lg" %>
+
+        <%= link_to "Learn more", "/ruby-retreat",
+                    class: "inline-flex items-center justify-center border-2 border-white text-white hover:bg-white/20 font-medium py-3 px-6 sm:py-3 sm:px-8 rounded-lg transition-colors text-base sm:text-lg" %>
+      </div>
+    </div>
+  </div>
+</section>
