@@ -1,35 +1,33 @@
-<%= content_for :heading do %>
-  Membership Terms and Conditions
-<% end %>
+<div class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+  <article class="space-y-8 sm:space-y-10 md:space-y-12">
+    <section class="bg-white rounded-lg shadow-md p-6 sm:p-8 md:p-10">
+      <header class="mb-4 sm:mb-5 md:mb-6">
+        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">Membership</h3>
+      </header>
+      <div class="prose prose-sm sm:prose md:prose-lg max-w-none">
+        <p>
+          Membership gives you voting rights at general meetings and the ability to run for committee positions. We will notify you by email of upcoming general meetings and you will have the opportunity to add items to the meeting's agenda.
+        </p>
+      </div>
+    </section>
 
-<section>
-  <header>
-    <h3>Membership</h3>
-  </header>
-  <p>
-    Membership gives you voting rights at general meetings and the ability to run for committee positions. We will notify you by email of upcoming general meetings and you will have the opportunity to add items to the meeting’s agenda.
-  </p>
-</section>
+    <section class="bg-white rounded-lg shadow-md p-6 sm:p-8 md:p-10">
+      <header class="mb-4 sm:mb-5 md:mb-6">
+        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">Data Security</h3>
+      </header>
+      <div class="prose prose-sm sm:prose md:prose-lg max-w-none space-y-4 sm:space-y-6">
+        <p>
+          By law, members are entitled to inspect the member registry upon request. The purpose of this is to empower the membership to coordinate with each other irrespective of the committee. We expect this to be a very rare occurrence, with plenty of avenues for communication between members outside of this allowance. Nonetheless, there are circumstances where we are obligated to share your name and email with other members, and we suggest you choose your signup email with this in mind.
+        </p>
+        <p>
+          You can see the legal requirements outlined on the <%= link_to "Consumer Affairs Victoria website", "https://www.consumer.vic.gov.au/clubs-and-fundraising/incorporated-associations/running-an-incorporated-association/membership", class: "text-ruby-red hover:text-red-700 transition-colors font-medium" %>.
+        </p>
+      </div>
+    </section>
 
-<!--
-<section>
-  <header>
-    <h3>Mailing List</h3>
-  </header>
-  <p>If you want to be notified when a major event (like a Rails Camp or RubyConf) is coming up then you’ll want this switched on. We will also occasionally send updates regarding the goings on of Ruby Australia as a whole. We are committed to being light on these and you can opt-out of them at any time.</p>
-</section>
--->
-
-<section>
-  <header>
-    <h3>Data Security</h3>
-  </header>
-
-  <p>By law, members are entitled to inspect the member registry upon request. The purpose of this is to empower the membership to coordinate with each other irrespective of the committee. We expect this to be a very rare occurrence, with plenty of avenues for communication between members outside of this allowance. Nonetheless, there are circumstances where we are obligated to share your name and email with other members, and we suggest you choose your signup email with this in mind.</p>
-
-  <p>You can see the legal requirements outlined on the <%= link_to "Consumer Affairs Victoria website", "https://www.consumer.vic.gov.au/clubs-and-fundraising/incorporated-associations/running-an-incorporated-association/membership" %>.</p>
-</section>
-
-<p>
-  <%= link_to "Join Ruby Australia", new_user_registration_path %>
-</p>
+    <div class="mt-8 sm:mt-10 md:mt-12 flex justify-center sm:justify-start">
+      <%= link_to "Join Ruby Australia", new_user_registration_path,
+                  class: "inline-block bg-ruby-red hover:bg-red-700 text-white font-medium py-3 px-6 sm:py-3 sm:px-8 rounded-lg transition-colors shadow-md text-base sm:text-lg" %>
+    </div>
+  </article>
+</div>
