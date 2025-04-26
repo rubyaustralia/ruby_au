@@ -1,4 +1,4 @@
-<div id="flash" class="fixed top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-8 w-[calc(100%-2rem)] sm:w-96 md:w-[28rem] z-50 flex flex-col gap-3 pointer-events-none">
+<div id="flash" class="fixed bottom-4 sm:bottom-6 md:bottom-8 right-4 sm:right-6 md:right-8 w-[calc(100%-2rem)] sm:w-96 md:w-[28rem] z-50 flex flex-col gap-3 pointer-events-none">
   <% flash.each do |key, value| %>
     <div class="flash <%= key %> flex items-start p-4 sm:p-5 rounded-lg shadow-lg backdrop-blur-sm animate-slideInRight transition-opacity duration-300 opacity-95 hover:opacity-100 pointer-events-auto">
       <% if key == "notice" %>
@@ -79,7 +79,7 @@
   }
 
   .flash {
-    animation: slideInRight 0.3s ease-out forwards, fadeOut 0.5s ease-in forwards 5s;
+    animation: slideInRight 0.3s ease-out forwards, fadeOut 0.5s ease-in forwards 3s;
   }
 
   @keyframes fadeOut {
@@ -102,7 +102,7 @@
         messages.forEach(function(message) {
           setTimeout(function() {
             message.remove();
-          }, 5500);
+          }, 3500); // 3 seconds + 0.5s for fade out animation
         });
       }
     }, 100);
