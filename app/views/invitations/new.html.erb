@@ -1,7 +1,3 @@
-<%= content_for :heading do %>
-  Confirm Membership
-<% end %>
-
 <%= form_for(user, url: invitation_path(imported_member.token), html: {class: "standard"}) do |f| %>
   <%= render "devise/shared/error_messages", resource: user %>
 
