@@ -1,32 +1,111 @@
-<%= content_for :heading do %>
-  Access Requests
-<% end %>
+<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 sm:mb-8">
+    <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-0">Member Registry Access</h2>
 
-<h2>Member Registry Access</h2>
-
-<article>
-  <p class="button"><%= link_to "Add", new_admin_access_request_path %></p>
-
-  <table class="member-list">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Requested</th>
-        <th>Viewed</th>
-        <th>&nbsp;</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% access_requests.each do |request| %>
-        <tr>
-          <td><%= request.name %></td>
-          <td><%= request.requested_on %></td>
-          <td><%= request.viewed_on || "Not yet" %></td>
-          <td><%= link_to "Edit", edit_admin_access_request_path(request) %></td>
-        </tr>
+    <div>
+      <%= link_to new_admin_access_request_path, class: "inline-flex items-center justify-center rounded-md bg-ruby-red px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-ruby-red focus:ring-offset-2 transition-colors" do %>
+        <i data-lucide="plus" class="w-4 h-4 mr-1.5"></i>
+        <span>Add New Request</span>
       <% end %>
-    </tbody>
-  </table>
+    </div>
+  </div>
 
-  <%= paginate access_requests %>
-</article>
+  <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead>
+        <tr class="bg-gray-50">
+          <th scope="col" class="px-4 sm:px-6 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Name</th>
+          <th scope="col" class="px-4 sm:px-6 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Requested</th>
+          <th scope="col" class="px-4 sm:px-6 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Viewed</th>
+          <th scope="col" class="px-4 sm:px-6 py-3 text-right text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+        </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+        <% if access_requests.any? %>
+          <% access_requests.each do |request| %>
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="px-4 sm:px-6 py-4 whitespace-nowrap">
+                <div class="text-sm sm:text-base font-medium text-gray-900"><%= request.name %></div>
+              </td>
+              <td class="px-4 sm:px-6 py-4 whitespace-nowrap">
+                <div class="text-sm sm:text-base text-gray-700">
+                  <time datetime="<%= request.requested_on.to_s(:iso8601) if request.requested_on %>">
+                    <%= request.requested_on&.strftime("%b %d, %Y") %>
+                  </time>
+                </div>
+                <div class="text-xs text-gray-500">
+                  <%= request.requested_on&.strftime("%l:%M %p")&.strip %>
+                </div>
+              </td>
+              <td class="px-4 sm:px-6 py-4 whitespace-nowrap">
+                <% if request.viewed_on %>
+                  <div class="text-sm sm:text-base text-gray-700">
+                    <time datetime="<%= request.viewed_on.to_s(:iso8601) %>">
+                      <%= request.viewed_on.strftime("%b %d, %Y") %>
+                    </time>
+                  </div>
+                  <div class="text-xs text-gray-500">
+                    <%= request.viewed_on.strftime("%l:%M %p").strip %>
+                  </div>
+                <% else %>
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                      Not viewed
+                    </span>
+                <% end %>
+              </td>
+              <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <div class="flex items-center justify-end space-x-2">
+                  <%= link_to edit_admin_access_request_path(request), class: "rounded bg-white p-1.5 text-gray-700 hover:bg-gray-100 hover:text-ruby-red focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ruby-red transition-colors" do %>
+                    <i data-lucide="edit-2" class="h-4 w-4"></i>
+                    <span class="sr-only">Edit</span>
+                  <% end %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan="4" class="px-4 sm:px-6 py-8 text-center text-sm text-gray-500">
+              <div class="flex flex-col items-center justify-center">
+                <i data-lucide="file-text" class="h-10 w-10 text-gray-400 mb-2"></i>
+                <p>No access requests found</p>
+                <p class="mt-1 text-xs text-gray-400">Add a new request to get started</p>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <% if access_requests.respond_to?(:total_pages) && access_requests.total_pages > 1 %>
+      <div class="border-t border-gray-200 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between flex-col sm:flex-row bg-gray-50">
+        <div class="text-sm text-gray-700 mb-4 sm:mb-0">
+          Showing page <%= access_requests.current_page %> of <%= access_requests.total_pages %>
+        </div>
+        <div>
+          <%= paginate access_requests, window: 2, class: "pagination flex gap-2" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Informational section -->
+  <div class="mt-8 bg-blue-50 rounded-lg p-4 sm:p-5 border border-blue-200">
+    <div class="flex">
+      <div class="flex-shrink-0">
+        <i data-lucide="info" class="h-5 w-5 text-blue-400"></i>
+      </div>
+      <div class="ml-3">
+        <h3 class="text-sm font-medium text-blue-800">About Registry Access</h3>
+        <div class="mt-2 text-sm text-blue-700">
+          <p>
+            Access requests allow committee members to grant temporary access to the membership registry for legitimate purposes.
+            Each request is logged and time-stamped when viewed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

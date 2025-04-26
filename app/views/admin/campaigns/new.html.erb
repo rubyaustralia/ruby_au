@@ -1,9 +1,116 @@
-<%= content_for :heading do %>
-  Email Campaigns
-<% end %>
+<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+  <div class="mb-6 sm:mb-8 lg:mb-10">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+      <div class="flex items-center mb-4 sm:mb-0">
+        <i data-lucide="mail-plus" class="h-6 w-6 sm:h-7 sm:w-7 text-ruby-red mr-2 sm:mr-3"></i>
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">New Campaign</h2>
+      </div>
 
-<h2>New Campaign</h2>
+      <div>
+        <%= link_to admin_campaigns_path, class: "inline-flex items-center text-sm font-medium text-gray-500 hover:text-ruby-red transition-colors" do %>
+          <i data-lucide="arrow-left" class="h-4 w-4 mr-1"></i>
+          <span>Back to campaigns</span>
+        <% end %>
+      </div>
+    </div>
 
-<article>
-  <%= render partial: "form" %>
-</article>
+    <p class="mt-2 text-sm sm:text-base text-gray-600 max-w-3xl">
+      Create a new email campaign to send to Ruby Australia members. Campaigns can be linked to events
+      and support basic formatting with markdown and variables.
+    </p>
+  </div>
+
+  <div class="bg-white shadow-sm rounded-lg border border-gray-200 overflow-hidden">
+    <div class="px-4 py-5 sm:p-6">
+      <%= render partial: "form" %>
+    </div>
+  </div>
+
+  <!-- Quick Tips -->
+  <div class="mt-8 sm:mt-10 lg:mt-12">
+    <div class="bg-blue-50 rounded-lg shadow-sm border border-blue-100 overflow-hidden">
+      <div class="px-4 py-5 sm:p-6">
+        <h3 class="text-base sm:text-lg font-medium text-blue-800 mb-3 sm:mb-4 flex items-center">
+          <i data-lucide="lightbulb" class="h-5 w-5 mr-2 text-blue-600"></i>
+          Campaign Tips
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div>
+            <h4 class="font-medium text-blue-700 text-sm sm:text-base mb-2">Writing Effective Subject Lines</h4>
+            <ul class="text-sm text-gray-700 space-y-1 pl-5 list-disc">
+              <li>Keep subject lines under 50 characters</li>
+              <li>Use action verbs to create urgency</li>
+              <li>Personalize when possible</li>
+              <li>Avoid spam trigger words and ALL CAPS</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-medium text-blue-700 text-sm sm:text-base mb-2">Email Content Best Practices</h4>
+            <ul class="text-sm text-gray-700 space-y-1 pl-5 list-disc">
+              <li>Use short paragraphs (3-4 lines max)</li>
+              <li>Include a clear call-to-action</li>
+              <li>Test all links before sending</li>
+              <li>Make sure your content is mobile-friendly</li>
+            </ul>
+          </div>
+
+          <div class="md:col-span-2">
+            <h4 class="font-medium text-blue-700 text-sm sm:text-base mb-2">Markdown Formatting Examples</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm font-mono bg-white p-3 rounded border border-blue-100">
+              <div>
+                <p class="text-gray-600">## Heading</p>
+                <p class="text-gray-600">*italic text*</p>
+                <p class="text-gray-600">**bold text**</p>
+                <p class="text-gray-600">[link text](https://example.com)</p>
+              </div>
+              <div>
+                <p class="text-gray-600">* Bullet point</p>
+                <p class="text-gray-600">1. Numbered list</p>
+                <p class="text-gray-600">---</p>
+                <p class="text-gray-600">![Alt text](image-url.jpg)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Campaign Schedule Info -->
+  <div class="mt-6 sm:mt-8">
+    <div class="rounded-lg bg-gray-50 overflow-hidden shadow-sm border border-gray-200">
+      <div class="px-4 py-5 sm:p-6">
+        <h3 class="text-base sm:text-lg font-medium text-gray-900 mb-3 flex items-center">
+          <i data-lucide="clock" class="h-5 w-5 mr-2 text-gray-600"></i>
+          Scheduling Information
+        </h3>
+
+        <div class="space-y-3 text-sm text-gray-600">
+          <p>
+            New campaigns are saved as drafts until you choose to send them. You can preview and edit drafts
+            before sending.
+          </p>
+          <p>
+            Consider timing your campaigns for optimal open rates:
+          </p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mt-2">
+            <li class="flex items-center">
+              <i data-lucide="check-circle" class="h-4 w-4 text-green-500 mr-1"></i>
+              <span>Tuesday - Thursday</span>
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check-circle" class="h-4 w-4 text-green-500 mr-1"></i>
+              <span>10am - 2pm local time</span>
+            </li>
+            <li class="flex items-center">
+              <i data-lucide="check-circle" class="h-4 w-4 text-green-500 mr-1"></i>
+              <span>2 weeks before events</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

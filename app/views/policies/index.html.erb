@@ -1,13 +1,23 @@
-<%= content_for :heading do %>
-  Policies
-<% end %>
+<div class="mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 max-w-full sm:max-w-xl lg:max-w-4xl">
+  <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Published Policies</h2>
 
-<h2>Published Policies</h2>
+  <ul class="bg-white rounded-lg shadow-sm divide-y divide-gray-200 mb-6 sm:mb-8">
+    <% policies.each do |policy| %>
+      <li class="group">
+        <%= link_to policy_path(policy.context['key']), class: "block px-4 py-3 sm:px-6 sm:py-4 hover:bg-gray-50 transition-colors duration-150" do %>
+          <div class="flex items-center justify-between">
+            <span class="text-sm sm:text-base font-medium text-gray-900 group-hover:text-blue-600"><%= policy.context['name'] %></span>
+            <svg class="h-5 w-5 text-gray-400 group-hover:text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 
-<ul>
-  <% policies.each do |policy| %>
-    <li><%= link_to policy.context['name'], policy_path(policy.context['key']) %></li>
-  <% end %>
-</ul>
-
-<p>All published policies are listed above. Draft policies can be found (or proposed) in the GitHub repository.</p>
+  <p class="text-sm sm:text-base text-gray-600 bg-blue-50 border border-blue-200 rounded-md p-3 sm:p-4 lg:p-5">
+    All published policies are listed above. Draft policies can be found (or proposed) in the
+    <a href="https://github.com/rubyaustralia/ruby-au/tree/main/pages/policies" class="text-blue-600 hover:text-blue-800 underline">GitHub repository</a>.
+  </p>
+</div>

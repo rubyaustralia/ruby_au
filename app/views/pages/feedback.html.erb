@@ -1,8 +1,73 @@
-<%= content_for :heading do %>
-  Feedback
-<% end %>
+<div class="max-w-2xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 mb-16 sm:mb-24 md:mb-32">
+  <div class="text-center sm:text-left mb-8 sm:mb-10 md:mb-12">
+    <h3 class="text-lg sm:text-xl md:text-2xl font-bold uppercase text-gray-900 mb-3 sm:mb-4">
+      Send us feedback
+    </h3>
+    <p class="text-sm sm:text-base text-gray-600 max-w-lg">
+      We value your thoughts on how we can improve Ruby Australia. Your feedback helps us better serve the community.
+    </p>
+  </div>
 
-<div class="md:block mb-32">
-  <h3 class="uppercase mb-12">Send us feedback</h3>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfqfDWXk6azrC7v_qLQk0jp6knUios3g8AW0QRcG5tKOjlww/viewform?embedded=true" class="w-[280px] md:w-[640px]" height="629" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  <div class="bg-white shadow-md rounded-lg overflow-hidden border border-gray-200">
+    <div class="p-4 sm:p-6 md:p-8">
+      <div class="flex flex-col items-center sm:items-stretch">
+        <div class="w-full flex justify-center">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScfqfDWXk6azrC7v_qLQk0jp6knUios3g8AW0QRcG5tKOjlww/viewform?embedded=true"
+            class="w-full min-w-[280px] max-w-full sm:max-w-none h-[500px] sm:h-[550px] md:h-[629px]"
+            frameborder="0"
+            style="border:none;"
+            title="Ruby Australia Feedback Form">
+            Loading…
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center text-center sm:text-left">
+    <div class="flex items-center justify-center bg-ruby-red rounded-full p-3 mb-4 sm:mb-0 sm:mr-5">
+      <i data-lucide="mail" class="h-6 w-6 text-white"></i>
+    </div>
+    <div>
+      <h4 class="text-base sm:text-lg font-medium text-gray-900 mb-1">
+        Prefer to email us directly?
+      </h4>
+      <p class="text-sm text-gray-600">
+        Contact us at <a href="mailto:feedback@ruby.org.au" class="text-ruby-red hover:text-red-700 underline">feedback@ruby.org.au</a> with your suggestions or questions.
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+    <div class="bg-gray-50 rounded-lg p-4 sm:p-5 text-center sm:text-left">
+      <div class="flex flex-col sm:flex-row items-center mb-3">
+        <i data-lucide="users" class="h-5 w-5 text-ruby-red mb-2 sm:mb-0 sm:mr-2"></i>
+        <h5 class="font-medium text-gray-900">Community Feedback</h5>
+      </div>
+      <p class="text-sm text-gray-600">
+        Share thoughts about our meetups, conferences, and community initiatives.
+      </p>
+    </div>
+
+    <div class="bg-gray-50 rounded-lg p-4 sm:p-5 text-center sm:text-left">
+      <div class="flex flex-col sm:flex-row items-center mb-3">
+        <i data-lucide="code" class="h-5 w-5 text-ruby-red mb-2 sm:mb-0 sm:mr-2"></i>
+        <h5 class="font-medium text-gray-900">Website Suggestions</h5>
+      </div>
+      <p class="text-sm text-gray-600">
+        Let us know how we can improve our website and online resources.
+      </p>
+    </div>
+
+    <div class="bg-gray-50 rounded-lg p-4 sm:p-5 text-center sm:text-left">
+      <div class="flex flex-col sm:flex-row items-center mb-3">
+        <i data-lucide="lightbulb" class="h-5 w-5 text-ruby-red mb-2 sm:mb-0 sm:mr-2"></i>
+        <h5 class="font-medium text-gray-900">New Ideas</h5>
+      </div>
+      <p class="text-sm text-gray-600">
+        Propose new activities, content, or initiatives for the Ruby community.
+      </p>
+    </div>
+  </div>
 </div>

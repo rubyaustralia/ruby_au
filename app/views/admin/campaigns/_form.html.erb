@@ -1,53 +1,163 @@
-<%= form_for [:admin, campaign], html: {class: "standard"} do |form| %>
-  <% if campaign.errors.any? %>
-    <div id="error_explanation" class="ui visible error message">
-      <h2><%= pluralize(campaign.errors.count, "error") %> prohibited this from being saved:</h2>
+<div class="max-w-3xl mx-auto px-4 sm:px-6 py-6">
+  <%= form_for [:admin, campaign], html: { class: "space-y-6 sm:space-y-8" } do |form| %>
+    <% if campaign.errors.any? %>
+      <div class="rounded-md bg-red-50 p-4 mb-6">
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <i data-lucide="alert-circle" class="h-5 w-5 text-red-400" aria-hidden="true"></i>
+          </div>
+          <div class="ml-3">
+            <h3 class="text-sm font-medium text-red-800">
+              <%= pluralize(campaign.errors.count, "error") %> prohibited this campaign from being saved:
+            </h3>
+            <div class="mt-2 text-sm text-red-700">
+              <ul class="list-disc pl-5 space-y-1">
+                <% campaign.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
 
-      <ul>
-        <% campaign.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <div class="bg-white shadow-sm rounded-lg border border-gray-200 overflow-hidden">
+      <div class="px-4 py-5 sm:p-6">
+        <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+          <!-- Campaign Event -->
+          <div class="sm:col-span-6">
+            <label for="campaign_rsvp_event_id" class="block text-sm font-medium text-gray-700 mb-1">
+              Associated Event
+            </label>
+            <div class="mt-1">
+              <%= form.select :rsvp_event_id,
+                              events.collect { |event| [event.title, event.id] },
+                              { include_blank: "Select an event (optional)" },
+                              { class: "w-full rounded-md border-gray-300 shadow-sm focus:border-ruby-red focus:ring focus:ring-ruby-red focus:ring-opacity-50 text-sm sm:text-base" } %>
+            </div>
+            <p class="mt-2 text-xs sm:text-sm text-gray-500">Connect this campaign to a specific event (optional).</p>
+          </div>
+
+          <!-- Campaign Subject -->
+          <div class="sm:col-span-6">
+            <label for="campaign_subject" class="block text-sm font-medium text-gray-700 mb-1">
+              Subject <span class="text-red-500">*</span>
+            </label>
+            <div class="mt-1">
+              <%= form.text_field :subject,
+                                  class: "w-full rounded-md border-gray-300 shadow-sm focus:border-ruby-red focus:ring focus:ring-ruby-red focus:ring-opacity-50 text-sm sm:text-base",
+                                  placeholder: "Enter email subject line" %>
+            </div>
+            <p class="mt-2 text-xs sm:text-sm text-gray-500">A clear, concise subject line increases open rates.</p>
+          </div>
+
+          <!-- Campaign Preheader -->
+          <div class="sm:col-span-6">
+            <label for="campaign_preheader" class="block text-sm font-medium text-gray-700 mb-1">
+              Preheader <span class="text-red-500">*</span>
+            </label>
+            <div class="mt-1">
+              <%= form.text_field :preheader,
+                                  class: "w-full rounded-md border-gray-300 shadow-sm focus:border-ruby-red focus:ring focus:ring-ruby-red focus:ring-opacity-50 text-sm sm:text-base",
+                                  placeholder: "Brief summary shown in email previews" %>
+            </div>
+            <p class="mt-2 text-xs sm:text-sm text-gray-500">The preheader appears in email clients after the subject line.</p>
+          </div>
+
+          <!-- Campaign Content -->
+          <div class="sm:col-span-6">
+            <label for="campaign_content" class="block text-sm font-medium text-gray-700 mb-1">
+              Content <span class="text-red-500">*</span>
+            </label>
+            <div class="mt-1">
+              <%= form.text_area :content,
+                                 rows: 15,
+                                 class: "w-full rounded-md border-gray-300 shadow-sm focus:border-ruby-red focus:ring focus:ring-ruby-red focus:ring-opacity-50 font-mono text-sm sm:text-base",
+                                 placeholder: "Enter the email content here..." %>
+            </div>
+            <p class="mt-2 text-xs sm:text-sm text-gray-500">
+              HTML is supported. You can use <code class="text-xs px-1 py-0.5 bg-gray-100 rounded">{{variable}}</code> for dynamic content.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-4 py-4 sm:px-6 bg-gray-50 border-t border-gray-200 flex flex-col sm:flex-row-reverse sm:justify-between sm:items-center space-y-3 sm:space-y-0">
+        <div class="flex space-x-3">
+          <%= form.submit "Save Campaign",
+                          class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-ruby-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" %>
+
+          <% if campaign.persisted? && !campaign.delivered? %>
+            <%= link_to "Send Now", "#",
+                        class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors" %>
+          <% end %>
+        </div>
+
+        <div>
+          <%= link_to "Cancel", admin_campaigns_path,
+                      class: "inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preview Section -->
+    <% if campaign.persisted? %>
+      <div class="bg-white shadow-sm rounded-lg border border-gray-200 overflow-hidden">
+        <div class="px-4 py-5 sm:p-6 border-b border-gray-200">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Email Preview</h3>
+            <div>
+              <%= link_to admin_campaign_path(campaign), target: "_blank", class: "inline-flex items-center text-sm font-medium text-ruby-red hover:text-red-700" do %>
+                <i data-lucide="external-link" class="h-4 w-4 mr-1"></i>
+                <span>Open in new tab</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="px-4 py-5 sm:p-6">
+          <div class="bg-gray-50 border border-gray-200 rounded-md p-4 overflow-auto h-64">
+            <!-- Preview content would go here -->
+            <div class="text-center text-gray-500 text-sm py-10">
+              <i data-lucide="mail" class="h-8 w-8 mx-auto mb-2 text-gray-400"></i>
+              <p>Save changes to update the preview</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <!-- Help Section -->
+    <div class="bg-blue-50 shadow-sm rounded-lg border border-blue-200 overflow-hidden">
+      <div class="px-4 py-5 sm:p-6">
+        <h3 class="text-sm font-medium text-blue-800 mb-2">Available Variables</h3>
+        <div class="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="bg-white p-3 rounded border border-blue-100 text-xs">
+            <code class="font-mono text-blue-700">{{member.name}}</code>
+            <p class="mt-1 text-gray-600">Member's full name</p>
+          </div>
+          <div class="bg-white p-3 rounded border border-blue-100 text-xs">
+            <code class="font-mono text-blue-700">{{member.email}}</code>
+            <p class="mt-1 text-gray-600">Member's email address</p>
+          </div>
+          <div class="bg-white p-3 rounded border border-blue-100 text-xs">
+            <code class="font-mono text-blue-700">{{event.title}}</code>
+            <p class="mt-1 text-gray-600">Event title (if selected)</p>
+          </div>
+          <div class="bg-white p-3 rounded border border-blue-100 text-xs">
+            <code class="font-mono text-blue-700">{{event.date}}</code>
+            <p class="mt-1 text-gray-600">Event date (if selected)</p>
+          </div>
+          <div class="bg-white p-3 rounded border border-blue-100 text-xs">
+            <code class="font-mono text-blue-700">{{event.location}}</code>
+            <p class="mt-1 text-gray-600">Event location (if selected)</p>
+          </div>
+          <div class="bg-white p-3 rounded border border-blue-100 text-xs">
+            <code class="font-mono text-blue-700">{{unsubscribe_link}}</code>
+            <p class="mt-1 text-gray-600">Required unsubscribe link</p>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <div class="label">
-      <%= form.label :rsvp_event_id %>
-    </div>
-    <div class="input">
-      <%= form.select :rsvp_event_id, events.collect { |event| [event.title, event.id] }, include_blank: true %>
-    </div>
-  </div>
-
-  <div class="field">
-    <div class="label">
-      <%= form.label :subject, class: "required" %>
-    </div>
-    <div class="input">
-      <%= form.text_field :subject %>
-    </div>
-  </div>
-
-  <div class="field">
-    <div class="label">
-      <%= form.label :preheader, class: "required" %>
-    </div>
-    <div class="input">
-      <%= form.text_field :preheader %>
-    </div>
-  </div>
-
-  <div class="field">
-    <div class="label">
-      <%= form.label :content, class: "required" %>
-    </div>
-    <div class="input">
-      <%= form.text_area :content %>
-    </div>
-  </div>
-
-  <div class="buttons">
-    <%= form.submit "Save" %>
-  </div>
-<% end %>
+</div>

@@ -1,18 +1,119 @@
-<section>
-  <h1>Treasury</h1>
+<section class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+  <div class="bg-white rounded-lg shadow-md overflow-hidden">
+    <div class="p-6 sm:p-8 md:p-10">
+      <header class="mb-8 sm:mb-10 md:mb-12 border-b border-gray-200 pb-6 sm:pb-8">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Treasury</h1>
+        <p class="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl">
+          To provide a consistent way for people organising Ruby events to get an official invoice created or make a claim, we ask you fill in one of these forms.
+        </p>
+      </header>
 
-  <p>
-    To provide a consistent way for people organising Ruby events to get an official invoice created or make a claim, we ask you fill in one of these forms.
-  </p>
-  <h3>Invoices</h3>
-  <p>
-    To have us raise an invoice, please fill in <%= link_to "this form", "https://docs.google.com/forms/d/1OXgyLIeNBDw7tnwTpnnpwu3tDakjiNdcEMzALGDlnPM/viewform" %>
-  </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
+        <!-- Invoice Request Card -->
+        <div class="bg-gray-50 rounded-lg overflow-hidden border border-gray-200 shadow-sm flex flex-col">
+          <div class="p-5 sm:p-6 flex-grow">
+            <div class="flex items-start mb-4">
+              <div class="flex-shrink-0 bg-ruby-red rounded-md p-2.5">
+                <i data-lucide="file-text" class="h-5 w-5 text-white"></i>
+              </div>
+              <h3 class="ml-4 text-lg sm:text-xl font-semibold text-gray-900">Request an Invoice</h3>
+            </div>
 
-  <h3>Invoices</h3>
+            <p class="text-sm sm:text-base text-gray-700 mb-6">
+              Need Ruby Australia to create an invoice for your event or sponsorship? Fill in our invoice request form and our treasurer will process it promptly.
+            </p>
 
-  <p>
-    To claim a reimbursement, please fill in
-    <%= link_to "this form", "https://docs.google.com/forms/d/1-U_Huums-DO-BbXO92Nmtt6tcQlT7SR5bGR5UInCl08/viewform" %>
-  </p>
+            <div class="mt-auto">
+              <%= link_to "https://docs.google.com/forms/d/1OXgyLIeNBDw7tnwTpnnpwu3tDakjiNdcEMzALGDlnPM/viewform",
+                          target: "_blank",
+                          class: "inline-flex items-center px-4 py-2 border border-transparent text-sm sm:text-base font-medium rounded-md shadow-sm text-white bg-ruby-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" do %>
+                <i data-lucide="external-link" class="h-4 w-4 mr-2"></i>
+                Open Invoice Request Form
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reimbursement Card -->
+        <div class="bg-gray-50 rounded-lg overflow-hidden border border-gray-200 shadow-sm flex flex-col">
+          <div class="p-5 sm:p-6 flex-grow">
+            <div class="flex items-start mb-4">
+              <div class="flex-shrink-0 bg-ruby-red rounded-md p-2.5">
+                <i data-lucide="receipt" class="h-5 w-5 text-white"></i>
+              </div>
+              <h3 class="ml-4 text-lg sm:text-xl font-semibold text-gray-900">Request a Reimbursement</h3>
+            </div>
+
+            <p class="text-sm sm:text-base text-gray-700 mb-6">
+              If you've incurred expenses while organizing a Ruby Australia event, you can claim a reimbursement by completing our form.
+            </p>
+
+            <div class="mt-auto">
+              <%= link_to "https://docs.google.com/forms/d/1-U_Huums-DO-BbXO92Nmtt6tcQlT7SR5bGR5UInCl08/viewform",
+                          target: "_blank",
+                          class: "inline-flex items-center px-4 py-2 border border-transparent text-sm sm:text-base font-medium rounded-md shadow-sm text-white bg-ruby-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" do %>
+                <i data-lucide="external-link" class="h-4 w-4 mr-2"></i>
+                Open Reimbursement Form
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Treasury Information -->
+      <div class="mt-10 sm:mt-12 md:mt-16 bg-blue-50 rounded-lg p-5 sm:p-6 md:p-8 border border-blue-100">
+        <div class="flex flex-col sm:flex-row sm:items-start">
+          <div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-5 bg-blue-100 rounded-full p-3">
+            <i data-lucide="info" class="h-6 w-6 text-blue-600"></i>
+          </div>
+
+          <div>
+            <h3 class="text-lg sm:text-xl font-medium text-blue-900 mb-3 sm:mb-4">Treasury Process Information</h3>
+
+            <div class="space-y-3 sm:space-y-4 text-sm sm:text-base text-blue-800">
+              <p>
+                Our treasurer typically processes requests within 5-7 business days. For urgent requests, please note this in your form submission.
+              </p>
+
+              <p>
+                For reimbursements, please ensure you have retained all original receipts as they may be requested for audit purposes.
+              </p>
+
+              <p>
+                Questions about Ruby Australia's treasury process? Contact our treasurer at <a href="mailto:treasurer@ruby.org.au" class="underline hover:text-blue-600 transition-colors">treasurer@ruby.org.au</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Treasury FAQ -->
+      <div class="mt-10 sm:mt-12 md:mt-16">
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">Frequently Asked Questions</h3>
+
+        <div class="space-y-4 sm:space-y-6">
+          <div class="border-b border-gray-200 pb-4">
+            <h4 class="text-base sm:text-lg font-medium text-gray-900 mb-2">What expenses can be reimbursed?</h4>
+            <p class="text-sm sm:text-base text-gray-700">
+              Ruby Australia can reimburse approved expenses related to community events, including venue costs, catering, speaker travel arrangements, and promotional materials.
+            </p>
+          </div>
+
+          <div class="border-b border-gray-200 pb-4">
+            <h4 class="text-base sm:text-lg font-medium text-gray-900 mb-2">How long does the reimbursement process take?</h4>
+            <p class="text-sm sm:text-base text-gray-700">
+              Once approved, reimbursements are typically processed within 14 days. Bank transfers are our standard payment method.
+            </p>
+          </div>
+
+          <div class="border-b border-gray-200 pb-4">
+            <h4 class="text-base sm:text-lg font-medium text-gray-900 mb-2">Who can request an invoice from Ruby Australia?</h4>
+            <p class="text-sm sm:text-base text-gray-700">
+              Event organisers can request invoices for sponsors, venues, or other service providers who are supporting Ruby Australia community events.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
