@@ -40,14 +40,25 @@ export default defineConfig({
     }
   },
   build: {
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
+    cssMinify: true,
     rollupOptions: {
       input: {
         application: './app/frontend/entrypoints/application.js',
         styles: './app/frontend/entrypoints/application.css'
       },
+      output: {
+        manualChunks: {
+          vendor: ['lucide']
+        }
+      },
       external: ['jquery']
     },
     sourcemap: false,
   }
-
 })

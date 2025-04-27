@@ -117,4 +117,11 @@ Rails.application.configure do
 
   # Store files locally.
   config.active_storage.service = :local
+
+  config.middleware.use Rack::Deflater
+
+  config.public_file_server.headers = {
+    'Cache-Control' => 'public, max-age=31536000',
+    'Expires' => 1.year.from_now.to_formatted_s(:rfc822)
+  }
 end
