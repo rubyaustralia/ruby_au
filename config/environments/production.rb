@@ -122,4 +122,11 @@ Rails.application.configure do
 
   # Make sure Active Storage URLs match your ActionMailer settings
   config.active_storage.default_url_options = { host: 'ruby.org.au', protocol: 'https' }
+
+  config.middleware.use Rack::Deflater
+
+  config.public_file_server.headers = {
+    'Cache-Control' => 'public, max-age=31536000',
+    'Expires' => 1.year.from_now.to_formatted_s(:rfc822)
+  }
 end
