@@ -129,4 +129,13 @@ Rails.application.configure do
     'Expires' => 1.year.from_now.to_formatted_s(:rfc822)
   }
   config.active_storage.resolve_model_to_route = :rails_storage_redirect
+
+  # Make sure Active Storage URLs match your ActionMailer settings
+  config.active_storage.default_url_options = { host: 'ruby.org.au', protocol: 'https' }
+  config.middleware.use Rack::Deflater
+
+  config.public_file_server.headers = {
+    'Cache-Control' => 'public, max-age=31536000',
+    'Expires' => 1.year.from_now.to_formatted_s(:rfc822)
+  }
 end
