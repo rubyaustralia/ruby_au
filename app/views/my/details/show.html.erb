@@ -72,10 +72,25 @@
         <p class="text-base sm:text-lg"><%= subscribed_mailing_lists(@user) %></p>
       </div>
 
-      <div>
+      <div class="border-b border-gray-200 pb-4">
         <h3 class="text-sm text-gray-500 uppercase tracking-wider mb-2">Postal Address</h3>
         <div class="text-base sm:text-lg">
           <%= escape_once(@user.address.to_s).gsub("\n", "<br />").html_safe %>
+        </div>
+      </div>
+
+      <div class="border-b border-gray-200 pb-4 space-y-2">
+        <h3 class="text-sm text-gray-500 uppercase tracking-wider mb-2">Account Information</h3>
+        <div class="flex flex-col space-y-1">
+          <p class="text-sm sm:text-xs">
+            <span class="font-bold">Registered:</span> <%= @user.created_at.strftime("%d-%m-%Y %H:%M") %>
+          </p>
+          <p class="text-sm sm:text-xs">
+            <span class="font-bold">Updated at:</span> <%= @user.updated_at ? @user.updated_at.strftime("%d-%m-%Y %H:%M") : "Never" %>
+          </p>
+          <p class="text-sm sm:text-xs">
+            <span class="font-bold">Last logged in at:</span> <%= @user.current_sign_in_at ? @user.current_sign_in_at.strftime("%d-%m-%Y %H:%M") : "Never" %>
+          </p>
         </div>
       </div>
     </div>
