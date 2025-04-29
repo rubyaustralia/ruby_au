@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, controllers: {
+    registrations: 'registrations'
+  }
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
@@ -24,6 +26,7 @@ Rails.application.routes.draw do
   resources :reactivations, only: [:new, :create]
 
   namespace :admin do
+    resource :dashboard, only: [:show]
     resources :memberships, only: [:index]
     resources :access_requests, except: [:destroy]
     resources :imported_members, only: [:index, :create]
