@@ -1,0 +1,91 @@
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-2xl font-bold mb-6">Admin Dashboard</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Membership Stats</h2>
+      <p class="mb-2">Total Members: <span class="font-bold"><%= @member_count %></span></p>
+      <p class="mb-2">Inactive Members (2+ years): <span class="font-bold"><%= @inactive_members.count %></span></p>
+      <p class="mb-2">Never Logged In: <span class="font-bold"><%= @never_logged_in_members.count %></span></p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Recently Updated Profiles</h2>
+      <ul class="divide-y">
+        <% @recently_updated_members.each do |member| %>
+          <li class="py-2">
+            <%= member.email %>
+            <span class="text-gray-500 text-sm block">
+              Updated <%= time_ago_in_words(member.updated_at) %> ago
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Recent Logins</h2>
+      <ul class="divide-y">
+        <% @recently_logged_in_members.each do |member| %>
+          <li class="py-2">
+            <%= member.email %>
+            <span class="text-gray-500 text-sm block">
+              Logged in <%= time_ago_in_words(member.last_sign_in_at) %> ago
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Recent News Items</h2>
+      <ul class="divide-y">
+        <% @recent_posts.each do |post| %>
+          <li class="py-2">
+            <%= link_to post.title, admin_post_path(post.slug), class: "text-blue-600 hover:underline" %>
+            <span class="text-gray-500 text-sm block">
+              Posted <%= time_ago_in_words(post.created_at) %> ago
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Unpublished News Posts</h2>
+      <% if @unpublished_posts.any? %>
+        <ul class="divide-y">
+          <% @unpublished_posts.each do |post| %>
+            <li class="py-2">
+              <%= link_to post.title, admin_post_path(post.slug), class: "text-blue-600 hover:underline" %>
+              <span class="text-gray-500 text-sm block">
+                Created <%= time_ago_in_words(post.created_at) %> ago
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="text-gray-500">No unpublished news posts</p>
+      <% end %>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Recent Campaign Mailers</h2>
+      <% if @recent_campaigns.any? %>
+        <ul class="divide-y">
+          <% @recent_campaigns.each do |campaign| %>
+            <li class="py-2">
+              <%= link_to campaign.subject || "Campaign ##{campaign.id}", admin_campaign_path(campaign), class: "text-blue-600 hover:underline" %>
+              <span class="text-gray-500 text-sm block">
+                Created <%= time_ago_in_words(campaign.created_at) %> ago
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="text-gray-500">No recent campaigns</p>
+      <% end %>
+    </div>
+  </div>
+</div>
