@@ -26,24 +26,42 @@
         ecosystem in Australia by providing guidance and logistical support for community initiatives and events.
       </p>
 
-      <p>
-        <%= link_to 'Join', new_user_registration_path, class: "font-medium text-ruby-red hover:text-red-400 transition-colors underline" %>
-        us in exploring the possibilities that Ruby offers and connect with a community that values innovation,
-        collaboration, and excellence in software development.
-      </p>
+      <% if user_signed_in? %>
+        <p>
+          As a member of Ruby Australia, you gain access to exclusive resources, networking opportunities, and
+          professional development programs. We encourage you to explore our website, join our community events, and
+          connect with fellow Ruby enthusiasts.
+        </p>
+        <% else %>
+        <p>
+          <%= link_to 'Join', new_user_registration_path, class: "font-medium text-ruby-red hover:text-red-400 transition-colors underline" %>
+          us in exploring the possibilities that Ruby offers and connect with a community that values innovation,
+          collaboration, and excellence in software development.
+        </p>
+      <% end %>
     </div>
 
+    <% unless user_signed_in? %>
     <div class="mt-8 sm:mt-10 md:mt-12 flex justify-center sm:justify-start">
       <%= link_to 'Become a Member', new_user_registration_path, class: "inline-block bg-ruby-red hover:bg-red-700 text-white font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-colors shadow-md" %>
     </div>
+    <% end %>
   </article>
 </section>
 
-<%= render('shared/spacer-rubyau-signup') %>
+<% if user_signed_in? %>
+  <%= render('shared/spacer-linkedin') %>
+<% else %>
+  <%= render('shared/spacer-rubyau-signup') %>
+<% end %>
 
 <%= render('shared/section-news-summary-list') %>
 
-<%= render('shared/spacer-rubyau-signup') %>
+<% if user_signed_in? %>
+  <%= render('shared/spacer-linkedin') %>
+<% else %>
+  <%= render('shared/spacer-rubyau-signup') %>
+<% end %>
 
 <%= render('shared/section-connecting-online') %>
 
@@ -55,7 +73,11 @@
 
 <%= render('shared/section-rubyconf') %>
 
-<%= render('shared/spacer-rubyau-signup') %>
+<% if user_signed_in? %>
+  <%= render('shared/spacer-linkedin') %>
+<% else %>
+  <%= render('shared/spacer-rubyau-signup') %>
+<% end %>
 
 <%= render('shared/section-ruby-retreat') %>
 
