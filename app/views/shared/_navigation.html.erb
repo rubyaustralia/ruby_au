@@ -80,6 +80,7 @@
       <div class="border-t border-white/20 mt-3 pt-3 sm:mt-4 sm:pt-4">
         <div class="text-base sm:text-lg font-medium text-white mb-2 px-4 uppercase">Committee only</div>
         <div class="space-y-1 sm:space-y-2">
+          <%= link_to "Dashboard", admin_dashboard_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
           <%= link_to "Members", admin_memberships_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
           <%= link_to "Access Requests", admin_access_requests_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
           <%= link_to "Imported Members", admin_imported_members_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
