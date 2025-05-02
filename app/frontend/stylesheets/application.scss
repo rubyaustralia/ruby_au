@@ -45,7 +45,21 @@ p {
 }
 
 .nav-link {
-  @apply block py-2 px-4 text-white hover:text-ruby-red hover:bg-metal-dark hover:border-l-2 hover:border-ruby-red transition-colors border-l-2 border-transparent hover:shadow-[inset_0_10px_10px_-10px_rgba(0,0,0,0.3)];
+  @apply block py-2 px-4 text-white hover:text-ruby-red hover:bg-metal-dark hover:border-l-2
+  hover:border-ruby-red transition-colors border-l-2 border-transparent
+  hover:shadow-[inset_0_10px_10px_-10px_rgba(0,0,0,0.3)];
+}
+
+.footer-link {
+  @apply hover:text-ruby-red transition-colors;
+}
+
+.red-link {
+  @apply bg-white/40 px-2 rounded-lg text-ruby-red hover:text-pearl transition-colors underline;
+}
+
+.white-link {
+  @apply text-ruby-red hover:text-red-400 transition-colors underline;
 }
 
 .bg-railsgirls {
