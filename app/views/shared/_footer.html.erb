@@ -22,51 +22,51 @@
       <div class="text-center sm:text-left">
         <h3 class="font-bold text-base sm:text-lg mb-3">Contact</h3>
         <ul class="space-y-2">
-          <li><%= link_to 'News', posts_path, class: "hover:text-ruby-red transition-colors" %></li>
-          <li><%= link_to "Feedback", "/feedback", class: "hover:text-ruby-red transition-colors" %></li>
-          <li><%= link_to "Contact us", "/contact", class: "hover:text-ruby-red transition-colors" %></li>
-          <li><%= link_to 'Committee Members', "/committee-members", class: "hover:text-ruby-red transition-colors" %></li>
-          <li><%= link_to 'Mailing List', "/mailing-list", class: "hover:text-ruby-red transition-colors" %></li>
+          <li><%= link_to 'News', posts_path, class: "footer-link" %></li>
+          <li><%= link_to "Feedback", "/feedback", class: "footer-link" %></li>
+          <li><%= link_to "Contact us", "/contact", class: "footer-link" %></li>
+          <li><%= link_to 'Committee Members', "/committee-members", class: "footer-link" %></li>
+          <li><%= link_to 'Mailing List', "/mailing-list", class: "footer-link" %></li>
         </ul>
       </div>
 
       <div class="text-center sm:text-left">
         <h3 class="font-bold text-base sm:text-lg mb-3">Events</h3>
         <ul class="space-y-2">
-          <li><%= link_to "Rails Camp", "https://rails.camp", class: "hover:text-ruby-red transition-colors" %></li>
-          <li><%= link_to "RubyConf AU", "https://rubyconf.org.au", class: "hover:text-ruby-red transition-colors" %></li>
-          <li><%= link_to 'Meetups', "/#in-person", class: "hover:text-ruby-red transition-colors" %></li>
-          <li><%= link_to 'Rails Girls', "/rails-girls", class: "hover:text-ruby-red transition-colors" %></li>
+          <li><%= link_to "Rails Camp", "https://rails.camp", class: "footer-link" %></li>
+          <li><%= link_to "RubyConf AU", "https://rubyconf.org.au", class: "footer-link" %></li>
+          <li><%= link_to 'Meetups', "/#in-person", class: "footer-link" %></li>
+          <li><%= link_to 'Rails Girls', "/rails-girls", class: "footer-link" %></li>
         </ul>
       </div>
 
       <div class="text-center sm:text-left">
         <h3 class="font-bold text-base sm:text-lg mb-3">Policies</h3>
         <ul class="space-y-2">
-          <li><%= link_to 'Code of Conduct', "/policies/code-of-conduct", class: "hover:text-ruby-red transition-colors" %></li>
-          <li><%= link_to 'Constitution', "/constitution", class: "hover:text-ruby-red transition-colors" %></li>
-          <li><%= link_to 'Policies', "/policies", class: "hover:text-ruby-red transition-colors" %></li>
-          <li><%= link_to 'Sponsorship', "/sponsorship", class: "hover:text-ruby-red transition-colors" %></li>
+          <li><%= link_to 'Code of Conduct', "/policies/code-of-conduct", class: "footer-link" %></li>
+          <li><%= link_to 'Constitution', "/constitution", class: "footer-link" %></li>
+          <li><%= link_to 'Policies', "/policies", class: "footer-link" %></li>
+          <li><%= link_to 'Sponsorship', "/sponsorship", class: "footer-link" %></li>
         </ul>
       </div>
 
       <div class="text-center sm:text-left">
         <h3 class="font-bold text-base sm:text-lg mb-3">Community</h3>
         <ul class="space-y-2">
-          <li><%= link_to "Chat (Slack)", my_slack_invite_path, class: "text-ruby-red hover:text-red-400 transition-colors underline" %></li>
-          <li><%= link_to "Videos", videos_path, class: "text-ruby-red hover:text-red-400 transition-colors underline" %></li>
-          <li><%= link_to "RubyAU Merch", "https://www.redbubble.com/people/ruby-au/shop", class: "text-ruby-red hover:text-red-400 transition-colors underline" %></li>
+          <li><%= link_to "Chat (Slack)", my_slack_invite_path, class: "white-link" %></li>
+          <li><%= link_to "Videos", videos_path, class: "white-link" %></li>
+          <li><%= link_to "RubyAU Merch", "https://www.redbubble.com/people/ruby-au/shop", class: "white-link" %></li>
         </ul>
       </div>
 
       <div class="flex justify-center sm:justify-start lg:justify-center gap-4 mt-6 lg:mt-0">
-        <%= link_to "https://www.linkedin.com/company/ruby-australia/", class: "text-metal hover:text-ruby-red transition-colors", aria: { label: "Visit Ruby Australia's LinkedIn page" } do %>
+        <%= link_to "https://www.linkedin.com/company/ruby-australia/", class: "text-metal footer-link", aria: { label: "Visit Ruby Australia's LinkedIn page" } do %>
           <i data-lucide="linkedin" class="h-6 w-6 sm:h-7 sm:w-7"></i>
         <% end %>
-        <%= link_to "https://www.youtube.com/channel/UCr38SHAvOKMDyX3-8lhvJHA/videos", class: "text-metal hover:text-ruby-red transition-colors", aria: { label: "Visit Ruby Australia's YouTube channel" } do %>
+        <%= link_to "https://www.youtube.com/channel/UCr38SHAvOKMDyX3-8lhvJHA/videos", class: "text-metal footer-link", aria: { label: "Visit Ruby Australia's YouTube channel" } do %>
           <i data-lucide="youtube" class="h-6 w-6 sm:h-7 sm:w-7"></i>
         <% end %>
-        <%= link_to "https://twitter.com/rubyaustralia", class: "text-metal hover:text-ruby-red transition-colors", aria: { label: "Visit Ruby Australia's Twitter page" } do %>
+        <%= link_to "https://twitter.com/rubyaustralia", class: "text-metal footer-link", aria: { label: "Visit Ruby Australia's Twitter page" } do %>
           <i data-lucide="twitter" class="h-6 w-6 sm:h-7 sm:w-7"></i>
         <% end %>
       </div>
@@ -79,8 +79,8 @@
         &copy; <%= Time.current.year %> Ruby Australia. All rights reserved.
       </p>
       <p class="text-xs sm:text-sm text-gray-500">
-        <%= link_to "Privacy Policy", "/policies", class: "text-ruby-red hover:text-red-400 transition-colors underline" %> |
-        <%= link_to "Terms of Service", "/policies", class: "text-ruby-red hover:text-red-400 transition-colors underline" %>
+        <%= link_to "Privacy Policy", "/policies", class: "white-link" %> |
+        <%= link_to "Terms of Service", "/policies", class: "white-link" %>
       </p>
     </div>
   </div>
