@@ -64,6 +64,7 @@ Rails.application.routes.draw do
 
   get "/events/rubyconf_au_2021" => "events#rubyconf_au_2021"
   get "/events/rails_camp_27" => "events#rails_camp_27"
+  get "/events", to: "events#index"
 
   root to: 'pages#show', defaults: { id: 'welcome' }
 
