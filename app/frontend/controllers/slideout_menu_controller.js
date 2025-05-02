@@ -3,22 +3,36 @@ import { createIcons, icons } from 'lucide';
 
 export default class extends Controller {
   static targets = ["menu", "overlay"]
+  static values = { open: Boolean }
+
+  ignoreNextClick = false
 
   connect() {
-    document.addEventListener("click", this.closeMenuOnClickOutside)
+    this.openValue = false
+    document.addEventListener("click", this.closeMenuOnClickOutside, { capture: true })
     document.addEventListener("keydown", this.handleKeyDown)
   }
 
   disconnect() {
-    document.removeEventListener("click", this.closeMenuOnClickOutside)
+    document.removeEventListener("click", this.closeMenuOnClickOutside, { capture: true })
     document.removeEventListener("keydown", this.handleKeyDown)
   }
 
-  toggle() {
-    if (this.isMenuOpen) {
+  toggle(event) {
+    this.ignoreNextClick = true
+
+    setTimeout(() => {
+      this.ignoreNextClick = false
+    }, 0)
+
+    if (this.openValue) {
       this.close()
     } else {
       this.open()
+    }
+
+    if (event) {
+      event.stopPropagation()
     }
   }
 
@@ -29,7 +43,7 @@ export default class extends Controller {
     }, 10)
     this.menuTarget.style.right = "0"
     document.body.classList.add("overflow-hidden")
-    this.isMenuOpen = true
+    this.openValue = true
 
     createIcons({
       icons,
@@ -50,27 +64,22 @@ export default class extends Controller {
       document.body.classList.remove("overflow-hidden")
     }, 300)
 
-    this.isMenuOpen = false
+    this.openValue = false
   }
 
   closeMenuOnClickOutside = (event) => {
-    if (this.isMenuOpen && !this.menuTarget.contains(event.target) &&
+    if (this.ignoreNextClick) return
+
+    if (this.openValue &&
+      !this.menuTarget.contains(event.target) &&
       !event.target.closest('[data-action="slideout-menu#toggle"]')) {
       this.close()
     }
   }
 
   handleKeyDown = (event) => {
-    if (this.isMenuOpen && event.key === "Escape") {
+    if (this.openValue && event.key === "Escape") {
       this.close()
     }
-  }
-
-  get isMenuOpen() {
-    return this.data.get("open") === "true"
-  }
-
-  set isMenuOpen(value) {
-    this.data.set("open", value)
   }
 }
