@@ -23,7 +23,27 @@ import { createIcons, icons } from 'lucide';
 
 document.addEventListener('DOMContentLoaded', () => {
   createIcons({
-    icons,
+    icons: icons,
+    attrs: {
+      class: "",
+      stroke: "currentColor"
+    }
+  });
+});
+
+document.addEventListener('turbo:load', () => {
+  createIcons({
+    icons: icons,
+    attrs: {
+      class: "",
+      stroke: "currentColor"
+    }
+  });
+});
+
+document.addEventListener('turbo:frame-load', () => {
+  createIcons({
+    icons: icons,
     attrs: {
       class: "",
       stroke: "currentColor"
