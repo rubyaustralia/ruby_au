@@ -63,20 +63,47 @@ p {
 }
 
 .bg-railsgirls {
-  background-image: url('@/images/railsgirls-sydney.webp');
+  background-image: url('@/images/railsgirls-sydney-sm.webp');
   background-size: cover;
   background-position: center;
 }
 
 .bg-rubyconf-sydney {
-  background-image: url('@/images/rubyconf-sydney.webp');
+  background-image: url('@/images/rubyconf-sydney-sm.webp');
   background-size: cover;
   background-position: center;
 }
 
 .bg-ruby-retreat {
-  background-image: url('@/images/ruby-retreat.webp');
+  background-image: url('@/images/ruby-retreat-sm.webp');
   background-size: cover;
   background-position: center;
 }
 
+@media (min-width: 640px) {
+  .bg-railsgirls {
+    background-image: url('@/images/railsgirls-sydney-md.webp');
+  }
+
+  .bg-rubyconf-sydney {
+    background-image: url('@/images/rubyconf-sydney-md.webp');
+  }
+
+  .bg-ruby-retreat {
+    background-image: url('@/images/ruby-retreat-md.webp');
+  }
+}
+
+@media (min-width: 768px) {
+  .bg-railsgirls {
+    background-image: url('@/images/railsgirls-sydney.webp');
+  }
+
+  .bg-rubyconf-sydney {
+    background-image: url('@/images/rubyconf-sydney.webp');
+  }
+
+  .bg-ruby-retreat {
+    background-image: url('@/images/ruby-retreat.webp');
+  }
+}
