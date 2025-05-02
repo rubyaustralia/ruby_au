@@ -50,7 +50,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         application: './app/frontend/entrypoints/application.js',
-        styles: './app/frontend/entrypoints/application.css'
       },
       output: {
         manualChunks: {
