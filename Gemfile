@@ -42,7 +42,7 @@ group :development, :test do
   gem "brakeman", require: false
   gem 'capybara'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
@@ -65,8 +65,6 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'letter_opener'
   gem 'letter_opener_web', '~> 3.0'
-  # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console"
 end
 
 group :test do
