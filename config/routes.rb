@@ -20,7 +20,10 @@ Rails.application.routes.draw do
   end
 
   resources :rsvps, only: [:show, :update, :destroy] do
-    member { get :confirm, :decline }
+    member do
+      get :confirm
+      get :decline
+    end
   end
 
   resources :reactivations, only: [:new, :create]
@@ -41,7 +44,8 @@ Rails.application.routes.draw do
 
   resources :invitations, only: [] do
     member do
-      get :unsubscribe, :new
+      get :unsubscribe
+      get :new
       post :create
     end
   end
@@ -50,7 +54,9 @@ Rails.application.routes.draw do
   get 'posts/*slug', to: 'posts#show', as: :post
 
   resources :mailing_lists, only: [] do
-    member { post :hook }
+    member do
+      post :hook
+    end
   end
 
   post '/slack/hook' => 'slack#hook'
