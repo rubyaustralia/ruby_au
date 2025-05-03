@@ -65,6 +65,8 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'letter_opener'
   gem 'letter_opener_web', '~> 3.0'
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
 end
 
 group :test do
