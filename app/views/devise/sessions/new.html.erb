@@ -74,10 +74,15 @@
       <div class="text-center">
         <% if devise_mapping.registerable? && controller_name != 'registrations' %>
           <p class="text-sm text-gray-600">
-            Don't have an account yet?
+            Don't have an account yet?<br>
             <%= link_to "Sign up", new_registration_path(resource_name), class: "font-medium text-ruby-red hover:text-red-700 transition-colors" %>
           </p>
         <% end %>
+
+        <p class="mt-2 text-sm text-gray-600">
+          Deactivated your membership?<br>
+          <%= link_to "Reactivate Membership", new_reactivation_path, class: "font-medium text-ruby-red hover:text-red-700 transition-colors" %>
+        </p>
       </div>
     </div>
   </div>
