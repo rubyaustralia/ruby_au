@@ -39,7 +39,7 @@ $ yarn install
 
 ## Running the Development Environment
 
-This command will run using Foreman and start the app using both webpack and puma.
+This command will run using Foreman and start the app using both Vite and Puma.
 
 ```bash
 $ bin/dev

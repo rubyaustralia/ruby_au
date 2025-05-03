@@ -1,5 +1,6 @@
 class Admin::PostsController < Admin::ApplicationController
   before_action :set_post, only: %i[show edit update archive destroy]
+  helper :posts
 
   def index
     @posts = Post.order(Arel.sql("COALESCE(published_at, publish_scheduled_at) DESC NULLS LAST"))

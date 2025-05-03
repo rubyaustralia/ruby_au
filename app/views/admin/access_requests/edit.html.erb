@@ -1,9 +1,44 @@
-<%= content_for :heading do %>
-  Access Requests
-<% end %>
+<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+  <div class="mb-6 sm:mb-8">
+    <nav class="flex" aria-label="Breadcrumb">
+      <ol class="inline-flex items-center space-x-1 md:space-x-2">
+        <li class="inline-flex items-center">
+          <%= link_to admin_access_requests_path, class: "inline-flex items-center text-sm text-gray-500 hover:text-ruby-red" do %>
+            <i data-lucide="home" class="w-4 h-4 mr-2"></i>
+            Access Requests
+          <% end %>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+            <span class="ml-1 md:ml-2 text-sm font-medium text-gray-700">Edit Request</span>
+          </div>
+        </li>
+      </ol>
+    </nav>
 
-<h2>Edit Request</h2>
+    <div class="mt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">Edit Access Request</h2>
 
-<article>
-  <%= render partial: "form" %>
-</article>
+      <div class="mt-4 sm:mt-0">
+        <%= link_to admin_access_requests_path, class: "inline-flex items-center text-sm text-gray-600 hover:text-ruby-red transition-colors" do %>
+          <i data-lucide="arrow-left" class="w-4 h-4 mr-1"></i>
+          <span>Back to list</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <%= render partial: "form" %>
+  </div>
+
+  <div class="mt-8 flex flex-col-reverse sm:flex-row sm:justify-between gap-4">
+    <div class="flex justify-center sm:justify-start">
+      <%= link_to admin_access_requests_path, class: "inline-flex items-center justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" do %>
+        <i data-lucide="list" class="w-4 h-4 mr-1.5"></i>
+        <span>All Access Requests</span>
+      <% end %>
+    </div>
+  </div>
+</div>

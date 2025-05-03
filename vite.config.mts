@@ -26,8 +26,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      '@images': resolve(__dirname, 'app/frontend/images'),
       '@': resolve(__dirname, 'app/frontend')
-    }
+    },
+    dedupe: ['lucide']
   },
   css: {
     devSourcemap: true,
@@ -38,7 +40,17 @@ export default defineConfig({
     }
   },
   build: {
+    minify: 'esbuild',
+    cssMinify: true,
     rollupOptions: {
+      input: {
+        application: './app/frontend/entrypoints/application.js',
+      },
+      output: {
+        manualChunks: {
+          vendor: ['lucide']
+        }
+      },
       external: ['jquery']
     },
     sourcemap: false,
