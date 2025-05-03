@@ -44,6 +44,8 @@ module RubyAu
     config.time_zone = "Australia/Melbourne"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    config.active_support.to_time_preserves_timezone = :zone
+
     # Don't generate system test files.
     config.generators.system_tests = nil
 
