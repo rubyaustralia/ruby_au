@@ -9,7 +9,7 @@ RSpec.feature "User deactivates their membership", type: :feature do
     log_in_as user
     visit my_details_path
 
-    click_link "Resign from Ruby Australia"
+    click_button "Resign from Ruby Australia"
     expect(page).to have_content(
       "Your membership to Ruby Australia has ceased."
     )
