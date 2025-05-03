@@ -30,7 +30,7 @@ RSpec.describe "Committee managing members", type: :feature do
   scenario "adds a new access request" do
     visit root_path
     click_link "Access Requests"
-    click_link "Add"
+    click_link "Add New Request"
 
     fill_in "Name", with: "Alex"
     fill_in "Reason", with: "Contacting members"
