@@ -30,23 +30,25 @@ gem 'ahoy_matey' # analytics
 # background jobs
 gem 'solid_queue'
 
+# Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
+gem "thruster", require: false
+
 group :production do
   gem 'rails_12factor'
 end
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a
-  # debugger console
-  gem 'byebug'
+  # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
+  gem "brakeman", require: false
+  gem 'capybara'
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+  gem 'factory_bot_rails'
   gem 'faker'
-  gem 'pry-rails'
-  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
-  gem 'factory_bot_rails'
-  gem 'capybara'
 end
 
 group :development do
@@ -63,7 +65,8 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'letter_opener'
   gem 'letter_opener_web', '~> 3.0'
-  gem 'brakeman', require: false
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
 end
 
 group :test do
@@ -72,6 +75,7 @@ group :test do
       branch: 'master',
       ref: 'e1f61aa9b4'
   gem 'rails-controller-testing'
+  gem "selenium-webdriver"
   gem "codeclimate-test-reporter", require: nil
   gem "simplecov", require: nil
   gem 'webmock'
