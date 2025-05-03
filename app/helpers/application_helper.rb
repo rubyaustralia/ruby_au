@@ -3,6 +3,12 @@
 require "markdown_handler"
 
 module ApplicationHelper
+  include CommitteeHelper
+  include IconHelper
+  include PostsHelper
+  include SvgHelper
+  include UserHelper
+
   TIME_ZONES = {
     "Melbourne" => "NSW, Victoria, Tasmania, ACT",
     "Brisbane" => "Queensland",
