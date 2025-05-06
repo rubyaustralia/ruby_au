@@ -1,0 +1,9 @@
+#!/bin/sh
+
+PROJECT_ROOT=$(git rev-parse --show-toplevel)
+
+echo "Installing git hooks..."
+mkdir -p "$PROJECT_ROOT/.git/hooks"
+cp "$PROJECT_ROOT/.github/hooks/pre-push" "$PROJECT_ROOT/.git/hooks/pre-push"
+chmod +x "$PROJECT_ROOT/.git/hooks/pre-push"
+echo "Git hooks installed successfully."
