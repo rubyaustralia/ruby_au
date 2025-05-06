@@ -27,6 +27,7 @@ $ cd ruby_au
 First time set up of the environment, this will bundle gems and install the JS dependencies as well as prepare the database:
 
 ```bash
+$ bin/install-hooks
 $ bin/setup
 ```
 
