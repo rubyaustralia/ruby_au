@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo "👮👮 Running tests before pushing..."
+bin/tests
+
+# Check the exit status of the tests
+if [ $? -ne 0 ]; then
+  echo "🚨🚨 Tests failed. Aborting push."
+  exit 1
+fi
+
+echo "👮 Tests passed. Proceeding with push."
+exit 0
