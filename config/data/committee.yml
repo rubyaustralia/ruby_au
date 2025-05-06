@@ -61,19 +61,6 @@
   linkedin: daniel-nguyen-ror
   twitter: _cheddachedda
 
-- name: Claire Fernandes
-  photo: claire-fernandes.jpg
-  position: General Member
-  bio: |
-    Claire is relatively new to Ruby development having recently completed a full
-    stack web development bootcamp. She's been working in Tech for the last 5 years in
-    the Support and Customer Experience space and decided to make the move to development
-    because building things is fun 😎
-
-    Outside of coding she loves getting out into nature, playing music and bouldering.
-  github: cnandes
-  linkedin: claire-fernandes-a6b6a2169
-
 - name: Helen Stonehouse
   photo: helen-stonehouse.jpg
   position: General Member
