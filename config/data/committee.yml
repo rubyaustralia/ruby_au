@@ -13,13 +13,12 @@
 
 - name: Lee Sheppard
   photo: lee-sheppard.jpg
-  position: Vice President (2023), General Member (2019-2023)
+  position: General Member (2019 - ), Vice President (2023 - 2025)
   bio: |
-    [Lee](https://en.wikipedia.org/wiki/Lee_Sheppard_(cartoonist)) is a Ruby on Rails developer from Sydney, and part
-    of the organising committee for [Rails Girls Sydney](https://railsgirls.com/sydney). He
-    spent many years previously working in animation and as a syndicated cartoonist. Lee has been a past Vice President for the
-    [Australian Cartoonists Association](https://cartoonists.org.au) and is a member of the
-    [Society of Children's Book Writers and Illustrators](https://www.scbwi.org).
+    Lee is a Ruby on Rails developer from Sydney, co-organiser of RoROSyd, contributor to the
+    [Rails](https://contributors.rubyonrails.org/contributors/lee-sheppard/commits) project and part
+    of the organising committee for [Rails Girls Sydney](https://railsgirls.com/sydney). Previously
+    working in the animation industry and as a [syndicated cartoonist](https://www.leesheppard.com).
   github: leesheppard
   linkedin: leesheppard
 
