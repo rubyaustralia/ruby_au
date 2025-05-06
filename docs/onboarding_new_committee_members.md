@@ -3,7 +3,7 @@
 Incoming committee members should be added to the following groups:
 
 - Ruby Australia Slack - invite to `org-committee` channel
-- Ruby Australia GitHub - add to `ruby-australia` team
+- Ruby Australia [GitHub](https://github.com/orgs/rubyaustralia/teams/committee) - add to `committee` team
 
 Check to confirm you have access to the Slack and Github accounts and advise the Secretary
 or President if you do not.
