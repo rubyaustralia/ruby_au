@@ -8,7 +8,6 @@ import Rails from '@rails/ujs';
 import "trix";
 import "@rails/actiontext";
 import SignaturePad from "signature_pad";
-import '~/icons';
 
 const application = Application.start();
 const controllers = import.meta.glob("../controllers/**/*_controller.js", { eager: true });
