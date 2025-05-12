@@ -46,13 +46,14 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'rubocop'
+  gem 'rubocop', require: false
   gem 'rubocop-performance'
   gem 'rubocop-rails'
 end
 
 group :development do
   gem "annotaterb"
+  gem "bullet"
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'listen'
   # Spring speeds up development by keeping your application running in the
