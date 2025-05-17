@@ -88,9 +88,10 @@ RSpec.describe 'Admin::PostsController', type: :request do
         expect(Post.last.user).to eq(admin)
       end
 
-      it 'calls the publisher service' do
-        expect(Posts::Publisher).to receive(:call)
+      it "calls the publisher service" do
+        allow(Posts::Publisher).to receive(:call)
         post admin_posts_path, params: { post: post_attributes }
+        expect(Posts::Publisher).to have_received(:call)
       end
     end
 
@@ -122,9 +123,10 @@ RSpec.describe 'Admin::PostsController', type: :request do
         expect(flash[:notice]).to eq('Post was successfully updated.')
       end
 
-      it 'calls the publisher service' do
-        expect(Posts::Publisher).to receive(:call)
+      it "calls the publisher service" do
+        allow(Posts::Publisher).to receive(:call)
         patch admin_post_path(post), params: { post: new_attributes }
+        expect(Posts::Publisher).to have_received(:call)
       end
     end
 

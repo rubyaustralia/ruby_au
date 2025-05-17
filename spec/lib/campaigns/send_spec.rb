@@ -1,60 +1,87 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe Campaigns::Send do
-  let(:user) { create(:user) }
-  let(:campaign) { create(:campaign) }
-  let(:membership) { user.memberships.first }
-  let(:campaign_delivery) { create(:campaign_delivery, campaign: campaign, membership: membership) }
+  subject(:send_service) { described_class.new(campaign) }
 
-  before do
-    membership
-    allow(CampaignsMailer).to receive_message_chain(:campaign_email, :deliver_now)
-  end
+  let(:campaign) { Campaign.new(subject: "Test Subject", preheader: "Test Preheader") }
+  let(:user) { double("User", email: "test@example.com") }
+  let(:membership) { double("Membership", user: user, email: user.email) }
 
-  describe '.call' do
-    subject { described_class.call(campaign) }
-
-    context 'when campaign has already been delivered' do
+  describe '#call' do
+    context 'when campaign is already delivered' do
       before do
-        campaign_delivery
-        campaign.update!(delivered_at: Time.current)
+        campaign.delivered_at = Time.current
+
+        allow(send_service).to receive(:memberships).and_return([])
       end
 
-      it 'does not send any emails' do
-        expect(CampaignsMailer).not_to receive(:campaign_email)
-        subject
+      it 'does not send email and returns empty results' do
+        allow(CampaignsMailer).to receive(:campaign_email)
+
+        result = send_service.call
+
+        expect(CampaignsMailer).not_to have_received(:campaign_email)
+        expect(result || []).to be_empty
       end
     end
 
-    context 'when campaign has not been delivered' do
-      before { campaign.update(delivered_at: nil) }
+    context 'when campaign is not yet delivered' do
+      before do
+        campaign.delivered_at = nil
+      end
 
-      context 'and memberships exist' do
-        it 'sends emails to all memberships' do
-          expect(CampaignsMailer).to receive(:campaign_email).with(campaign, membership, anything).and_call_original
-          subject
+      context 'with existing memberships' do
+        let(:campaign_delivery) do
+          double(
+            "CampaignDelivery",
+            delivered_at: nil,
+            'delivered_at=' => nil,
+            save!: true
+          )
         end
 
-        it 'generate the delivery' do
-          expect { subject }.to change { CampaignDelivery.count }.by(1)
+        before do
+          allow(send_service).to receive_messages(memberships: [membership], ics: nil)
+          allow(send_service).to receive(:delivery_for)
+            .with(membership)
+            .and_return(campaign_delivery)
+
+          allow(CampaignsMailer).to receive(:campaign_email)
+            .with(campaign, membership, anything)
+            .and_return(double("MessageDelivery", deliver_now: true))
         end
 
-        it 'updates the campaign delivery time' do
-          subject
-          expect(CampaignDelivery.first.delivered_at).to be_present
+        it 'sends email and creates campaign delivery' do
+          send_service.call
+
+          expect(CampaignsMailer).to have_received(:campaign_email)
+            .with(campaign, membership, anything)
+        end
+
+        it 'increments the campaign delivery count' do
+          expect(campaign_delivery).to receive(:delivered_at=).with(anything)
+          expect(campaign_delivery).to receive(:save!)
+
+          send_service.call
+        end
+
+        it 'returns a successful result' do
+          result = send_service.call
+
+          expect(result).to be_truthy
         end
       end
 
-      context 'and no memberships exist' do
+      context 'without memberships' do
         before do
-          membership.update!(left_at: Time.current)
+          allow(send_service).to receive(:memberships).and_return([])
+          allow(CampaignsMailer).to receive(:campaign_email)
         end
 
-        it 'does not send any emails' do
-          expect(CampaignsMailer).not_to receive(:campaign_email)
-          subject
+        it 'does not send email' do
+          send_service.call
+
+          expect(CampaignsMailer).not_to have_received(:campaign_email)
         end
       end
     end

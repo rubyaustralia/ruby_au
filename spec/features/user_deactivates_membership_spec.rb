@@ -23,6 +23,6 @@ RSpec.feature "User deactivates their membership", type: :feature do
     fill_in "Password", with: user.password
     click_button "Log in"
 
-    expect(page).to_not have_content("Signed in successfully")
+    expect(page).not_to have_content("Signed in successfully")
   end
 end

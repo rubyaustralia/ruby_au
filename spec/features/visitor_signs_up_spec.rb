@@ -6,18 +6,18 @@ RSpec.feature "Visitor signs up", type: :feature do
 
     click_link 'Join'
 
-    expect(current_path).to eq new_user_registration_path
+    expect(page).to have_current_path new_user_registration_path, ignore_query: true
   end
 
   scenario "with valid email and password" do
     sign_up_with "valid@example.com", "password"
 
     expect(page).to have_content 'A message with a confirmation link has been sent to your email address.'
-    expect(page).to_not have_link('Sign out')
+    expect(page).not_to have_link('Sign out')
 
     user = Email.find_by(email: "valid@example.com").user
     expect(user).to be_present
-    expect(user).to_not be_confirmed
+    expect(user).not_to be_confirmed
     expect(user.memberships.count).to be_zero
   end
 

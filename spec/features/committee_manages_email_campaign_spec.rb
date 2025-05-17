@@ -5,7 +5,7 @@ require "rails_helper"
 RSpec.describe "Committee manages email campaigns", type: :feature do
   let(:user) { FactoryBot.create(:user, committee: true) }
 
-  before :each do
+  before do
     log_in_as user
 
     clear_emails
@@ -31,8 +31,8 @@ RSpec.describe "Committee manages email campaigns", type: :feature do
 
     click_link "Campaigns"
     expect(page).to have_content("Random News")
-    expect(page).to_not have_content("Edit")
-    expect(page).to_not have_content("Delete")
+    expect(page).not_to have_content("Edit")
+    expect(page).not_to have_content("Delete")
   end
 
   scenario "create a new campaign with an event" do
@@ -79,7 +79,7 @@ RSpec.describe "Committee manages email campaigns", type: :feature do
     click_link "Delete"
 
     expect(page).to have_content("Your campaign has been deleted.")
-    expect(page).to_not have_content("Latest News")
+    expect(page).not_to have_content("Latest News")
   end
 
   scenario "sending campaigns" do

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Committee Members Max Filesize' do
   let(:max_filesize) { 200_000 } # bytes
 
-  it 'will not have an image over max filesize' do
+  it 'does not have an image over max filesize' do
     images = Dir.glob("app/assets/images/committee-members/*")
 
     images.each do |image|

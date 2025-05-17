@@ -35,7 +35,7 @@ RSpec.describe Email, type: :model do
   end
 
   describe 'validations' do
-    context 'presence' do
+    context 'when validating presence' do
       it 'requires an email address' do
         email.email = nil
         expect(email).not_to be_valid
@@ -49,7 +49,7 @@ RSpec.describe Email, type: :model do
       end
     end
 
-    context 'uniqueness' do
+    context 'when validating uniqueness' do
       it 'requires a unique email address regardless of case' do
         create(:email, email: 'TEST@example.com')
         new_email = build(:email, email: 'test@example.com')
@@ -59,7 +59,7 @@ RSpec.describe Email, type: :model do
       end
     end
 
-    context 'format' do
+    context 'when validating format' do
       it 'accepts valid email addresses' do
         valid_emails = ['user@example.com', 'user.name@example.co.uk', 'user+label@example.com']
 
@@ -83,7 +83,9 @@ RSpec.describe Email, type: :model do
 
   describe '#trigger_after_confirmation' do
     subject(:email) { create(:email) }
+
     let(:user) { email.user }
+
     context 'when skip_trigger_after_confirmation is true' do
       it 'does not call update_mailing_list_and_memberships' do
         email.skip_trigger_after_confirmation = true
