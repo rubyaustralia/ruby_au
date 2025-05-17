@@ -47,8 +47,12 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'rubocop', require: false
-  gem 'rubocop-performance'
-  gem 'rubocop-rails'
+  gem 'rubocop-capybara', require: false
+  gem 'rubocop-factory_bot', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rspec_rails'
+  gem 'rubocop-rails', require: false
 end
 
 group :development do
@@ -70,10 +74,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara-email',
-      git: 'https://github.com/DavyJonesLocker/capybara-email.git',
-      branch: 'master',
-      ref: 'e1f61aa9b4'
+  gem 'capybara-email'
   gem 'rails-controller-testing'
   gem "selenium-webdriver"
   gem "codeclimate-test-reporter", require: nil
