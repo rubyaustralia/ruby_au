@@ -16,15 +16,15 @@ RSpec.describe "Committee managing members", type: :feature do
     visit root_path
     click_link "Members"
     expect(page).to have_content "Alex"
-    expect(page).to_not have_content "Dylan"
-    expect(page).to_not have_content "Jules"
+    expect(page).not_to have_content "Dylan"
+    expect(page).not_to have_content "Jules"
     expect(page).to have_content "Riley"
 
     riley.memberships.current.update left_at: 1.minute.ago
 
     click_link "Members"
     expect(page).to have_content "Alex"
-    expect(page).to_not have_content "Riley"
+    expect(page).not_to have_content "Riley"
   end
 
   scenario "adds a new access request" do
