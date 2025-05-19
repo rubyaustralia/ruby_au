@@ -44,20 +44,12 @@
     </div>
 
     <% unless user_signed_in? %>
-    <div class="mt-8 sm:mt-10 md:mt-12 flex justify-center sm:justify-start mb-20">
+    <div class="mt-8 sm:mt-10 md:mt-12 flex justify-center sm:justify-start">
       <%= link_to 'Become a Member', new_user_registration_path, class: "inline-block bg-ruby-red hover:bg-red-700 border border-white border-2 text-pearl font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-colors shadow-md" %>
     </div>
-
-    <%= render "shared/section-faq-membership" %>
     <% end %>
   </article>
 </section>
-
-<% if user_signed_in? %>
-  <%= render('shared/spacer-linkedin') %>
-<% else %>
-  <%= render('shared/spacer-rubyau-signup') %>
-<% end %>
 
 <%= render('shared/section-news-summary-list') %>
 
