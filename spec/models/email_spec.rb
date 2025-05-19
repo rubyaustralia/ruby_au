@@ -89,7 +89,8 @@ RSpec.describe Email, type: :model do
     context 'when skip_trigger_after_confirmation is true' do
       it 'does not call update_mailing_list_and_memberships' do
         email.skip_trigger_after_confirmation = true
-        expect(user).not_to receive(:update_mailing_list_and_memberships)
+        allow(user).to receive(:update_mailing_list_and_memberships)
+        expect(user).not_to have_received(:update_mailing_list_and_memberships)
         email.update!(confirmed_at: Time.current)
       end
     end
@@ -98,7 +99,8 @@ RSpec.describe Email, type: :model do
       subject(:email) { create(:email, confirmed_at: nil) }
 
       it 'passes email_update: false to update_mailing_list_and_memberships' do
-        expect(user).to receive(:update_mailing_list_and_memberships).with(email_update: false)
+        allow(user).to receive(:update_mailing_list_and_memberships)
+        expect(user).to have_received(:update_mailing_list_and_memberships).with(email_update: false)
         email.update!(confirmed_at: Time.current)
       end
     end

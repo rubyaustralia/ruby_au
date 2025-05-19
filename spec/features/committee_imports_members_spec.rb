@@ -58,7 +58,7 @@ RSpec.describe "Committee importing members", type: :feature do
     conf.close
   end
 
-  context "sending invitations" do
+  context "when sending invitations" do
     before do
       clear_emails
 

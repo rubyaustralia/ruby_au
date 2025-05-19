@@ -11,7 +11,8 @@ RSpec.describe Slack::EventHandler do
     end
 
     it 'defers to event class based on event_type' do
-      expect(Slack::Events::TeamJoin).to receive(:call)
+      allow(Slack::Events::TeamJoin).to receive(:call)
+      expect(Slack::Events::TeamJoin).to have_received(:call)
 
       described_class.call(event_data: { type: 'team_join' })
     end
