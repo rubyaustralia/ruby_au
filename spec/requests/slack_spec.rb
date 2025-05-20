@@ -36,9 +36,11 @@ RSpec.describe "Slack Controller", type: :request do
       end
 
       it 'passes event_data to event handler' do
-        allow(Slack::EventHandler).to receive(:call)
-        expect(Slack::EventHandler).to have_received(:call).with({ event_data: 'event' })
+        allow(Slack::EventHandler).to receive(:call).and_return(true)
+
         post_to_hook(base_params.merge(event: 'event'))
+
+        expect(Slack::EventHandler).to have_received(:call).with(event_data: 'event')
       end
     end
   end

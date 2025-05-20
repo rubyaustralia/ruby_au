@@ -96,12 +96,13 @@ RSpec.describe Email, type: :model do
     end
 
     context 'when email confirmed_at changed' do
-      subject(:email) { create(:email, confirmed_at: nil) }
-
       it 'passes email_update: false to update_mailing_list_and_memberships' do
         allow(user).to receive(:update_mailing_list_and_memberships)
+
+        email.confirmed_at = Time.current
+        email.save
+
         expect(user).to have_received(:update_mailing_list_and_memberships).with(email_update: false)
-        email.update!(confirmed_at: Time.current)
       end
     end
   end
