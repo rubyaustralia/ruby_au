@@ -55,7 +55,7 @@ p {
 }
 
 .red-link {
-  @apply bg-white/40 px-2 rounded-lg text-ruby-red hover:text-pearl transition-colors underline;
+  @apply bg-white/40 px-2 rounded-lg text-white font-bold hover:text-pearl transition-colors underline;
 }
 
 .white-link {
