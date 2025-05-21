@@ -11,9 +11,12 @@
       </p>
     </div>
 
+    <%= render('shared/devise_error_alert') %>
+
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div class="bg-white py-8 px-4 sm:rounded-lg sm:px-10 shadow">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-6" }) do |f| %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name),
+                     html: { class: "space-y-6", data: { turbo: false } }) do |f| %>
           <div>
             <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
             <div class="mt-1">
