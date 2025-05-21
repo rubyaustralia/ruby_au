@@ -69,7 +69,11 @@ You can see it in action here:
 
 ## Known Issues / Gotchas
 
-None (yet) but please see [CONTRIBUTING.md](CONTRIBUTING.md)
+With Yarn 4, you upgrade outdated packs using `yarn upgrade-interactive`
+
+There have been issues with implementing Trix, the JS file is temporarily in the <HEAD> from the CDN.
+
+Please also refer to [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Code of Conduct
 
