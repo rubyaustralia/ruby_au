@@ -10,7 +10,7 @@
       <div class="flex items-center justify-between">
         <div>
           <p class="text-sm font-medium text-gray-600">Total Visits</p>
-          <p class="text-2xl font-bold text-gray-900"><%= number_with_delimiter(@total_visits) %></p>
+          <p class="text-2xl font-bold text-gray-900"><%= number_with_delimiter(@analytics_data.total_visits) %></p>
         </div>
         <div class="text-blue-500">
           <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -24,7 +24,7 @@
       <div class="flex items-center justify-between">
         <div>
           <p class="text-sm font-medium text-gray-600">Unique Visitors</p>
-          <p class="text-2xl font-bold text-gray-900"><%= number_with_delimiter(@unique_visitors) %></p>
+          <p class="text-2xl font-bold text-gray-900"><%= number_with_delimiter(@analytics_data.unique_visitors) %></p>
         </div>
         <div class="text-green-500">
           <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -38,7 +38,7 @@
       <div class="flex items-center justify-between">
         <div>
           <p class="text-sm font-medium text-gray-600">Visits Today</p>
-          <p class="text-2xl font-bold text-gray-900"><%= number_with_delimiter(@visits_today) %></p>
+          <p class="text-2xl font-bold text-gray-900"><%= number_with_delimiter(@analytics_data.visits_today) %></p>
         </div>
         <div class="text-yellow-500">
           <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -52,7 +52,7 @@
       <div class="flex items-center justify-between">
         <div>
           <p class="text-sm font-medium text-gray-600">Avg. Session Duration</p>
-          <p class="text-2xl font-bold text-gray-900"><%= @avg_session_duration %></p>
+          <p class="text-2xl font-bold text-gray-900"><%= @analytics_data.avg_session_duration %></p>
         </div>
         <div class="text-purple-500">
           <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -72,7 +72,7 @@
         <canvas id="visitsChart" width="400" height="200"
                 data-controller="analytics-chart"
                 data-analytics-chart-type-value="line"
-                data-analytics-chart-data-value="<%= @visits_over_time.to_json %>">
+                data-analytics-chart-data-value="<%= @analytics_data.visits_over_time.to_json %>">
         </canvas>
       </div>
     </div>
@@ -84,7 +84,7 @@
         <canvas id="deviceChart" width="400" height="200"
                 data-controller="analytics-chart"
                 data-analytics-chart-type-value="doughnut"
-                data-analytics-chart-data-value="<%= @device_breakdown.to_json %>">
+                data-analytics-chart-data-value="<%= @analytics_data.device_breakdown.to_json %>">
         </canvas>
       </div>
     </div>
@@ -107,7 +107,7 @@
         </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
-        <% @top_pages.each_with_index do |(page, views), index| %>
+        <% @analytics_data.top_pages.each_with_index do |(page, views), index| %>
           <tr class="<%= 'bg-gray-50' if index.even? %>">
             <td class="px-6 py-4 whitespace-nowrap">
               <div class="flex items-center">
@@ -121,7 +121,7 @@
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
               <div class="text-sm text-gray-900">
-                <%= number_to_percentage((views.to_f / @total_page_views) * 100, precision: 1) %>
+                <%= number_to_percentage((views.to_f / @analytics_data.total_page_views) * 100, precision: 1) %>
               </div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
@@ -146,7 +146,7 @@
       <p class="text-sm text-gray-600">Latest visitor sessions</p>
     </div>
     <div class="divide-y divide-gray-200">
-      <% @recent_visits.each do |visit| %>
+      <% @analytics_data.recent_visits.each do |visit| %>
         <div class="px-6 py-4 flex items-center justify-between">
           <div class="flex items-center space-x-4">
             <div class="flex-shrink-0">
