@@ -1,19 +1,28 @@
 class AnalyticsService
   def call
-    OpenStruct.new(
+    OpenStruct.new(basic_metrics.merge(detailed_metrics))
+  end
+
+  private
+
+  def basic_metrics
+    {
       total_visits: total_visits,
       unique_visitors: unique_visitors,
       visits_today: visits_today,
       total_page_views: total_page_views,
-      avg_session_duration: avg_session_duration,
+      avg_session_duration: avg_session_duration
+    }
+  end
+
+  def detailed_metrics
+    {
       top_pages: top_pages,
       visits_over_time: visits_over_time,
       device_breakdown: device_breakdown,
       recent_visits: recent_visits
-    )
+    }
   end
-
-  private
 
   def total_visits
     @total_visits ||= Ahoy::Visit.count
