@@ -1,55 +1,55 @@
-<section id="welcome" class="welcome bg-ruby-red py-8 sm:py-12 md:py-16">
-  <article class="max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 text-pearl">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 text-center sm:text-left text-pearl">
-      Welcome to Ruby Australia
-    </h2>
+<% unless user_signed_in? %>
+  <section id="welcome" class="welcome bg-ruby-red py-8 sm:py-12 md:py-16">
+    <article class="max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 text-pearl">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 text-center sm:text-left text-pearl">
+        Welcome to Ruby Australia
+      </h2>
 
-    <div class="space-y-4 sm:space-y-5 md:space-y-6 text-sm sm:text-base md:text-lg">
-      <p>
-        Ruby Australia is the premier organisation supporting the vibrant <%= link_to "Ruby", "https://www.ruby-lang.org/en/", class: "red-link" %>
-        programming language community across Australia. Established in 2011, we foster collaboration, learning, and
-        professional development for developers at all stages of their journey.
-      </p>
-
-      <p>
-        Ruby is renowned for its elegant syntax and developer friendly approach - a language designed with programmer
-        productivity and satisfaction at its core. Whether you're an experienced Ruby developer, just beginning your
-        coding journey, or curious about what Ruby has to offer, our community welcomes you.
-      </p>
-
-      <p>
-        We organise and support numerous events throughout Australia, including conferences, workshops, and meetups,
-        all governed by our comprehensive <%= link_to "Code of Conduct", page_path("code-of-conduct"), class: "red-link" %> to ensure an
-        inclusive and respectful environment for everyone.
-      </p>
-
-      <p>
-        Our dedicated <%= link_to 'committee members', "/committee-members", class: "red-link" %>, elected annually at general meetings, work diligently to advance the Ruby
-        ecosystem in Australia by providing guidance and logistical support for community initiatives and events.
-      </p>
-
-      <% if user_signed_in? %>
+      <div class="space-y-4 sm:space-y-5 md:space-y-6 text-sm sm:text-base md:text-lg">
         <p>
-          As a member of Ruby Australia, you gain access to exclusive resources, networking opportunities, and
-          professional development programs. We encourage you to explore our website, join our community events, and
-          connect with fellow Ruby enthusiasts.
+          Ruby Australia is the premier organisation supporting the vibrant <%= link_to "Ruby", "https://www.ruby-lang.org/en/", class: "red-link" %>
+          programming language community across Australia. Established in 2011, we foster collaboration, learning, and
+          professional development for developers at all stages of their journey.
         </p>
-        <% else %>
-        <p>
-          <%= link_to 'Join', new_user_registration_path, class: "red-link" %>
-          us in exploring the possibilities that Ruby offers and connect with a community that values innovation,
-          collaboration, and excellence in software development.
-        </p>
-      <% end %>
-    </div>
 
-    <% unless user_signed_in? %>
-    <div class="mt-8 sm:mt-10 md:mt-12 flex justify-center sm:justify-start">
-      <%= link_to 'Become a Member', new_user_registration_path, class: "inline-block bg-ruby-red hover:bg-red-700 border border-white border-2 text-pearl font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-colors shadow-md" %>
-    </div>
-    <% end %>
-  </article>
-</section>
+        <p>
+          Ruby is renowned for its elegant syntax and developer friendly approach - a language designed with programmer
+          productivity and satisfaction at its core. Whether you're an experienced Ruby developer, just beginning your
+          coding journey, or curious about what Ruby has to offer, our community welcomes you.
+        </p>
+
+        <p>
+          We organise and support numerous events throughout Australia, including conferences, workshops, and meetups,
+          all governed by our comprehensive <%= link_to "Code of Conduct", page_path("code-of-conduct"), class: "red-link" %> to ensure an
+          inclusive and respectful environment for everyone.
+        </p>
+
+        <p>
+          Our dedicated <%= link_to 'committee members', "/committee-members", class: "red-link" %>, elected annually at general meetings, work diligently to advance the Ruby
+          ecosystem in Australia by providing guidance and logistical support for community initiatives and events.
+        </p>
+
+        <% if user_signed_in? %>
+          <p>
+            As a member of Ruby Australia, you gain access to exclusive resources, networking opportunities, and
+            professional development programs. We encourage you to explore our website, join our community events, and
+            connect with fellow Ruby enthusiasts.
+          </p>
+          <% else %>
+          <p>
+            <%= link_to 'Join', new_user_registration_path, class: "red-link" %>
+            us in exploring the possibilities that Ruby offers and connect with a community that values innovation,
+            collaboration, and excellence in software development.
+          </p>
+        <% end %>
+      </div>
+
+      <div class="mt-8 sm:mt-10 md:mt-12 flex justify-center sm:justify-start">
+        <%= link_to 'Become a Member', new_user_registration_path, class: "inline-block bg-ruby-red hover:bg-red-700 border border-white border-2 text-pearl font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-colors shadow-md" %>
+      </div>
+    </article>
+  </section>
+<% end %>
 
 <%= render('shared/section-news-summary-list') %>
 
