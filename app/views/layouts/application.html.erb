@@ -36,11 +36,10 @@
   <%= csrf_meta_tags %>
   <%= vite_client_tag %>
   <%= vite_javascript_tag 'application' %>
-  <%# hack to use cdn since failed to import trix from production, no issue in dev, remove it once the issue is fixed %>
+  <!-- hack to use cdn since failed to import trix from production, no issue in dev, remove it once the issue is fixed -->
   <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/trix@2.1.12/dist/trix.umd.min.js" %>
-
 </head>
-  <body class="bg-pearl">
+  <body class="bg-pearl" data-controller="ahoy">
     <div id="wrap" class="flex flex-col md:flex-row">
       <aside id="meta" class="md:w-64 sm:w-screen flex-shrink-0">
         <%= render "shared/navigation" %>
