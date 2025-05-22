@@ -11,6 +11,7 @@
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/postcss": "^4.1.7",
     "@tailwindcss/typography": "^0.5.16",
+    "chart.js": "^4.4.9",
     "jquery": "^3.7.1",
     "sass": "^1.89.0",
     "signature_pad": "^5.0.7",
