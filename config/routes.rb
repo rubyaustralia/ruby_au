@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  mount Ahoy::Engine => "/ahoy"
 
   namespace :my do
     resource :details, only: [:show, :edit, :update]
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
     post 'posts/*slug/archive', to: 'posts#archive', as: :archive_post
     get 'posts/*slug', to: 'posts#show', as: :post
     patch 'posts/*slug', to: 'posts#update', as: :update_post
+    resources :analytics, only: [:index]
   end
 
   resources :invitations, only: [] do
