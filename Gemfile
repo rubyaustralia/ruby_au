@@ -26,6 +26,7 @@ gem 'turbo-rails'
 gem 'validates_email_format_of'
 gem 'warden' # use for auth
 gem 'vite_rails'
+gem 'ahoy_matey' # analytics
 
 # background jobs
 gem 'solid_queue'
