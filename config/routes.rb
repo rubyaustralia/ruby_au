@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-  mount Ahoy::Engine => "/ahoy"
+  mount Ahoy::Engine => "/ahoy", as: :analytics_tracking unless Rails.env.test?
 
   namespace :my do
     resource :details, only: [:show, :edit, :update]
