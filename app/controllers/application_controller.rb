@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :track_ahoy_visit
 
   protected
 
@@ -16,6 +17,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def track_ahoy_visit
+    ahoy.track_visit
+  end
 
   def report_errors(object, success_message = nil)
     if object.errors.any?

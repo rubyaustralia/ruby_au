@@ -3,7 +3,7 @@
 # Table name: posts
 #
 #  id                   :bigint           not null, primary key
-#  archieved_at         :datetime
+#  archived_at          :datetime
 #  category             :integer
 #  content              :text
 #  publish_scheduled_at :datetime
