@@ -4614,6 +4614,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"regenerator-runtime@npm:^0.14.1":
+  version: 0.14.1
+  resolution: "regenerator-runtime@npm:0.14.1"
+  checksum: 10c0/1b16eb2c4bceb1665c89de70dcb64126a22bc8eb958feef3cd68fe11ac6d2a4899b5cd1b80b0774c7c03591dc57d16631a7f69d2daa2ec98100e2f29f7ec4cc4
+  languageName: node
+  linkType: hard
+
 "regexp.prototype.flags@npm:^1.5.1":
   version: 1.5.4
   resolution: "regexp.prototype.flags@npm:1.5.4"
@@ -4830,6 +4837,7 @@ __metadata:
     postcss-import: "npm:^16.1.0"
     postcss-nested: "npm:^7.0.2"
     postcss-preset-env: "npm:^10.1.5"
+    regenerator-runtime: "npm:^0.14.1"
     sass: "npm:^1.86.3"
     sass-lint: "npm:^1.13.1"
     signature_pad: "npm:^5.0.4"

@@ -16,6 +16,7 @@
     "jquery": "^3.7.1",
     "lucide": "^0.499.0",
     "postcss-import": "^16.1.0",
+    "regenerator-runtime": "^0.14.1",
     "sass": "^1.86.3",
     "signature_pad": "^5.0.4",
     "tailwindcss": "^4.1.4",
