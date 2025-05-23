@@ -1,2 +1,2 @@
 web: bundle exec puma -C config/puma.rb
-release: bin/heroku-release bundle exec rails db:migrate tmp:cache:clear assets:precompile
+release: ./bin/vite build && bundle exec rails db:migrate && bundle exec rails tmp:cache:clear && bundle exec rails assets:precompile
