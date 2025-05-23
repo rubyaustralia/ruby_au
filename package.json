@@ -47,5 +47,6 @@
     "type": "git",
     "url": "https://github.com/rubyaustralia/ruby_au.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "yarn@4.9.1"
 }
