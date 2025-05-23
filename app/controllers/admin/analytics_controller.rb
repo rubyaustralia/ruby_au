@@ -1,6 +1,4 @@
 class Admin::AnalyticsController < ApplicationController
-  before_action :authenticate_admin!
-
   def index
     @analytics_data = AnalyticsService.new.call
 
