@@ -1,38 +1,167 @@
-<%= content_for :heading do %>
-  Email Campaigns
-<% end %>
+<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 sm:mb-8">
+    <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-0">Email Campaigns</h2>
 
-<h2>Campaigns</h2>
-
-<article>
-  <p class="button"><%= link_to "Add", new_admin_campaign_path %></p>
-
-  <table class="member-list">
-    <thead>
-      <tr>
-        <th>Subject</th>
-        <th>Event</th>
-        <th>Sent At</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% campaigns.each do |campaign| %>
-        <tr>
-          <td><%= campaign.subject %></td>
-          <td><%= campaign.rsvp_event&.title %></td>
-          <td><%= campaign.delivered_at || "Not yet" %></td>
-          <td>
-            <%= link_to "Preview", admin_campaign_path(campaign), target: "_blank" %>
-            <% unless campaign.delivered? %>
-              <%= link_to "Edit", edit_admin_campaign_path(campaign) %>
-              <%= link_to "Delete", admin_campaign_path(campaign), method: :delete, data: {confirm: "Are you sure? Deletion is permanent."} %>
-            <% end %>
-          </td>
-        </tr>
+    <div>
+      <%= link_to new_admin_campaign_path, class: "inline-flex items-center justify-center rounded-md bg-ruby-red px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-ruby-red focus:ring-offset-2 transition-colors" do %>
+        <i data-lucide="plus" class="w-4 h-4 mr-1.5"></i>
+        <span>New Campaign</span>
       <% end %>
-    </tbody>
-  </table>
+    </div>
+  </div>
 
-  <%= paginate campaigns %>
-</article>
+  <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead>
+        <tr class="bg-gray-50">
+          <th scope="col" class="px-4 sm:px-6 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Subject</th>
+          <th scope="col" class="px-4 sm:px-6 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Event</th>
+          <th scope="col" class="px-4 sm:px-6 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Sent At</th>
+          <th scope="col" class="px-4 sm:px-6 py-3 text-right text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+        </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+        <% if campaigns.any? %>
+          <% campaigns.each do |campaign| %>
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="px-4 sm:px-6 py-4 whitespace-normal">
+                <div class="text-sm sm:text-base font-medium text-gray-900 line-clamp-2"><%= campaign.subject %></div>
+              </td>
+              <td class="px-4 sm:px-6 py-4 whitespace-normal">
+                <div class="text-sm sm:text-base text-gray-700">
+                  <%= campaign.rsvp_event&.title || "No Event" %>
+                </div>
+              </td>
+              <td class="px-4 sm:px-6 py-4 whitespace-nowrap">
+                <% if campaign.delivered_at %>
+                  <div class="text-sm sm:text-base text-gray-700">
+                    <time datetime="<%= campaign.delivered_at.iso8601 %>">
+                      <%= campaign.delivered_at.strftime("%b %d, %Y") %>
+                    </time>
+                  </div>
+                  <div class="text-xs text-gray-500">
+                    <%= campaign.delivered_at.strftime("%l:%M %p").strip %>
+                  </div>
+                <% else %>
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                      Not sent
+                    </span>
+                <% end %>
+              </td>
+              <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <div class="flex items-center justify-end space-x-2 sm:space-x-3">
+                  <%= link_to admin_campaign_path(campaign), target: "_blank", class: "rounded bg-white p-1.5 text-gray-700 hover:bg-gray-100 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-colors", title: "Preview" do %>
+                    <i data-lucide="eye" class="h-4 w-4"></i>
+                    <span class="sr-only">Preview</span>
+                  <% end %>
+
+                  <% unless campaign.delivered? %>
+                    <%= link_to edit_admin_campaign_path(campaign), class: "rounded bg-white p-1.5 text-gray-700 hover:bg-gray-100 hover:text-ruby-red focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ruby-red transition-colors", title: "Edit" do %>
+                      <i data-lucide="edit-2" class="h-4 w-4"></i>
+                      <span class="sr-only">Edit</span>
+                    <% end %>
+
+                    <%= link_to admin_campaign_path(campaign), data: { turbo_method: :delete, turbo_confirm: "Are you sure? Deletion is permanent." }, class: "rounded bg-white p-1.5 text-gray-700 hover:bg-gray-100 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500 transition-colors", title: "Delete" do %>
+                      <i data-lucide="trash-2" class="h-4 w-4"></i>
+                      <span class="sr-only">Delete</span>
+                    <% end %>
+                  <% end %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan="4" class="px-4 sm:px-6 py-8 text-center text-sm text-gray-500">
+              <div class="flex flex-col items-center justify-center">
+                <i data-lucide="mail" class="h-10 w-10 text-gray-400 mb-2"></i>
+                <p>No campaigns found</p>
+                <p class="mt-1 text-xs text-gray-400">Create a new campaign to get started</p>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <% if campaigns.respond_to?(:total_pages) && campaigns.total_pages > 1 %>
+      <div class="border-t border-gray-200 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between flex-col sm:flex-row bg-gray-50">
+        <div class="text-sm text-gray-700 mb-4 sm:mb-0">
+          Showing page <%= campaigns.current_page %> of <%= campaigns.total_pages %>
+        </div>
+        <div>
+          <%= paginate campaigns, window: 2, class: "pagination flex gap-2" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Campaign stats section -->
+  <div class="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+    <div class="bg-white overflow-hidden shadow-sm rounded-lg border border-gray-200">
+      <div class="p-5">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+            <i data-lucide="mail" class="h-6 w-6 text-white"></i>
+          </div>
+          <div class="ml-5">
+            <div class="text-sm font-medium text-gray-500">Total Campaigns</div>
+            <div class="mt-1 text-xl sm:text-2xl font-semibold text-gray-900">
+              <%= campaigns.total_count || 0 %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white overflow-hidden shadow-sm rounded-lg border border-gray-200">
+      <div class="p-5">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
+            <i data-lucide="send" class="h-6 w-6 text-white"></i>
+          </div>
+          <div class="ml-5">
+            <div class="text-sm font-medium text-gray-500">Sent Campaigns</div>
+            <div class="mt-1 text-xl sm:text-2xl font-semibold text-gray-900">
+              <%= campaigns.select(&:delivered?).count || 0 %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white overflow-hidden shadow-sm rounded-lg border border-gray-200">
+      <div class="p-5">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 bg-yellow-500 rounded-md p-3">
+            <i data-lucide="clock" class="h-6 w-6 text-white"></i>
+          </div>
+          <div class="ml-5">
+            <div class="text-sm font-medium text-gray-500">Pending Campaigns</div>
+            <div class="mt-1 text-xl sm:text-2xl font-semibold text-gray-900">
+              <%= campaigns.reject(&:delivered?).count || 0 %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white overflow-hidden shadow-sm rounded-lg border border-gray-200">
+      <div class="p-5">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 bg-blue-500 rounded-md p-3">
+            <i data-lucide="users" class="h-6 w-6 text-white"></i>
+          </div>
+          <div class="ml-5">
+            <div class="text-sm font-medium text-gray-500">Recipient Base</div>
+            <div class="mt-1 text-xl sm:text-2xl font-semibold text-gray-900">
+              <%= User.count %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+{
+  "name": "Ruby Australia",
+  "description": "A Ruby on Rails application for managing Ruby events in Australia",
+  "env": {
+    "YARN_PRODUCTION": {
+      "description": "Prevent Yarn from pruning dev dependencies during build",
+      "value": "false"
+    },
+    "NODE_ENV": {
+      "description": "Node environment for build process",
+      "value": "production"
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "description": "Prevent npm from pruning dev dependencies during build",
+      "value": "false"
+    },
+    "NPM_CONFIG_INCLUDE": {
+      "description": "Include dev dependencies in build",
+      "value": "dev"
+    }
+  },
+  "environments": {
+    "review": {
+      "env": {
+        "YARN_PRODUCTION": "false",
+        "NODE_ENV": "production",
+        "NPM_CONFIG_PRODUCTION": "false"
+      }
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
+}

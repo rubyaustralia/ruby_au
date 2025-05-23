@@ -1,38 +1,92 @@
-<h2>Log in</h2>
+<div class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="text-center">
+      <%= link_to root_path do %>
+        <%= vite_image_tag 'images/ruby_au_icon.svg', class: "mx-auto h-12 w-auto", alt: "Ruby Australia Logo" %>
+      <% end %>
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Log in to your account</h2>
+      <p class="mt-2 text-center text-sm text-gray-600">
+        Or
+        <%= link_to "create a new account", new_registration_path(resource_name), class: "font-medium text-ruby-red hover:text-red-700 transition-colors" %>
+      </p>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "standard"}) do |f| %>
-  <div class="field">
-    <div class="label">
-      <%= f.label :email %>
-    </div>
-    <div class="input">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-  </div>
+    <%= render('shared/devise_error_alert') %>
 
-  <div class="field">
-    <div class="label">
-      <%= f.label :password %>
-    </div>
-    <div class="input">
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
-  </div>
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div class="bg-white py-8 px-4 sm:rounded-lg sm:px-10 shadow">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name),
+                     html: { class: "space-y-6", data: { turbo: false } }) do |f| %>
+          <div>
+            <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+            <div class="mt-1">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                                class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-ruby-red focus:border-ruby-red sm:text-sm" %>
+            </div>
+          </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field flipped">
-      <div class="input">
-        <%= f.check_box :remember_me %>
+          <div>
+            <div class="flex items-center justify-between">
+              <%= f.label :password, class: "block text-sm font-medium text-gray-700" %>
+              <% if devise_mapping.recoverable? %>
+                <%= link_to "Forgot your password?", new_password_path(resource_name), class: "text-xs text-ruby-red hover:text-red-700 transition-colors" %>
+              <% end %>
+            </div>
+            <div class="mt-1">
+              <%= f.password_field :password, autocomplete: "current-password",
+                                   class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-ruby-red focus:border-ruby-red sm:text-sm" %>
+            </div>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="flex items-center">
+              <%= f.check_box :remember_me, class: "h-4 w-4 text-ruby-red focus:ring-ruby-red border-gray-300 rounded" %>
+              <%= f.label :remember_me, class: "ml-2 block text-sm text-gray-900" %>
+            </div>
+          <% end %>
+
+          <div>
+            <%= f.submit "Log in", class: "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-ruby-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" %>
+          </div>
+        <% end %>
+
+        <div class="mt-6">
+          <div class="relative">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-gray-300"></div>
+            </div>
+            <div class="relative flex justify-center text-sm">
+              <span class="px-2 bg-white text-gray-500">Or continue with</span>
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 gap-3">
+            <% if devise_mapping.omniauthable? %>
+              <% resource_class.omniauth_providers.each do |provider| %>
+                <%= button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: "w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors" do %>
+                  <span>Sign in with <%= OmniAuth::Utils.camelize(provider) %></span>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
-      <div class="label">
-        <%= f.label :remember_me %>
+    </div>
+
+    <div class="mt-6">
+      <div class="text-center">
+        <% if devise_mapping.registerable? && controller_name != 'registrations' %>
+          <p class="text-sm text-gray-600">
+            Don't have an account yet?<br>
+            <%= link_to "Sign up", new_registration_path(resource_name), class: "font-medium text-ruby-red hover:text-red-700 transition-colors" %>
+          </p>
+        <% end %>
+
+        <p class="mt-2 text-sm text-gray-600">
+          Deactivated your membership?<br>
+          <%= link_to "Reactivate Membership", new_reactivation_path, class: "font-medium text-ruby-red hover:text-red-700 transition-colors" %>
+        </p>
       </div>
     </div>
-  <% end %>
-
-  <div class="buttons">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

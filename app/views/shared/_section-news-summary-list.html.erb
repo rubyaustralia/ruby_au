@@ -1,0 +1,44 @@
+<section id="News" class="py-10 sm:py-12 md:py-16 bg-white">
+  <div class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 md:mb-10">News</h1>
+
+    <% if @posts.present? %>
+      <div class="space-y-4 sm:space-y-5 md:space-y-6">
+        <% @posts.each do |post| %>
+          <article class="group">
+            <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 p-3 sm:p-4 rounded-lg hover:bg-gray-50 transition-colors">
+              <div class="text-gray-500 text-sm sm:text-base md:min-w-36 md:max-w-36 shrink-0">
+                <%= post.published_at.strftime("%B %d, %Y") %>
+              </div>
+
+              <div class="flex-grow">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-ruby-red group-hover:text-red-700 transition-colors">
+                  <%= link_to post.title, post_path(post), class: "no-underline" %>
+                </h2>
+              </div>
+            </div>
+          </article>
+        <% end %>
+      </div>
+
+      <div class="mt-8 sm:mt-10 md:mt-12">
+        <div class="h-px w-full bg-ruby-red/20"></div>
+      </div>
+
+      <div class="mt-6 sm:mt-8 flex justify-center sm:justify-end">
+        <%= link_to "View all news", posts_path,
+                    class: "inline-flex items-center justify-center bg-white border border-ruby-red text-ruby-red hover:bg-ruby-red hover:text-white font-medium py-2 px-4 sm:py-2 sm:px-5 rounded-lg transition-colors text-sm sm:text-base" %>
+      </div>
+    <% else %>
+      <div class="bg-gray-50 rounded-lg p-6 sm:p-8 md:p-10 text-center">
+        <p class="text-base sm:text-lg md:text-xl text-gray-600">
+          No news posts available at the moment.
+        </p>
+      </div>
+
+      <div class="mt-8 sm:mt-10 md:mt-12">
+        <div class="h-px w-full bg-ruby-red/20"></div>
+      </div>
+    <% end %>
+  </div>
+</section>

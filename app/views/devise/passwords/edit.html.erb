@@ -1,37 +1,81 @@
-<h2>Change your password</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "standard" }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <div class="label">
-      <%= f.label :password, "New password" %>
+<div class="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8 bg-gray-50">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="text-center">
+      <%= link_to root_path do %>
+        <%= vite_image_tag 'images/ruby_au_icon.svg', class: "mx-auto h-12 w-auto", alt: "Ruby Australia Logo" %>
+      <% end %>
+      <h2 class="mt-6 text-center text-2xl sm:text-3xl font-bold text-gray-900">Reset Your Password</h2>
+      <p class="mt-2 text-center text-sm text-gray-600">
+        Create a new secure password for your account
+      </p>
     </div>
 
-    <div class="input">
-      <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
-    </div>
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div class="bg-white py-8 px-4 sm:rounded-lg sm:px-10 shadow-md">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "space-y-6" }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <%= f.hidden_field :reset_password_token %>
 
-    <% if @minimum_password_length %>
-      <div class="hint">
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <div>
+            <%= f.label :password, "New password", class: "block text-sm font-medium text-gray-700" %>
+            <div class="mt-1">
+              <%= f.password_field :password, autofocus: true, autocomplete: "new-password",
+                  class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-ruby-red focus:border-ruby-red text-sm" %>
+            </div>
+            <% if @minimum_password_length %>
+              <p class="mt-1 text-xs text-gray-500">
+                <%= @minimum_password_length %> characters minimum
+              </p>
+            <% end %>
+          </div>
+
+          <div>
+            <%= f.label :password_confirmation, "Confirm new password", class: "block text-sm font-medium text-gray-700" %>
+            <div class="mt-1">
+              <%= f.password_field :password_confirmation, autocomplete: "off",
+                  class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-ruby-red focus:border-ruby-red text-sm" %>
+            </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-md">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <svg class="h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <p class="text-sm text-blue-700">
+                    For a strong password, use a mix of letters, numbers, and special characters.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <%= f.submit "Reset Password",
+                class: "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-ruby-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" %>
+          </div>
+        <% end %>
+
+        <div class="mt-6 text-center text-sm">
+          <p class="text-gray-600">
+            Remember your password?
+            <%= link_to "Sign in", new_session_path(resource_name),
+                class: "font-medium text-ruby-red hover:text-red-700 transition-colors" %>
+          </p>
+        </div>
       </div>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <div class="label">
-      <%= f.label :password_confirmation, "Confirm new password" %>
     </div>
-    <div class="input">
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+
+    <div class="mt-8 text-center text-xs sm:text-sm text-gray-500">
+      <p>
+        If you continue to have trouble resetting your password,
+        <br class="hidden sm:inline">
+        please contact <%= mail_to "support@ruby.org.au", "support@ruby.org.au", class: "text-ruby-red hover:text-red-700 transition-colors" %>
+      </p>
     </div>
   </div>
-
-  <div class="buttons">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
