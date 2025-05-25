@@ -1,17 +1,17 @@
 import "@hotwired/turbo-rails";
 import { Application } from "@hotwired/stimulus";
 import { registerControllers } from "stimulus-vite-helpers";
-import "~/controllers";
+import "../controllers";
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import Rails from '@rails/ujs';
 import "trix";
 import "@rails/actiontext";
 import SignaturePad from "signature_pad";
-import "~/stylesheets/actiontext.css";
-import "~/stylesheets/custom_actiontext.scss";
-import "~/stylesheets/application.scss";
-import "~/stylesheets/signatures.scss";
+import "../stylesheets/actiontext.css";
+import "../stylesheets/custom_actiontext.scss";
+import "../stylesheets/application.scss";
+import "../stylesheets/signatures.scss";
 import { createIcons, icons } from 'lucide';
 
 const application = Application.start();
