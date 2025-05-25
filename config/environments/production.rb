@@ -91,5 +91,4 @@ Rails.application.configure do
 
   # ensure Rails is correctly serving static files in production
   config.public_file_server.enabled = true
-
 end
