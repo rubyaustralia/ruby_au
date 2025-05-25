@@ -13,6 +13,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "animate.css": "^4.1.1",
     "chart.js": "^4.4.9",
+    "core-js": "^3.38.1",
     "jquery": "^3.7.1",
     "lucide": "^0.499.0",
     "postcss-import": "^16.1.0",
@@ -42,12 +43,14 @@
   },
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview",
+    "heroku-postbuild": "pnpm run build"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/rubyaustralia/ruby_au.git"
   },
   "license": "MIT",
-  "packageManager": "yarn@4.9.1"
+  "packageManager": "pnpm@10.11.0"
 }
