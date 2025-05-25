@@ -8,19 +8,17 @@ import Rails from '@rails/ujs';
 import "trix";
 import "@rails/actiontext";
 import SignaturePad from "signature_pad";
+import "~/stylesheets/actiontext.css";
+import "~/stylesheets/custom_actiontext.scss";
+import "~/stylesheets/application.scss";
+import "~/stylesheets/signatures.scss";
+import { createIcons, icons } from 'lucide';
 
 const application = Application.start();
 const controllers = import.meta.glob("../controllers/**/*_controller.js", { eager: true });
 registerControllers(application, controllers);
 
 Rails.start();
-
-import "~/stylesheets/actiontext.css";
-import "~/stylesheets/custom_actiontext.scss";
-import "~/stylesheets/application.scss";
-import "~/stylesheets/signatures.scss";
-
-import { createIcons, icons } from 'lucide';
 
 document.addEventListener('DOMContentLoaded', () => {
   createIcons({
