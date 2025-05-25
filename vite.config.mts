@@ -41,7 +41,9 @@ export default defineConfig({
   },
   build: {
     minify: 'esbuild',
+    cssCodeSplit: false,
     cssMinify: true,
+    outDir: 'public/vite',
     rollupOptions: {
       input: {
         application: './app/frontend/entrypoints/application.js',
