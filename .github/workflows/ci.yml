@@ -36,12 +36,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
-          cache: 'yarn'
-          cache-dependency-path: 'yarn.lock'
 
       - name: Install dependencies
         run: |
-          yarn install
+          pnpm install
           bundle install
 
       - name: Prepare assets
