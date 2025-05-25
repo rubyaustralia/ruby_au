@@ -81,4 +81,8 @@ Rails.application.configure do
   config.active_storage.resolve_model_to_route = :rails_storage_redirect
   # Make sure Active Storage URLs match your ActionMailer settings
   config.active_storage.default_url_options = { host: 'ruby.org.au', protocol: 'https' }
+
+  # ensure Rails is correctly serving static files in production
+  config.public_file_server.enabled = true
+
 end
