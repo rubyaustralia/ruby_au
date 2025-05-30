@@ -1,3 +1,4 @@
+
 name: Continuous Integration
 
 on:
@@ -36,29 +37,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
+          cache: 'yarn'
 
-      - name: Set up PNPM
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10.11.0
-          run_install: false
+      - name: Set up Yarn
+        run: npm install -g yarn@1.22.22
 
-      - name: Get pnpm store directory
-        shell: bash
-        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - name: Install JavaScript dependencies
+        run: yarn install --frozen-lockfile
 
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: |
-          pnpm install
-          bundle install
+      - name: Install Ruby dependencies
+        run: bundle install
 
       - name: Prepare assets
         run: |

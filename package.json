@@ -41,15 +41,15 @@
     "node": "22.x.x"
   },
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
+    "dev": "yarn vite dev",
+    "build": "yarn vite build",
     "preview": "vite preview",
-    "heroku-postbuild": "pnpm run build"
+    "install": "yarn install"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/rubyaustralia/ruby_au.git"
   },
   "license": "MIT",
-  "packageManager": "pnpm@10.11.0"
+  "packageManager": "yarn@1.22.22"
 }
