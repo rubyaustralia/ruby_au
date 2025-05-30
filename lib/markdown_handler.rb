@@ -30,7 +30,7 @@ class MarkdownHandler
 
     def add_code_tags(code, lang)
       code = code.sub(/<pre>/, %{<div class="lang">#{lang}</div><pre><code  class="' + lang + '">})
-      code.sub(/<\/pre>/, "</code></pre>")
+      code.sub(%r{</pre>}, "</code></pre>")
     end
   end
 end
