@@ -1,13 +1,3 @@
-GIT
-  remote: https://github.com/DavyJonesLocker/capybara-email.git
-  revision: e1f61aa9b486da6a8485dd6a18a4221e78cda6e7
-  ref: e1f61aa9b4
-  branch: master
-  specs:
-    capybara-email (3.0.1)
-      capybara (>= 2.4, < 4.0)
-      mail
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -100,7 +90,9 @@ GEM
     bugsnag (6.27.1)
       concurrent-ruby (~> 1.0)
     builder (3.3.0)
-    byebug (12.0.0)
+    bullet (8.0.7)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     capybara (3.40.0)
       addressable
       matrix
@@ -110,6 +102,9 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    capybara-email (3.0.2)
+      capybara (>= 2.4, < 4.0)
+      mail
     childprocess (5.1.0)
       logger (~> 1.5)
     codeclimate-test-reporter (1.0.7)
@@ -129,6 +124,9 @@ GEM
       addressable
     csv (3.3.4)
     date (3.4.1)
+    debug (1.10.0)
+      irb (~> 1.10)
+      reline (>= 0.3.8)
     decent_exposure (3.0.4)
       activesupport (>= 4.0)
     device_detector (1.1.3)
@@ -155,9 +153,8 @@ GEM
       railties (>= 5.0.0)
     faker (3.5.1)
       i18n (>= 1.8.11, < 2)
-    ffi (1.17.2)
-    ffi (1.17.2-aarch64-linux-gnu)
     ffi (1.17.2-arm64-darwin)
+    ffi (1.17.2-x86_64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
     formatador (1.1.0)
     friendly_id (5.5.1)
@@ -258,7 +255,6 @@ GEM
       benchmark
       logger
     mini_mime (1.1.5)
-    mini_portile2 (2.8.9)
     minitest (5.25.5)
     multi_xml (0.7.2)
       bigdecimal (~> 3.1)
@@ -274,12 +270,9 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.18.8)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
-    nokogiri (1.18.8-aarch64-linux-gnu)
-      racc (~> 1.4)
     nokogiri (1.18.8-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.18.8-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.8-x86_64-linux-gnu)
       racc (~> 1.4)
@@ -308,11 +301,6 @@ GEM
     pry (0.15.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    pry-byebug (3.11.0)
-      byebug (~> 12.0)
-      pry (>= 0.13, < 0.16)
-    pry-rails (0.3.11)
-      pry (>= 0.13.0)
     psych (5.2.6)
       date
       stringio
@@ -360,9 +348,6 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
-    rails_icons (1.3.0)
-      nokogiri (~> 1.16, >= 1.16.4)
-      rails (> 6.1)
     rails_serve_static_assets (0.0.5)
     rails_stdout_logging (0.0.5)
     railties (8.0.2)
@@ -424,6 +409,12 @@ GEM
     rubocop-ast (1.44.1)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
+    rubocop-capybara (2.22.1)
+      lint_roller (~> 1.1)
+      rubocop (~> 1.72, >= 1.72.1)
+    rubocop-factory_bot (2.27.1)
+      lint_roller (~> 1.1)
+      rubocop (~> 1.72, >= 1.72.1)
     rubocop-performance (1.25.0)
       lint_roller (~> 1.1)
       rubocop (>= 1.75.0, < 2.0)
@@ -434,12 +425,26 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.44.0, < 2.0)
+    rubocop-rspec (3.6.0)
+      lint_roller (~> 1.1)
+      rubocop (~> 1.72, >= 1.72.1)
+    rubocop-rspec_rails (2.31.0)
+      lint_roller (~> 1.1)
+      rubocop (~> 1.72, >= 1.72.1)
+      rubocop-rspec (~> 3.5)
     ruby-progressbar (1.13.0)
     ruby-vips (2.2.3)
       ffi (~> 1.12)
       logger
+    rubyzip (2.4.1)
     safely_block (0.4.1)
     securerandom (0.4.1)
+    selenium-webdriver (4.32.0)
+      base64 (~> 0.2)
+      logger (~> 1.4)
+      rexml (~> 3.2, >= 3.2.5)
+      rubyzip (>= 1.2.2, < 3.0)
+      websocket (~> 1.0)
     shellany (0.0.1)
     simplecov (0.22.0)
       docile (~> 1.1)
@@ -461,16 +466,11 @@ GEM
     spring-watcher-listen (2.1.0)
       listen (>= 2.7, < 4.0)
       spring (>= 4)
-    sprockets (4.2.2)
-      concurrent-ruby (~> 1.0)
-      logger
-      rack (>= 2.2.4, < 4)
-    sprockets-rails (3.5.2)
-      actionpack (>= 6.1)
-      activesupport (>= 6.1)
-      sprockets (>= 3.0.0)
     stringio (3.1.7)
     thor (1.3.2)
+    thruster (0.1.13-arm64-darwin)
+    thruster (0.1.13-x86_64-darwin)
+    thruster (0.1.13-x86_64-linux)
     timeout (0.4.3)
     turbo-rails (2.0.13)
       actionpack (>= 7.1.0)
@@ -480,6 +480,7 @@ GEM
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
+    uniform_notifier (1.17.0)
     uri (1.0.3)
     useragent (0.16.11)
     validates_email_format_of (1.8.2)
@@ -505,6 +506,7 @@ GEM
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
+    websocket (1.2.11)
     websocket-driver (0.7.7)
       base64
       websocket-extensions (>= 0.1.0)
@@ -514,9 +516,8 @@ GEM
     zeitwerk (2.7.3)
 
 PLATFORMS
-  aarch64-linux
-  arm64-darwin-22
-  ruby
+  arm64-darwin-24
+  x86_64-darwin
   x86_64-linux
 
 DEPENDENCIES
@@ -525,11 +526,12 @@ DEPENDENCIES
   bcrypt
   brakeman
   bugsnag
-  byebug
+  bullet
   capybara
-  capybara-email!
+  capybara-email
   codeclimate-test-reporter
   createsend
+  debug
   decent_exposure
   devise
   devise-multi_email
@@ -548,25 +550,27 @@ DEPENDENCIES
   listen
   pg
   premailer-rails
-  pry-byebug
-  pry-rails
   puma
   pygmentize
   rails (>= 8.0.0)
   rails-controller-testing
   rails_12factor
-  rails_icons
   redcarpet
   rspec-rails
   rubocop
+  rubocop-capybara
+  rubocop-factory_bot
   rubocop-performance
   rubocop-rails
+  rubocop-rspec
+  rubocop-rspec_rails
+  selenium-webdriver
   simplecov
   solid_queue
   spring
   spring-commands-rspec
   spring-watcher-listen
-  sprockets-rails
+  thruster
   turbo-rails
   tzinfo-data
   validates_email_format_of

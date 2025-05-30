@@ -1,3 +1,6 @@
 #!/bin/bash
-echo "Running Vite build..."
-./bin/vite build
+set -e
+
+echo "Running Heroku release tasks..."
+echo "Note: Node.js dependencies and Vite build handled during build phase"
+echo "Heroku release tasks completed successfully!"

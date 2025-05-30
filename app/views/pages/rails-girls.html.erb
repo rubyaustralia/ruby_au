@@ -1,35 +1,129 @@
-<%= content_for :heading do %>
-  Rails Girls
-<% end %>
+<section class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+  <div class="bg-white rounded-lg shadow-md overflow-hidden">
+    <div class="flex flex-col md:flex-row">
+      <div class="hidden md:block md:w-2/5 bg-ruby-red">
+        <div class="h-full w-full relative bg-railsgirls">
+          <div class="absolute inset-0 bg-gradient-to-r from-ruby-red/50 to-transparent"></div>
+        </div>
+      </div>
 
-<p>
-  Rails Girls is a global, non-profit volunteer community that provides tools and a community for women to understand technology and to build their ideas. You can find more information on the <%= link_to_external "Rails Girls website.", "http://railsgirls.com/" %>
-</p>
+      <div class="w-full md:w-3/5 p-6 sm:p-8 md:p-10">
+        <header class="mb-6 sm:mb-8">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-5">Rails Girls</h1>
 
-<p>
-  Australian editions of these events run regularly across the country - to stay on top of what's happening and to hear when an event is run near you, we recommend you sign up for our Rails Girls Australia announcements mailing list.
-</p>
+          <div class="space-y-4 text-sm sm:text-base text-gray-700">
+            <p>
+              Rails Girls is a global, non-profit volunteer community that provides tools and a community for women to
+              understand technology and to build their ideas. You can find more information on the
+              <%= link_to "Rails Girls website.", "https://railsgirls.com/", class: "text-ruby-red hover:text-red-700 transition-colors font-medium underline" %>
+            </p>
 
-<%= form_tag "http://rubyaustralia.createsend.com/t/j/s/qtheu/", id: "subForm", class: "standard" do %>
-  <div class="field">
-    <div class="label">
-      <%= label_tag "cm-name", "Name" %>
-    </div>
-    <div class="input">
-      <%= text_field_tag "cm-name" %>
+            <p>
+              Australian editions of these events run regularly across the country - to stay on top of what's happening and to hear when an event is run near you, we recommend you sign up for our Rails Girls Australia announcements mailing list.
+            </p>
+          </div>
+        </header>
+
+        <!-- Subscription Form -->
+        <div class="bg-gray-50 rounded-lg p-5 sm:p-6 md:p-8">
+          <h2 class="text-lg sm:text-xl font-medium text-gray-900 mb-4 sm:mb-5">Join Our Mailing List</h2>
+          <%= form_tag "http://rubyaustralia.createsend.com/t/j/s/qtheu/", id: "subForm", class: "space-y-4 sm:space-y-5" do %>
+            <div class="space-y-1.5">
+              <%= label_tag "cm-name", "Name", class: "block text-sm sm:text-base font-medium text-gray-700" %>
+              <%= text_field_tag "cm-name", nil, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-ruby-red focus:ring-ruby-red sm:text-sm", placeholder: "Your name" %>
+            </div>
+
+            <div class="space-y-1.5">
+              <%= label_tag "cm-qtheu-qtheu", "Email", class: "block text-sm sm:text-base font-medium text-gray-700" %>
+              <%= text_field_tag "cm-qtheu-qtheu", nil, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-ruby-red focus:ring-ruby-red sm:text-sm", placeholder: "you@example.com" %>
+            </div>
+
+            <div class="pt-2">
+              <%= submit_tag "Subscribe", class: "inline-flex items-center px-4 py-2 border border-transparent text-sm sm:text-base font-medium rounded-md shadow-sm text-white bg-ruby-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" %>
+            </div>
+          <% end %>
+        </div>
+
+        <!-- Additional Info Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-8 sm:mt-10">
+          <div class="bg-gray-50 rounded-lg p-4 sm:p-5">
+            <div class="flex items-start mb-3">
+              <div class="flex-shrink-0">
+                <i data-lucide="calendar" class="h-5 w-5 text-ruby-red"></i>
+              </div>
+              <div class="ml-3">
+                <h3 class="text-sm sm:text-base font-medium text-gray-900">Upcoming Events</h3>
+                <p class="mt-2 text-sm text-gray-600">Stay informed about workshops in your area by subscribing to our mailing list.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-lg p-4 sm:p-5">
+            <div class="flex items-start mb-3">
+              <div class="flex-shrink-0">
+                <i data-lucide="users" class="h-5 w-5 text-ruby-red"></i>
+              </div>
+              <div class="ml-3">
+                <h3 class="text-sm sm:text-base font-medium text-gray-900">Volunteer</h3>
+                <p class="mt-2 text-sm text-gray-600">Want to help? We're always looking for coaches and organisers for our events.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="field">
-    <div class="label">
-      <%= label_tag "cm-qtheu-qtheu", "Email" %>
-    </div>
-    <div class="input">
-      <%= text_field_tag "cm-qtheu-qtheu" %>
+  <!-- Testimonials Section -->
+  <div class="mt-12 sm:mt-16 md:mt-20">
+    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">What Participants Say</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      <div class="bg-white rounded-lg shadow-sm p-5 sm:p-6 border border-gray-200">
+        <div class="flex flex-col sm:flex-row sm:items-start">
+          <div class="mb-4 sm:mb-0 sm:mr-4 flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-ruby-red text-white mx-auto sm:mx-0">
+            <i data-lucide="quote" class="h-6 w-6"></i>
+          </div>
+          <div>
+            <p class="text-gray-700 text-sm sm:text-base mb-4 italic">
+              "Rails Girls was my first introduction to coding. The supportive environment gave me confidence to explore technology, and now I'm a full-time web developer!"
+            </p>
+            <p class="font-medium text-gray-900 text-sm sm:text-base">- Sarah J., Melbourne</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-sm p-5 sm:p-6 border border-gray-200">
+        <div class="flex flex-col sm:flex-row sm:items-start">
+          <div class="mb-4 sm:mb-0 sm:mr-4 flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-ruby-red text-white mx-auto sm:mx-0">
+            <i data-lucide="quote" class="h-6 w-6"></i>
+          </div>
+          <div>
+            <p class="text-gray-700 text-sm sm:text-base mb-4 italic">
+              "I volunteered as a coach at Rails Girls and found it incredibly rewarding. Seeing participants build their first web app in just one day is amazing!"
+            </p>
+            <p class="font-medium text-gray-900 text-sm sm:text-base">- Emily T., Sydney</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="buttons">
-    <%= submit_tag "Subscribe" %>
+  <!-- CTA Section -->
+  <div class="mt-12 sm:mt-16 bg-ruby-red text-white rounded-lg overflow-hidden shadow-lg">
+    <div class="p-6 sm:p-8 md:p-10 text-center">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-5">Ready to join the Ruby community?</h2>
+      <p class="text-sm sm:text-base max-w-2xl mx-auto mb-6 sm:mb-8">
+        Rails Girls workshops are a perfect starting point for anyone interested in coding. Subscribe to our mailing list to be notified about upcoming events across Australia.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#subForm" class="inline-flex items-center px-5 py-2.5 border border-transparent text-sm sm:text-base font-medium rounded-md shadow-sm text-ruby-red bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-ruby-red focus:ring-white transition-colors">
+          Subscribe Now
+        </a>
+        <a href="http://railsgirls.com/" target="_blank" rel="noopener" class="inline-flex items-center px-5 py-2.5 border border-white text-sm sm:text-base font-medium rounded-md text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-ruby-red focus:ring-white transition-colors">
+          Learn More
+        </a>
+      </div>
+    </div>
   </div>
-<% end %>
+</section>

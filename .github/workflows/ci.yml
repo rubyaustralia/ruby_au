@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -36,22 +36,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
-          cache: 'yarn'
-          cache-dependency-path: 'yarn.lock'
+          cache: 'npm'
 
-      - name: Set up Yarn 4
+      - name: Install JavaScript dependencies
         run: |
-          corepack enable
-          yarn set version 4.9.1
+          # Use npm for CI to avoid E2BIG errors
+          rm -rf node_modules package-lock.json
+          npm install
 
-      - name: Install dependencies
-        run: |
-          yarn install
-          bundle install
+      - name: Install Ruby dependencies
+        run: bundle install
 
       - name: Prepare assets
         run: |
-          bin/vite build
+          npx vite build
           bundle exec rails assets:precompile
 
       - name: Lint Ruby code

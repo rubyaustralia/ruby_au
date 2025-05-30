@@ -103,27 +103,27 @@ RSpec.describe Post, type: :model do
 
     describe 'status' do
       it 'defines the correct statuses' do
-        expect(Post.statuses).to eq({
-                                      "draft" => 0,
-                                      "scheduled" => 1,
-                                      "published" => 2,
-                                      "archived" => 3
-                                    })
+        expect(described_class.statuses).to eq({
+                                                 "draft" => 0,
+                                                 "scheduled" => 1,
+                                                 "published" => 2,
+                                                 "archived" => 3
+                                               })
       end
 
       it 'defaults to draft' do
         expect(post.status).to eq("draft") # based on factory default
-        new_post = Post.new
+        new_post = described_class.new
         expect(new_post.status).to eq("draft") # model default
       end
     end
 
     describe 'category' do
       it 'defines the correct categories' do
-        expect(Post.categories).to eq({
-                                        "news" => 0,
-                                        "announcements" => 1
-                                      })
+        expect(described_class.categories).to eq({
+                                                   "news" => 0,
+                                                   "announcements" => 1
+                                                 })
       end
     end
   end
@@ -132,18 +132,18 @@ RSpec.describe Post, type: :model do
     let(:user) { create(:user) }
 
     describe '.published_with_associations' do
-      let(:published_post1) { create(:post, user: user, status: :published, published_at: 2.days.ago) }
-      let(:published_post2) { create(:post, user: user, status: :published, published_at: 1.day.ago) }
+      let(:older_published_post) { create(:post, user: user, status: :published, published_at: 2.days.ago) }
+      let(:newer_published_post) { create(:post, user: user, status: :published, published_at: 1.day.ago) }
       let(:draft_post) { create(:post, user: user, status: :draft) }
 
       before do
-        published_post1
-        published_post2
+        older_published_post
+        newer_published_post
         draft_post
       end
 
       it 'returns only published posts in descending order' do
-        expect(Post.published_with_associations).to eq([published_post2, published_post1])
+        expect(described_class.published_with_associations).to eq([newer_published_post, older_published_post])
       end
     end
 
@@ -155,14 +155,15 @@ RSpec.describe Post, type: :model do
         news_post
         announcement_post
       end
+
       it 'filters posts by category when category is provided' do
-        results = Post.filter_by_category(:news)
+        results = described_class.filter_by_category(:news)
         expect(results).to include(news_post)
         expect(results).not_to include(announcement_post)
       end
 
       it 'returns nil when category is not provided' do
-        expect(Post.filter_by_category(nil)).to match_array([news_post, announcement_post])
+        expect(described_class.filter_by_category(nil)).to contain_exactly(news_post, announcement_post)
       end
     end
   end
@@ -193,8 +194,8 @@ RSpec.describe Post, type: :model do
     let(:post) { create(:post) }
 
     it 'changes post status to archived' do
-      expect { post.archive }.to change { post.status }.from('draft').to('archived')
-                                                       .and change { post.archived_at }.from(nil).to(Time)
+      expect { post.archive }.to change(post, :status).from('draft').to('archived')
+                                                      .and change(post, :archived_at).from(nil).to(Time)
     end
   end
 

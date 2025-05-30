@@ -48,9 +48,10 @@ RSpec.describe User, type: :model do
       committee_user
       unconfirmed_user
     end
+
     it 'returns users who are part of the committee' do
-      expect(User.committee).to include(committee_user)
-      expect(User.committee).not_to include(unconfirmed_user)
+      expect(described_class.committee).to include(committee_user)
+      expect(described_class.committee).not_to include(unconfirmed_user)
     end
   end
 
@@ -64,23 +65,23 @@ RSpec.describe User, type: :model do
 
   describe '#active_for_authentication?' do
     it 'returns true if the user is not deactivated' do
-      expect(user.active_for_authentication?).to be_truthy
+      expect(user).to be_active_for_authentication
     end
 
     it 'returns false if the user is deactivated' do
       user.deactivated_at = Time.current
-      expect(user.active_for_authentication?).to be_falsey
+      expect(user).not_to be_active_for_authentication
     end
   end
 
   describe '#deactivated?' do
     it 'returns false if the user is not deactivated' do
-      expect(user.deactivated?).to be_falsey
+      expect(user).not_to be_deactivated
     end
 
     it 'returns true if the user is deactivated' do
       user.deactivated_at = Time.current
-      expect(user.deactivated?).to be_truthy
+      expect(user).to be_deactivated
     end
   end
 
@@ -97,7 +98,7 @@ RSpec.describe User, type: :model do
     it 'does not return users with email and associated Email record' do
       user_with_email_field
       user_with_emails_association
-      expect(User.without_emails).to eq([user_with_email_field])
+      expect(described_class.without_emails).to eq([user_with_email_field])
     end
   end
 
@@ -123,7 +124,8 @@ RSpec.describe User, type: :model do
     end
 
     it 'does not trigger update_mailing_list_and_memberships method' do
-      expect(user_with_email_field).to_not receive(:update_mailing_list_and_memberships)
+      allow(user_with_email_field).to receive(:update_mailing_list_and_memberships)
+      expect(user_with_email_field).not_to have_received(:update_mailing_list_and_memberships)
       user_with_email_field.update_emails
     end
 

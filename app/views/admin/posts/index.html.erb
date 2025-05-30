@@ -1,40 +1,72 @@
-<% content_for :heading, "Blog" %>
+<div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10">
+  <div class="mb-6 sm:mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Posts</h1>
 
-<article>
-  <table class="min-w-full divide-y divide-gray-200 text-sm text-left bg-white rounded shadow-sm ml-5">
-    <thead class="bg-gray-50">
-      <tr>
-        <th>ID</th>
-        <th>Status</th>
-        <th>Slug</th>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Content</th>
-        <th>Created At</th>
-        <th>Publish Scheduled At</th>
-        <th>Published At</th>
-      </tr>
-    </thead>
-    <tbody class="divide-y divide-gray-100">
-      <% @posts.each do |post| %>
-        <tr class="hover:bg-gray-100">
-          <td><%= post.id %></td>
-          <td><%= post.status.capitalize %></td>
-          <td><%= post.slug %></td>
-          <td><%= link_to post.title, admin_post_path(post) %></td>
-          <td><%= post.category.humanize %></td>
-          <td><%= post.content.to_plain_text.truncate(80) %></td>
-          <td><%= post.created_at.try(:strftime, "%Y-%m-%d %H:%M") %></td>
-          <td><%= post.publish_scheduled_at.try(:strftime, "%Y-%m-%d %H:%M") %></td>
-          <td><%= post.published_at.try(:strftime, "%Y-%m-%d %H:%M") %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <div class="ml-5 mt-5">
-    <%= paginate @posts %>
+    <%= link_to new_admin_post_path, class: "inline-flex items-center justify-center bg-ruby-red hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors shadow-sm text-sm sm:text-base" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+      </svg>
+      New Post
+    <% end %>
   </div>
-</article>
-<p class="button">
-  <%= link_to "New post", new_admin_post_path %>
-</p>
+
+  <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+    <div class="overflow-x-auto">
+      <table class="w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+        <tr>
+          <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">ID</th>
+          <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Status</th>
+          <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden lg:table-cell">Slug</th>
+          <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Title</th>
+          <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Category</th>
+          <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">Content</th>
+          <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">Created</th>
+          <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden xl:table-cell">Scheduled</th>
+          <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden lg:table-cell">Published</th>
+        </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 bg-white">
+        <% @posts.each do |post| %>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden md:table-cell"><%= post.id %></td>
+            <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm">
+                <span class="<%= status_badge_class(post.status) %> px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full">
+                  <%= post.status.capitalize %>
+                </span>
+            </td>
+            <td class="px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm text-gray-500 hidden lg:table-cell">
+              <div class="max-w-xs truncate"><%= post.slug %></div>
+            </td>
+            <td class="px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm font-medium">
+              <%= link_to admin_post_path(post), class: "text-ruby-red hover:text-red-700 transition-colors" do %>
+                <div class="max-w-[150px] sm:max-w-[200px] md:max-w-xs truncate"><%= post.title %></div>
+              <% end %>
+            </td>
+            <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-700"><%= post.category.humanize %></td>
+            <td class="px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm text-gray-500 hidden sm:table-cell">
+              <div class="max-w-[150px] md:max-w-[200px] lg:max-w-xs truncate"><%= post.content.to_plain_text.truncate(80) %></div>
+            </td>
+            <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden md:table-cell"><%= post.created_at.try(:strftime, "%Y-%m-%d") %></td>
+            <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden xl:table-cell"><%= post.publish_scheduled_at.try(:strftime, "%Y-%m-%d") %></td>
+            <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden lg:table-cell"><%= post.published_at.try(:strftime, "%Y-%m-%d") %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <% if @posts.respond_to?(:total_pages) && @posts.total_pages > 1 %>
+      <div class="border-t border-gray-200 px-4 py-4 bg-gray-50 sm:px-6">
+        <div class="flex justify-between items-center flex-wrap gap-4">
+          <div class="text-sm text-gray-700">
+            Showing page <%= @posts.current_page %> of <%= @posts.total_pages %>
+          </div>
+          <div class="pagination-container">
+            <%= paginate @posts %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

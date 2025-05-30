@@ -1,49 +1,43 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+<div id="<%= dom_id post %>" class="mx-auto px-4 sm:px-6 lg:px-8 max-w-full sm:max-w-xl lg:max-w-4xl">
+  <!-- Title section -->
+  <div class="mb-4 sm:mb-6">
+    <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold"><%= post.title %></h2>
+    <p class="text-sm text-gray-500 mt-1"><%= post.slug %></p>
+  </div>
 
-  <p>
-    <strong>Slug:</strong>
-    <%= post.slug %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <div class="action-text px-5">
+  <!-- Content section -->
+  <div class="mb-6 sm:mb-8">
+    <h3 class="text-lg sm:text-xl font-medium mb-2">Content</h3>
+    <div class="action-text px-3 sm:px-4 lg:px-5 py-3 bg-gray-50 rounded-md">
       <%= post.content %>
     </div>
-  </p>
+  </div>
 
-  <p>
-    <strong>Status:</strong>
-    <%= post.status %>
-  </p>
+  <!-- Post metadata -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+    <div class="bg-white p-3 sm:p-4 rounded shadow-sm">
+      <p class="font-medium">Status</p>
+      <p class="text-gray-700"><%= post.status %></p>
+    </div>
 
-  <p>
-    <strong>Published at:</strong>
-    <%= post.published_at %>
-  </p>
+    <div class="bg-white p-3 sm:p-4 rounded shadow-sm">
+      <p class="font-medium">Category</p>
+      <p class="text-gray-700"><%= post.category.humanize %></p>
+    </div>
 
-  <p>
-    <strong>Category:</strong>
-    <%= post.category.humanize %>
-  </p>
+    <div class="bg-white p-3 sm:p-4 rounded shadow-sm">
+      <p class="font-medium">Published at</p>
+      <p class="text-gray-700"><%= post.published_at %></p>
+    </div>
 
-  <p>
-    <strong>Publish scheduled at:</strong>
-    <%= post.publish_scheduled_at %>
-  </p>
+    <div class="bg-white p-3 sm:p-4 rounded shadow-sm">
+      <p class="font-medium">Publish scheduled at</p>
+      <p class="text-gray-700"><%= post.publish_scheduled_at %></p>
+    </div>
 
-  <p>
-    <strong>Published at:</strong>
-    <%= post.published_at %>
-  </p>
-
-  <p>
-    <strong>Archived at:</strong>
-    <%= post.archived_at %>
-  </p>
-
+    <div class="bg-white p-3 sm:p-4 rounded shadow-sm">
+      <p class="font-medium">Archived at</p>
+      <p class="text-gray-700"><%= post.archived_at %></p>
+    </div>
+  </div>
 </div>
