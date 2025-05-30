@@ -1,3 +1,17 @@
 #!/bin/bash
+set -e
+
+echo "Running Heroku release tasks..."
+
+if ! command -v yarn &> /dev/null; then
+  echo "Installing yarn..."
+  npm install -g yarn@1.22.22
+fi
+
+echo "Installing JavaScript dependencies..."
+yarn install --production=false --frozen-lockfile
+
 echo "Running Vite build..."
 ./bin/vite build
+
+echo "Heroku release tasks completed successfully!"

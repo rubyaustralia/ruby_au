@@ -38,13 +38,12 @@
     "vite-plugin-stimulus-hmr": "^3.0.0"
   },
   "engines": {
-    "node": "22.x.x"
+    "node": "22.x.x",
+    "yarn": "1.x.x"
   },
   "scripts": {
-    "dev": "yarn vite dev",
-    "build": "yarn vite build",
-    "preview": "vite preview",
-    "install": "yarn install"
+    "build": "vite build",
+    "dev": "vite dev"
   },
   "repository": {
     "type": "git",

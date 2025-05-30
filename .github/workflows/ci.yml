@@ -1,4 +1,3 @@
-
 name: Continuous Integration
 
 on:
@@ -25,7 +24,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -37,20 +36,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
-          cache: 'yarn'
-
-      - name: Set up Yarn
-        run: npm install -g yarn@1.22.22
+          cache: 'npm'
 
       - name: Install JavaScript dependencies
-        run: yarn install --frozen-lockfile
+        run: |
+          # Use npm for CI to avoid E2BIG errors
+          rm -rf node_modules package-lock.json
+          npm install
 
       - name: Install Ruby dependencies
         run: bundle install
 
       - name: Prepare assets
         run: |
-          bin/vite build
+          npx vite build
           bundle exec rails assets:precompile
 
       - name: Lint Ruby code
