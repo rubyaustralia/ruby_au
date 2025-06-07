@@ -1,3 +1,4 @@
+
 {
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.40",
@@ -39,18 +40,17 @@
   },
   "engines": {
     "node": "22.x.x",
-    "yarn": "1.x"
+    "yarn": "1.x.x"
   },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "heroku-postbuild": "pnpm run build"
+    "heroku-postbuild": "yarn run build"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/rubyaustralia/ruby_au.git"
   },
-  "license": "MIT",
-  "packageManager": "pnpm@10.11.0"
+  "license": "MIT"
 }
