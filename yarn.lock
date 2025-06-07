@@ -3090,7 +3090,7 @@ sass-lint@^1.13.1:
     path-is-absolute "^1.0.0"
     util "^0.10.3"
 
-sass@^1.86.3:
+sass@^1.89.0:
   version "1.89.1"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.89.1.tgz#9281c52c85b4be54264d310fef63a811dfcfb9d9"
   integrity sha512-eMLLkl+qz7tx/0cJ9wI+w09GQ2zodTkcE/aVfywwdlRcI3EO19xGnbmJwg/JMIm+5MxVJ6outddLZ4Von4E++Q==
@@ -3133,7 +3133,7 @@ shelljs@^0.6.0:
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.6.1.tgz#ec6211bed1920442088fe0f70b2837232ed2c8a8"
   integrity sha512-B1vvzXQlJ77SURr3SIUQ/afh+LwecDKAVKE1wqkBlr2PCHoZDaF6MFD+YX1u9ddQjR4z2CKx1tdqvS2Xfs5h1A==
 
-signature_pad@^5.0.4:
+signature_pad@^5.0.7:
   version "5.0.9"
   resolved "https://registry.yarnpkg.com/signature_pad/-/signature_pad-5.0.9.tgz#125f59707840caf5c78a81cb5fb8b844f079f59e"
   integrity sha512-x+X69R5knEvZh06uytjGCODBFoUk9aDkK3Y60D8TDMSa8Ue42JXrMLL4FDNpyntYtTskothiVaxVvgSRg4gKHw==
