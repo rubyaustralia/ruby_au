@@ -27,7 +27,7 @@ You should also feel free to contact our sponsorship representatives via email: 
 
 <section class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
   <article id="sponsors" class="welcome">
-    <% sponsors.group_by { |sponsor| sponsor['tier'] }.each do |tier, sponsors| %>
+    <% @sponsors.group_by { |sponsor| sponsor['tier'] }.each do |tier, sponsors| %>
       <section class="sponsor-logos flex flex-col">
         <h2><%= tier %> Sponsors </h2>
         <% sponsors.each do |sponsor| %>

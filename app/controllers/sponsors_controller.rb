@@ -1,15 +1,21 @@
 class SponsorsController < ApplicationController
-  expose(:sponsors) do
-    YAML.load_file Rails.root.join('config/data/sponsors.yml')
-  end
+  before_action :sponsors
 
-  expose(:sponsor) do
-    sponsors.detect { |hash| hash['key'] == params[:id] }
+  def index
+    # @sponsors is already loaded by before_action
   end
 
   def show
-    return unless sponsor.nil?
+    @sponsor = @sponsors.find { |sponsor| sponsor['key'] == params[:id] }
 
-    raise ActionController::RoutingError, "No such page: #{params[:id]}"
+    return if @sponsor
+
+    raise ActionController::RoutingError, "No such sponsor: #{params[:id]}"
+  end
+
+  private
+
+  def sponsors
+    @sponsors ||= YAML.load_file(Rails.root.join('config/data/sponsors.yml'))
   end
 end
