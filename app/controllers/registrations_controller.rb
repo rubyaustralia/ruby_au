@@ -8,7 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def confirm_human
-    return unless params[:human_verification].downcase['ruby'].nil?
+    return if params[:human_verification]&.downcase&.include?('ruby')
 
     build_resource(sign_up_params)
 
