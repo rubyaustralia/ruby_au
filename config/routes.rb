@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, controllers: {
+    registrations: 'registrations'
+  }
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   mount Ahoy::Engine => "/ahoy", as: :analytics_tracking unless Rails.env.test?
@@ -19,12 +21,16 @@ Rails.application.routes.draw do
   end
 
   resources :rsvps, only: [:show, :update, :destroy] do
-    member { get :confirm, :decline }
+    member do
+      get :confirm
+      get :decline
+    end
   end
 
   resources :reactivations, only: [:new, :create]
 
   namespace :admin do
+    resource :dashboard, only: [:show]
     resources :memberships, only: [:index]
     resources :access_requests, except: [:destroy]
     resources :imported_members, only: [:index, :create]
@@ -40,7 +46,8 @@ Rails.application.routes.draw do
 
   resources :invitations, only: [] do
     member do
-      get :unsubscribe, :new
+      get :unsubscribe
+      get :new
       post :create
     end
   end
@@ -49,7 +56,9 @@ Rails.application.routes.draw do
   get 'posts/*slug', to: 'posts#show', as: :post
 
   resources :mailing_lists, only: [] do
-    member { post :hook }
+    member do
+      post :hook
+    end
   end
 
   post '/slack/hook' => 'slack#hook'
@@ -63,6 +72,7 @@ Rails.application.routes.draw do
 
   get "/events/rubyconf_au_2021" => "events#rubyconf_au_2021"
   get "/events/rails_camp_27" => "events#rails_camp_27"
+  get "/events", to: "events#index"
 
   root to: 'pages#show', defaults: { id: 'welcome' }
 

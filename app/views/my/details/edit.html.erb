@@ -1,124 +1,140 @@
-<%= content_for :heading do %>
-  Update Details
-<% end %>
+<div class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+  <div class="space-y-12 sm:space-y-16 md:space-y-20">
+    <!-- Update Membership Form -->
+    <section>
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Update Membership</h2>
 
-<h2>Update Membership</h2>
-
-<%= form_for @user, url: my_details_path, html: {class: 'standard'} do |form| %>
-  <% if @user.errors.any? && !password_errors?(@user) %>
-    <div id="error_explanation" class="ui visible error message">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this from being saved:</h2>
-
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+      <%= form_for @user, url: my_details_path, html: { class: 'space-y-6 sm:space-y-8' } do |form| %>
+        <% if @user.errors.any? && !password_errors?(@user) %>
+          <div id="error_explanation" class="bg-red-50 border-l-4 border-red-500 p-4 sm:p-5 rounded-md mb-6">
+            <h3 class="text-red-800 font-medium"><%= pluralize(@user.errors.count, "error") %> prohibited this from being saved:</h3>
+            <ul class="mt-2 list-disc pl-5 space-y-1 text-red-700">
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <div class="label">
-      <%= form.label :full_name, class: 'required' %>
-    </div>
-    <div class="input">
-      <%= form.text_field :full_name %>
-    </div>
-  </div>
-
-  <div class="field">
-    <div class="label">
-      <%= form.label :address, class: 'required' %>
-    </div>
-    <div class="input">
-      <%= form.text_area :address %>
-    </div>
-  </div>
-
-  <div class="field flipped">
-    <div class="input">
-      <%= form.check_box :visible %>
-    </div>
-    <div class="label">
-      <%= form.label :visible, 'Visible on Members Registry' %>
-    </div>
-    <div class="hint">
-      The registry is only viewable to other members on request, and with supervision from a committee member. Still, we can <%= link_to_external "retract your details", "https://www.consumer.vic.gov.au/clubs-and-fundraising/incorporated-associations/running-an-incorporated-association/membership#restricting-access-to-personal-information" %> if you wish.
-    </div>
-  </div>
-
-  <fieldset>
-    <legend>Mailing Lists</legend>
-
-    <% MailingList.each do |list| %>
-      <div class="field flipped">
-        <div class="input">
-          <%= hidden_field_tag "user[mailing_lists][#{list.name}]", "false" %>
-          <%= check_box_tag "user[mailing_lists][#{list.name}]", "true", @user.mailing_lists[list.name] == "true", id: list.normalised_name %>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-start">
+          <label for="user_full_name" class="block text-sm font-medium text-gray-700 md:text-right md:mt-2">
+            Full Name <span class="text-red-500">*</span>
+          </label>
+          <div class="md:col-span-2">
+            <%= form.text_field :full_name, class: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-ruby-red focus:border-ruby-red" %>
+          </div>
         </div>
-        <div class="label">
-          <%= label_tag list.normalised_name, list.name %>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-start">
+          <label for="user_address" class="block text-sm font-medium text-gray-700 md:text-right md:mt-2">
+            Address <span class="text-red-500">*</span>
+          </label>
+          <div class="md:col-span-2">
+            <%= form.text_area :address, rows: 4, class: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-ruby-red focus:border-ruby-red" %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </fieldset>
 
-  <div class="buttons">
-    <%= form.submit 'Update my details' %>
-  </div>
-<% end %>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-start md:items-center">
+          <div class="md:col-span-2 md:col-start-2">
+            <div class="flex items-start">
+              <div class="flex items-center h-5">
+                <%= form.check_box :visible, class: "h-4 w-4 text-ruby-red border-gray-300 rounded focus:ring-ruby-red" %>
+              </div>
+              <div class="ml-3 text-sm">
+                <label for="user_visible" class="font-medium text-gray-700">Visible on Members Registry</label>
+                <p class="text-gray-500 mt-1">
+                  The registry is only viewable to other members on request, and with supervision from a committee member. Still, we can
+                  <%= link_to "retract your details", "https://www.consumer.vic.gov.au/clubs-and-fundraising/incorporated-associations/running-an-incorporated-association/membership#restricting-access-to-personal-information", class: "text-ruby-red hover:text-red-700 underline" %>
+                  if you wish.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<h2>Change Password</h2>
+        <fieldset class="mt-6 sm:mt-8">
+          <legend class="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">Mailing Lists</legend>
 
-<%= form_for(@user, url: my_password_path, html: { method: :put, class: "standard" }) do |f| %>
-  <% if @user.errors.any? && password_errors?(@user) %>
-    <div id="error_explanation" class="ui visible error message">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this from being saved:</h2>
+          <div class="space-y-4 sm:space-y-5 md:ml-[calc(100%/3)]">
+            <% MailingList.each do |list| %>
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <%= hidden_field_tag "user[mailing_lists][#{list.name}]", "false" %>
+                  <%= check_box_tag "user[mailing_lists][#{list.name}]", "true",
+                                    @user.mailing_lists[list.name] == "true",
+                                    id: list.normalised_name,
+                                    class: "h-4 w-4 text-ruby-red border-gray-300 rounded focus:ring-ruby-red" %>
+                </div>
+                <div class="ml-3 text-sm">
+                  <label for="<%= list.normalised_name %>" class="font-medium text-gray-700"><%= list.name %></label>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </fieldset>
 
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+        <div class="md:ml-[calc(100%/3)] pt-5">
+          <%= form.submit 'Update my details', class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-ruby-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" %>
+        </div>
+      <% end %>
+    </section>
+
+    <!-- Change Password Form -->
+    <section class="pt-8 sm:pt-10 border-t border-gray-200">
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Change Password</h2>
+
+      <%= form_for(@user, url: my_password_path, html: { method: :put, class: "space-y-6 sm:space-y-8" }) do |f| %>
+        <% if @user.errors.any? && password_errors?(@user) %>
+          <div id="error_explanation" class="bg-red-50 border-l-4 border-red-500 p-4 sm:p-5 rounded-md mb-6">
+            <h3 class="text-red-800 font-medium"><%= pluralize(@user.errors.count, "error") %> prohibited this from being saved:</h3>
+            <ul class="mt-2 list-disc pl-5 space-y-1 text-red-700">
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <div class="label">
-      <%= f.label :password, "New password" %>
-    </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-start">
+          <label for="user_password" class="block text-sm font-medium text-gray-700 md:text-right md:mt-2">
+            New password
+          </label>
+          <div class="md:col-span-2">
+            <%= f.password_field :password, autofocus: true, autocomplete: "new-password",
+                                 class: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-ruby-red focus:border-ruby-red" %>
+            <p class="mt-1 text-sm text-gray-500">
+              (<%= User.password_length.min %> characters minimum)
+            </p>
+          </div>
+        </div>
 
-    <div class="input">
-      <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
-    </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-start">
+          <label for="user_password_confirmation" class="block text-sm font-medium text-gray-700 md:text-right md:mt-2">
+            Confirm new password
+          </label>
+          <div class="md:col-span-2">
+            <%= f.password_field :password_confirmation, autocomplete: "off",
+                                 class: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-ruby-red focus:border-ruby-red" %>
+          </div>
+        </div>
 
-    <div class="hint">
-      <em>(<%= User.password_length.min %> characters minimum)</em>
-    </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-start">
+          <label for="user_current_password" class="block text-sm font-medium text-gray-700 md:text-right md:mt-2">
+            Current password
+          </label>
+          <div class="md:col-span-2">
+            <%= f.password_field :current_password, autocomplete: "current-password",
+                                 class: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-ruby-red focus:border-ruby-red" %>
+            <p class="mt-1 text-sm text-gray-500">
+              (we need your current password to confirm your changes)
+            </p>
+          </div>
+        </div>
+
+        <div class="md:ml-[calc(100%/3)] pt-5">
+          <%= f.submit "Change my password", class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-ruby-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" %>
+        </div>
+      <% end %>
+    </section>
   </div>
-
-  <div class="field">
-    <div class="label">
-      <%= f.label :password_confirmation, "Confirm new password" %>
-    </div>
-    <div class="input">
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
-  </div>
-
-  <div class="field">
-    <div class="label">
-      <%= f.label :current_password %>
-    </div>
-    <div class="input">
-      <%= f.password_field :current_password, autocomplete: "current-password" %>
-    </div>
-    <div class="hint">
-      <em>(we need your current password to confirm your changes)</em>
-    </div>
-  </div>
-
-  <div class="buttons">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+</div>

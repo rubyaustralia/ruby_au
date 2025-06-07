@@ -102,6 +102,6 @@ RSpec.describe "User edits profile details", type: :feature do
 
     user.reload
     expect(page).to have_content 'Your password has been updated. You will need to sign in again to continue.'
-    expect(user.valid_password?('newpassword')).to eq(true)
+    expect(user.valid_password?('newpassword')).to be(true)
   end
 end
