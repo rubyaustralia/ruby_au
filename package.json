@@ -13,6 +13,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "chart.js": "^4.4.9",
     "jquery": "^3.7.1",
+    "regenerator-runtime": "^0.14.1",
     "sass": "^1.89.0",
     "signature_pad": "^5.0.7",
     "tailwindcss": "^3.4.17",
@@ -31,7 +32,8 @@
     "vite-plugin-stimulus-hmr": "^3.0.0"
   },
   "engines": {
-    "node": "22.x.x"
+    "node": "22.x.x",
+    "yarn": "1.x"
   },
   "scripts": {
     "dev": "vite dev",
@@ -41,6 +43,5 @@
     "type": "git",
     "url": "https://github.com/rubyaustralia/ruby_au.git"
   },
-  "license": "MIT",
-  "packageManager": "yarn@4.9.1"
+  "license": "MIT"
 }
