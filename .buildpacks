@@ -1,2 +1,2 @@
-heroku/nodejs
-heroku/ruby
+https://github.com/heroku/heroku-buildpack-nodejs
+https://github.com/heroku/heroku-buildpack-ruby
