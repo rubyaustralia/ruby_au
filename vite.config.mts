@@ -41,17 +41,11 @@ export default defineConfig({
   },
   build: {
     minify: 'esbuild',
-    cssCodeSplit: false,
     cssMinify: true,
     outDir: 'public/vite',
     rollupOptions: {
       input: {
-        application: './app/frontend/entrypoints/application.js',
-      },
-      output: {
-        manualChunks: {
-          vendor: ['lucide']
-        }
+        application: resolve(__dirname, 'app/frontend/entrypoints/application.js')
       },
       external: ['jquery']
     },
