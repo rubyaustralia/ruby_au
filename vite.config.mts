@@ -26,8 +26,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      '@images': resolve(__dirname, 'app/frontend/images'),
       '@': resolve(__dirname, 'app/frontend')
-    }
+    },
+    dedupe: ['lucide']
   },
   css: {
     devSourcemap: true,
@@ -38,7 +40,13 @@ export default defineConfig({
     }
   },
   build: {
+    minify: 'esbuild',
+    cssMinify: true,
+    outDir: 'public/vite',
     rollupOptions: {
+      input: {
+        application: resolve(__dirname, 'app/frontend/entrypoints/application.js')
+      },
       external: ['jquery']
     },
     sourcemap: false,

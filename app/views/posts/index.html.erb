@@ -1,27 +1,54 @@
-<% content_for :heading, "Blog" %>
+<div class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+  <header class="mb-8 sm:mb-10 md:mb-12">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-6 sm:mb-8 text-center sm:text-left">News</h1>
 
-<nav class="category-nav mb-8">
-  <ul class="flex justify-center space-x-6 text-lg pb-4">
-    <%= link_to 'Everything', posts_path, class: "text-gray-600 hover:text-red-700 font-bold text-red-700" %>
-    <% Post.categories.keys.each do |category| %>
-      <%= link_to category.humanize, posts_path(category: category), class: "text-gray-600 hover:text-red-700 font-bold text-red-700" %>
-    <% end %>
-   </ul>
-</nav>
+    <nav class="category-nav mb-6 sm:mb-8 pb-2 border-b border-gray-200">
+      <ul class="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-4 md:gap-6">
+        <%= link_to 'Everything', posts_path,
+                    class: "px-3 py-1.5 rounded-full text-sm sm:text-base #{params[:category].blank? ? 'bg-ruby-red text-white font-medium' : 'text-gray-600 hover:bg-gray-100 transition-colors'}" %>
 
-<div class="posts flex flex-col divide-y-2 divide-gray-300 border-y-2 border-gray-300 mx-5">
-  <% @posts.each do |post| %>
-    <div class="post flex py-6">
-      <h3 class="published-date w-[20%] shrink-0 font-semibold text-gray-600 pl-0"><%= post.published_at.strftime("%B %d, %Y") %></h3>
-      <div class="w-[80%]">
-        <h3 class="text-xl font-bold text-red-700 underline mt-2 p">
-          <%= link_to post.title, post_path(post), class: "text-red no-underline" %>
-        </h3>
-        <p class="text-gray-700 mt-2"><%= post.content.to_plain_text.truncate(500) %></p>
+        <% Post.categories.keys.each do |category| %>
+          <%= link_to category.humanize, posts_path(category: category),
+                      class: "px-3 py-1.5 rounded-full text-sm sm:text-base #{params[:category] == category ? 'bg-ruby-red text-white font-medium' : 'text-gray-600 hover:bg-gray-100 transition-colors'}" %>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="space-y-6 sm:space-y-8 md:space-y-10 mb-8 sm:mb-10 md:mb-12">
+    <% if @posts.present? %>
+      <% @posts.each do |post| %>
+        <article class="group border-b border-gray-200 pb-6 sm:pb-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-6">
+            <div class="text-gray-500 md:w-32 shrink-0 text-sm sm:text-base">
+              <%= post.published_at.strftime("%B %d, %Y") %>
+            </div>
+
+            <div class="flex-1">
+              <h2 class="text-xl sm:text-2xl font-bold text-ruby-red mb-3 sm:mb-4 hover:text-red-700 transition-colors">
+                <%= link_to post.title, post_path(post) %>
+              </h2>
+
+              <div class="text-gray-700 text-sm sm:text-base line-clamp-3 sm:line-clamp-4 prose prose-sm sm:prose">
+                <%= post.content.to_plain_text.truncate(300) %>
+              </div>
+
+              <div class="mt-3 sm:mt-4">
+                <%= link_to "Read more", post_path(post),
+                            class: "inline-flex items-center text-ruby-red hover:text-red-700 text-sm sm:text-base font-medium" %>
+              </div>
+            </div>
+          </div>
+        </article>
+      <% end %>
+    <% else %>
+      <div class="text-center py-10 sm:py-12 bg-gray-50 rounded-lg">
+        <p class="text-gray-600 text-lg">No posts available with the selected filter.</p>
       </div>
-    </div>
-  <% end %>
-</div>
-<div class="ml-6 my-6">
-  <%= paginate @posts %>
+    <% end %>
+  </div>
+
+  <div class="flex justify-center sm:justify-end">
+    <%= paginate @posts, class: "pagination" %>
+  </div>
 </div>

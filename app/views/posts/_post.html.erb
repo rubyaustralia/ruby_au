@@ -1,12 +1,31 @@
-<div id="<%= dom_id post %>" class="max-w-7xl mx-auto pt-4 pb-12 px-12">
-  <div class="text-center my-8 pb-8 border-b-2 border-gray-300">
-    <h4 class="p-0">
+<div id="<%= dom_id post %>" class="w-full">
+  <header class="text-center mb-6 sm:mb-8 md:mb-10 pb-4 sm:pb-6 border-b border-gray-200">
+    <time datetime="<%= post.published_at.iso8601 %>" class="block text-sm sm:text-base text-gray-500 mb-2 sm:mb-3">
       <%= post.published_at.strftime("%B %d, %Y") %>
-    </h4>
-    <h2 class="text-5xl font-bold my-3 p-0"><%= post.title %></h2>
-    <div class="">Posted by <%= post.user&.full_name || "Ruby Australia" %></div>
-  </div>
-  <article class="prose max-w-none">
+    </time>
+
+    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+      <%= post.title %>
+    </h1>
+
+    <div class="text-sm sm:text-base text-gray-600">
+      Posted by <%= post.user&.full_name || "Ruby Australia" %>
+    </div>
+  </header>
+
+  <article class="prose prose-sm sm:prose md:prose-lg max-w-none mb-8">
     <%= post.content %>
   </article>
+
+  <% if post.category.present? %>
+    <footer class="mt-8 sm:mt-10 md:mt-12 pt-4 sm:pt-6 border-t border-gray-200">
+      <div class="flex flex-wrap gap-2">
+        <span class="text-sm sm:text-base text-gray-600">Category:</span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-gray-100 text-gray-800">
+          <%= post.category.titleize %>
+        </span>
+      </div>
+    </footer>
+  <% end %>
+
 </div>

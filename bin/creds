@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+set -e
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+EDITOR=${EDITOR:-vim}
+
+echo -e "${BLUE}Rails Credentials Manager${NC}"
+echo "=========================="
+echo
+
+if [ ! -f "Gemfile" ] || [ ! -f "config/application.rb" ]; then
+echo -e "${RED}Error: This doesn't appear to be a Rails application directory.${NC}"
+exit 1
+fi
+
+show_credentials() {
+  echo -e "${GREEN}Showing Rails credentials...${NC}"
+  echo
+  EDITOR=$EDITOR bundle exec rails credentials:show
+}
+
+edit_credentials() {
+  echo -e "${YELLOW}Opening Rails credentials for editing...${NC}"
+  echo -e "${YELLOW}Editor: $EDITOR${NC}"
+  echo
+  EDITOR=$EDITOR bundle exec rails credentials:edit
+}
+
+echo "What would you like to do?"
+echo "1) Show credentials"
+echo "2) Edit credentials"
+echo "3) Exit"
+echo
+read -p "Enter your choice (1-3): " choice
+
+case $choice in
+    1)
+        show_credentials
+        ;;
+    2)
+        edit_credentials
+        ;;
+    3)
+        echo -e "${GREEN}Goodbye!${NC}"
+        ;;
+    *)
+        echo -e "${RED}Invalid choice. Please enter 1, 2, or 3.${NC}"
+        exit 1
+        ;;
+esac
