@@ -10,9 +10,6 @@
             <div class="ml-3 sm:ml-4 flex-1">
               <p class="text-sm sm:text-base font-medium text-green-800 m-0"><%= value %></p>
             </div>
-            <button type="button" class="ml-3 flex-shrink-0 text-green-500 hover:text-green-700 focus:outline-none" onclick="this.parentElement.parentElement.remove()">
-              <i data-lucide="x" class="h-4 w-4 sm:h-5 sm:w-5"></i>
-            </button>
           </div>
         </div>
       <% elsif key == "alert" || key == "error" %>
@@ -24,9 +21,6 @@
             <div class="ml-3 sm:ml-4 flex-1">
               <p class="text-sm sm:text-base font-medium text-red-800 m-0"><%= value %></p>
             </div>
-            <button type="button" class="ml-3 flex-shrink-0 text-red-500 hover:text-red-700 focus:outline-none" onclick="this.parentElement.parentElement.remove()">
-              <i data-lucide="x" class="h-4 w-4 sm:h-5 sm:w-5"></i>
-            </button>
           </div>
         </div>
       <% elsif key == "warning" %>
@@ -38,9 +32,6 @@
             <div class="ml-3 sm:ml-4 flex-1">
               <p class="text-sm sm:text-base font-medium text-amber-800 m-0"><%= value %></p>
             </div>
-            <button type="button" class="ml-3 flex-shrink-0 text-amber-500 hover:text-amber-700 focus:outline-none" onclick="this.parentElement.parentElement.remove()">
-              <i data-lucide="x" class="h-4 w-4 sm:h-5 sm:w-5"></i>
-            </button>
           </div>
         </div>
       <% else %>
@@ -52,9 +43,6 @@
             <div class="ml-3 sm:ml-4 flex-1">
               <p class="text-sm sm:text-base font-medium text-blue-800 m-0"><%= value %></p>
             </div>
-            <button type="button" class="ml-3 flex-shrink-0 text-blue-500 hover:text-blue-700 focus:outline-none" onclick="this.parentElement.parentElement.remove()">
-              <i data-lucide="x" class="h-4 w-4 sm:h-5 sm:w-5"></i>
-            </button>
           </div>
         </div>
       <% end %>
