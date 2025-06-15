@@ -35,6 +35,8 @@ class Post < ApplicationRecord
 
   belongs_to :user
 
+  scope :recent, -> { order(published_at: :desc, created_at: :desc) }
+
   scope :published_with_associations, lambda {
     published
       .includes(:user, :rich_text_content)
