@@ -1,50 +1,52 @@
-<%= content_for :heading do %>
-  Committee Members
-<% end %>
-
-<div id="committee" class="flex flex-col md:flex-row flex-wrap">
-  <% committee.each do |member| %>
-    <article class="bg-white max-w-xs rounded-lg shadow-lg m-5 flex-shrink-0 flex flex-col">
-      <figure class="overflow-hidden max-h-80">
-        <%= image_tag "committee-members/#{member['photo']}", class: "w-full overflow-hidden rounded-t-lg", alt: "Photo of #{member['name']}" %>
-      </figure>
-      <header class="px-6 py-4">
-        <div><%= member['name'] %></div>
-        <div><%= member['position'] %></div>
-      </header>
-      <main class="px-1 py-2">
-        <%= markdown_to_html member['bio'] %>
-      </main>
-      <aside class="flex flex-grow flex-col p-3 justify-end">
-        <% if member['twitter'] %>
-          <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
-            <%= inline_svg_tag "twitter.svg", height: 16, class: "inline" %>
-            <%= link_to "@#{ member['twitter']}", "https://twitter.com/#{ member['twitter']}" %>
-          </span>
-        <% end %>
-        <% if member['github'] %>
-          <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
-            <%= inline_svg_tag "github.svg", height: 16, class: "inline" %>
-            <%= link_to member['github'], "https://github.com/#{ member['github']}", title: 'GitHub' %>
-          </span>
-        <% end %>
-        <% if member['linkedin'] %>
-          <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
-            <%= inline_svg_tag "linkedin.svg", height: 16, class: "inline" %>
-            <%= link_to "LinkedIn", "https://www.linkedin.com/in/#{member['linkedin']}/" %>
-          </span>
-        <% end %>
-        <% if member['website'] %>
-          <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
-            <%= inline_svg_tag "rss.svg", height: 16, class: "inline" %>
-            <%= link_to member['website'].gsub(%r{^https?://}, ''), member['website'] %>
-          </span>
-        <% end %>
-      </aside>
-    </article>
-  <% end %>
-</div>
-
-<p class="text-grey-darker text-base px-5">
-  <%= link_to "Previous Committee Members", "/previous-committee-members" %>
-</p>
+<section class="container mx-auto px-4 py-10">
+  <h1 class="text-center">Committee Members</h1>
+  <div id="committee" class="flex flex-wrap justify-center gap-6 mt-8">
+    <% committee.each do |member| %>
+      <article class="bg-white rounded-lg shadow-lg flex-shrink-0 flex flex-col w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] xl:w-[calc(25%-1.5rem)]">
+        <figure class="overflow-hidden max-h-80">
+          <%= vite_image_tag "images/committee-members/#{member['photo']}", class: "w-full h-auto aspect-square object-cover rounded-t-lg", alt: "Photo of #{member['name']}" %>
+        </figure>
+        <header class="px-4 sm:px-6 py-4">
+          <div class="text-ruby-red font-bold uppercase text-lg sm:text-xl"><%= member['name'] %></div>
+          <div class="font-bold text-sm sm:text-base"><%= member['position'] %></div>
+        </header>
+        <main class="px-4 sm:px-6 py-2">
+          <div class="prose prose-sm sm:prose max-w-none">
+            <%= markdown_to_html member['bio'] %>
+          </div>
+        </main>
+        <aside class="flex flex-grow flex-col p-3 justify-end gap-2">
+          <% if member['twitter'] %>
+            <span class="bg-gray-100 rounded-full px-3 py-2 text-sm font-semibold text-gray-700 flex items-center">
+              <%= vite_inline_svg "twitter.svg", width: 24, height: 24, class: "inline mr-2" %>
+              <%= link_to "@#{ member['twitter']}", "https://x.com/#{ member['twitter']}", class: "hover:text-ruby-red transition-colors" %>
+            </span>
+          <% end %>
+          <% if member['github'] %>
+            <span class="bg-gray-100 rounded-full px-3 py-2 text-sm font-semibold text-gray-700 flex items-center">
+              <%= vite_inline_svg "github.svg", width: 24, height: 24, class: "inline mr-2" %>
+              <%= link_to member['github'], "https://github.com/#{ member['github']}", title: 'GitHub', class: "hover:text-ruby-red transition-colors" %>
+            </span>
+          <% end %>
+          <% if member['linkedin'] %>
+            <span class="bg-gray-100 rounded-full px-3 py-2 text-sm font-semibold text-gray-700 flex items-center">
+              <%= vite_inline_svg "linkedin.svg", width: 24, height: 24, class: "inline mr-2" %>
+              <%= link_to "LinkedIn", "https://www.linkedin.com/in/#{member['linkedin']}/", class: "hover:text-ruby-red transition-colors" %>
+            </span>
+          <% end %>
+          <% if member['website'] %>
+            <span class="bg-gray-100 rounded-full px-3 py-2 text-sm font-semibold text-gray-700 flex items-center">
+              <%= vite_inline_svg "rss.svg", width: 24, height: 24, class: "inline mr-2" %>
+              <%= link_to member['website'].gsub(%r{^https?://}, ''), member['website'], class: "hover:text-ruby-red transition-colors truncate" %>
+            </span>
+          <% end %>
+        </aside>
+      </article>
+    <% end %>
+  </div>
+  <div class="flex justify-center mt-8 mb-10">
+    <div class="bg-ruby-red text-white rounded-2xl py-3 px-5 sm:px-6 transition-colors hover:bg-ruby-red/90">
+      <%= link_to "Previous Committee Members", "/previous-committee-members", class: "block w-full h-full" %>
+    </div>
+  </div>
+</section>

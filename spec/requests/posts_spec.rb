@@ -56,11 +56,11 @@ RSpec.describe "/posts", type: :request do
         get post_path("invalid-slug")
       end
 
-      it "raises an error" do
+      it "redirects to the posts index page" do
         expect(response).to redirect_to(posts_path)
       end
 
-      it "raises an error" do
+      it "displays an appropriate error message" do
         expect(flash[:error]).to eq("Post 'invalid-slug' is not found")
       end
     end

@@ -26,8 +26,8 @@ RSpec.describe Membership, type: :model do
     it 'does not let a second current membership exist for a user' do
       user
 
-      membership = Membership.new user: user, joined_at: 1.minute.ago
-      expect(membership).to_not be_valid
+      membership = described_class.new user: user, joined_at: 1.minute.ago
+      expect(membership).not_to be_valid
     end
   end
 end

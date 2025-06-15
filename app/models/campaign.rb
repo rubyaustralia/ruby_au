@@ -22,6 +22,8 @@
 class Campaign < ApplicationRecord
   belongs_to :rsvp_event, optional: true
 
+  scope :recent, -> { order(created_at: :desc) }
+
   def delivered?
     delivered_at.present?
   end

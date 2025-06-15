@@ -1,0 +1,11 @@
+<% if flash[:alert] %>
+  <div class="mt-2 text-center text-sm text-red-600">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<% if devise_error_messages! %>
+  <div class="mt-2 text-center text-sm text-red-600">
+    <%= render "devise/shared/error_messages", resource: resource %>
+  </div>
+<% end %>

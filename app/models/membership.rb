@@ -19,6 +19,7 @@
 #
 class Membership < ApplicationRecord
   belongs_to :user
+  has_many :rsvps, dependent: :destroy
 
   validates :joined_at, presence: true
   validate :single_current_membership

@@ -1,0 +1,74 @@
+<tr class="hover:bg-gray-50" id="user_row_<%= user.id %>">
+  <td class="px-4 py-4 whitespace-nowrap">
+    <div class="text-sm font-medium text-gray-900"><%= user.full_name %></div>
+    <% if user.preferred_name.present? && user.preferred_name != user.full_name %>
+      <div class="text-xs text-gray-500">(<%= user.preferred_name %>)</div>
+    <% end %>
+  </td>
+  <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+    <%= user.email %>
+  </td>
+  <td class="px-4 py-4 whitespace-nowrap">
+    <div class="flex flex-col space-y-1">
+      <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full <%= user.committee? ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800' %>">
+        <%= user.committee? ? 'Admin/Committee' : 'Member' %>
+      </span>
+      <% if user.memberships.current.empty? %>
+        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800">
+          Inactive
+        </span>
+      <% end %>
+    </div>
+  </td>
+  <td class="px-4 py-4 whitespace-nowrap text-sm font-medium">
+    <div class="flex flex-wrap gap-1">
+      <% if user.committee? %>
+        <%= button_to "Remove Admin", admin_update_user_role_path,
+                      params: { user_id: user.id, committee: false },
+                      method: :patch,
+                      class: "text-red-600 hover:text-red-900 text-xs bg-transparent border-0 p-0",
+                      data: {
+                        action: "click->user-management#confirmRoleUpdate",
+                        user_management_user_name_param: user.full_name,
+                        user_management_action_param: "remove admin access from"
+                      },
+                      form: { data: { turbo_frame: "user_search_results" } } %>
+      <% else %>
+        <%= button_to "Make Admin", admin_update_user_role_path,
+                      params: { user_id: user.id, committee: true },
+                      method: :patch,
+                      class: "text-green-600 hover:text-green-900 text-xs bg-transparent border-0 p-0",
+                      data: {
+                        action: "click->user-management#confirmRoleUpdate",
+                        user_management_user_name_param: user.full_name,
+                        user_management_action_param: "grant admin access to"
+                      },
+                      form: { data: { turbo_frame: "user_search_results" } } %>
+      <% end %>
+
+      <% unless user == current_user %>
+        <% if user.memberships.current.any? %>
+          <%= button_to "Deactivate", admin_deactivate_user_path,
+                        params: { user_id: user.id },
+                        method: :patch,
+                        class: "text-orange-600 hover:text-orange-900 text-xs bg-transparent border-0 p-0",
+                        data: {
+                          action: "click->user-management#confirmUserDeactivate",
+                          user_management_user_name_param: user.full_name
+                        },
+                        form: { data: { turbo_frame: "user_search_results" } } %>
+        <% end %>
+
+        <%= button_to "Delete", admin_delete_user_path,
+                      params: { user_id: user.id },
+                      method: :delete,
+                      class: "text-red-600 hover:text-red-900 text-xs bg-transparent border-0 p-0",
+                      data: {
+                        action: "click->user-management#confirmUserDelete",
+                        user_management_user_name_param: user.full_name
+                      },
+                      form: { data: { turbo_frame: "user_search_results" } } %>
+      <% end %>
+    </div>
+  </td>
+</tr>
