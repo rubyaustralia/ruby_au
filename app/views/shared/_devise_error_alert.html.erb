@@ -6,6 +6,6 @@
 
 <% if devise_error_messages! %>
   <div class="mt-2 text-center text-sm text-red-600">
-    <%= devise_error_messages! %>
+    <%= render "devise/shared/error_messages", resource: resource %>
   </div>
 <% end %>
