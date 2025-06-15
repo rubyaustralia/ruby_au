@@ -50,6 +50,8 @@ class User < ApplicationRecord
          :trackable
 
   has_many :memberships, dependent: :destroy
+  has_many :emails, dependent: :destroy
+  has_many :access_requests, dependent: :destroy
 
   scope :unconfirmed, -> { where(confirmed_at: nil) }
   scope :old, -> { where('created_at < ?', 2.weeks.ago) }
