@@ -16,25 +16,25 @@
         <aside class="flex flex-grow flex-col p-3 justify-end">
           <% if member['twitter'] %>
             <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
-              <%= vite_inline_svg "twitter.svg", height: 16, class: "inline" %>
+              <%= vite_inline_svg "twitter.svg", width: 24, height: 24, class: "inline" %>
               <%= link_to "@#{ member['twitter']}", "https://twitter.com/#{ member['twitter']}" %>
             </span>
           <% end %>
           <% if member['github'] %>
             <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
-              <%= vite_inline_svg "github.svg", height: 16, class: "inline" %>
+              <%= vite_inline_svg "github.svg", width: 24, height: 24, class: "inline" %>
               <%= link_to member['github'], "https://github.com/#{ member['github']}", title: 'GitHub' %>
             </span>
           <% end %>
           <% if member['linkedin'] %>
             <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
-              <%= vite_inline_svg "linkedin.svg", height: 16, class: "inline" %>
+              <%= vite_inline_svg "linkedin.svg", width: 24, height: 24, class: "inline" %>
               <%= link_to "LinkedIn", "https://www.linkedin.com/in/#{member['linkedin']}/" %>
             </span>
           <% end %>
           <% if member['website'] %>
             <span class="bg-grey-lighter rounded-full px-3 py-2 text-sm font-semibold text-grey-darker m-1">
-              <%= vite_inline_svg "rss.svg", height: 16, class: "inline" %>
+              <%= vite_inline_svg "rss.svg", width: 24, height: 24, class: "inline" %>
               <%= link_to member['website'].gsub(%r{^https?://}, ''), member['website'] %>
             </span>
           <% end %>

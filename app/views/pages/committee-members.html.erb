@@ -18,25 +18,25 @@
         <aside class="flex flex-grow flex-col p-3 justify-end gap-2">
           <% if member['twitter'] %>
             <span class="bg-gray-100 rounded-full px-3 py-2 text-sm font-semibold text-gray-700 flex items-center">
-              <%= vite_inline_svg "twitter.svg", height: 16, class: "inline mr-2" %>
+              <%= vite_inline_svg "twitter.svg", width: 24, height: 24, class: "inline mr-2" %>
               <%= link_to "@#{ member['twitter']}", "https://x.com/#{ member['twitter']}", class: "hover:text-ruby-red transition-colors" %>
             </span>
           <% end %>
           <% if member['github'] %>
             <span class="bg-gray-100 rounded-full px-3 py-2 text-sm font-semibold text-gray-700 flex items-center">
-              <%= vite_inline_svg "github.svg", height: 16, class: "inline mr-2" %>
+              <%= vite_inline_svg "github.svg", width: 24, height: 24, class: "inline mr-2" %>
               <%= link_to member['github'], "https://github.com/#{ member['github']}", title: 'GitHub', class: "hover:text-ruby-red transition-colors" %>
             </span>
           <% end %>
           <% if member['linkedin'] %>
             <span class="bg-gray-100 rounded-full px-3 py-2 text-sm font-semibold text-gray-700 flex items-center">
-              <%= vite_inline_svg "linkedin.svg", height: 16, class: "inline mr-2" %>
+              <%= vite_inline_svg "linkedin.svg", width: 24, height: 24, class: "inline mr-2" %>
               <%= link_to "LinkedIn", "https://www.linkedin.com/in/#{member['linkedin']}/", class: "hover:text-ruby-red transition-colors" %>
             </span>
           <% end %>
           <% if member['website'] %>
             <span class="bg-gray-100 rounded-full px-3 py-2 text-sm font-semibold text-gray-700 flex items-center">
-              <%= vite_inline_svg "rss.svg", height: 16, class: "inline mr-2" %>
+              <%= vite_inline_svg "rss.svg", width: 24, height: 24, class: "inline mr-2" %>
               <%= link_to member['website'].gsub(%r{^https?://}, ''), member['website'], class: "hover:text-ruby-red transition-colors truncate" %>
             </span>
           <% end %>
