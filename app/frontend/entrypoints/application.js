@@ -8,10 +8,6 @@ import Rails from '@rails/ujs';
 import "trix";
 import "@rails/actiontext";
 import SignaturePad from "signature_pad";
-import "../stylesheets/actiontext.css";
-import "../stylesheets/custom_actiontext.scss";
-import "../stylesheets/application.scss";
-import "../stylesheets/signatures.scss";
 import { createIcons, icons } from 'lucide';
 
 const application = Application.start();
