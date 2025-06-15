@@ -9,101 +9,103 @@
   --color-metal-darker: #1e1f28;
 }
 
-:root {
-  color: var(--color-metal);
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
+@layer base {
 
-a, .underline {
-  text-underline-offset: 2px;
-}
+  :root {
+    color: var(--color-metal);
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
 
-a:not(:is(:hover, :focus)), underline:not(:is(:hover, :focus)) {
-  text-decoration-color:
-    color-mix(in srgb, currentColor, transparent 75%);
-}
+  a, .underline {
+    text-underline-offset: 2px;
+  }
 
-h1 {
-  @apply text-6xl font-extrabold text-ruby-red mb-10;
-  font-family: "Merriweather", serif;
-}
+  a:not(:is(:hover, :focus)), underline:not(:is(:hover, :focus)) {
+    text-decoration-color: color-mix(in srgb, currentColor, transparent 75%);
+  }
 
-h3 {
-  @apply text-2xl text-black uppercase mb-5;
-  font-family: "Open Sans", sans-serif;
-}
+  h1 {
+    @apply text-6xl font-extrabold text-ruby-red mb-10;
+    font-family: "Merriweather", serif;
+  }
 
-p {
-  @apply mb-5 text-xl font-normal;
-}
+  h3 {
+    @apply text-2xl text-black uppercase mb-5;
+    font-family: "Open Sans", sans-serif;
+  }
 
-.turbo-progress-bar {
-  height: 5px;
-  background-color: var(--color-amber-500);
-}
+  p {
+    @apply mb-5 text-xl font-normal;
+  }
 
-.nav-link {
-  @apply block py-2 px-4 text-white hover:text-ruby-red hover:bg-metal-dark hover:border-l-2
-  hover:border-ruby-red transition-colors border-l-2 border-transparent
-  hover:shadow-[inset_0_10px_10px_-10px_rgba(0,0,0,0.3)];
-}
+  .turbo-progress-bar {
+    height: 5px;
+    background-color: var(--color-amber-500);
+  }
 
-.footer-link {
-  @apply hover:text-ruby-red transition-colors;
-}
+  .nav-link {
+    @apply block py-2 px-4 text-white hover:text-ruby-red hover:bg-metal-dark hover:border-l-2
+    hover:border-ruby-red transition-colors border-l-2 border-transparent
+    hover:shadow-[inset_0_10px_10px_-10px_rgba(0,0,0,0.3)];
+  }
 
-.red-link {
-  @apply bg-white/40 px-2 rounded-lg text-white font-bold hover:text-pearl transition-colors underline;
-}
+  .footer-link {
+    @apply hover:text-ruby-red transition-colors;
+  }
 
-.white-link {
-  @apply text-ruby-red hover:text-red-400 transition-colors underline;
-}
+  .red-link {
+    @apply bg-white/40 px-2 rounded-lg text-white font-bold hover:text-pearl transition-colors underline;
+  }
 
-.bg-railsgirls {
-  background-image: url('@/images/railsgirls-sydney-sm.webp');
-  background-size: cover;
-  background-position: center;
-}
+  .white-link {
+    @apply text-ruby-red hover:text-red-400 transition-colors underline;
+  }
 
-.bg-rubyconf-sydney {
-  background-image: url('@/images/rubyconf-sydney-sm.webp');
-  background-size: cover;
-  background-position: center;
-}
-
-.bg-ruby-retreat {
-  background-image: url('@/images/ruby-retreat-sm.webp');
-  background-size: cover;
-  background-position: center;
-}
-
-@media (min-width: 640px) {
   .bg-railsgirls {
-    background-image: url('@/images/railsgirls-sydney-md.webp');
+    background-image: url('@/images/railsgirls-sydney-sm.webp');
+    background-size: cover;
+    background-position: center;
   }
 
   .bg-rubyconf-sydney {
-    background-image: url('@/images/rubyconf-sydney-md.webp');
+    background-image: url('@/images/rubyconf-sydney-sm.webp');
+    background-size: cover;
+    background-position: center;
   }
 
   .bg-ruby-retreat {
-    background-image: url('@/images/ruby-retreat-md.webp');
-  }
-}
-
-@media (min-width: 768px) {
-  .bg-railsgirls {
-    background-image: url('@/images/railsgirls-sydney.webp');
+    background-image: url('@/images/ruby-retreat-sm.webp');
+    background-size: cover;
+    background-position: center;
   }
 
-  .bg-rubyconf-sydney {
-    background-image: url('@/images/rubyconf-sydney.webp');
+  @media (min-width: 640px) {
+    .bg-railsgirls {
+      background-image: url('@/images/railsgirls-sydney-md.webp');
+    }
+
+    .bg-rubyconf-sydney {
+      background-image: url('@/images/rubyconf-sydney-md.webp');
+    }
+
+    .bg-ruby-retreat {
+      background-image: url('@/images/ruby-retreat-md.webp');
+    }
   }
 
-  .bg-ruby-retreat {
-    background-image: url('@/images/ruby-retreat.webp');
+  @media (min-width: 768px) {
+    .bg-railsgirls {
+      background-image: url('@/images/railsgirls-sydney.webp');
+    }
+
+    .bg-rubyconf-sydney {
+      background-image: url('@/images/rubyconf-sydney.webp');
+    }
+
+    .bg-ruby-retreat {
+      background-image: url('@/images/ruby-retreat.webp');
+    }
   }
 }
