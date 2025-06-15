@@ -54,6 +54,6 @@ module RubyAu
     # Disable the asset pipeline
     # config.assets.enabled = false
 
-    config.active_support.json_encoder = ActiveSupport::JSON::Encoder.new(limit: 1000)
+    config.active_support.encoder_max_depth = 1000
   end
 end
