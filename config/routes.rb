@@ -32,10 +32,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resource :dashboard, only: [:show]
-    patch 'update_user_role', to: 'dashboards#update_user_role'
-    delete 'delete_user', to: 'dashboards#delete_user'
-    delete 'force_delete_user', to: 'dashboards#force_delete_user'
-    patch 'deactivate_user', to: 'dashboards#deactivate_user'
+    patch 'update_user_role', to: 'user_management#update_role'
+    delete 'delete_user', to: 'user_management#delete'
+    delete 'force_delete_user', to: 'user_management#force_delete'
+    patch 'deactivate_user', to: 'user_management#deactivate'
     resources :memberships, only: [:index]
     resources :access_requests, except: [:destroy]
     resources :imported_members, only: [:index, :create]
