@@ -81,6 +81,34 @@
     background-position: center;
   }
 
+  .prose {
+    @apply max-w-none text-metal-darker;
+
+    h2 {
+      @apply text-3xl font-bold my-4;
+    }
+
+    h3 {
+      @apply text-2xl font-semibold my-3;
+    }
+
+    h4 {
+      @apply text-xl font-semibold my-3;
+    }
+
+    p {
+      @apply mb-4 text-lg;
+    }
+
+    ul {
+      @apply list-disc pl-5;
+    }
+
+    ol {
+      @apply list-decimal pl-5;
+    }
+  }
+
   @media (min-width: 640px) {
     .bg-railsgirls {
       background-image: url('@/images/railsgirls-sydney-md.webp');
