@@ -49,6 +49,12 @@ Rails.application.routes.draw do
     resources :analytics, only: [:index]
   end
 
+  namespace :api do
+    namespace :youtube do
+      get 'playlist/:id', to: 'playlists#show'
+    end
+  end
+
   resources :invitations, only: [] do
     member do
       get :unsubscribe
