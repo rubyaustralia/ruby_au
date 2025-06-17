@@ -9,7 +9,7 @@ RSpec.feature "User deactivates their membership", type: :feature do
     log_in_as user
     visit my_details_path
 
-    click_link "Resign from Ruby Australia"
+    click_button "Resign from Ruby Australia"
     expect(page).to have_content(
       "Your membership to Ruby Australia has ceased."
     )
@@ -23,6 +23,6 @@ RSpec.feature "User deactivates their membership", type: :feature do
     fill_in "Password", with: user.password
     click_button "Log in"
 
-    expect(page).to_not have_content("Signed in successfully")
+    expect(page).not_to have_content("Signed in successfully")
   end
 end

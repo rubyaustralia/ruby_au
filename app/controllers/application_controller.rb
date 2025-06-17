@@ -18,6 +18,14 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def after_sign_in_path_for(_resource)
+    root_path
+  end
+
+  def after_sign_up_path_for(_resource)
+    my_slack_invite_path
+  end
+
   def track_ahoy_visit
     ahoy.track_visit
   end

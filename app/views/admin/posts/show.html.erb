@@ -1,8 +1,22 @@
-<% content_for :heading, "Post" %>
-<%= render @post %>
-<div class="my-5 ml-5">
-  <%= link_to "Edit", admin_edit_post_path(@post) %> |
-  <%= link_to "Delete", admin_delete_post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %> |
-  <%= link_to "Archive", admin_archive_post_path(@post), method: :post, data: { confirm: 'Are you sure you want to archive this post?' } %> |
-  <%= link_to "Back to posts", admin_posts_path, class: "btn btn-secondary" %>
+<div class="mx-4 sm:mx-6 lg:mx-8">
+  <%= render @post %>
+
+  <div class="my-4 sm:my-5 lg:my-6 px-3 sm:px-4 lg:px-5 py-4 bg-white rounded-lg shadow-sm">
+    <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+      <%= link_to "Edit", admin_edit_post_path(@post), class: "inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+
+      <%= link_to "Delete", admin_delete_post_path(@post),
+                  method: :delete,
+                  data: { confirm: 'Are you sure you want to delete this post?' },
+                  class: "inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" %>
+
+      <%= link_to "Archive", admin_archive_post_path(@post),
+                  method: :post,
+                  data: { confirm: 'Are you sure you want to archive this post?' },
+                  class: "inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" %>
+
+      <%= link_to "Back to posts", admin_posts_path,
+                  class: "inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-600 border border-gray-300 rounded-md bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" %>
+    </div>
+  </div>
 </div>

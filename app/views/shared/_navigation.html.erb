@@ -1,90 +1,92 @@
-<nav role="navigation" class="flex items-center justify-between flex-wrap bg-red text-white">
-  <header role="banner" class="bg-red py-2 px-5 flex-shrink-0 h-12">
-    <a href="/" class="text-white no-underline flex flex-row">
-      <%= image_tag 'logo_standalone_tiny.png', width: 34, alt: 'Ruby Australia Logo' %>
-      <p class="self-center ml-4 text-white text-lg md:text-xl">Ruby Australia</p>
-    </a>
-  </header>
-  <div class="mobile-menu-trigger cursor block md:hidden bg-red">
-    <button class="flex items-center mr-4 px-3 py-2 border rounded text-red-lightest border-red-lighter hover:text-white hover:border-white">
-      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-      </svg>
-    </button>
-  </div>
-  <% if false %>
-    <div class="search ml-2 mt-6">
-      <svg class="fill-current text-red inline-block h-4 w-4" viewBox="0 0 20 20">
-        <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
-      </svg>
-      <label>
-        <input type="text" placeholder="search..." class="border-solid text-red-darkest border-red border-b">
-      </label>
+<div data-controller="slideout-menu lucide" class="relative">
+  <nav role="navigation" class="flex items-center justify-between h-16 sm:h-20 md:h-24 bg-metal-darker text-white w-full shadow-md fixed top-0 z-50">
+    <div class="py-2 px-3 sm:px-4 md:px-5 flex-shrink-0 h-full flex items-center">
+      <a href="/" class="text-white no-underline flex flex-row items-center">
+        <%= vite_image_tag 'images/ruby_au_icon-wht.svg', alt: 'Ruby Australia Logo', class: "h-8 w-auto sm:h-10" %>
+        <h4 class="self-center ml-2 sm:ml-3 md:ml-4 text-white text-sm sm:text-base md:text-lg font-medium">Ruby Australia</h4>
+      </a>
     </div>
-  <% end %>
-  <div class="mobile-menu w-full md:visible flex-grow md:flex-col md:flex md:items-center md:w-auto bg-pearl text-red show">
-    <div class="actions ml-2 md:ml-0 mb-6">
+
+    <!-- Mobile menu button - Only visible on small screens -->
+    <button
+      class="flex items-center cursor-pointer mr-3 sm:hidden hover:text-red-400 transition-colors"
+      data-action="slideout-menu#toggle"
+      aria-label="Toggle mobile menu">
+      <i data-lucide="menu" class="h-6 w-6"></i>
+    </button>
+
+    <!-- Desktop menu button - Hidden on mobile -->
+    <button
+      class="hidden sm:flex items-center cursor-pointer mr-3 sm:mr-4 md:mr-6 hover:text-red-400 transition-colors"
+      data-action="slideout-menu#toggle"
+      aria-label="Toggle menu">
+      <span class="flex items-center">
+        <i data-lucide="menu" class="h-5 w-5 mr-1.5 pointer-events-none"></i>
+        <span class="pointer-events-none">Menu</span>
+      </span>
+    </button>
+  </nav>
+
+  <!-- Slideout menu overlay -->
+  <div
+    class="fixed inset-0 bg-black/50 z-40 hidden transition-opacity duration-300"
+    data-slideout-menu-target="overlay"
+    data-action="click->slideout-menu#close"></div>
+
+  <!-- Slideout menu - responsive width based on screen size -->
+  <div
+    class="fixed top-0 right-[-100%] w-[85%] sm:w-72 md:w-80 h-full bg-metal z-50 transition-all duration-300 ease-in-out overflow-y-auto shadow-lg py-5"
+    data-slideout-menu-target="menu">
+    <div class="flex justify-between items-center px-4 sm:px-5">
+      <div class="flex-1 text-center">
+        <a href="/">
+          <%= vite_image_tag 'images/ruby_au_icon.svg', alt: "Ruby Australia Logo", class: "mx-auto my-2 h-8 sm:h-10 md:h-12 w-auto" %>
+        </a>
+      </div>
+      <button
+        type="button"
+        data-action="slideout-menu#close"
+        class="text-white hover:text-red-400 transition-colors p-2"
+        aria-label="Close menu">
+        <i data-lucide="x" class="h-5 w-5 sm:h-6 sm:w-6"></i>
+      </button>
+    </div>
+
+    <!-- Menu content remains the same -->
+    <div class="py-3 sm:py-4 space-y-1 sm:space-y-2">
       <% if user_signed_in? %>
-        <%= link_to 'My Details', my_details_path, class: "bg-white" %>
-        <%= link_to 'Log out', destroy_user_session_path, class: "bg-white", method: :delete %>
+        <%= link_to 'Profile', my_details_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+        <%= link_to "Upcoming Meetings", my_meetings_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+        <%= link_to "Member Register Access", my_access_requests_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+        <%= link_to 'Log out', destroy_user_session_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10", data: { turbo_method: :delete } %>
       <% else %>
-        <%= link_to 'Join', new_user_registration_path, class: "bg-white" %>
-        <%= link_to 'Log in', new_user_session_path, class: "bg-white" %>
+        <%= link_to 'Join', new_user_registration_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+        <%= link_to 'Log in', new_user_session_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
       <% end %>
     </div>
-    <section id="nav-primary" class="ml-5 md:ml-0" aria-roledescription="primary navigation">
-      <nav role="navigation">
-        <h3>Association</h3>
-        <ul>
-          <li><%= link_to "Welcome", "/" %></li>
-          <li><%= link_to 'News', posts_path %></li>
-          <li><%= link_to 'Committee Members', "/committee-members" %></li>
-          <li><%= link_to_external "Meeting Minutes", "https://forum.ruby.org.au/c/ruby-au/meetings", longdesc: 'Committee Meeting minutes hosted on RubyAU Forums' %></li>
-          <li><%= link_to 'Code of Conduct', "/policies/code-of-conduct" %></li>
-          <li><%= link_to 'Constitution', "/constitution" %></li>
-          <li><%= link_to 'Policies', "/policies" %></li>
-          <li><%= link_to 'Sponsorship', "/sponsorship" %></li>
-          <li><%= link_to "Feedback", "/feedback" %></li>
-          <li><%= link_to "Contact us", "/contact" %></li>
-        </ul>
-        <h3>Events</h3>
-        <ul>
-          <li><%= link_to_external "Rails Camp", "https://rails.camp" %></li>
-          <li><%= link_to_external "RubyConf AU", "https://rubyconf.org.au" %></li>
-          <li><%= link_to 'Meetups', "/#in-person" %></li>
-          <li><%= link_to 'Rails Girls', "/rails-girls" %></li>
-        </ul>
-        <h3>Community</h3>
-        <ul>
-          <li><%= link_to_external "Chat (Slack)", my_slack_invite_path %></li>
-          <li><%= link_to_external "Videos", videos_path %></li>
-          <li><%= link_to_external 'Mailing List', "/mailing-list" %></li>
-        </ul>
-        <h3>Social Media</h3>
-        <ul>
-          <li><%= link_to_external "LinkedIn", "https://www.linkedin.com/company/ruby-australia/" %></li>
-          <li><%= link_to_external "Youtube", "https://www.youtube.com/channel/UCr38SHAvOKMDyX3-8lhvJHA/videos" %></li>
-          <li><%= link_to_external "X", "https://twitter.com/rubyaustralia" %></li>
-        </ul>
-        <% if user_signed_in? %>
-          <h3>Members</h3>
-          <ul>
-            <li><%= link_to "My Details", my_details_path %></li>
-            <li><%= link_to "Upcoming Meetings", my_meetings_path %></li>
-            <li><%= link_to "Register Access", my_access_requests_path %></li>
-          </ul>
-        <% end %>
-        <% if current_committee? %>
-          <h3>Committee</h3>
-          <ul>
-            <li><%= link_to "Members", admin_memberships_path %></li>
-            <li><%= link_to "Access Requests", admin_access_requests_path %></li>
-            <li><%= link_to "Imported Members", admin_imported_members_path %></li>
-            <li><%= link_to "Campaigns", admin_campaigns_path %></li>
-            <li><%= link_to "Posts", admin_posts_path %></li>
-          </ul>
-        <% end %>
-      </nav>
-    </section>
+
+    <div class="border-t border-white/20 pt-3 space-y-1 sm:space-y-2">
+      <%= link_to 'News', posts_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+      <%= link_to "Chat (Slack)", my_slack_invite_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+      <%= link_to "Videos", videos_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+      <%= link_to 'Sponsorship', "/sponsorship", class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+      <%= link_to "Feedback", "/feedback", class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+      <%= link_to "Contact us", "/contact", class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+    </div>
+
+    <% if current_committee? %>
+      <div class="border-t border-white/20 mt-3 pt-3 sm:mt-4 sm:pt-4">
+        <div class="text-base sm:text-lg font-medium text-white mb-2 px-4 uppercase">Committee only</div>
+        <div class="space-y-1 sm:space-y-2">
+          <%= link_to "Dashboard", admin_dashboard_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+          <%= link_to "Analytics", admin_analytics_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+          <%= link_to "Members", admin_memberships_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+          <%= link_to "Access Requests", admin_access_requests_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+          <%= link_to "Imported Members", admin_imported_members_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+          <%= link_to "Campaigns", admin_campaigns_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+          <%= link_to "Posts", admin_posts_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-</nav>
+</div>

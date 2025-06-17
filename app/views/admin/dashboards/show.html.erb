@@ -1,0 +1,177 @@
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-2xl font-bold mb-6">Admin Dashboard</h1>
+
+  <div id="notifications" class="fixed top-4 right-4 z-50 space-y-2"></div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="bg-white rounded-lg shadow p-6 md:col-span-2 lg:col-span-3"
+         data-controller="user-management">
+      <h2 class="text-xl font-semibold mb-4">User Management</h2>
+
+      <%= form_with url: admin_dashboard_path, method: :get, local: true,
+                    class: "mb-4",
+                    data: {
+                      user_management_target: "searchForm",
+                      turbo_frame: "user_search_results"
+                    } do |form| %>
+        <div class="flex flex-wrap gap-4 items-end">
+          <div class="flex-1 min-w-64 relative">
+            <%= form.text_field :users_search,
+                                value: @users_search,
+                                placeholder: "Search users by name or email...",
+                                class: "w-full px-3 py-2 pr-10 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500",
+                                data: {
+                                  user_management_target: "searchInput",
+                                  action: "input->user-management#submitSearch"
+                                } %>
+            <button type="button"
+                    class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 hidden"
+                    data-user-management-target="clearButton"
+                    data-action="click->user-management#clearSearch">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="min-w-32">
+            <%= form.select :users_role_filter,
+                            options_for_select([
+                                                 ['All Users', ''],
+                                                 ['Admin/Committee', 'admin'],
+                                                 ['Members', 'member']
+                                               ], @users_role_filter),
+                            {},
+                            {
+                              class: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500",
+                              data: {
+                                action: "change->user-management#filterChanged"
+                              }
+                            } %>
+          </div>
+
+          <div>
+            <%= form.submit "Search", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+          </div>
+        </div>
+      <% end %>
+
+      <%= turbo_frame_tag "user_search_results" do %>
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+            <tr>
+              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+            </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+            <% @users_for_management.each do |user| %>
+              <%= render 'admin/dashboards/user_row', user: user %>
+            <% end %>
+            </tbody>
+          </table>
+
+          <% if @users_for_management.empty? %>
+            <div class="text-center py-8 text-gray-500">
+              <% if @users_search.blank? && @users_role_filter.blank? %>
+                <div class="text-lg font-medium mb-2">Search for users to get started</div>
+                <div class="text-sm">Enter a name, email, or select a role filter to find users</div>
+              <% else %>
+                No users found matching your search criteria.
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Membership Stats</h2>
+      <p class="mb-2">Total Members: <span class="font-bold"><%= @member_count %></span></p>
+      <p class="mb-2">Inactive Members (2+ years): <span class="font-bold"><%= @inactive_members.count %></span></p>
+      <p class="mb-2">Never Logged In: <span class="font-bold"><%= @never_logged_in_members.count %></span></p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Recently Updated Profiles</h2>
+      <ul class="divide-y">
+        <% @recently_updated_members.each do |member| %>
+          <li class="py-2">
+            <%= member.email %>
+            <span class="text-gray-500 text-sm block">
+              Updated <%= time_ago_in_words(member.updated_at) %> ago
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Recent Logins</h2>
+      <ul class="divide-y">
+        <% @recently_logged_in_members.each do |member| %>
+          <li class="py-2">
+            <%= member.email %>
+            <span class="text-gray-500 text-sm block">
+              Logged in <%= time_ago_in_words(member.last_sign_in_at) %> ago
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Recent News Items</h2>
+      <ul class="divide-y">
+        <% @recent_posts.each do |post| %>
+          <li class="py-2">
+            <%= link_to post.title, admin_post_path(post.slug), class: "text-blue-600 hover:underline" %>
+            <span class="text-gray-500 text-sm block">
+              Posted <%= time_ago_in_words(post.created_at) %> ago
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Unpublished News Posts</h2>
+      <% if @unpublished_posts.any? %>
+        <ul class="divide-y">
+          <% @unpublished_posts.each do |post| %>
+            <li class="py-2">
+              <%= link_to post.title, admin_post_path(post.slug), class: "text-blue-600 hover:underline" %>
+              <span class="text-gray-500 text-sm block">
+                Created <%= time_ago_in_words(post.created_at) %> ago
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="text-gray-500">No unpublished news posts</p>
+      <% end %>
+    </div>
+
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Recent Campaign Mailers</h2>
+      <% if @recent_campaigns.any? %>
+        <ul class="divide-y">
+          <% @recent_campaigns.each do |campaign| %>
+            <li class="py-2">
+              <%= link_to campaign.subject || "Campaign ##{campaign.id}", admin_campaign_path(campaign), class: "text-blue-600 hover:underline" %>
+              <span class="text-gray-500 text-sm block">
+                Created <%= time_ago_in_words(campaign.created_at) %> ago
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="text-gray-500">No recent campaigns</p>
+      <% end %>
+    </div>
+  </div>
+</div>

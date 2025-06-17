@@ -34,8 +34,8 @@ RSpec.describe "Committee importing members", type: :feature do
     expect(page).to have_content("Alex")
     expect(page).to have_content("Riley")
     expect(page).to have_content("charlie@ruby.test")
-    expect(page).to_not have_content("Jules")
-    expect(page).to_not have_content("Lindsay")
+    expect(page).not_to have_content("Jules")
+    expect(page).not_to have_content("Lindsay")
 
     camp.close
 
@@ -58,8 +58,8 @@ RSpec.describe "Committee importing members", type: :feature do
     conf.close
   end
 
-  context "sending invitations" do
-    before :each do
+  context "when sending invitations" do
+    before do
       clear_emails
 
       FactoryBot.create :imported_member, email: "riley@ruby.test"
@@ -107,7 +107,7 @@ RSpec.describe "Committee importing members", type: :feature do
       user = Email.find_by(email: "riley@ruby.test")&.user
       expect(user).to be_present
       expect(user).to be_confirmed
-      expect(user.valid_password?("rubyrubyruby")).to eq(true)
+      expect(user.valid_password?("rubyrubyruby")).to be(true)
       expect(user.memberships.current.count).to eq(1)
     end
 
@@ -148,7 +148,7 @@ RSpec.describe "Committee importing members", type: :feature do
       user = Email.find_by(email: "charlie@ruby.test")&.user
       expect(user).to be_present
       expect(user).to be_confirmed
-      expect(user.valid_password?("rubyrubyruby")).to eq(true)
+      expect(user.valid_password?("rubyrubyruby")).to be(true)
       expect(user.memberships.current.count).to eq(1)
     end
 
@@ -161,7 +161,7 @@ RSpec.describe "Committee importing members", type: :feature do
       current_email.click_link "unsubscribing"
 
       user = Email.find_by(email: "dylan@ruby.test")&.user
-      expect(user).to_not be_present
+      expect(user).not_to be_present
 
       member = ImportedMember.find_by(email: "dylan@ruby.test")
       expect(member.unsubscribed_at).to be_present
@@ -176,7 +176,7 @@ RSpec.describe "Committee importing members", type: :feature do
       clear_emails
       SendInvitations.call
 
-      expect(emails_sent_to("riley@ruby.test")).to_not be_empty
+      expect(emails_sent_to("riley@ruby.test")).not_to be_empty
       expect(emails_sent_to("dylan@ruby.test")).to be_empty
     end
   end

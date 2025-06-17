@@ -1,8 +1,99 @@
-<hr class="mt-8">
-<footer role="contentinfo" class="p-6">
-  <small class="">Ruby Australia website &copy; <%= Time.current.year %> Ruby Australia (Vic registration A0056643H).<br>
-    Ruby Australia acknowledges and pays respect to the past, present and future Traditional Custodians and Elders of
-    this nation and the continuation of cultural, spiritual and educational practices of Aboriginal and Torres Strait
-    Islander peoples.
-  </small>
+<footer role="presentation" class="w-full">
+  <div class="bg-ruby-red w-full text-center text-white py-8 px-4 sm:py-10 sm:px-6 md:px-8 bg-no-repeat bg-left-bottom"
+       style="background-image: url(<%= vite_asset_path 'images/tracks.svg' %>);">
+    <div class="max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="w-20 m-auto fill-white mb-10">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM208.6 357.3l-39-13.5c-6.5-2.2-13.6-2.3-20.1-.3l-15.3 4.9c-18.5 5.9-38.5-2.4-47.5-19.5l-3.3-6.2c-10.6-20.1-2.3-45 18.2-54.7l35.3-16.8c2.3-1.1 4.4-2.8 5.9-4.8l5.3-7c7.2-9.6 18.6-15.3 30.6-15.3s23.4 5.7 30.6 15.3l4.6 6.1c2 2.6 4.9 4.5 8.1 5.1c7.8 1.6 15.7-1.5 20.4-7.9l10.4-14.2c2-2.8 5.3-4.4 8.7-4.4c4.4 0 8.4 2.7 10 6.8l10.1 25.9c2.8 7.2 6.7 14 11.5 20.2L311 299.8c5.8 7.4 9 16.6 9 26s-3.2 18.6-9 26L299 367.2c-8.3 10.6-21 16.8-34.4 16.8c-8.4 0-16.6-2.4-23.7-7l-25.4-16.4c-2.2-1.4-4.5-2.5-6.9-3.4zm65.2-214.8L296 164.7c10.1 10.1 2.9 27.3-11.3 27.3l-29.9 0c-5.6 0-11.1-1.2-16.2-3.4l-42.8-19c-14.3-6.3-11.9-27.3 3.4-30.3l38.5-7.7c13.1-2.6 26.7 1.5 36.1 10.9zM248 432c0-8.8 7.2-16 16-16l16 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-16 0c-8.8 0-16-7.2-16-16zM431.2 298.9l8 24c2.8 8.4-1.7 17.4-10.1 20.2s-17.4-1.7-20.2-10.1l-8-24c-2.8-8.4 1.7-17.4 10.1-20.2s17.4 1.7 20.2 10.1zm-19.9 80.4l-32 32c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l32-32c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"/></svg>
+      </div>
+      <h4 class="text-white text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 md:mb-8">Acknowledgement of Country</h4>
+      <p class="text-sm sm:text-base md:text-lg">
+        Ruby Australia acknowledges and pays respect to the past, present and future Traditional Custodians and Elders of
+        this nation and the continuation of cultural, spiritual and educational practices of Aboriginal and Torres Strait
+        Islander peoples.
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-6">
+      <div class="flex justify-center sm:justify-start mb-6 sm:mb-0">
+        <%= vite_image_tag 'images/ruby_au_icon.svg', height: 40, width: 40, alt: "Ruby Australia Logo", class: "h-10 w-10 sm:h-12 sm:w-12" %>
+      </div>
+
+      <div class="text-center sm:text-left">
+        <h3 class="font-bold text-base sm:text-lg mb-3">Contact</h3>
+        <ul class="space-y-2">
+          <li><%= link_to 'News', posts_path, class: "footer-link" %></li>
+          <li><%= link_to "Feedback", "/feedback", class: "footer-link" %></li>
+          <li><%= link_to "Contact us", "/contact", class: "footer-link" %></li>
+          <li><%= link_to 'Committee Members', "/committee-members", class: "footer-link" %></li>
+          <li><%= link_to 'Mailing List', "/mailing-list", class: "footer-link" %></li>
+        </ul>
+      </div>
+
+      <div class="text-center sm:text-left">
+        <h3 class="font-bold text-base sm:text-lg mb-3">Events</h3>
+        <ul class="space-y-2">
+          <li><%= link_to "Rails Camp", "https://rails.camp", class: "footer-link" %></li>
+          <li><%= link_to "RubyConf AU", "https://rubyconf.org.au", class: "footer-link" %></li>
+          <li><%= link_to "Meetups", events_path, class: "footer-link" %></li>
+          <li><%= link_to "Rails Girls", "/rails-girls", class: "footer-link" %></li>
+        </ul>
+      </div>
+
+      <div class="text-center sm:text-left">
+        <h3 class="font-bold text-base sm:text-lg mb-3">Policies</h3>
+        <ul class="space-y-2">
+          <li><%= link_to 'Code of Conduct', "/policies/code-of-conduct", class: "footer-link" %></li>
+          <li><%= link_to 'Constitution', "/constitution", class: "footer-link" %></li>
+          <li><%= link_to 'Policies', "/policies", class: "footer-link" %></li>
+          <li><%= link_to 'Sponsorship', "/sponsorship", class: "footer-link" %></li>
+        </ul>
+      </div>
+
+      <div class="text-center sm:text-left">
+        <h3 class="font-bold text-base sm:text-lg mb-3">Community</h3>
+        <ul class="space-y-2">
+          <li><%= link_to "Chat (Slack)", my_slack_invite_path, class: "white-link" %></li>
+          <li><%= link_to "Videos", videos_path, class: "white-link" %></li>
+          <li><%= link_to "RubyAU Merch", merch_path, class: "white-link" %></li>
+          <li><%= link_to "Ruby New Zealand", "https://ruby.nz/", class: "white-link" %></li>
+          <li><%= link_to "Ruby Central", "https://rubycentral.org/", class: "white-link" %></li>
+          <li><%= link_to "Ruby on Rails", "https://rubyonrails.org/", class: "white-link" %></li>
+          <li><%= link_to "RubyGems", "https://rubygems.org/", class: "white-link" %></li>
+          <li><%= link_to "Ruby Language", "https://www.ruby-lang.org/", class: "white-link" %></li>
+        </ul>
+      </div>
+
+      <div class="flex justify-center sm:justify-start lg:justify-center gap-4 mt-6 lg:mt-0">
+        <%= link_to "https://www.linkedin.com/company/ruby-australia/", class: "text-metal footer-link", aria: { label: "Visit Ruby Australia's LinkedIn page" } do %>
+          <span class="fill-black hover:fill-ruby-red h-2 w-2 mr-8">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+          </span>
+        <% end %>
+        <%= link_to "https://www.youtube.com/channel/UCr38SHAvOKMDyX3-8lhvJHA/videos", class: "text-metal footer-link", aria: { label: "Visit Ruby Australia's YouTube channel" } do %>
+          <span class="fill-black hover:fill-ruby-red h-2 w-2 mr-8">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M282 256.2l-95.2-54.1V310.3L282 256.2zM384 32H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm14.4 136.1c7.6 28.6 7.6 88.2 7.6 88.2s0 59.6-7.6 88.1c-4.2 15.8-16.5 27.7-32.2 31.9C337.9 384 224 384 224 384s-113.9 0-142.2-7.6c-15.7-4.2-28-16.1-32.2-31.9C42 315.9 42 256.3 42 256.3s0-59.7 7.6-88.2c4.2-15.8 16.5-28.2 32.2-32.4C110.1 128 224 128 224 128s113.9 0 142.2 7.7c15.7 4.2 28 16.6 32.2 32.4z"/></svg>
+          </span>
+        <% end %>
+        <%= link_to "https://twitter.com/rubyaustralia", class: "text-metal footer-link", aria: { label: "Visit Ruby Australia's Twitter page" } do %>
+          <span class="fill-black hover:fill-ruby-red h-2 w-2 mr-8">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"/></svg>
+          </span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto px-4 sm:px-6 py-6 border-t border-gray-200">
+    <div class="text-center">
+      <p class="text-xs sm:text-sm text-gray-500 mb-2">
+        &copy; <%= Time.current.year %> Ruby Australia. All rights reserved.
+      </p>
+      <p class="text-xs sm:text-sm text-gray-500">
+        <%= link_to "Policies", "/policies", class: "white-link" %> |
+        <%= link_to "Terms and Conditions", "/terms-and-conditions", class: "white-link" %>
+      </p>
+    </div>
+  </div>
 </footer>

@@ -16,28 +16,28 @@ RSpec.describe "Committee managing members", type: :feature do
     visit root_path
     click_link "Members"
     expect(page).to have_content "Alex"
-    expect(page).to_not have_content "Dylan"
-    expect(page).to_not have_content "Jules"
+    expect(page).not_to have_content "Dylan"
+    expect(page).not_to have_content "Jules"
     expect(page).to have_content "Riley"
 
     riley.memberships.current.update left_at: 1.minute.ago
 
     click_link "Members"
     expect(page).to have_content "Alex"
-    expect(page).to_not have_content "Riley"
+    expect(page).not_to have_content "Riley"
   end
 
   scenario "adds a new access request" do
     visit root_path
     click_link "Access Requests"
-    click_link "Add"
+    click_link "Add New Request"
 
     fill_in "Name", with: "Alex"
     fill_in "Reason", with: "Contacting members"
     click_button "Save"
 
     expect(page).to have_content("Alex")
-    expect(page).to have_content("Not yet")
+    expect(page).to have_content("Not viewed")
 
     last_year = Time.zone.today.year - 1
 
@@ -48,6 +48,6 @@ RSpec.describe "Committee managing members", type: :feature do
     click_button "Save"
 
     expect(page).to have_content("Alex")
-    expect(page).to have_content("#{last_year}-12-31")
+    expect(page).to have_content("Dec 31, #{last_year}")
   end
 end

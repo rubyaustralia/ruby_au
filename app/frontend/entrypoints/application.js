@@ -1,38 +1,47 @@
-import "@hotwired/turbo-rails"
-import "~/controllers"
+import "@hotwired/turbo-rails";
+import { Application } from "@hotwired/stimulus";
+import { registerControllers } from "stimulus-vite-helpers";
+import "../controllers";
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import Rails from '@rails/ujs';
 import "trix";
 import "@rails/actiontext";
 import SignaturePad from "signature_pad";
+import { createIcons, icons } from 'lucide';
+
+const application = Application.start();
+const controllers = import.meta.glob("../controllers/**/*_controller.js", { eager: true });
+registerControllers(application, controllers);
 
 Rails.start();
 
-import "~/stylesheets/actiontext.css";
-import "~/stylesheets/custom_actiontext.scss";
-import "~/stylesheets/application.scss";
-import "~/stylesheets/committee.scss";
-import "~/stylesheets/sponsorship.scss";
-import "~/stylesheets/forms.scss";
-import "~/stylesheets/admin.scss";
-import "~/stylesheets/signatures.scss";
-import "~/stylesheets/surveys.scss";
-
-/**
- * Initializes mobile menu toggle
- */
 document.addEventListener('DOMContentLoaded', () => {
-  const menuTrigger = document.querySelector('.mobile-menu-trigger');
-  const mobileMenu = document.querySelector('.mobile-menu');
+  createIcons({
+    icons: icons,
+    attrs: {
+      class: "",
+      stroke: "currentColor"
+    }
+  });
+});
 
-  if (window.innerWidth < 768) {
-    mobileMenu?.classList.add('hidden');
-  }
+document.addEventListener('turbo:load', () => {
+  createIcons({
+    icons: icons,
+    attrs: {
+      class: "",
+      stroke: "currentColor"
+    }
+  });
+});
 
-  menuTrigger?.addEventListener('click', () => {
-    if (mobileMenu) {
-      mobileMenu.classList.toggle('hidden');
+document.addEventListener('turbo:frame-load', () => {
+  createIcons({
+    icons: icons,
+    attrs: {
+      class: "",
+      stroke: "currentColor"
     }
   });
 });
@@ -54,36 +63,18 @@ window.setupSignature = function() {
     backgroundColor: 'rgb(255, 255, 255)'
   });
 
-  /**
-   * Resizes the canvas to match device pixel ratio for better rendering.
-   */
-  function resizeCanvas() {
-    const ratio = Math.max(window.devicePixelRatio || 1, 1);
-
-    canvas.width = canvas.offsetWidth * ratio;
-    canvas.height = canvas.offsetHeight * ratio;
-    canvas.getContext("2d").scale(ratio, ratio);
-
+  clearButton?.addEventListener("click", () => {
     signaturePad.clear();
-  }
+  });
 
-  // Resize canvas on window resize
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
-
-  // Clear button event
-  clearButton?.addEventListener("click", () => signaturePad.clear());
-
-  // Undo last stroke event
   undoButton?.addEventListener("click", () => {
     const data = signaturePad.toData();
-    if (data.length > 0) {
-      data.pop();
+    if (data) {
+      data.pop(); // remove the last dot or line
       signaturePad.fromData(data);
     }
   });
 
-  // Form submission validation
   document.getElementById('set-proxy-form')?.addEventListener('submit', function(event) {
     const proxyName = document.getElementById('rsvp_proxy_name');
     const proxySignature = document.getElementById('rsvp_proxy_signature');
@@ -102,3 +93,7 @@ window.setupSignature = function() {
     proxySignature.value = signaturePad.toDataURL();
   });
 };
+
+document.addEventListener('turbo:load', () => {
+  window.setupSignature();
+});

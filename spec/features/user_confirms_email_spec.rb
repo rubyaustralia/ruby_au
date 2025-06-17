@@ -5,7 +5,7 @@ RSpec.feature "User confirms account", type: :feature do
     create :user, confirmed_at: nil, mailing_lists: { "Rails Camp" => "true" }
   end
 
-  before :each do
+  before do
     ActionMailer::Base.deliveries.clear
   end
 

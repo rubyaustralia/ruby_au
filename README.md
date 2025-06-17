@@ -40,7 +40,7 @@ $ yarn install
 
 ## Running the Development Environment
 
-This command will run using Foreman and start the app using both webpack and puma.
+This command will run using Foreman and start the app using both Vite and Puma.
 
 ```bash
 $ bin/dev
@@ -68,8 +68,6 @@ You can see it in action here:
 [ruby australia](https://ruby.org.au)
 
 ## Known Issues / Gotchas
-
-With Yarn 4, you upgrade outdated packs using `yarn upgrade-interactive`
 
 There have been issues with implementing Trix, the JS file is temporarily in the <HEAD> from the CDN.
 

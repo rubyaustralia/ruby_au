@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, controllers: {
+    registrations: 'registrations',
+    passwords: 'devise/passwords'
+  }
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   mount Ahoy::Engine => "/ahoy", as: :analytics_tracking unless Rails.env.test?
@@ -19,12 +22,20 @@ Rails.application.routes.draw do
   end
 
   resources :rsvps, only: [:show, :update, :destroy] do
-    member { get :confirm, :decline }
+    member do
+      get :confirm
+      get :decline
+    end
   end
 
   resources :reactivations, only: [:new, :create]
 
   namespace :admin do
+    resource :dashboard, only: [:show]
+    patch 'update_user_role', to: 'user_management#update_role'
+    delete 'delete_user', to: 'user_management#delete'
+    delete 'force_delete_user', to: 'user_management#force_delete'
+    patch 'deactivate_user', to: 'user_management#deactivate'
     resources :memberships, only: [:index]
     resources :access_requests, except: [:destroy]
     resources :imported_members, only: [:index, :create]
@@ -38,9 +49,16 @@ Rails.application.routes.draw do
     resources :analytics, only: [:index]
   end
 
+  namespace :api do
+    namespace :youtube do
+      get 'playlist/:id', to: 'playlists#show'
+    end
+  end
+
   resources :invitations, only: [] do
     member do
-      get :unsubscribe, :new
+      get :unsubscribe
+      get :new
       post :create
     end
   end
@@ -49,7 +67,9 @@ Rails.application.routes.draw do
   get 'posts/*slug', to: 'posts#show', as: :post
 
   resources :mailing_lists, only: [] do
-    member { post :hook }
+    member do
+      post :hook
+    end
   end
 
   post '/slack/hook' => 'slack#hook'
@@ -63,6 +83,7 @@ Rails.application.routes.draw do
 
   get "/events/rubyconf_au_2021" => "events#rubyconf_au_2021"
   get "/events/rails_camp_27" => "events#rails_camp_27"
+  get "/events", to: "events#index"
 
   root to: 'pages#show', defaults: { id: 'welcome' }
 

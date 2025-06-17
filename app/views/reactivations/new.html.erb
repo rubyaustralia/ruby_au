@@ -1,31 +1,46 @@
-<%= content_for :heading do %>
-  Reactivation
-<% end %>
-
-<h2>Reactivate Membership</h2>
-
-<%= form_for(user, url: reactivations_path, html: {class: "standard"}) do |f| %>
-  <p class="info">To reactivate your membership, you must provide the email address and password you had used when you were previously a member.</p>
-
-  <div class="field">
-    <div class="label">
-      <%= f.label :email %>
+<div class="min-h-screen bg-gray-50 flex flex-col justify-center py-8 px-4 sm:py-12 sm:px-6 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="text-center">
+      <%= link_to root_path do %>
+        <%= vite_image_tag 'images/ruby_au_icon.svg', class: "mx-auto h-10 w-auto sm:h-12", alt: "Ruby Australia Logo" %>
+      <% end %>
+      <h2 class="mt-5 text-center text-2xl sm:text-3xl font-extrabold text-gray-900">Reactivate Membership</h2>
     </div>
-    <div class="input">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+
+    <div class="mt-6 sm:mt-8">
+      <div class="bg-white py-6 px-4 sm:rounded-lg sm:py-8 sm:px-10 shadow">
+        <p class="text-sm text-gray-600 mb-6">
+          To reactivate your membership, you must provide the email address and password you had used when you were previously a member.
+        </p>
+
+        <%= form_for(user, url: reactivations_path, html: {class: "space-y-6"}) do |f| %>
+          <div>
+            <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+            <div class="mt-1">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                                class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-ruby-red focus:border-ruby-red sm:text-sm" %>
+            </div>
+          </div>
+
+          <div>
+            <%= f.label :password, class: "block text-sm font-medium text-gray-700" %>
+            <div class="mt-1">
+              <%= f.password_field :password, autocomplete: "current-password",
+                                   class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-ruby-red focus:border-ruby-red sm:text-sm" %>
+            </div>
+          </div>
+
+          <div>
+            <%= f.submit "Reactivate", class: "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-ruby-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" %>
+          </div>
+        <% end %>
+
+        <div class="mt-6 text-center">
+          <p class="text-sm text-gray-600">
+            <%= link_to "Back to login", new_user_session_path, class: "font-medium text-ruby-red hover:text-red-700 transition-colors" %>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="field">
-    <div class="label">
-      <%= f.label :password %>
-    </div>
-    <div class="input">
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
-  </div>
-
-  <div class="buttons">
-    <%= f.submit "Reactivate" %>
-  </div>
-<% end %>
+</div>

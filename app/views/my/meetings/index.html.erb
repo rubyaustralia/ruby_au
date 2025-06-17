@@ -1,15 +1,57 @@
-<%= content_for :heading do %>
-  Upcoming Meetings
-<% end %>
+<div class="max-w-full sm:max-w-2xl lg:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+  <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+    <div class="border-b border-gray-200 bg-gray-50 px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">Upcoming Meetings</h2>
+    </div>
 
-<h2>Upcoming Meetings</h2>
+    <article class="px-4 sm:px-6 lg:px-8 py-5 sm:py-6">
+      <p class="text-sm sm:text-base lg:text-lg text-gray-700 mb-6">
+        Here is a list of upcoming Ruby Australia meetings. For each meeting you can RSVP and/or assign a proxy representative to vote on your behalf.
+      </p>
 
-<article>
-  <p>Here is a list of upcoming Ruby Australia meetings. For each meeting you can RSVP and/or assign a proxy representative to vote on your behalf.</p>
+      <div class="mt-4 sm:mt-6">
+        <% if meetings.any? %>
+          <ul class="divide-y divide-gray-200 border border-gray-200 rounded-lg overflow-hidden">
+            <% meetings.each do |meeting| %>
+              <li class="group hover:bg-gray-50 transition-colors">
+                <%= link_to rsvp_path(rsvp_for(meeting).token), class: "flex items-center justify-between p-4 sm:px-6 sm:py-5" do %>
+                  <div class="flex-1">
+                    <h3 class="text-base sm:text-lg font-medium text-gray-900 group-hover:text-ruby-red transition-colors">
+                      <%= meeting.title %>
+                    </h3>
+                    <% if meeting.happens_at %>
+                      <p class="mt-1 text-xs sm:text-sm text-gray-500">
+                        <i data-lucide="calendar" class="inline-block h-4 w-4 mr-1 -mt-0.5"></i>
+                        <%= meeting.happens_at.strftime("%B %d, %Y at %I:%M %p") %>
+                      </p>
+                    <% end %>
+                  </div>
+                  <div class="ml-4">
+                    <i data-lucide="chevron-right" class="h-5 w-5 text-gray-400 group-hover:text-ruby-red transition-colors"></i>
+                  </div>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 sm:p-5 lg:p-6 text-blue-800 text-sm sm:text-base">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <i data-lucide="info" class="h-5 w-5 text-blue-500"></i>
+              </div>
+              <div class="ml-3">
+                <p>There are no upcoming meetings scheduled at this time. Please check back later.</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
 
-  <ul>
-    <% meetings.each do |meeting| %>
-      <li><%= link_to meeting.title, rsvp_path(rsvp_for(meeting).token) %></li>
-    <% end %>
-  </ul>
-</article>
+      <div class="mt-6 sm:mt-8 text-sm bg-gray-50 rounded-lg p-4 sm:p-5 border border-gray-200">
+        <p class="text-gray-600">
+          All published meetings are listed above.
+        </p>
+      </div>
+    </article>
+  </div>
+</div>

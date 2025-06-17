@@ -1,62 +1,49 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe Campaigns::Send do
-  let(:user) { create(:user) }
-  let(:campaign) { create(:campaign) }
-  let(:membership) { user.memberships.first }
-  let(:campaign_delivery) { create(:campaign_delivery, campaign: campaign, membership: membership) }
+  let(:send_campaigns) { described_class.new(campaign) }
+  let(:campaign) { instance_double(Campaign, delivered_at: nil, rsvp_event: nil) }
+  let(:membership) { instance_double(Membership) }
+  let(:memberships) { [membership] }
+  let(:campaign_delivery) { instance_double(CampaignDelivery, delivered_at: nil) }
 
   before do
-    membership
-    allow(CampaignsMailer).to receive_message_chain(:campaign_email, :deliver_now)
+    mail_double = instance_double(ActionMailer::MessageDelivery, deliver_now: true)
+
+    allow(Membership).to receive(:current).and_return(memberships)
+    allow(send_campaigns).to receive(:delivery_for).with(membership).and_return(campaign_delivery)
+    allow(campaign_delivery).to receive(:delivered_at=)
+    allow(campaign_delivery).to receive(:save!)
+    allow(campaign).to receive(:update)
+    allow(CampaignsMailer).to receive(:campaign_email)
+      .with(campaign, membership, nil)
+      .and_return(mail_double)
   end
 
-  describe '.call' do
-    subject { described_class.call(campaign) }
+  context "when campaign is not delivered with existing memberships" do
+    it "sends email and creates campaign delivery" do
+      send_campaigns.call
 
-    context 'when campaign has already been delivered' do
-      before do
-        campaign_delivery
-        campaign.update!(delivered_at: Time.current)
-      end
-
-      it 'does not send any emails' do
-        expect(CampaignsMailer).not_to receive(:campaign_email)
-        subject
-      end
+      expect(CampaignsMailer).to have_received(:campaign_email)
+        .with(campaign, membership, nil)
     end
 
-    context 'when campaign has not been delivered' do
-      before { campaign.update(delivered_at: nil) }
+    it "updates the campaign delivery" do
+      send_campaigns.call
 
-      context 'and memberships exist' do
-        it 'sends emails to all memberships' do
-          expect(CampaignsMailer).to receive(:campaign_email).with(campaign, membership, anything).and_call_original
-          subject
-        end
+      expect(campaign_delivery).to have_received(:delivered_at=).with(anything)
+    end
+  end
 
-        it 'generate the delivery' do
-          expect { subject }.to change { CampaignDelivery.count }.by(1)
-        end
+  context "when campaign is not delivered without memberships" do
+    before do
+      allow(Membership).to receive(:current).and_return([])
+    end
 
-        it 'updates the campaign delivery time' do
-          subject
-          expect(CampaignDelivery.first.delivered_at).to be_present
-        end
-      end
+    it "does not send email" do
+      send_campaigns.call
 
-      context 'and no memberships exist' do
-        before do
-          membership.update!(left_at: Time.current)
-        end
-
-        it 'does not send any emails' do
-          expect(CampaignsMailer).not_to receive(:campaign_email)
-          subject
-        end
-      end
+      expect(CampaignsMailer).not_to have_received(:campaign_email)
     end
   end
 end

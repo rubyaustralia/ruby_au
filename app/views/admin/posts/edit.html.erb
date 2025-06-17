@@ -1,10 +1,10 @@
-<% content_for :heading, "Editing post" %>
+<div class="max-w-full md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+  <%= render "form", post: @post %>
 
-<%= render "form", post: @post %>
-
-<br>
-
-<div>
-  <%= link_to "Show this post", admin_post_path(@post) %> |
-  <%= link_to "Back to posts", admin_posts_path %>
+  <div class="mt-6 sm:mt-8 lg:mt-10">
+    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center">
+      <%= link_to "Show this post", admin_post_path(@post), class: "inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+      <%= link_to "Back to posts", admin_posts_path, class: "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+    </div>
+  </div>
 </div>

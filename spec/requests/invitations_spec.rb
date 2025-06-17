@@ -25,7 +25,7 @@ RSpec.describe "Invitations", type: :request do
         expect(user.full_name).to eq("Test User")
         expect(user.emails.count).to be(1)
         expect(user.email).to eq(imported_member.email)
-        expect(user.confirmed_at).to_not be_nil
+        expect(user.confirmed_at).not_to be_nil
         expect(controller.current_user).to eq(user)
       end
     end
@@ -47,7 +47,7 @@ RSpec.describe "Invitations", type: :request do
       get "/invitations/#{imported_member.token}/unsubscribe"
       expect(response).to redirect_to(root_path)
       expect(flash[:notice]).to eq("You have been unsubscribed from membership invitations.")
-      expect(imported_member.reload.unsubscribed_at).to_not be_nil
+      expect(imported_member.reload.unsubscribed_at).not_to be_nil
     end
   end
 end

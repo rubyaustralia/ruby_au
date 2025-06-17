@@ -1,35 +1,48 @@
-<%= content_for :heading do %>
-  Contact Us
-<% end %>
+<section class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+  <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 sm:mb-10 md:mb-12 text-center">
+    How to Contact Ruby Australia
+  </h1>
 
-<h2>How to contact Ruby Australia</h2>
+  <div class="space-y-6 sm:space-y-8 md:space-y-10">
+    <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 md:p-10">
+      <h2 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-5">Email Contact</h2>
+      <p class="text-base sm:text-lg text-gray-700 mb-3">
+        You can email us at
+        <%= link_to "contact@ruby.org.au", "mailto:contact@ruby.org.au", class: "text-ruby-red hover:text-red-700 transition-colors font-medium" %>.
+        Alternatively, we have a
+        <%= link_to "feedback form", page_path('feedback'), class: "text-ruby-red hover:text-red-700 transition-colors font-medium" %>
+        you may submit.
+      </p>
+    </div>
 
-<p>
-  You can send an email to us 
-  <%= link_to "contact@ruby.org.au", "mailto:contact@ruby.org.au" %>. Alternatively 
-  we have a <%= link_to "feedback", page_path('feedback') %> form you may submit.
-</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      <div class="bg-white rounded-lg shadow-md p-6 sm:p-8">
+        <h2 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-5">Postal Address</h2>
+        <p class="text-base sm:text-lg text-gray-700 mb-3">
+          Our address, if you need to post something to us, is as follows:
+        </p>
+        <address class="text-base sm:text-lg font-medium text-gray-800 not-italic border-l-4 border-ruby-red pl-4 py-2">
+          Ruby Australia<br>
+          Suite 325<br>
+          585 Little Collins Street<br>
+          Melbourne, VIC 3000, Australia
+        </address>
+      </div>
 
-<p>Our address, if you need to post something to us, is as follows:</p>
-
-<p class="text-grey-darkest font-bold leading-tight mt-3">
-  Ruby Australia<br>
-  Suite 325<br>
-  585 Little Collins Street<br>
-  Melbourne, VIC 3000, Australia
-</p>
-
-<p>
-  And on the off-chance you need to send us some money 
-  (perhaps for event tickets, or because you're one of our wonderful sponsors), 
-  here are our business and bank details for funds transfers:
-</p>
-
-<p>
-  <strong>ABN:</strong> 58 789 561 496<br>
-  <strong>Bank name:</strong> Commonwealth Bank<br>
-  <strong>BSB:</strong> 063-000<br>
-  <strong>Account Number:</strong> 13217246<br>
-  <strong>Account Name:</strong> Ruby Australia Inc.<br>
-  <strong>SWIFT Code:</strong> CTBAAU2S or CTBAAU2SXXX
-</p>
+      <div class="bg-white rounded-lg shadow-md p-6 sm:p-8">
+        <h2 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-5">Banking Details</h2>
+        <p class="text-base sm:text-lg text-gray-700 mb-3">
+          For event tickets or sponsorship payments, here are our business and bank details:
+        </p>
+        <div class="text-base sm:text-lg text-gray-800 space-y-2 border-l-4 border-ruby-red pl-4 py-2">
+          <p><span class="font-medium">ABN:</span> 58 789 561 496</p>
+          <p><span class="font-medium">Bank name:</span> Commonwealth Bank</p>
+          <p><span class="font-medium">BSB:</span> 063-000</p>
+          <p><span class="font-medium">Account Number:</span> 13217246</p>
+          <p><span class="font-medium">Account Name:</span> Ruby Australia Inc.</p>
+          <p><span class="font-medium">SWIFT Code:</span> CTBAAU2S or CTBAAU2SXXX</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
