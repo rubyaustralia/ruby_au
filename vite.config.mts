@@ -10,17 +10,6 @@ export default defineConfig({
       }
     }),
   ],
-  server: {
-    host: 'localhost',
-    port: 3036,
-    strictPort: true,
-    watch: {
-      ignored: ['**/node_modules/**'],
-    },
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-  },
   resolve: {
     alias: {
       '@images': resolve(__dirname, 'app/frontend/images'),
