@@ -38,14 +38,5 @@ export default defineConfig({
         quietDeps: true
       }
     }
-  },
-  build: {
-    minify: 'esbuild',
-    cssMinify: true,
-    outDir: 'public/vite',
-    rollupOptions: {
-      external: ['jquery']
-    },
-    sourcemap: false,
   }
 })
