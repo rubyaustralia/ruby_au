@@ -14,6 +14,7 @@ AllCops:
     - 'bin/**/*'
     - 'vendor/**/*'
     - 'node_modules/**/*'
+    - 'tmp/**/*'
   DisplayCopNames: true
   TargetRubyVersion: 3.4
   NewCops: disable
