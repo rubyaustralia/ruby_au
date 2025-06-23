@@ -7,9 +7,6 @@ export default defineConfig({
     ViteRails({
       fullReload: {
         additionalPaths: ['config/routes.rb', 'app/views/**/*']
-      },
-      stimulus: {
-        hmr: true,
       }
     }),
   ],
