@@ -44,9 +44,6 @@ export default defineConfig({
     cssMinify: true,
     outDir: 'public/vite',
     rollupOptions: {
-      input: {
-        application: resolve(__dirname, 'app/frontend/entrypoints/application.js')
-      },
       external: ['jquery']
     },
     sourcemap: false,
