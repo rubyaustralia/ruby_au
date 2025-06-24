@@ -1,6 +1,13 @@
 {
   "buildpacks": [
-    { "url": "heroku/nodejs" },
-    { "url": "heroku/ruby" }
-  ]
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "env": {
+    "NODE_OPTIONS": "--max-old-space-size=384"
+  }
 }
