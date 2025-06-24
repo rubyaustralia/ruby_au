@@ -38,6 +38,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <%= csrf_meta_tags %>
   <%= vite_client_tag %>
+  <%= vite_javascript_tag("rails", defer: true) %>
+  <%= vite_javascript_tag("controllers", defer: true) %>
+  <%= vite_javascript_tag("trix", defer: true) %>
   <%= vite_javascript_tag("application") %>
   <%= vite_stylesheet_tag("application") %>
   <!-- hack to use cdn since failed to import trix from production, no issue in dev, remove it once the issue is fixed -->
