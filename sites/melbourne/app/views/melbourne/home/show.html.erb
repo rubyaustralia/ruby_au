@@ -1,5 +1,6 @@
-<div class="h-[calc(100lvh-2rem)]">
-  <div class="font-mono text-right text-xs p-2 text-stone-500">Ruby Melbourne is a <a href="https://ruby.org.au" class="underline" target="_blank">Ruby Australia Meetup</a></div>
+<div class="h-lvh overflow-hidden overflow-y-scroll">
+  <div class="font-mono text-right text-xs p-2 text-stone-500">Ruby Melbourne is a
+    <a href="https://ruby.org.au" class="underline" target="_blank">Ruby Australia Meetup</a></div>
   <div class="grid md:place-items-center">
     <div class="block md:flex w-full h-[calc(100lvh-2rem)] overflow-hidden">
       <div class="w-full md:max-w-1/2 h-[50vh] md:h-full md:block overflow-hidden">
@@ -11,7 +12,8 @@
       <div class="w-full md:w-1/2">
         <div class="h-full grid items-center p-4">
           <div class="font-lekton text-2xl">
-            <div class="font-bold"><h1 class="inline">Ruby Melbourne</h1> <p class="inline">Meetup Relaunch</p></div>
+            <div class="font-bold"><h1 class="inline">Ruby Melbourne</h1>
+              <p class="inline">Meetup Relaunch</p></div>
             <div class="flex gap-4 items-center mt-8">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                    stroke="currentColor"
@@ -50,5 +52,29 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="container mx-auto font-lekton mt-8">
+  <div class="space-y-4">
+    <% Melbourne::Event.all.each do |event| %>
+      <%= tag.section id: dom_id(event) do %>
+        <p><%= event.date %></p>
+        <p>
+          <%= link_to event.venue.google_maps_url, class: "underline" do %>
+            <%= event.venue.name %>
+          <% end %>
+        </p>
+        <% event.talks.each do |talk| %>
+          <article>
+            <p><%= talk.speaker.name %> - <%= link_to talk.speaker.github_username, "https://github.com/#{talk.speaker.github_username}", target: "_blank" %></p>
+            <p></p>
+            <p>
+              <%= truncate(talk.description, length: 200) %>
+            </p>
+          </article>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
 </div>
