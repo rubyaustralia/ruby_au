@@ -1,0 +1,37 @@
+# frozen_string_literal: true
+
+namespace :melbourne do
+  namespace :data do
+    desc "fetch issues from melbourne-ruby"
+    task :fetch_issues, [:repo_owner, :repo_name, :github_token] => :environment do
+      raise unless Rails.env.development?
+
+      repo_owner = args[:repo_owner] # rubyaustralia
+      repo_name = args[:repo_name] # melbourne-ruby
+      github_token = args[:github_token]
+
+      fetcher = Melbourne::Github::IssueFetcher.new(
+        github_token:,
+        repo_owner:,
+        repo_name:
+      )
+
+      result = fetcher.fetch_all
+
+      no_milestone = result.delete("No Milestone")
+
+      File.write(Melbourne::Engine.root.join("db", "data", "events", "raw", "issues.json"), JSON.pretty_generate(result.as_json))
+      File.write(Melbourne::Engine.root.join("db", "data", "events", "raw", "issues-no-milestone.json"), JSON.pretty_generate(no_milestone.as_json))
+    end
+
+    desc "process issues; from json to yaml in even format"
+    task process_issues: :environment do
+      processor = Melbourne::RawIssuesProcessor.new(path: "#{Melbourne::Engine.root}/db/data/events/raw/issues.json")
+      events = processor.process
+      File.write(
+        Melbourne::Engine.root.join("db", "data", "events.yml"),
+        events.to_yaml
+      )
+    end
+  end
+end
