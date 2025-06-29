@@ -7,6 +7,23 @@
   --color-metal: #30313b;
   --color-metal-dark: #272832;
   --color-metal-darker: #1e1f28;
+  /* primary colours */
+  --color-deep-crimson: #DC143C;
+  --color-deeper-crimson: #C41E3A; /* deeper crimson for accents */
+  --color-bright-gold: #FFD700;
+  /* secondary colours */
+  --color-muted-gold: #B8860B; /* darker gold for text/borders */
+  --color-deep-maroon: #8B0000; /* shadows and depth */
+  --color-orange-gold: #FFA500;
+  /* neutral colours */
+  --color-gunmetal-grey: #2F4F4F;
+  --color-slate-metal-grey: #708090;
+  --color-offwhite-beige: #F5F5DC;
+  --color-pure-black: #000000;
+  /* effect colours */
+  --color-arc-blue: #00BFFF;
+  --color-repulsor-orange: #FF4500;
+  --color-pure-white: #FFFFFF;
 }
 
 @layer base {
@@ -42,7 +59,7 @@
 
   .turbo-progress-bar {
     height: 5px;
-    background-color: var(--color-amber-500);
+    background-color: var(--color-arc-blue);
   }
 
   .nav-link {
