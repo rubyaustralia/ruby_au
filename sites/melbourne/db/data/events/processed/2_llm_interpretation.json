@@ -1,0 +1,855 @@
+[
+  {
+    "date": "2025-06-26",
+    "talks": [
+      {
+        "title": "The Unspoken Contract: Communicating Intent Through Code",
+        "description": "Discover how to make your code speak for itself! Learn to avoid hidden bugs and miscommunications by writing crystal-clear code and understanding the 'unspoken contracts' every dev faces. A talk full of real-life stories and fun takeaways! 👨‍💻✨",
+        "speakers": [
+          {
+            "name": "HashNotAdam",
+            "contact_details": {
+              "github_username": "HashNotAdam",
+              "x_handle": null,
+              "linkedin_handle": "HashNotAdam",
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-04-24",
+    "talks": [
+      {
+        "title": "Make vs Justfile vs Mise - choose your task runner",
+        "description": "Curious about task runners? Come explore Make, Justfile, Mise, and more! We'll cover why you need them, how to pick the right one, gotchas, and dev playbooks. Boost your productivity with the right tools! 🔧💡",
+        "speakers": [
+          {
+            "name": "Michael Milewski",
+            "contact_details": {
+              "github_username": "saramic",
+              "x_handle": "saramic",
+              "linkedin_handle": "michael-milewski",
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": "https://sessionize.com/michael-milewski/"
+            }
+          }
+        ]
+      },
+      {
+        "title": "rails 8 new",
+        "description": "Dive into the latest Rails 8 features! Hear about building a brand-new app, production adventures, and cool tools like Kamal and Action Cable. Celebrate wins, admit mistakes, and learn something new together! 🚂✨",
+        "speakers": [
+          {
+            "name": "John Sherwood",
+            "contact_details": {
+              "github_username": "ponny",
+              "x_handle": "ponny",
+              "linkedin_handle": "johnsherwooddeveloper",
+              "bluesky_handle": "ponny.dev",
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-05-29",
+    "talks": [
+      {
+        "title": "How on earth do you manage forms with Turbo?",
+        "description": "Turbo forms can be mind-boggling! Discover practical ways to deal with errors, redirects, validations, and more. Turbo-charge your forms and join us for this dynamic talk full of tips and fun insights! 🚀",
+        "speakers": [
+          {
+            "name": "Matt Hood",
+            "contact_details": {
+              "github_username": "MattHood",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "SQLite-ruby - a whole SQL database in a gem",
+        "description": "Get the scoop on SQLite in Ruby! Unpack the magic of the tiniest, most deployed database—right in your Gemfile. Whether you're new to SQLite or a fan, come join the fun and see what all the buzz is about!",
+        "speakers": [
+          {
+            "name": "dkam",
+            "contact_details": {
+              "github_username": "dkam",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": "@apocraphilia@hachyderm.io",
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-03-27",
+    "talks": [
+      {
+        "title": "Panel/Discussion/Riffing Session on Objects to encapsulate business logic",
+        "description": "Dive into a lively panel exploring where to put business logic beyond traditional Rails models. Join us to riff, discuss, and crowdsource creative solutions for smarter, cleaner Ruby apps! Bring your questions and opinions!",
+        "speakers": [
+          {
+            "name": "Julian Pinzón",
+            "contact_details": {
+              "github_username": "pinzonjulian",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          },
+          {
+            "name": "Adam",
+            "contact_details": {
+              "github_username": "HashNotAdam",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "Rack Fundamentals revisited",
+        "description": "Rediscover the core of Ruby web apps! This talk reveals how Rack powers our favorite frameworks, and why sometimes a slim API is all you need. Get under the hood—it's simpler (and more fun) than you think!",
+        "speakers": [
+          {
+            "name": "Simon Hildebrandt",
+            "contact_details": {
+              "github_username": "simonhildebrandt",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": "@apocraphilia@hachyderm.io",
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-02-27",
+    "talks": [
+      {
+        "title": "Semantic Search and RAG with Ruby",
+        "description": "Curious how Ruby powers next-level search? Join us as we dive into embeddings and Retrieval-Augmented Generation—making smart, relevant search a breeze in Ruby. Perfect for devs eager to add some AI magic to their apps!",
+        "speakers": [
+          {
+            "name": "dkam",
+            "contact_details": {
+              "github_username": "dkam",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": "@dkam@ruby.social",
+              "website": "https://github.com/dkam/"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-01-30",
+    "talks": [
+      {
+        "title": "The Inner Workings of Puma",
+        "description": "Curious about what keeps your Ruby apps speedy? Join us for an in-depth tour of Puma’s internals—discover architecture secrets, smart configurations, and features you might be missing! Perfect for anyone running Rails. 🐾",
+        "speakers": [
+          {
+            "name": "Joshua Yang",
+            "contact_details": {
+              "github_username": null,
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": "joshuay03.bsky.social",
+              "mastodon_handle": "@joshuay03@ruby.social",
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "Ruby salad. What's fresh on the market?",
+        "description": "Ruby 3.4 and Rails 8 are serving up fresh features! Get the scoop on authentication generators, compare Rodauth, and taste what’s new in the Ruby world. Dive in for a flavorful update and some juicy discussion! 🥗✨",
+        "speakers": [
+          {
+            "name": "Anton Davydov",
+            "contact_details": {
+              "github_username": null,
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2024-10-24",
+    "talks": [
+      {
+        "title": "Cursor v Github Copilot: building a better data schema tool?",
+        "description": "Curious about AI coding assistants? See how Cursor stacks up against GitHub Copilot for data schema building! We'll dive into setup tips, which AI models to pick, and the pros & cons. Perfect for tinkerers—don't miss this lively tech face-off!",
+        "speakers": [
+          {
+            "name": "Ceels",
+            "contact_details": {
+              "github_username": null,
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": "@ceels",
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "Happy Ruby SAML Development",
+        "description": "SAML got you stumped? Join us for a cheerful guide to handling SAML in Ruby! Learn how Covidence tackles SAML without third parties, tests full sign-in flows, and boosts performance with smart parsing. You'll smile your way to seamless SSO! 🎉",
+        "speakers": [
+          {
+            "name": "Pat",
+            "contact_details": {
+              "github_username": "pat",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": "https://hachyderm.io/@pat",
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2024-11-28",
+    "talks": [
+      {
+        "title": "Turbo (Hotwire), Stimulusjs and being happy with front end development again",
+        "description": "Tired of complicated front-end frameworks? Get a peek into using Hotwire and StimulusJS for Rails apps—it's fun and delightfully simple. Join us to see how modern Rails can actually make front-end dev enjoyable again! 💡",
+        "speakers": [
+          {
+            "name": "Jeropaul",
+            "contact_details": {
+              "github_username": "jeropaul",
+              "x_handle": "@gardengnome_au",
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "How do `CurrentAttributes` work?",
+        "description": "Ever wondered how Rails keeps per-request data separate? Dive into `CurrentAttributes` and learn how this clever class magically stores values for each request. Get the practical scoop—with slides! Come curious!",
+        "speakers": [
+          {
+            "name": "darkfishy",
+            "contact_details": {
+              "github_username": "darkfishy",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2024-09-26",
+    "talks": [
+      {
+        "title": "How does `reload!` work?",
+        "description": "Ever wondered what happens behind the scenes when you call `reload!` in Rails console? Dive in as we demystify class reloading and explore its impact on your development workflow. Perfect for curious minds who love Rails magic! ✨",
+        "speakers": [
+          {
+            "name": "darkfishy",
+            "contact_details": {
+              "github_username": "darkfishy",
+              "x_handle": "fusionfish",
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "Oaken - A fresh take on seeds and fixtures",
+        "description": "Discover Oaken—a new approach to handling seeds and fixtures in your Rails apps! From setup to clever tricks, join us for an engaging session aimed at making your database setup cleaner and more fun. Sprout some fresh ideas with us! 🌱",
+        "speakers": [
+          {
+            "name": "Julian Pinzon",
+            "contact_details": {
+              "github_username": "pinzonjulian",
+              "x_handle": "pinzonjulian",
+              "linkedin_handle": "pinzonjulian",
+              "bluesky_handle": "pinzonjulian",
+              "mastodon_handle": "pinzonjulian",
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2024-08-29",
+    "talks": [
+      {
+        "title": "My Career Change - Nothing is what it seems",
+        "description": "Get inspired by Helen's journey from a different path into tech! This cheerful talk is packed with personal stories and light-hearted anecdotes, perfect for anyone curious about making a career leap. Come for the laughs, stay for the wisdom!",
+        "speakers": [
+          {
+            "name": "Helen Stonehouse",
+            "contact_details": {
+              "github_username": null,
+              "x_handle": "cinnamonbabies",
+              "linkedin_handle": "helen-stonehouse",
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "Rails Engines in 20 minutes",
+        "description": "Curious about Rails Engines? In just 20 minutes, discover how to build plugins and extend your Rails app in creative ways! Whether you're new to engines or want a refresher, this fun session has you covered.",
+        "speakers": [
+          {
+            "name": "Chris Oliver",
+            "contact_details": {
+              "github_username": "excid3",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2024-07-25",
+    "talks": [
+      {
+        "title": "Pinkest Pink",
+        "description": "Get ready for an eye-popping look at the latest vibrant web colors! Discover why pink is now even pinker, how our eyes perceive color, and how reality is recreated on screens. Come for a fun, colorful journey into the bright world of modern web design!",
+        "speakers": [
+          {
+            "name": "Dan Laush",
+            "contact_details": {
+              "github_username": "danlaush",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": "@danlaush",
+              "website": "https://danlaush.biz/"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Being a Good Male Ally",
+        "description": "Join us for a thoughtful session on what it means, and how, to be a supportive male ally. Learn practical steps and perspectives that help create a more inclusive and respectful environment for everyone. Open minds and good vibes welcome!",
+        "speakers": [
+          {
+            "name": "Nick Wolf",
+            "contact_details": {
+              "github_username": "quintrino",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": "https://nickwolf.com.au"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2024-06-27",
+    "talks": [
+      {
+        "title": "One does not simply... rebuild a product",
+        "description": "Curious about rebuilding complex products and revamping engineering culture at the same time? Hear practical stories and lessons from Culture Amp’s journey—full of wins, fails, and hidden spiders. You'll leave with real-world inspiration and maybe a few laughs!",
+        "speakers": [
+          {
+            "name": "Prakriti Mateti",
+            "contact_details": {
+              "github_username": null,
+              "x_handle": null,
+              "linkedin_handle": "prakritimateti",
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": "https://www.linkedin.com/in/prakritimateti/"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Laravel, meet my friend Turbo",
+        "description": "Discover how Turbo supercharges Laravel apps! Explore Turbo, Turbo Native, and Strada—whether you’re a Laravel or Rails fan, this talk will bridge the frameworks and give you fresh ideas for smoother, modern web development.",
+        "speakers": []
+      }
+    ]
+  },
+  {
+    "date": "2024-05-30",
+    "talks": [
+      {
+        "title": "Cursors: Why Pagination is Bad-gination!",
+        "description": "Tired of stale old pagination? Discover why cursor-based pagination is the fresh new way to serve data fast and reliably! A friendly introduction with Ruby insights—catch up with modern best practices in just 20-30 lively minutes.",
+        "speakers": []
+      }
+    ]
+  },
+  {
+    "date": "2024-04-25",
+    "talks": [
+      {
+        "title": "Dissecting Rails",
+        "description": "Curious how Rails works behind the scenes? Join us for a lighthearted dive into the Rails framework, exploring gems like Active Support and Active Model—perfect for curious minds and those eager to level up their Rails knowledge! 💡",
+        "speakers": [
+          {
+            "name": "Antz",
+            "contact_details": {
+              "github_username": "friendlyantz",
+              "x_handle": "friendlyantz",
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2024-03-28",
+    "talks": [
+      {
+        "title": "One Billion Rows in Ruby",
+        "description": "Discover how Ruby stacks up for heavy data crunching! Dive into optimising Ruby for the One Billion Row Challenge, and learn fun tips, tools, and lessons from one developer’s quest to squeeze peak performance from our favourite language.",
+        "speakers": [
+          {
+            "name": "Rian McGuire",
+            "contact_details": {
+              "github_username": "rianmcguire",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "The Economics of Ruby",
+        "description": "Ever wonder how Ruby stays alive and vibrant? Join John for a breezy lightning talk exploring the economics behind Ruby—costs, sponsors, and the passionate contributors that keep Ruby running. Get to know the ecosystem's hidden engines!",
+        "speakers": [
+          {
+            "name": "John (ponny)",
+            "contact_details": {
+              "github_username": "ponny",
+              "x_handle": "ponny",
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": "https://twitter.com/ponny"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2024-02-22",
+    "talks": [
+      {
+        "title": "Can I host a rails app from a home server?",
+        "description": "Is it really possible (or worth it) to self-host a Rails app on your own hardware? Explore the retro-fun, cost-saving, tech-savvy world of hosting Rails from home—maybe even like it’s 1999 again!",
+        "speakers": [
+          {
+            "name": "Saramic",
+            "contact_details": {
+              "github_username": null,
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "System Design & Distributed System Lightweight Concept",
+        "description": "Curious about scaling your app? Join this engaging intro to vertical and horizontal scaling, lightweight distributed systems, and a dash of Kubernetes fun. Perfect for anyone wanting to make their app ready for the big leagues!",
+        "speakers": [
+          {
+            "name": "Stefanuswilfrid",
+            "contact_details": {
+              "github_username": "Stefanuswilfrid",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2024-01-25",
+    "talks": [
+      {
+        "title": "Processing DMARC reports via Action Mailbox",
+        "description": "Email security doesn't have to be a headache! See how Action Mailbox can make sense of those cryptic DMARC reports and turn email authentication chaos into clarity. Join us to learn clever report automation with Rails! 📧🔍",
+        "speakers": [
+          {
+            "name": "Adam Gordon Bell",
+            "contact_details": {
+              "github_username": "HashNotAdam",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "Something Something Fibers Something",
+        "description": "Curious about Ruby fibers? Dive into Ruby's low-level magic! Learn what fibers are, how they relate to threads, and peek under the hood at how they're built. Get ready to up your Ruby game and explore async marvels!",
+        "speakers": [
+          {
+            "name": "Konstantin Tsanaktsidis",
+            "contact_details": {
+              "github_username": "KJTsanaktsidis",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2023-11-23",
+    "talks": [
+      {
+        "title": "Precious gems I've learned during my first dev year",
+        "description": "Join us for a short, uplifting lightning talk as Justin shares the hidden gems and wisdom picked up throughout his first year as a developer—perfect for anyone looking for inspiration and insight! ✨",
+        "speakers": [
+          {
+            "name": "Justin",
+            "contact_details": {
+              "github_username": "j-tws",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "Rails architecture with engines work group",
+        "description": "Get ready for a hands-on Rails engines discussion! We’ll see live demos, share real-world experiences, and learn together. Jump in and bring your questions or examples—the more, the merrier! 🚂",
+        "speakers": [
+          {
+            "name": "antulik",
+            "contact_details": {
+              "github_username": "antulik",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2023-10-26",
+    "talks": [
+      {
+        "title": "Showcase of final project of my bootcamp with Academy Xi",
+        "description": "Come see an inspiring project built from scratch! Discover a full stack Rails & React web app crafted for Academy Xi's bootcamp finale. A great opportunity to ask questions and see learning put into real action!",
+        "speakers": [
+          {
+            "name": "Thanh Huynh",
+            "contact_details": {
+              "github_username": null,
+              "x_handle": null,
+              "linkedin_handle": "thdev",
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": "thdev.com.au"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Thoughts on Environment Variables",
+        "description": "Unlock the secrets of safer Rails apps! This lightning talk covers the right way to use env vars, managing secrets, and avoiding common pitfalls. Perfect for anyone ready to level up their app’s security and configuration game!",
+        "speakers": [
+          {
+            "name": "Saranjeet Singh",
+            "contact_details": {
+              "github_username": "saramic",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2023-09-28",
+    "talks": [
+      {
+        "title": "Rails forms",
+        "description": "Get up to speed with Rails forms and service objects in this lightning talk! Quick, practical, and perfect for anyone looking to streamline forms in Rails apps. Join us for some handy tips and a dash of fun!",
+        "speakers": [
+          {
+            "name": "Antulik",
+            "contact_details": {
+              "github_username": "antulik",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "Unleashing the Power of Pair Presenting: Elevate Your Conference Impact",
+        "description": "Unlock the magic of pair presenting! Discover how working together on stage can boost your confidence, create memorable talks, and foster inclusivity. Don’t miss this inspiring and interactive session for conference success!",
+        "speakers": []
+      }
+    ]
+  },
+  {
+    "date": "2023-08-24",
+    "talks": [
+      {
+        "title": "Dragonruby: Creating the game \"Metal Warrior: Search for Valhalla\"",
+        "description": "Dive into the exciting world of indie game dev! Hear highlights and funny mishaps from the making of \"Metal Warrior: Search for Valhalla\" with Dragonruby. Quick, lively, and perfect for game lovers and curious coders alike!",
+        "speakers": [
+          {
+            "name": "map7",
+            "contact_details": {
+              "github_username": "map7",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "But why does it work?",
+        "description": "Break open the black box! Get inspired to dive into unknown code and gems, as we unravel mysteries behind Ruby and its source. Curiosity is your ticket – bring your questions and let’s learn how things really tick!",
+        "speakers": [
+          {
+            "name": "Rian McGuire",
+            "contact_details": {
+              "github_username": "rianmcguire",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2023-07-27",
+    "talks": [
+      {
+        "title": "Tips for juniors and mentors",
+        "description": "Level up your Ruby skills with tips for juniors and mentors! From pairing up and TDD to exploring dojos and advanced hacks, this talk is a great way to connect and grow together. Join us and take your code (and mentorship) to the next level!",
+        "speakers": []
+      },
+      {
+        "title": "A production bug 27 years in the making",
+        "description": "Ready for a real-life Ruby whodunit? Hear the story of a bug that slipped through every test for 27 years! It's a thrilling, cautionary tale full of lessons for devs of all levels. Don’t miss this time-traveling debugging adventure!",
+        "speakers": [
+          {
+            "name": "radar",
+            "contact_details": {
+              "github_username": "radar",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "How FHIR is tackling a wicked problem with technical, social and political solutions",
+        "description": "Discover how the FHIR standard is revolutionizing healthcare data! Explore technical, social, and political challenges in healthcare interoperability and what Ruby devs can learn to build better communities and solutions. Fascinating, inspiring, and practical!",
+        "speakers": [
+          {
+            "name": "Matt Hood",
+            "contact_details": {
+              "github_username": "MattHood",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2021-06-24",
+    "talks": [
+      {
+        "title": "How to stop I18n getting complex",
+        "description": "Ever get lost in I18n keys? Discover a fresh, super simple approach to managing internationalization in Rails! If keeping things clear and easy is your goal, don't miss this practical, light-hearted lightning talk.",
+        "speakers": [
+          {
+            "name": "David Carlin",
+            "contact_details": {
+              "github_username": "davich",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      },
+      {
+        "title": "Exercism for Junior Developers",
+        "description": "Bootcamp grads and junior devs: level up your coding! Learn to crack problems with test-driven development using real Exercism exercises, and build confidence for your next pairing challenge. Supportive, hands-on, and perfect for newcomers!",
+        "speakers": [
+          {
+            "name": "Achhetr",
+            "contact_details": {
+              "github_username": "achhetr",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2021-03-25",
+    "talks": [
+      {
+        "title": "The Joy of Docs: Technical Writing for Developers and Engineers",
+        "description": "Discover how great technical writing can save developers time and frustration! Join us for tips, empathy, and practical advice on writing docs that truly help your audience—whether it’s code, RFCs, or just emails. Make your docs a joy, not a chore! 📚✨",
+        "speakers": [
+          {
+            "name": "Oscar Alan Pierce",
+            "contact_details": {
+              "github_username": "oscaralanpierce",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2021-02-25",
+    "talks": [
+      {
+        "title": "View Components in the Wild",
+        "description": "Curious how View Components make Rails UIs easier and testing simpler? Join us as we explore real-world examples, design through composability, and see how Fresho streamlines the frontend for consistency and joy! Come for the code, stay for the wild ride!",
+        "speakers": [
+          {
+            "name": "Vanessa Nimmo",
+            "contact_details": {
+              "github_username": "VanessaNimmo",
+              "x_handle": null,
+              "linkedin_handle": null,
+              "bluesky_handle": null,
+              "mastodon_handle": null,
+              "website": null
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
