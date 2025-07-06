@@ -47,7 +47,7 @@ namespace :melbourne do
     desc "process issues; from json to yaml in event format"
     task process_into_domain_models: :environment do
       path = "#{Melbourne::Engine.root}/db/data/events/processed/2_llm_interpretation.json"
-      processor = Melbourne::Data::DomainModelProcessor.new(path: )
+      processor = Melbourne::Data::DomainModelProcessor.new(path:)
       events = processor.process
       File.write(
         Melbourne::Engine.root.join("db", "data", "events", "processed", "3_data_in_app_domain.yml"),

@@ -1,11 +1,8 @@
 # frozen_string_literal: true
-#   require 'net/http'
-#   require 'json'
-#   require 'uri'
 
 module Melbourne
   module Data
-    class LLMCaller
+    class LLMCaller # rubocop:disable Metrics/ClassLength:
       def initialize(openai_api_key:)
         # Define the request URL
         uri = URI('https://api.openai.com/v1/responses')
@@ -43,7 +40,7 @@ module Melbourne
         JSON.parse(parsed_response.fetch("output").first.fetch("content").first.fetch("text"))
       end
 
-      def request_body(event_json)
+      def request_body(event_json) # rubocop:disable Metrics/MethodLength
         {
           "model" => "gpt-4.1",
           "input" => [
@@ -55,7 +52,7 @@ module Melbourne
                   "text" => "#{base_prompt} ```json #{event_json} ```"
                 }
               ]
-            },
+            }
           ],
           "text" => {
             "format" => {
@@ -98,52 +95,52 @@ module Melbourne
                                 "type" => "object",
                                 "properties" => {
                                   "github_username" => {
-                                    "type" => ["string", "null"],
+                                    "type" => %w[string null],
                                     "description" => "GitHub username of the speaker."
                                   },
                                   "x_handle" => {
-                                    "type" => ["string", "null"],
+                                    "type" => %w[string null],
                                     "description" => "X social media handle of the speaker."
                                   },
                                   "linkedin_handle" => {
-                                    "type" => ["string", "null"],
+                                    "type" => %w[string null],
                                     "description" => "LinkedIn handle of the speaker."
                                   },
                                   "bluesky_handle" => {
-                                    "type" => ["string", "null"],
+                                    "type" => %w[string null],
                                     "description" => "Bluesky handle of the speaker."
                                   },
                                   "mastodon_handle" => {
-                                    "type" => ["string", "null"],
+                                    "type" => %w[string null],
                                     "description" => "Mastodon handle of the speaker."
                                   },
                                   "website" => {
-                                    "type" => ["string", "null"],
+                                    "type" => %w[string null],
                                     "description" => "Personal website of the speaker."
                                   }
                                 },
-                                "required" => [
-                                  "github_username",
-                                  "x_handle",
-                                  "linkedin_handle",
-                                  "bluesky_handle",
-                                  "mastodon_handle",
-                                  "website"
+                                "required" => %w[
+                                  github_username
+                                  x_handle
+                                  linkedin_handle
+                                  bluesky_handle
+                                  mastodon_handle
+                                  website
                                 ],
                                 "additionalProperties" => false
                               }
                             },
-                            "required" => ["name", "contact_details"],
+                            "required" => %w[name contact_details],
                             "additionalProperties" => false
                           }
                         }
                       },
-                      "required" => ["title", "description", "speakers"],
+                      "required" => %w[title description speakers],
                       "additionalProperties" => false
                     }
                   }
                 },
-                "required" => ["date", "talks"],
+                "required" => %w[date talks],
                 "additionalProperties" => false
               }
             }

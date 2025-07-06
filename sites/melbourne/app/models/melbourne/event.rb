@@ -16,7 +16,7 @@ module Melbourne
     attribute :venue
     attribute :talks
 
-    def self.all
+    def self.all # rubocop:disable Metrics/MethodLength
       @all ||= YAML.load_file(Engine.root.join("db", "data", "events.yml")).map do |event_data|
         event_data = event_data.with_indifferent_access
         Event.new(

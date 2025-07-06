@@ -7,7 +7,7 @@ module Melbourne
         @json_contents = JSON.parse(File.read(path))
       end
 
-      def process # rubocop:disable Metrics/MethodLength
+      def process # rubocop:disable Metrics/MethodLength, Metrics/AbcSize:
         json_contents.map do |event|
           date = Date.parse(event["date"]).end_of_month.prev_occurring(:thursday)
           {
