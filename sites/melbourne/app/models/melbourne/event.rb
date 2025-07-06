@@ -22,7 +22,14 @@ module Melbourne
         Event.new(
           **event_data.slice(:uuid, :date, :type),
           venue: Venue.new(event_data.fetch("venue", {})),
-          talks: event_data.fetch("talks", []).map { Talk.new(**it.slice(:id, :title, :description, :video_url), speaker: Speaker.new(it.fetch(:speaker, {}))) }
+          talks: event_data.fetch("talks", []).map do |talk|
+            Talk.new(
+              **talk.slice(:id, :title, :description, :video_url),
+              speakers: talk.fetch(:speakers, []).map do |speaker|
+                Speaker.new(**speaker)
+              end
+            )
+          end
         )
       end
     end

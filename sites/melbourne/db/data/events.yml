@@ -1,877 +1,849 @@
 ---
-- uuid: 62e78f09-e393-481b-8c6a-e817b214a27b
+- uuid: ff18f1ce-dbb9-4ea6-be82-f32544f7a866
   date: '2025-06-26'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 3171733200
-    title: 'Talk Proposal: The Unspoken Contract: Communicating Intent Through Code'
-    description: |-
-      ### Description(this will appear on youtube):
-      Code doesn’t just tell computers what to do—it tells future developers what you meant. In this talk, we’ll explore how a simple change in a Ruby on Rails app—replacing `image_tag` with `vite_image_tag`—unintentionally broke a core abstraction, causing a baffling `JSON::NestingError`.
-
-      This bug wasn’t just about tools like Vite or Active Storage—it was a symptom of a deeper problem: intent wasn’t communicated clearly in the code.
-
-      We’ll explore the idea of unspoken contracts in software—those invisible lines where systems, assumptions, and mental models meet. Through real-world examples, you’ll learn how to:
-
-      - Recognise where intent gets lost in translation
-      - Communicate purpose through naming, structure, and boundaries
-      - Leave better breadcrumbs for your teammates and future self
-
-      Whether you're refactoring, reviewing, or just trying to be less confusing, this talk will help you write code that speaks more clearly—even when you're not there to explain it.
-
-      ### Estimated Talk Time:
-      30 minutes
-
-      ### Prefered Month to Present:
-      June 2025
-
-      ### Preferred Social media handles:
-      GitHub: HashNotAdam
-      LinkedIn: HashNotAdam
-
-      ### Mugshot (will be use in the slides):
-      Same as from our host slides
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 65318e57-5b0f-43fe-97f9-cf0e3f2b9ff8
+    - id: da3cb3c7-4b8f-4e21-9186-a0f128dd8531
+      title: 'The Unspoken Contract: Communicating Intent Through Code'
+      description: "Discover how to make your code speak for itself! Learn to avoid
+      hidden bugs and miscommunications by writing crystal-clear code and understanding
+      the 'unspoken contracts' every dev faces. A talk full of real-life stories and
+      fun takeaways! \U0001F468‍\U0001F4BB✨"
+      video_url: TODO
+      speakers:
+        - name: HashNotAdam
+          contact_details:
+            github_username: HashNotAdam
+            x_handle:
+            linkedin_handle: HashNotAdam
+            bluesky_handle:
+            mastodon_handle:
+            website:
+- uuid: 722ddcae-64d3-4147-a1a8-ef82b1be72bc
   date: '2025-04-24'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2990963355
-    title: 'Talk Proposal: Make vs Justfile vs Mise'
-    description: "Description(this will appear on youtube):\n\n## Make vs Justfile
-      vs Mise - _choose your task runner_\n\nOverview the some task runners like **Make**,
-      **Justfile** and **Mise** - may even take a look at [**xc**](https://xcfile.dev/)
-      then delve into the hard questions:\n\n- why a task runner is important?\n-
-      which ones to use and when?\n- some gotchas?\n- some common playbooks!\n- `DIAC`
-      - Developer Infrastructure as Code - how far can we take this?\n\npresentation
-      will be documented here: https://github.com/failure-driven/make-just-dev-runners\n\nEstimated
-      Talk Time: `18 min`\n\nPreferred Month to Present: **April 2025**\n\nPreferred
-      Social media handles:\n- https://github.com/saramic\n- https://x.com/saramic\n-
-      https://www.linkedin.com/in/michael-milewski/\n- https://sessionize.com/michael-milewski/\n\nMugshot
-      (will be use in the slides): \n\n<img src=\"https://failure-driven.com/images/michael_milewski_profile_20190421_large.jpg\"
-      width=\"320\">\n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 2915946094
-    title: 'Talk Proposal: rails 8 new'
-    description: "Description(this will appear on youtube):\nI started a new app on
-      January 1st using Rails 8.  It's running in production in a farily Rails 8 way
-      with a few changes which I can explain.  Using Kamal, Action Cable, Action Text,
-      Active Job, etc.  I'm probably doing a few things wrong too so people can correct
-      me (Yay!  Interactive talk via Cunningham's law!)\n\nMainly I'm just really
-      happy with Rails 8 and want to gush about it ❤ \n\nEstimated Talk Time: Can
-      be adjusted.  Perhaps 15-30 mins.\n\nPrefered Month to Present: April\n\nPreferred
-      Social media handles:\nhttps://www.linkedin.com/in/johnsherwooddeveloper/\nhttps://bsky.app/profile/ponny.dev\nhttps://x.com/ponny\n\nMugshot
-      (will be use in the slides):\n![Image](https://github.com/user-attachments/assets/12913521-9b09-4f5f-82ca-b131b35a7998)"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: c4d93503-4297-4af4-846c-b65aca3d17e6
+    - id: 5ed7fb22-96f5-45cc-90fb-f271ed91d93a
+      title: Make vs Justfile vs Mise - choose your task runner
+      description: "Curious about task runners? Come explore Make, Justfile, Mise, and
+      more! We'll cover why you need them, how to pick the right one, gotchas, and
+      dev playbooks. Boost your productivity with the right tools! \U0001F527\U0001F4A1"
+      video_url: TODO
+      speakers:
+        - name: Michael Milewski
+          contact_details:
+            github_username: saramic
+            x_handle: saramic
+            linkedin_handle: michael-milewski
+            bluesky_handle:
+            mastodon_handle:
+            website: https://sessionize.com/michael-milewski/
+    - id: 7dfb9478-b341-42ca-836c-121d20a6b0f0
+      title: rails 8 new
+      description: "Dive into the latest Rails 8 features! Hear about building a brand-new
+      app, production adventures, and cool tools like Kamal and Action Cable. Celebrate
+      wins, admit mistakes, and learn something new together! \U0001F682✨"
+      video_url: TODO
+      speakers:
+        - name: John Sherwood
+          contact_details:
+            github_username: ponny
+            x_handle: ponny
+            linkedin_handle: johnsherwooddeveloper
+            bluesky_handle: ponny.dev
+            mastodon_handle:
+            website:
+- uuid: 93c8d8da-44ea-4039-a0e2-fbbfad86664b
   date: '2025-05-29'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2950841633
-    title: 'Requested talk: How on earth do you manage forms with Turbo?'
-    description: |-
-      Turbo is an amazing tool that usually stays out of the way. Forms, however, come with some weird and wonderful quirks that can drive you insane.
-
-      I'd love to hear a talk that covers things like:
-
-      - Handling errors
-        - Status codes
-        - Double rendering
-      - Redirecting after a form submission (esp when used inside a Turbo Frame)
-      - Disabling Turbo on a form
-      - Leveraging Turbo Streams
-      - Inline validations and dynamic error messaging
-      - Testing Turbo interactions
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 2937083767
-    title: 'Talk Proposal: SQLite-ruby - a whole SQL database in a gem'
-    description: |+
-      SQLite - the most deployed database that most people have never heard of - as a gem
-
-      Estimated Talk Time: 5-20 minutes
-
-      Prefered Month to Present: -
-
-      Preferred Social media handles: @apocraphilia@hachyderm.io
-
-
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: ba73489a-639f-443c-8b6c-c31cff24eea6
+    - id: 279bea35-fee9-407b-bc63-39347f5a1eae
+      title: How on earth do you manage forms with Turbo?
+      description: "Turbo forms can be mind-boggling! Discover practical ways to deal
+      with errors, redirects, validations, and more. Turbo-charge your forms and join
+      us for this dynamic talk full of tips and fun insights! \U0001F680"
+      video_url: TODO
+      speakers:
+        - name: Matt Hood
+          contact_details:
+            github_username: MattHood
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - id: 15fa8f5f-4689-4b1f-8bfe-77cec96e22be
+      title: SQLite-ruby - a whole SQL database in a gem
+      description: Get the scoop on SQLite in Ruby! Unpack the magic of the tiniest,
+        most deployed database—right in your Gemfile. Whether you're new to SQLite or
+        a fan, come join the fun and see what all the buzz is about!
+      video_url: TODO
+      speakers:
+        - name: dkam
+          contact_details:
+            github_username: dkam
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle: "@apocraphilia@hachyderm.io"
+            website:
+- uuid: 87175646-76ab-48b1-9379-2267c5f5aef9
   date: '2025-03-27'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2944675321
-    title: 'Talk Proposal: Panel/Discussion/Riffing Session on Objects to encapsulate
-      business logic'
-    description: "Description(this will appear on youtube):\nA discussion about where
-      to put business logic that may not belong in a traditional Rails Model. \n\nEstimated
-      Talk Time:\n50 min\n\nPrefered Month to Present:\nMarch 2025\n\nPreferred Social
-      media handles:\n@pinzonjulian @HashNotAdam \n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 2941730105
-    title: 'Talk Proposal: Rack Fundamentals revisited'
-    description: |
-      Description(this will appear on youtube): Learn the machinery that underpins our favourite frameworks, and why you might not need a whole Rails stack for an API that's basically a single method.
-
-      Estimated Talk Time: 20 minutes
-
-      Preferred Month to Present: March 2025
-
-      Preferred Social media handles: @apocraphilia@hachyderm.io
-
-      Mugshot (will be use in the slides):
-
-      ![Image](https://github.com/user-attachments/assets/cc2b687a-6983-4093-8090-50112f772c87)
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 2dc086b6-e27d-4c27-be1b-c224726c0ce3
+    - id: b3397144-6cbf-4da9-ad6f-d43f0bc1ce98
+      title: Panel/Discussion/Riffing Session on Objects to encapsulate business logic
+      description: Dive into a lively panel exploring where to put business logic beyond
+        traditional Rails models. Join us to riff, discuss, and crowdsource creative
+        solutions for smarter, cleaner Ruby apps! Bring your questions and opinions!
+      video_url: TODO
+      speakers:
+        - name: Julian Pinzón
+          contact_details:
+            github_username: pinzonjulian
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+        - name: Adam
+          contact_details:
+            github_username: HashNotAdam
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - id: f646d286-f710-4a88-8aa5-978df0b25652
+      title: Rack Fundamentals revisited
+      description: Rediscover the core of Ruby web apps! This talk reveals how Rack
+        powers our favorite frameworks, and why sometimes a slim API is all you need.
+        Get under the hood—it's simpler (and more fun) than you think!
+      video_url: TODO
+      speakers:
+        - name: Simon Hildebrandt
+          contact_details:
+            github_username: simonhildebrandt
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle: "@apocraphilia@hachyderm.io"
+            website:
+- uuid: 034d1b72-21c4-48d6-8733-f7fe5fc4f23d
   date: '2025-02-27'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2855880198
-    title: 'Talk Proposal: Semantic Search and RAG with Ruby'
-    description: |+
-      Description: From Embeddings to RAG: Building a Smart Search System in Ruby
-
-      Estimated Talk Time: 20 minutes
-
-      Prefered Month to Present: Feb
-
-      Preferred Social media handles: @dkam on [GitHub](https://github.com/dkam/) and [Ruby Social](https://ruby.social/@dkam)
-
-      Mugshot (will be use in the slides):
-
-      ![Image](https://github.com/user-attachments/assets/6efe8b1d-3019-4c0d-b473-38aab5f50165)
-
-
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: da44ff27-8de7-45ab-a871-a2c97611fbb9
+    - id: e9fc6774-ee66-4f4f-a1d4-87064e699951
+      title: Semantic Search and RAG with Ruby
+      description: Curious how Ruby powers next-level search? Join us as we dive into
+        embeddings and Retrieval-Augmented Generation—making smart, relevant search
+        a breeze in Ruby. Perfect for devs eager to add some AI magic to their apps!
+      video_url: TODO
+      speakers:
+        - name: dkam
+          contact_details:
+            github_username: dkam
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle: "@dkam@ruby.social"
+            website: https://github.com/dkam/
+- uuid: 591aff42-5f7f-422a-a275-371c786888d3
   date: '2025-01-30'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2808179722
-    title: 'Talk Proposal: The Inner Workings of Puma'
-    description: |-
-      Description(this will appear on youtube): Most Rubyists use the Puma web server to handle requests, especially in their Rails applications. But how many of us truly understand its design, inner workings, and the powerful features it offers? In this session, we’ll dive into Puma’s internals, exploring its architecture and configuration options.
-
-      Estimated Talk Time: 30-40 minutes
-
-      Prefered Month to Present: January
-
-      Preferred Social media handles:
-      - https://bsky.app/profile/joshuay03.bsky.social
-      - https://ruby.social/@joshuay03
-
-      Mugshot (will be use in the slides):
-      ![Image](https://github.com/user-attachments/assets/cad2ea3c-23f1-4c93-9222-b3e42a952b32)
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 2808082071
-    title: 'Talk Proposal: Ruby salad. What''s fresh on the market?'
-    description: "Description(this will appear on youtube): A review of some of new
-      features in ruby 3.4 and rails 8. Including rails authentication generators
-      and rodauth comparison.\n\nEstimated Talk Time: 40min\n\nPrefered Month to Present:
-      January\n\nPreferred Social media handles: antulik on ruby slack\n\nMugshot
-      (will be use in the slides): \n\n![Image](https://github.com/user-attachments/assets/ed08caaa-b142-4687-a3f5-43c1ca040bf6)\n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 37472300-f743-469e-8933-ec71aace5bcc
+    - id: 3a24211a-974c-48f0-889c-435e4b6d3319
+      title: The Inner Workings of Puma
+      description: "Curious about what keeps your Ruby apps speedy? Join us for an in-depth
+      tour of Puma’s internals—discover architecture secrets, smart configurations,
+      and features you might be missing! Perfect for anyone running Rails. \U0001F43E"
+      video_url: TODO
+      speakers:
+        - name: Joshua Yang
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle: joshuay03.bsky.social
+            mastodon_handle: "@joshuay03@ruby.social"
+            website:
+    - id: 64c3da8e-231e-4ae6-98d2-005d20f2639e
+      title: Ruby salad. What's fresh on the market?
+      description: "Ruby 3.4 and Rails 8 are serving up fresh features! Get the scoop
+      on authentication generators, compare Rodauth, and taste what’s new in the Ruby
+      world. Dive in for a flavorful update and some juicy discussion! \U0001F957✨"
+      video_url: TODO
+      speakers:
+        - name: Anton Davydov
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+- uuid: 1d0506b5-feb7-4421-8f8d-b1a282bbb722
   date: '2024-10-24'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2550597828
-    title: 'Talk Proposal:  ''Cursor v Github Copilot: building a better data schema
-      tool?'''
-    description: "Description:\r\nAn evaluation of [Cursor](https://www.cursor.com/),
-      how to configure it, which AI model to use, and a look at the pros and cons
-      of [Cursor](https://www.cursor.com/) compared to GitHub Copilot.\r\n\r\nEstimated
-      Talk Time:\r\n10–15 minutes\r\n\r\nPrefered Month to Present: October\r\n\r\nPreferred
-      Social media handles: @ceels\r\n\r\nMugshot (will be use in the slides): lemme
-      find one real quick\r\n![image](https://github.com/user-attachments/assets/e44e1475-2a29-48a3-ab50-636d63f06f63)\r\n\r\n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 2455100965
-    title: 'Talk Proposal: Happy Ruby SAML Development'
-    description: "**Description (this will appear on YouTube):**\r\n\r\nThis talk
-      is an introduction to how SAML requests and responses can be handled with Ruby,
-      as well as a discussion around how we at [Covidence](https://www.covidence.org)
-      have solved such challenges as:\r\n\r\n* Building SAML support ourselves rather
-      than using third-party services.\r\n* Writing full feature tests to sign in
-      via SSO (no mocking of SAML objects/responses).\r\n* Bridging SAML requests
-      across many domains for staging/PR apps, to ensure a consistent approach across
-      environments.\r\n* Parsing SAML metadata files using Nokogiri for better performance.\r\n\r\n**Estimated
-      Talk Time:**\r\n\r\n20-30 minutes\r\n\r\n**Preferred Month to Present:**\r\n\r\nOctober
-      or November 2024 (I'm away prior to that, sorry!)\r\n\r\n**Preferred Social
-      media handles:**\r\n\r\nhttps://hachyderm.io/@pat\r\n\r\n**Mugshot (will be
-      use in the slides):**\r\n\r\n![](https://media.hachyderm.io/accounts/avatars/109/308/312/683/593/994/original/49c39d379fbc3d37.jpg)\r\n[https://media.hachyderm.io/accounts/avatars/109/308/312/683/593/994/original/49c39d379fbc3d37.jpg](https://media.hachyderm.io/accounts/avatars/109/308/312/683/593/994/original/49c39d379fbc3d37.jpg)"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 61d04b29-1f84-4478-b42c-e233e9742a63
+    - id: 6b6f1f35-9c48-482e-95c5-ac6b71ec55f2
+      title: 'Cursor v Github Copilot: building a better data schema tool?'
+      description: Curious about AI coding assistants? See how Cursor stacks up against
+        GitHub Copilot for data schema building! We'll dive into setup tips, which AI
+        models to pick, and the pros & cons. Perfect for tinkerers—don't miss this lively
+        tech face-off!
+      video_url: TODO
+      speakers:
+        - name: Ceels
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle: "@ceels"
+            website:
+    - id: '0529a168-5f04-4ec7-b764-1630ebae2d70'
+      title: Happy Ruby SAML Development
+      description: "SAML got you stumped? Join us for a cheerful guide to handling SAML
+      in Ruby! Learn how Covidence tackles SAML without third parties, tests full
+      sign-in flows, and boosts performance with smart parsing. You'll smile your
+      way to seamless SSO! \U0001F389"
+      video_url: TODO
+      speakers:
+        - name: Pat
+          contact_details:
+            github_username: pat
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle: https://hachyderm.io/@pat
+            website:
+- uuid: 8c7ddb50-1a11-4acf-8433-001566752fe6
   date: '2024-11-28'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2549232104
-    title: 'Talk Proposal: Turbo (Hotwire), Stimulusjs and being happy with front
-      end development again'
-    description: "Description(this will appear on youtube):\r\n\r\nI've done a lot
-      of front end development work in my career. Think React, AngularJS, Rails UJS
-      and JQuery enhanced pages. At no point can I say that I've enjoyed any of them,
-      I was giving serious consideration to re-branding away from a full stack dev.\r\n\r\nEnter
-      Hotwire and I'm actually enjoying it.\r\n\r\nThis is a peak into what life is
-      like building and maintaining a modern Rails webapp.\r\n\r\nEstimated Talk Time:
-      \ 15 - 20 mins?  I'll try and keep it short\r\n\r\nPreferred Month to Present:
-      November 2024. I may have something for the October 24th meetup but I'll also
-      only just be back from holidays...\r\n\r\nPreferred Social media handles: Twitter
-      @gardengnome_au (in case anyone is still there...)\r\n\r\nMugshot (will be use
-      in the slides):\r\n![image](https://github.com/user-attachments/assets/0d2f7fe2-829f-4781-93b6-2cf0ac9017e4)\r\n\r\n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 2537782432
-    title: 'Requested Talk: How do `CurrentAttributes` work?'
-    description: "**Description:**\r\nRails includes a class called `ActiveSupport::CurrentAttributes`
-      that can be used to store values that relate only to the current request or
-      job.\r\n\r\nFor example:\r\n```ruby\r\nclass Current < ActiveSupport::CurrentAttributes\r\n
-      \ attribute :user\r\nend\r\n\r\nCurrent.user = User.first\r\n```\r\n\r\nHow
-      does Rails store these values?\r\nHow can it ensure these values can only be
-      read in the current request?\r\nWhat happens when you change the isolation level?\r\nFrom
-      a practical standpoint, what does the isolation level mean?\r\n\r\n**Estimated
-      Talk Time:**\r\n10–15 minutes"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 1501f2b3-5cb9-4723-8eb6-eb3f856bab88
+    - id: fdb8b685-bf28-472d-be36-88380bc6072f
+      title: Turbo (Hotwire), Stimulusjs and being happy with front end development
+        again
+      description: "Tired of complicated front-end frameworks? Get a peek into using
+      Hotwire and StimulusJS for Rails apps—it's fun and delightfully simple. Join
+      us to see how modern Rails can actually make front-end dev enjoyable again!
+      \U0001F4A1"
+      video_url: TODO
+      speakers:
+        - name: Jeropaul
+          contact_details:
+            github_username: jeropaul
+            x_handle: "@gardengnome_au"
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - id: 0b5808f9-fa33-482a-929f-3035348ed6a3
+      title: How do `CurrentAttributes` work?
+      description: Ever wondered how Rails keeps per-request data separate? Dive into
+        `CurrentAttributes` and learn how this clever class magically stores values
+        for each request. Get the practical scoop—with slides! Come curious!
+      video_url: TODO
+      speakers:
+        - name: darkfishy
+          contact_details:
+            github_username: darkfishy
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+- uuid: 8a444de8-3079-4269-a160-cc537732ad6c
   date: '2024-09-26'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2537778854
-    title: 'Requested Talk: How does `reload!` work?'
-    description: "**Description:**\r\nWhen using the Rails console, you can call `reload!`
-      to reset the environment.\r\nHow does this work?\r\nHow does it know which classes
-      to reload?\r\nHow does a class get reloaded?\r\nWhat are the implications for
-      intializers?\r\n\r\n**Estimated Talk Time:**\r\n10–15 minutes"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 2520782749
-    title: 'Talk Proposal: Oaken - A fresh take on seeds and fixtures'
-    description: "Description(this will appear on youtube): Exploring Oaken - A fresh
-      take on seeds and fixtures\n\nEstimated Talk Time: 30min\n\nPrefered Month to
-      Present: September \n\nPreferred Social media handles: pinzonjulian everywhere\n\nMugshot
-      (will be use in the slides): TBD"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 50a2687d-19c8-41f3-beda-581c81ecb502
+    - id: 7ae08c24-c339-4196-8750-fa332a4805b2
+      title: How does `reload!` work?
+      description: Ever wondered what happens behind the scenes when you call `reload!`
+        in Rails console? Dive in as we demystify class reloading and explore its impact
+        on your development workflow. Perfect for curious minds who love Rails magic!
+        ✨
+      video_url: TODO
+      speakers:
+        - name: darkfishy
+          contact_details:
+            github_username: darkfishy
+            x_handle: fusionfish
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - id: 53bf165f-3088-4e32-845f-cd0fb8e4ad22
+      title: Oaken - A fresh take on seeds and fixtures
+      description: "Discover Oaken—a new approach to handling seeds and fixtures in
+      your Rails apps! From setup to clever tricks, join us for an engaging session
+      aimed at making your database setup cleaner and more fun. Sprout some fresh
+      ideas with us! \U0001F331"
+      video_url: TODO
+      speakers:
+        - name: Julian Pinzon
+          contact_details:
+            github_username: pinzonjulian
+            x_handle: pinzonjulian
+            linkedin_handle: pinzonjulian
+            bluesky_handle: pinzonjulian
+            mastodon_handle: pinzonjulian
+            website:
+- uuid: '06830ec4-d2e1-4fdb-a7b0-30a0ff942c9d'
   date: '2024-08-29'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2446778748
-    title: 'Talk Proposal: My Career Change - Nothing is what it seems'
-    description: "Description(this will appear on youtube):\r\nMy career change story:
-      why am I here? How did I get here? This is the talk I gave at the Rails Girls
-      Workshop to hopefully inspire others to make the change, or at the very least
-      provide some entertaining and relatable anecdotes.\r\n\r\nEstimated Talk Time:
-      10 mins\r\n\r\nPreferred Month to Present: August 2024\r\n\r\nPreferred Social
-      media handles: Twitter @cinnamonbabies, https://www.linkedin.com/in/helen-stonehouse/\r\n\r\nMugshot
-      (will be use in the slides): \r\n![bratbg](https://github.com/user-attachments/assets/5edba73e-f5cc-463d-992c-144359eaddbb)\r\n\r\n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 2437892166
-    title: 'Talk Proposal: Rails Engines in 20 minutes'
-    description: "Description(this will appear on youtube):\r\nIn this talk, we'll
-      walk through building a basic Rails plugin and talk about the different ways
-      of extending Rails through Engines.\r\n\r\nEstimated Talk Time: \r\n20mins\r\n\r\nPrefered
-      Month to Present: \r\nAugust\r\n\r\nPreferred Social media handles: \r\n@excid3\r\n\r\nMugshot
-      (will be use in the slides):\r\nhttps://rubyonrails.org/assets/world/2023/images/speakers/c-oliver.jpg"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: effa8a02-c4dc-489f-8815-4c1637bfddd4
+    - id: 4ec50eef-6e95-4f83-ab40-a184280ebbcb
+      title: My Career Change - Nothing is what it seems
+      description: Get inspired by Helen's journey from a different path into tech!
+        This cheerful talk is packed with personal stories and light-hearted anecdotes,
+        perfect for anyone curious about making a career leap. Come for the laughs,
+        stay for the wisdom!
+      video_url: TODO
+      speakers:
+        - name: Helen Stonehouse
+          contact_details:
+            github_username:
+            x_handle: cinnamonbabies
+            linkedin_handle: helen-stonehouse
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - id: e4991960-c278-45f8-87b9-0f8a73847e2a
+      title: Rails Engines in 20 minutes
+      description: Curious about Rails Engines? In just 20 minutes, discover how to
+        build plugins and extend your Rails app in creative ways! Whether you're new
+        to engines or want a refresher, this fun session has you covered.
+      video_url: TODO
+      speakers:
+        - name: Chris Oliver
+          contact_details:
+            github_username: excid3
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+- uuid: eb84d714-4966-4c76-b138-7d4a4a81aa77
   date: '2024-07-25'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2363828597
-    title: 'Talk Proposal: Pinkest Pink'
-    description: "Description:\r\nDid you know the web got new colors? The pink is
-      pinker than it used to be. The colors are so bright and we can use them on web
-      pages. I'm not an expert in this space but I am excited to share what I've learned
-      about the topic, like how our eyes work and how we try to recreate reality on
-      a screen.\r\n\r\nEstimated Talk Time: 10 or 20min, can probably scope it to
-      a lightning talk if it's better for timing\r\n\r\nPrefered Month to Present:
-      No preference, can do with short notice if needed\r\n\r\nPreferred Social media
-      handles: `@danlaush`, https://danlaush.biz/\r\n\r\nMugshot (will be use in the
-      slides):\r\nhttps://github.com/rubyaustralia/melbourne-ruby/assets/1204500/da13da31-84bb-4e52-baa5-372a7f304195\r\n\r\n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 2301498429
-    title: 'Talk Proposal: Being a Good Male Ally'
-    description: "Description(this will appear on youtube):\r\nBeing a Good Male Ally\r\n\r\nEstimated
-      Talk Time:\r\n15-20 minutes. \r\nPrefered Month to Present:\r\nMay\r\nPreferred
-      Social media handles:\r\nhttps://nickwolf.com.au"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 7eb87dbe-e657-4505-b595-aed236d0696a
+    - id: aa3b2627-32ca-49e0-bbf4-c073bc99e59b
+      title: Pinkest Pink
+      description: Get ready for an eye-popping look at the latest vibrant web colors!
+        Discover why pink is now even pinker, how our eyes perceive color, and how reality
+        is recreated on screens. Come for a fun, colorful journey into the bright world
+        of modern web design!
+      video_url: TODO
+      speakers:
+        - name: Dan Laush
+          contact_details:
+            github_username: danlaush
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle: "@danlaush"
+            website: https://danlaush.biz/
+    - id: 90e817d3-bb93-42dd-a0ed-0fa6f76baf45
+      title: Being a Good Male Ally
+      description: Join us for a thoughtful session on what it means, and how, to be
+        a supportive male ally. Learn practical steps and perspectives that help create
+        a more inclusive and respectful environment for everyone. Open minds and good
+        vibes welcome!
+      video_url: TODO
+      speakers:
+        - name: Nick Wolf
+          contact_details:
+            github_username: quintrino
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website: https://nickwolf.com.au
+- uuid: 7aa681b8-4646-40f2-aadd-fee34410e1ab
   date: '2024-06-27'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2271079974
-    title: 'Talk Proposal: One does not simply... rebuild a product'
-    description: "Description(this will appear on youtube): \r\n\r\n\"A rebuild is
-      never finished, only started\"\r\n\r\nWe're rebuilding Culture Amp's second
-      largest product - Performance. It's 9 years old, came in as a Series A acquisition
-      5 years ago, has over 2700 customers with the largest one at 77k users. Against
-      conventional wisdom, we're rebuilding it from the ground up with an aggressive
-      timeline. The underlying model is outdated, slow to iterate on, and not extensible.
-      The monoliths are riddled with tech debt, tightly coupled, patched and band-aided
-      over many times, and won't scale to the $3b global Performance market we're
-      targeting.\r\n\r\nThat wasn't challenging enough already so I'm also using this
-      opportunity to rebuild our engineering culture. Setting a high bar for engineering
-      standards, ways of working, and hoping to improve engagement as we go.\r\n\r\nIn
-      this talk, I'll share:\r\n\r\n- How I came to this decision\r\n- How we got
-      buy in from Exec and the Board for a purely technical rebuild\r\n- How we tried
-      to set up for success, our principles and standards\r\n- Where we failed\r\n-
-      Where we succeeded\r\n- Lessons that could be useful for anyone thinking about
-      rebuilding a product that's hampering speed and hindering your ability to innovate
-      or deliver value to your customers.\r\n\r\nThe rebuild is still in progress.
-      I don't have all the answers (or any!). But we've already learned much - what
-      to do, what not to do, and where the spiders are hiding.\r\n\r\nEstimated Talk
-      Time: 35 - 40 minutes\r\n\r\nPreferred Month to Present: June\r\n\r\nPreferred
-      Social media handles: https://www.linkedin.com/in/prakritimateti/\r\n\r\nMugshot
-      (will be use in the slides): [link to photo](https://github.com/rubyaustralia/melbourne-ruby/assets/502956/6fd7dfe4-5f49-4c48-bccd-8784e41e48b7)\r\n\r\n\r\n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 2254940264
-    title: Laravel, meet my friend Turbo
-    description: "I've been playing around with the PHP framework, Laravel, and looking
-      at how to use it with Turbo, Turbo Native, and Strada.\r\n\r\nI will be giving
-      a full talk for the PHP community that includes explanations of Turbo, Turbo
-      Native, and Strada, as well as a comparison between Turbo and Livewire.\r\n\r\nIt
-      would be simple enough for me to modify the talk to fit a Ruby audience, and
-      I could set the length based on the other talks that will be given on that day.
-      For example, if this were a full talk, I could discuss what Laravel is, the
-      similarities to Rails, and dig a bit into the line between Turbo Native and
-      Strada. If it were to be a lightning talk, we could skip most of the background
-      and just do a walkthrough."
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 2dd66e88-6505-4520-90d3-d03293769d73
+    - id: b7bd0ce5-8013-4791-a046-17763770f3e3
+      title: One does not simply... rebuild a product
+      description: Curious about rebuilding complex products and revamping engineering
+        culture at the same time? Hear practical stories and lessons from Culture Amp’s
+        journey—full of wins, fails, and hidden spiders. You'll leave with real-world
+        inspiration and maybe a few laughs!
+      video_url: TODO
+      speakers:
+        - name: Prakriti Mateti
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle: prakritimateti
+            bluesky_handle:
+            mastodon_handle:
+            website: https://www.linkedin.com/in/prakritimateti/
+    - id: cf116d2c-0e63-4a0d-88eb-3e871ff9075e
+      title: Laravel, meet my friend Turbo
+      description: Discover how Turbo supercharges Laravel apps! Explore Turbo, Turbo
+        Native, and Strada—whether you’re a Laravel or Rails fan, this talk will bridge
+        the frameworks and give you fresh ideas for smoother, modern web development.
+      video_url: TODO
+      speakers: []
+- uuid: b0b3ada5-fb11-4612-a65c-31c6f8050412
   date: '2024-05-30'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2251647844
-    title: 'Cursors: Why Pagination is Bad-gination!'
-    description: "Using Ruby to explain a popular new approach to accessing and displaying
-      data, without the staleness issues of traditional pagination - cursors! Learn
-      the basic concepts, and find out why this approach is popular in modern toolkits
-      like GraphQL.\r\n\r\nProbably 20 to 30 minutes."
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 19ace013-9309-40d3-9101-f0f68e080207
+    - id: e0e3d9d4-72f4-41cd-963b-0c6a601c29c1
+      title: 'Cursors: Why Pagination is Bad-gination!'
+      description: Tired of stale old pagination? Discover why cursor-based pagination
+        is the fresh new way to serve data fast and reliably! A friendly introduction
+        with Ruby insights—catch up with modern best practices in just 20-30 lively
+        minutes.
+      video_url: TODO
+      speakers: []
+- uuid: a5f91e3c-e2eb-4d2f-8180-185dc0eaf1ec
   date: '2024-04-25'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2245115139
-    title: Dissecting Rails
-    description: "Lightning talk for RORO Melbourne\r\n\r\n__Title:__ Dissecting Rails
-      \r\n__About:__ How I learn Rails. My takeaways from dissecting Rails: Active
-      Support, Active Model, etc\r\n\r\n__Timing:__ APR-2024\r\n\r\n>    Are you happy
-      to have your talk published on the RubyAU YouTube channel? -> yes\r\n    Your
-      Twitter username (if you have one) -> [@friendlyantz](https://twitter.com/friendlyantz)\r\n
-      \   Link to, or upload of, a photo of yourself that will appear in the meetup
-      slide deck: refer https://github.com/rubyaustralia/melbourne-ruby/issues/192\r\n\r\nLength:
-      10-15min"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 3c1a11c3-9a85-4605-b1c0-a72a8828d453
+    - id: fdc45286-351d-4a25-9d63-b9197306e38d
+      title: Dissecting Rails
+      description: "Curious how Rails works behind the scenes? Join us for a lighthearted
+      dive into the Rails framework, exploring gems like Active Support and Active
+      Model—perfect for curious minds and those eager to level up their Rails knowledge!
+      \U0001F4A1"
+      video_url: TODO
+      speakers:
+        - name: Antz
+          contact_details:
+            github_username: friendlyantz
+            x_handle: friendlyantz
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+- uuid: 6b37b314-c5c3-411d-a509-8a91b95cab17
   date: '2024-03-28'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2166041203
-    title: One Billion Rows in Ruby
-    description: "Description(this will appear on youtube):\r\nIs Ruby a good language
-      for CPU-intensive data crunching? Can it beat Java? This talk is about my adventures
-      taking on the One Billion Row Challenge (https://github.com/gunnarmorling/1brc)
-      in Ruby. I'll cover some of the tools, techniques and pitfalls around optimising
-      Ruby programs.\r\n\r\nEstimated Talk Time: maybe 30 minutes? (haven't timed
-      it yet)\r\n\r\nPreferred Month to Present: March 2024\r\n\r\nPreferred Social
-      media handles: None\r\n\r\nMugshot (will be use in the slides): https://avatars.githubusercontent.com/u/1201065"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 2165644521
-    title: The Economics of Ruby
-    description: "Description(this will appear on youtube):\r\nJohn is a developer
-      that likes both Ruby and Economics.  \r\n\r\nThis is a lightning talk about
-      the flow of resources and incentives in the Ruby ecosystem.  It will discuss
-      the costs of maintaining Ruby, the support from various benefactors/companies,
-      and the contributors that make it all happen.\r\n\r\nEstimated Talk Time: 10
-      minutes\r\n\r\nPrefered Month to Present: March 2024\r\n\r\nPreferred Social
-      media handles: \r\nhttps://twitter.com/ponny\r\n\r\nMugshot (will be use in
-      the slides): just use my github avatar\r\n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: e6621813-f2b7-4fc8-95f9-5a183b686fd5
+    - id: 9f3da9b9-afee-44dc-8fa4-83b750880924
+      title: One Billion Rows in Ruby
+      description: Discover how Ruby stacks up for heavy data crunching! Dive into optimising
+        Ruby for the One Billion Row Challenge, and learn fun tips, tools, and lessons
+        from one developer’s quest to squeeze peak performance from our favourite language.
+      video_url: TODO
+      speakers:
+        - name: Rian McGuire
+          contact_details:
+            github_username: rianmcguire
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - id: 307e258c-b62e-4d34-95ba-031d6a667fde
+      title: The Economics of Ruby
+      description: Ever wonder how Ruby stays alive and vibrant? Join John for a breezy
+        lightning talk exploring the economics behind Ruby—costs, sponsors, and the
+        passionate contributors that keep Ruby running. Get to know the ecosystem's
+        hidden engines!
+      video_url: TODO
+      speakers:
+        - name: John (ponny)
+          contact_details:
+            github_username: ponny
+            x_handle: ponny
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website: https://twitter.com/ponny
+- uuid: 5d6cc8ba-7dbe-47b8-81d5-2d1482c560d6
   date: '2024-02-22'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2126276849
-    title: Can I host a rails app from a home server?
-    description: "With the advent of cloud and the availability of PaaS (Platform
-      as a Service) providers like Heroku, Fly.io, Render, and Hatchbox, why would
-      even consider running a **rails app** on **bare metal** from home?\r\n- because
-      you can?\r\n- because it's cheaper?\r\n- because you want to be your own sysadmin/devops?\r\n-
-      because you want the internet to be back like it was in **1999 \U0001F389 !!!**\r\n-
-      because there has been some recent noise on this in the Rails community\r\n
-      \   **[RECLAIM THE STACK!](https://reclaim-the-stack.com/)**\r\n    > We spent
-      7 months building a Kubernetes based platform to replace Heroku. The results
-      were a 90% reduction in costs and a 30% improvement in performance.\r\n    \r\n
-      \   **[KAMAL](https://kamal-deploy.org/)** _formerly MRSK_\r\n    > Leaving
-      the cloud will save us $7 million over five years.\r\n    https://basecamp.com/cloud-exit\r\n-
-      because @friendlyantz - wants to know\r\n    [Ruby Australia Slack #melb-meets
-      3:27pm Oct 5 2023](https://rubyau.slack.com/archives/C010RUGPRHU/p1696480053027199?thread_ts=1696479747.231869&cid=C010RUGPRHU)\r\n
-      \ > Keen to hear about these topics(hope it inspires someone):\r\n  >  * Self
-      hosting ruby app\r\n\r\nSo **\"can I host a rails app from a home server?\"**
-      whats involved? how hard can it be? is it just `RAILS_ENV=production bin/rails
-      server`?\r\n\r\nlet's see how far I can get - maybe a **5 minute talk** or maybe
-      **30 minutes** depending how far I get\r\n\r\nNOTE: _this is part of a larger
-      talk idea for running a rails app locally on **bare metal** using a laptop,
-      moving it into the **cloud☁️** and back again on-premise on **bare metal** home
-      cluster_\r\n\r\n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 2112381409
-    title: 'Talk Proposal : System Design & Distributed System Lightweight Concept'
-    description: "- What to do when our app gains popularity (Vertical & Horizontal
-      Scaling)\r\n- Horizontal scaling best practices (instance stickiness, louse
-      coupling ) \r\n-  Distributed Systems ( stuff like chaos monkeys, retry mechanism
-      should be somewhat fun )\r\n- Could also talk abt some tools like kubernetes
-      ( just the lightweight stuff like k8 backgrounds, pods, deleting pods , scalling
-      , and a bit abt writing .yaml file not the advanced or super detailed ) . "
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: cc859181-b7c6-4cc4-a715-92c4c1d86369
+    - id: c9296796-dd9b-48cf-a436-5f5b1a106f04
+      title: Can I host a rails app from a home server?
+      description: Is it really possible (or worth it) to self-host a Rails app on your
+        own hardware? Explore the retro-fun, cost-saving, tech-savvy world of hosting
+        Rails from home—maybe even like it’s 1999 again!
+      video_url: TODO
+      speakers:
+        - name: Saramic
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - id: 2304c281-0ddb-480f-9ccf-9ed51d75ceb1
+      title: System Design & Distributed System Lightweight Concept
+      description: Curious about scaling your app? Join this engaging intro to vertical
+        and horizontal scaling, lightweight distributed systems, and a dash of Kubernetes
+        fun. Perfect for anyone wanting to make their app ready for the big leagues!
+      video_url: TODO
+      speakers:
+        - name: Stefanuswilfrid
+          contact_details:
+            github_username: Stefanuswilfrid
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+- uuid: c6c9feb9-2dc0-427e-82a4-09281bc377dd
   date: '2024-01-25'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2080633355
-    title: Processing DMARC reports via Action Mailbox
-    description: "Domain-based Message Authentication, Reporting, and Conformance
-      (or DMARC) is an email validation system that builds upon Sender Policy Framework
-      (SPF) and DomainKeys Identified Mail (DKIM) to protect email domains from being
-      used in email spoofing, phishing scams, and other cybercrime.\r\n\r\nWhen creating
-      a DMARC DNS record, you can include a `rua` attribute, the value of which is
-      an email address that servers can send a daily report of the deliverability
-      of emails from your domain. This provides valuable data that can help you check
-      that you've approved every server that you expect to be able to send on your
-      behalf and reduce the number of legitimate emails that are sent to spam. Unfortunately,
-      these reports come as XML files which are usually GZipped which makes them poorly
-      suited to human reading. Also, since they are sent by the receiving servers,
-      you can expect to be sent many reports per day.\r\n\r\nThis talk is the story
-      of how I leveraged Action Mailbox in Ruby on Rails to automatically parse incoming
-      DMARC reports and alert me to issues in a human-readable format."
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 2075457487
-    title: Something Something Fibers Something
-    description: "Yes, the title of the talk is \"Something Something Fibers Something\"
-      - I'll try and nail down more specifically what I want to talk about this weekend
-      :)\r\n\r\nI'd like to do a talk that really gets into the low-level guts of
-      how fibers work in Ruby. The rough kind of thing I'm thinking of covering is...\r\n\r\n*
-      What a Fiber is, and how fibers relate to threads\r\n* How Fiber.yield/Fiber.resume
-      work in Ruby\r\n* What you can build with them (e.g. implementing enumerators
-      with them, \"saving\" the context of being inside a block)\r\n* How the Ruby
-      and C call stacks relate to each other (this is important prerequisite info
-      which is kind of genuinely interesting on its own)\r\n* How Fiber.yield and
-      Fiber.resume are implemented in terms of the C call stack\r\n\r\nI would also
-      like to talk about Fiber.transfer & the new Ruby fiber scheduler interface &
-      the async gem, but let's see how much content ☝️  turns out to be. Maybe it's
-      a different talk for another time.\r\n\r\nI'll be able to present this on Jan
-      25."
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 62a69b9f-0ce8-4d5a-ab79-d11c76bfc8ca
+    - id: 5e0645d3-1afb-47bf-a4a9-446b23785405
+      title: Processing DMARC reports via Action Mailbox
+      description: "Email security doesn't have to be a headache! See how Action Mailbox
+      can make sense of those cryptic DMARC reports and turn email authentication
+      chaos into clarity. Join us to learn clever report automation with Rails! \U0001F4E7\U0001F50D"
+      video_url: TODO
+      speakers:
+        - name: Adam Gordon Bell
+          contact_details:
+            github_username: HashNotAdam
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - id: 68e47508-7618-49a9-94b7-a707c2357c94
+      title: Something Something Fibers Something
+      description: Curious about Ruby fibers? Dive into Ruby's low-level magic! Learn
+        what fibers are, how they relate to threads, and peek under the hood at how
+        they're built. Get ready to up your Ruby game and explore async marvels!
+      video_url: TODO
+      speakers:
+        - name: Konstantin Tsanaktsidis
+          contact_details:
+            github_username: KJTsanaktsidis
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+- uuid: af55f1d2-9a4a-4650-a5e4-d9390933d204
   date: '2023-11-23'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 2010461264
-    title: 'Proposal: precious gems I''ve learned during my first dev year (10-15min
-      lightning talk)'
-    description: "Title: Precious gems I've learned in my first dev year\r\nAbout:
-      Not the ruby gems but more like gems of wisdom that I've experienced during
-      my first developer year. Lots of self reflection to be done and just want to
-      share some of them\r\n\r\nTiming: 29th Nov 2023\r\nLength: 10 - 15min Lightning
-      talk"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 1929166227
-    title: "[discussion]: Rails architecture with engines work group"
-    description: "I'll demo an app and talk about my experience for a little bit.
-      The goal is to have an audience discussion and share experiences about using
-      rails engines. Other people are welcome to demo their examples as well.\r\n\r\nLength:
-      1-1.5 hour discussion"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: b60da9f1-b765-4c96-90fa-6f49fb467b20
+    - id: b75144f7-c88e-4b98-a5d1-381a2a0899d9
+      title: Precious gems I've learned during my first dev year
+      description: Join us for a short, uplifting lightning talk as Justin shares the
+        hidden gems and wisdom picked up throughout his first year as a developer—perfect
+        for anyone looking for inspiration and insight! ✨
+      video_url: TODO
+      speakers:
+        - name: Justin
+          contact_details:
+            github_username: j-tws
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - id: 759b6470-3f14-48cd-8f41-ca6857a098b1
+      title: Rails architecture with engines work group
+      description: "Get ready for a hands-on Rails engines discussion! We’ll see live
+      demos, share real-world experiences, and learn together. Jump in and bring your
+      questions or examples—the more, the merrier! \U0001F682"
+      video_url: TODO
+      speakers:
+        - name: antulik
+          contact_details:
+            github_username: antulik
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+- uuid: 72a87a33-e9ff-4909-b101-ad3721dbd869
   date: '2023-10-26'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 1956158778
-    title: 'Proposal: Showcase of final project of my bootcamp with Academy Xi'
-    description: "Description: A showcase of my full stack web app built for the final
-      project of the bootcamp I have completed with Academy Xi. Made with Rails and
-      React\r\n\r\nTalk time: 20mins \r\n\r\nMonth: October\r\n\r\nSocial Media: \r\nhttp://linkedin.com/in/thdev\r\n\r\nPortfolio
-      \r\nThdev.com.au\r\n\r\n![IMG_1742](https://github.com/rubyaustralia/melbourne-ruby/assets/59306359/5ae6893b-4249-480a-942e-33bd88cba93b)\r\n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 1956091676
-    title: Thoughts on Environment Variables
-    description: "A lightning talk 5 - 10 minutes on managing environment variables
-      in rails.\r\n\r\n> You're app is coming along and all of a sudden you need to
-      configure the number of workers, or an endpoint to access an API. You reach
-      for `CONSTANTS` but very quickly you find out that these will vary between **development**,
-      **test** and **production** apps. Not only that but you have a number of **\"production\"**
-      apps like _staging_, _sandbox_, _UAT_ and the like. You also read up about [The
-      Twelve-Factor App](https://12factor.net/) and you go for **Environment Variables**
-      (`ENV_VARS`) to configure everything. But development becomes a night mare so
-      you use `.env` files to store all these configurations. And then you get an
-      API **Key \U0001F511** or **Secret \U0001F510** and you also through it into
-      the `.env` file and even commit it to Git!!! \U0001F6A8 - at night you here
-      yourself counselling yourself\r\n>    \"it's OK, it's a private repo\"\r\n>
-      \   \"it's OK, it's only a developer secret\"\r\n\r\nIt's **NOT OK** this is
-      the kind of behaviour that leads to security breaches and people being fired!
-      - let's not blame the individuals but the process. The process of not having
-      an easy way to store and share secrets is the root of the problem, and not developers
-      accidentally sharing secrets they haphazardly saved to their publicly visible
-      `.Dotfiles` git hub repo\r\n\r\nLearn:\r\n1. why to use Env Vars\r\n2. how to
-      use `.env` https://github.com/bkeepers/dotenv and why it's a bad idea\r\n3.
-      how to use **rails credentials** as well as Shopify's EJson, or Mozillas SOPS
-      or Ansible's Vault\r\n4. how to easily manage and override credentials using
-      Evil Martians AnywayConfg\r\n5. and why you should never be complacent with
-      the way things are - learn how to break your system to make a better system\r\n\r\nwith
-      code examples - https://github.com/failure-driven/env-var-demo"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 86ef7196-fbd5-40bc-b81a-e76d0a3788a9
+    - id: 74dd74ed-d1f6-49f1-8b00-6642ae142c6b
+      title: Showcase of final project of my bootcamp with Academy Xi
+      description: Come see an inspiring project built from scratch! Discover a full
+        stack Rails & React web app crafted for Academy Xi's bootcamp finale. A great
+        opportunity to ask questions and see learning put into real action!
+      video_url: TODO
+      speakers:
+        - name: Thanh Huynh
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle: thdev
+            bluesky_handle:
+            mastodon_handle:
+            website: thdev.com.au
+    - id: 92c8a111-73ff-49b2-80cf-75151255972d
+      title: Thoughts on Environment Variables
+      description: Unlock the secrets of safer Rails apps! This lightning talk covers
+        the right way to use env vars, managing secrets, and avoiding common pitfalls.
+        Perfect for anyone ready to level up their app’s security and configuration
+        game!
+      video_url: TODO
+      speakers:
+        - name: Saranjeet Singh
+          contact_details:
+            github_username: saramic
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+- uuid: 8d675e0c-4750-4fd1-8426-438c356bb088
   date: '2023-09-28'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 1870695080
-    title: 'Talk proposal: Rails forms'
-    description: I can do a lighting talk about rails forms and service objects
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 1784427256
-    title: 'Unleashing the Power of Pair Presenting: Elevate Your Conference Impact'
-    description: "I was commissioned to write this talk for an international group,
-      put in a lot of effort, heard the content was great, and would like to share
-      it with all of you!\r\n\r\n\r\nDescription:\r\nDiscover the transformative potential
-      of pair presenting at conferences in this captivating presentation. Explore
-      the principles behind successful collaborations, understanding the advantages
-      and disadvantages of this dynamic approach and how it can elevate your impact.\r\nGain
-      insights into leveraging unique personalities and strengths, assessing the need
-      for two speakers, and understanding the perception created, while incorporating
-      engaging live code demonstrations and interactive elements.\r\nRecognize the
-      importance of strong male allies in fostering inclusivity and integration. Harness
-      the power of pair presenting to maximize your conference impact, forge meaningful
-      connections, and empower you to make a lasting impression on your audience."
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: ff2e588f-df3d-4865-842a-8759eebb360a
+    - id: c8380f6f-81c1-4d63-96f0-34d00ed9479c
+      title: Rails forms
+      description: Get up to speed with Rails forms and service objects in this lightning
+        talk! Quick, practical, and perfect for anyone looking to streamline forms in
+        Rails apps. Join us for some handy tips and a dash of fun!
+      video_url: TODO
+      speakers:
+        - name: Antulik
+          contact_details:
+            github_username: antulik
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - id: dd312878-e190-4684-b898-b67473cc7ab3
+      title: 'Unleashing the Power of Pair Presenting: Elevate Your Conference Impact'
+      description: Unlock the magic of pair presenting! Discover how working together
+        on stage can boost your confidence, create memorable talks, and foster inclusivity.
+        Don’t miss this inspiring and interactive session for conference success!
+      video_url: TODO
+      speakers: []
+- uuid: 34c3095b-7301-42d1-b7c5-0e20037c9ffd
   date: '2023-08-24'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 1823402011
-    title: 'Dragonruby: Creating the game "Metal Warrior: Search for Valhalla"'
-    description: "A lightening talk proposal (5mins) just going over some of the highlights
-      and issues we had whilst creating a 2d action game called \"Metal Warrior: Search
-      for Valhalla\".\r\n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 1807154558
-    title: 'Talk Proposal: But why does it work?'
-    description: "Description(this will appear on youtube): Nothing is a black box!
-      Get the confidence to dive into unfamiliar code and languages, and understand
-      how things really work. Join me on a deep dive into gems, the Ruby source code
-      (and maybe more!)\r\n\r\nEstimated Talk Time: 15-30 min\r\n\r\nPreferred Month
-      to Present: July \U0001F631\r\n\r\nPreferred Social media handles: None\r\n\r\nMugshot
-      (will be use in the slides): https://avatars.githubusercontent.com/u/1201065"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: cda1258c-ebd6-4798-ae3e-a54d450872e1
+    - id: c5531606-da92-4ec0-8c4e-eb47983d132b
+      title: 'Dragonruby: Creating the game "Metal Warrior: Search for Valhalla"'
+      description: 'Dive into the exciting world of indie game dev! Hear highlights
+      and funny mishaps from the making of "Metal Warrior: Search for Valhalla" with
+      Dragonruby. Quick, lively, and perfect for game lovers and curious coders alike!'
+      video_url: TODO
+      speakers:
+        - name: map7
+          contact_details:
+            github_username: map7
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - id: 172fe97c-1e3a-42e9-8f33-56639942132e
+      title: But why does it work?
+      description: Break open the black box! Get inspired to dive into unknown code
+        and gems, as we unravel mysteries behind Ruby and its source. Curiosity is your
+        ticket – bring your questions and let’s learn how things really tick!
+      video_url: TODO
+      speakers:
+        - name: Rian McGuire
+          contact_details:
+            github_username: rianmcguire
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+- uuid: 0354c724-426e-4c44-b2a4-6f612a634246
   date: '2023-07-27'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 1809022197
-    title: Tips for juniors and mentors
-    description: "1. reach out to the community and pair up with someone (Michael)\r\n2.
-      exercism to brush up on some ruby\r\n3. basic TDD principles - via pairing\r\n4.
-      look at some Dojo's\r\n5. take it to next level with curses!!! winner\r\n5-10
-      mins\r\nready for july 26th"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 1807364108
-    title: 'Proposal: a production bug 27 years in the making'
-    description: "The most robustly tested application at the company. A PR to upgrade
-      Ruby, weeks in the The tests passed on local and on CI. No issues detected on
-      staging or the sandbox environment. All systems green.\r\n\r\nThen the production
-      deploy started.\r\n\r\n---\r\n\r\nA time-traveling tale of how a confluence
-      of changes came together to cause an issue in production.\r\n\r\nDuration: 10-15
-      minutes\r\nMonth: July 2023\r\n\r\n\r\n\r\n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 1784401161
-    title: 'Talk Proposal: How FHIR is tackling a wicked problem with technical, social
-      and political solutions'
-    description: "Description (this will appear on YouTube): \r\n\r\nThe project of
-      interoperability in healthcare is one that would make healthcare workers' jobs
-      easier, our healthcare industry more efficient, and improve our experiences
-      as patients. Yet, in spite of these upsides, the project has been held back
-      by technical difficulty, a lack of cooperation and misaligned incentives. \r\n\r\nOne
-      of the most promising developments in this space is HL7's FHIR standard, an
-      extensible meta-model for exchanging healthcare data. Not only does FHIR offer
-      some novel and fascinating techniques for flexibly modelling a wide range of
-      data, it also engages in the community-building required to help it solve real
-      problems, and the advocacy which is seeing it gain acceptance and mandate in
-      national and international politics.\r\n\r\nThis talk will examine how Ruby
-      developers can make productive use of FHIR in their projects, by describing
-      the design of FHIR and the state of the tooling available to the Ruby ecosystem.
-      Also discussed will be the lessons we can learn from FHIR on community-building
-      and advocacy for our own technology solutions.\r\n\r\nEstimated Talk Time: 20
-      minutes\r\n\r\nPreferred Month to Present: July '23\r\n\r\nPreferred Social
-      Media Handles: matthood0@gmail.com\r\n\r\nMugshot (will be used in the slides):\r\n![mattbio](https://github.com/rubyaustralia/melbourne-ruby/assets/1885706/ebc7dec6-6fb4-4042-968e-b860ed8ef3f7)\r\n"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 9cd1a7d8-5191-4b84-a9ae-5fd846d727da
+    - id: 38ca4c25-3cf5-45f7-985b-523d40c04cc3
+      title: Tips for juniors and mentors
+      description: Level up your Ruby skills with tips for juniors and mentors! From
+        pairing up and TDD to exploring dojos and advanced hacks, this talk is a great
+        way to connect and grow together. Join us and take your code (and mentorship)
+        to the next level!
+      video_url: TODO
+      speakers: []
+    - id: 34d5a2df-cdf5-4fb8-a28b-ec2460b0dc44
+      title: A production bug 27 years in the making
+      description: Ready for a real-life Ruby whodunit? Hear the story of a bug that
+        slipped through every test for 27 years! It's a thrilling, cautionary tale full
+        of lessons for devs of all levels. Don’t miss this time-traveling debugging
+        adventure!
+      video_url: TODO
+      speakers:
+        - name: radar
+          contact_details:
+            github_username: radar
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - id: 1ab24f73-8d84-4cb5-bfc7-5f64a8b05152
+      title: How FHIR is tackling a wicked problem with technical, social and political
+        solutions
+      description: Discover how the FHIR standard is revolutionizing healthcare data!
+        Explore technical, social, and political challenges in healthcare interoperability
+        and what Ruby devs can learn to build better communities and solutions. Fascinating,
+        inspiring, and practical!
+      video_url: TODO
+      speakers:
+        - name: Matt Hood
+          contact_details:
+            github_username: MattHood
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+- uuid: b61bcafa-1b69-4440-a1f8-87fb4818c437
   date: '2021-06-24'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 913030143
-    title: 'Lightning talk: How to stop I18n getting complex'
-    description: "10 minutes. \r\nIn Rails, I18n gets confusing :( I'm always trying
-      to figure out where keys come from and what text methods return. \r\n\r\nMy
-      team and I have done some cool stuff to keep it simple. I've never seen it done
-      like this before, so I'd like to share it."
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-  - id: 839473136
-    title: Exercism for Junior Developers
-    description: "Hi guys, I recently completed a bootcamp from Le Wagon. \r\n\r\nI
-      have experienced that most bootcamp graduate lack the understanding of test
-      driven development as well as how to conduct pair programming coding challenge.
-      I would like to present 2 exercism exercise to showcase how to approach a problem.\r\n\r\nI
-      am also participating in the presentation to build confidence around technical
-      gurus."
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 66928cef-51b3-4761-8c0c-9c8b08cfe90d
+    - id: 98ab7395-d789-41cb-9d8e-1455da103b83
+      title: How to stop I18n getting complex
+      description: Ever get lost in I18n keys? Discover a fresh, super simple approach
+        to managing internationalization in Rails! If keeping things clear and easy
+        is your goal, don't miss this practical, light-hearted lightning talk.
+      video_url: TODO
+      speakers:
+        - name: David Carlin
+          contact_details:
+            github_username: davich
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - id: 5009b521-c40f-477f-b428-65b4b1c16bc9
+      title: Exercism for Junior Developers
+      description: 'Bootcamp grads and junior devs: level up your coding! Learn to crack
+      problems with test-driven development using real Exercism exercises, and build
+      confidence for your next pairing challenge. Supportive, hands-on, and perfect
+      for newcomers!'
+      video_url: TODO
+      speakers:
+        - name: Achhetr
+          contact_details:
+            github_username: achhetr
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+- uuid: 21251498-53f1-4d20-9b07-9c16456904dc
   date: '2021-03-25'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 839194785
-    title: 'The Joy of Docs: Technical Writing for Developers and Engineers'
-    description: "Hello organisers! I would like to propose a talk about technical
-      writing. You can see the slide deck [here](https://docs.google.com/presentation/d/1somOY_01ZRgSxuAIX-RenImp9QkgytjpXwsKm91lYoo/edit?usp=sharing)
-      if you'd like to suss it out more, but here's the gist. I can be available any
-      Wednesday but need at least a few days' advance notice to let my D&D group know
-      I won't be there :)\r\n\r\n## Talk Title\r\n\r\nThe Joy of Docs: Technical Writing
-      for Developers and Engineers\r\n\r\n## Description\r\n\r\nIn this talk, I discuss
-      communication, specifically technical writing, why it's important, and how to
-      improve your skills. Emphasis is on identifying and empathising with your audience.
-      The talk does not strictly cover the writing process as it is taught in schools,
-      but rather focusses on orienting oneself towards readers' needs when writing
-      technical documents or producing other technical writing. The information in
-      this talk is applicable to any kind of technical writing, from commit messages
-      to requests for comment (RFCs), as well as technical writing that is not strictly
-      a part of a technical document (e.g., writing in an email to stakeholders about
-      the status of development on a project). \r\n\r\n## Why It's Important\r\n\r\nBad
-      technical writing is a huge waste of time. Every developer who's worked in the
-      industry for any length of time has encountered vague and unhelpful documentation
-      and seen how much time they spend trying to find information that should've
-      been in the docs in the first place. Engineers who read RFCs and other longer-form
-      documents may notice these documents often don't give adequate context or define
-      terms, leading to more time spent on research rather than focussing on the tasks
-      at hand."
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
-- uuid: 9bf12cbf-f7d5-4dcd-915a-24af64415963
+    - id: ae992096-a0bc-476d-8174-9f252b327df6
+      title: 'The Joy of Docs: Technical Writing for Developers and Engineers'
+      description: "Discover how great technical writing can save developers time and
+      frustration! Join us for tips, empathy, and practical advice on writing docs
+      that truly help your audience—whether it’s code, RFCs, or just emails. Make
+      your docs a joy, not a chore! \U0001F4DA✨"
+      video_url: TODO
+      speakers:
+        - name: Oscar Alan Pierce
+          contact_details:
+            github_username: oscaralanpierce
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+- uuid: 7b0758e9-357f-4a21-a3ff-7ad226499b46
   date: '2021-02-25'
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
   talks:
-  - id: 813929810
-    title: View Components in the Wild
-    description: "Just some examples of how we at [Fresho](http://fresho.com) are
-      using [View Components](https://viewcomponent.org/) to test rails views and
-      help us decompose the front end, it will be wild! With the better design through
-      composability, leading to simplifying testing and more consistent front ends.\r\n\r\ninspired
-      by https://github.com/rails-oceania/melbourne-ruby/issues/158\r\n\r\npresented
-      from https://github.com/failure-driven/view-components-in-the-wild\r\n\r\nready
-      for Feb 2021 - ie like tomorrow"
-    video_url: TODO
-    speaker:
-      name: TODO
-      github_username: TODO
+    - id: 460d208a-f805-47c8-977e-f2608c3e6240
+      title: View Components in the Wild
+      description: Curious how View Components make Rails UIs easier and testing simpler?
+        Join us as we explore real-world examples, design through composability, and
+        see how Fresho streamlines the frontend for consistency and joy! Come for the
+        code, stay for the wild ride!
+      video_url: TODO
+      speakers:
+        - name: Vanessa Nimmo
+          contact_details:
+            github_username: VanessaNimmo
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:

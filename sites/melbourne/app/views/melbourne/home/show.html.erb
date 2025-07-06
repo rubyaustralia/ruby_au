@@ -67,11 +67,18 @@
         </p>
         <% event.talks.each do |talk| %>
           <article>
-            <p><%= talk.speaker.name %> - <%= link_to talk.speaker.github_username, "https://github.com/#{talk.speaker.github_username}", target: "_blank" %></p>
-            <p></p>
             <p>
-              <%= truncate(talk.description, length: 200) %>
+              <%= talk.description %>
             </p>
+            <ul>
+              <% talk.speakers.each do |speaker| %>
+                <li>
+                  <p><%= speaker.name %></p>
+                  <p><%= speaker.contact_details %></p>
+                </li>
+              <% end %>
+            </ul>
+
           </article>
         <% end %>
       <% end %>

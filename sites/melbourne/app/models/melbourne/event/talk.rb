@@ -8,7 +8,7 @@ module Melbourne
       attribute :title
       attribute :description
       attribute :video_url, default: "unknown"
-      attribute :speaker
+      attribute :speakers, default: []
     end
   end
 end

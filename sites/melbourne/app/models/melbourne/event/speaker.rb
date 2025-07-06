@@ -5,7 +5,7 @@ module Melbourne
       include ActiveModel::Attributes
 
       attribute :name, default: "unknown"
-      attribute :github_username, default: "unknown"
+      attribute :contact_details, default: {}
     end
   end
 end
