@@ -18,7 +18,7 @@ module Melbourne
     attribute :venue
     attribute :talks
 
-    def self.all # rubocop:disable Metrics/MethodLength
+    def self.all # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
       @all ||= YAML.load_file(Engine.root.join("db", "data", "events.yml")).map do |event_data|
         event_data = event_data.with_indifferent_access
         Event.new(
@@ -33,7 +33,7 @@ module Melbourne
             )
           end
         )
-      end.sort_by { |event| event.date }.reverse!
+      end.sort_by(&:date).reverse!
     end
 
     def self.find_by_slug(slug)

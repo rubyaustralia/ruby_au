@@ -6,13 +6,13 @@ module Melbourne
   class Event
     class Venue
       class Schema
-        TYPE = "Place".freeze
+        TYPE = "Place"
 
         def initialize(venue)
           @venue = venue
         end
 
-        def to_h
+        def to_h # rubocop:disable Metrics/MethodLength
           {
             "@type" => TYPE,
             name: venue.name,

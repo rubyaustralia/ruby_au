@@ -4,13 +4,13 @@
 module Melbourne
   class Event
     class Schema
-      TYPE = "Event".freeze
+      TYPE = "Event"
 
       def initialize(event)
         @event = event
       end
 
-      def to_h
+      def to_h # rubocop:disable Metrics/MethodLength
         {
           "@context" => "https://schema.org",
           "@type" => TYPE,
@@ -20,7 +20,7 @@ module Melbourne
           event_status: "https://schema.org/EventScheduled",
           location: event.venue.schema.to_h,
           description: event.summary,
-          performers: event.talks.flat_map(&:speakers).flat_map { it.schema.to_h}
+          performers: event.talks.flat_map(&:speakers).flat_map { it.schema.to_h }
         }
       end
 

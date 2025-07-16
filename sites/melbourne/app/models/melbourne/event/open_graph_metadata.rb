@@ -7,7 +7,7 @@ module Melbourne
         @event = event
       end
 
-      def to_meta_tags
+      def to_meta_tags # rubocop:disable Metrics/MethodLength
         {
           title: "#{event.date} - #{event.name}",
           description: event.summary,

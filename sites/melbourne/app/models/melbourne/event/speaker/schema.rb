@@ -6,7 +6,7 @@ module Melbourne
   class Event
     class Speaker
       class Schema
-        TYPE = "Person".freeze
+        TYPE = "Person"
 
         def initialize(speaker)
           @speaker = speaker
