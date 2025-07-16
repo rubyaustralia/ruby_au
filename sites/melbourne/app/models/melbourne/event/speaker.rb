@@ -6,6 +6,10 @@ module Melbourne
 
       attribute :name, default: "unknown"
       attribute :contact_details, default: {}
+
+      def schema
+        Schema.new(self)
+      end
     end
   end
 end

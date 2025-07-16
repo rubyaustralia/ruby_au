@@ -49,5 +49,9 @@ module Melbourne
     def name
       slug.split("-", 4).last.underscore.humanize
     end
+
+    def schema
+      Schema.new(self)
+    end
   end
 end
