@@ -9,6 +9,10 @@
         "description": "The date of the event in YYYY-MM-DD format",
         "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
       },
+      "summary": {
+        "type": "string",
+        "description": "A short summary of the speakers and the topics."
+      },
       "talks": {
         "type": "array",
         "description": "List of talks to be delivered at the event.",
@@ -109,6 +113,7 @@
     },
     "required": [
       "date",
+      "summary",
       "talks"
     ],
     "additionalProperties": false

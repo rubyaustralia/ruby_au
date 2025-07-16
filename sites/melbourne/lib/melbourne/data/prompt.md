@@ -77,6 +77,8 @@ Your task is to:
 - From the description and the comments:
   - figure out who the speaker or speakers were for a given talk and remember their name
   - figure out any social media handles they might have provided and remember them
+  - figure out if they provided a link to their webiste and remember it
+    - make sure that the url is for something that resembles a personal webiste. if it is a linkedin url, instagram url, twitter/x url, bluesky url or a mastodon url, extract the handle from it and remember it as a social media handle.
   - create a short summary (no longer than 300 characters) of what a meetup talk will be about. Make it slightly cheerful and inviting; as if you were inviting people to see the talk live.
 
 You should then use that information you've extracted to return a new JSON file. This is an example of the expected output from the sample above
@@ -84,6 +86,7 @@ You should then use that information you've extracted to return a new JSON file.
 ```json
 {
   "date": "2025-05-29",
+  "summary": "Forms with Turbo and SQLite with Matt Hood and Simon Hildebrandt",
   "talks": [
     {
       "title": "How on earth do you manage forms with Turbo?",

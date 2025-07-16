@@ -20,7 +20,7 @@ module Melbourne
       @all ||= YAML.load_file(Engine.root.join("db", "data", "events.yml")).map do |event_data|
         event_data = event_data.with_indifferent_access
         Event.new(
-          **event_data.slice(:uuid, :date, :type),
+          **event_data.slice(:uuid, :date, :type, :summary),
           venue: Venue.new(event_data.fetch("venue", {})),
           talks: event_data.fetch("talks", []).map do |talk|
             Talk.new(

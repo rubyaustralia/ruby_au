@@ -31,12 +31,9 @@ module Melbourne
       def perform_request(meetup)
         request.body = request_body(meetup).to_json
 
-        # Make the request
         response = http.request(request)
-
-        # Handle the response
         parsed_response = JSON.parse(response.body)
-        # puts JSON.pretty_generate(parsed_response)
+
         JSON.parse(parsed_response.fetch("output").first.fetch("content").first.fetch("text"))
       end
 
@@ -66,6 +63,10 @@ module Melbourne
                     "type" => "string",
                     "description" => "The date of the event in YYYY-MM-DD format",
                     "pattern" => "^\\d{4}-\\d{2}-\\d{2}$"
+                  },
+                  "summary" => {
+                    "type" => "string",
+                    "description" => "A short summary of the speakers and the topics.",
                   },
                   "talks" => {
                     "type" => "array",
@@ -140,7 +141,7 @@ module Melbourne
                     }
                   }
                 },
-                "required" => %w[date talks],
+                "required" => %w[date talks summary],
                 "additionalProperties" => false
               }
             }
@@ -155,7 +156,7 @@ module Melbourne
       end
 
       def base_prompt
-        File.read(Melbourne::Engine.root.join("app", "models", "melbourne", "data", "prompt.md"))
+        File.read(Melbourne::Engine.root.join("lib", "melbourne", "data", "prompt.md"))
       end
     end
   end

@@ -20,8 +20,8 @@ namespace :melbourne do
 
       no_milestone = result.delete("No Milestone")
 
-      File.write(Melbourne::Engine.root.join("db", "data", "events", "raw", "issues.json"), JSON.pretty_generate(result.as_json))
-      File.write(Melbourne::Engine.root.join("db", "data", "events", "raw", "issues-no-milestone.json"), JSON.pretty_generate(no_milestone.as_json))
+      File.write(Melbourne::Engine.root.join("lib", "melbourne", "data", "output", "events", "raw", "issues.json"), JSON.pretty_generate(result.as_json))
+      File.write(Melbourne::Engine.root.join("lib", "melbourne", "data", "output", "events", "raw", "issues-no-milestone.json"), JSON.pretty_generate(no_milestone.as_json))
     end
 
     desc "cleanup data for LLMs"
@@ -29,7 +29,7 @@ namespace :melbourne do
       result = Melbourne::Data::LLMPreparer.new(path: "#{Melbourne::Engine.root}/db/data/events/raw/issues.json").prepare
 
       File.write(
-        Melbourne::Engine.root.join("db", "data", "events", "processed", "1_llm_meetups_data.json"),
+        Melbourne::Engine.root.join("lib", "melbourne", "data", "output", "events", "processed", "1_llm_meetups_data.json"),
         JSON.pretty_generate(result)
       )
     end
@@ -37,9 +37,9 @@ namespace :melbourne do
     desc "send request to LLM"
     task process_with_llms: :environment do
       caller = Melbourne::Data::LLMCaller.new(openai_api_key: ENV["OPENAI_API_KEY"])
-      result = caller.call(path: File.read(Melbourne::Engine.root.join("db", "data", "events", "processed", "1_llm_meetups_data.json")))
+      result = caller.call(path: File.read(Melbourne::Engine.root.join("lib", "melbourne", "data", "output", "events", "processed", "1_llm_meetups_data.json")))
       File.write(
-        Melbourne::Engine.root.join("db", "data", "events", "processed", "2_llm_interpretation.json"),
+        Melbourne::Engine.root.join("lib", "melbourne", "data", "output", "events", "processed", "2_llm_interpretation.json"),
         JSON.pretty_generate(result)
       )
     end
@@ -50,7 +50,7 @@ namespace :melbourne do
       processor = Melbourne::Data::DomainModelProcessor.new(path:)
       events = processor.process
       File.write(
-        Melbourne::Engine.root.join("db", "data", "events", "processed", "3_data_in_app_domain.yml"),
+        Melbourne::Engine.root.join("lib", "melbourne", "data", "output", "events", "processed", "3_data_in_app_domain.yml"),
         events.to_yaml
       )
     end
