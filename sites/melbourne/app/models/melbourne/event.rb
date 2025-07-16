@@ -45,5 +45,9 @@ module Melbourne
     def to_param
       slug
     end
+
+    def name
+      slug.split("-", 4).last.underscore.humanize
+    end
   end
 end
