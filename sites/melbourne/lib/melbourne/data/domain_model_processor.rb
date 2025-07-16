@@ -14,6 +14,7 @@ module Melbourne
             uuid: SecureRandom.uuid,
             date: date.to_s,
             summary: event["summary"],
+            slug: event["slug"],
             type: "meetup",
             venue: {
               name: "BOYD Community Hub",

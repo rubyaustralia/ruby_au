@@ -60,6 +60,7 @@
     <% Melbourne::Event.all.each do |event| %>
       <%= tag.section id: dom_id(event) do %>
         <p><%= event.date %></p>
+        <p><%= event.summary %></p>
         <p>
           <%= link_to event.venue.google_maps_url, class: "underline" do %>
             <%= event.venue.name %>

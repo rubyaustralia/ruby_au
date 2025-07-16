@@ -68,6 +68,10 @@ module Melbourne
                     "type" => "string",
                     "description" => "A short summary of the speakers and the topics.",
                   },
+                  "slug" => {
+                    "type" => "string",
+                    "description" => "The slug of the event in YYYY-MM-DD-short-summary format",
+                  },
                   "talks" => {
                     "type" => "array",
                     "description" => "List of talks to be delivered at the event.",
@@ -141,7 +145,7 @@ module Melbourne
                     }
                   }
                 },
-                "required" => %w[date talks summary],
+                "required" => %w[date talks summary slug],
                 "additionalProperties" => false
               }
             }

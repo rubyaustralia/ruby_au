@@ -12,6 +12,8 @@ module Melbourne
 
     attribute :uuid
     attribute :date, :date
+    attribute :summary
+    attribute :slug
     attribute :type
     attribute :venue
     attribute :talks
@@ -31,6 +33,12 @@ module Melbourne
             )
           end
         )
+      end
+    end
+
+    def find_by_slug(slug)
+      all.find do |event|
+        event.slug == slug
       end
     end
 

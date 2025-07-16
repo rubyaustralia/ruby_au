@@ -80,6 +80,7 @@ Your task is to:
   - figure out if they provided a link to their webiste and remember it
     - make sure that the url is for something that resembles a personal webiste. if it is a linkedin url, instagram url, twitter/x url, bluesky url or a mastodon url, extract the handle from it and remember it as a social media handle.
   - create a short summary (no longer than 300 characters) of what a meetup talk will be about. Make it slightly cheerful and inviting; as if you were inviting people to see the talk live.
+  - create a slug to represent the web page the event will live on and remember it. Keep it under 70 characters
 
 You should then use that information you've extracted to return a new JSON file. This is an example of the expected output from the sample above
 
@@ -87,6 +88,7 @@ You should then use that information you've extracted to return a new JSON file.
 {
   "date": "2025-05-29",
   "summary": "Forms with Turbo and SQLite with Matt Hood and Simon Hildebrandt",
+  "slug": "2025-5-29-turbo-and-sqlite",
   "talks": [
     {
       "title": "How on earth do you manage forms with Turbo?",

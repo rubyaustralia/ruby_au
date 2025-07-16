@@ -2,4 +2,5 @@
 
 Melbourne::Engine.routes.draw do
   root to: "home#show"
+  resources :events, only: %i[inde show], param: :slug
 end
