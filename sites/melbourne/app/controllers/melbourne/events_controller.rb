@@ -7,7 +7,7 @@ module Melbourne
     end
 
     def show
-      @events = Event.find_by_slug(params[:slug])
+      @event = Event.find_by_slug(params[:slug])
     end
   end
 end

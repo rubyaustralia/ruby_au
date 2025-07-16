@@ -22,7 +22,7 @@ module Melbourne
       @all ||= YAML.load_file(Engine.root.join("db", "data", "events.yml")).map do |event_data|
         event_data = event_data.with_indifferent_access
         Event.new(
-          **event_data.slice(:uuid, :date, :type, :summary),
+          **event_data.slice(:uuid, :date, :type, :summary, :slug),
           venue: Venue.new(event_data.fetch("venue", {})),
           talks: event_data.fetch("talks", []).map do |talk|
             Talk.new(
@@ -33,15 +33,17 @@ module Melbourne
             )
           end
         )
-      end
+      end.sort_by { |event| event.date }.reverse!
     end
 
-    def find_by_slug(slug)
-      all.find do |event|
-        event.slug == slug
-      end
+    def self.find_by_slug(slug)
+      all.find { it.slug == slug }
     end
 
     alias_attribute :id, :uuid
+
+    def to_param
+      slug
+    end
   end
 end

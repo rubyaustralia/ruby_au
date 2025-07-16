@@ -56,33 +56,9 @@
 </div>
 
 <div class="container mx-auto font-lekton mt-8">
-  <div class="space-y-4">
-    <% Melbourne::Event.all.each do |event| %>
-      <%= tag.section id: dom_id(event) do %>
-        <p><%= event.date %></p>
-        <p><%= event.summary %></p>
-        <p>
-          <%= link_to event.venue.google_maps_url, class: "underline" do %>
-            <%= event.venue.name %>
-          <% end %>
-        </p>
-        <% event.talks.each do |talk| %>
-          <article>
-            <p>
-              <%= talk.description %>
-            </p>
-            <ul>
-              <% talk.speakers.each do |speaker| %>
-                <li>
-                  <p><%= speaker.name %></p>
-                  <p><%= speaker.contact_details %></p>
-                </li>
-              <% end %>
-            </ul>
-
-          </article>
-        <% end %>
-      <% end %>
-    <% end %>
+  <h2 class="text-2xl">Recent events</h2>
+  <%= link_to "see all", events_path %>
+  <div class="mt-4 space-y-4">
+    <%= render partial: "melbourne/events/event", collection: @events %>
   </div>
 </div>
