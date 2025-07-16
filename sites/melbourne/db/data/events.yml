@@ -1,5 +1,5 @@
 ---
-- uuid: b3283bd7-49af-472e-8729-9acbeb4ff4f2
+- uuid: 19ef99df-99aa-4855-941c-4671072e7a46
   date: '2025-06-26'
   summary: Communicating intent in code with Adam from HashNotAdam
   slug: 2025-06-26-communicating-intent-in-code
@@ -7,8 +7,14 @@
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 7542191b-bb04-4ade-8833-4be05b4f6246
+    - id: 0ac25488-a434-469d-beae-eddba8abe2c3
       title: 'The Unspoken Contract: Communicating Intent Through Code'
       description: Discover how code can communicate more than just instructions to
         a computer! Join Adam (HashNotAdam) as he uncovers hidden contracts in our code
@@ -24,16 +30,22 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: 26f6ca58-0a9e-4d27-8bf4-e3a68afdbf85
+- uuid: 44ffc36f-895e-43aa-ae71-462c107d3e1a
   date: '2025-04-24'
   summary: Task runners and Rails 8 excitement with Michael Milewski and John Sherwood.
-  slug: 2025-4-24-make-vs-justfile-vs-mise-and-rails-8-new
+  slug: 2025-4-24-make-vs-justfile-vs-mise-rails-8-new
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 178d537b-c024-4220-aacd-a05accd33cdb
+    - id: d6657114-2fa0-4bc5-9007-3b1cae582fdb
       title: Make vs Justfile vs Mise
       description: Curious about which task runner is right for you? Join Michael Milewski
         as he explores Make, Justfile, Mise, and more. From best practices to common
@@ -49,7 +61,7 @@
             bluesky_handle:
             mastodon_handle:
             website: https://sessionize.com/michael-milewski/
-    - id: 63a02141-ec00-4460-b826-92a5e1927077
+    - id: 229570af-f655-4469-96ab-219359560002
       title: rails 8 new
       description: Excited about Rails 8? So is John Sherwood! See how he built a fresh
         app with Rails 8 and get the inside scoop on Kamal, Action Cable, and more—with
@@ -65,16 +77,22 @@
             bluesky_handle: ponny.dev
             mastodon_handle:
             website:
-- uuid: 8d4d4b61-94e0-4b42-a7e7-9787aa625bc1
+- uuid: c824f161-18f0-43f9-9314-bb2504c16de4
   date: '2025-05-29'
   summary: Turbo forms and SQLite magic with Matt Hood and Simon Hildebrandt
-  slug: 2025-05-29-turbo-forms-and-sqlite
+  slug: 2025-05-29-turbo-forms-sqlite
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: c92f040d-ba97-457e-8a50-3e2f81c339e7
+    - id: 876f946a-9a37-4507-a80b-761cd817257c
       title: How on earth do you manage forms with Turbo?
       description: Come explore the wild world of handling web forms with Turbo! Matt
         Hood unveils tricks for handling errors, redirects, validations, and more. It's
@@ -90,7 +108,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: a873cdb2-660a-474c-8807-2ce307747d47
+    - id: 5a0be7f9-2d0b-46fa-a023-ca1001cf2b47
       title: SQLite-ruby - a whole SQL database in a gem
       description: Discover the power of SQLite wrapped in a Ruby gem! Simon Hildebrandt
         brings the world's most deployed database to life, sharing tips and tricks for
@@ -106,7 +124,7 @@
             bluesky_handle:
             mastodon_handle: "@apocraphilia@hachyderm.io"
             website:
-- uuid: b441c340-7c1c-4ff7-916b-f5aa42163525
+- uuid: 208af47b-7d23-497f-8c98-b67a29a1a2f3
   date: '2025-03-27'
   summary: Business logic panels and Rack basics with Julian Pinzon, Adam, & Simon
     Hildebrandt
@@ -115,8 +133,14 @@
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 322bb227-cb3a-4839-930c-c9fb1844d88d
+    - id: 04dcbc79-7628-4681-bd18-61cccd42954c
       title: Panel/Discussion/Riffing Session on Objects to encapsulate business logic
       description: Join an engaging panel as Julian Pinzon and Adam guide us through
         smart ways to organize business logic outside traditional models. Perfect for
@@ -139,7 +163,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: 398a186c-9b72-4255-81b1-b8bcdc00f2ba
+    - id: 87376d82-e401-4405-a8b3-bcd7db34199d
       title: Rack Fundamentals revisited
       description: Take a fresh look at Rack with Simon Hildebrandt! Discover how the
         magic beneath Rails works, and why lightweight APIs can be simpler than you
@@ -154,7 +178,7 @@
             bluesky_handle:
             mastodon_handle: "@apocraphilia@hachyderm.io"
             website:
-- uuid: 6dc38b49-1089-4e5f-a3e0-fe8908bc7beb
+- uuid: bc411d2c-de32-4ed2-b096-b5bfaedb25a9
   date: '2025-02-27'
   summary: Semantic Search & RAG in Ruby with dkam
   slug: 2025-02-27-semantic-search-rag-ruby
@@ -162,8 +186,14 @@
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 5cb5fbc4-67a8-402f-9010-3d8893819975
+    - id: 2748e6aa-1c2f-4aef-bdca-1b5a2d998028
       title: Semantic Search and RAG with Ruby
       description: "Ever wondered how to add intelligent search to your Ruby apps? Come
       along as dkam walks you through embeddings and Retrieval-Augmented Generation
@@ -179,16 +209,22 @@
             bluesky_handle:
             mastodon_handle: "@dkam@ruby.social"
             website:
-- uuid: 79119282-42e7-4a29-8440-4cb8e1055244
+- uuid: 10f4f912-56b7-4ab4-829a-2d4714c17058
   date: '2025-01-30'
   summary: Puma internals and Ruby/Rails updates with Joshua Y. and Anton L.
-  slug: 2025-01-30-puma-internals-and-ruby-rails-updates
+  slug: 2025-01-30-puma-internals-ruby-rails-updates
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 9525b3c2-0216-432f-9fe5-7738ca91955f
+    - id: cd4f76a5-dccb-41f0-82f8-a0ff969f18f1
       title: The Inner Workings of Puma
       description: Uncover the mysteries of the Puma web server! Join Joshua for a deep
         dive into its design, features, and configuration—essential knowledge for Rails
@@ -204,7 +240,7 @@
             bluesky_handle: joshuay03.bsky.social
             mastodon_handle: "@joshuay03@ruby.social"
             website:
-    - id: 79b95edc-3dd7-42ee-aa19-0897c3bb8be7
+    - id: 42af63df-604e-4705-bd28-680cb3d9d974
       title: Ruby salad. What's fresh on the market?
       description: Craving the freshest Ruby and Rails updates? Anton shares the latest
         features from Ruby 3.4 & Rails 8, including cool new authentication generators
@@ -219,7 +255,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: d136a384-2d51-4549-a83d-9578bb7d4823
+- uuid: 37510234-d58b-47b9-badd-53334fd137b5
   date: '2024-10-24'
   summary: Cursor AI vs Copilot and Happy Ruby SAML with Ceels and Pat
   slug: 2024-10-24-cursor-vs-copilot-and-happy-saml
@@ -227,8 +263,14 @@
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: d9757ca9-7491-4eb8-b720-9ece1f4621d4
+    - id: b4c42e2f-3158-4b34-9108-ae6e38769677
       title: 'Cursor v Github Copilot: building a better data schema tool?'
       description: Curious about AI-powered coding? Join Ceels for a lively comparison
         of Cursor and GitHub Copilot! We’ll explore configuration, models, and the pros
@@ -244,7 +286,7 @@
             bluesky_handle:
             mastodon_handle: "@ceels"
             website:
-    - id: cf8c631b-605a-4970-a3bd-8c566dd0bf53
+    - id: bbca6d42-631a-4ca5-b8bd-01f92490620c
       title: Happy Ruby SAML Development
       description: Join Pat for a cheerful deep dive into Ruby SAML! Learn how Covidence
         tackled SAML without third-party tools, built robust sign-in tests, and bridged
@@ -260,17 +302,23 @@
             bluesky_handle:
             mastodon_handle: "@pat@hachyderm.io"
             website:
-- uuid: f453123c-2002-41b3-b6c5-32bf3e89b72d
+- uuid: 841bfb44-c5c7-44a7-8852-e721966a12d2
   date: '2024-11-28'
   summary: Experience front end joy with Turbo & learn about Rails' CurrentAttributes
     with Paul and darkfishy.
-  slug: 2024-11-28-turbo-and-current-attributes
+  slug: 2024-11-28-turbo-currentattributes-happy-front-end
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: bc60c466-0445-4e4f-8938-2a4616dda2d4
+    - id: 96892afe-33cf-410f-9c6e-ee0ddc1b4ad4
       title: Turbo (Hotwire), Stimulusjs and being happy with front end development
         again
       description: Discover the pure joy of front end development again! Paul shares
@@ -287,7 +335,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: 07e068d3-b95d-47ba-bafa-d0eeff31a39a
+    - id: b3994dcc-2960-4917-831e-6032289a1fde
       title: How do `CurrentAttributes` work?
       description: Ever wondered what magic lets Rails keep request-specific data with
         `CurrentAttributes`? Dive into how Rails isolates and manages per-request values,
@@ -303,16 +351,22 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: 98fc8a77-e763-43bc-941d-9760df3fd592
+- uuid: a22d7e3c-c7ba-4909-973c-63d9051edf01
   date: '2024-09-26'
   summary: Rails console magic and Oaken seeds with darkfishy and pinzonjulian
-  slug: 2024-09-26-rails-reload-and-oaken
+  slug: 2024-09-26-rails-reload-and-oaken-seeds
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 28a10f72-2f12-4c0a-aae0-7d96ec85247b
+    - id: '08a4a4e4-4506-4a9a-9fe1-1090ef4e7d09'
       title: How does `reload!` work?
       description: Curious how `reload!` in the Rails console works its magic? Join
         darkfishy for a deep dive into what gets reloaded, how it happens, and what
@@ -328,7 +382,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: 6973e4c6-2c5f-47c9-8b19-28998cfcf371
+    - id: 96dafd30-0fb0-41dd-a1bf-45fc442cc4ca
       title: Oaken - A fresh take on seeds and fixtures
       description: "Discover Oaken, the exciting approach to database seeds and fixtures!
       pinzonjulian will showcase how Oaken can refresh your setup and streamline development.
@@ -343,16 +397,22 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: 6219447f-88ee-43e8-b733-97c99d5ecdaa
+- uuid: d74cd9b9-05ce-4cf4-9e2f-3f314e6784d1
   date: '2024-08-29'
   summary: Career journeys and Rails Engines with Helen Stonehouse and Chris Oliver
-  slug: 2024-08-29-career-and-rails-engines
+  slug: 2024-08-29-careers-rails-engines
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 7cc67efc-dc78-48fa-956c-fe951cbe61e8
+    - id: b46085f8-d35b-4c7b-8c97-193c280e1a08
       title: My Career Change - Nothing is what it seems
       description: Get inspired and entertained with Helen Stonehouse's career change
         story! Packed with relatable anecdotes and real talk, this is a must-see if
@@ -368,7 +428,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: c7e21764-3e32-427b-bb0c-bfa0abdb1cf6
+    - id: 51f1a323-6ee4-46fd-b030-d81b8dd28c88
       title: Rails Engines in 20 minutes
       description: Dive into the magic of Rails Engines with Chris Oliver! Learn how
         to build your own plugins and expand Rails like a pro, all in just 20 minutes.
@@ -383,7 +443,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: aabc77c4-7bff-433d-8e2d-1737020ee657
+- uuid: c274bc9f-0e95-41bf-bab9-7274302c2a72
   date: '2024-07-25'
   summary: Discover dazzling new web colors with Dan Laush and learn to be a great
     ally with Nick Wolf.
@@ -392,8 +452,14 @@
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 32079468-710b-4f25-9a13-6a78d1169ae0
+    - id: 3e401ea6-edbc-41d5-adb1-ca50c34ded5e
       title: Pinkest Pink
       description: Experience the web's boldest colors! Dan Laush shares how brighter,
         richer colors are now at your fingertips on the web. Dive into how human vision
@@ -409,7 +475,7 @@
             bluesky_handle:
             mastodon_handle:
             website: https://danlaush.biz/
-    - id: c6da781e-dfe5-42e7-83b6-b5ed52b051d8
+    - id: 6644875a-640b-4a8f-ab90-9e696ebe5b3e
       title: Being a Good Male Ally
       description: Join Nick Wolf as he shares practical insights on how to be a supportive
         and proactive male ally in the tech world. Find out how small changes can make
@@ -424,7 +490,7 @@
             bluesky_handle:
             mastodon_handle:
             website: https://nickwolf.com.au
-- uuid: '09053a21-f640-42b5-91e4-736ddf1558fa'
+- uuid: 3dddb3a2-c41d-4adb-92df-5ea443b7074c
   date: '2024-06-27'
   summary: Product rebuild lessons from Prakriti Mateti and Turbo adventures with
     Laravel!
@@ -433,8 +499,14 @@
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 7feab6e0-e65e-4768-8736-87a5ba708210
+    - id: 6b8b0392-a943-41ff-a90f-7d8335207080
       title: One does not simply... rebuild a product
       description: Come hear Prakriti Mateti share candid stories and essential lessons
         from rebuilding Culture Amp's Performance product—and their engineering culture!
@@ -450,39 +522,51 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: 4901b4a5-2dcd-4a77-86f0-b087042e49cf
+    - id: c6f27202-2aed-464e-9761-e5ff08ed486c
       title: Laravel, meet my friend Turbo
       description: Discover a lively developer’s tale comparing Laravel and Turbo! Explore
         how Turbo, Turbo Native, and Strada blend with PHP and how these ideas can inspire
         Rubyists. Perfect for fans of both ecosystems—or anyone seeking fresh tech sparks!
       video_url: TODO
       speakers: []
-- uuid: 5e8a9d8e-9d70-4ca5-a422-2c5ab6ca1e5d
+- uuid: c8e31134-1f5c-441c-8727-3db50dcc5b76
   date: '2024-05-30'
   summary: Cursors and modern data navigation—learn why pagination is passé!
-  slug: 2024-05-30-cursor-pagination
+  slug: 2024-05-30-cursors-why-pagination-is-bad-gination
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 0e8cd65d-9ca1-4ab9-b9c8-d555c1fcb4ee
+    - id: 1cd6508e-fc71-4f76-a38f-9d675cf3498f
       title: 'Cursors: Why Pagination is Bad-gination!'
       description: Discover how Ruby can help you ditch stale pagination for modern,
         efficient cursor-based data access! Find out why this approach is the backbone
         of tools like GraphQL. Perfect for anyone tired of old-fashioned paginated lists!
       video_url: TODO
       speakers: []
-- uuid: 73cac538-294a-470e-9893-c788801c0d9c
+- uuid: c2dc5654-4009-4710-8d7a-2b4962260978
   date: '2024-04-25'
   summary: Dissecting Rails with Antz at RORO Melbourne
-  slug: 2024-04-25-dissecting-rails
+  slug: 2024-04-25-dissecting-rails-melbourne
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 6b3157c4-34cf-4bc6-a1a1-9f8b37a77e06
+    - id: ad937b8d-5576-4ba9-92a0-39d13d2010d3
       title: Dissecting Rails
       description: Ever wondered how Rails works under the hood? Join Antz as he shares
         practical tips, insights from dissecting Active Support and Active Model, and
@@ -498,16 +582,22 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: c0209a0d-3652-437f-9e23-55eae030374a
+- uuid: 2d5a57c3-b4b2-4278-bd3b-8e57f78a405d
   date: '2024-03-28'
-  summary: Ruby and economics with Rian McGuire and Ponny
-  slug: 2024-03-28-ruby-scales-and-ruby-economics
+  summary: Ruby at scale and in economics with Rian McGuire and Ponny
+  slug: 2024-03-28-ruby-one-billion-rows-economics
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 6be97002-95b4-4ce6-be1d-927cdc081243
+    - id: 7bcac410-b308-41f1-a823-d97c18fb2342
       title: One Billion Rows in Ruby
       description: Can Ruby tackle data at massive scale? Join Rian as he shares his
         journey optimizing Ruby for the One Billion Row Challenge – covering wild pitfalls,
@@ -522,7 +612,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: 9a4af53d-1ae9-4ea7-87ca-564984b8b0d0
+    - id: b8c01b64-01af-48f4-bab3-e034b2b3cf29
       title: The Economics of Ruby
       description: Explore the dynamic ecosystem of Ruby! Ponny dives into how resources,
         incentives, and support from companies and contributors keep the Ruby world
@@ -537,16 +627,22 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: fe645155-05b2-433d-baf8-083f02e08162
+- uuid: efe09008-28fd-45d8-ab6c-e465b2bc402b
   date: '2024-02-22'
   summary: Home-Server Rails and Scaling Insights with Saramic and Stefanuswilfrid
-  slug: 2024-02-22-home-server-and-rails-scaling
+  slug: 2024-02-22-home-server-rails-scaling
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 875a5b77-cc2e-4205-8b22-0252ef37ca2b
+    - id: fd82c651-0c56-4adb-bdfd-ba8bc9a50b29
       title: Can I host a rails app from a home server?
       description: Curious if you can host your own Rails app at home? Saramic takes
         us through the joys and challenges of bare-metal hosting, nostalgia for '90s
@@ -562,7 +658,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: dd4d5138-e05a-43ef-b309-9d18a530a172
+    - id: 7866cb1b-170b-42cb-b2b0-4320d2ae9a84
       title: System Design & Distributed System Lightweight Concept
       description: What happens when your app gets big? Stefanuswilfrid guides us through
         essential scaling tricks, distributed system concepts, and fun tools like Kubernetes—all
@@ -577,7 +673,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: bfdc1807-f085-47ca-8094-139485f34101
+- uuid: be96a3f0-2df7-4c16-a7bf-8481f5bed648
   date: '2024-01-25'
   summary: DMARC, Action Mailbox, and Ruby Fibers with HashNotAdam and KJ Tsanaktsidis
   slug: 2024-01-25-dmarc-mailbox-and-ruby-fibers
@@ -585,8 +681,14 @@
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 6c988ab8-1180-4386-8e02-d7519b6ceefa
+    - id: c23ab287-dbcc-4281-99ba-357176378d19
       title: Processing DMARC reports via Action Mailbox
       description: Curious about DMARC? Discover how to automatically parse and analyze
         daily DMARC reports using Rails' Action Mailbox. Make sense of XML and GZipped
@@ -602,7 +704,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: a4224b30-0519-4720-b8af-d2759dd21088
+    - id: 91d82a9d-0e8a-41bc-a210-7e526f4f6b4c
       title: Something Something Fibers Something
       description: Get deep into Ruby's guts! Explore how Fibers work, their relationship
         to threads, and how they're implemented both in Ruby and C. See practical fiber
@@ -618,17 +720,23 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: 5eb9fd4f-a2e7-4193-9125-fb0dab56bcfb
+- uuid: 35d87170-f858-44fe-b463-19165ac311b8
   date: '2023-11-23'
   summary: Gems of dev wisdom and a Rails Engines architecture chat with Justin and
     Anton
-  slug: 2023-11-23-dev-gems-and-rails-engines
+  slug: 2023-11-23-dev-gems-rails-engines
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: e01b1930-1bdd-4f6a-b329-4addbabb5fc9
+    - id: 80b7f5d8-2df9-4a48-9d1d-656c5ce12e40
       title: Precious gems I've learned during my first dev year
       description: Join Justin as he shares gems of wisdom picked up during his first
         year as a developer. Whether you're starting out or want a dose of reflection,
@@ -643,7 +751,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: 150afd01-d05d-4b89-98e2-8df4ced129f0
+    - id: 7bf32b5a-515d-4e78-9cc7-fff3c52c1747
       title: Rails architecture with engines work group
       description: Explore the ins and outs of Rails Engines! Anton will demo an app,
         share experience working with engines, and open up the floor for community discussion.
@@ -658,17 +766,23 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: ef279669-2fd6-471e-bd91-9f3a3c2bc7ba
+- uuid: a9322fa4-e243-46b3-83b9-7a8106ecdf43
   date: '2023-10-26'
   summary: Bootcamp showcase with Thdev and thoughts on environment variables with
     Saramic
-  slug: 2023-10-26-bootcamp-showcase-and-env-vars
+  slug: 2023-10-26-bootcamp-showcase-env-vars
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: fcfd8de9-5a3c-48c5-b73e-c5abd1ce53d7
+    - id: b329ce2e-c66d-4fe6-96f4-09abb4bace8c
       title: Showcase of final project of my bootcamp with Academy Xi
       description: Come check out an inspiring full-stack web app built with Rails and
         React as Thdev shares their final bootcamp project with Academy Xi! A perfect
@@ -683,7 +797,7 @@
             bluesky_handle:
             mastodon_handle:
             website: https://thdev.com.au
-    - id: 74c8b4aa-1a9c-4766-866a-3f001ce1ffe0
+    - id: daed1fa9-73db-4d52-8e14-15217b8a4d67
       title: Thoughts on Environment Variables
       description: Join Saramic for a lively lightning talk about managing Rails app
         secrets safely! Learn real-world tips on environment variables, credentials,
@@ -699,17 +813,23 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: 75d1085b-2f73-4660-a4e4-9ccde3e0bbed
+- uuid: b8065893-2d52-4607-9dd1-01752bfcc5e2
   date: '2023-09-28'
   summary: Lightning talk on Rails forms by Antulik and a dynamic session on pair
     presenting
-  slug: 2023-09-28-rails-forms-and-pair-presenting
+  slug: 2023-09-28-rails-forms-pair-presenting
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 63a72f46-a7aa-40b5-a2d0-18c94f55dbc4
+    - id: afd634fe-34d6-40c1-8606-3314aef9edbc
       title: Rails forms
       description: Join us for a lightning talk as Antulik breaks down Rails forms and
         service objects! Expect quick tips, real-world tricks, and a touch of fun –
@@ -724,7 +844,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: 54e11d69-c0d0-42da-aef9-5fabf53a4560
+    - id: ab2ce363-c9dc-4adf-aec5-91c162a0227d
       title: 'Unleashing the Power of Pair Presenting: Elevate Your Conference Impact'
       description: Discover the magic of pair presenting! Learn how dynamic partnerships
         can boost your conference experience—unpacking collaboration, live coding, and
@@ -732,17 +852,23 @@
         and inspiration!
       video_url: TODO
       speakers: []
-- uuid: 33129016-b564-4592-99d9-894daff8de29
+- uuid: 2d6f4e89-296a-4a2e-8562-52afe42d255d
   date: '2023-08-24'
   summary: Join us for 2D game dev with Dragonruby and Ruby code deep-diving with
     Matt and Rian!
-  slug: 2023-8-24-dragon-ruby-and-ruby-internals
+  slug: 2023-8-24-dragonruby-metal-warrior-and-ruby-internals
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 812b2c41-2ffd-4ba6-800b-267284abf014
+    - id: 8f0c8f77-f461-435e-b273-c9f7b9ed603d
       title: 'Dragonruby: Creating the game "Metal Warrior: Search for Valhalla"'
       description: "Discover how \"Metal Warrior: Search for Valhalla\" came to life!
       Matt will share the fun and hiccups of building a 2D action game in Dragonruby.
@@ -758,7 +884,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: 1641bd6d-0a15-43fd-947a-dbdb374575e4
+    - id: e6b268f2-c233-4771-bceb-0b0e77b4b313
       title: But why does it work?
       description: "Don’t fear the code! Rian takes us on a confidence-boosting journey
       to peek inside Ruby gems and source code. Come away inspired to explore, learn,
@@ -774,17 +900,23 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: 62d6f7a8-774b-4bc3-8d8f-d790aa8ad5c9
+- uuid: 7c528420-5d98-4e3d-88a6-e7426cae8564
   date: '2023-07-27'
   summary: Mentor tips, a bug mystery, and healthcare FHIR with Michael, Radar, and
     Matt Hood.
-  slug: 2023-07-27-mentoring-debugging-and-fhir
+  slug: 2023-07-27-mentoring-bugs-fhir
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 8c538f7a-b3c2-49dd-9156-7a265c314965
+    - id: ed0b4aef-3297-4946-b1f5-f8b686792eee
       title: Tips for juniors and mentors
       description: 'New to Ruby or mentoring? Join Michael for rapid-fire tips: from
       pairing up and practicing with exercises to tackling TDD and levelling up with
@@ -799,7 +931,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: 383cedf2-d74a-434f-9fef-57fc6fb75332
+    - id: de3179a0-99a7-4f13-a961-4c1fc0342a64
       title: A production bug 27 years in the making
       description: Ready for a wild debugging adventure? Radar shares the gripping story
         of a long-hidden bug, discovered after decades despite flawless testing. Learn
@@ -814,7 +946,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: b0533b58-87a2-48ec-9213-0c73ea32dab6
+    - id: c6307e01-a59b-43d9-86ad-32d49067e9d3
       title: How FHIR is tackling a wicked problem with technical, social and political
         solutions
       description: Curious about healthcare data and Ruby? Matt Hood explores how FHIR
@@ -830,7 +962,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: d676a915-7341-4e40-9b24-bf4516005260
+- uuid: 80fd2545-3f37-4a99-9f3e-7b6499116350
   date: '2021-06-24'
   summary: Keeping I18n simple and Exercism tips with David Carlin and Achhetr
   slug: 2021-6-24-i18n-and-exercism
@@ -838,8 +970,14 @@
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 2b1d7501-acea-44be-9bbd-a44481e131c6
+    - id: b62e5d9e-e2b2-4701-93f7-d75c707802f5
       title: 'Lightning talk: How to stop I18n getting complex'
       description: "I18n in Rails can be a maze! Join David Carlin as he shares some
       simple, fresh strategies to keep translation management clear and stress-free.
@@ -854,7 +992,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-    - id: 958f0421-f88e-436e-b8fa-0b1462fbe41d
+    - id: 953be8f2-f7f5-45f8-8fb0-5f8af49b2157
       title: Exercism for Junior Developers
       description: "Feeling new to tech? Achhetr will walk through Exercism exercises
       and share approaches to problem-solving for junior devs—great for recent bootcamp
@@ -870,16 +1008,22 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: 6568854f-d9fb-4aea-92c3-e7d90d7b03f3
+- uuid: 19e25558-c0f6-4433-ad16-7243d40ceafe
   date: '2021-03-25'
   summary: A deep dive into technical writing for developers with Oscar Alan Pierce.
-  slug: 2021-03-25-technical-writing
+  slug: 2021-03-25-joy-of-docs-technical-writing
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: d2dd944f-408e-4f66-ab55-4e91d74dac4e
+    - id: e9727069-9b42-42a4-9d4b-c9c5c34be2e3
       title: 'The Joy of Docs: Technical Writing for Developers and Engineers'
       description: Join Oscar Alan Pierce for a lively talk showing why good technical
         writing matters. Discover tips to improve your docs, make communication smooth,
@@ -895,16 +1039,22 @@
             bluesky_handle:
             mastodon_handle:
             website:
-- uuid: 651e10bd-c555-4e68-ace8-56218e8e7e89
+- uuid: cbf5d842-8118-40e1-b952-a37d4ad563c6
   date: '2021-02-25'
   summary: Exploring View Components in Rails with Vanessa Nimmo
-  slug: 2021-02-25-view-component
+  slug: 2021-02-25-view-components-rails
   type: meetup
   venue:
     name: BOYD Community Hub
     google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    address:
+      street: 207 City Rd
+      locality: Southbank
+      postal_code: '3006'
+      region: VIC
+      country: AU
   talks:
-    - id: 9cf89465-209c-43b2-b364-644271cc46dc
+    - id: 163c8b6d-9dbb-4dbf-b8aa-03e6b4bfb780
       title: View Components in the Wild
       description: Get inspired as Vanessa Nimmo showcases real-world examples of View
         Components at Fresho! Learn how composability boosts testing and consistency

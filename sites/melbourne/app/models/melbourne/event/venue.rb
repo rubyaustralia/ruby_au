@@ -6,6 +6,7 @@ module Melbourne
 
       attribute :name
       attribute :google_maps_url
+      attribute :address, default: {}
 
       def schema
         Schema.new(self)

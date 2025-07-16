@@ -18,7 +18,14 @@ module Melbourne
             type: "meetup",
             venue: {
               name: "BOYD Community Hub",
-              google_maps_url: "https://maps.app.goo.gl/Tifehaitwnf2fJSq5"
+              google_maps_url: "https://maps.app.goo.gl/Tifehaitwnf2fJSq5",
+              address: {
+                street: "207 City Rd",
+                locality: "Southbank",
+                postal_code: "3006",
+                region: "VIC",
+                country: "AU",
+              }
             },
             talks: event["talks"].map do |talk|
               {

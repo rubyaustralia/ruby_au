@@ -18,11 +18,11 @@ module Melbourne
             name: venue.name,
             address: {
               "@type" => "PostalAddress",
-              street_address: nil,
-              address_locality: nil,
-              postal_code: nil,
-              address_region: nil,
-              address_country: "AU"
+              street_address: venue.address.fetch(:street),
+              address_locality: venue.address.fetch(:locality),
+              postal_code: venue.address.fetch(:postal_code),
+              address_region: venue.address.fetch(:region),
+              address_country: venue.address.fetch(:country)
             }
           }
         end
