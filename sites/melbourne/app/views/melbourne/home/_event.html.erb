@@ -1,13 +1,20 @@
 <%
   css_classes = class_names(
-    "event-box cursor-pointer p-4 border rounded-lg hover:bg-gray-50 transition-colors",
-    "bg-blue-100 border-blue-400" => selected_event == event,
-    "bg-white border-gray-200" => selected_event != event
+    "event-box cursor-pointer p-4 border rounded-lg hover:bg-gray-50 transition-colors bg-white border-gray-200",
+    "aria-current-page:bg-blue-100 aria-current-page:border-blue-400"
   )
+  extras = event == selected_event ? { aria: { current: "page" }} : {}
 %>
 
-<%= link_to root_path(slug: event.slug), class: "block", data: { turbo_frame: :event } do %>
-  <%= tag.div id: dom_id(event), class: css_classes do %>
+<%= link_to root_path(slug: event.slug),
+            class: css_classes,
+            data: {
+              turbo_frame: :event,
+              current_page_target: "item",
+              action: "current-page#setAriaCurrent",
+            },
+            **extras do %>
+  <%= tag.div id: dom_id(event) do %>
     <p class="font-medium"><%= event.date %></p>
     <p class="mt-1 text-sm text-gray-600"><%= event.summary %></p>
   <% end %>
