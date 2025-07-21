@@ -6,7 +6,7 @@
   )
 %>
 
-<%= link_to root_path(slug: event.slug), class: "block", data: { turbo_action: :replace } do %>
+<%= link_to root_path(slug: event.slug), class: "block", data: { turbo_frame: :event } do %>
   <%= tag.div id: dom_id(event), class: css_classes do %>
     <p class="font-medium"><%= event.date %></p>
     <p class="mt-1 text-sm text-gray-600"><%= event.summary %></p>

@@ -12,8 +12,10 @@
         <%= render collection: @events, partial: "event", locals: { selected_event: @selected_event } %>
       </div>
     </div>
-    <article class="flex flex-col col-start-3 px-4 py-6">
-      <%= render "event_summary", event: @selected_event %>
-    </article>
+    <div class="flex flex-col col-start-3 px-4 py-6">
+      <%= turbo_frame_tag :event do %>
+        <%= render "event_summary", event: @selected_event %>
+      <% end %>
+    </div>
   </main>
 </div>
