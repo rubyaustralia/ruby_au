@@ -1,10 +1,6 @@
-<%= tag.section id: dom_id(event) do %>
-  <p><%= event.date %></p>
-  <p><%= event.summary %></p>
-  <%= link_to "see event", event_path(event.slug) %>
-  <p>
-    <%= link_to event.venue.google_maps_url, class: "underline" do %>
-      <%= event.venue.name %>
-    <% end %>
-  </p>
+<%= link_to event_path(event), data: { turbo_frame: "event_show" } do %>
+  <div class="event-box" id="<%= dom_id(event) %>">
+    <p><%= event.date %></p>
+    <p><%= event.summary %></p>
+  </div>
 <% end %>
