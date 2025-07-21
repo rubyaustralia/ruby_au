@@ -1,44 +1,10 @@
-<div class="grid grid-cols-[minmax(130px,_160px)_minmax(300px,_360px)_1fr] gap-x-4 grid-rows-[600px_50px_1fr] w-full min-h-[100dvh] relative">
-  <div class="w-full bg-[#0D37F2] col-span-3"></div>
-  <header class="col-span-3 grid grid-cols-subgrid sticky top-0 z-50 w-full max-w-[1500px] items-center bg-[#0D37F2] text-white">
-    <%# Logo %>
-    <div class="col-start-1 pl-4">
-      <span class="font-bold">Ruby Melbs</span>
-    </div>
-    <%# Events Collection Code %>
-    <div class="col-start-2 pt-2 w-full h-full">
-      <div class="flex bg-[#0025CA] rounded-t-lg h-full items-center px-4">
-        <code class="text-sm">@event.talks.each do |talk|</code>
-      </div>
-    </div>
-    <div class="flex col-start-3 gap-6 justify-between items-center h-full">
-      <%# Event Code %>
-      <div class="pt-2 w-full h-full">
-        <div class="flex bg-[#0025CA] rounded-t-lg h-full items-center px-4">
-          <code class="text-sm">@event.selected.show</code>
-        </div>
-      </div>
-      <%# Sponsors %>
-      <ul class="flex flex-row col-start-3 gap-4 pr-4 list-none w-fit">
-        <li class="whitespace-nowrap">Github</li>
-        <li class="whitespace-nowrap">Sponsor</li>
-      </ul>
-    </div>
-  </header>
 
-  <main class="col-span-3 grid grid-cols-subgrid max-w-[1500px]">
-    <%= render partial: "melbourne/events/timeline" %>
-    <div class="sticky top-[50px] flex-shrink-0 col-start-2 h-[calc(100dvh-50px)]" style="overscroll-behavior: contain; scrollbar-width: none;">
-      <div class="flex overflow-y-auto absolute top-0 left-0 flex-col col-start-2 gap-2 pb-6 w-full h-full">
-        <% @events.each do |event| %>
-          <%= render partial: "melbourne/events/event", locals: { event: event } %>
-        <% end %>
-      </div>
+<article class="flex flex-col col-start-3 px-4 py-6">
+  <% if @selected_event %>
+    <%= render template: "melbourne/events/show", locals: { event: @selected_event } %>
+  <% else %>
+    <div class="event-detail">
+      <p class="text-gray-500">Select an event to view details</p>
     </div>
-    <article class="flex flex-col col-start-3 px-4 py-6">
-      <%= turbo_frame_tag 'event_show' do %>
-      <%= render partial: "melbourne/events/show", locals: { event: event } %>
-      <% end %>
-    </article>
-  </main>
-</div>
+  <% end %>
+</article>

@@ -1,6 +1,13 @@
-<%= link_to event_path(event), data: { turbo_frame: "event_show" } do %>
-  <div class="event-box" id="<%= dom_id(event) %>">
-    <p><%= event.date %></p>
-    <p><%= event.summary %></p>
+<%
+  is_selected = defined?(selected_event) && selected_event && selected_event.id == event.id
+  css_classes = "event-box cursor-pointer p-4 border rounded-lg hover:bg-gray-50 transition-colors"
+  css_classes += " bg-blue-100 border-blue-400" if is_selected
+  css_classes += " bg-white border-gray-200" unless is_selected
+%>
+
+<%= link_to event_path(event), class: "block" do %>
+  <div class="<%= css_classes %>" id="<%= dom_id(event) %>">
+    <p class="font-medium"><%= event.date %></p>
+    <p class="mt-1 text-sm text-gray-600"><%= event.summary %></p>
   </div>
 <% end %>

@@ -3,8 +3,7 @@
 module Melbourne
   class HomeController < ApplicationController
     def show
-      @events = Event.all.first(20)
-      @selected_event = @events.first
+      # Events and selected_event are set by ApplicationController
     end
   end
 end

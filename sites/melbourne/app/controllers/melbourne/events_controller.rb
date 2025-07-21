@@ -8,6 +8,7 @@ module Melbourne
 
     def show
       @event = Event.find_by_slug(params[:slug]) # rubocop:disable Rails/DynamicFindBy
+      @selected_event = @event
     end
   end
 end
