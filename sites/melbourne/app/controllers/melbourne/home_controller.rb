@@ -3,7 +3,8 @@
 module Melbourne
   class HomeController < ApplicationController
     def show
-      # Events and selected_event are set by ApplicationController
+      @events = Event.all.first(10)
+      @selected_event = params[:slug] ? Event.find_by_slug(params[:slug]) : @events.first
     end
   end
 end

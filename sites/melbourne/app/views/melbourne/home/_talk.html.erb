@@ -1,0 +1,12 @@
+<article class="p-4 mb-4 rounded-lg border">
+  <h4 class="font-semibold"><%= talk.title %></h4>
+  <p><%= talk.description %></p>
+  <strong>Speakers:</strong>
+  <ul class="pl-5 list-disc">
+    <% talk.speakers.each do |speaker| %>
+      <li>
+        <p><%= speaker.name %></p>
+      </li>
+    <% end %>
+  </ul>
+</article>
