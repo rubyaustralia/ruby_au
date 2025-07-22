@@ -1,14 +1,44 @@
-<article class="flex flex-col col-start-3 px-4 py-6">
-  <div class="event-detail">
-    <h2 class="text-2xl"><%= event.name %></h2>
-    <p><strong>Date:</strong> <%= event.date %></p>
-    <p><strong>Venue:</strong> <%= event.venue.name  %></p>
-    <p><strong>Summary:</strong> <%= event.summary %></p>
-
-      <hr class="my-4">
-      <h3 class="text-xl">Talks</h3>
-      <div class="mt-8">
-        <%= render collection: event.talks, partial: "melbourne/events/talk" %>
-      </div>
+<article class="flex flex-col col-start-3 gap-6 px-4 py-6">
+  <div class="flex flex-col gap-2">
+    <h2 class="text-6xl font-semibold text-black text-balance"><%= event.name %></h2>
+    <div class="flex flex-row gap-2 items-center">
+      <img class="overflow-hidden w-8 h-8 rounded-full border-2 border-white shadow" src="https://ca.slack-edge.com/T05MR1HN2U9-U06LYG9KCJ3-66c5ce0cf7a3-512" alt="Juli">
+      <h3 class="text-lg text-gray-600">Hosted by Juli</h3>
+    </div>
   </div>
+
+  <div class="grid grid-cols-2 items-center">
+    <div class="flex flex-row gap-4 items-center">
+      <div class="w-13 h-13 flex flex-col gap-0 justify-center items-center rounded bg-[#0D37F2] text-white">
+        <span class="font-mono"><%= event.date.strftime("%d") %></span>
+        <span class="-mt-1 font-mono text-xs"><%= event.date.strftime("%b") %></span>
+      </div>
+      <div class="flex flex-col">
+        <p class="p-0 font-medium leading-5 text-black"><%= event.date.strftime("%A, %d %B") %></p>
+        <p class="p-0 leading-5 text-gray-600">6:30pm - 8:30pm</p>
+      </div>
+    </div>
+    <div class="flex flex-row gap-4 items-center">
+      <div class="w-13 h-13 flex flex-col gap-0 justify-center items-center rounded bg-[#0D37F2] text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+          <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="flex flex-col">
+        <p class="p-0 font-medium leading-5 text-black truncate whitespace-nowrap"><%= event.venue.name  %></p>
+        <p class="p-0 leading-5 text-gray-600 truncate whitespace-nowrap">207 City Rd, Southbank</p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h4 class="pb-1 mb-1 text-gray-500 border-b border-gray-200">About Event</h4>
+    <p class="text-lg text-black"><%= event.summary %></p>
+  </div>
+
+  <div>
+    <h4 class="pb-1 mb-1 text-gray-500 border-b border-gray-200">Talks</h4>
+    <%= render collection: event.talks, partial: "melbourne/events/talk" %>
+  </div>
+
 </article>
