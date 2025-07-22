@@ -19,7 +19,11 @@
 <% end %>
 
 <%= content_for :event_summary do  %>
-  <%= render "melbourne/events/summary", event: @event %>
+  <% if @event %>
+    <%= render "melbourne/events/summary", event: @event %>
+  <% else %>
+    <%= render "melbourne/events/no_upcoming_summary" %>
+  <% end %>
 <% end %>
 
 <%= render "layouts/melbourne/jumbotron" %>

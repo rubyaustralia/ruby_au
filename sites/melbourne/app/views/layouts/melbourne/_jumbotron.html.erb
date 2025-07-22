@@ -13,10 +13,7 @@
           <%= yield :upcoming_events %>
         <% else %>
           <div class="grid grid-rows-1 justify-center items-center mx-4 bg-gray-100 rounded-lg grids-cols-1">
-            <p class="z-10 col-start-1 row-start-1 py-4 text-sm text-center text-gray-600">No upcoming events atm. <br/>Stay tuned!</p>
-            <video autoplay loop muted class="col-start-1 row-start-1 w-full rounded h-fit">
-              <source src="<%= vite_asset_path('videos/confused.mp4') %>" type="video/mp4">
-            </video>
+            <p class="z-10 col-start-1 row-start-1 py-4 text-sm text-center text-gray-600">No upcoming events atm</p>
           </div>
         <% end %>
 

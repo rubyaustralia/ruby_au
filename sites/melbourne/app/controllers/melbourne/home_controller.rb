@@ -7,7 +7,7 @@ module Melbourne
       today = Date.current
       @upcoming_events = @events.select { |event| event.date >= today }
       @past_events = @events.select { |event| event.date < today }
-      @selected_event = @upcoming_events.first || @past_events.first
+      @selected_event = @upcoming_events.first
     end
   end
 end
