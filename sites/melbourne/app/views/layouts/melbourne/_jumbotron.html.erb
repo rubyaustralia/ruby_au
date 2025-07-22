@@ -1,0 +1,20 @@
+<div class="grid grid-cols-[minmax(130px,_160px)_minmax(300px,_360px)_1fr] gap-x-4 grid-rows-[600px_50px_1fr] w-full min-h-[100dvh] relative">
+  <div class="w-full bg-[#0D37F2] col-span-3"></div>
+  <%= render "layouts/melbourne/header" %>
+
+  <main class="col-span-3 grid grid-cols-subgrid max-w-[1500px]">
+    <%= render partial: "layouts/melbourne/timeline" %>
+    <div class="sticky top-[50px] flex-shrink-0 col-start-2 h-[calc(100dvh-50px)]" style="overscroll-behavior: contain; scrollbar-width: none;">
+      <nav id="events-list"
+           class="flex overflow-y-auto absolute top-0 left-0 flex-col col-start-2 gap-2 pb-6 w-full h-full"
+           data-controller="current-page" >
+        <%= yield :events %>
+      </nav>
+    </div>
+    <div class="flex flex-col col-start-3 px-4 py-6">
+      <%= turbo_frame_tag :event, aria: { live: "polite" } do %>
+        <%= yield :event_summary %>
+      <% end %>
+    </div>
+  </main>
+</div>

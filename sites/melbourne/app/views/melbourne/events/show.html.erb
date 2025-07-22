@@ -1,9 +1,22 @@
 <% set_meta_tags Melbourne::Event::OpenGraphMetadata.new(@event).to_meta_tags %>
+
+<% content_for :head do %>
+  <%= turbo_refreshes_with scroll: :preserve %>
+<% end %>
+
 <% content_for :head do %>
   <script type="application/ld+json">
     <%= raw JSON.pretty_generate @event.schema.to_h %>
   </script>
 <% end %>
 
-<%= render "melbourne/events/event_summary" %>
+<%= content_for :events do  %>
+  <%= render @events, selected_event: @event %>
+<% end %>
+
+<%= content_for :event_summary do  %>
+  <%= render "melbourne/events/summary", event: @event %>
+<% end %>
+
+<%= render "layouts/melbourne/jumbotron" %>
 
