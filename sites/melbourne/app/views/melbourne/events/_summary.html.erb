@@ -14,8 +14,8 @@
         <span class="-mt-1 font-mono text-xs"><%= event.date.strftime("%b") %></span>
       </div>
       <div class="flex flex-col">
-        <p class="p-0 font-medium leading-5 text-black"><%= event.date.strftime("%A, %d %B") %></p>
-        <p class="p-0 leading-5 text-gray-600">6:30pm - 8:30pm</p>
+        <p class="font-medium leading-5 text-black"><%= event.date.strftime("%A, %d %B") %></p>
+        <p class="leading-5 text-gray-600">6:30pm - 8:30pm</p>
       </div>
     </div>
     <div class="flex flex-row gap-4 items-center">
@@ -25,10 +25,32 @@
         </svg>
       </div>
       <div class="flex flex-col">
-        <p class="p-0 font-medium leading-5 text-black truncate whitespace-nowrap"><%= event.venue.name  %></p>
-        <p class="p-0 leading-5 text-gray-600 truncate whitespace-nowrap">207 City Rd, Southbank</p>
+        <p class="font-medium leading-5 text-black truncate whitespace-nowrap"><%= event.venue.name  %></p>
+        <p class="leading-5 text-gray-600 truncate whitespace-nowrap">207 City Rd, Southbank</p>
       </div>
     </div>
+  </div>
+
+  <div class="flex overflow-hidden flex-col gap-2 p-1 bg-white rounded-lg border shadow-lg border-black/5">
+    <h4 class="p-2 w-full font-semibold text-gray-500 bg-gray-100 rounded-t-md">Registration</h4>
+    <p class="px-4 pt-2 text-lg leading-6 text-black">Welcome! To join the event please register using the form below. Spaces are limited and it's on a first come first serve basis.</p>
+    <form action="#" method="POST" class="px-4 py-2">
+      <div class="grid grid-cols-1 gap-y-2 gap-x-4 sm:grid-cols-2">
+        <div class="sm:col-span-2">
+          <label for="company" class="block font-semibold text-gray-900 text-sm/6">Full name</label>
+          <input id="company" type="text" name="company" autocomplete="given-name" class="block px-3.5 py-2 w-full text-base text-gray-900 bg-white rounded-md outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600" />
+        </div>
+        <div class="sm:col-span-2">
+          <label for="company" class="block font-semibold text-gray-900 text-sm/6">Company</label>
+          <input id="company" type="text" name="company" autocomplete="organization" class="block px-3.5 py-2 w-full text-base text-gray-900 bg-white rounded-md outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600" />
+        </div>
+        <div class="sm:col-span-2">
+          <label for="email" class="block font-semibold text-gray-900 text-sm/6">Email</label>
+          <input id="email" type="email" name="email" autocomplete="email" class="block px-3.5 py-2 w-full text-base text-gray-900 bg-white rounded-md outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600" />
+        </div>
+      </div>
+      <button type="submit" class="block px-3.5 py-2.5 mt-4 w-full text-sm font-semibold text-center text-white bg-blue-600 rounded-md cursor-pointer shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Register</button>
+    </form>
   </div>
 
   <div>
@@ -38,7 +60,9 @@
 
   <div>
     <h4 class="pb-1 mb-1 text-gray-500 border-b border-gray-200">Talks</h4>
-    <%= render collection: event.talks, partial: "melbourne/events/talk" %>
+    <div class="flex flex-col gap-8 py-4">
+      <%= render collection: event.talks, partial: "melbourne/events/talk" %>
+    </div>
   </div>
 
 </article>
