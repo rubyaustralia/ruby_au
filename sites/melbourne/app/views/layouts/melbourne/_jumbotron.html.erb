@@ -7,12 +7,12 @@
     <div class="sticky top-[50px] flex-shrink-0 col-start-2 h-[calc(100dvh-50px)]" style="overscroll-behavior: contain; scrollbar-width: none;">
       <nav id="events-list"
            class="flex overflow-y-auto absolute top-0 left-0 flex-col col-start-2 gap-2 pb-6 w-full h-full"
-           data-controller="current-page" data-turbo-permanent="true">
+           data-controller="current-page" >
         <%= yield :events %>
       </nav>
     </div>
     <div class="flex flex-col col-start-3 px-4 py-6">
-      <%= tag.div id: :event, aria: { live: "polite" } do %>
+      <%= turbo_frame_tag :event, aria: { live: "polite" } do %>
         <%= yield :event_summary %>
       <% end %>
     </div>
