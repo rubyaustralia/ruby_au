@@ -4,7 +4,10 @@ module Melbourne
   class HomeController < ApplicationController
     def show
       @events = Event.all
-      @selected_event = @events.first
+      today = Date.current
+      @upcoming_events = @events.select { |event| event.date >= today }
+      @past_events = @events.select { |event| event.date < today }
+      @selected_event = @upcoming_events.first || @past_events.first
     end
   end
 end

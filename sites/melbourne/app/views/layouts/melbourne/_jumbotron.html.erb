@@ -6,9 +6,28 @@
     <%= render partial: "layouts/melbourne/timeline" %>
     <div class="sticky top-[50px] z-40 flex-shrink-0 col-start-2 h-[calc(100dvh-50px)] shadow-[0_4px_34px_rgba(0,_0,_0,_0.1))]" style="overscroll-behavior: contain; scrollbar-width: none;">
       <nav id="events-list"
-           class="flex overflow-y-auto absolute top-0 left-0 flex-col col-start-2 pb-6 w-full h-full"
+           class="flex overflow-y-auto absolute top-0 left-0 flex-col col-start-2 pt-2 pb-6 w-full h-full"
            data-controller="current-page" >
-        <%= yield :events %>
+        <h3 class="px-4 my-2 text-gray-600">Upcoming Events</h3>
+        <% if content_for?(:upcoming_events) && !yield(:upcoming_events).blank? %>
+          <%= yield :upcoming_events %>
+        <% else %>
+          <div class="grid grid-rows-1 justify-center items-center mx-4 bg-gray-100 rounded-lg grids-cols-1">
+            <p class="z-10 col-start-1 row-start-1 py-4 text-sm text-center text-gray-600">No upcoming events atm. <br/>Stay tuned!</p>
+            <video autoplay loop muted class="col-start-1 row-start-1 w-full rounded h-fit">
+              <source src="<%= vite_asset_path('videos/confused.mp4') %>" type="video/mp4">
+            </video>
+          </div>
+        <% end %>
+
+        <h3 class="px-4 mt-6 text-gray-600">Past Events</h3>
+        <% if content_for?(:past_events) && !yield(:past_events).blank? %>
+          <%= yield :past_events %>
+        <% else %>
+          <div class="flex flex-col justify-center items-center">
+            <p>No past events.</p>
+          </div>
+        <% end %>
       </nav>
     </div>
     <div class="flex flex-col col-start-4 pt-6 snap-start">

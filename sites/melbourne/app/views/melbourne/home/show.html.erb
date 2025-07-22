@@ -1,5 +1,9 @@
-<%= content_for :events do  %>
-  <%= render @events, selected_event: @selected_event %>
+<%= content_for :upcoming_events do  %>
+  <%= render @upcoming_events, selected_event: @selected_event %>
+<% end %>
+
+<%= content_for :past_events do  %>
+  <%= render @past_events, selected_event: @selected_event %>
 <% end %>
 
 <%= content_for :event_summary do  %>
