@@ -6,12 +6,12 @@
   extras = event == selected_event ? { aria: { current: "page" }} : {}
 %>
 
-<%= link_to root_path(slug: event.slug),
+<%= link_to event_path(event),
             class: css_classes,
             data: {
-              turbo_frame: :event,
               current_page_target: "item",
               action: "current-page#setAriaCurrent",
+              turbo_action: :replace
             },
             **extras do %>
   <%= tag.div id: dom_id(event) do %>
