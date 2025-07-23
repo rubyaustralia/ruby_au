@@ -23,6 +23,24 @@ export default class extends Controller {
     const eventLink = document.querySelector(`#${eventId}`);
     if (eventLink) {
       eventLink.click();
+      
+      // Scroll the event into view in the events list
+      const eventsListContainer = document.querySelector('#events-list');
+      if (eventsListContainer) {
+        const eventLinkRect = eventLink.getBoundingClientRect();
+        const containerRect = eventsListContainer.getBoundingClientRect();
+        
+        // Calculate the scroll position to center the event in the container
+        const scrollTop = eventsListContainer.scrollTop + 
+                         (eventLinkRect.top - containerRect.top) - 
+                         (containerRect.height / 2) + 
+                         (eventLinkRect.height / 2);
+        
+        eventsListContainer.scrollTo({
+          top: Math.max(0, scrollTop),
+          behavior: 'smooth'
+        });
+      }
     }
   }
 
