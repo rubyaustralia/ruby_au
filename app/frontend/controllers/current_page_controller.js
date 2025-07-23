@@ -15,7 +15,11 @@ export default class extends Controller {
     );
     if (timelineController) {
       timelineController.selectedEventIdValue = eventId;
-      // Note: scrollToSelectedEvent will be called automatically via selectedEventIdValueChanged
+      
+      // Scroll timeline to selected event with smooth animation
+      setTimeout(() => {
+        timelineController.scrollTimelineToSelectedEvent(true); // true = smooth scrolling
+      }, 50);
     }
   }
 }

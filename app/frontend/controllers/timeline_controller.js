@@ -16,6 +16,7 @@ export default class extends Controller {
     // Scroll to selected event on page load with delay for DOM rendering (instant scroll)
     setTimeout(() => {
       this.scrollToSelectedEvent(false); // false = no smooth scrolling
+      this.scrollTimelineToSelectedEvent(false); // false = no smooth scrolling
     }, 200);
   }
 
@@ -32,6 +33,7 @@ export default class extends Controller {
       // Scroll to the selected event after a brief delay (smooth scroll)
       setTimeout(() => {
         this.scrollToSelectedEvent(true); // true = smooth scrolling
+        this.scrollTimelineToSelectedEvent(true); // true = smooth scrolling
       }, 50);
     }
   }
@@ -59,6 +61,35 @@ export default class extends Controller {
         top: Math.max(0, scrollTop),
         behavior: smooth ? "smooth" : "instant",
       });
+    }
+  }
+
+  scrollTimelineToSelectedEvent(smooth = true) {
+    if (!this.selectedEventIdValue) return;
+    
+    const selectedTimelineEvent = this.eventTargets.find(
+      eventElement => eventElement.dataset.eventId === this.selectedEventIdValue
+    );
+    
+    if (selectedTimelineEvent) {
+      const timelineContainer = this.element;
+      const timelineScrollContainer = timelineContainer.querySelector('.overflow-y-auto');
+      
+      if (timelineScrollContainer) {
+        const eventRect = selectedTimelineEvent.getBoundingClientRect();
+        const containerRect = timelineScrollContainer.getBoundingClientRect();
+        
+        // Calculate scroll position to center the event in the timeline view
+        const scrollTop = timelineScrollContainer.scrollTop + 
+                         (eventRect.top - containerRect.top) - 
+                         (containerRect.height / 2) + 
+                         (eventRect.height / 2);
+        
+        timelineScrollContainer.scrollTo({
+          top: Math.max(0, scrollTop),
+          behavior: smooth ? 'smooth' : 'instant'
+        });
+      }
     }
   }
 
