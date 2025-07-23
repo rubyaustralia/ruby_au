@@ -36,25 +36,36 @@
   </div>
 
   <div class="flex overflow-hidden flex-col gap-2 p-1 bg-white rounded-lg border shadow-lg border-black/5">
-    <h4 class="p-2 w-full font-semibold text-gray-500 bg-gray-100 rounded-t-md">Registration</h4>
-    <p class="px-4 pt-2 text-lg leading-6 text-black">Welcome! To join the event please register using the form below. Spaces are limited and it's on a first come first serve basis.</p>
-    <form action="#" method="POST" class="px-4 py-2">
-      <div class="grid grid-cols-1 gap-y-2 gap-x-4 sm:grid-cols-2">
-        <div class="sm:col-span-2">
-          <label for="full-name" class="block font-semibold text-gray-900 text-sm/6">Full name</label>
-          <input id="full-name" type="text" name="full-name" autocomplete="full-name" class="block px-3.5 py-2 w-full text-base text-gray-900 bg-white rounded-md outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600" />
-        </div>
-        <div class="sm:col-span-2">
-          <label for="company" class="block font-semibold text-gray-900 text-sm/6">Company</label>
-          <input id="company" type="text" name="company" autocomplete="organization" class="block px-3.5 py-2 w-full text-base text-gray-900 bg-white rounded-md outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600" />
-        </div>
-        <div class="sm:col-span-2">
-          <label for="email" class="block font-semibold text-gray-900 text-sm/6">Email</label>
-          <input id="email" type="email" name="email" autocomplete="email" class="block px-3.5 py-2 w-full text-base text-gray-900 bg-white rounded-md outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600" />
-        </div>
+    <% is_past_event = event.date < Date.current %>
+    <h4 class="p-2 w-full font-semibold text-gray-500 bg-gray-100 rounded-t-md">
+      <%= is_past_event ? 'Registration Closed' : 'Registration' %>
+    </h4>
+    
+    <% if is_past_event %>
+      <div class="px-4 py-4">
+        <p class="text-lg leading-6 text-gray-600 mb-3">Registration for this event has ended.</p>
+        <p class="text-base leading-6 text-gray-500">This event took place on <%= event.date.strftime("%A, %d %B") %><% if event.date.year != Date.current.year %> <%= event.date.year %><% end %>.</p>
       </div>
-      <button type="submit" class="block px-3.5 py-2.5 mt-4 w-full text-sm font-semibold text-center text-white bg-blue-600 rounded-md cursor-pointer shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Register</button>
-    </form>
+    <% else %>
+      <p class="px-4 pt-2 text-lg leading-6 text-black">Welcome! To join the event please register using the form below. Spaces are limited and it's on a first come first serve basis.</p>
+      <form action="#" method="POST" class="px-4 py-2">
+        <div class="grid grid-cols-1 gap-y-2 gap-x-4 sm:grid-cols-2">
+          <div class="sm:col-span-2">
+            <label for="full-name" class="block font-semibold text-gray-900 text-sm/6">Full name</label>
+            <input id="full-name" type="text" name="full-name" autocomplete="full-name" class="block px-3.5 py-2 w-full text-base text-gray-900 bg-white rounded-md outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600" />
+          </div>
+          <div class="sm:col-span-2">
+            <label for="company" class="block font-semibold text-gray-900 text-sm/6">Company</label>
+            <input id="company" type="text" name="company" autocomplete="organization" class="block px-3.5 py-2 w-full text-base text-gray-900 bg-white rounded-md outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600" />
+          </div>
+          <div class="sm:col-span-2">
+            <label for="email" class="block font-semibold text-gray-900 text-sm/6">Email</label>
+            <input id="email" type="email" name="email" autocomplete="email" class="block px-3.5 py-2 w-full text-base text-gray-900 bg-white rounded-md outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600" />
+          </div>
+        </div>
+        <button type="submit" class="block px-3.5 py-2.5 mt-4 w-full text-sm font-semibold text-center text-white bg-blue-600 rounded-md cursor-pointer shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Register</button>
+      </form>
+    <% end %>
   </div>
 
   <div>
