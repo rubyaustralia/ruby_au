@@ -35,7 +35,7 @@
     <%# Events %>
     <% all_events.each do |event| %>
       <% is_upcoming = event.date >= today %>
-      <dl class="flex absolute left-1 right-9 z-30 flex-col px-2 py-1 w-auto rounded-md border border-transparent transition-opacity cursor-pointer hover:opacity-80"
+      <dl class="flex absolute left-1 right-9 z-30 flex-col px-2 py-1 w-auto rounded-md border border-gray-100 transition-opacity cursor-pointer backdrop-blur-xs hover:opacity-80"
           data-timeline-target="event"
           data-event-id="<%= dom_id(event) %>"
           data-event-date="<%= event.date.iso8601 %>"
