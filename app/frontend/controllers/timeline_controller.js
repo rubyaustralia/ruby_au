@@ -12,6 +12,11 @@ export default class extends Controller {
     this.positionTodayMarker();
     this.positionEvents();
     this.updateSelectedEvent();
+    
+    // Scroll to selected event on page load with delay for DOM rendering (instant scroll)
+    setTimeout(() => {
+      this.scrollToSelectedEvent(false); // false = no smooth scrolling
+    }, 200);
   }
 
   selectedEventIdValueChanged() {
@@ -24,23 +29,33 @@ export default class extends Controller {
     if (eventLink) {
       eventLink.click();
       
-      // Scroll the event into view in the events list
-      const eventsListContainer = document.querySelector('#events-list');
-      if (eventsListContainer) {
-        const eventLinkRect = eventLink.getBoundingClientRect();
-        const containerRect = eventsListContainer.getBoundingClientRect();
-        
-        // Calculate the scroll position to center the event in the container
-        const scrollTop = eventsListContainer.scrollTop + 
-                         (eventLinkRect.top - containerRect.top) - 
-                         (containerRect.height / 2) + 
-                         (eventLinkRect.height / 2);
-        
-        eventsListContainer.scrollTo({
-          top: Math.max(0, scrollTop),
-          behavior: 'smooth'
-        });
-      }
+      // Scroll to the selected event after a brief delay (smooth scroll)
+      setTimeout(() => {
+        this.scrollToSelectedEvent(true); // true = smooth scrolling
+      }, 50);
+    }
+  }
+
+  scrollToSelectedEvent(smooth = true) {
+    if (!this.selectedEventIdValue) return;
+    
+    const selectedEventLink = document.querySelector(`#${this.selectedEventIdValue}`);
+    const eventsListContainer = document.querySelector('#events-list');
+    
+    if (selectedEventLink && eventsListContainer) {
+      const eventLinkRect = selectedEventLink.getBoundingClientRect();
+      const containerRect = eventsListContainer.getBoundingClientRect();
+      
+      // Calculate the scroll position to center the event in the container
+      const scrollTop = eventsListContainer.scrollTop + 
+                       (eventLinkRect.top - containerRect.top) - 
+                       (containerRect.height / 2) + 
+                       (eventLinkRect.height / 2);
+      
+      eventsListContainer.scrollTo({
+        top: Math.max(0, scrollTop),
+        behavior: smooth ? 'smooth' : 'instant'
+      });
     }
   }
 

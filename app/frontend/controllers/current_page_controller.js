@@ -15,6 +15,7 @@ export default class extends Controller {
     );
     if (timelineController) {
       timelineController.selectedEventIdValue = eventId;
+      // Note: scrollToSelectedEvent will be called automatically via selectedEventIdValueChanged
     }
   }
 }

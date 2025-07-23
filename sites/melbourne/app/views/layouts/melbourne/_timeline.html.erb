@@ -22,7 +22,7 @@
     current_month = current_month.prev_month
   end
 
-  selected_event_id = @selected_event&.uuid
+  selected_event_id = @selected_event ? dom_id(@selected_event) : nil
 %>
 
 <div class="col-start-1 left-0 sticky top-[50px] h-[calc(100dvh-50px)] w-full"
