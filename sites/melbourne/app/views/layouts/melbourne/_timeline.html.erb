@@ -35,7 +35,7 @@
     <%# Events %>
     <% all_events.each do |event| %>
       <% is_upcoming = event.date >= today %>
-      <dl class="flex absolute left-1 right-9 z-30 flex-col px-2 py-1 w-auto rounded-md border border-gray-100 transition-opacity cursor-pointer backdrop-blur-xs hover:opacity-80"
+      <dl class="flex absolute left-1 right-9 z-30 flex-col px-2 py-1 w-auto rounded-md border border-gray-100 transition-opacity cursor-pointer backdrop-blur-[2px] hover:opacity-80"
           data-timeline-target="event"
           data-event-id="<%= dom_id(event) %>"
           data-event-date="<%= event.date.iso8601 %>"
@@ -60,19 +60,27 @@
     <%# Months %>
     <% timeline_months.each do |month| %>
       <%
-        year_suffix = if month.year != today.year && month.year < today.year
-          " \\2019 #{month.strftime('%y')}"
-        elsif month.year != today.year
-          " #{month.year}"
+        show_year = month.year != today.year
+        year_display = if show_year && month.year < today.year
+          "#{month.strftime('%Y')}"
+        elsif show_year
+          month.year.to_s
         else
-          ""
+          nil
         end
       %>
-      <div class="relative border-t w-full border-t-gray-200 before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10 before:content-[var(--month-label)]"
+      <div class="relative w-full border-t border-t-gray-200"
            data-timeline-target="month"
            data-year="<%= month.year %>"
            data-month="<%= month.month %>"
-           style="min-height: 60px; --month-label: '<%= month.strftime("%B") %><%= year_suffix %>';"></div>
+           style="min-height: 60px;">
+        <div class="absolute right-0 z-10 px-2 text-right bg-white top-[-8px]">
+          <div class="text-xs leading-3 text-gray-400"><%= month.strftime("%B") %></div>
+          <% if year_display %>
+            <div class="leading-3 text-gray-300" style="font-size: 10px;"><%= year_display %></div>
+          <% end %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
