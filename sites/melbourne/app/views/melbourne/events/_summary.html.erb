@@ -12,7 +12,7 @@
       <div class="w-13 h-13 flex flex-col gap-0 justify-center items-center rounded bg-[#0D37F2] text-white">
         <span class="font-mono"><%= event.date.strftime("%d") %></span>
         <span class="-mt-1 font-mono text-xs">
-           <%= event.date.strftime("%b") %><% if event.date.year != Date.current.year %><br><%= event.date.year %><% end %>
+           <%= event.date.strftime("%b") %><% if event.date.year != Date.current.year %><% end %>
          </span>
       </div>
       <div class="flex flex-col">
