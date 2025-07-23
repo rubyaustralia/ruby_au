@@ -1,27 +1,78 @@
-<div class="col-start-1 left-0 sticky top-[50px] h-[calc(100dvh-50px)] w-full" style="overscroll-behavior: contain; scrollbar-width: none;">
+<%
+  # Calculate timeline data
+  all_events = (@upcoming_events || []) + (@past_events || [])
+  today = Date.current
+
+  # Generate months from earliest event to limited future
+  earliest_date = all_events.min_by(&:date)&.date || today
+  future_events = all_events.select { |event| event.date > today }
+  if future_events.any?
+    latest_future_event = future_events.max_by(&:date).date
+    latest_date = latest_future_event + 1.month
+  else
+    latest_date = today + 1.month
+  end
+
+  timeline_months = []
+  current_month = Date.new(latest_date.year, latest_date.month, 1)
+  end_month = Date.new(earliest_date.year, earliest_date.month, 1)
+
+  while current_month >= end_month
+    timeline_months << current_month
+    current_month = current_month.prev_month
+  end
+
+  selected_event_id = @selected_event&.uuid
+%>
+
+<div class="col-start-1 left-0 sticky top-[50px] h-[calc(100dvh-50px)] w-full"
+     style="overscroll-behavior: contain; scrollbar-width: none;"
+     data-controller="timeline"
+     data-timeline-today-date-value="<%= today.iso8601 %>"
+     data-timeline-selected-event-id-value="<%= selected_event_id %>">
   <div class="flex overflow-y-auto absolute top-0 left-0 flex-col gap-2 py-6 w-full h-full">
+
     <%# Events %>
-    <dl class="absolute z-30 top-[84px] flex flex-col bg-[#0D37F2] border border-white shadow rounded-md py-1 px-2 w-auto left-1 right-9">
-      <dt class="text-xs text-white truncate">Communicating intent in code</dt>
-      <dd class="text-[10px] text-[#B8C5FF]"><time datetime="2026-08-26">26th Aug (19 days)</time></dd>
-    </dl>
-    <dl class="flex absolute top-[150px] z-30 flex-col bg-gray-200/90 rounded py-px px-2 w-auto left-1 right-9">
-      <dt class="text-xs text-gray-500 truncate">Rails at Scale</dt>
-    </dl>
+    <% all_events.each do |event| %>
+      <% is_upcoming = event.date >= today %>
+      <dl class="flex absolute left-1 right-9 z-30 flex-col px-2 py-1 w-auto rounded-md border border-transparent transition-opacity cursor-pointer hover:opacity-80"
+          data-timeline-target="event"
+          data-event-id="<%= dom_id(event) %>"
+          data-event-date="<%= event.date.iso8601 %>"
+          data-action="click->timeline#selectEvent">
+        <dt class="text-xs truncate event-title"><%= event.name %></dt>
+        <dd class="text-[10px] event-date">
+          <time datetime="<%= event.date.iso8601 %>">
+            <%= event.date.strftime("%d") %><%= event.date.strftime("%d").to_i.ordinalize.last(2) %> <%= event.date.strftime("%b") %>
+            <% if event.date.year != today.year %> <%= event.date.year %><% end %>
+            <% if is_upcoming && event.date > today %>
+              (<%= distance_of_time_in_words(today, event.date) %>)
+            <% end %>
+          </time>
+        </dd>
+      </dl>
+    <% end %>
+
     <%# Today Marker %>
-    <div class="absolute top-[142px] flex items-center z-20 border-t w-full border-t-red-500 before:content-['Today'] before:text-white before:text-[10px] before:font-semibold before:absolute before:top-[-9px] before:right-0 before:px-1 before:bg-red-500 before:rounded-l-xs before:z-10"></div>
+    <div class="absolute flex items-center z-20 border-t w-full border-t-red-500 before:content-['Today'] before:text-white before:text-[10px] before:font-semibold before:absolute before:top-[-9px] before:right-0 before:px-1 before:bg-red-500 before:rounded-l-xs before:z-10"
+         data-timeline-target="today"></div>
+
     <%# Months %>
-    <div class="h-12 relative border-t w-full border-t-gray-200 before:content-['September'] before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10"></div>
-    <div class="h-12 relative border-t w-full border-t-gray-200 before:content-['August'] before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10"></div>
-    <div class="h-12 relative border-t w-full border-t-gray-200 before:content-['July'] before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10"></div>
-    <div class="h-12 relative border-t w-full border-t-gray-200 before:content-['June'] before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10"></div>
-    <div class="h-12 relative border-t w-full border-t-gray-200 before:content-['March'] before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10"></div>
-    <div class="h-12 relative border-t w-full border-t-gray-200 before:content-['May'] before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10"></div>
-    <div class="h-12 relative border-t w-full border-t-gray-200 before:content-['February'] before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10"></div>
-    <div class="h-12 relative border-t w-full border-t-gray-200 before:content-['January'] before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10"></div>
-    <div class="h-12 relative border-t w-full border-t-gray-200 before:content-['December_24'] before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10"></div>
-    <div class="h-12 relative border-t w-full border-t-gray-200 before:content-['November_24'] before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10"></div>
-    <div class="h-12 relative border-t w-full border-t-gray-200 before:content-['October_24'] before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10"></div>
-    <div class="h-12 relative border-t w-full border-t-gray-200 before:content-['September_24'] before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10"></div>
+    <% timeline_months.each do |month| %>
+      <%
+        year_suffix = if month.year != today.year && month.year < today.year
+          " \\2019 #{month.strftime('%y')}"
+        elsif month.year != today.year
+          " #{month.year}"
+        else
+          ""
+        end
+      %>
+      <div class="relative border-t w-full border-t-gray-200 before:text-gray-400 before:text-xs before:absolute before:top-[-10px] before:right-0 before:px-2 before:bg-white before:z-10 before:content-[var(--month-label)]"
+           data-timeline-target="month"
+           data-year="<%= month.year %>"
+           data-month="<%= month.month %>"
+           style="min-height: 60px; --month-label: '<%= month.strftime("%B") %><%= year_suffix %>';"></div>
+    <% end %>
   </div>
 </div>

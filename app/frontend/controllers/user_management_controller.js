@@ -75,7 +75,7 @@ export default class extends Controller {
     }
   }
 
-  filterChanged(event) {
+  filterChanged() {
     this.performSearch()
   }
 

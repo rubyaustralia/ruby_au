@@ -19,7 +19,9 @@
 
     <div class="flex flex-row gap-4 justify-between items-center w-full">
       <p class="font-medium truncate whitespace-nowrap" data-title><%= event.name %></p>
-      <p class="text-xs whitespace-nowrap"><%= event.date.strftime("%d %B") %></p>
+      <p class="text-xs whitespace-nowrap">
+        <%= event.date.strftime("%d %B") %><% if event.date.year != Date.current.year %> <%= event.date.year %><% end %>
+      </p>
     </div>
     <div class="flex overflow-hidden justify-center items-center h-fit" data-ascii-image>
       <svg xmlns="http://www.w3.org/2000/svg" width="660" height="430" viewBox="0 0 660 430" class="h-fit">
