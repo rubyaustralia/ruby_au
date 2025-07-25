@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  constraints subdomain: "melbourne" do
+    mount(Melbourne::Engine, at: "/")
+  end
+
   devise_for :users, controllers: {
     registrations: 'registrations',
     passwords: 'devise/passwords'

@@ -103,4 +103,9 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   config.solid_queue.logger = ActiveSupport::Logger.new($stdout)
+
+  # TLD = 0 means Rails will assume no TLD
+  # in the url localhost:3000: domain: "localhost",tld: none
+  # in the url melbourne.localhost:3000: subdomain: "melbourne", domain: "localhost",tld: none
+  config.action_dispatch.tld_length = 0
 end

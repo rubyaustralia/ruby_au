@@ -91,4 +91,9 @@ Rails.application.configure do
 
   # ensure Rails is correctly serving static files in production
   config.public_file_server.enabled = true
+
+  # TLD = 2 means Rails will assume .org.au as the TLD.
+  # in the url ruby.org.au: domain: "ruby",tld: ["org", "au"]
+  # in the url melbourne.ruby.org.au: subdomain: "melbourne", domain: "ruby",tld: ["org", "au"]
+  config.action_dispatch.tld_length = 2
 end
