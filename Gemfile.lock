@@ -260,6 +260,8 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.3)
+    meta-tags (2.22.1)
+      actionpack (>= 6.0.0, < 8.1)
     method_source (1.1.0)
     mini_magick (5.3.0)
       logger
@@ -577,6 +579,7 @@ DEPENDENCIES
   letter_opener
   letter_opener_web (~> 3.0)
   listen
+  meta-tags (~> 2.22)
   pg
   premailer-rails
   puma

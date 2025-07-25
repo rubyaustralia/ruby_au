@@ -1,0 +1,10 @@
+<%= tag.section id: dom_id(event) do %>
+  <p><%= event.date %></p>
+  <p><%= event.summary %></p>
+  <%= link_to "see event", event_path(event.slug) %>
+  <p>
+    <%= link_to event.venue.google_maps_url, class: "underline" do %>
+      <%= event.venue.name %>
+    <% end %>
+  </p>
+<% end %>

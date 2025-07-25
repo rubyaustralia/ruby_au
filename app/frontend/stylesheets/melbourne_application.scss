@@ -1,0 +1,20 @@
+@use "tailwindcss";
+
+:root {
+  color-scheme: light dark;
+  /*--surface: light-dark(rgb(243, 241, 253), rgb(27, 26, 34));*/
+  /*--text: light-dark(rgb(27, 26, 34), rgb(243, 241, 253));*/
+
+  --surface: light-dark(var(--color-stone-50), var(--color-stone-900));
+  --text: light-dark(var(--color-stone-900), var(--color-stone-50));
+}
+
+:where(html) {
+  background: var(--surface);
+  color: var(--text);
+}
+
+@theme {
+  --font-lekton: "Lekton", monospace;
+}
+
