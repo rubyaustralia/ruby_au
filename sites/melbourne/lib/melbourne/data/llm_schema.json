@@ -1,0 +1,121 @@
+{
+  "name": "event_schema",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "The date of the event in YYYY-MM-DD format",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+      },
+      "summary": {
+        "type": "string",
+        "description": "A short summary of the speakers and the topics."
+      },
+      "talks": {
+        "type": "array",
+        "description": "List of talks to be delivered at the event.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "Title of the talk."
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of the talk."
+            },
+            "speakers": {
+              "type": "array",
+              "description": "List of speakers for the talk.",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the speaker."
+                  },
+                  "contact_details": {
+                    "type": "object",
+                    "properties": {
+                      "github_username": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "GitHub username of the speaker."
+                      },
+                      "x_handle": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "X social media handle of the speaker."
+                      },
+                      "linkedin_handle": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "LinkedIn handle of the speaker."
+                      },
+                      "bluesky_handle": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Bluesky handle of the speaker."
+                      },
+                      "mastodon_handle": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Mastodon handle of the speaker."
+                      },
+                      "website": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Personal website of the speaker."
+                      }
+                    },
+                    "required": [
+                      "github_username",
+                      "x_handle",
+                      "linkedin_handle",
+                      "bluesky_handle",
+                      "mastodon_handle",
+                      "website"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "name",
+                  "contact_details"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "title",
+            "description",
+            "speakers"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "date",
+      "summary",
+      "talks"
+    ],
+    "additionalProperties": false
+  }
+}

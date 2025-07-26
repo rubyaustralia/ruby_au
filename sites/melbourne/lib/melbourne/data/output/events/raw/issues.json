@@ -1,0 +1,1240 @@
+{
+  "Ruby Melbourne June 2025": [
+    {
+      "id": 3171733200,
+      "number": 271,
+      "title": "Talk Proposal: The Unspoken Contract: Communicating Intent Through Code",
+      "description": "### Description(this will appear on youtube):\nCode doesn’t just tell computers what to do—it tells future developers what you meant. In this talk, we’ll explore how a simple change in a Ruby on Rails app—replacing `image_tag` with `vite_image_tag`—unintentionally broke a core abstraction, causing a baffling `JSON::NestingError`.\n\nThis bug wasn’t just about tools like Vite or Active Storage—it was a symptom of a deeper problem: intent wasn’t communicated clearly in the code.\n\nWe’ll explore the idea of unspoken contracts in software—those invisible lines where systems, assumptions, and mental models meet. Through real-world examples, you’ll learn how to:\n\n- Recognise where intent gets lost in translation\n- Communicate purpose through naming, structure, and boundaries\n- Leave better breadcrumbs for your teammates and future self\n\nWhether you're refactoring, reviewing, or just trying to be less confusing, this talk will help you write code that speaks more clearly—even when you're not there to explain it.\n\n### Estimated Talk Time:\n30 minutes\n\n### Prefered Month to Present:\nJune 2025\n\n### Preferred Social media handles:\nGitHub: HashNotAdam\nLinkedIn: HashNotAdam\n\n### Mugshot (will be use in the slides):\nSame as from our host slides",
+      "state": "open",
+      "created_at": "2025-06-24T12:03:32Z",
+      "updated_at": "2025-06-25T06:43:17Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/271",
+      "comments": []
+    }
+  ],
+  "Ruby Melbourne April 2025": [
+    {
+      "id": 2990963355,
+      "number": 265,
+      "title": "Talk Proposal: Make vs Justfile vs Mise",
+      "description": "Description(this will appear on youtube):\n\n## Make vs Justfile vs Mise - _choose your task runner_\n\nOverview the some task runners like **Make**, **Justfile** and **Mise** - may even take a look at [**xc**](https://xcfile.dev/) then delve into the hard questions:\n\n- why a task runner is important?\n- which ones to use and when?\n- some gotchas?\n- some common playbooks!\n- `DIAC` - Developer Infrastructure as Code - how far can we take this?\n\npresentation will be documented here: https://github.com/failure-driven/make-just-dev-runners\n\nEstimated Talk Time: `18 min`\n\nPreferred Month to Present: **April 2025**\n\nPreferred Social media handles:\n- https://github.com/saramic\n- https://x.com/saramic\n- https://www.linkedin.com/in/michael-milewski/\n- https://sessionize.com/michael-milewski/\n\nMugshot (will be use in the slides): \n\n<img src=\"https://failure-driven.com/images/michael_milewski_profile_20190421_large.jpg\" width=\"320\">\n",
+      "state": "closed",
+      "created_at": "2025-04-13T03:40:07Z",
+      "updated_at": "2025-05-20T02:41:13Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/265",
+      "comments": []
+    },
+    {
+      "id": 2915946094,
+      "number": 249,
+      "title": "Talk Proposal: rails 8 new",
+      "description": "Description(this will appear on youtube):\nI started a new app on January 1st using Rails 8.  It's running in production in a farily Rails 8 way with a few changes which I can explain.  Using Kamal, Action Cable, Action Text, Active Job, etc.  I'm probably doing a few things wrong too so people can correct me (Yay!  Interactive talk via Cunningham's law!)\n\nMainly I'm just really happy with Rails 8 and want to gush about it ❤ \n\nEstimated Talk Time: Can be adjusted.  Perhaps 15-30 mins.\n\nPrefered Month to Present: April\n\nPreferred Social media handles:\nhttps://www.linkedin.com/in/johnsherwooddeveloper/\nhttps://bsky.app/profile/ponny.dev\nhttps://x.com/ponny\n\nMugshot (will be use in the slides):\n![Image](https://github.com/user-attachments/assets/12913521-9b09-4f5f-82ca-b131b35a7998)",
+      "state": "closed",
+      "created_at": "2025-03-13T05:53:57Z",
+      "updated_at": "2025-05-20T02:41:31Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/249",
+      "comments": [
+        {
+          "id": 2764849583,
+          "user": "simran-sawhney",
+          "body": "Hey @ponny I have added this as 20 minutes talk for 24th April",
+          "created_at": "2025-03-31T00:44:22Z",
+          "updated_at": "2025-03-31T00:44:22Z"
+        }
+      ]
+    }
+  ],
+  "Ruby Melbourne May 2025": [
+    {
+      "id": 2950841633,
+      "number": 264,
+      "title": "Requested talk: How on earth do you manage forms with Turbo?",
+      "description": "Turbo is an amazing tool that usually stays out of the way. Forms, however, come with some weird and wonderful quirks that can drive you insane.\n\nI'd love to hear a talk that covers things like:\n\n- Handling errors\n  - Status codes\n  - Double rendering\n- Redirecting after a form submission (esp when used inside a Turbo Frame)\n- Disabling Turbo on a form\n- Leveraging Turbo Streams\n- Inline validations and dynamic error messaging\n- Testing Turbo interactions",
+      "state": "closed",
+      "created_at": "2025-03-26T21:41:11Z",
+      "updated_at": "2025-06-15T23:49:22Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/264",
+      "comments": [
+        {
+          "id": 2837543140,
+          "user": "MattHood",
+          "body": "This is close to my heart, and I'm keen to do another RORO talk, so I'd love to pick this one up.\n\nIf anyone else is keen to get into this topic, feel free to get in touch - would be lovely to have a collaborator :)",
+          "created_at": "2025-04-29T05:55:32Z",
+          "updated_at": "2025-04-29T05:55:32Z"
+        },
+        {
+          "id": 2837698258,
+          "user": "HashNotAdam",
+          "body": "This would make me very happy, @MattHood 🫶",
+          "created_at": "2025-04-29T07:00:20Z",
+          "updated_at": "2025-04-29T07:00:20Z"
+        },
+        {
+          "id": 2974766765,
+          "user": "simran-sawhney",
+          "body": "Thanks @MattHood for the great showcase!",
+          "created_at": "2025-06-15T23:49:22Z",
+          "updated_at": "2025-06-15T23:49:22Z"
+        }
+      ]
+    },
+    {
+      "id": 2937083767,
+      "number": 261,
+      "title": "Talk Proposal: SQLite-ruby - a whole SQL database in a gem",
+      "description": "SQLite - the most deployed database that most people have never heard of - as a gem\n\nEstimated Talk Time: 5-20 minutes\n\nPrefered Month to Present: -\n\nPreferred Social media handles: @apocraphilia@hachyderm.io\n\n\n",
+      "state": "closed",
+      "created_at": "2025-03-21T02:27:14Z",
+      "updated_at": "2025-06-15T23:49:04Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/261",
+      "comments": [
+        {
+          "id": 2743086231,
+          "user": "HashNotAdam",
+          "body": "Can't believe I didn't think to add this as a requested talk. SQLite is so hot right now! Brilliant topic",
+          "created_at": "2025-03-21T11:26:12Z",
+          "updated_at": "2025-03-21T11:26:12Z"
+        },
+        {
+          "id": 2744948315,
+          "user": "simonhildebrandt",
+          "body": "When do you think we should do it?",
+          "created_at": "2025-03-22T03:33:11Z",
+          "updated_at": "2025-03-22T03:33:11Z"
+        },
+        {
+          "id": 2767587833,
+          "user": "simran-sawhney",
+          "body": "Hey @simonhildebrandt we can do this May if you like ? ",
+          "created_at": "2025-03-31T22:43:57Z",
+          "updated_at": "2025-03-31T22:43:57Z"
+        },
+        {
+          "id": 2767635531,
+          "user": "simonhildebrandt",
+          "body": "Sure - I'm in no rush if we wanna give other people a go, though. 😁 ",
+          "created_at": "2025-03-31T23:20:58Z",
+          "updated_at": "2025-03-31T23:20:58Z"
+        },
+        {
+          "id": 2887092647,
+          "user": "dkam",
+          "body": "I’m happy to do this for May, if Simon’s ok with that? I’d be aiming for a regular length talk rather than a lightning talk though. ",
+          "created_at": "2025-05-16T15:46:07Z",
+          "updated_at": "2025-05-16T15:46:07Z"
+        },
+        {
+          "id": 2887945296,
+          "user": "simonhildebrandt",
+          "body": "That'd be awesome, @dkam !\n",
+          "created_at": "2025-05-17T01:41:45Z",
+          "updated_at": "2025-05-17T01:41:45Z"
+        },
+        {
+          "id": 2892741817,
+          "user": "simran-sawhney",
+          "body": "Hey @dkam, are you planning to go for this one this month? \nSince we don’t have much lined up, I guess we could go for a proper talk instead lightning talk!\n\n",
+          "created_at": "2025-05-20T02:41:04Z",
+          "updated_at": "2025-05-20T02:41:04Z"
+        },
+        {
+          "id": 2974766570,
+          "user": "simran-sawhney",
+          "body": "Thanks @dkam for the amazing talk :) ",
+          "created_at": "2025-06-15T23:49:04Z",
+          "updated_at": "2025-06-15T23:49:04Z"
+        }
+      ]
+    }
+  ],
+  "March 2025": [
+    {
+      "id": 2944675321,
+      "number": 263,
+      "title": "Talk Proposal: Panel/Discussion/Riffing Session on Objects to encapsulate business logic",
+      "description": "Description(this will appear on youtube):\nA discussion about where to put business logic that may not belong in a traditional Rails Model. \n\nEstimated Talk Time:\n50 min\n\nPrefered Month to Present:\nMarch 2025\n\nPreferred Social media handles:\n@pinzonjulian @HashNotAdam \n",
+      "state": "closed",
+      "created_at": "2025-03-24T23:08:27Z",
+      "updated_at": "2025-03-31T00:41:04Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/263",
+      "comments": [
+        {
+          "id": 2764846933,
+          "user": "simran-sawhney",
+          "body": "Thanks @pinzonjulian and @HashNotAdam - it was so cool and great idea to engage the audience :) ",
+          "created_at": "2025-03-31T00:41:03Z",
+          "updated_at": "2025-03-31T00:41:03Z"
+        }
+      ]
+    },
+    {
+      "id": 2941730105,
+      "number": 262,
+      "title": "Talk Proposal: Rack Fundamentals revisited",
+      "description": "Description(this will appear on youtube): Learn the machinery that underpins our favourite frameworks, and why you might not need a whole Rails stack for an API that's basically a single method.\n\nEstimated Talk Time: 20 minutes\n\nPreferred Month to Present: March 2025\n\nPreferred Social media handles: @apocraphilia@hachyderm.io\n\nMugshot (will be use in the slides):\n\n![Image](https://github.com/user-attachments/assets/cc2b687a-6983-4093-8090-50112f772c87)\n",
+      "state": "closed",
+      "created_at": "2025-03-24T01:29:26Z",
+      "updated_at": "2025-03-31T00:40:12Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/262",
+      "comments": [
+        {
+          "id": 2764846205,
+          "user": "simran-sawhney",
+          "body": "Thanks @simonhildebrandt - it was really insightful",
+          "created_at": "2025-03-31T00:40:11Z",
+          "updated_at": "2025-03-31T00:40:11Z"
+        }
+      ]
+    }
+  ],
+  "February 2025": [
+    {
+      "id": 2855880198,
+      "number": 248,
+      "title": "Talk Proposal: Semantic Search and RAG with Ruby",
+      "description": "Description: From Embeddings to RAG: Building a Smart Search System in Ruby\n\nEstimated Talk Time: 20 minutes\n\nPrefered Month to Present: Feb\n\nPreferred Social media handles: @dkam on [GitHub](https://github.com/dkam/) and [Ruby Social](https://ruby.social/@dkam)\n\nMugshot (will be use in the slides):\n\n![Image](https://github.com/user-attachments/assets/6efe8b1d-3019-4c0d-b473-38aab5f50165)\n\n\n",
+      "state": "closed",
+      "created_at": "2025-02-16T04:49:47Z",
+      "updated_at": "2025-03-24T22:24:02Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/248",
+      "comments": [
+        {
+          "id": 2661271635,
+          "user": "HashNotAdam",
+          "body": "Thanks, @dkam, I'm looking forward to it",
+          "created_at": "2025-02-16T06:16:40Z",
+          "updated_at": "2025-02-16T06:16:40Z"
+        }
+      ]
+    }
+  ],
+  "January 2025": [
+    {
+      "id": 2808179722,
+      "number": 247,
+      "title": "Talk Proposal: The Inner Workings of Puma",
+      "description": "Description(this will appear on youtube): Most Rubyists use the Puma web server to handle requests, especially in their Rails applications. But how many of us truly understand its design, inner workings, and the powerful features it offers? In this session, we’ll dive into Puma’s internals, exploring its architecture and configuration options.\n\nEstimated Talk Time: 30-40 minutes\n\nPrefered Month to Present: January\n\nPreferred Social media handles:\n- https://bsky.app/profile/joshuay03.bsky.social\n- https://ruby.social/@joshuay03\n\nMugshot (will be use in the slides):\n![Image](https://github.com/user-attachments/assets/cad2ea3c-23f1-4c93-9222-b3e42a952b32)",
+      "state": "closed",
+      "created_at": "2025-01-23T23:53:04Z",
+      "updated_at": "2025-03-24T22:24:01Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/247",
+      "comments": []
+    },
+    {
+      "id": 2808082071,
+      "number": 246,
+      "title": "Talk Proposal: Ruby salad. What's fresh on the market?",
+      "description": "Description(this will appear on youtube): A review of some of new features in ruby 3.4 and rails 8. Including rails authentication generators and rodauth comparison.\n\nEstimated Talk Time: 40min\n\nPrefered Month to Present: January\n\nPreferred Social media handles: antulik on ruby slack\n\nMugshot (will be use in the slides): \n\n![Image](https://github.com/user-attachments/assets/ed08caaa-b142-4687-a3f5-43c1ca040bf6)\n",
+      "state": "closed",
+      "created_at": "2025-01-23T22:39:26Z",
+      "updated_at": "2025-03-24T22:24:01Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/246",
+      "comments": []
+    }
+  ],
+  "October 2024": [
+    {
+      "id": 2550597828,
+      "number": 245,
+      "title": "Talk Proposal:  'Cursor v Github Copilot: building a better data schema tool?'",
+      "description": "Description:\r\nAn evaluation of [Cursor](https://www.cursor.com/), how to configure it, which AI model to use, and a look at the pros and cons of [Cursor](https://www.cursor.com/) compared to GitHub Copilot.\r\n\r\nEstimated Talk Time:\r\n10–15 minutes\r\n\r\nPrefered Month to Present: October\r\n\r\nPreferred Social media handles: @ceels\r\n\r\nMugshot (will be use in the slides): lemme find one real quick\r\n![image](https://github.com/user-attachments/assets/e44e1475-2a29-48a3-ab50-636d63f06f63)\r\n\r\n",
+      "state": "closed",
+      "created_at": "2024-09-26T13:28:47Z",
+      "updated_at": "2024-10-28T00:31:35Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/245",
+      "comments": [
+        {
+          "id": 2381262487,
+          "user": "HashNotAdam",
+          "body": "Thanks, @ceels, I can't wait to watch",
+          "created_at": "2024-09-29T08:32:51Z",
+          "updated_at": "2024-09-29T08:32:51Z"
+        },
+        {
+          "id": 2395729064,
+          "user": "simran-sawhney",
+          "body": "Locking this for October @ceels - see you on 24th :) ",
+          "created_at": "2024-10-07T01:40:44Z",
+          "updated_at": "2024-10-07T01:40:44Z"
+        }
+      ]
+    },
+    {
+      "id": 2455100965,
+      "number": 239,
+      "title": "Talk Proposal: Happy Ruby SAML Development",
+      "description": "**Description (this will appear on YouTube):**\r\n\r\nThis talk is an introduction to how SAML requests and responses can be handled with Ruby, as well as a discussion around how we at [Covidence](https://www.covidence.org) have solved such challenges as:\r\n\r\n* Building SAML support ourselves rather than using third-party services.\r\n* Writing full feature tests to sign in via SSO (no mocking of SAML objects/responses).\r\n* Bridging SAML requests across many domains for staging/PR apps, to ensure a consistent approach across environments.\r\n* Parsing SAML metadata files using Nokogiri for better performance.\r\n\r\n**Estimated Talk Time:**\r\n\r\n20-30 minutes\r\n\r\n**Preferred Month to Present:**\r\n\r\nOctober or November 2024 (I'm away prior to that, sorry!)\r\n\r\n**Preferred Social media handles:**\r\n\r\nhttps://hachyderm.io/@pat\r\n\r\n**Mugshot (will be use in the slides):**\r\n\r\n![](https://media.hachyderm.io/accounts/avatars/109/308/312/683/593/994/original/49c39d379fbc3d37.jpg)\r\n[https://media.hachyderm.io/accounts/avatars/109/308/312/683/593/994/original/49c39d379fbc3d37.jpg](https://media.hachyderm.io/accounts/avatars/109/308/312/683/593/994/original/49c39d379fbc3d37.jpg)",
+      "state": "closed",
+      "created_at": "2024-08-08T07:39:40Z",
+      "updated_at": "2024-10-28T00:32:57Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/239",
+      "comments": [
+        {
+          "id": 2387787849,
+          "user": "simran-sawhney",
+          "body": "Hey @pat do you wanna go for it this month on 24th Oct ?",
+          "created_at": "2024-10-02T07:18:50Z",
+          "updated_at": "2024-10-02T07:18:50Z"
+        },
+        {
+          "id": 2387946314,
+          "user": "pat",
+          "body": "@simran-sawhney yup, let's lock it in 😁",
+          "created_at": "2024-10-02T08:47:58Z",
+          "updated_at": "2024-10-02T08:47:58Z"
+        }
+      ]
+    }
+  ],
+  "November 2024": [
+    {
+      "id": 2549232104,
+      "number": 244,
+      "title": "Talk Proposal: Turbo (Hotwire), Stimulusjs and being happy with front end development again",
+      "description": "Description(this will appear on youtube):\r\n\r\nI've done a lot of front end development work in my career. Think React, AngularJS, Rails UJS and JQuery enhanced pages. At no point can I say that I've enjoyed any of them, I was giving serious consideration to re-branding away from a full stack dev.\r\n\r\nEnter Hotwire and I'm actually enjoying it.\r\n\r\nThis is a peak into what life is like building and maintaining a modern Rails webapp.\r\n\r\nEstimated Talk Time:  15 - 20 mins?  I'll try and keep it short\r\n\r\nPreferred Month to Present: November 2024. I may have something for the October 24th meetup but I'll also only just be back from holidays...\r\n\r\nPreferred Social media handles: Twitter @gardengnome_au (in case anyone is still there...)\r\n\r\nMugshot (will be use in the slides):\r\n![image](https://github.com/user-attachments/assets/0d2f7fe2-829f-4781-93b6-2cf0ac9017e4)\r\n\r\n",
+      "state": "closed",
+      "created_at": "2024-09-26T00:36:39Z",
+      "updated_at": "2025-01-14T22:32:11Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/244",
+      "comments": [
+        {
+          "id": 2440259826,
+          "user": "simran-sawhney",
+          "body": "Hey @jeropaul - do you wanna do this on 28th November? ",
+          "created_at": "2024-10-28T00:32:29Z",
+          "updated_at": "2024-10-28T00:32:29Z"
+        },
+        {
+          "id": 2441328461,
+          "user": "friendlyantz",
+          "body": "keen! also interested in your take on HTMX",
+          "created_at": "2024-10-28T11:30:53Z",
+          "updated_at": "2024-10-28T11:31:09Z"
+        },
+        {
+          "id": 2443002633,
+          "user": "jeropaul",
+          "body": "@simran-sawhney yes I'll do this on the 28th of November",
+          "created_at": "2024-10-29T01:54:40Z",
+          "updated_at": "2024-10-29T01:54:40Z"
+        },
+        {
+          "id": 2492535482,
+          "user": "simran-sawhney",
+          "body": "hey @jeropaul - I was trying to find you over ruby Slack, couldnt come across your profile.\r\nSee you on 28th at BOYD library.",
+          "created_at": "2024-11-21T23:06:40Z",
+          "updated_at": "2024-11-21T23:06:40Z"
+        },
+        {
+          "id": 2492984153,
+          "user": "jeropaul",
+          "body": "Absolutely talk is ready! See you then.  (I'll also join slack)\r\n\r\nOn Fri, Nov 22, 2024, 10:07 Simran Sawhney ***@***.***> wrote:\r\n\r\n> hey @jeropaul <https://github.com/jeropaul> - I was trying to find you\r\n> over ruby Slack, couldnt come across your profile.\r\n> See you on 28th at BOYD library.\r\n>\r\n> —\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/rubyaustralia/melbourne-ruby/issues/244#issuecomment-2492535482>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/AAD7GGPCO5JAW7AXQYHFPVL2BZRRLAVCNFSM6AAAAABO3YX2QWVHI2DSMVQWIX3LMV43OSLTON2WKQ3PNVWWK3TUHMZDIOJSGUZTKNBYGI>\r\n> .\r\n> You are receiving this because you were mentioned.Message ID:\r\n> ***@***.***>\r\n>\r\n",
+          "created_at": "2024-11-22T06:46:54Z",
+          "updated_at": "2024-11-22T06:46:54Z"
+        }
+      ]
+    },
+    {
+      "id": 2537782432,
+      "number": 242,
+      "title": "Requested Talk: How do `CurrentAttributes` work?",
+      "description": "**Description:**\r\nRails includes a class called `ActiveSupport::CurrentAttributes` that can be used to store values that relate only to the current request or job.\r\n\r\nFor example:\r\n```ruby\r\nclass Current < ActiveSupport::CurrentAttributes\r\n  attribute :user\r\nend\r\n\r\nCurrent.user = User.first\r\n```\r\n\r\nHow does Rails store these values?\r\nHow can it ensure these values can only be read in the current request?\r\nWhat happens when you change the isolation level?\r\nFrom a practical standpoint, what does the isolation level mean?\r\n\r\n**Estimated Talk Time:**\r\n10–15 minutes",
+      "state": "closed",
+      "created_at": "2024-09-20T03:46:00Z",
+      "updated_at": "2025-01-14T23:46:18Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/242",
+      "comments": [
+        {
+          "id": 2376616966,
+          "user": "darkfishy",
+          "body": "@HashNotAdam and @simran-sawhney\nI could talk about this in November, with proper presentation slides then 😅",
+          "created_at": "2024-09-26T10:55:57Z",
+          "updated_at": "2024-09-26T10:55:57Z"
+        }
+      ]
+    }
+  ],
+  "September 2024": [
+    {
+      "id": 2537778854,
+      "number": 241,
+      "title": "Requested Talk: How does `reload!` work?",
+      "description": "**Description:**\r\nWhen using the Rails console, you can call `reload!` to reset the environment.\r\nHow does this work?\r\nHow does it know which classes to reload?\r\nHow does a class get reloaded?\r\nWhat are the implications for intializers?\r\n\r\n**Estimated Talk Time:**\r\n10–15 minutes",
+      "state": "closed",
+      "created_at": "2024-09-20T03:41:46Z",
+      "updated_at": "2024-10-02T07:20:46Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/241",
+      "comments": [
+        {
+          "id": 2367337228,
+          "user": "darkfishy",
+          "body": "@HashNotAdam and @simran-sawhney I can present on this topic at the next meeting.",
+          "created_at": "2024-09-23T06:36:18Z",
+          "updated_at": "2024-09-23T06:36:18Z"
+        },
+        {
+          "id": 2372747968,
+          "user": "HashNotAdam",
+          "body": "Thanks so much, @darkfishy, that's a big help. Would you might filling out the following?\r\n\r\nDescription(this will appear on youtube):\r\n\r\nPreferred Social media handles:\r\n\r\nMugshot (will be use in the slides):\r\n",
+          "created_at": "2024-09-25T02:14:44Z",
+          "updated_at": "2024-09-25T02:14:44Z"
+        },
+        {
+          "id": 2373063637,
+          "user": "darkfishy",
+          "body": "Hey @HashNotAdam \r\n\r\n> Description(this will appear on youtube):\r\n\r\nSame as above in https://github.com/rubyaustralia/melbourne-ruby/issues/241#issue-2537778854\r\n\r\n> Preferred Social media handles:\r\n\r\nhttps://x.com/fusionfish\r\n\r\n> Mugshot (will be use in the slides):\r\n\r\nSupplied to @simran-sawhney \r\n",
+          "created_at": "2024-09-25T05:35:29Z",
+          "updated_at": "2024-09-25T05:35:29Z"
+        },
+        {
+          "id": 2387790827,
+          "user": "simran-sawhney",
+          "body": "Thanks @darkfishy for putting it all together :) ",
+          "created_at": "2024-10-02T07:20:46Z",
+          "updated_at": "2024-10-02T07:20:46Z"
+        }
+      ]
+    },
+    {
+      "id": 2520782749,
+      "number": 240,
+      "title": "Talk Proposal: Oaken - A fresh take on seeds and fixtures",
+      "description": "Description(this will appear on youtube): Exploring Oaken - A fresh take on seeds and fixtures\n\nEstimated Talk Time: 30min\n\nPrefered Month to Present: September \n\nPreferred Social media handles: pinzonjulian everywhere\n\nMugshot (will be use in the slides): TBD",
+      "state": "closed",
+      "created_at": "2024-09-11T21:10:00Z",
+      "updated_at": "2024-10-02T07:21:06Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/240",
+      "comments": [
+        {
+          "id": 2344711152,
+          "user": "pinzonjulian",
+          "body": "This addresses two past issues I posed a while ago for talks I wanted to see!\n#159\n#168",
+          "created_at": "2024-09-11T21:12:07Z",
+          "updated_at": "2024-09-11T21:13:18Z"
+        },
+        {
+          "id": 2345009702,
+          "user": "HashNotAdam",
+          "body": "You have my attention with that title 😃 ",
+          "created_at": "2024-09-12T00:14:40Z",
+          "updated_at": "2024-09-12T00:14:40Z"
+        },
+        {
+          "id": 2373647707,
+          "user": "HashNotAdam",
+          "body": "@pinzonjulian I've used the photo from GitHub, but you're welcome to supply another",
+          "created_at": "2024-09-25T10:09:57Z",
+          "updated_at": "2024-09-25T10:09:57Z"
+        },
+        {
+          "id": 2387791305,
+          "user": "simran-sawhney",
+          "body": "Thanks @pinzonjulian, it was a great talk!",
+          "created_at": "2024-10-02T07:21:05Z",
+          "updated_at": "2024-10-02T07:21:05Z"
+        }
+      ]
+    }
+  ],
+  "August 2024": [
+    {
+      "id": 2446778748,
+      "number": 238,
+      "title": "Talk Proposal: My Career Change - Nothing is what it seems",
+      "description": "Description(this will appear on youtube):\r\nMy career change story: why am I here? How did I get here? This is the talk I gave at the Rails Girls Workshop to hopefully inspire others to make the change, or at the very least provide some entertaining and relatable anecdotes.\r\n\r\nEstimated Talk Time: 10 mins\r\n\r\nPreferred Month to Present: August 2024\r\n\r\nPreferred Social media handles: Twitter @cinnamonbabies, https://www.linkedin.com/in/helen-stonehouse/\r\n\r\nMugshot (will be use in the slides): \r\n![bratbg](https://github.com/user-attachments/assets/5edba73e-f5cc-463d-992c-144359eaddbb)\r\n\r\n",
+      "state": "closed",
+      "created_at": "2024-08-04T03:50:35Z",
+      "updated_at": "2024-09-05T03:14:31Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/238",
+      "comments": []
+    },
+    {
+      "id": 2437892166,
+      "number": 237,
+      "title": "Talk Proposal: Rails Engines in 20 minutes",
+      "description": "Description(this will appear on youtube):\r\nIn this talk, we'll walk through building a basic Rails plugin and talk about the different ways of extending Rails through Engines.\r\n\r\nEstimated Talk Time: \r\n20mins\r\n\r\nPrefered Month to Present: \r\nAugust\r\n\r\nPreferred Social media handles: \r\n@excid3\r\n\r\nMugshot (will be use in the slides):\r\nhttps://rubyonrails.org/assets/world/2023/images/speakers/c-oliver.jpg",
+      "state": "closed",
+      "created_at": "2024-07-30T13:48:54Z",
+      "updated_at": "2024-09-05T03:14:48Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/237",
+      "comments": [
+        {
+          "id": 2259569119,
+          "user": "simran-sawhney",
+          "body": "Thanks @excid3 - community would be so proud and excited to hear it from you !!!🔥",
+          "created_at": "2024-07-31T03:29:15Z",
+          "updated_at": "2024-07-31T03:29:15Z"
+        }
+      ]
+    }
+  ],
+  "July 2024": [
+    {
+      "id": 2363828597,
+      "number": 235,
+      "title": "Talk Proposal: Pinkest Pink",
+      "description": "Description:\r\nDid you know the web got new colors? The pink is pinker than it used to be. The colors are so bright and we can use them on web pages. I'm not an expert in this space but I am excited to share what I've learned about the topic, like how our eyes work and how we try to recreate reality on a screen.\r\n\r\nEstimated Talk Time: 10 or 20min, can probably scope it to a lightning talk if it's better for timing\r\n\r\nPrefered Month to Present: No preference, can do with short notice if needed\r\n\r\nPreferred Social media handles: `@danlaush`, https://danlaush.biz/\r\n\r\nMugshot (will be use in the slides):\r\nhttps://github.com/rubyaustralia/melbourne-ruby/assets/1204500/da13da31-84bb-4e52-baa5-372a7f304195\r\n\r\n",
+      "state": "closed",
+      "created_at": "2024-06-20T08:18:46Z",
+      "updated_at": "2024-07-26T06:40:46Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/235",
+      "comments": [
+        {
+          "id": 2201970934,
+          "user": "simran-sawhney",
+          "body": "hey @danlaush - do you wanna do this for this month at 25th July?",
+          "created_at": "2024-07-02T05:32:45Z",
+          "updated_at": "2024-07-02T05:32:45Z"
+        },
+        {
+          "id": 2208162699,
+          "user": "danlaush",
+          "body": "Hey Simran, sure I'd be happy to. It's pretty solid with a 15min run time, does that work?",
+          "created_at": "2024-07-04T05:47:04Z",
+          "updated_at": "2024-07-04T05:47:04Z"
+        },
+        {
+          "id": 2224213298,
+          "user": "simran-sawhney",
+          "body": "Hey @danlaush yep that will work fine. Let's do it mate on 25th July (Thursday)\r\nHere is the event details. https://www.meetup.com/ruby-on-rails-oceania-melbourne/events/297781282/",
+          "created_at": "2024-07-12T00:35:50Z",
+          "updated_at": "2024-07-12T00:35:50Z"
+        },
+        {
+          "id": 2229761689,
+          "user": "simran-sawhney",
+          "body": "Hey @danlaush - could you please confirm it so I can lock it in for the event?\r\nThanks mate,",
+          "created_at": "2024-07-16T00:50:07Z",
+          "updated_at": "2024-07-16T00:50:07Z"
+        },
+        {
+          "id": 2230088500,
+          "user": "danlaush",
+          "body": "Oh whoops I didn't submit what I wrote earlier! Yes I'm in, thanks for accepting and looking forward to it.",
+          "created_at": "2024-07-16T06:01:24Z",
+          "updated_at": "2024-07-16T06:01:24Z"
+        },
+        {
+          "id": 2249527403,
+          "user": "danlaush",
+          "body": "@simran-sawhney do you need a PDF/document for the talk or will I be able to plug my laptop in?",
+          "created_at": "2024-07-25T06:03:46Z",
+          "updated_at": "2024-07-25T06:03:46Z"
+        },
+        {
+          "id": 2252078156,
+          "user": "simran-sawhney",
+          "body": "Sorry I just saw your comment now, thanks for the amazing talk last night!",
+          "created_at": "2024-07-26T06:40:46Z",
+          "updated_at": "2024-07-26T06:40:46Z"
+        }
+      ]
+    },
+    {
+      "id": 2301498429,
+      "number": 233,
+      "title": "Talk Proposal: Being a Good Male Ally",
+      "description": "Description(this will appear on youtube):\r\nBeing a Good Male Ally\r\n\r\nEstimated Talk Time:\r\n15-20 minutes. \r\nPrefered Month to Present:\r\nMay\r\nPreferred Social media handles:\r\nhttps://nickwolf.com.au",
+      "state": "closed",
+      "created_at": "2024-05-16T22:38:58Z",
+      "updated_at": "2024-07-26T06:40:09Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/233",
+      "comments": [
+        {
+          "id": 2201972054,
+          "user": "simran-sawhney",
+          "body": "hey @quintrino - do you wanna do this on 25th July - Thursday?",
+          "created_at": "2024-07-02T05:33:50Z",
+          "updated_at": "2024-07-02T05:33:50Z"
+        },
+        {
+          "id": 2204704008,
+          "user": "quintrino",
+          "body": "Sounds good to me. ",
+          "created_at": "2024-07-02T23:43:58Z",
+          "updated_at": "2024-07-02T23:43:58Z"
+        },
+        {
+          "id": 2252077469,
+          "user": "simran-sawhney",
+          "body": "Thanks for the amazing talk!",
+          "created_at": "2024-07-26T06:40:09Z",
+          "updated_at": "2024-07-26T06:40:09Z"
+        }
+      ]
+    }
+  ],
+  "June 2024": [
+    {
+      "id": 2271079974,
+      "number": 232,
+      "title": "Talk Proposal: One does not simply... rebuild a product",
+      "description": "Description(this will appear on youtube): \r\n\r\n\"A rebuild is never finished, only started\"\r\n\r\nWe're rebuilding Culture Amp's second largest product - Performance. It's 9 years old, came in as a Series A acquisition 5 years ago, has over 2700 customers with the largest one at 77k users. Against conventional wisdom, we're rebuilding it from the ground up with an aggressive timeline. The underlying model is outdated, slow to iterate on, and not extensible. The monoliths are riddled with tech debt, tightly coupled, patched and band-aided over many times, and won't scale to the $3b global Performance market we're targeting.\r\n\r\nThat wasn't challenging enough already so I'm also using this opportunity to rebuild our engineering culture. Setting a high bar for engineering standards, ways of working, and hoping to improve engagement as we go.\r\n\r\nIn this talk, I'll share:\r\n\r\n- How I came to this decision\r\n- How we got buy in from Exec and the Board for a purely technical rebuild\r\n- How we tried to set up for success, our principles and standards\r\n- Where we failed\r\n- Where we succeeded\r\n- Lessons that could be useful for anyone thinking about rebuilding a product that's hampering speed and hindering your ability to innovate or deliver value to your customers.\r\n\r\nThe rebuild is still in progress. I don't have all the answers (or any!). But we've already learned much - what to do, what not to do, and where the spiders are hiding.\r\n\r\nEstimated Talk Time: 35 - 40 minutes\r\n\r\nPreferred Month to Present: June\r\n\r\nPreferred Social media handles: https://www.linkedin.com/in/prakritimateti/\r\n\r\nMugshot (will be use in the slides): [link to photo](https://github.com/rubyaustralia/melbourne-ruby/assets/502956/6fd7dfe4-5f49-4c48-bccd-8784e41e48b7)\r\n\r\n\r\n",
+      "state": "closed",
+      "created_at": "2024-04-30T10:20:29Z",
+      "updated_at": "2024-07-02T05:31:46Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/232",
+      "comments": [
+        {
+          "id": 2151362698,
+          "user": "simran-sawhney",
+          "body": "Thanks @itirkarp - let's do it this month on 27th June ",
+          "created_at": "2024-06-06T03:54:57Z",
+          "updated_at": "2024-06-06T03:54:57Z"
+        }
+      ]
+    },
+    {
+      "id": 2254940264,
+      "number": 231,
+      "title": "Laravel, meet my friend Turbo",
+      "description": "I've been playing around with the PHP framework, Laravel, and looking at how to use it with Turbo, Turbo Native, and Strada.\r\n\r\nI will be giving a full talk for the PHP community that includes explanations of Turbo, Turbo Native, and Strada, as well as a comparison between Turbo and Livewire.\r\n\r\nIt would be simple enough for me to modify the talk to fit a Ruby audience, and I could set the length based on the other talks that will be given on that day. For example, if this were a full talk, I could discuss what Laravel is, the similarities to Rails, and dig a bit into the line between Turbo Native and Strada. If it were to be a lightning talk, we could skip most of the background and just do a walkthrough.",
+      "state": "closed",
+      "created_at": "2024-04-21T07:17:29Z",
+      "updated_at": "2024-07-02T05:31:57Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/231",
+      "comments": []
+    }
+  ],
+  "May 2024": [
+    {
+      "id": 2251647844,
+      "number": 230,
+      "title": "Cursors: Why Pagination is Bad-gination!",
+      "description": "Using Ruby to explain a popular new approach to accessing and displaying data, without the staleness issues of traditional pagination - cursors! Learn the basic concepts, and find out why this approach is popular in modern toolkits like GraphQL.\r\n\r\nProbably 20 to 30 minutes.",
+      "state": "closed",
+      "created_at": "2024-04-18T21:59:14Z",
+      "updated_at": "2024-06-06T03:55:35Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/230",
+      "comments": []
+    }
+  ],
+  "April 2024": [
+    {
+      "id": 2245115139,
+      "number": 229,
+      "title": "Dissecting Rails",
+      "description": "Lightning talk for RORO Melbourne\r\n\r\n__Title:__ Dissecting Rails \r\n__About:__ How I learn Rails. My takeaways from dissecting Rails: Active Support, Active Model, etc\r\n\r\n__Timing:__ APR-2024\r\n\r\n>    Are you happy to have your talk published on the RubyAU YouTube channel? -> yes\r\n    Your Twitter username (if you have one) -> [@friendlyantz](https://twitter.com/friendlyantz)\r\n    Link to, or upload of, a photo of yourself that will appear in the meetup slide deck: refer https://github.com/rubyaustralia/melbourne-ruby/issues/192\r\n\r\nLength: 10-15min",
+      "state": "closed",
+      "created_at": "2024-04-16T05:21:27Z",
+      "updated_at": "2024-04-29T02:06:37Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/229",
+      "comments": [
+        {
+          "id": 2081778776,
+          "user": "simran-sawhney",
+          "body": "Thanks @friendlyantz for your insightful talk :) ",
+          "created_at": "2024-04-29T02:06:37Z",
+          "updated_at": "2024-04-29T02:06:37Z"
+        }
+      ]
+    }
+  ],
+  "March 2024": [
+    {
+      "id": 2166041203,
+      "number": 228,
+      "title": "One Billion Rows in Ruby",
+      "description": "Description(this will appear on youtube):\r\nIs Ruby a good language for CPU-intensive data crunching? Can it beat Java? This talk is about my adventures taking on the One Billion Row Challenge (https://github.com/gunnarmorling/1brc) in Ruby. I'll cover some of the tools, techniques and pitfalls around optimising Ruby programs.\r\n\r\nEstimated Talk Time: maybe 30 minutes? (haven't timed it yet)\r\n\r\nPreferred Month to Present: March 2024\r\n\r\nPreferred Social media handles: None\r\n\r\nMugshot (will be use in the slides): https://avatars.githubusercontent.com/u/1201065",
+      "state": "closed",
+      "created_at": "2024-03-04T06:27:53Z",
+      "updated_at": "2024-04-03T23:19:10Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/228",
+      "comments": [
+        {
+          "id": 1992941578,
+          "user": "simran-sawhney",
+          "body": "Thanks @rianmcguire - let's do it on 28th March!",
+          "created_at": "2024-03-13T01:17:25Z",
+          "updated_at": "2024-03-13T01:17:25Z"
+        },
+        {
+          "id": 2035796150,
+          "user": "simran-sawhney",
+          "body": "Thanks @rianmcguire for your amazing talk!",
+          "created_at": "2024-04-03T23:19:09Z",
+          "updated_at": "2024-04-03T23:19:09Z"
+        }
+      ]
+    },
+    {
+      "id": 2165644521,
+      "number": 227,
+      "title": "The Economics of Ruby",
+      "description": "Description(this will appear on youtube):\r\nJohn is a developer that likes both Ruby and Economics.  \r\n\r\nThis is a lightning talk about the flow of resources and incentives in the Ruby ecosystem.  It will discuss the costs of maintaining Ruby, the support from various benefactors/companies, and the contributors that make it all happen.\r\n\r\nEstimated Talk Time: 10 minutes\r\n\r\nPrefered Month to Present: March 2024\r\n\r\nPreferred Social media handles: \r\nhttps://twitter.com/ponny\r\n\r\nMugshot (will be use in the slides): just use my github avatar\r\n",
+      "state": "closed",
+      "created_at": "2024-03-04T00:10:04Z",
+      "updated_at": "2024-04-29T02:06:22Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/227",
+      "comments": [
+        {
+          "id": 1992940900,
+          "user": "simran-sawhney",
+          "body": "Thanks @ponny - let's do this on 28th March! ",
+          "created_at": "2024-03-13T01:17:11Z",
+          "updated_at": "2024-03-13T01:17:11Z"
+        },
+        {
+          "id": 2035796354,
+          "user": "simran-sawhney",
+          "body": "Thanks @ponny for your amazing talk!",
+          "created_at": "2024-04-03T23:19:29Z",
+          "updated_at": "2024-04-03T23:19:29Z"
+        },
+        {
+          "id": 2038639122,
+          "user": "ponny",
+          "body": "@simran-sawhney No worries.  A couple of people asked for the vid so could you please post it here when it's up?",
+          "created_at": "2024-04-05T02:19:44Z",
+          "updated_at": "2024-04-05T02:19:44Z"
+        },
+        {
+          "id": 2081778615,
+          "user": "simran-sawhney",
+          "body": "@ponny here is the posted video link!\r\nhttps://www.youtube.com/watch?v=ydU3WvLoXpY\r\n",
+          "created_at": "2024-04-29T02:06:21Z",
+          "updated_at": "2024-04-29T02:06:21Z"
+        }
+      ]
+    }
+  ],
+  "Feb 2024": [
+    {
+      "id": 2126276849,
+      "number": 226,
+      "title": "Can I host a rails app from a home server?",
+      "description": "With the advent of cloud and the availability of PaaS (Platform as a Service) providers like Heroku, Fly.io, Render, and Hatchbox, why would even consider running a **rails app** on **bare metal** from home?\r\n- because you can?\r\n- because it's cheaper?\r\n- because you want to be your own sysadmin/devops?\r\n- because you want the internet to be back like it was in **1999 🎉 !!!**\r\n- because there has been some recent noise on this in the Rails community\r\n    **[RECLAIM THE STACK!](https://reclaim-the-stack.com/)**\r\n    > We spent 7 months building a Kubernetes based platform to replace Heroku. The results were a 90% reduction in costs and a 30% improvement in performance.\r\n    \r\n    **[KAMAL](https://kamal-deploy.org/)** _formerly MRSK_\r\n    > Leaving the cloud will save us $7 million over five years.\r\n    https://basecamp.com/cloud-exit\r\n- because @friendlyantz - wants to know\r\n    [Ruby Australia Slack #melb-meets 3:27pm Oct 5 2023](https://rubyau.slack.com/archives/C010RUGPRHU/p1696480053027199?thread_ts=1696479747.231869&cid=C010RUGPRHU)\r\n  > Keen to hear about these topics(hope it inspires someone):\r\n  >  * Self hosting ruby app\r\n\r\nSo **\"can I host a rails app from a home server?\"** whats involved? how hard can it be? is it just `RAILS_ENV=production bin/rails server`?\r\n\r\nlet's see how far I can get - maybe a **5 minute talk** or maybe **30 minutes** depending how far I get\r\n\r\nNOTE: _this is part of a larger talk idea for running a rails app locally on **bare metal** using a laptop, moving it into the **cloud☁️** and back again on-premise on **bare metal** home cluster_\r\n\r\n",
+      "state": "closed",
+      "created_at": "2024-02-09T00:28:00Z",
+      "updated_at": "2024-03-03T23:36:19Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/226",
+      "comments": [
+        {
+          "id": 1975398941,
+          "user": "simran-sawhney",
+          "body": "Thanks for the great talk @saramic ! ",
+          "created_at": "2024-03-03T23:36:18Z",
+          "updated_at": "2024-03-03T23:36:18Z"
+        }
+      ]
+    },
+    {
+      "id": 2112381409,
+      "number": 224,
+      "title": "Talk Proposal : System Design & Distributed System Lightweight Concept",
+      "description": "- What to do when our app gains popularity (Vertical & Horizontal Scaling)\r\n- Horizontal scaling best practices (instance stickiness, louse coupling ) \r\n-  Distributed Systems ( stuff like chaos monkeys, retry mechanism should be somewhat fun )\r\n- Could also talk abt some tools like kubernetes ( just the lightweight stuff like k8 backgrounds, pods, deleting pods , scalling , and a bit abt writing .yaml file not the advanced or super detailed ) . ",
+      "state": "closed",
+      "created_at": "2024-02-01T12:18:37Z",
+      "updated_at": "2024-03-03T23:36:35Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/224",
+      "comments": [
+        {
+          "id": 1933094663,
+          "user": "simran-sawhney",
+          "body": "hey @Stefanuswilfrid - . It's a great topic but for it to be qualified for lightning talk, this seems bit too heavy. Is there any chance if you could decrease the presentation and talk time to 10 minutes maximum and realign the details in your slides accordingly ?",
+          "created_at": "2024-02-07T23:19:17Z",
+          "updated_at": "2024-02-07T23:19:17Z"
+        },
+        {
+          "id": 1933243342,
+          "user": "ZimbiX",
+          "body": "Or have it be a full talk?",
+          "created_at": "2024-02-08T01:54:12Z",
+          "updated_at": "2024-02-08T01:54:12Z"
+        },
+        {
+          "id": 1933247140,
+          "user": "Stefanuswilfrid",
+          "body": "hey , ur right i think for the lightning talk i'l just talk abt 'scaling you app 101' . in the bginning i thought i was supposed to propose about topics for multiple weeks lol. ",
+          "created_at": "2024-02-08T01:59:34Z",
+          "updated_at": "2024-02-08T01:59:34Z"
+        },
+        {
+          "id": 1975399044,
+          "user": "simran-sawhney",
+          "body": "Thanks for the talk @Stefanuswilfrid ! ",
+          "created_at": "2024-03-03T23:36:34Z",
+          "updated_at": "2024-03-03T23:36:34Z"
+        }
+      ]
+    }
+  ],
+  "January 2024": [
+    {
+      "id": 2080633355,
+      "number": 223,
+      "title": "Processing DMARC reports via Action Mailbox",
+      "description": "Domain-based Message Authentication, Reporting, and Conformance (or DMARC) is an email validation system that builds upon Sender Policy Framework (SPF) and DomainKeys Identified Mail (DKIM) to protect email domains from being used in email spoofing, phishing scams, and other cybercrime.\r\n\r\nWhen creating a DMARC DNS record, you can include a `rua` attribute, the value of which is an email address that servers can send a daily report of the deliverability of emails from your domain. This provides valuable data that can help you check that you've approved every server that you expect to be able to send on your behalf and reduce the number of legitimate emails that are sent to spam. Unfortunately, these reports come as XML files which are usually GZipped which makes them poorly suited to human reading. Also, since they are sent by the receiving servers, you can expect to be sent many reports per day.\r\n\r\nThis talk is the story of how I leveraged Action Mailbox in Ruby on Rails to automatically parse incoming DMARC reports and alert me to issues in a human-readable format.",
+      "state": "closed",
+      "created_at": "2024-01-14T08:28:33Z",
+      "updated_at": "2024-01-29T02:15:22Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/223",
+      "comments": [
+        {
+          "id": 1913847853,
+          "user": "simran-sawhney",
+          "body": "Thanks for the great talk @HashNotAdam ",
+          "created_at": "2024-01-29T02:15:22Z",
+          "updated_at": "2024-01-29T02:15:22Z"
+        }
+      ]
+    },
+    {
+      "id": 2075457487,
+      "number": 222,
+      "title": "Something Something Fibers Something",
+      "description": "Yes, the title of the talk is \"Something Something Fibers Something\" - I'll try and nail down more specifically what I want to talk about this weekend :)\r\n\r\nI'd like to do a talk that really gets into the low-level guts of how fibers work in Ruby. The rough kind of thing I'm thinking of covering is...\r\n\r\n* What a Fiber is, and how fibers relate to threads\r\n* How Fiber.yield/Fiber.resume work in Ruby\r\n* What you can build with them (e.g. implementing enumerators with them, \"saving\" the context of being inside a block)\r\n* How the Ruby and C call stacks relate to each other (this is important prerequisite info which is kind of genuinely interesting on its own)\r\n* How Fiber.yield and Fiber.resume are implemented in terms of the C call stack\r\n\r\nI would also like to talk about Fiber.transfer & the new Ruby fiber scheduler interface & the async gem, but let's see how much content ☝️  turns out to be. Maybe it's a different talk for another time.\r\n\r\nI'll be able to present this on Jan 25.",
+      "state": "closed",
+      "created_at": "2024-01-11T00:23:43Z",
+      "updated_at": "2024-01-29T02:15:33Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/222",
+      "comments": [
+        {
+          "id": 1893315132,
+          "user": "ZimbiX",
+          "body": "Very cool. I've been keen for a talk like this since Ruby 3 came out :grin:",
+          "created_at": "2024-01-16T08:57:44Z",
+          "updated_at": "2024-01-16T08:57:44Z"
+        },
+        {
+          "id": 1913847986,
+          "user": "simran-sawhney",
+          "body": "Thanks for the great talk @KJTsanaktsidis ",
+          "created_at": "2024-01-29T02:15:33Z",
+          "updated_at": "2024-01-29T02:15:33Z"
+        }
+      ]
+    }
+  ],
+  "November 2023": [
+    {
+      "id": 2010461264,
+      "number": 221,
+      "title": "Proposal: precious gems I've learned during my first dev year (10-15min lightning talk)",
+      "description": "Title: Precious gems I've learned in my first dev year\r\nAbout: Not the ruby gems but more like gems of wisdom that I've experienced during my first developer year. Lots of self reflection to be done and just want to share some of them\r\n\r\nTiming: 29th Nov 2023\r\nLength: 10 - 15min Lightning talk",
+      "state": "closed",
+      "created_at": "2023-11-25T03:59:34Z",
+      "updated_at": "2023-12-06T03:46:10Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/221",
+      "comments": [
+        {
+          "id": 1826675822,
+          "user": "optimistic-updt",
+          "body": "hey Justin, \r\nAre you keen to do this in November?\r\n",
+          "created_at": "2023-11-26T06:56:50Z",
+          "updated_at": "2023-11-26T06:56:50Z"
+        },
+        {
+          "id": 1826727532,
+          "user": "j-tws",
+          "body": "Yeah can do! That will be this coming Wed right?",
+          "created_at": "2023-11-26T08:58:54Z",
+          "updated_at": "2023-11-26T08:58:54Z"
+        },
+        {
+          "id": 1826754456,
+          "user": "optimistic-updt",
+          "body": "yep",
+          "created_at": "2023-11-26T11:11:10Z",
+          "updated_at": "2023-11-26T11:11:10Z"
+        }
+      ]
+    },
+    {
+      "id": 1929166227,
+      "number": 218,
+      "title": "[discussion]: Rails architecture with engines work group",
+      "description": "I'll demo an app and talk about my experience for a little bit. The goal is to have an audience discussion and share experiences about using rails engines. Other people are welcome to demo their examples as well.\r\n\r\nLength: 1-1.5 hour discussion",
+      "state": "closed",
+      "created_at": "2023-10-05T22:27:52Z",
+      "updated_at": "2023-12-06T03:46:18Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/218",
+      "comments": [
+        {
+          "id": 1765944447,
+          "user": "optimistic-updt",
+          "body": "that sounds awesome,\r\nLet's maybe have it in november ❤️ \r\n",
+          "created_at": "2023-10-17T08:39:08Z",
+          "updated_at": "2023-10-17T08:39:08Z"
+        },
+        {
+          "id": 1826674249,
+          "user": "optimistic-updt",
+          "body": "are you stil happy to this next week?",
+          "created_at": "2023-11-26T06:56:13Z",
+          "updated_at": "2023-11-26T06:56:13Z"
+        },
+        {
+          "id": 1827053680,
+          "user": "antulik",
+          "body": "yes",
+          "created_at": "2023-11-27T03:04:02Z",
+          "updated_at": "2023-11-27T03:04:02Z"
+        }
+      ]
+    }
+  ],
+  "October 2023": [
+    {
+      "id": 1956158778,
+      "number": 220,
+      "title": "Proposal: Showcase of final project of my bootcamp with Academy Xi",
+      "description": "Description: A showcase of my full stack web app built for the final project of the bootcamp I have completed with Academy Xi. Made with Rails and React\r\n\r\nTalk time: 20mins \r\n\r\nMonth: October\r\n\r\nSocial Media: \r\nhttp://linkedin.com/in/thdev\r\n\r\nPortfolio \r\nThdev.com.au\r\n\r\n![IMG_1742](https://github.com/rubyaustralia/melbourne-ruby/assets/59306359/5ae6893b-4249-480a-942e-33bd88cba93b)\r\n",
+      "state": "closed",
+      "created_at": "2023-10-23T01:09:04Z",
+      "updated_at": "2023-11-26T06:15:48Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/220",
+      "comments": []
+    },
+    {
+      "id": 1956091676,
+      "number": 219,
+      "title": "Thoughts on Environment Variables",
+      "description": "A lightning talk 5 - 10 minutes on managing environment variables in rails.\r\n\r\n> You're app is coming along and all of a sudden you need to configure the number of workers, or an endpoint to access an API. You reach for `CONSTANTS` but very quickly you find out that these will vary between **development**, **test** and **production** apps. Not only that but you have a number of **\"production\"** apps like _staging_, _sandbox_, _UAT_ and the like. You also read up about [The Twelve-Factor App](https://12factor.net/) and you go for **Environment Variables** (`ENV_VARS`) to configure everything. But development becomes a night mare so you use `.env` files to store all these configurations. And then you get an API **Key 🔑** or **Secret 🔐** and you also through it into the `.env` file and even commit it to Git!!! 🚨 - at night you here yourself counselling yourself\r\n>    \"it's OK, it's a private repo\"\r\n>    \"it's OK, it's only a developer secret\"\r\n\r\nIt's **NOT OK** this is the kind of behaviour that leads to security breaches and people being fired! - let's not blame the individuals but the process. The process of not having an easy way to store and share secrets is the root of the problem, and not developers accidentally sharing secrets they haphazardly saved to their publicly visible `.Dotfiles` git hub repo\r\n\r\nLearn:\r\n1. why to use Env Vars\r\n2. how to use `.env` https://github.com/bkeepers/dotenv and why it's a bad idea\r\n3. how to use **rails credentials** as well as Shopify's EJson, or Mozillas SOPS or Ansible's Vault\r\n4. how to easily manage and override credentials using Evil Martians AnywayConfg\r\n5. and why you should never be complacent with the way things are - learn how to break your system to make a better system\r\n\r\nwith code examples - https://github.com/failure-driven/env-var-demo",
+      "state": "closed",
+      "created_at": "2023-10-22T23:04:19Z",
+      "updated_at": "2023-11-27T01:18:16Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/219",
+      "comments": [
+        {
+          "id": 1774376100,
+          "user": "ponny",
+          "body": "Keen for this.",
+          "created_at": "2023-10-23T03:31:26Z",
+          "updated_at": "2023-10-23T03:31:26Z"
+        },
+        {
+          "id": 1826987104,
+          "user": "saramic",
+          "body": "@ponny - not sure I did the topic justice but in case you were interested -> https://www.youtube.com/watch?v=Pf-IrWRm-UE",
+          "created_at": "2023-11-27T01:18:16Z",
+          "updated_at": "2023-11-27T01:18:16Z"
+        }
+      ]
+    }
+  ],
+  "September 2023": [
+    {
+      "id": 1870695080,
+      "number": 217,
+      "title": "Talk proposal: Rails forms",
+      "description": "I can do a lighting talk about rails forms and service objects",
+      "state": "closed",
+      "created_at": "2023-08-29T00:37:30Z",
+      "updated_at": "2023-10-01T23:05:26Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/217",
+      "comments": [
+        {
+          "id": 1698246150,
+          "user": "friendlyantz",
+          "body": "yes please!",
+          "created_at": "2023-08-29T22:51:52Z",
+          "updated_at": "2023-08-29T22:51:52Z"
+        },
+        {
+          "id": 1713259150,
+          "user": "simran-sawhney",
+          "body": "Alright let's do mate this month @antulik",
+          "created_at": "2023-09-11T06:40:20Z",
+          "updated_at": "2023-09-11T06:40:20Z"
+        },
+        {
+          "id": 1714840378,
+          "user": "antulik",
+          "body": "it's a lightning talk, so 5min, but will probably stretch to 10min.",
+          "created_at": "2023-09-12T01:43:50Z",
+          "updated_at": "2023-09-12T01:43:50Z"
+        }
+      ]
+    },
+    {
+      "id": 1784427256,
+      "number": 210,
+      "title": "Unleashing the Power of Pair Presenting: Elevate Your Conference Impact",
+      "description": "I was commissioned to write this talk for an international group, put in a lot of effort, heard the content was great, and would like to share it with all of you!\r\n\r\n\r\nDescription:\r\nDiscover the transformative potential of pair presenting at conferences in this captivating presentation. Explore the principles behind successful collaborations, understanding the advantages and disadvantages of this dynamic approach and how it can elevate your impact.\r\nGain insights into leveraging unique personalities and strengths, assessing the need for two speakers, and understanding the perception created, while incorporating engaging live code demonstrations and interactive elements.\r\nRecognize the importance of strong male allies in fostering inclusivity and integration. Harness the power of pair presenting to maximize your conference impact, forge meaningful connections, and empower you to make a lasting impression on your audience.",
+      "state": "closed",
+      "created_at": "2023-07-02T03:59:30Z",
+      "updated_at": "2023-10-01T23:05:47Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/210",
+      "comments": []
+    }
+  ],
+  "August 2023": [
+    {
+      "id": 1823402011,
+      "number": 215,
+      "title": "Dragonruby: Creating the game \"Metal Warrior: Search for Valhalla\"",
+      "description": "A lightening talk proposal (5mins) just going over some of the highlights and issues we had whilst creating a 2d action game called \"Metal Warrior: Search for Valhalla\".\r\n",
+      "state": "closed",
+      "created_at": "2023-07-27T00:31:58Z",
+      "updated_at": "2023-09-11T06:52:28Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/215",
+      "comments": [
+        {
+          "id": 1698280535,
+          "user": "map7",
+          "body": "Timed the talk last night, could go up to 10min, we'll see. I had a rough crowd to practice in front of (my kids)",
+          "created_at": "2023-08-29T23:41:21Z",
+          "updated_at": "2023-08-29T23:41:21Z"
+        },
+        {
+          "id": 1698425623,
+          "user": "ponny",
+          "body": "Super keen for this!",
+          "created_at": "2023-08-30T03:16:44Z",
+          "updated_at": "2023-08-30T03:16:44Z"
+        }
+      ]
+    },
+    {
+      "id": 1807154558,
+      "number": 212,
+      "title": "Talk Proposal: But why does it work?",
+      "description": "Description(this will appear on youtube): Nothing is a black box! Get the confidence to dive into unfamiliar code and languages, and understand how things really work. Join me on a deep dive into gems, the Ruby source code (and maybe more!)\r\n\r\nEstimated Talk Time: 15-30 min\r\n\r\nPreferred Month to Present: July 😱\r\n\r\nPreferred Social media handles: None\r\n\r\nMugshot (will be use in the slides): https://avatars.githubusercontent.com/u/1201065",
+      "state": "closed",
+      "created_at": "2023-07-17T07:24:28Z",
+      "updated_at": "2023-09-11T06:52:20Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/212",
+      "comments": [
+        {
+          "id": 1639110763,
+          "user": "simran-sawhney",
+          "body": "hey @rianmcguire - thanks for raising the issue mate. are you okay to do it in August if you need more time to prep, this way we would have locked in for next month ?",
+          "created_at": "2023-07-18T00:51:03Z",
+          "updated_at": "2023-07-18T00:51:03Z"
+        },
+        {
+          "id": 1641133189,
+          "user": "simran-sawhney",
+          "body": "hey @rianmcguire moving this to next month mate for August one - let's lock that in :) ",
+          "created_at": "2023-07-18T23:45:54Z",
+          "updated_at": "2023-07-18T23:45:54Z"
+        },
+        {
+          "id": 1681400974,
+          "user": "simran-sawhney",
+          "body": "Hey @rianmcguire - let's do it mate this month. I have added Milestone to it already :) ",
+          "created_at": "2023-08-16T23:39:48Z",
+          "updated_at": "2023-08-16T23:39:48Z"
+        }
+      ]
+    }
+  ],
+  "July 2023": [
+    {
+      "id": 1809022197,
+      "number": 214,
+      "title": "Tips for juniors and mentors",
+      "description": "1. reach out to the community and pair up with someone (Michael)\r\n2. exercism to brush up on some ruby\r\n3. basic TDD principles - via pairing\r\n4. look at some Dojo's\r\n5. take it to next level with curses!!! winner\r\n5-10 mins\r\nready for july 26th",
+      "state": "closed",
+      "created_at": "2023-07-18T03:44:24Z",
+      "updated_at": "2023-08-15T23:52:35Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/214",
+      "comments": []
+    },
+    {
+      "id": 1807364108,
+      "number": 213,
+      "title": "Proposal: a production bug 27 years in the making",
+      "description": "The most robustly tested application at the company. A PR to upgrade Ruby, weeks in the The tests passed on local and on CI. No issues detected on staging or the sandbox environment. All systems green.\r\n\r\nThen the production deploy started.\r\n\r\n---\r\n\r\nA time-traveling tale of how a confluence of changes came together to cause an issue in production.\r\n\r\nDuration: 10-15 minutes\r\nMonth: July 2023\r\n\r\n\r\n\r\n",
+      "state": "closed",
+      "created_at": "2023-07-17T09:29:17Z",
+      "updated_at": "2023-08-15T23:51:27Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/213",
+      "comments": [
+        {
+          "id": 1641132754,
+          "user": "simran-sawhney",
+          "body": "Let's do this next week on 26th July meetup!",
+          "created_at": "2023-07-18T23:45:17Z",
+          "updated_at": "2023-07-18T23:45:17Z"
+        },
+        {
+          "id": 1643233448,
+          "user": "radar",
+          "body": "Looking forward to it!",
+          "created_at": "2023-07-20T05:26:19Z",
+          "updated_at": "2023-07-20T05:26:19Z"
+        }
+      ]
+    },
+    {
+      "id": 1784401161,
+      "number": 209,
+      "title": "Talk Proposal: How FHIR is tackling a wicked problem with technical, social and political solutions",
+      "description": "Description (this will appear on YouTube): \r\n\r\nThe project of interoperability in healthcare is one that would make healthcare workers' jobs easier, our healthcare industry more efficient, and improve our experiences as patients. Yet, in spite of these upsides, the project has been held back by technical difficulty, a lack of cooperation and misaligned incentives. \r\n\r\nOne of the most promising developments in this space is HL7's FHIR standard, an extensible meta-model for exchanging healthcare data. Not only does FHIR offer some novel and fascinating techniques for flexibly modelling a wide range of data, it also engages in the community-building required to help it solve real problems, and the advocacy which is seeing it gain acceptance and mandate in national and international politics.\r\n\r\nThis talk will examine how Ruby developers can make productive use of FHIR in their projects, by describing the design of FHIR and the state of the tooling available to the Ruby ecosystem. Also discussed will be the lessons we can learn from FHIR on community-building and advocacy for our own technology solutions.\r\n\r\nEstimated Talk Time: 20 minutes\r\n\r\nPreferred Month to Present: July '23\r\n\r\nPreferred Social Media Handles: matthood0@gmail.com\r\n\r\nMugshot (will be used in the slides):\r\n![mattbio](https://github.com/rubyaustralia/melbourne-ruby/assets/1885706/ebc7dec6-6fb4-4042-968e-b860ed8ef3f7)\r\n",
+      "state": "closed",
+      "created_at": "2023-07-02T02:44:01Z",
+      "updated_at": "2023-08-15T23:52:48Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/209",
+      "comments": [
+        {
+          "id": 1639046895,
+          "user": "simran-sawhney",
+          "body": "hey @MattHood we have added **July talk** milestone for this issue , see you then!",
+          "created_at": "2023-07-17T23:48:00Z",
+          "updated_at": "2023-07-17T23:48:24Z"
+        }
+      ]
+    }
+  ],
+  "RORO June 2021": [
+    {
+      "id": 913030143,
+      "number": 175,
+      "title": "Lightning talk: How to stop I18n getting complex",
+      "description": "10 minutes. \r\nIn Rails, I18n gets confusing :( I'm always trying to figure out where keys come from and what text methods return. \r\n\r\nMy team and I have done some cool stuff to keep it simple. I've never seen it done like this before, so I'd like to share it.",
+      "state": "closed",
+      "created_at": "2021-06-07T02:19:32Z",
+      "updated_at": "2021-07-05T11:24:38Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/175",
+      "comments": [
+        {
+          "id": 855805793,
+          "user": "optimistic-updt",
+          "body": "Hey @davich,\r\n\r\nThat sounds great.\r\nWould you be willing to share at this month's RORO (30th June)?\r\n\r\nLet me know",
+          "created_at": "2021-06-07T10:22:27Z",
+          "updated_at": "2021-06-07T10:22:27Z"
+        },
+        {
+          "id": 859133604,
+          "user": "davidcarlin-ap",
+          "body": "Yep, can do. Will it be in person or zoom?",
+          "created_at": "2021-06-10T22:47:42Z",
+          "updated_at": "2021-06-10T22:47:42Z"
+        },
+        {
+          "id": 859375930,
+          "user": "davich",
+          "body": "ha, that's also me ^^. On my work github account. Probably confusing to the casual observer.",
+          "created_at": "2021-06-11T08:13:02Z",
+          "updated_at": "2021-06-11T08:13:02Z"
+        },
+        {
+          "id": 861851031,
+          "user": "optimistic-updt",
+          "body": "haha no problem @davich / @davidcarlin-ap.\r\nShould your talk be titled: How to stop I18n getting complex\r\n?",
+          "created_at": "2021-06-15T21:38:17Z",
+          "updated_at": "2021-06-15T21:43:54Z"
+        },
+        {
+          "id": 864540719,
+          "user": "davich",
+          "body": "yep, that's a descriptive title. Will the meetup be in person or zoom?",
+          "created_at": "2021-06-20T11:40:23Z",
+          "updated_at": "2021-06-20T11:40:23Z"
+        },
+        {
+          "id": 869236282,
+          "user": "optimistic-updt",
+          "body": "Meetup will be over Zoom @davich \r\n:)",
+          "created_at": "2021-06-27T23:02:45Z",
+          "updated_at": "2021-06-27T23:02:45Z"
+        }
+      ]
+    },
+    {
+      "id": 839473136,
+      "number": 174,
+      "title": "Exercism for Junior Developers",
+      "description": "Hi guys, I recently completed a bootcamp from Le Wagon. \r\n\r\nI have experienced that most bootcamp graduate lack the understanding of test driven development as well as how to conduct pair programming coding challenge. I would like to present 2 exercism exercise to showcase how to approach a problem.\r\n\r\nI am also participating in the presentation to build confidence around technical gurus.",
+      "state": "closed",
+      "created_at": "2021-03-24T08:21:17Z",
+      "updated_at": "2021-07-05T11:24:38Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/174",
+      "comments": [
+        {
+          "id": 822394701,
+          "user": "optimistic-updt",
+          "body": "Hey @achhetr, Thank you for reaching and well done for putting yourself out there!!\r\nWould you be keen to Present at the April RORO on the 28th (next week)?\r\n How long would your talk be?\r\n \r\n Thank you",
+          "created_at": "2021-04-19T11:28:28Z",
+          "updated_at": "2021-04-19T11:28:28Z"
+        },
+        {
+          "id": 822925361,
+          "user": "achhetr",
+          "body": "Thank you @CumulusGround for giving me this opportunity. I am planning to give 15 to 20 mins talk. \r\nI have two ideas which I am happy to share with young developers. \r\n1) 2 exercism exercise to showcase how to approach a problem\r\n2) How to integrate React with Rails\r\n\r\nPlease suggest which one should I go as I think they both are really important",
+          "created_at": "2021-04-20T02:29:07Z",
+          "updated_at": "2021-04-20T02:29:07Z"
+        },
+        {
+          "id": 823092634,
+          "user": "optimistic-updt",
+          "body": "Hey @achhetr,\r\n\r\nthey do both sound great!!\r\nbut obviously I'm mindful of having a couple of speakers on the night.\r\n\r\nHow about this:\r\nWe can do React/Ruby this time\r\nthen skip next month\r\nthen have you back in June for the exersim one.\r\n\r\nMy thought behind it is that I think a lot of bootcamp just started in March and should wrap up in June, which theoretically would give us an influx of junior, perfect target crowd for the exercism.\r\n\r\nwhat do you think?\r\n\r\nCheers\r\n",
+          "created_at": "2021-04-20T08:36:43Z",
+          "updated_at": "2021-04-20T08:36:43Z"
+        },
+        {
+          "id": 823096739,
+          "user": "achhetr",
+          "body": "Sounds great @CumulusGround\r\n\r\nThis will be my first presentation, have you got any tips which I can offer to the audience from React on Rails perspective",
+          "created_at": "2021-04-20T08:42:36Z",
+          "updated_at": "2021-04-20T08:42:36Z"
+        }
+      ]
+    }
+  ],
+  "March 2021": [
+    {
+      "id": 839194785,
+      "number": 173,
+      "title": "The Joy of Docs: Technical Writing for Developers and Engineers",
+      "description": "Hello organisers! I would like to propose a talk about technical writing. You can see the slide deck [here](https://docs.google.com/presentation/d/1somOY_01ZRgSxuAIX-RenImp9QkgytjpXwsKm91lYoo/edit?usp=sharing) if you'd like to suss it out more, but here's the gist. I can be available any Wednesday but need at least a few days' advance notice to let my D&D group know I won't be there :)\r\n\r\n## Talk Title\r\n\r\nThe Joy of Docs: Technical Writing for Developers and Engineers\r\n\r\n## Description\r\n\r\nIn this talk, I discuss communication, specifically technical writing, why it's important, and how to improve your skills. Emphasis is on identifying and empathising with your audience. The talk does not strictly cover the writing process as it is taught in schools, but rather focusses on orienting oneself towards readers' needs when writing technical documents or producing other technical writing. The information in this talk is applicable to any kind of technical writing, from commit messages to requests for comment (RFCs), as well as technical writing that is not strictly a part of a technical document (e.g., writing in an email to stakeholders about the status of development on a project). \r\n\r\n## Why It's Important\r\n\r\nBad technical writing is a huge waste of time. Every developer who's worked in the industry for any length of time has encountered vague and unhelpful documentation and seen how much time they spend trying to find information that should've been in the docs in the first place. Engineers who read RFCs and other longer-form documents may notice these documents often don't give adequate context or define terms, leading to more time spent on research rather than focussing on the tasks at hand.",
+      "state": "closed",
+      "created_at": "2021-03-23T23:08:03Z",
+      "updated_at": "2021-04-14T00:19:53Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/173",
+      "comments": [
+        {
+          "id": 806226489,
+          "user": "optimistic-updt",
+          "body": "Hi Dana, \r\nThank you for proposing this talk!\r\n\r\nIt sounds like a great talk and it's definitely already right at home with me :) :S\r\n\r\nHow long do you thing your talk would take? \r\nThe next RORO is next wednesday the 31st of March.\r\n\r\nWould you be keen/ready to present then?\r\n\r\nCheers\r\n",
+          "created_at": "2021-03-24T22:30:07Z",
+          "updated_at": "2021-03-24T22:32:02Z"
+        },
+        {
+          "id": 806327553,
+          "user": "oscaralanpierce",
+          "body": "The 31st works! The last time I gave this talk it ran about 30 minutes but I can make it longer or shorter to suit. Just let me know!",
+          "created_at": "2021-03-25T03:00:51Z",
+          "updated_at": "2021-03-25T03:00:51Z"
+        },
+        {
+          "id": 808849971,
+          "user": "optimistic-updt",
+          "body": "awesome, 31st it is then.\r\nWe'll be in touch with you shortly",
+          "created_at": "2021-03-28T05:31:00Z",
+          "updated_at": "2021-03-28T05:31:00Z"
+        },
+        {
+          "id": 819132356,
+          "user": "optimistic-updt",
+          "body": "https://youtu.be/l8pFr1y14f8",
+          "created_at": "2021-04-14T00:19:53Z",
+          "updated_at": "2021-04-14T00:19:53Z"
+        }
+      ]
+    }
+  ],
+  "February 2021 meetup": [
+    {
+      "id": 813929810,
+      "number": 172,
+      "title": "View Components in the Wild",
+      "description": "Just some examples of how we at [Fresho](http://fresho.com) are using [View Components](https://viewcomponent.org/) to test rails views and help us decompose the front end, it will be wild! With the better design through composability, leading to simplifying testing and more consistent front ends.\r\n\r\ninspired by https://github.com/rails-oceania/melbourne-ruby/issues/158\r\n\r\npresented from https://github.com/failure-driven/view-components-in-the-wild\r\n\r\nready for Feb 2021 - ie like tomorrow",
+      "state": "closed",
+      "created_at": "2021-02-22T22:47:58Z",
+      "updated_at": "2021-03-28T10:07:58Z",
+      "url": "https://github.com/rubyaustralia/melbourne-ruby/issues/172",
+      "comments": [
+        {
+          "id": 808875142,
+          "user": "VanessaNimmo",
+          "body": "https://youtu.be/ISWuPcCoChw 🌄",
+          "created_at": "2021-03-28T10:07:58Z",
+          "updated_at": "2021-03-28T10:07:58Z"
+        }
+      ]
+    }
+  ]
+}
