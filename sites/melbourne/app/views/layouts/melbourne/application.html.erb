@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="snap-y">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <%= display_meta_tags site: "Ruby Melbourne" %>
+
   <%= yield :head %>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,8 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <%= vite_stylesheet_tag("melbourne_application") %>
+  <%= vite_javascript_tag("melbourne_application", defer: true) %>
+  <%= vite_javascript_tag("controllers", defer: true) %>
 </head>
 <body>
-<%= yield %>
+  <%= yield %>
 </body>
 </html>

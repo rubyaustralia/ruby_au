@@ -1,0 +1,86 @@
+<%
+  # Calculate timeline data
+  all_events = (@upcoming_events || []) + (@past_events || [])
+  today = Date.current
+
+  # Generate months from earliest event to limited future
+  earliest_date = all_events.min_by(&:date)&.date || today
+  future_events = all_events.select { |event| event.date > today }
+  if future_events.any?
+    latest_future_event = future_events.max_by(&:date).date
+    latest_date = latest_future_event + 1.month
+  else
+    latest_date = today + 1.month
+  end
+
+  timeline_months = []
+  current_month = Date.new(latest_date.year, latest_date.month, 1)
+  end_month = Date.new(earliest_date.year, earliest_date.month, 1)
+
+  while current_month >= end_month
+    timeline_months << current_month
+    current_month = current_month.prev_month
+  end
+
+  selected_event_id = @selected_event ? dom_id(@selected_event) : nil
+%>
+
+<div class="col-start-1 left-0 sticky top-[50px] h-[calc(100dvh-50px)] w-full"
+     style="overscroll-behavior: contain; scrollbar-width: none;"
+     data-controller="timeline"
+     data-timeline-today-date-value="<%= today.iso8601 %>"
+     data-timeline-selected-event-id-value="<%= selected_event_id %>">
+  <div class="flex overflow-y-auto absolute top-0 left-0 flex-col gap-2 py-6 w-full h-full">
+
+    <%# Events %>
+    <% all_events.each do |event| %>
+      <% is_upcoming = event.date >= today %>
+      <dl class="flex absolute left-1 right-9 z-30 flex-col px-2 py-1 w-auto rounded-md border border-gray-100 transition-opacity cursor-pointer backdrop-blur-[2px] hover:opacity-80"
+          data-timeline-target="event"
+          data-event-id="<%= dom_id(event) %>"
+          data-event-date="<%= event.date.iso8601 %>"
+          data-action="click->timeline#selectEvent">
+        <dt class="text-xs truncate event-title"><%= event.name %></dt>
+        <dd class="text-[10px] event-date">
+          <time datetime="<%= event.date.iso8601 %>">
+            <%= event.date.strftime("%d") %><%= event.date.strftime("%d").to_i.ordinalize.last(2) %> <%= event.date.strftime("%b") %>
+            <% if event.date.year != today.year %> <%= event.date.year %><% end %>
+            <% if is_upcoming && event.date > today %>
+              (<%= distance_of_time_in_words(today, event.date) %>)
+            <% end %>
+          </time>
+        </dd>
+      </dl>
+    <% end %>
+
+    <%# Today Marker %>
+    <div class="absolute flex items-center z-20 border-t w-full border-t-red-500 before:content-['Today'] before:text-white before:text-[10px] before:font-semibold before:absolute before:top-[-9px] before:right-0 before:px-1 before:bg-red-500 before:rounded-l-xs before:z-10"
+         data-timeline-target="today"></div>
+
+    <%# Months %>
+    <% timeline_months.each do |month| %>
+      <%
+        show_year = month.year != today.year
+        year_display = if show_year && month.year < today.year
+          "#{month.strftime('%Y')}"
+        elsif show_year
+          month.year.to_s
+        else
+          nil
+        end
+      %>
+      <div class="relative w-full border-t border-t-gray-200"
+           data-timeline-target="month"
+           data-year="<%= month.year %>"
+           data-month="<%= month.month %>"
+           style="min-height: 60px;">
+        <div class="absolute right-0 z-10 px-2 text-right bg-white top-[-8px]">
+          <div class="text-xs leading-3 text-gray-400"><%= month.strftime("%B") %></div>
+          <% if year_display %>
+            <div class="leading-3 text-gray-300" style="font-size: 10px;"><%= year_display %></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

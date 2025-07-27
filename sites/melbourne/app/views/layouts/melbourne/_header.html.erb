@@ -1,0 +1,29 @@
+<header class="col-span-4 grid grid-cols-subgrid sticky top-0 z-50 w-full max-w-[1500px] items-center bg-[#0D37F2] text-white">
+  <%# Logo %>
+  <div class="col-start-1 pl-4">
+    <span class="font-bold">Ruby Melbs</span>
+  </div>
+  <%# Events Collection Code %>
+  <div class="col-start-2 pt-2 w-full h-full">
+    <div class="flex bg-[#0025CA] rounded-t-lg h-full items-center px-4">
+      <code class="text-sm">
+        <%= raw Pygmentize.process("render @events", :ruby) %>
+      </code>
+    </div>
+  </div>
+  <div class="flex col-start-4 gap-6 justify-between items-center h-full">
+    <%# Event Code %>
+    <div class="pt-2 w-full h-full">
+      <div class="flex bg-[#0025CA] rounded-t-lg h-full items-center px-4">
+        <code class="text-sm">
+          <%= raw Pygmentize.process("render \"melbourne/events/event_summary\", event: @event", :ruby) %>
+        </code>
+      </div>
+    </div>
+    <%# Sponsors %>
+    <ul class="flex flex-row col-start-4 gap-4 pr-4 list-none w-fit">
+      <li class="whitespace-nowrap">Github</li>
+      <li class="whitespace-nowrap">Sponsor</li>
+    </ul>
+  </div>
+</header>

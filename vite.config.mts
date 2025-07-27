@@ -24,5 +24,11 @@ export default defineConfig({
         quietDeps: true
       }
     }
+  },
+  test: {
+    environment: 'jsdom',
+    include: ['spec/javascript/**/*.spec.js', 'spec/javascript/**/*.test.js'],
+    globals: true,
+    root: '.'
   }
 })

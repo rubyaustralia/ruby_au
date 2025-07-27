@@ -1,28 +1,30 @@
 <% set_meta_tags @event.open_graph_metadata %>
-<% content_for :head do  %>
+
+<% content_for :head do %>
+  <%= turbo_refreshes_with scroll: :preserve %>
+<% end %>
+
+<% content_for :head do %>
   <script type="application/ld+json">
     <%= raw JSON.pretty_generate @event.schema %>
   </script>
 <% end %>
-<div class="container mx-auto">
-  <h1><%= @event.name %></h1>
 
-  <h2 class="text-2xl">Talks</h2>
-  <div class="mt-8">
-    <% @event.talks.each do |talk| %>
-      <article>
-        <p>
-          <%= talk.description %>
-        </p>
-        <ul>
-          <% talk.speakers.each do |speaker| %>
-            <li>
-              <p><%= speaker.name %></p>
-              <p><%= speaker.contact_details %></p>
-            </li>
-          <% end %>
-        </ul>
-      </article>
-    <% end %>
-  </div>
-</div>
+<%= content_for :upcoming_events do  %>
+  <%= render @upcoming_events, selected_event: @selected_event %>
+<% end %>
+
+<%= content_for :past_events do  %>
+  <%= render @past_events, selected_event: @selected_event %>
+<% end %>
+
+<%= content_for :event_summary do  %>
+  <% if @event %>
+    <%= render "melbourne/events/summary", event: @event %>
+  <% else %>
+    <%= render "melbourne/events/no_upcoming_summary" %>
+  <% end %>
+<% end %>
+
+<%= render "layouts/melbourne/jumbotron" %>
+
