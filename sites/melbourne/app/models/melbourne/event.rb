@@ -13,6 +13,7 @@ module Melbourne
     attribute :type
     attribute :venue
     attribute :talks
+    attribute :registration_link
 
     validates :uuid, presence: true
     validates :date, presence: true
@@ -27,7 +28,7 @@ module Melbourne
       @all ||= events_from_yaml_db.map do |event_data|
         event_data = event_data.with_indifferent_access
         Event.new(
-          **event_data.slice(:uuid, :date, :type, :description, :name, :slug),
+          **event_data.slice(:uuid, :date, :type, :description, :name, :slug, :registration_link),
           venue: Venue.new(event_data.fetch("venue", {})),
           talks: build_talks(event_data.fetch("talks", []))
         )
