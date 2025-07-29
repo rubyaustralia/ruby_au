@@ -10,7 +10,7 @@
 <div class="grid grid-cols-[1fr_minmax(0,_5fr)_minmax(0,_7fr)_1fr]">
   <%= render "melbourne/home/header" %>
 
-  <div class="col-span-4 grid grid-cols-subgrid bg-blue-700 h-8 gap-16">
+  <div class="hidden md:grid col-span-4 grid-cols-subgrid bg-blue-700 h-8 gap-16">
     <div class="col-start-2">
       <div class="flex bg-[#0025CA] rounded-t h-full items-center px-4 overflow-auto">
         <code class="text-sm">
@@ -26,16 +26,17 @@
       </div>
     </div>
   </div>
+
   <div class="col-span-4 grid grid-cols-subgrid gap-8 mt-8 mb-32">
-    <div class="col-start-2">
+    <div class="order-2 md:order-1 col-start-1 col-span-4 md:col-start-2 md:col-span-1">
       <section class="px-4">
-        <h2 class="font-mono text-gray-700 px-4">Latest events</h2>
+        <h2 class="font-mono text-gray-700 px-4">Past events</h2>
         <div class="space-y-8 mt-4">
-          <%= render collection: @latest_events, partial: "melbourne/home/event" %>
+          <%= render collection: @past_events, partial: "melbourne/home/event" %>
         </div>
       </section>
     </div>
-    <div class="col-start-3">
+    <div class="order-1 md:order-2 col-start-1 col-span-4 md:col-start-3  md:col-span-1">
       <section class="px-8">
         <h2 class="font-mono text-gray-700">Next event</h2>
         <% if @next_event %>

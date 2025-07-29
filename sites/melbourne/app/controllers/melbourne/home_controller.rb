@@ -4,12 +4,12 @@ module Melbourne
   class HomeController < ApplicationController
     def show
       @next_event = Event.next_event
-      @latest_events = Event.last(4)
+      @past_events = Event.last(4)
 
-      if @next_event && @next_event.in?(@latest_events)
-        @latest_events.shift
+      if @next_event && @next_event.in?(@past_events)
+        @past_events.shift
       else
-        @latest_events.pop
+        @past_events.pop
       end
     end
   end
