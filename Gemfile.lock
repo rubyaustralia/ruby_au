@@ -395,6 +395,7 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.4.1)
+    rouge (4.6.0)
     rspec (3.13.1)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -590,6 +591,7 @@ DEPENDENCIES
   rails-controller-testing
   rails_12factor
   redcarpet
+  rouge
   rspec-rails
   rubocop
   rubocop-capybara
