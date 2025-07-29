@@ -25,7 +25,7 @@ module SvgHelper
 
   def sanitize_svg(doc)
     sanitize(doc.to_html,
-             tags: %w[svg path g circle rect line polyline polygon use defs clipPath title desc],
-             attributes: %w[id class style viewBox fill stroke stroke-width stroke-linecap stroke-linejoin width height x y cx cy r transform d points xmlns xlink:href clip-path])
+             tags: %w[svg path g circle rect line polyline polygon use defs clipPath title desc tspan style text],
+             attributes: %w[id class style viewBox fill stroke stroke-width stroke-linecap stroke-linejoin width height x y cx cy dy r transform d points xmlns xlink:href clip-path viewbox])
   end
 end

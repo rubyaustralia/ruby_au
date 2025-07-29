@@ -1,20 +1,170 @@
 @use "tailwindcss";
 
+@custom-variant aria-current-page (&[aria-current="page"]);
+
+.prose-link {
+  @apply underline text-black hover:text-blue-800;
+}
+
+// Syntax Highlighting
+
 :root {
-  color-scheme: light dark;
-  /*--surface: light-dark(rgb(243, 241, 253), rgb(27, 26, 34));*/
-  /*--text: light-dark(rgb(27, 26, 34), rgb(243, 241, 253));*/
-
-  --surface: light-dark(var(--color-stone-50), var(--color-stone-900));
-  --text: light-dark(var(--color-stone-900), var(--color-stone-50));
+  --code-base: #ffffff;
+  --code-yellow: #fbbf24;
+  --code-grey: #94a3b8;
+  --code-pink: #fca5a5;
+  --code-light-blue: #60a5fa;
+  --code-off-white: #e2e8f0;
+  --code-lilac: #a78bfa;
+  --code-salmon: #f87171;
+  --code-light-grey: #cbd5e1;
+  --code-purple: #c084fc;
+  --code-green: #34d399;
+  --code-bright-yellow: #fde047;
+  --code-light-green: #86efac;
+  --code-magenta: #f472b6;
+  --code-rose: #fb7185;
+  --code-slate: #64748b;
 }
 
-:where(html) {
-  background: var(--surface);
-  color: var(--text);
+.highlight {
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-@theme {
-  --font-lekton: "Lekton", monospace;
+.highlight pre {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  overflow: visible;
 }
 
+/* Base styles */
+.highlight .n     { color: var(--code-base); font-style: italic } /* Comment */
+.highlight .p     { color: var(--code-base); font-style: italic } /* Comment */
+.highlight .c     { color: var(--code-grey); font-style: italic } /* Comment */
+.highlight .err   { color: var(--code-pink); background-color: rgba(239, 68, 68, 0.2) } /* Error */
+.highlight .k     { color: var(--code-light-blue); font-weight: bold } /* Keyword */
+.highlight .o     { color: var(--code-off-white) } /* Operator */
+.highlight .ch    { color: var(--code-grey); font-style: italic } /* Comment.Hashbang */
+.highlight .cm    { color: var(--code-grey); font-style: italic } /* Comment.Multiline */
+.highlight .cp    { color: var(--code-lilac); font-weight: bold } /* Comment.Preproc */
+.highlight .cpf   { color: var(--code-grey); font-style: italic } /* Comment.PreprocFile */
+.highlight .c1    { color: var(--code-grey); font-style: italic } /* Comment.Single */
+.highlight .cs    { color: var(--code-grey); font-weight: bold; font-style: italic } /* Comment.Special */
+
+/* Generic tokens */
+.highlight .gd    { color: var(--code-pink); background-color: rgba(239, 68, 68, 0.1) } /* Generic.Deleted */
+.highlight .ge    { color: var(--code-off-white); font-style: italic } /* Generic.Emph */
+.highlight .gr    { color: var(--code-salmon) } /* Generic.Error */
+.highlight .gh    { color: var(--code-light-grey); font-weight: bold } /* Generic.Heading */
+.highlight .gi    { color: var(--code-light-green); background-color: rgba(34, 197, 94, 0.1) } /* Generic.Inserted */
+.highlight .go    { color: var(--code-grey) } /* Generic.Output */
+.highlight .gp    { color: var(--code-yellow); font-weight: bold } /* Generic.Prompt */
+.highlight .gs    { color: var(--code-off-white); font-weight: bold } /* Generic.Strong */
+.highlight .gu    { color: var(--code-lilac); font-weight: bold } /* Generic.Subheading */
+.highlight .gt    { color: var(--code-pink) } /* Generic.Traceback */
+
+/* Keywords */
+.highlight .kc    { color: var(--code-yellow); font-weight: bold } /* Keyword.Constant */
+.highlight .kd    { color: var(--code-light-blue); font-weight: bold } /* Keyword.Declaration */
+.highlight .kn    { color: var(--code-purple); font-weight: bold } /* Keyword.Namespace */
+.highlight .kp    { color: var(--code-light-blue); font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr    { color: var(--code-light-blue); font-weight: bold } /* Keyword.Reserved */
+.highlight .kt    { color: var(--code-green); font-weight: bold } /* Keyword.Type */
+
+/* Literals */
+.highlight .ld    { color: var(--code-bright-yellow) } /* Literal.Date */
+.highlight .m     { color: var(--code-yellow) } /* Literal.Number */
+.highlight .s     { color: var(--code-light-green) } /* Literal.String */
+
+/* Names */
+.highlight .na    { color: var(--code-yellow) } /* Name.Attribute */
+.highlight .nb    { color: var(--code-light-blue) } /* Name.Builtin */
+.highlight .nc    { color: var(--code-green); font-weight: bold } /* Name.Class */
+.highlight .no    { color: var(--code-yellow); font-weight: bold } /* Name.Constant */
+.highlight .nd    { color: var(--code-lilac) } /* Name.Decorator */
+.highlight .ni    { color: var(--code-magenta); font-weight: bold } /* Name.Entity */
+.highlight .ne    { color: var(--code-salmon); font-weight: bold } /* Name.Exception */
+.highlight .nf    { color: var(--code-yellow); font-weight: bold } /* Name.Function */
+.highlight .nl    { color: var(--code-yellow); font-weight: bold } /* Name.Label */
+.highlight .nn    { color: var(--code-green); font-weight: bold } /* Name.Namespace */
+.highlight .nx    { color: var(--code-off-white) } /* Name.Other */
+.highlight .py    { color: var(--code-off-white) } /* Name.Property */
+.highlight .nt    { color: var(--code-magenta); font-weight: bold } /* Name.Tag */
+.highlight .nv    { color: var(--code-yellow) } /* Name.Variable */
+.highlight .ow    { color: var(--code-purple); font-weight: bold } /* Operator.Word */
+
+/* Numbers */
+.highlight .mb    { color: var(--code-yellow) } /* Literal.Number.Bin */
+.highlight .mf    { color: var(--code-yellow) } /* Literal.Number.Float */
+.highlight .mh    { color: var(--code-yellow) } /* Literal.Number.Hex */
+.highlight .mi    { color: var(--code-yellow) } /* Literal.Number.Integer */
+.highlight .mo    { color: var(--code-yellow) } /* Literal.Number.Oct */
+
+/* Strings */
+.highlight .sa    { color: var(--code-light-green) } /* Literal.String.Affix */
+.highlight .sb    { color: var(--code-light-green) } /* Literal.String.Backtick */
+.highlight .sc    { color: var(--code-light-green) } /* Literal.String.Char */
+.highlight .dl    { color: var(--code-light-green) } /* Literal.String.Delimiter */
+.highlight .sd    { color: var(--code-grey); font-style: italic } /* Literal.String.Doc */
+.highlight .s2    { color: var(--code-light-green) } /* Literal.String.Double */
+.highlight .se    { color: var(--code-yellow); font-weight: bold } /* Literal.String.Escape */
+.highlight .sh    { color: var(--code-light-green) } /* Literal.String.Heredoc */
+.highlight .si    { color: var(--code-yellow); font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx    { color: var(--code-light-green) } /* Literal.String.Other */
+.highlight .sr    { color: var(--code-rose) } /* Literal.String.Regex */
+.highlight .s1    { color: var(--code-light-green) } /* Literal.String.Single */
+.highlight .ss    { color: var(--code-magenta) } /* Literal.String.Symbol */
+
+/* Variables */
+.highlight .bp    { color: var(--code-light-blue) } /* Name.Builtin.Pseudo */
+.highlight .fm    { color: var(--code-yellow); font-weight: bold } /* Name.Function.Magic */
+.highlight .vc    { color: var(--code-yellow) } /* Name.Variable.Class */
+.highlight .vg    { color: var(--code-yellow) } /* Name.Variable.Global */
+.highlight .vi    { color: var(--code-yellow) } /* Name.Variable.Instance */
+.highlight .vm    { color: var(--code-yellow) } /* Name.Variable.Magic */
+
+/* Whitespace and text */
+.highlight .w     { color: var(--code-slate) } /* Text.Whitespace */
+
+/* Line numbers (optional) */
+.highlight .linenos {
+  color: var(--code-slate);
+  background-color: rgba(255, 255, 255, 0.02);
+  padding-right: 8px;
+  margin-right: 8px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  user-select: none;
+}
+
+/* Highlighted line (for line highlighting) */
+.highlight .hll {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: block;
+  margin: 0 -12px;
+  padding: 0 12px;
+}
+
+/* Additional modern touches */
+
+.highlight::-webkit-scrollbar {
+  height: 8px;
+}
+
+.highlight::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.highlight::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.highlight::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}

@@ -1,10 +1,58 @@
 ---
+- uuid: 019850c6-3ec7-78f4-8142-606741e118c1
+  date: '2025-07-31'
+  name: Ruby Melbourne Relaunch!
+  description: Let's celebrate together the relaunch of Ruby Melbourne meetup, previously known as RORO!
+    We'll hear a command pattern retrospective by Tom Dalling, from Ferocia, and about the pitfalls of TDD by Michael Milewski
+  slug: 2025-07-31-ruby-melbourne-relaunch
+  registration_link: https://www.meetup.com/ruby-on-rails-oceania-melbourne/events/305601915/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+  talks:
+    - uuid: 019850ca-524b-79ac-9c96-19a8f4d9ba4d
+      title: 'A retrospective of the command pattern'
+      description: Join us as Tom Dalling shares insights from Ferocia's journey with the command pattern - their take on service objects. Discover what worked well, what didn't, and the valuable lessons learned along the way.
+        A great opportunity to hear real-world patterns and practices from the trenches of one of Australia's most exciting Ruby on Rails applications. Come ready to engage and learn!
+      video_url: TODO
+      speakers:
+        - name: Tom Dalling
+          contact_details:
+            github_username: tomdalling
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+
+    - uuid: 019850cb-c13f-7198-94f2-4d42c8ca9e78
+      title: 'TDD - why does it fail?'
+      description: A bunch of us Ruby devs write tests because "we are told to". We write tests because its meant to be a good things. We follow philosophies like betterspecs.org because it sounded like a good idea at the time. This presentation takes us back to "why" write tests and "why" looking at each test failure, should be the driver of the design of your code. It also introduces the philosophy of evenbetterspecs as well as why DAMP (Descriptive and Meaningful Phrases) tests are preferable over DRY (Don't Repeat Yourself).
+        This talk will leave you with a bunch of tools, tips and philosophies to get more out of your tests and their readability no matter what language you code in. Code repo https://github.com/failure-driven/tdd-why-does-it-fail
+      video_url: TODO
+      speakers:
+        - name: Michael Milewski
+          contact_details:
+            github_username: saramic
+            x_handle: saramic
+            linkedin_handle: michael-milewski
+            bluesky_handle:
+            mastodon_handle:
+            website: https://failure-driven.com/
 - uuid: 4438e22b-055c-4f37-b2c8-2eb7bd236296
   date: '2025-06-26'
-  name: Communicating Intent in Code with HashNotAdam
-  description: HashNotAdam guides us through the art of writing code that speaks your
+  name: Communicating Intent in Code with Adam Rice
+  description: Adam Rice will guide us through the art of writing code that speaks your
     intent and avoids common pitfalls, drawing from real Rails experience.
-  slug: 2025-06-26-communicating-intent-in-code-hashnotadam
+  slug: 2025-06-26-communicating-intent-in-code
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -39,6 +87,7 @@
     Rails 8 in production with John Sherwood! Two practical talks to supercharge your
     dev workflow.
   slug: 2025-04-24-task-runners-and-rails-8
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -88,6 +137,7 @@
   description: Join Matt Hood as he unravels Turbo form wizardry and Simon Hildebrandt
     delves into using SQLite as a Ruby gem. Insightful, interactive, and fun!
   slug: 2025-05-29-turbo-forms-sqlite-gem
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -136,6 +186,7 @@
     with Julian Pinzon and Adam, then get hands-on with Rack’s fundamentals with Simon
     Hildebrandt.
   slug: 2025-03-27-logic-objects-and-rack-fundamentals
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -192,6 +243,7 @@
   description: Explore smart search systems in Ruby! Daniel Kaminsky breaks down embeddings,
     RAG, and more.
   slug: 2025-02-27-semantic-search-rag-ruby
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -225,6 +277,7 @@
   description: Explore Puma’s secrets with Joshua and get the tasty highlights of
     Ruby 3.4 & Rails 8 with Anton.
   slug: 2025-01-30-puma-ruby-salad
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -273,6 +326,7 @@
   description: Join us for an AI coding showdown with Ceels and dive into practical
     SAML magic for Ruby with Pat!
   slug: 2024-10-24-cursor-v-copilot-and-happy-ruby-saml
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -320,6 +374,7 @@
   description: Dive into frontend joy with Jero Paul on Hotwire, Turbo & Stimulus.
     Then, uncover the magic of Rails `CurrentAttributes` with Darkfishy.
   slug: 2024-11-28-hotwire-and-currentattributes
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -369,6 +424,7 @@
   description: Discover the magic behind Rails' reload! with Darkfishy and get a fresh
     take on seeds and fixtures with Julian Pinzon.
   slug: 2024-09-26-reload-rails-oaken-seeds
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -419,6 +475,7 @@
   description: Hear Helen Stonehouse’s journey into tech and get hands-on with Rails
     Engines in a fun double bill with Chris Oliver.
   slug: 2024-08-29-career-change-rails-engines
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -466,6 +523,7 @@
   description: Dive into vibrant web colors with Dan Laush and learn about being a
     good male ally with Nick Wolf.
   slug: 2024-07-25-pinkest-pink-and-being-a-good-male-ally
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -514,6 +572,7 @@
   description: Join Prakriti Mateti as she shares insights on rebuilding a large product
     from scratch, plus discover Turbo in Laravel with Simran Sawhney.
   slug: 2024-06-27-rebuilding-products-and-turbo-in-laravel
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -562,6 +621,7 @@
     Ruby—staving off data staleness and powering GraphQL and more. Perfect for anyone
     moving beyond standard page-by-page queries!
   slug: 2024-05-30-cursors-modern-pagination-ruby
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -596,6 +656,7 @@
     Support, Active Model, and more—from his learning journey. Perfect for curious
     Rubyists!
   slug: 2024-04-25-dissecting-rails
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -629,6 +690,7 @@
     behind the Ruby ecosystem with Ponny. Insights, techniques, and fun for every
     Rubyist!
   slug: 2024-03-28-one-billion-rows-and-ruby-economics
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -677,6 +739,7 @@
   description: Explore how to host a Rails app from home with Saramic and master scaling
     basics of distributed systems with Stefanus Wilfrid.
   slug: 2024-02-22-self-hosting-and-scaling-rails
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -724,6 +787,7 @@
   description: Discover how to process DMARC reports with Action Mailbox, then take
     a deep dive into the internals of Ruby fibers with KJ!
   slug: 2024-01-25-dmarc-action-mailbox-and-ruby-fibers
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -774,6 +838,7 @@
   description: Join Justin Towsey for lessons and wisdom from a year as a dev, then
     dive into Rails architecture and engines with Anton Valkov in a panel-style discussion.
   slug: 2023-11-23-developer-wisdom-rails-engines
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -821,6 +886,7 @@
   description: Dive into full stack creativity with Thomas Hoang's bootcamp project
     and level-up your Rails security with Michael S.'s talk on environment variables.
   slug: 2023-10-26-bootcamp-showcase-environment-variables
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -869,6 +935,7 @@
   description: Anton shares quick insights on Rails forms, then Simran explores how
     pair presenting can make your talks unforgettable!
   slug: 2023-09-28-rails-forms-and-pair-presenting
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -916,6 +983,7 @@
   description: Hear Map7 share insights from building a 2D action game in Dragonruby,
     plus take a deep dive into Ruby code internals with Rian McGuire.
   slug: 2023-08-24-dragonruby-and-ruby-code-dive
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -963,6 +1031,7 @@
   description: Mentorship and TDD tips for juniors, unraveling a 27-year-old production
     bug with radar, and Matt Hood delves into FHIR's technical power in healthcare.
   slug: 2023-07-27-juniors-bugs-fhir
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -1029,6 +1098,7 @@
   description: David Carlin shares fresh I18n simplicity tips, followed by Achhetr
     demoing Exercism and coding approaches for junior devs.
   slug: 2021-06-24-i18n-simplicity-exercism-juniors
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -1076,6 +1146,7 @@
   description: Join Oscar Alan Pierce as he shares practical tips for better technical
     writing—make your docs fun, clear, and super useful for every developer!
   slug: 2021-03-25-joy-of-docs-technical-writing-oscar-alan-pierce
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub
@@ -1109,6 +1180,7 @@
   description: See how Vanessa Nimmo and the team at Fresho use View Components to
     make Rails views simpler, easier to test, and more fun to build!
   slug: 2021-02-25-view-components-in-the-wild
+  registration_link:
   type: meetup
   venue:
     name: BOYD Community Hub

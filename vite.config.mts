@@ -6,7 +6,12 @@ export default defineConfig({
   plugins: [
     ViteRails({
       fullReload: {
-        additionalPaths: ['config/routes.rb', 'app/views/**/*']
+        additionalPaths: [
+          'config/routes.rb',
+          'app/views/**/*',
+          'sites/melbourne/app/views/**/*',
+          'sites/melbourne/app/config/routes.rb',
+        ]
       }
     }),
   ],
@@ -24,5 +29,11 @@ export default defineConfig({
         quietDeps: true
       }
     }
+  },
+  test: {
+    environment: 'jsdom',
+    include: ['spec/javascript/**/*.spec.js', 'spec/javascript/**/*.test.js'],
+    globals: true,
+    root: '.'
   }
 })
