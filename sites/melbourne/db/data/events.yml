@@ -4,7 +4,7 @@
   name: Ruby Melbourne Relaunch!
   description: Let's celebrate together the relaunch of Ruby Melbourne meetup, previously known as RORO!
     We'll hear a command pattern retrospective by Tom Dalling, from Ferocia, and about the pitfalls of TDD by Michael Milewski
-  slug: 2025-07-31-ruby-melbourne-relaunch-with-tom-and-mike
+  slug: 2025-07-31-ruby-melbourne-relaunch
   registration_link: https://www.meetup.com/ruby-on-rails-oceania-melbourne/events/305601915/
   type: meetup
   venue:
@@ -51,7 +51,7 @@
   name: Communicating Intent in Code with Adam Rice
   description: Adam Rice will guide us through the art of writing code that speaks your
     intent and avoids common pitfalls, drawing from real Rails experience.
-  slug: 2025-06-26-communicating-intent-in-code-adam-rice
+  slug: 2025-06-26-communicating-intent-in-code
   registration_link:
   type: meetup
   venue:

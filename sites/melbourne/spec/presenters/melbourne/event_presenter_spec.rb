@@ -220,4 +220,46 @@ RSpec.describe Melbourne::EventPresenter do
       end
     end
   end
+
+  describe "#formatted_date_for_card" do
+    context "when event year is the same as current year" do
+      let(:event_date) { Date.new(2025, 3, 15) }
+
+      it "returns formatted date without year" do
+        travel_to Date.new(2025, 4, 1) do
+          expect(presenter.formatted_date_for_card).to eq("15 March")
+        end
+      end
+    end
+
+    context "when event year is different from current year" do
+      let(:event_date) { Date.new(2024, 3, 15) }
+
+      it "returns formatted date with year" do
+        travel_to Date.new(2025, 4, 1) do
+          expect(presenter.formatted_date_for_card).to eq("15 March 2024")
+        end
+      end
+    end
+  end
+
+  describe "#container_base_classes" do
+    it "returns the base CSS classes for the event container" do
+      expected_classes = "rounded cursor-pointer flex flex-col gap-1 border-b border-b-gray-200 px-4 pb-4 pt-3 transition-colors bg-white text-gray-500 **:data-title:text-black **:data-ascii-image:text-gray-300 hover:bg-blue-700 inset-ring-4 inset-ring-white"
+      expect(presenter.container_base_classes).to eq(expected_classes)
+    end
+  end
+
+  describe "#container_hover_classes" do
+    it "returns the hover CSS classes for the event container" do
+      expected_classes = "hover:bg-[#0D37F2] hover:border-b-transparent hover:text-white hover:**:data-title:text-white hover:**:data-ascii-image:text-[#6A86FF] hover:inset-ring-transparent"
+      expect(presenter.container_hover_classes).to eq(expected_classes)
+    end
+  end
+
+  describe "#dom_id" do
+    it "returns the DOM ID for the event" do
+      expect(presenter.dom_id).to eq("event_event-1")
+    end
+  end
 end

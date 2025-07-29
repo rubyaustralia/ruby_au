@@ -2,7 +2,14 @@
 
 @custom-variant aria-current-page (&[aria-current="page"]);
 
+.prose-link {
+  @apply underline text-black hover:text-blue-800;
+}
+
+// Syntax Highlighting
+
 :root {
+  --code-base: #ffffff;
   --code-yellow: #fbbf24;
   --code-grey: #94a3b8;
   --code-pink: #fca5a5;
@@ -22,7 +29,7 @@
 
 .highlight {
   overflow-x: auto;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-family: 'JetBrains Mono', 'Menlo', 'Ubuntu Mono', monospace;
   font-size: 14px;
   line-height: 1.5;
 }
@@ -36,6 +43,8 @@
 }
 
 /* Base styles */
+.highlight .n     { color: var(--code-base); font-style: italic } /* Comment */
+.highlight .p     { color: var(--code-base); font-style: italic } /* Comment */
 .highlight .c     { color: var(--code-grey); font-style: italic } /* Comment */
 .highlight .err   { color: var(--code-pink); background-color: rgba(239, 68, 68, 0.2) } /* Error */
 .highlight .k     { color: var(--code-light-blue); font-weight: bold } /* Keyword */

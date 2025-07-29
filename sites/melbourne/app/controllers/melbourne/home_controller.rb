@@ -3,11 +3,14 @@
 module Melbourne
   class HomeController < ApplicationController
     def show
-      @events = Event.all
-      today = Date.current
-      @upcoming_events = @events.select { |event| event.date >= today }
-      @past_events = @events.select { |event| event.date < today }
-      @selected_event = @upcoming_events.first
+      @next_event = Event.next_event
+      @latest_events = Event.last(4)
+
+      if @next_event && @next_event.in?(@latest_events)
+        @latest_events.shift
+      else
+        @latest_events.pop
+      end
     end
   end
 end

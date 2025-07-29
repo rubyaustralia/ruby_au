@@ -7,20 +7,45 @@
                    image: vite_asset_url("images/melbourne/ruby_melbourne_og.png")
                  } %>
 
-<%= content_for :upcoming_events do  %>
-  <%= render @upcoming_events, selected_event: @selected_event %>
-<% end %>
+<div class="grid grid-cols-[1fr_minmax(0,_5fr)_minmax(0,_7fr)_1fr]">
+  <%= render "melbourne/home/header" %>
 
-<%= content_for :past_events do  %>
-  <%= render @past_events, selected_event: @selected_event %>
-<% end %>
-
-<%= content_for :event_summary do  %>
-  <% if @selected_event %>
-    <%= render "melbourne/events/summary", event: @selected_event %>
-  <% else %>
-    <%= render "melbourne/events/no_upcoming_summary" %>
-  <% end %>
-<% end %>
-
-<%= render "layouts/melbourne/jumbotron" %>
+  <div class="col-span-4 grid grid-cols-subgrid bg-blue-700 h-8 gap-16">
+    <div class="col-start-2">
+      <div class="flex bg-[#0025CA] rounded-t h-full items-center px-4 overflow-auto">
+        <code class="text-sm">
+          <%= raw Pygmentize.process("render collection: @latest_events, partial: \"home/event\"", :ruby) %>
+        </code>
+      </div>
+    </div>
+    <div class="col-start-3">
+      <div class="flex bg-[#0025CA] rounded-t h-full items-center px-4  overflow-auto">
+        <code class="text-sm">
+          <%= raw Pygmentize.process("render \"home/next_event\", event: @next_event", :ruby) %>
+        </code>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-4 grid grid-cols-subgrid gap-8 mt-8 mb-32">
+    <div class="col-start-2">
+      <section class="px-4">
+        <h2 class="font-mono text-gray-700 px-4">Latest events</h2>
+        <div class="space-y-8 mt-4">
+          <%= render collection: @latest_events, partial: "melbourne/home/event" %>
+        </div>
+      </section>
+    </div>
+    <div class="col-start-3">
+      <section class="px-8">
+        <h2 class="font-mono text-gray-700">Next event</h2>
+        <% if @next_event %>
+          <div class="mt-4">
+            <%= render "melbourne/home/next_event", event: @next_event %>
+          </div>
+        <% else %>
+          <%= render "melbourne/home/no_upcoming_summary" %>
+        <% end %>
+      </section>
+    </div>
+  </div>
+</div>

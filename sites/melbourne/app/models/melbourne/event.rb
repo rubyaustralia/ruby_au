@@ -32,17 +32,30 @@ module Melbourne
           venue: Venue.new(event_data.fetch("venue", {})),
           talks: build_talks(event_data.fetch("talks", []))
         )
-      end.sort_by(&:date).reverse!
+      end.sort_by(&:date)
     end
 
     def self.find_by_slug(slug)
       all.find { it.slug == slug }
     end
 
+    def self.next_event
+      next_event = all.last
+      return next_event if next_event.today_or_in_the_future?
+    end
+
+    def self.last(n = 1)
+      Event.all.last(n).reverse
+    end
+
     alias_attribute :id, :uuid
 
     def to_param
       slug
+    end
+
+    def today_or_in_the_future?
+      date.today? || date.future?
     end
 
     def schema
