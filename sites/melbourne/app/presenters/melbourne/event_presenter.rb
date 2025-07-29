@@ -44,6 +44,8 @@ module Melbourne
       event.description
     end
 
+    def open_graph_metadata = event.open_graph_metadata
+
     def talks
       event.talks
     end

@@ -1,3 +1,12 @@
+<% set_meta_tags title: "Home",
+                 description: "Ruby community in Melbourne hosting meetups, workshops, hack nights, Rails Girls and more events to learn Ruby and grow the community.",
+                 keywords: "Ruby, Rails, Melbourne, Meetup",
+                 og: {
+                   title: :title,
+                   description: :description,
+                   image: vite_asset_url("images/melbourne/ruby_melbourne_og.png")
+                 } %>
+
 <%= content_for :upcoming_events do  %>
   <%= render @upcoming_events, selected_event: @selected_event %>
 <% end %>

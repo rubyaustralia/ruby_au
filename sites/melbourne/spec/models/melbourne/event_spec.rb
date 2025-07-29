@@ -129,7 +129,7 @@ RSpec.describe Melbourne::Event do
              og: {
                title: :title,
                description: :description,
-               image: nil,
+               image: "/vite-test/assets/ruby_melbourne_og-DpZpxroE.png",
                url: "http://melbourne.localhost:3000/events/2025-04-24-make-vs-justfile-vs-mise-rails-8-new",
              },
              twitter: {
