@@ -1,0 +1,19 @@
+<div class="col-span-4 grid grid-cols-subgrid min-h-[60dvh] bg-blue-700 p-4">
+  <div class="col-span-4 md:col-span-1 md:col-start-2 grid items-center">
+    <div class="flex gap-2 items-center justify-center md:justify-start">
+      <%= vite_inline_svg("melbourne/logo.svg", class: "text-white h-20 w-20 md:h-32 md:w-32") %>
+      <div class="">
+        <h1 class="uppercase text-white font-bold">
+          <span class="text-2xl md:text-4xl">Ruby</span><br>
+          <span class="text-4xl md:text-6xl">Melbourne</span>
+        </h1>
+        <p class="text-white/60">Meetups and events by Ruby Australia</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-start-1 col-span-4 md:col-start-3 md:col-span-1">
+    <div class="md:grid md:items-end">
+      <%= vite_image_tag("images/melbourne/coffee_cup.png", class: "w-[80%] opacity-80 mx-auto") %>
+    </div>
+  </div>
+</div>

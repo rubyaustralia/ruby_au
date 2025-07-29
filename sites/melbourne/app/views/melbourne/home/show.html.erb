@@ -1,56 +1,52 @@
-<div class="h-lvh overflow-hidden overflow-y-scroll">
-  <div class="font-mono text-right text-xs p-2 text-stone-500">Ruby Melbourne is a
-    <a href="https://ruby.org.au" class="underline" target="_blank">Ruby Australia Meetup</a></div>
-  <div class="grid md:place-items-center">
-    <div class="block md:flex w-full h-[calc(100lvh-2rem)] overflow-hidden">
-      <div class="w-full md:max-w-1/2 h-[50vh] md:h-full md:block overflow-hidden">
-        <div aria-hidden="true"
-             class="break-all text-7xl md:text-[7rem] lg:text-[10rem] tracking-widest font-lekton italic overflow-hidden text-stone-200 dark:text-stone-800">
-          <span class="text-yellow-600 dark:text-yellow-400">RUBY</span>MELBOURNERUBY<span class="text-yellow-600 dark:text-yellow-400">MELBOURNE</span>RUBY<span>MELBOURNE</span>RUBYMELBOURNERUBYMELBOURNERUBYMELBOURNERUBYMELBOURNERUBYMELBOURNERUBYMELBOURNERUBYMELBOURNERUBYMELBOURNERUBYMELBOURNERUBYMELBOURNE
-        </div>
+<% set_meta_tags title: "Home",
+                 description: "Ruby community in Melbourne hosting meetups, workshops, hack nights, Rails Girls and more events to learn Ruby and grow the community.",
+                 keywords: "Ruby, Rails, Melbourne, Meetup",
+                 og: {
+                   title: :title,
+                   description: :description,
+                   image: vite_asset_url("images/melbourne/ruby_melbourne_og.png")
+                 } %>
+
+<div class="grid grid-cols-[1fr_minmax(0,_5fr)_minmax(0,_7fr)_1fr]">
+  <%= render "melbourne/home/header" %>
+
+  <div class="hidden md:grid col-span-4 grid-cols-subgrid bg-blue-700 h-8 gap-16">
+    <div class="col-start-2">
+      <div class="flex bg-[#0025CA] rounded-t h-full items-center px-4 overflow-auto">
+        <code class="text-sm">
+          <%= raw Pygmentize.process("render collection: @latest_events, partial: \"home/event\"", :ruby) %>
+        </code>
       </div>
-      <div class="w-full md:w-1/2">
-        <div class="h-full grid items-center p-4">
-          <div class="font-lekton text-2xl">
-            <div class="font-bold"><h1 class="inline">Ruby Melbourne</h1>
-              <p class="inline">Meetup Relaunch</p></div>
-            <div class="flex gap-4 items-center mt-8">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                   stroke="currentColor"
-                   class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/>
-              </svg>
-              <p>31 July 2025</p>
-            </div>
-            <div class="flex gap-4 mt-2 items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                   stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/>
-              </svg>
-              <div>
-                <p>Location: Ferocia ⚡️</p>
-                <div>
-                  <a href="https://maps.app.goo.gl/9xvvwpdw9BkByKqy9" target="_blank">
-                    <span class="underline">Level 7/271 Collins St, Melbourne VIC 3000</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="flex gap-4 mt-2 items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                   stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z"/>
-              </svg>
-              <a href="https://www.meetup.com/ruby-on-rails-oceania-melbourne/events/305601915" target="_blank"
-                 class="underline">RSVP Today</a>
-            </div>
+    </div>
+    <div class="col-start-3">
+      <div class="flex bg-[#0025CA] rounded-t h-full items-center px-4  overflow-auto">
+        <code class="text-sm">
+          <%= raw Pygmentize.process("render \"home/next_event\", event: @next_event", :ruby) %>
+        </code>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-span-4 grid grid-cols-subgrid gap-8 mt-8 mb-32">
+    <div class="order-2 md:order-1 col-start-1 col-span-4 md:col-start-2 md:col-span-1">
+      <section class="px-4">
+        <h2 class="font-mono text-gray-700 px-4">Past events</h2>
+        <div class="space-y-8 mt-4">
+          <%= render collection: @past_events, partial: "melbourne/home/event" %>
+        </div>
+      </section>
+    </div>
+    <div class="order-1 md:order-2 col-start-1 col-span-4 md:col-start-3  md:col-span-1">
+      <section class="px-8">
+        <h2 class="font-mono text-gray-700">Next event</h2>
+        <% if @next_event %>
+          <div class="mt-4">
+            <%= render "melbourne/home/next_event", event: @next_event %>
           </div>
-        </div>
-      </div>
+        <% else %>
+          <%= render "melbourne/home/no_upcoming_summary" %>
+        <% end %>
+      </section>
     </div>
   </div>
 </div>

@@ -4,6 +4,9 @@ module Melbourne
   class Event
     private_constant :OpenGraphMetadata
     class OpenGraphMetadata
+      include ViteRails::TagHelpers
+      include ActionView::Helpers::AssetUrlHelper
+
       def initialize(event)
         @event = event
       end
@@ -16,7 +19,7 @@ module Melbourne
           og: {
             title: :title,
             description: :description,
-            image: nil,
+            image: vite_asset_url("images/melbourne/ruby_melbourne_og.png"),
             url: event_url
           },
           twitter: {

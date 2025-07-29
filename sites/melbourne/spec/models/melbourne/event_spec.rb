@@ -129,7 +129,7 @@ RSpec.describe Melbourne::Event do
              og: {
                title: :title,
                description: :description,
-               image: nil,
+               image: "/vite-test/assets/ruby_melbourne_og-DhIJuUvR.png",
                url: "http://melbourne.localhost:3000/events/2025-04-24-make-vs-justfile-vs-mise-rails-8-new",
              },
              twitter: {
@@ -139,6 +139,84 @@ RSpec.describe Melbourne::Event do
                description: :description,
              }
            })
+    end
+  end
+
+  describe ".next_event" do
+    it "returns the next future event" do
+      allow(described_class).to \
+        receive(:all).and_return(
+          [
+            described_class.new(date: 1.day.ago),
+            described_class.new(date: 1.day.from_now)
+          ]
+        )
+
+      next_event = described_class.next_event
+      expect(next_event).to be_a(described_class)
+      expect(next_event.date).to eq(1.day.from_now.to_date)
+    end
+
+    it "returns nil when no future events exist" do
+      allow(described_class).to \
+        receive(:all).and_return(
+          [
+            described_class.new(date: 1.day.ago),
+            described_class.new(date: 2.days.ago)
+          ]
+        )
+
+      expect(described_class.next_event).to be_nil
+    end
+  end
+
+  describe ".last" do
+    it "returns the last event by default" do
+      events = [
+        described_class.new(date: 3.days.ago),
+        described_class.new(date: 2.days.ago),
+        described_class.new(date: 1.day.ago)
+      ]
+      allow(described_class).to receive(:all).and_return(events)
+
+      result = described_class.last
+      expect(result).to eq([events.last])
+    end
+
+    it "returns the last n events in reverse order" do
+      events = [
+        described_class.new(date: 3.days.ago),
+        described_class.new(date: 2.days.ago),
+        described_class.new(date: 1.day.ago)
+      ]
+      allow(described_class).to receive(:all).and_return(events)
+
+      result = described_class.last(2)
+      expect(result).to eq([events.last, events[-2]])
+    end
+  end
+
+  describe "#id" do
+    it "returns the uuid" do
+      event = described_class.new(uuid: "test-uuid-123")
+      expect(event.id).to eq("test-uuid-123")
+    end
+  end
+
+  describe "#today_or_in_the_future?" do
+    it "returns true for today's events" do
+      event = described_class.new(date: Date.current)
+      expect(event.today_or_in_the_future?).to be(true)
+    end
+
+    it "returns true for future events" do
+      event = described_class.new(date: 1.day.from_now)
+      expect(event.today_or_in_the_future?).to be(true)
+    end
+
+    it "returns false for past events" do
+      event = described_class.new(date: 1.day.ago)
+      expect(event.today_or_in_the_future?).to be(false)
     end
   end
 end
