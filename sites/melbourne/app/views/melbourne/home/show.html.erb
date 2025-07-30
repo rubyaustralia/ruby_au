@@ -13,31 +13,31 @@
                  },
                  twitter: { card: "summary_large_image" } %>
 
-<div class="grid grid-cols-[1fr_minmax(0,_5fr)_minmax(0,_7fr)_1fr]">
+<div class="grid grid-cols-[1fr_minmax(0,_5fr)_minmax(0,_7fr)_1fr] grid-rows-[60dvh_32px_auto]">
   <%= render "melbourne/home/header" %>
 
-  <div class="hidden md:grid col-span-4 grid-cols-subgrid bg-blue-700 h-8 gap-16">
+  <div class="hidden col-span-4 col-start-1 row-start-2 gap-16 h-8 md:grid grid-cols-subgrid">
     <div class="col-start-2">
       <div class="flex bg-[#0025CA] rounded-t h-full items-center px-4 overflow-auto">
-        <code class="text-sm highlight overflow-auto whitespace-nowrap">
+        <code class="overflow-auto text-sm whitespace-nowrap highlight">
           <%== formatter.format(lexer.lex("render @past_events")) %>
         </code>
       </div>
     </div>
     <div class="col-start-3">
       <div class="flex bg-[#0025CA] rounded-t h-full items-center px-4  overflow-auto">
-        <code class="text-sm highlight overflow-auto whitespace-nowrap">
+        <code class="overflow-auto text-sm whitespace-nowrap highlight">
           <%== formatter.format(lexer.lex("render \"home/next_event\", event: @next_event")) %>
         </code>
       </div>
     </div>
   </div>
 
-  <div class="col-span-4 grid grid-cols-subgrid gap-8 mt-8 mb-32">
-    <div class="order-2 md:order-1 col-start-1 col-span-4 md:col-start-2 md:col-span-1">
+  <div class="grid col-span-4 row-start-3 gap-8 mt-8 mb-32 grid-cols-subgrid">
+    <div class="order-2 col-span-4 col-start-1 md:order-1 md:col-start-2 md:col-span-1">
       <section class="px-4">
-        <h2 class="font-mono text-gray-700 px-4">Past events</h2>
-        <div class="space-y-8 mt-4">
+        <h2 class="px-4 font-mono text-gray-700">Past events</h2>
+        <div class="mt-4 space-y-8">
           <%= render @past_events %>
         </div>
         <div>
@@ -47,7 +47,7 @@
         </div>
       </section>
     </div>
-    <div class="order-1 md:order-2 col-start-1 col-span-4 md:col-start-3  md:col-span-1">
+    <div class="order-1 col-span-4 col-start-1 md:order-2 md:col-start-3 md:col-span-1">
       <section class="px-8">
         <h2 class="font-mono text-gray-700">Next event</h2>
         <% if @next_event %>

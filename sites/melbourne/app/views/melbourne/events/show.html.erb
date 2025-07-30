@@ -1,8 +1,10 @@
 <% set_meta_tags @event_presenter.open_graph_metadata %>
 <%= render "layouts/melbourne/navigation" %>
 
-<div class="w-full bg-[#0D37F2] flex items-center justify-center py-4">
-  <%= vite_inline_svg("melbourne/logo.svg", class: "text-white h-8 w-8 md:h-12 md:w-12") %>
+<div class="w-full bg-[#0D37F2] flex items-center justify-center py-4 md:py-2">
+  <a href="/">
+    <%= vite_image_tag("images/melbourne/logomark-graf.png", class: "text-white h-8 w-8 md:h-10 md:w-10") %>
+  </a>
 </div>
 
 
