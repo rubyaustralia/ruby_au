@@ -19,7 +19,7 @@
     <div class="col-start-2">
       <div class="flex bg-[#0025CA] rounded-t h-full items-center px-4 overflow-auto">
         <code class="text-sm highlight overflow-auto whitespace-nowrap">
-          <%== formatter.format(lexer.lex("render collection: @latest_events, partial: \"home/event\"")) %>
+          <%== formatter.format(lexer.lex("render @past_events")) %>
         </code>
       </div>
     </div>
@@ -37,7 +37,12 @@
       <section class="px-4">
         <h2 class="font-mono text-gray-700 px-4">Past events</h2>
         <div class="space-y-8 mt-4">
-          <%= render collection: @past_events, partial: "melbourne/home/event" %>
+          <%= render @past_events %>
+        </div>
+        <div>
+          <%= link_to "All events",
+                      events_path,
+                      class: "block px-3.5 py-2.5 mt-4 w-full text-sm font-semibold text-center text-gray-900 bg-gray-200 rounded-md cursor-pointer shadow-xs hover:bg-gray-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" %>
         </div>
       </section>
     </div>

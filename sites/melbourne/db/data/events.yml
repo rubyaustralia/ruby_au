@@ -82,7 +82,7 @@
             website:
 - uuid: 1693724f-2cf7-462a-8e92-95183f80d7c4
   date: '2025-04-24'
-  name: Task Runners with Michael Milewski & Rails 8 with John Sherwood
+  name: Task Runners & Rails 8
   description: Explore task runners with Michael Milewski, then get hands-on with
     Rails 8 in production with John Sherwood! Two practical talks to supercharge your
     dev workflow.
@@ -133,7 +133,7 @@
             website:
 - uuid: 3e09ed96-cbb6-4089-83d1-baa3930d5dff
   date: '2025-05-29'
-  name: Mastering Turbo Forms with Matt Hood and SQLite in Ruby with Simon Hildebrandt
+  name: Mastering Turbo Forms and SQLite in Ruby
   description: Join Matt Hood as he unravels Turbo form wizardry and Simon Hildebrandt
     delves into using SQLite as a Ruby gem. Insightful, interactive, and fun!
   slug: 2025-05-29-turbo-forms-sqlite-gem
@@ -181,7 +181,7 @@
             website:
 - uuid: 5722c07e-31d3-4dbc-bee2-c833f400b6fc
   date: '2025-03-27'
-  name: Business Logic Objects Panel & Rack Fundamentals with Julian, Adam, Simon
+  name: Business Logic Objects & Rack Fundamentals
   description: Dive into advanced Ruby business logic structures in a lively panel
     with Julian Pinzon and Adam, then get hands-on with Rack’s fundamentals with Simon
     Hildebrandt.
@@ -239,7 +239,7 @@
             website:
 - uuid: 405f46ee-f5c5-4793-90d8-33673a903328
   date: '2025-02-27'
-  name: Semantic Search and RAG with Ruby by Daniel Kaminsky
+  name: Semantic Search and RAG
   description: Explore smart search systems in Ruby! Daniel Kaminsky breaks down embeddings,
     RAG, and more.
   slug: 2025-02-27-semantic-search-rag-ruby
@@ -273,7 +273,7 @@
             website:
 - uuid: '050789d7-68cf-4c77-8155-44e670e7a7ac'
   date: '2025-01-30'
-  name: Puma Internals with Joshua and Ruby 3.4/Rails 8 Salad by Anton
+  name: Puma Internals and Ruby 3.4/Rails 8 Salad
   description: Explore Puma’s secrets with Joshua and get the tasty highlights of
     Ruby 3.4 & Rails 8 with Anton.
   slug: 2025-01-30-puma-ruby-salad
@@ -322,7 +322,7 @@
             website:
 - uuid: 72262239-7a6b-4f1f-a87c-8fbd9605b578
   date: '2024-10-24'
-  name: Cursor v Copilot with Ceels & Happy Ruby SAML by Pat
+  name: Cursor v Copilot & Ruby SAML
   description: Join us for an AI coding showdown with Ceels and dive into practical
     SAML magic for Ruby with Pat!
   slug: 2024-10-24-cursor-v-copilot-and-happy-ruby-saml
@@ -370,7 +370,7 @@
             website:
 - uuid: e9e7267b-cf7b-4611-88ce-14718b5d8225
   date: '2024-11-28'
-  name: Hotwire Happiness with Jero Paul & Rails CurrentAttributes with Darkfishy
+  name: Hotwire Happiness & Rails CurrentAttributes
   description: Dive into frontend joy with Jero Paul on Hotwire, Turbo & Stimulus.
     Then, uncover the magic of Rails `CurrentAttributes` with Darkfishy.
   slug: 2024-11-28-hotwire-and-currentattributes
@@ -420,7 +420,7 @@
             website:
 - uuid: b02f51ea-7d82-4bc7-b5c9-764c0baabdfd
   date: '2024-09-26'
-  name: Understanding reload! in Rails with Darkfishy & Oaken Seeds by Julian Pinzon
+  name: Understanding reload! in Rails & Oaken
   description: Discover the magic behind Rails' reload! with Darkfishy and get a fresh
     take on seeds and fixtures with Julian Pinzon.
   slug: 2024-09-26-reload-rails-oaken-seeds
@@ -470,7 +470,7 @@
             website:
 - uuid: a166fb19-330b-4735-bce1-5d5e9cb5ccad
   date: '2024-08-29'
-  name: Career Change Inspiration with Helen Stonehouse & Rails Engines with Chris
+  name: Career Change Inspiration & Rails Engines
     Oliver
   description: Hear Helen Stonehouse’s journey into tech and get hands-on with Rails
     Engines in a fun double bill with Chris Oliver.
@@ -519,7 +519,7 @@
             website:
 - uuid: 7a39e549-cf0d-402f-81f9-52e2593907cc
   date: '2024-07-25'
-  name: Pinkest Pink with Dan Laush & Allyship with Nick Wolf
+  name: Pinkest Pink & Allyship
   description: Dive into vibrant web colors with Dan Laush and learn about being a
     good male ally with Nick Wolf.
   slug: 2024-07-25-pinkest-pink-and-being-a-good-male-ally
@@ -568,7 +568,7 @@
             website: https://nickwolf.com.au
 - uuid: 02364aaf-c011-4115-afde-66571500a38e
   date: '2024-06-27'
-  name: Rebuilding Products with Prakriti Mateti & Turbo in Laravel with Simran Sawhney
+  name: Rebuilding Products & Turbo in Laravel
   description: Join Prakriti Mateti as she shares insights on rebuilding a large product
     from scratch, plus discover Turbo in Laravel with Simran Sawhney.
   slug: 2024-06-27-rebuilding-products-and-turbo-in-laravel
@@ -651,7 +651,7 @@
             website:
 - uuid: 3ed4e019-6bcc-4940-866b-d94d597e79c2
   date: '2024-04-25'
-  name: Dissecting Rails with Anthony Chen
+  name: Dissecting Rails
   description: Join Anthony Chen as he shares his dive into Rails internals—Active
     Support, Active Model, and more—from his learning journey. Perfect for curious
     Rubyists!
@@ -685,7 +685,7 @@
             website:
 - uuid: d68fc115-ac10-4e82-a772-8d59a31bf6ed
   date: '2024-03-28'
-  name: One Billion Rows in Ruby with Rian McGuire & Ruby Economics by Ponny
+  name: One Billion Rows in Ruby & Ruby Economics
   description: Explore CPU crunching in Ruby with Rian McGuire and discover the economics
     behind the Ruby ecosystem with Ponny. Insights, techniques, and fun for every
     Rubyist!
@@ -735,7 +735,7 @@
             website:
 - uuid: 85a493b8-b676-4677-9ba2-83d6b3125d34
   date: '2024-02-22'
-  name: Self-hosting Rails with Saramic & Scaling Systems with Stefanus Wilfrid
+  name: Self-hosting Rails & Scaling Systems
   description: Explore how to host a Rails app from home with Saramic and master scaling
     basics of distributed systems with Stefanus Wilfrid.
   slug: 2024-02-22-self-hosting-and-scaling-rails
@@ -783,7 +783,7 @@
             website:
 - uuid: 3f4bc51c-83c0-43f8-a1a9-6991c46ade42
   date: '2024-01-25'
-  name: DMARC Reports with HashNotAdam & Ruby Fibers with KJ Tsanaktsidis
+  name: DMARC Reports & Ruby Fibers
   description: Discover how to process DMARC reports with Action Mailbox, then take
     a deep dive into the internals of Ruby fibers with KJ!
   slug: 2024-01-25-dmarc-action-mailbox-and-ruby-fibers
@@ -833,8 +833,7 @@
             website:
 - uuid: e0a01976-53d5-47bc-9ea5-0312dd22abdb
   date: '2023-11-23'
-  name: Developer Wisdom with Justin Towsey & Rails Engines Discussion with Anton
-    Valkov
+  name: Developer Wisdom & Rails Engines
   description: Join Justin Towsey for lessons and wisdom from a year as a dev, then
     dive into Rails architecture and engines with Anton Valkov in a panel-style discussion.
   slug: 2023-11-23-developer-wisdom-rails-engines
@@ -882,7 +881,7 @@
             website:
 - uuid: d58e31c8-add3-4cc7-ad4c-05027a1edb52
   date: '2023-10-26'
-  name: Bootcamp Project Showcase by Thomas Hoang & Env Var Insights by Michael S.
+  name: Bootcamp Project Showcase & Env Var Insights
   description: Dive into full stack creativity with Thomas Hoang's bootcamp project
     and level-up your Rails security with Michael S.'s talk on environment variables.
   slug: 2023-10-26-bootcamp-showcase-environment-variables
@@ -931,7 +930,7 @@
             website:
 - uuid: 654dddc4-d390-4c72-9e9d-da42a0209a24
   date: '2023-09-28'
-  name: Rails Forms with Anton and Power of Pair Presenting by Simran
+  name: Rails Forms & Power of Pair Presenting
   description: Anton shares quick insights on Rails forms, then Simran explores how
     pair presenting can make your talks unforgettable!
   slug: 2023-09-28-rails-forms-and-pair-presenting
@@ -979,7 +978,7 @@
             website:
 - uuid: cf75ed65-776e-43b5-9cc7-887f87d2ad0c
   date: '2023-08-24'
-  name: Game Dev with Map7 and Ruby Code Dive with Rian McGuire
+  name: Game Dev and Ruby Code Dive
   description: Hear Map7 share insights from building a 2D action game in Dragonruby,
     plus take a deep dive into Ruby code internals with Rian McGuire.
   slug: 2023-08-24-dragonruby-and-ruby-code-dive
@@ -1027,7 +1026,7 @@
             website:
 - uuid: 8ad866ea-07fb-46fd-8999-7eae7ebf5a99
   date: '2023-07-27'
-  name: Guidance for Juniors, Bug Mysteries & FHIR with Michael, radar, Matt Hood
+  name: Guidance for Juniors, Bug Mysteries & FHIR
   description: Mentorship and TDD tips for juniors, unraveling a 27-year-old production
     bug with radar, and Matt Hood delves into FHIR's technical power in healthcare.
   slug: 2023-07-27-juniors-bugs-fhir
@@ -1094,7 +1093,7 @@
             website:
 - uuid: cd5f7102-3430-4e44-acd4-7f0fc4da69a6
   date: '2021-06-24'
-  name: Simple I18n with David Carlin and Exercism for Juniors with Achhetr
+  name: Simple I18n and Exercism for Juniors
   description: David Carlin shares fresh I18n simplicity tips, followed by Achhetr
     demoing Exercism and coding approaches for junior devs.
   slug: 2021-06-24-i18n-simplicity-exercism-juniors
@@ -1142,7 +1141,7 @@
             website:
 - uuid: d45f9d8d-270c-4942-9c8c-c9a7fab097c1
   date: '2021-03-25'
-  name: 'The Joy of Docs: Technical Writing with Oscar Alan Pierce'
+  name: 'The Joy of Docs: Technical Writing'
   description: Join Oscar Alan Pierce as he shares practical tips for better technical
     writing—make your docs fun, clear, and super useful for every developer!
   slug: 2021-03-25-joy-of-docs-technical-writing-oscar-alan-pierce
@@ -1176,7 +1175,7 @@
             website:
 - uuid: 82d763b9-afb2-4f79-b9c4-ab08c0d4e2c0
   date: '2021-02-25'
-  name: View Components in the Wild with Vanessa Nimmo
+  name: View Components in the Wild
   description: See how Vanessa Nimmo and the team at Fresho use View Components to
     make Rails views simpler, easier to test, and more fun to build!
   slug: 2021-02-25-view-components-in-the-wild
