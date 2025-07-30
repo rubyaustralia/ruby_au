@@ -5,7 +5,7 @@
             id: presenter.dom_id do %>
 
   <div class="flex gap-4 justify-between items-center w-full">
-    <p class="font-medium text-xl" data-title><%= presenter.name %></p>
+    <p class="font-medium text-xl line-clamp-2 text-balance"><%= presenter.name %></p>
     <p class="text-xs whitespace-nowrap font-mono">
       <%= presenter.formatted_date_for_card %>
     </p>

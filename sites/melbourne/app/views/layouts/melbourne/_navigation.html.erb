@@ -1,0 +1,14 @@
+<nav class="bg-blue-700">
+  <div class="container mx-auto py-4 px-4">
+    <div class="flex gap-2 justify-between items-center">
+      <div class="flex items-center gap-8 font-mono text-white">
+        <%= link_to root_path do %>
+          <%= vite_inline_svg("melbourne/logo.svg", class: "h-8 w-8 text-white") %>
+        <% end %>
+        <%= link_to "Events", events_path, class: class_names("hover:underline", "underline" => current_page?(controller: :events, action: :index)) %>
+      </div>
+
+      <%= link_to "ruby.org.au", "http://ruby.org.au", target: "_blank", class: "text-white/50 text-sm underline hover:text-white/80" %>
+    </div>
+  </div>
+</nav>
