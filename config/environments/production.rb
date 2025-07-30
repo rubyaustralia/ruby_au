@@ -97,7 +97,7 @@ Rails.application.configure do
   # in the url melbourne.ruby.org.au: subdomain: "melbourne", domain: "ruby",tld: ["org", "au"]
   config.action_dispatch.tld_length = 2
 
-  config.assets.compile = false
+  # config.assets.compile = false
 
   config.vite_ruby.config_path = Rails.root.join('config/vite.json')
 end
