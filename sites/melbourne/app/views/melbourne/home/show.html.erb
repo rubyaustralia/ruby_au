@@ -13,19 +13,19 @@
                  },
                  twitter: { card: "summary_large_image" } %>
 
-<div class="grid grid-cols-[1fr_minmax(0,_5fr)_minmax(0,_7fr)_1fr] grid-rows-[60dvh_32px_auto]">
+<div class="grid grid-cols-[1fr_minmax(0,_5fr)_minmax(0,_7fr)_1fr] grid-rows-[60dvh_48px_auto]">
   <%= render "melbourne/home/header" %>
 
-  <div class="hidden col-span-4 col-start-1 row-start-2 gap-16 h-8 md:grid grid-cols-subgrid">
+  <div class="hidden col-span-4 col-start-1 row-start-2 gap-16 h-12 md:grid grid-cols-subgrid">
     <div class="col-start-2">
-      <div class="flex bg-[#0025CA] rounded-t h-full items-center px-4 overflow-auto">
+      <div class="flex bg-[#0025CA] rounded-t-lg h-full items-center px-4 overflow-auto">
         <code class="overflow-auto text-sm whitespace-nowrap highlight">
           <%== formatter.format(lexer.lex("render @past_events")) %>
         </code>
       </div>
     </div>
     <div class="col-start-3">
-      <div class="flex bg-[#0025CA] rounded-t h-full items-center px-4  overflow-auto">
+      <div class="flex bg-[#0025CA] rounded-t-lg h-full items-center px-4  overflow-auto">
         <code class="overflow-auto text-sm whitespace-nowrap highlight">
           <%== formatter.format(lexer.lex("render \"home/next_event\", event: @next_event")) %>
         </code>
