@@ -1,0 +1,4 @@
+name: Issue
+title: "[New Issue] "
+labels: ["triage"]
+projects: ["projects/14"]
