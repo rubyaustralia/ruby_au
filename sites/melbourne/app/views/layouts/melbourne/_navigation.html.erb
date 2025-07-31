@@ -3,7 +3,14 @@
     <div class="flex gap-2 justify-between items-center">
       <div class="flex items-center gap-8 font-mono text-white">
         <%= link_to root_path do %>
-          <%= vite_image_tag("images/melbourne/logomark-graf.png", class: "text-white h-8 w-8 md:h-8 md:w-8") %>
+          <picture>
+            <source srcset="<%= vite_asset_path('images/melbourne/logomark-graf-optimized.webp') %>" type="image/webp" />
+            <%= vite_image_tag("images/melbourne/logomark-graf-optimized.png", 
+                class: "text-white h-8 w-7 md:h-8 md:w-7", 
+                width: 610, 
+                height: 550,
+                alt: "Ruby Melbourne logo") %>
+          </picture>
         <% end %>
         <%= link_to "Events", events_path, class: class_names("hover:underline", "underline" => current_page?(controller: :events, action: :index)) %>
       </div>
