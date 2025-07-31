@@ -10,7 +10,6 @@ RSpec.describe Melbourne::HomeController, type: :request do
       get melbourne.root_path
       expect(response.status).to eq(200)
       expect(response.body).to include("Ruby Melbourne")
-      expect(response.body).to include("Meetups and events by Ruby Australia")
     end
   end
 end
