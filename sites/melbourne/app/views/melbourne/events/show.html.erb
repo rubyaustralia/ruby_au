@@ -1,13 +1,6 @@
 <% set_meta_tags @event_presenter.open_graph_metadata %>
 <%= render "layouts/melbourne/navigation" %>
 
-<div class="w-full bg-[#0D37F2] flex items-center justify-center py-4 md:py-2">
-  <a href="/">
-    <%= vite_image_tag("images/melbourne/logomark-graf.png", class: "text-white h-8 w-8 md:h-10 md:w-10") %>
-  </a>
-</div>
-
-
 <article class="max-w-[80ch] mx-auto px-4 lg:px-0 mt-8 mb-16">
   <div class="space-y-8">
     <h1 class="text-4xl text-black md:text-6xl"><%= @event_presenter.name %></h1>
