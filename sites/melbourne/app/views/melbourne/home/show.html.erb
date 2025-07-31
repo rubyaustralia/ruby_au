@@ -18,14 +18,14 @@
 
   <div class="hidden col-span-4 col-start-1 row-start-2 gap-16 h-12 md:grid grid-cols-subgrid">
     <div class="col-start-2">
-      <div class="flex bg-[#0025CA] rounded-t-lg h-full items-center px-4 overflow-auto">
+      <div class="flex bg-[#0025CA] border border-blue-400/40 border-b-transparent rounded-t-lg h-full items-center px-4 overflow-auto">
         <code class="overflow-auto text-sm whitespace-nowrap highlight">
           <%== formatter.format(lexer.lex("render @past_events")) %>
         </code>
       </div>
     </div>
     <div class="col-start-3">
-      <div class="flex bg-[#0025CA] rounded-t-lg h-full items-center px-4  overflow-auto">
+      <div class="flex bg-[#0025CA] border border-blue-400/40 border-b-transparent rounded-t-lg h-full items-center px-4  overflow-auto">
         <code class="overflow-auto text-sm whitespace-nowrap highlight">
           <%== formatter.format(lexer.lex("render \"home/next_event\", event: @next_event")) %>
         </code>
