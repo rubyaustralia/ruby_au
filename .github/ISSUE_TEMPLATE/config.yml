@@ -1,4 +1,5 @@
 name: Issue
-title: "[New Issue] "
+description: Used for tracking Ruby AU website issues.
+title: "[NAME] "
 labels: ["triage"]
 projects: ["projects/14"]
