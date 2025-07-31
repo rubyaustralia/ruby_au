@@ -2,8 +2,9 @@
 name: Feature request
 about: Suggest an idea for this project
 title: ''
-labels: ''
+labels: ["triage"]
 assignees: ''
+projects: ["projects/14"]
 
 ---
 
