@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "🎨 clear vite..."
+bin/vite build --clear --mode=test
+
 echo "👮👮 Running tests before pushing..."
 bin/tests
 
