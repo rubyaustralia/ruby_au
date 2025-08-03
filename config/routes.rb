@@ -47,6 +47,7 @@ Rails.application.routes.draw do
     get 'posts/*slug', to: 'posts#show', as: :post
     patch 'posts/*slug', to: 'posts#update', as: :update_post
     resources :analytics, only: [:index]
+    resources :youtube_analytics, only: [:index], path: 'youtube-analytics'
   end
 
   namespace :api do

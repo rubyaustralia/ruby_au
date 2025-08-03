@@ -27,6 +27,7 @@ gem 'warden' # use for auth
 gem 'vite_rails'
 gem 'ahoy_matey' # analytics
 gem 'geocoder' # geo location for ahoy
+gem 'google-api-client'
 
 # background jobs
 gem 'solid_queue'
