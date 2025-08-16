@@ -45,7 +45,7 @@ Once the subcommittee has a complete account of the events they will make a deci
 - A private reprimand from the subcommittee to the individual(s) involved.
 - A public reprimand.
 - An imposed vacation (i.e. asking someone to "take a week off" from Ruby Down Under or the Ruby AU Slack).
-- A permanent or temporary ban from some or all Ruby Australia spaces (Slack, forums, meetups, camps & conferences, etc.).
+- A permanent or temporary ban from some or all Ruby Australia spaces (Slack, forums, meetups, retreats & conferences, etc.).
 - A request for a public or private apology.
 - Revocation of Ruby AU membership, including voting rights.
 

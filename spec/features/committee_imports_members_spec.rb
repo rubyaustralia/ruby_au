@@ -21,14 +21,14 @@ RSpec.describe "Committee importing members", type: :feature do
     jules = FactoryBot.create(:user, email: "jules@ruby.test")
     jules.memberships.current.update left_at: 1.minute.ago
 
-    camp = Tempfile.new("camp")
-    camp.write output
-    camp.rewind
+    retreat = Tempfile.new("retreat")
+    retreat.write output
+    retreat.rewind
 
     click_link "Imported Members"
 
-    fill_in "Source", with: "Rails Camp"
-    attach_file "CSV File", camp.path
+    fill_in "Source", with: "Ruby Retreat"
+    attach_file "CSV File", retreat.path
     click_button "Upload"
 
     expect(page).to have_content("Alex")
@@ -37,7 +37,7 @@ RSpec.describe "Committee importing members", type: :feature do
     expect(page).not_to have_content("Jules")
     expect(page).not_to have_content("Lindsay")
 
-    camp.close
+    retreat.close
 
     output = CSV.generate do |csv|
       csv << %w[ticket_full_name ticket_email]
