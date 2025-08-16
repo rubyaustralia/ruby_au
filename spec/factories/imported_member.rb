@@ -7,6 +7,6 @@ FactoryBot.define do
       "user#{n}@example.com"
     end
 
-    data { { "sources" => ["Rails Camp"] } }
+    data { { "sources" => ["Ruby Retreat"] } }
   end
 end
