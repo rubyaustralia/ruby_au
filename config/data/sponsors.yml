@@ -1,3 +1,12 @@
+- name: Assembly Four
+  key: assemblyfour
+  url: https://assemblyfour.com/
+  images:
+    - 2024/assembly-four-500x143.png
+  tier: Sapphire
+  bio: |
+    [Assembly Four](https://assemblyfour.com) is a collective of sex workers and technologists on a mission to empower sex workers through technology. Sex workers are among the most marginalised, stigmatised groups in the world, and our goal is to create platforms where sex workers thrive, not just survive.
+
 - name: Bluethumb
   key: bluethumb
   url: https://bluethumb.com.au/
@@ -7,11 +16,3 @@
   bio: |
     Bluethumb's mission is to create the world's largest online art marketplace by transforming the way art is bought and sold. We connect artists with collectors nationwide and have recently expanded our platform to the US.
 
-- name: Assembly Four
-  key: assemblyfour
-  url: https://assemblyfour.com/
-  images:
-    - 2024/assembly-four-500x143.png
-  tier: Sapphire
-  bio: |
-    [Assembly Four](https://assemblyfour.com) is a collective of sex workers and technologists on a mission to empower sex workers through technology. Sex workers are among the most marginalised, stigmatised groups in the world, and our goal is to create platforms where sex workers thrive, not just survive.
