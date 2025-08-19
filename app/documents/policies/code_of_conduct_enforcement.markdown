@@ -45,7 +45,7 @@ Possible responses may include:
 - A private reprimand from the subcommittee to the individual(s) involved. In this case, the subcommittee chair will deliver that reprimand to the individual(s) over email, cc'ing the subcommittee.
 - A public reprimand. In this case, the subcommittee chair will deliver that reprimand in the same venue that the violation occurred (i.e. in Slack for a Slack violation; email for an email violation, etc.). The committee may choose to publish this message elsewhere for posterity.
 - An imposed vacation (i.e. asking someone to "take a week off" from Ruby Down Under or the Ruby AU Slack). The subcommittee chair will communicate this "vacation" to the individual(s). They'll be asked to take this vacation voluntarily, but if they don't agree then a temporary ban may be imposed to enforce this vacation.
-- A permanent or temporary ban from some or all Ruby Australia spaces (Slack, forums, meetups, camps & conferences, etc.). The subcommittee will maintain records of all such bans so that they may be reviewed in the future, extended to new Ruby Australia spaces, or otherwise maintained.
+- A permanent or temporary ban from some or all Ruby Australia spaces (Slack, forums, meetups, retreats & conferences, etc.). The subcommittee will maintain records of all such bans so that they may be reviewed in the future, extended to new Ruby Australia spaces, or otherwise maintained.
 - A request for a public or private apology. The chair will deliver this request. The subcommittee may, if it chooses, attach "strings" to this request: for example, the subcommittee may ask a violator to apologise in order to retain their membership on the Ruby Down Under forum.
 - Expulsion from Ruby Australia and revocation of voting rights.
 
