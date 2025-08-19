@@ -11,7 +11,7 @@ gem 'bugsnag'
 gem 'createsend'
 gem 'decent_exposure'
 gem 'devise'
-gem 'devise-multi_email'
+gem 'devise-multi_email', github: 'rubyaustralia/devise-multi_email', branch: 'main'
 gem 'friendly_id', '~> 5.5.0'
 gem 'icalendar'
 gem "image_processing", "~> 1.13"
