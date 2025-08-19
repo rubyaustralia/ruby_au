@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/rubyaustralia/devise-multi_email.git
+  revision: 8af332653e087cbbb6b6a411a1bda34bb54e167a
+  branch: main
+  specs:
+    devise-multi_email (3.0.1)
+      devise
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -138,8 +146,6 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-multi_email (3.0.1)
-      devise
     diff-lcs (1.6.2)
     docile (1.4.1)
     drb (2.2.3)
@@ -567,7 +573,7 @@ DEPENDENCIES
   debug
   decent_exposure
   devise
-  devise-multi_email
+  devise-multi_email!
   factory_bot_rails
   faker
   friendly_id (~> 5.5.0)
