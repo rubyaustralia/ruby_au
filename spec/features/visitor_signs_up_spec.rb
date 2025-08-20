@@ -42,7 +42,7 @@ RSpec.feature "Visitor signs up", type: :feature do
     fill_in "Full Name", with: 'Jane Doe'
     fill_in "Postal Address", with: '1 High Street'
 
-    check "Rails Camp"
+    check "Ruby Retreat"
 
     fill_in "Ruby?", with: "Random bot generated string"
 
@@ -61,7 +61,7 @@ RSpec.feature "Visitor signs up", type: :feature do
     fill_in "Full Name", with: 'Jane Doe'
     fill_in "Postal Address", with: '1 High Street'
 
-    check "Rails Camp"
+    check "Ruby Retreat"
 
     fill_in "Ruby?", with: "Ruby"
 

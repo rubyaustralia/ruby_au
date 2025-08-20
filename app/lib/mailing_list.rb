@@ -2,7 +2,7 @@
 
 class MailingList
   LISTS = [
-    "Rails Camp",
+    "Ruby Retreat",
     "RubyConf AU",
     "RailsGirls"
   ].freeze
