@@ -438,3 +438,15 @@ trix-editor .attachment__metadata {
   padding: 0 !important;
   max-width: 100% !important;
 }
+
+/*
+ * Extends trix.css's link styles to match the .white-link class.
+*/
+.trix-content a {
+  color: #D30001; /* --color-ruby-red */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.trix-content a:not(:hover, :focus) {
+  text-decoration-color: color-mix(in srgb, currentColor, transparent 75%);
+}
