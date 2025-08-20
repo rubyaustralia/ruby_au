@@ -31,8 +31,9 @@ class Campaigns::Event
 
   def add_event
     calendar.event do |event|
-      event.dtstart = datetime(rsvp_event.happens_at)
-      event.dtend = datetime(rsvp_event.happens_at + 90.minutes)
+      happens_at = rsvp_event.happens_at.utc
+      event.dtstart = datetime(happens_at)
+      event.dtend = datetime(happens_at + 90.minutes)
       event.summary = title
       event.description = rsvp_event.link
 
