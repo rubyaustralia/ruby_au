@@ -23,7 +23,7 @@ end
 
 ENV["RUBYCONF_AU_LIST_ID"] ||= "conf-key"
 ENV["RAILSGIRLS_LIST_ID"]  ||= "girls-key"
-ENV["RAILS_CAMP_LIST_ID"]  ||= "camp-key"
+ENV["RUBY_RETREAT_LIST_ID"] ||= "camp-key"
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

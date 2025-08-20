@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "User confirms account", type: :feature do
   let(:user) do
-    create :user, confirmed_at: nil, mailing_lists: { "Rails Camp" => "true" }
+    create :user, confirmed_at: nil, mailing_lists: { "Ruby Retreat" => "true" }
   end
 
   before do
@@ -50,7 +50,7 @@ RSpec.feature "User confirms account", type: :feature do
     user.reload
     expect(user).to be_confirmed
     expect(user.memberships.current.count).to eq(1)
-    expect(user.mailing_lists["Rails Camp"]).to eq("true")
+    expect(user.mailing_lists["Ruby Retreat"]).to eq("true")
     expect(user.mailing_lists["RubyConf AU"]).to eq("false")
     expect(user.mailing_lists["RailsGirls"]).to eq("false")
 
