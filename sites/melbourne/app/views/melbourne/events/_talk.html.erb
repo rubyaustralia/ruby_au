@@ -13,4 +13,14 @@
       </div>
     <% end %>
   </div>
+    <% if talk.youtube_video_id.present? %>
+      <div class="w-full aspect-[16/9]">
+        <%= youtube_iframe(talk.youtube_video_id) %>
+      </div>
+    <% else %>
+      <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+          <h5 class="mb-2 text-2xl font-semibold text-gray-900">Sorry :(</h5>
+          <p class="mb-3 font-normal text-gray-500">The video is either not uploaded yet, or something went wrong, or just plain not available.</p>
+      </div>
+    <% end %>
 </div>

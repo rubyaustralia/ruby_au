@@ -21,7 +21,7 @@
       title: 'A retrospective of the command pattern'
       description: Join us as Tom Dalling shares insights from Ferocia's journey with the command pattern - their take on service objects. Discover what worked well, what didn't, and the valuable lessons learned along the way.
         A great opportunity to hear real-world patterns and practices from the trenches of one of Australia's most exciting Ruby on Rails applications. Come ready to engage and learn!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=-kazoPXmqZg'
       speakers:
         - name: Tom Dalling
           contact_details:
@@ -36,7 +36,7 @@
       title: 'TDD - why does it fail?'
       description: A bunch of us Ruby devs write tests because "we are told to". We write tests because its meant to be a good things. We follow philosophies like betterspecs.org because it sounded like a good idea at the time. This presentation takes us back to "why" write tests and "why" looking at each test failure, should be the driver of the design of your code. It also introduces the philosophy of evenbetterspecs as well as why DAMP (Descriptive and Meaningful Phrases) tests are preferable over DRY (Don't Repeat Yourself).
         This talk will leave you with a bunch of tools, tips and philosophies to get more out of your tests and their readability no matter what language you code in. Code repo https://github.com/failure-driven/tdd-why-does-it-fail
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=al-vfRd5ZTY'
       speakers:
         - name: Michael Milewski
           contact_details:
@@ -68,11 +68,11 @@
       title: 'The Unspoken Contract: Communicating Intent Through Code'
       description: Discover the secrets of writing code that communicates your intent!
         Learn from a real Rails bug why naming, structure, and clear boundaries matter.
-        Ideal for devs who want their code to speak—loud and clear. Join HashNotAdam
+        Ideal for devs who want their code to speak—loud and clear. Join Adam Rice
         for practical tips and relatable war stories!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=ZH-f4G1kqp0'
       speakers:
-        - name: HashNotAdam
+        - name: Adam Rice
           contact_details:
             github_username: HashNotAdam
             x_handle:
@@ -105,7 +105,7 @@
         Justfile, Mise, and more. Discover best practices, playbooks, and how far Developer
         Infrastructure as Code can go. Don’t miss this practical, energetic tour of
         modern task runners!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=EBFJSCkPnlU'
       speakers:
         - name: Michael Milewski
           contact_details:
@@ -121,7 +121,7 @@
         app on Rails 8! Learn the ins, outs, and happy surprises of Rails 8 with Kamal,
         Action Cable, Active Job, and more. Bring your questions—it’s interactive and
         fun!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=bNF1lohObNs'
       speakers:
         - name: John Sherwood
           contact_details:
@@ -134,7 +134,7 @@
 - uuid: 3e09ed96-cbb6-4089-83d1-baa3930d5dff
   date: '2025-05-29'
   name: Mastering Turbo Forms and SQLite in Ruby
-  description: Join Matt Hood as he unravels Turbo form wizardry and Simon Hildebrandt
+  description: Join Matt Hood as he unravels Turbo form wizardry and Dan Milne
     delves into using SQLite as a Ruby gem. Insightful, interactive, and fun!
   slug: 2025-05-29-turbo-forms-sqlite-gem
   registration_link:
@@ -154,7 +154,7 @@
       description: "Get the inside scoop on taming tricky Turbo forms! Matt Hood shares
       hands-on tips and fun tricks for error handling, validation, and making forms
       a breeze. Perfect for anyone wanting smoother Rails forms. \U0001F680"
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=Anb3dWrtz50'
       speakers:
         - name: Matt Hood
           contact_details:
@@ -166,14 +166,13 @@
             website:
     - uuid: 405f23a5-d49c-4e14-819e-385472aa55df
       title: SQLite-ruby - a whole SQL database in a gem
-      description: Discover the wonders of SQLite wrapped neatly in a Ruby gem! Simon
-        Hildebrandt introduces SQLite-ruby—fast, familiar, and a little bit magical.
+      description: Discover the wonders of SQLite wrapped neatly in a Ruby gem! Dan Milne introduces SQLite-ruby—fast, familiar, and a little bit magical.
         Bring your questions and curiosity!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=c5L4GLfDWLI'
       speakers:
-        - name: Simon Hildebrandt
+        - name: Daniel Milne
           contact_details:
-            github_username: simonhildebrandt
+            github_username: dkam
             x_handle:
             linkedin_handle:
             bluesky_handle:
@@ -204,7 +203,7 @@
         organize business logic in Ruby apps. Discover practical tips, fresh perspectives,
         and get your questions answered. Don't miss this spirited session full of insight
         and laughs!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=FDJFp54iD_8'
       speakers:
         - name: Julian Pinzon
           contact_details:
@@ -214,7 +213,7 @@
             bluesky_handle:
             mastodon_handle:
             website:
-        - name: Adam
+        - name: Adam Rice
           contact_details:
             github_username: HashNotAdam
             x_handle:
@@ -227,7 +226,7 @@
       description: Simon Hildebrandt revisits the Rack layer under Ruby’s most popular
         web frameworks. Learn the core mechanics and find out when you don’t need Rails!
         Perfect for Rubyists looking to level-up their backend game.
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=r4M1VwMWOgU'
       speakers:
         - name: Simon Hildebrandt
           contact_details:
@@ -257,13 +256,13 @@
   talks:
     - uuid: 24e8c8cb-ec66-45f1-be2a-06da1f1e11b3
       title: Semantic Search and RAG with Ruby
-      description: Curious about modern smart search? Join us as Daniel Kaminsky walks
+      description: Curious about modern smart search? Join us as Daniel Milne walks
         through building a powerful semantic search system with Ruby, from embeddings
         to Retrieval Augmented Generation. Perfect for those interested in the cutting
         edge of search tech!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=GrLLoS253fY'
       speakers:
-        - name: Daniel Kaminsky
+        - name: Daniel Milne
           contact_details:
             github_username: dkam
             x_handle:
@@ -291,12 +290,12 @@
   talks:
     - uuid: '0490599c-9a1c-4bdd-940e-8314c4605a16'
       title: The Inner Workings of Puma
-      description: Ever wondered what makes Puma tick? Joshua Yeo guides us deep inside
+      description: Ever wondered what makes Puma tick? Joshua Young guides us deep inside
         Puma’s design and advanced features. Ideal for Rubyists who want to level up
         their server game and understand performance secrets up close!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=pfWS1PrE6zY'
       speakers:
-        - name: Joshua Yeo
+        - name: Joshua Young
           contact_details:
             github_username:
             x_handle:
@@ -310,11 +309,11 @@
         features! If you love seeing new ruby and rails goodness in action—including
         authentication generators and Rodauth vs Rails Auth—don’t miss this bite-sized
         update.
-      video_url: TODO
+      video_url: unknown
       speakers:
-        - name: Anton Tolik
+        - name: Anton Katunin
           contact_details:
-            github_username:
+            github_username: antulik
             x_handle:
             linkedin_handle:
             bluesky_handle:
@@ -343,7 +342,7 @@
       description: Ceels puts Cursor and Copilot head to head! Get tips for setting
         up Cursor, explore its AI model options, and discover which tool fits your workflow
         best. Bring your questions and see these coding copilots in action!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=AkDXMIFETyY'
       speakers:
         - name: Ceels
           contact_details:
@@ -358,9 +357,9 @@
       description: Pat guides you through tackling real-world SAML authentication in
         Ruby—no mocking, just hands-on SSO, fast Nokogiri parsing, and multi-domain
         setups the Covidence way. Learn how to smooth out your SAML experience!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=MeQXR8ojX5c'
       speakers:
-        - name: Pat
+        - name: Pat Allan
           contact_details:
             github_username: pat
             x_handle:
@@ -371,8 +370,8 @@
 - uuid: e9e7267b-cf7b-4611-88ce-14718b5d8225
   date: '2024-11-28'
   name: Hotwire Happiness & Rails CurrentAttributes
-  description: Dive into frontend joy with Jero Paul on Hotwire, Turbo & Stimulus.
-    Then, uncover the magic of Rails `CurrentAttributes` with Darkfishy.
+  description: Dive into frontend joy with Jerome Paul on Hotwire, Turbo & Stimulus.
+    Then, uncover the magic of Rails `CurrentAttributes` with Abhijeet Anand.
   slug: 2024-11-28-hotwire-and-currentattributes
   registration_link:
   type: meetup
@@ -389,12 +388,12 @@
     - uuid: 0c5391de-34aa-40d5-ab76-617624494507
       title: Turbo (Hotwire), Stimulusjs and being happy with front end development
         again
-      description: "Rediscover the joy of frontend dev! Jero Paul shares his Hotwire,
+      description: "Rediscover the joy of frontend dev! Jerome Paul shares his Hotwire,
       Turbo, and Stimulus journey—great for anyone ready to love building apps again
       \U0001F680. Come see why modern Rails tools spark happiness!"
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=rhInecDwaKQ'
       speakers:
-        - name: Jero Paul
+        - name: Jerome Paul
           contact_details:
             github_username: jeropaul
             x_handle: gardengnome_au
@@ -404,13 +403,13 @@
             website:
     - uuid: 51db52cf-ce23-4d9b-bbb4-179cecf0bf16
       title: How do `CurrentAttributes` work?
-      description: Ever wondered how Rails keeps track of values per request? Darkfishy
+      description: Ever wondered how Rails keeps track of values per request? Abhijeet Anand
         explains `ActiveSupport::CurrentAttributes`, request isolation, and more in
         an engaging and practical talk. Perfect for Rails developers seeking backend
         clarity!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=doz32657dbM'
       speakers:
-        - name: Darkfishy
+        - name: Abhijeet Anand
           contact_details:
             github_username: darkfishy
             x_handle:
@@ -421,7 +420,7 @@
 - uuid: b02f51ea-7d82-4bc7-b5c9-764c0baabdfd
   date: '2024-09-26'
   name: Understanding reload! in Rails & Oaken
-  description: Discover the magic behind Rails' reload! with Darkfishy and get a fresh
+  description: Discover the magic behind Rails' reload! with Abhijeet Anand and get a fresh
     take on seeds and fixtures with Julian Pinzon.
   slug: 2024-09-26-reload-rails-oaken-seeds
   registration_link:
@@ -439,12 +438,12 @@
     - uuid: 32c4cdac-7c77-4472-9edc-72e5fffd795e
       title: How does `reload!` work?
       description: Curious about what happens when you hit `reload!` in the Rails console?
-        Join Darkfishy as we peek under the hood and reveal how Rails reloads code,
+        Join Abhijeet Anand as we peek under the hood and reveal how Rails reloads code,
         what classes are affected, and the impacts on your dev workflow. Rails magic,
         demystified!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=Fb_sqlOotms'
       speakers:
-        - name: darkfishy
+        - name: Abhijeet Anand
           contact_details:
             github_username: darkfishy
             x_handle: fusionfish
@@ -458,7 +457,7 @@
         a new way to handle seeds and fixtures in Rails. Discover efficient methods,
         best practices, and why Oaken could become your go-to for dev data. Fresh ideas
         guaranteed!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=bxOqXLL06Sg'
       speakers:
         - name: Julian Pinzon
           contact_details:
@@ -492,7 +491,7 @@
       description: Helen Stonehouse shares her inspiring journey into tech, filled with
         relatable anecdotes and encouragement to take the leap. Perfect for anyone pondering
         a career shift or just looking for a dose of motivation!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=8F3oJlLq4Nw'
       speakers:
         - name: Helen Stonehouse
           contact_details:
@@ -507,7 +506,7 @@
       description: Curious how to extend Rails? Chris Oliver will walk you through building
         plugins and using Engines. Join us for a practical, speedy deep dive—perfect
         for devs wanting to level up their Rails skills!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=hXNXLBvlWbI'
       speakers:
         - name: Chris Oliver
           contact_details:
@@ -541,7 +540,7 @@
         our eyes see color and how we recreate vibrant realities on screens. Join us
         for a colorful and fun talk that will make you see web colors in a whole new
         light!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=hid13bPyeEk'
       speakers:
         - name: Dan Laush
           contact_details:
@@ -556,7 +555,7 @@
       description: Nick Wolf guides us through what it means to be a supportive male
         ally. Join his insightful talk and foster a more inclusive, positive environment
         for everyone. Practical tips and genuine stories included!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=qPeUwyZb-OI'
       speakers:
         - name: Nick Wolf
           contact_details:
@@ -589,7 +588,7 @@
       description: "Thinking of rebuilding a big product? Join Prakriti Mateti as she
       takes you through the highs, lows, and lessons of rebuilding Culture Amp's second
       biggest platform! Great for anyone facing tough legacy code and tech debt. \U0001F370"
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=NHIeIQtel7E'
       speakers:
         - name: Prakriti Mateti
           contact_details:
@@ -601,14 +600,14 @@
             website:
     - uuid: d1fe4bdb-b476-499e-8c07-94a08324587f
       title: Laravel, meet my friend Turbo
-      description: Simran Sawhney shows how Turbo can spice up your Laravel projects!
+      description: Adam Rice shows how Turbo can spice up your Laravel projects!
         Get the scoop on Turbo, Turbo Native, and Strada, and see how they compare with
         Livewire. Perfect for Rubyists curious about the PHP world!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=QtJeilx1czI'
       speakers:
-        - name: Simran Sawhney
+        - name: Adam Rice
           contact_details:
-            github_username: simran-sawhney
+            github_username: HashNotAdam
             x_handle:
             linkedin_handle:
             bluesky_handle:
@@ -639,7 +638,7 @@
         with Ruby and see why it's taking over GraphQL and beyond. You'll learn new
         ways to keep your info fresh, fast, and reliable. Pagination will never look
         the same again! ⚡
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=J5RSqgl6GlY'
       speakers:
         - name: Simon Hildebrandt
           contact_details:
@@ -652,7 +651,7 @@
 - uuid: 3ed4e019-6bcc-4940-866b-d94d597e79c2
   date: '2024-04-25'
   name: Dissecting Rails
-  description: Join Anthony Chen as he shares his dive into Rails internals—Active
+  description: Join Anton Panteleev as he shares his dive into Rails internals—Active
     Support, Active Model, and more—from his learning journey. Perfect for curious
     Rubyists!
   slug: 2024-04-25-dissecting-rails
@@ -670,12 +669,12 @@
   talks:
     - uuid: 809987eb-6e08-4dec-b4ed-ef10560ffc24
       title: Dissecting Rails
-      description: "Explore Anthony Chen's hands-on takeaways from dissecting Rails
+      description: "Explore Anton Panteleev's hands-on takeaways from dissecting Rails
       internals! Learn about Active Support, Active Model, and get insights to fuel
       your Rails journey. Great for learners and fans of Ruby alike! \U0001F680"
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=LavkZM_CQME'
       speakers:
-        - name: Anthony Chen
+        - name: Anton Panteleev
           contact_details:
             github_username: friendlyantz
             x_handle: friendlyantz
@@ -708,7 +707,7 @@
         dives into the One Billion Row Challenge, optimizing Ruby to the max. Perfect
         for anyone who wants to push Ruby’s limits. Don’t miss this adventure in code
         and speed!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=evvoWsP8o5Q'
       speakers:
         - name: Rian McGuire
           contact_details:
@@ -720,12 +719,12 @@
             website:
     - uuid: c04298ec-43c5-4c0c-80a6-696de64fd90b
       title: The Economics of Ruby
-      description: Ruby plus economics—what's not to love? Ponny gives a rapid-fire
+      description: Ruby plus economics—what's not to love? John Sherwood gives a rapid-fire
         talk on the flow of resources, incentives, and the unsung heroes powering the
         Ruby world. Get a fresh perspective on what keeps our community ticking!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=ydU3WvLoXpY'
       speakers:
-        - name: Ponny
+        - name: John Sherwood
           contact_details:
             github_username: ponny
             x_handle: ponny
@@ -736,7 +735,7 @@
 - uuid: 85a493b8-b676-4677-9ba2-83d6b3125d34
   date: '2024-02-22'
   name: Self-hosting Rails & Scaling Systems
-  description: Explore how to host a Rails app from home with Saramic and master scaling
+  description: Explore how to host a Rails app from home with Michael Milewski and master scaling
     basics of distributed systems with Stefanus Wilfrid.
   slug: 2024-02-22-self-hosting-and-scaling-rails
   registration_link:
@@ -753,12 +752,12 @@
   talks:
     - uuid: f3ec845d-30ba-45f0-a7a8-ec1273301581
       title: Can I host a rails app from a home server?
-      description: "Curious about running Rails from your own home? Saramic explores
+      description: "Curious about running Rails from your own home? Michael Milewski explores
       self-hosting, cost savings, DevOps fun, and why DIY deployment rocks. Come see
       how far you can go with bare metal! \U0001F4BB"
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=BeG0CeyHRqQ'
       speakers:
-        - name: Saramic
+        - name: Michael Milewski
           contact_details:
             github_username: saramic
             x_handle:
@@ -771,7 +770,7 @@
       description: "Join Stefanus Wilfrid for a practical session on scaling your app!
       Learn lightweight strategies for vertical/horizontal scaling and get hands-on
       tips for taming distributed systems. \U0001F680"
-      video_url: TODO
+      video_url: unknown
       speakers:
         - name: Stefanus Wilfrid
           contact_details:
@@ -801,13 +800,13 @@
   talks:
     - uuid: 15d1e458-5652-4687-9a79-ba151f23edbf
       title: Processing DMARC reports via Action Mailbox
-      description: Curious about DMARC reports? See how HashNotAdam automates parsing
+      description: Curious about DMARC reports? See how Adam Rice automates parsing
         and alerts with Action Mailbox! Perfect if you want less spam and clearer email
         deliverability insights—all using Ruby on Rails. Join us for email geekery made
         simple and fun!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=FgrNHf_8kN8'
       speakers:
-        - name: HashNotAdam
+        - name: Adam Rice
           contact_details:
             github_username: HashNotAdam
             x_handle:
@@ -821,7 +820,7 @@
         Fiber.yield and resume work, how fibers relate to threads, and discover their
         awesome low-level magic. Perfect for Rubyists who love digging into the guts
         of the language!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=dh46btPI3xg'
       speakers:
         - name: KJ Tsanaktsidis
           contact_details:
@@ -834,7 +833,7 @@
 - uuid: e0a01976-53d5-47bc-9ea5-0312dd22abdb
   date: '2023-11-23'
   name: Developer Wisdom & Rails Engines
-  description: Join Justin Towsey for lessons and wisdom from a year as a dev, then
+  description: Join Justin Tan for lessons and wisdom from a year as a dev, then
     dive into Rails architecture and engines with Anton Valkov in a panel-style discussion.
   slug: 2023-11-23-developer-wisdom-rails-engines
   registration_link:
@@ -854,9 +853,9 @@
       description: Reflect on a year packed with developer discoveries! Justin shares
         his top nuggets of wisdom and inspiring moments from his first year in tech.
         Perfect for new and seasoned devs alike to learn, laugh, and relate.
-      video_url: TODO
+      video_url: unknown
       speakers:
-        - name: Justin Towsey
+        - name: Justin Tan
           contact_details:
             github_username: j-tws
             x_handle:
@@ -869,9 +868,9 @@
       description: Explore the power of Rails Engines! Anton will demo his app and kick
         off a group discussion on architecture best practices, sharing stories and real-world
         examples. Great for anyone curious about modular Rails apps.
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=weW4FFomi5Q'
       speakers:
-        - name: Anton Valkov
+        - name: Anton Katunin
           contact_details:
             github_username: antulik
             x_handle:
@@ -882,7 +881,7 @@
 - uuid: d58e31c8-add3-4cc7-ad4c-05027a1edb52
   date: '2023-10-26'
   name: Bootcamp Project Showcase & Env Var Insights
-  description: Dive into full stack creativity with Thomas Hoang's bootcamp project
+  description: Dive into full stack creativity with Tony Hansord's bootcamp project
     and level-up your Rails security with Michael S.'s talk on environment variables.
   slug: 2023-10-26-bootcamp-showcase-environment-variables
   registration_link:
@@ -899,12 +898,12 @@
   talks:
     - uuid: f9e81bae-4fb7-4029-ac76-9651fd80c6f1
       title: Showcase of final project of my bootcamp with Academy Xi
-      description: Celebrate creativity! Join Thomas Hoang as he presents his full stack
+      description: Celebrate creativity! Join Tony Hansord as he presents his full stack
         web app—crafted from Rails and React—developed for his final Academy Xi bootcamp
         project. Get inspired by a real-world journey from learning to launch!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=H2PILTYGuM8'
       speakers:
-        - name: Thomas Hoang
+        - name: Tony Hansord
           contact_details:
             github_username:
             x_handle:
@@ -915,12 +914,12 @@
     - uuid: ba200eea-210a-435b-aae6-816beb9967d7
       title: Thoughts on Environment Variables
       description: Learn the do's and don'ts of environment variables in Rails with
-        Michael S.! Discover best practices for secrets, safe config storage, and tools
+        Michael Milewski! Discover best practices for secrets, safe config storage, and tools
         to keep your apps secure. See real code and real solutions in this punchy lightning
         talk!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=Pf-IrWRm-UE'
       speakers:
-        - name: Michael S.
+        - name: Michael Milewski
           contact_details:
             github_username: saramic
             x_handle:
@@ -931,7 +930,7 @@
 - uuid: 654dddc4-d390-4c72-9e9d-da42a0209a24
   date: '2023-09-28'
   name: Rails Forms & Power of Pair Presenting
-  description: Anton shares quick insights on Rails forms, then Simran explores how
+  description: Anton shares quick insights on Rails forms, then Selena explores how
     pair presenting can make your talks unforgettable!
   slug: 2023-09-28-rails-forms-and-pair-presenting
   registration_link:
@@ -951,9 +950,9 @@
       description: Join Anton for a fast-paced lightning talk on Rails forms and service
         objects! Perfect for anyone looking to streamline form handling in their Rails
         app. Short, sharp, and super practical—don’t miss it!
-      video_url: TODO
+      video_url: unknown
       speakers:
-        - name: Anton
+        - name: Anton Katunin
           contact_details:
             github_username: antulik
             x_handle:
@@ -963,12 +962,12 @@
             website:
     - uuid: f676bfb4-214e-4546-8bef-ef193a815939
       title: 'Unleashing the Power of Pair Presenting: Elevate Your Conference Impact'
-      description: Simran reveals how pair presenting can transform your conference
+      description: Selena reveals how pair presenting can transform your conference
         talks! Explore the benefits, pitfalls, and exciting live demos while learning
         to forge deeper connections and make every presentation memorable.
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=8dlbSd-Y_cw'
       speakers:
-        - name: Simran Sawhney
+        - name: Selena Small
           contact_details:
             github_username: simran-sawhney
             x_handle:
@@ -986,7 +985,7 @@
   type: meetup
   venue:
     name: BOYD Community Hub
-    google_maps_url: https://maps.app.goo.gl/Tifehaitwnf2fJSq5
+    google_maps_url: 'https://maps.app.goo.gl/Tifehaitwnf2fJSq5'
     address:
       street: 207 City Rd
       locality: Southbank
@@ -996,12 +995,12 @@
   talks:
     - uuid: 253957c7-9c07-4c5d-8ca1-ea57e238405d
       title: 'Dragonruby: Creating the game "Metal Warrior: Search for Valhalla"'
-      description: Hear Map7 share fun stories, highlights, and hurdles from building
+      description: Hear Michael Pope share fun stories, highlights, and hurdles from building
         their action-packed 2D game in Dragonruby. Aspiring game devs and curious coders—don’t
         miss this energetic lightning talk!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=z2qQUTFIEzo'
       speakers:
-        - name: Map7
+        - name: Michael Pope
           contact_details:
             github_username: map7
             x_handle:
@@ -1014,7 +1013,7 @@
       description: Nothing’s a black box! Rian McGuire will show you how to confidently
         peer into unfamiliar code and languages, exploring gems and even the Ruby source.
         Demystify how things really tick in this inspiring talk.
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=eNgYVlkiRJs'
       speakers:
         - name: Rian McGuire
           contact_details:
@@ -1044,13 +1043,13 @@
   talks:
     - uuid: 2d63386b-6582-4c3c-b2f4-a81e0546f35c
       title: Tips for juniors and mentors
-      description: Join Michael as he shares uplifting tips for juniors and mentors!
+      description: Join Thomas Himawan as he shares uplifting tips for juniors and mentors!
         Learn about pairing up in the community, brushing up Ruby with exercism, and
         taking your TDD and dojo skills to the next level. A quick, friendly guide for
         all newcomers.
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=HPtvqeVY0tY'
       speakers:
-        - name: Michael
+        - name: Thomas Himawan
           contact_details:
             github_username:
             x_handle:
@@ -1060,13 +1059,13 @@
             website:
     - uuid: f1cdbb5d-d4e0-442e-8b3d-4206b142499d
       title: A production bug 27 years in the making
-      description: Get ready for a suspenseful bug hunt! radar unveils the story of
+      description: Get ready for a suspenseful bug hunt! Ryan Bigg unveils the story of
         a perfectly-tested app with a bug that lay dormant for 27 years. Learn from
         surprising production adventures. You’ll laugh, you’ll gasp, you’ll code more
         defensively.
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=q_mCZABhJcc'
       speakers:
-        - name: radar
+        - name: Ryan Bigg
           contact_details:
             github_username: radar
             x_handle:
@@ -1081,7 +1080,7 @@
         by solving technical, social, and political challenges. Ideal for Ruby devs
         and anyone curious about interoperability and tech advocacy. Fascinating insights
         await!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=YvOmkbeIe9o'
       speakers:
         - name: Matt Hood
           contact_details:
@@ -1114,7 +1113,7 @@
       description: Ready to stop wrestling with I18n? David Carlin reveals clever new
         ways to keep language logic simple in your Rails apps. Clear, concise, and unlike
         anything you've seen before—unlock a smoother multilingual workflow!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=t6ZMVW1FHes'
       speakers:
         - name: David Carlin
           contact_details:
@@ -1129,7 +1128,7 @@
       description: Join Achhetr’s welcoming walkthrough of Exercism! See hands-on coding
         exercises and gain TDD & pair programming confidence. Perfect for new devs looking
         for real-world problem-solving tips and a supportive vibe.
-      video_url: TODO
+      video_url: unknown
       speakers:
         - name: Achhetr
           contact_details:
@@ -1142,7 +1141,7 @@
 - uuid: d45f9d8d-270c-4942-9c8c-c9a7fab097c1
   date: '2021-03-25'
   name: 'The Joy of Docs: Technical Writing'
-  description: Join Oscar Alan Pierce as he shares practical tips for better technical
+  description: Join Dana Scheider as he shares practical tips for better technical
     writing—make your docs fun, clear, and super useful for every developer!
   slug: 2021-03-25-joy-of-docs-technical-writing-oscar-alan-pierce
   registration_link:
@@ -1160,14 +1159,14 @@
     - uuid: 7d227c0b-1167-4621-9d32-d0bf6ac1c8c0
       title: 'The Joy of Docs: Technical Writing for Developers and Engineers'
       description: Unlock the secrets to writing documentation that actually helps!
-        Join Oscar Alan Pierce for a fun and insightful session on improving your technical
+        Join Dana Scheider for a fun and insightful session on improving your technical
         writing and making your docs shine. You’ll never look at commit messages the
         same way again!
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=l8pFr1y14f8'
       speakers:
-        - name: Oscar Alan Pierce
+        - name: Dana Scheider
           contact_details:
-            github_username: oscaralanpierce
+            github_username:
             x_handle:
             linkedin_handle:
             bluesky_handle:
@@ -1176,7 +1175,7 @@
 - uuid: 82d763b9-afb2-4f79-b9c4-ab08c0d4e2c0
   date: '2021-02-25'
   name: View Components in the Wild
-  description: See how Vanessa Nimmo and the team at Fresho use View Components to
+  description: See how Michael Milewski and the team at Fresho use View Components to
     make Rails views simpler, easier to test, and more fun to build!
   slug: 2021-02-25-view-components-in-the-wild
   registration_link:
@@ -1196,11 +1195,11 @@
       description: See how Fresho uses View Components to make Rails testing and frontend
         dev wilder, more composable, and a lot more fun! Learn about decomposing UIs
         and writing maintainable, consistent code.
-      video_url: TODO
+      video_url: 'https://www.youtube.com/watch?v=ISWuPcCoChw'
       speakers:
-        - name: Vanessa Nimmo
+        - name: Michael Milewski
           contact_details:
-            github_username: VanessaNimmo
+            github_username: saramic
             x_handle:
             linkedin_handle:
             bluesky_handle:
