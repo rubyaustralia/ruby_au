@@ -1,4 +1,85 @@
 ---
+- uuid: 2509d2e4-58fc-4e1a-b099-6ec1c26dabc2
+  date: '2025-08-28'
+  name: 'Ruby Melbourne: August 2025'
+  description: >-
+    Join us at Ruby Melbourne: August 2025 for two insightful talks. Ryan Bigg on Railway Oriented
+    Programming and Ankur Kothari on the quirks of Ruby.
+  slug: 2025-08-28-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-on-rails-oceania-melbourne/events/305601920/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+  talks:
+    - uuid: a5681632-fe07-413e-bfb2-adbeeb477299
+      title: 'Railway Oriented Programming, Getting Us Back On Track'
+      description: |-
+        <p>
+          Your Rails applications are probably missing one crucial component: Operation classes that
+          harness the power of Railway Oriented Programming.
+        </p>
+        <p>
+          While "The Rails Way" gave us incredible productivity wins with convention over
+          configuration and rapid prototyping, it left a gap in handling complex business logic.
+        </p>
+        <p>
+          Your controllers are doing their job of handling requests & responses, your models are
+          doing theirs by representing data, but how are you isolating your business logic to make
+          it easier to use in isolation?
+        </p>
+        <p>
+          Railway Oriented Programming fills this void with Operation classes that make success and
+          failure paths explicit and composable.
+        </p>
+        <p>
+          I'll show you how to use this pattern in a Rails application, writing practical examples
+          of how to use operations to transform messy, scattered business logic into elegant,
+          composable workflows.
+        </p>
+      video_url: TODO
+      speakers:
+        - name: Ryan Bigg
+          contact_details:
+            github_username: radar
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle: ryanbigg@ruby.social
+            website:
+
+    - uuid: f78dbd1d-d18b-45ee-9ec6-6f53be355505
+      title: '10 things I hate about Ruby'
+      description: >-
+        <p>
+          We often celebrate Ruby for its "magic" and developer-friendly syntax, but what happens
+          when that magic becomes mystifying? Drawing on a programming journey through a wide
+          spectrum of languages, from low-level bit-twiddling to the highest levels of Lisp, this
+          talk explores why Ruby is one of the most deceptively difficult languages to master.
+        </p>
+        <p>
+          We'll move beyond the surface-level shine to dissect specific inconsistencies and design
+          deficiencies that make building a coherent mental model a surprising challenge. A critical
+          and affectionate look at the language we love, designed to spark a deeper conversation
+          about its quirks and complexities.
+        </p>
+      video_url: TODO
+      speakers:
+        - name: Ankur Kothari
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+
 - uuid: 019850c6-3ec7-78f4-8142-606741e118c1
   date: '2025-07-31'
   name: Ruby Melbourne Relaunch!
