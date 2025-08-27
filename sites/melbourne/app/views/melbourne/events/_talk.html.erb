@@ -2,7 +2,7 @@
   <h4 class="text-xl font-semibold text-black"><%= talk.title %></h4>
   <p class="font-medium leading-5 text-black"><%= talk.speakers.map(&:name).to_sentence %></p>
 
-  <p class="text-black"><%= talk.description %></p>
+  <p class="text-black"><%= talk.description.html_safe %></p>
 
   <div class="grid grid-cols-2 gap-4 mt-1 w-full">
     <% talk.speakers.each do |speaker| %>
