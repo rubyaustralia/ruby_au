@@ -9,7 +9,7 @@
 
 - name: Bluethumb
   key: bluethumb
-  url: https://bluethumb.com.au/
+  url: https://tech.bluet.hm/
   images:
     - 2024/bluethumb-500x109.png
   tier: Opal
