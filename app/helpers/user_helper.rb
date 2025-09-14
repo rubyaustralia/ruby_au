@@ -8,4 +8,10 @@ module UserHelper
 
     lists.empty? ? "None" : lists.join(", ")
   end
+
+  def job_seekers_available?
+    Rails.cache.fetch('job_seekers_available', expires_in: 5.minutes) do
+      User.seeking_work.joins(:memberships).where(memberships: { left_at: nil }).exists?
+    end
+  end
 end
