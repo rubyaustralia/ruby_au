@@ -17,12 +17,14 @@
 #  full_name              :string
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :inet
+#  linkedin_url           :string
 #  mailing_list           :boolean          default(FALSE), not null
 #  mailing_lists          :json             not null
 #  preferred_name         :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  seeking_work           :boolean          default(FALSE), not null
 #  sign_in_count          :integer          default(0), not null
 #  token                  :string
 #  unconfirmed_email      :string
@@ -53,6 +55,7 @@ class User < ApplicationRecord
   has_many :emails, dependent: :destroy
   has_many :access_requests, dependent: :destroy
 
+  scope :seeking_work, -> { where(seeking_work: true).where.not(linkedin_url: [nil, ""]) }
   scope :unconfirmed, -> { where(confirmed_at: nil) }
   scope :old, -> { where('created_at < ?', 2.weeks.ago) }
   scope :subscribed_to_any_list, lambda {
@@ -73,6 +76,7 @@ class User < ApplicationRecord
 
   validates :full_name, presence: true
   validates :address, presence: true
+  validates :linkedin_url, format: { with: /\Ahttps:\/\/(www\.)?linkedin\.com\/.*\z/i, message: "must be a valid LinkedIn URL" }, allow_blank: true
 
   def active_for_authentication?
     super && deactivated_at.nil?

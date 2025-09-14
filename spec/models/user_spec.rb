@@ -17,12 +17,14 @@
 #  full_name              :string
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :inet
+#  linkedin_url           :string
 #  mailing_list           :boolean          default(FALSE), not null
 #  mailing_lists          :json             not null
 #  preferred_name         :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  seeking_work           :boolean          default(FALSE), not null
 #  sign_in_count          :integer          default(0), not null
 #  token                  :string
 #  unconfirmed_email      :string

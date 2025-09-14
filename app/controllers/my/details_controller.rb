@@ -25,8 +25,8 @@ class My::DetailsController < My::ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(\
-      :full_name, :address, :visible,
+    params.require(:user).permit(
+      :full_name, :address, :visible, :linkedin_url, :seeking_work,
       mailing_lists: MailingList.all.collect(&:name)
     )
   end
