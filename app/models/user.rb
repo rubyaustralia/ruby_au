@@ -76,7 +76,7 @@ class User < ApplicationRecord
 
   validates :full_name, presence: true
   validates :address, presence: true
-  validates :linkedin_url, format: { with: /\Ahttps:\/\/(www\.)?linkedin\.com\/.*\z/i, message: "must be a valid LinkedIn URL" }, allow_blank: true
+  validates :linkedin_url, format: { with: %r{\Ahttps://(www\.)?linkedin\.com/.*\z}i, message: "must be a valid LinkedIn URL" }, allow_blank: true
 
   def active_for_authentication?
     super && deactivated_at.nil?
