@@ -69,6 +69,10 @@
 
 <%= render('shared/spacer-linkedin') %>
 
+<% if job_seekers_available? %>
+  <%= render('shared/section-job-seekers') %>
+<% end %>
+
 <%= render('shared/section-connecting-online') %>
 
 <% if user_signed_in? %>

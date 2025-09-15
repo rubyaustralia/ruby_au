@@ -34,6 +34,34 @@
           </div>
         </div>
 
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-start">
+          <label for="user_linkedin_url" class="block text-sm font-medium text-gray-700 md:text-right md:mt-2">
+            LinkedIn Profile URL
+          </label>
+          <div class="md:col-span-2">
+            <%= form.text_field :linkedin_url, class: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-ruby-red focus:border-ruby-red", placeholder: "https://www.linkedin.com/in/yourprofile" %>
+            <p class="mt-1 text-sm text-gray-500">
+              Please enter your full LinkedIn profile URL if you'd like to be listed in our job seekers section.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-start md:items-center">
+          <div class="md:col-span-2 md:col-start-2">
+            <div class="flex items-start">
+              <div class="flex items-center h-5">
+                <%= form.check_box :seeking_work, class: "h-4 w-4 text-ruby-red border-gray-300 rounded focus:ring-ruby-red" %>
+              </div>
+              <div class="ml-3 text-sm">
+                <label for="user_seeking_work" class="font-medium text-gray-700">I am currently seeking work</label>
+                <p class="text-gray-500 mt-1">
+                  Check this box if you'd like to be featured in our "Members Seeking Work" section on the welcome page.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-start md:items-center">
           <div class="md:col-span-2 md:col-start-2">
             <div class="flex items-start">
