@@ -50,6 +50,8 @@ In these Rules—
 
 **_the Registrar_** means the Registrar of Incorporated Associations.
 
+**_written_** and **_in writing_** includes both electronic and non-electronic submissions.
+
 ## Part 2—Powers of Association
 
 #### 5 Powers of Association
@@ -91,9 +93,9 @@ Any person who supports the purposes of the Association is eligible for membersh
 
 #### 9 Application for membership
 
-1. Memberships of the Association are granted automatically to attendees at events conducted by the Association such as “the Rails Camp” or other such events as they are held from time to time.
+1. Membership of the Association may be granted to attendees of any event conducted by the Association.
 
-2. Memberships can also be made by way of application, either written or verbal at any other time.
+2. Membership of the Association may be made by way of application - either written or verbal - at any time.
 
 #### 10 Consideration of application
 
@@ -105,7 +107,7 @@ Any person who supports the purposes of the Association is eligible for membersh
 
 #### 11 New membership
 
-1. Once an application for membership is received the Secretary must enter the name and address of the new member, and the date of becoming a member, in the register of members.
+1. Once an application for membership is received the Secretary must enter the name and email address of the new member, and the date of becoming a member, in the register of members.
 
 #### 12 Annual subscription and fee on joining
 
@@ -448,12 +450,12 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 #### 43 Composition of Committee
 
-1. The Committee consists of—
+1. The Committee consists of:
     1. a President; and
     2. a Vice-President; and
     3. a Secretary; and
     4. a Treasurer; and
-    5. four ordinary members (if any) elected under rule 52.
+    5. Ordinary members, if any, as elected under rule 52.
 
 #### 44 General Duties
 
@@ -551,21 +553,21 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 2. If only one member is nominated for the position, the Chairperson of the meeting must declare the member elected to the position.
 
-3. If more than one member is nominated, a ballot must be held.
+3. If more than one member is nominated, a vote must be held.
 
-#### 52 Election of ordinary members
+#### 52 Election of Ordinary members
 
-1. The annual general meeting may by resolution decide the number of ordinary members of the Committee (if any) it wishes to hold office for the next year.
+1. A general meeting may by resolution decide the number of Ordinary Members of the Committee (if any) it wishes to hold office for the next year.
 
-2. A single election may be held to fill all of those positions in so far as the position is vacant at that meeting.
+2. A single election may be held to fill all of those positions insofar as the position is vacant at that meeting.
 
-3. If the number of members nominated for the position of ordinary committee member is less than or equal to the number to be elected, the Chairperson of the meeting must declare each of those members to be elected to the position.
+3. If the number of members nominated for the position of Ordinary committee member is less than or equal to the number to be elected, the Chairperson of the meeting must declare each of those members to be elected to the position.
 
-4. If the number of members nominated exceeds the number to be elected, a ballot must be held.
+4. If the number of members nominated exceeds the number to be elected, a vote must be held.
 
 #### 53 Term of office
 
-1. Subject to subrule 3 and rule 54, a committee member holds office until the positions of the Committee are declared vacant at the next annual general meeting or special general meeting whichever falls on the 12 month anniversary of the member’s appointment.
+1. Subject to subrule 3 and rule 54, a committee member holds office until committee positions are automatically declared vacant at the General Meeting following the expiration of their term of office, immediately prior to the election of committee members.
 
 2. A committee member may be re-elected.
 
@@ -583,8 +585,9 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 2. A person ceases to be a committee member if they-
     1. ceases to be a member of the Association; or
-    2. fails to attend 3 consecutive committee meetings (other than special or urgent committee meetings) without leave of absence under rule 64; or
-    3. otherwise ceases to be a committee member by operation of section 78 of the Act.
+    2. otherwise ceases to be a committee member by operation of section 78 of the Act.
+
+3. The committee may remove a committee member who fails to attend 3 consecutive committee meetings (other than special or urgent committee meetings) without leave of absence (under rule 64).
 
 > ##### Note
 >
@@ -596,7 +599,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
     1. has become vacant under rule 54; or
     2. was not filled by election at the last annual general meeting.
 
-2. If the position of Secretary becomes vacant, the Committee must appoint a member to the position within 14 days after the vacancy arises.
+2. If the position of Secretary becomes vacant, the Committee must appoint a member to the position within the legally mandated period after the vacancy arises.
 
 3. Rule 54 also applies to any committee member appointed by the Committee to fill a vacant position under subrule 1 or 2.
 
@@ -614,9 +617,9 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 1. Notice of each committee meeting must be given to each committee member no later than 7 days before the date of the meeting.
 
-2.  Notice may be given of more than one committee meeting at the same time.
+2. Notice may be given of more than one committee meeting at the same time.
 
-3.  The notice must state the date, time and place of the meeting.
+3. The notice must state the date, time and place of the meeting.
 
 4. If a special committee meeting is convened, the Secretary must give Committee Members notice by way of email which must include the general nature of the business to be conducted.
 
@@ -644,7 +647,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 3. If a quorum is not present within 30 minutes after the notified commencement time of a committee meeting—
     1. in the case of a special meeting—the meeting lapses;
-    2. in any other case—the meeting must be adjourned to a date no later than 14 days after the adjournment and notice of the time, date and place to which the meeting is adjourned must be given in accordance with rule 59.
+    2. in any other case—the meeting must be adjourned to a date no later than 14 days after the adjournment and notice of the time, date and place to which the meeting is adjourned must be given in accordance with rule 57.
 
 #### 61 Voting
 
@@ -680,7 +683,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 #### 64 Leave of absence
 
-1. The Committee may grant a committee member leave of absence from committee meetings for a period not exceeding 3 months.
+1. The Committee may grant a committee member leave of absence from committee meetings.
 
 2. The Committee must not grant leave of absence retrospectively unless it is satisfied that it was not feasible for the committee member to seek the leave in advance.
 
