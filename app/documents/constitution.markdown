@@ -107,7 +107,7 @@ Any person who supports the purposes of the Association is eligible for membersh
 
 #### 11 New membership
 
-1. Once an application for membership is received the Secretary must enter the name and email address of the new member, and the date of becoming a member, in the register of members.
+1. Once an application for membership is received the Secretary must enter the name and address of the new member, and the date of becoming a member, in the register of members.
 
 #### 12 Annual subscription and fee on joining
 
