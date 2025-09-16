@@ -95,7 +95,7 @@ Any person who supports the purposes of the Association is eligible for membersh
 
 1. Membership of the Association may be granted to attendees of any event conducted by the Association.
 
-2. Membership of the Association may be made by way of application - either written or verbal - at any time.
+2. Membership of the Association may be granted by way of application to the committee at any time. An application may be either written or verbal.
 
 #### 10 Consideration of application
 
