@@ -567,7 +567,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 #### 53 Term of office
 
-1. Subject to subrule 3 and rule 54, a committee member holds office until committee positions are automatically declared vacant at the General Meeting following the expiration of their term of office, immediately prior to the election of committee members.
+1. Subject to subrule 3 and rule 54, Committee positions are automatically declared vacant at the General Meeting held proximate to the expiration of their term of office. The declaration occurs immediately prior to the election of committee members.
 
 2. A committee member may be re-elected.
 
