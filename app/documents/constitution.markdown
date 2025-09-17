@@ -32,7 +32,7 @@ In these Rules—
 
 **_disciplinary appeal meeting_** means a meeting of the members of the Association convened under rule 23(3);
 
-**_disciplinary meeting_** means a meeting of the Committee convened for the purposes of rule 22;
+**_disciplinary meeting_** means a meeting of the Committee convened for the purposes of rule 22;
 
 **_disciplinary subcommittee_** means the subcommittee appointed under rule 20;
 
@@ -174,7 +174,7 @@ The rights of a member are not transferable and end when membership ceases.
 1. Before disciplinary action is taken against a member, the Secretary must give written notice to the member—
     1. stating that the Association proposes to take disciplinary action against the member; and
     2. stating the grounds for the proposed disciplinary action; and
-    3. specifying the date, place and time of the meeting at which the Committee intends to consider the disciplinary action (the disciplinary meeting); and
+    3. specifying the date, place and time of the meeting at which the Committee intends to consider the disciplinary action (the disciplinary meeting); and
     4. advising the member that they may do one or both of the following—
         1. attend the disciplinary meeting and address the Committee at that meeting;
         2. give a written statement to the Committee at any time before the disciplinary meeting; and
@@ -235,7 +235,7 @@ The parties to a dispute must attempt to resolve the dispute between themselves 
 
 #### 27 Appointment of mediator
 
-1. If the parties to a dispute are unable to resolve the dispute between themselves within the time required by rule 26, the parties must within 10 days—
+1. If the parties to a dispute are unable to resolve the dispute between themselves within the time required by rule 26, the parties must within 10 days—
     1. notify the Committee of the dispute; and
     2. agree to or request the appointment of a mediator; and
     3. attempt in good faith to settle the dispute by mediation.
@@ -244,7 +244,7 @@ The parties to a dispute must attempt to resolve the dispute between themselves 
     1. a person chosen by agreement between the parties; or
     2. in the absence of agreement—
         1. if the dispute is between a member and another member—a person appointed by the Committee; or
-        2. if the dispute is between a member and the Committee or the Association—a person appointed or employed by the Dispute Settlement Centre of Victoria.
+        2. if the dispute is between a member and the Committee or the Association—a person appointed or employed by the Dispute Settlement Centre of Victoria.
 
 3. A mediator appointed by the Committee may be a member or former member of the Association but in any case must not be a person who—
     1. has a personal interest in the dispute; or
@@ -267,7 +267,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 #### 30 Annual general meetings
 
-1. The Committee must convene an annual general meeting of the Association to be held within 5 months after the end of each financial year.
+1. The Committee must convene an annual general meeting of the Association to be held within 5 months after the end of each financial year.
 
 2. The Committee may determine the date, time and place of the annual general meeting.
 
@@ -344,7 +344,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 2. The quorum for a general meeting is the presence of nine members entitled to vote.
 
 3. If a quorum is not present within 30 minutes after the notified commencement time of a general meeting—
-    1. in the case of a meeting convened by, or at the request of, members under rule 32—the meeting must be dissolved;
+    1. in the case of a meeting convened by, or at the request of, members under rule 32—the meeting must be dissolved;
     2. in any other case—
         1. the meeting must be adjourned to a date not more than 21 days after the adjournment; and
         2. notice of the date, time and place to which the meeting is adjourned must be given at the meeting and confirmed by written notice given to all members as soon as practicable after the meeting.
@@ -450,12 +450,12 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 #### 43 Composition of Committee
 
-1. The Committee consists of:
+1. The Committee consists of—
     1. a President; and
     2. a Vice-President; and
     3. a Secretary; and
     4. a Treasurer; and
-    5. Ordinary members, if any, as elected under rule 52.
+    5. Ordinary members, if any, as elected under rule 52.
 
 #### 44 General Duties
 
@@ -505,9 +505,9 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 1. The Treasurer must—
     1. receive all moneys paid to or received by the Association and issue receipts for those moneys in the name of the Association; and
-    2. ensure that all moneys received are paid into the account of the Association within 5 working days after receipt; and
+    2. ensure that all moneys received are paid into the account of the Association within 5 working days after receipt; and
     3. make any payments authorised by the Committee or by a general meeting of the Association from the Association's funds; and
-    4. ensure cheques are signed by at least 2 committee members.
+    4. ensure cheques are signed by at least 2 committee members.
 
 2. The Treasurer must—
     1. ensure that the financial records of the Association are kept in accordance with the Act; and
@@ -555,13 +555,13 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 3. If more than one member is nominated, a vote must be held.
 
-#### 52 Election of Ordinary members
+#### 52 Election of ordinary members
 
 1. A general meeting may by resolution decide the number of Ordinary Members of the Committee (if any) it wishes to hold office for the next year.
 
 2. A single election may be held to fill all of those positions insofar as the position is vacant at that meeting.
 
-3. If the number of members nominated for the position of Ordinary committee member is less than or equal to the number to be elected, the Chairperson of the meeting must declare each of those members to be elected to the position.
+3. If the number of members nominated for the position of ordinary committee member is less than or equal to the number to be elected, the Chairperson of the meeting must declare each of those members to be elected to the position.
 
 4. If the number of members nominated exceeds the number to be elected, a vote must be held.
 
@@ -601,7 +601,7 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 2. If the position of Secretary becomes vacant, the Committee must appoint a member to the position within the legally mandated period after the vacancy arises.
 
-3. Rule 54 also applies to any committee member appointed by the Committee to fill a vacant position under subrule 1 or 2.
+3. Rule 54 also applies to any committee member appointed by the Committee to fill a vacant position under subrule 1 or 2.
 
 4. The Committee may continue to act despite any vacancy in its membership.
 
@@ -617,9 +617,9 @@ If the mediation process does not resolve the dispute, the parties may seek to r
 
 1. Notice of each committee meeting must be given to each committee member no later than 7 days before the date of the meeting.
 
-2. Notice may be given of more than one committee meeting at the same time.
+2.  Notice may be given of more than one committee meeting at the same time.
 
-3. The notice must state the date, time and place of the meeting.
+3.  The notice must state the date, time and place of the meeting.
 
 4. If a special committee meeting is convened, the Secretary must give Committee Members notice by way of email which must include the general nature of the business to be conducted.
 
@@ -750,7 +750,7 @@ The funds of the Association may be derived from joining fees, annual subscripti
 The registered address of the Association is—
 
 1. the address determined from time to time by resolution of the Committee; or
-2. if the Committee has not determined an address to be the registered address—the postal address of the Secretary.
+2. if the Committee has not determined an address to be the registered address—the postal address of the Secretary.
 
 #### 71 Notice requirements
 
