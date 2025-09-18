@@ -17,16 +17,35 @@ RSpec.describe Campaigns::Test do
   end
 
   describe '.call' do
-    it 'delivers campaign delivery for committee users' do
+    it 'sends emails to committee users without creating delivery records' do
       expect do
         test_service.call(campaign)
-      end.to change { CampaignDelivery.where(membership: committee_memberships).count }.by(3)
+      end.not_to(change(CampaignDelivery, :count))
+
+      expect(CampaignsMailer).to have_received(:campaign_email).exactly(3).times
     end
 
-    it 'does not deliver campaign delivery for non-committee users' do
+    it 'does not send emails to non-committee users' do
+      test_service.call(campaign)
+
+      non_committee_membership.each do |membership|
+        expect(CampaignsMailer).not_to have_received(:campaign_email).with(campaign, membership, anything)
+      end
+    end
+
+    it 'does not mark the campaign as delivered' do
       expect do
         test_service.call(campaign)
-      end.not_to(change { CampaignDelivery.where(membership: non_committee_membership).count })
+      end.not_to(change { campaign.reload.delivered_at })
+    end
+
+    it 'allows multiple test sends without issues' do
+      expect do
+        test_service.call(campaign)
+        test_service.call(campaign)
+      end.not_to(change(CampaignDelivery, :count))
+
+      expect(CampaignsMailer).to have_received(:campaign_email).exactly(6).times
     end
   end
 end
