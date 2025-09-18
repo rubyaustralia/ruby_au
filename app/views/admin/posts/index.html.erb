@@ -17,10 +17,8 @@
         <tr>
           <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">ID</th>
           <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Status</th>
-          <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden lg:table-cell">Slug</th>
           <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Title</th>
           <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Category</th>
-          <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">Content</th>
           <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">Created</th>
           <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden xl:table-cell">Scheduled</th>
           <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden lg:table-cell">Published</th>
@@ -35,18 +33,12 @@
                   <%= post.status.capitalize %>
                 </span>
             </td>
-            <td class="px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm text-gray-500 hidden lg:table-cell">
-              <div class="max-w-xs truncate"><%= post.slug %></div>
-            </td>
             <td class="px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm font-medium">
               <%= link_to admin_post_path(post), class: "text-ruby-red hover:text-red-700 transition-colors" do %>
                 <div class="max-w-[150px] sm:max-w-[200px] md:max-w-xs truncate"><%= post.title %></div>
               <% end %>
             </td>
             <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-700"><%= post.category.humanize %></td>
-            <td class="px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm text-gray-500 hidden sm:table-cell">
-              <div class="max-w-[150px] md:max-w-[200px] lg:max-w-xs truncate"><%= post.content.to_plain_text.truncate(80) %></div>
-            </td>
             <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden md:table-cell"><%= post.created_at.try(:strftime, "%Y-%m-%d") %></td>
             <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden xl:table-cell"><%= post.publish_scheduled_at.try(:strftime, "%Y-%m-%d") %></td>
             <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden lg:table-cell"><%= post.published_at.try(:strftime, "%Y-%m-%d") %></td>

@@ -35,10 +35,16 @@ class Post < ApplicationRecord
 
   belongs_to :user
 
+  before_save :set_default_publish_scheduled_at
+  after_save :publish_if_status_published
+
   scope :recent, -> { order(published_at: :desc, created_at: :desc) }
+
+  scope :published, -> { where(status: :published).where.not(published_at: nil) }
 
   scope :published_with_associations, lambda {
     published
+      .where.not(published_at: nil)
       .includes(:user, :rich_text_content)
       .order(published_at: :desc)
   }
@@ -47,8 +53,10 @@ class Post < ApplicationRecord
     category.present? ? where(category: category) : all
   }
 
+  scope :overdue_scheduled, -> { where(status: :scheduled).where('publish_scheduled_at <= ?', Time.current) }
+
   def publishable?
-    draft? && publish_scheduled_at.present?
+    (draft? || scheduled?) && publish_scheduled_at.present?
   end
 
   def archive
@@ -63,7 +71,21 @@ class Post < ApplicationRecord
     text # Return the text unchanged, maintaining the forward slashes
   end
 
+  def self.publish_overdue_posts
+    overdue_scheduled.find_each(&:publish!)
+  end
+
   private
+
+  def set_default_publish_scheduled_at
+    nil
+  end
+
+  def publish_if_status_published
+    return unless saved_change_to_status? && published? && published_at.blank?
+
+    update!(published_at: Time.current)
+  end
 
   def prevent_duplicated_slug
     return unless self.class.where(slug: normalize_title).or(self.class.where("slug ILIKE ?", "%/#{normalize_title}")).where.not(id: id).exists?
