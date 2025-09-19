@@ -1,77 +1,129 @@
-<%= content_for :heading do %>
-  RSVP: <%= rsvp.rsvp_event.title %>
-<% end %>
+<div class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+  <article class="bg-white rounded-lg shadow-md p-6 sm:p-8 md:p-10 mb-8 sm:mb-10 md:mb-12">
+    <%= content_for :heading do %>
+      RSVP: <%= rsvp.rsvp_event.title %>
+    <% end %>
 
-<h2>RSVP for <%= rsvp.rsvp_event.title %></h2>
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8">
+      RSVP for <%= rsvp.rsvp_event.title %>
+    </h1>
 
-<p>This event will be taking place on <strong><%= rsvp.rsvp_event.happens_at.to_formatted_s(:date_only) %></strong> with the starting time across Australia:</p>
+    <p class="mb-2">
+      This event will be taking place on
+      <strong><%= rsvp.rsvp_event.happens_at.to_formatted_s(:date_only) %></strong>
+      with the starting time across Australia:
+    </p>
 
-<ul>
-  <% time_zones.each do |zone, locations| %>
-    <li><%= rsvp.rsvp_event.happens_at.in_time_zone(zone).to_formatted_s(:time_only) %> (<%= locations %>)</li>
-  <% end %>
-</ul>
+    <ul class="list-disc list-inside">
+      <% time_zones.each do |zone, locations| %>
+        <li>
+          <%= rsvp.rsvp_event.happens_at.in_time_zone(zone).to_formatted_s(:time_only) %>
+          (<%= locations %>)
+        </li>
+      <% end %>
+    </ul>
 
-<% if rsvp.status == "yes" %>
-  <p>You are currently <strong>confirmed to attend</strong> this event. If that's no longer the case, please <%= link_to "change your status", decline_rsvp_path(rsvp.token), rel: 'nofollow' %>.</p>
-<% elsif rsvp.status == "no" %>
-  <p>You are currently marked as <strong>unable to attend</strong> this event. If instead you can now make it, please <%= link_to "change your status", confirm_rsvp_path(rsvp.token), rel: 'nofollow' %>.</p>
-<% else %>
-  <p>You have not yet RSVP'd for this event. You can either <%= link_to "confirm", confirm_rsvp_path(rsvp.token), rel: 'nofollow' %> or <%= link_to "decline", decline_rsvp_path(rsvp.token), rel: 'nofollow' %>.</p>
-<% end %>
-
-<h3>Proxy Voting</h3>
-
-<% if rsvp.proxy_name.blank? %>
-  <p>If you wish to have someone else vote on your behalf, you can assign them as your proxy for the meeting.</p>
-
-  <%= form_for rsvp, url: rsvp_path(rsvp.token), html: {class: 'standard', id: 'set-proxy-form'} do |form| %>
-    <div class="field">
-      <div class="label">
-        <%= form.label :proxy_name %>
-      </div>
-      <div class="input">
-        <%= form.text_field :proxy_name %>
-      </div>
+    <div class="my-8">
+      <% if rsvp.status == "yes" %>
+        <p>
+          You are currently <strong>confirmed to attend</strong> this event. If that's no longer the
+          case, please
+          <%= link_to "change your status", decline_rsvp_path(rsvp.token), rel: 'nofollow' %>.
+        </p>
+      <% elsif rsvp.status == "no" %>
+        <p>
+          You are currently marked as <strong>unable to attend</strong> this event. If instead you
+          can now make it, please
+          <%= link_to "change your status", confirm_rsvp_path(rsvp.token), rel: 'nofollow' %>.
+        </p>
+      <% else %>
+        <p>
+          You have not yet RSVP'd for this event. You can either
+          <%= link_to "confirm", confirm_rsvp_path(rsvp.token), rel: 'nofollow' %> or
+          <%= link_to "decline", decline_rsvp_path(rsvp.token), rel: 'nofollow' %>.
+        </p>
+      <% end %>
     </div>
 
-    <div class="signature field">
-      <div class="label">
-        <%= form.label :proxy_signature %>
-      </div>
+    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-8 sm:mb-10 md:mb-12">
+      Proxy Voting
+    </h2>
 
-      <div id="signature-pad" class="signature-pad input">
-        <%= form.hidden_field :proxy_signature %>
-        <div class="signature-pad--body">
-          <canvas></canvas>
+    <% if rsvp.proxy_name.blank? %>
+      <p>
+        If you wish to have someone else vote on your behalf, you can assign them as your proxy for
+        the meeting.
+      </p>
+
+      <%= form_for rsvp, url: rsvp_path(rsvp.token), html: {class: 'standard', id: 'set-proxy-form'} do |form| %>
+        <div class="field">
+          <div class="label mb-2">
+            <%= form.label :proxy_name %>
+          </div>
+          <div class="input mb-8">
+            <%= form.text_field(
+              :proxy_name,
+              class: %w[
+                w-full max-w-100 rounded-md px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400
+                outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2
+                focus:outline-ruby-red
+              ]
+            ) %>
+          </div>
         </div>
-        <div class="signature-pad--footer">
-          <div class="description">Sign above</div>
 
-          <div class="signature-pad--actions">
-            <div>
-              <button type="button" class="button clear" data-action="clear">Clear</button>
-              <button type="button" class="button" data-action="undo">Undo</button>
+        <div class="signature field mb-8">
+          <div class="label mb-2">
+            <%= form.label :proxy_signature %>
+          </div>
+
+          <div id="signature-pad" class="signature-pad input w-full max-w-200">
+            <%= form.hidden_field :proxy_signature %>
+
+            <div class="signature-pad--body h-48">
+              <canvas></canvas>
+            </div>
+
+            <div class="signature-pad--footer">
+              <div class="description">Sign above</div>
+
+              <div class="signature-pad--actions">
+                <div>
+                  <button type="button" class="button clear" data-action="clear">Clear</button>
+                  <button type="button" class="button" data-action="undo">Undo</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <p class="info">
-      As a member of Ruby Australia, you (<%= rsvp.membership.full_name %>) appoint this person as your proxy to vote on your behalf as they see fit, for the <%= rsvp.rsvp_event.title %> on <%= rsvp.rsvp_event.happens_at.to_formatted_s(:date_only) %> and at any adjournment of that meeting.
-    </p>
+        <p class="info">
+          As a member of Ruby Australia, you (<%= rsvp.membership.full_name %>) appoint this person
+          as your proxy to vote on your behalf as they see fit, for the <%= rsvp.rsvp_event.title %>
+          on <%= rsvp.rsvp_event.happens_at.to_formatted_s(:date_only) %> and at any adjournment of
+          that meeting.
+        </p>
 
-    <div class="buttons">
-      <%= form.submit 'Assign Proxy' %>
-    </div>
-  <% end %>
+        <div class="buttons">
+          <%= form.submit(
+            'Assign Proxy',
+            class: %w[
+              inline-flex items-center justify-center text-white font-medium text-base sm:text-lg
+              py-3 px-6 sm:py-3 sm:px-8
+              bg-ruby-red hover:bg-red-700
+              rounded-lg transition-colors shadow-lg cursor-pointer
+            ]
+          ) %>
+        </div>
+      <% end %>
 
-  <script type="text/javascript">
-    setupSignature();
-  </script>
-<% else %>
-  <p>You have assigned <%= rsvp.proxy_name %> as your proxy representative, as of <%= rsvp.proxy_assigned_at.to_formatted_s(:rfc822) %>.</p>
+      <script type="text/javascript">
+        setupSignature();
+      </script>
+    <% else %>
+      <p>You have assigned <%= rsvp.proxy_name %> as your proxy representative, as of <%= rsvp.proxy_assigned_at.to_formatted_s(:rfc822) %>.</p>
 
-  <p>If you wish, you can <%= link_to "unassign", rsvp_path(rsvp.token), method: :delete, data: { confirm: 'Are you sure?' } %> your recorded proxy representative.</p>
-<% end %>
+      <p>If you wish, you can <%= link_to "unassign", rsvp_path(rsvp.token), method: :delete, data: { confirm: 'Are you sure?' } %> your recorded proxy representative.</p>
+    <% end %>
+  </article>
+</div>
