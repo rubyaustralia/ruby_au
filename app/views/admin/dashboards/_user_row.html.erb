@@ -6,8 +6,10 @@
     <% end %>
   </td>
   <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
-    <%= user.email %>
+    <%= user.primary_email || "No email found" %>
+    <!-- Debug: <%= user.emails.count %> emails, primary: <%= user.emails.find_by(primary: true)&.email.inspect %>, fallback: <%= user.email.inspect %> -->
   </td>
+
   <td class="px-4 py-4 whitespace-nowrap">
     <div class="flex flex-col space-y-1">
       <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full <%= user.committee? ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800' %>">
@@ -68,7 +70,17 @@
                         user_management_user_name_param: user.full_name
                       },
                       form: { data: { turbo_frame: "user_search_results" } } %>
-      <% end %>
+
+        <%= button_to "Force Delete", admin_force_delete_user_path,
+                      params: { user_id: user.id },
+                      method: :delete,
+                      class: "text-red-800 hover:text-red-950 text-xs bg-transparent border-0 p-0 ml-2",
+                      data: {
+                        action: "click->user-management#confirmUserForceDelete",
+                        user_management_user_name_param: user.full_name
+                      },
+                      form: { data: { turbo_frame: "user_search_results" } } %>
+    <% end %>
     </div>
   </td>
 </tr>
