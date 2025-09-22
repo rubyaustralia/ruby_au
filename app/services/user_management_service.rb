@@ -33,7 +33,28 @@ class UserManagementService
 
     success_result("#{user.full_name} and all associated records have been force deleted")
   rescue StandardError => e
+    Rails.logger.error "Force delete failed for user #{user.id}: #{e.message}"
+    Rails.logger.error e.backtrace.join("\n")
     failure_result("Failed to force delete user: #{e.message}")
+  end
+
+  def remove_all
+    Rails.logger.info "Starting removal of associations for user #{user.id}"
+
+    remove_membership_associations
+    Rails.logger.info "Completed membership associations removal"
+
+    remove_memberships
+    Rails.logger.info "Completed memberships removal"
+
+    remove_extra_emails
+    Rails.logger.info "Completed emails removal"
+
+    remove_access_requests
+    Rails.logger.info "Completed access requests removal"
+
+    nullify_authored_posts
+    Rails.logger.info "Completed posts handling"
   end
 
   def deactivate_user
@@ -48,11 +69,16 @@ class UserManagementService
   end
 
   def update_role(committee_status)
-    if user.update(committee: committee_status)
-      success_result("#{user.full_name}'s role updated successfully")
+    if user.update_column(:committee, committee_status)
+      success_result("#{user.full_name || user.email || 'User'}'s role updated successfully")
     else
+      Rails.logger.error "Failed to update user role for user #{user.id}"
       failure_result('Failed to update user role')
     end
+  rescue StandardError => e
+    Rails.logger.error "Exception in update_role for user #{user.id}: #{e.message}"
+    Rails.logger.error e.backtrace.join("\n")
+    failure_result("Failed to update user role: #{e.message}")
   end
 
   private

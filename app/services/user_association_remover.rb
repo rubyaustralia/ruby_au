@@ -27,9 +27,11 @@ class UserAssociationRemover
   end
 
   def remove_membership_campaign_deliveries(membership)
-    return unless membership.respond_to?(:campaign_deliveries)
+    return unless defined?(CampaignDelivery)
 
-    membership.campaign_deliveries.destroy_all
+    CampaignDelivery.where(membership_id: membership.id).destroy_all
+  rescue NameError
+    # CampaignDelivery class doesn't exist, skip
   end
 
   def remove_memberships
@@ -37,7 +39,7 @@ class UserAssociationRemover
   end
 
   def remove_extra_emails
-    user.emails.where.not(id: user.email_id).destroy_all
+    user.emails.destroy_all
   end
 
   def remove_access_requests
@@ -49,8 +51,8 @@ class UserAssociationRemover
   def nullify_authored_posts
     return unless defined?(Post)
 
-    Post.where(author: user).find_each do |post|
-      post.update!(author_id: nil)
-    end
+    Rails.logger.info "Removing posts for user #{user.id}"
+    Post.where(user_id: user.id).destroy_all
+    Rails.logger.info "Completed posts removal for user #{user.id}"
   end
 end

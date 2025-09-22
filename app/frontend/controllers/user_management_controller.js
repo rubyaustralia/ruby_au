@@ -37,6 +37,20 @@ export default class extends Controller {
     }
   }
 
+  confirmUserForceDelete(event) {
+    event.preventDefault()
+    event.stopPropagation()
+
+    if (event.target.dataset.processing === "true") return
+
+    const userName = event.target.dataset.userManagementUserNameParam
+
+    if (confirm(`⚠️  FORCE DELETE WARNING ⚠️\n\nThis will permanently delete ${userName} and ALL associated records including:\n- Posts they've authored\n- Email records\n- Membership history\n- RSVPs\n- Access requests\n\nThis action CANNOT be undone!\n\nAre you absolutely sure you want to proceed?`)) {
+      event.target.dataset.processing = "true"
+      event.target.closest('form').submit()
+    }
+  }
+
   confirmUserDeactivate(event) {
     event.preventDefault()
     event.stopPropagation()
