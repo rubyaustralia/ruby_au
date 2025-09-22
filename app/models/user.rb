@@ -53,7 +53,7 @@ class User < ApplicationRecord
 
   has_many :memberships, dependent: :destroy
   has_many :emails, dependent: :destroy
-  has_many :access_requests, dependent: :destroy
+  has_many :access_requests, foreign_key: :recorder_id, dependent: :destroy
 
   scope :seeking_work, -> { where(seeking_work: true).where.not(linkedin_url: [nil, ""]) }
   scope :unconfirmed, -> { where(confirmed_at: nil) }
@@ -78,6 +78,10 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :linkedin_url, format: { with: %r{\Ahttps://(www\.)?linkedin\.com/.*\z}i, message: "must be a valid LinkedIn URL" }, allow_blank: true
 
+  def primary_email
+    emails.find_by(primary: true)&.email || email
+  end
+
   def active_for_authentication?
     super && deactivated_at.nil?
   end
@@ -92,9 +96,10 @@ class User < ApplicationRecord
   end
 
   def update_emails
-    # fetch the email attribute directly from the table
     existing_email = read_attribute_before_type_cast('email')
-    return if existing_email.blank? || email.present?
+    return if existing_email.blank?
+
+    return if emails.where(email: existing_email).exists?
 
     new_email = Email.new(email: existing_email, user: self, primary: true, skip_trigger_after_confirmation: true)
     new_email.skip_confirmation!
@@ -105,6 +110,7 @@ class User < ApplicationRecord
       logger.error "Failed to update email for user #{id}: #{new_email.errors.full_messages.join(', ')}"
     end
   end
+
 
   def update_mailing_list_and_memberships(email_update: false)
     subscribe_to_lists
