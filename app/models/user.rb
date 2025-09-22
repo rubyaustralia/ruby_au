@@ -53,7 +53,7 @@ class User < ApplicationRecord
 
   has_many :memberships, dependent: :destroy
   has_many :emails, dependent: :destroy
-  has_many :access_requests, foreign_key: :recorder_id, dependent: :destroy
+  has_many :access_requests, foreign_key: :recorder_id, dependent: :destroy, inverse_of: :recorder
 
   scope :seeking_work, -> { where(seeking_work: true).where.not(linkedin_url: [nil, ""]) }
   scope :unconfirmed, -> { where(confirmed_at: nil) }
@@ -110,7 +110,6 @@ class User < ApplicationRecord
       logger.error "Failed to update email for user #{id}: #{new_email.errors.full_messages.join(', ')}"
     end
   end
-
 
   def update_mailing_list_and_memberships(email_update: false)
     subscribe_to_lists
