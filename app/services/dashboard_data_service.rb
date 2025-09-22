@@ -29,15 +29,15 @@ class DashboardDataService
   end
 
   def never_logged_in_members
-    User.where(last_sign_in_at: nil)
+    User.includes(:emails).where(last_sign_in_at: nil)
   end
 
   def recently_updated_members
-    User.order(updated_at: :desc).limit(5)
+    User.includes(:emails).order(updated_at: :desc).limit(5)
   end
 
   def recently_logged_in_members
-    User.where.not(last_sign_in_at: nil).order(last_sign_in_at: :desc).limit(5)
+    User.includes(:emails).where.not(last_sign_in_at: nil).order(last_sign_in_at: :desc).limit(5)
   end
 
   def recent_posts
