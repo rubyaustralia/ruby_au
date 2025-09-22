@@ -101,7 +101,9 @@
       <ul class="divide-y">
         <% @recently_updated_members.each do |member| %>
           <li class="py-2">
-            <%= member.email %>
+            <%= link_to member.full_name.present? ? member.full_name : member.email,
+                        "mailto:#{member.email}",
+                        class: "text-blue-600 hover:underline" %>
             <span class="text-gray-500 text-sm block">
               Updated <%= time_ago_in_words(member.updated_at) %> ago
             </span>
@@ -115,7 +117,9 @@
       <ul class="divide-y">
         <% @recently_logged_in_members.each do |member| %>
           <li class="py-2">
-            <%= member.email %>
+            <%= link_to member.full_name.present? ? member.full_name : member.email,
+                        "mailto:#{member.email}",
+                        class: "text-blue-600 hover:underline" %>
             <span class="text-gray-500 text-sm block">
               Logged in <%= time_ago_in_words(member.last_sign_in_at) %> ago
             </span>
