@@ -34,17 +34,14 @@ class Admin::UserManagementController < Admin::ApplicationController
   private
 
   def respond_with_action_result(result, success_action)
-    if result[:success]
-      respond_with_result(result, success_action)
-    else
-      message_type = 'error'
+    return respond_with_result(result, success_action) if result[:success]
 
-      respond_to do |format|
-        format.turbo_stream do
-          render turbo_stream: notification_stream(result[:message], message_type)
-        end
-        format.html { redirect_with_flash(result[:message], message_type) }
+    message_type = 'error'
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: notification_stream(result[:message], message_type)
       end
+      format.html { redirect_with_flash(result[:message], message_type) }
     end
   end
 
