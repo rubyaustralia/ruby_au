@@ -10,6 +10,9 @@
 # Ignore system specific files
 .DS_Store
 
+# Ignore IRB history file
+.irb_history
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
