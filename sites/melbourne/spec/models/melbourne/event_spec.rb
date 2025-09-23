@@ -142,71 +142,95 @@ RSpec.describe Melbourne::Event do
     end
   end
 
-  describe ".next_event" do
-    it "returns the next future event" do
+  describe ".upcoming" do
+    it "returns all events scheduled for today and in the future" do
       allow(described_class).to \
         receive(:all).and_return(
           [
-            described_class.new(date: 2.days.from_now),
             described_class.new(date: 1.day.ago),
-            described_class.new(date: 1.day.from_now)
+            described_class.new(date: Time.zone.today),
+            described_class.new(date: 2.days.from_now)
           ]
         )
 
-      next_event = described_class.next_event
-      expect(next_event).to be_a(described_class)
-      expect(next_event.date).to eq(1.day.from_now.to_date)
+      expect(described_class.upcoming.map(&:date)).to eq(
+        [
+          Time.zone.today,
+          2.days.from_now.to_date
+        ]
+      )
     end
 
-    it "returns nil when no future events exist" do
-      allow(described_class).to \
-        receive(:all).and_return(
+    context "when it is called with an amount" do
+      it "returns that many events" do
+        allow(described_class).to \
+          receive(:all).and_return(
+            [
+              described_class.new(date: 1.day.from_now),
+              described_class.new(date: 2.days.from_now),
+              described_class.new(date: 3.days.from_now)
+            ]
+          )
+
+        expect(described_class.upcoming(2).map(&:date)).to eq(
           [
-            described_class.new(date: 1.day.ago),
-            described_class.new(date: 2.days.ago)
+            1.day.from_now.to_date,
+            2.days.from_now.to_date
           ]
         )
+      end
+    end
 
-      expect(described_class.next_event).to be_nil
+    context "when there are no upcoming events" do
+      it "returns an empty array" do
+        allow(described_class).to \
+          receive(:all).and_return(
+            [
+              described_class.new(date: 1.day.ago)
+            ]
+          )
+
+        expect(described_class.upcoming).to eq([])
+      end
     end
   end
 
   describe ".past" do
-    it "returns all events that were scheduled to start prior to the current day" do
-      expected_events = [
-        described_class.new(date: 1.year.ago),
-        described_class.new(date: 1.week.ago),
-        described_class.new(date: 1.day.ago)
-      ]
-
+    it "returns all events scheduled in the past" do
       allow(described_class).to \
         receive(:all).and_return(
-          expected_events + [
-            described_class.new(date: Time.zone.today),
-            described_class.new(date: 1.day.from_now)
+          [
+            described_class.new(date: 2.days.ago),
+            described_class.new(date: 1.day.ago),
+            described_class.new(date: Time.zone.today)
           ]
         )
 
-      expect(described_class.past).to match_array(expected_events)
+      expect(described_class.past.map(&:date)).to eq(
+        [
+          1.day.ago.to_date,
+          2.days.ago.to_date
+        ]
+      )
     end
 
     context "when it is called with an amount" do
-      it "returns that many past events" do
-        expected_events = [
-          described_class.new(date: 1.week.ago),
-          described_class.new(date: 1.day.ago)
-        ]
-
+      it "returns that many events" do
         allow(described_class).to \
           receive(:all).and_return(
-            expected_events + [
-              described_class.new(date: 1.year.ago),
-              described_class.new(date: Time.zone.today),
-              described_class.new(date: 1.day.from_now)
+            [
+              described_class.new(date: 3.days.ago),
+              described_class.new(date: 2.days.ago),
+              described_class.new(date: 1.day.ago)
             ]
           )
 
-        expect(described_class.past(2)).to eq(expected_events)
+        expect(described_class.past(2).map(&:date)).to eq(
+          [
+            1.day.ago.to_date,
+            2.days.ago.to_date
+          ]
+        )
       end
     end
 
@@ -215,8 +239,7 @@ RSpec.describe Melbourne::Event do
         allow(described_class).to \
           receive(:all).and_return(
             [
-              described_class.new(date: Time.zone.today),
-              described_class.new(date: 1.day.from_now)
+              described_class.new(date: Time.zone.today)
             ]
           )
 

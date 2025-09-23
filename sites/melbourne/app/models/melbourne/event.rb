@@ -38,12 +38,12 @@ module Melbourne
       all.find { it.slug == slug }
     end
 
-    def self.next_event
-      all.sort_by(&:date).find(&:today_or_in_the_future?)
+    def self.upcoming(amount = nil)
+      all.select(&:today_or_in_the_future?).slice(0..amount&.-(1))
     end
 
     def self.past(amount = nil)
-      all.sort_by(&:date).reject(&:today_or_in_the_future?).reverse.slice(0..amount&.-(1))
+      all.reject(&:today_or_in_the_future?).reverse.slice(0..amount&.-(1))
     end
 
     def self.last(amount = 1)
