@@ -22,7 +22,6 @@ module Melbourne
     validates :slug, presence: true
     validates :type, presence: true
     validates :venue, presence: true
-    validates :talks, presence: true
 
     def self.all
       @all ||= events_from_yaml_db.map do |event_data|
