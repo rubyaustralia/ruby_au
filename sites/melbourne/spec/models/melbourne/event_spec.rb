@@ -147,6 +147,7 @@ RSpec.describe Melbourne::Event do
       allow(described_class).to \
         receive(:all).and_return(
           [
+            described_class.new(date: 2.days.from_now),
             described_class.new(date: 1.day.ago),
             described_class.new(date: 1.day.from_now)
           ]
@@ -167,6 +168,60 @@ RSpec.describe Melbourne::Event do
         )
 
       expect(described_class.next_event).to be_nil
+    end
+  end
+
+  describe ".past" do
+    it "returns all events that were scheduled to start prior to the current day" do
+      expected_events = [
+        described_class.new(date: 1.year.ago),
+        described_class.new(date: 1.week.ago),
+        described_class.new(date: 1.day.ago)
+      ]
+
+      allow(described_class).to \
+        receive(:all).and_return(
+          expected_events + [
+            described_class.new(date: Time.zone.today),
+            described_class.new(date: 1.day.from_now)
+          ]
+        )
+
+      expect(described_class.past).to match_array(expected_events)
+    end
+
+    context "when it is called with an amount" do
+      it "returns that many past events" do
+        expected_events = [
+          described_class.new(date: 1.week.ago),
+          described_class.new(date: 1.day.ago)
+        ]
+
+        allow(described_class).to \
+          receive(:all).and_return(
+            expected_events + [
+              described_class.new(date: 1.year.ago),
+              described_class.new(date: Time.zone.today),
+              described_class.new(date: 1.day.from_now)
+            ]
+          )
+
+        expect(described_class.past(2)).to eq(expected_events)
+      end
+    end
+
+    context "when there are no past events" do
+      it "returns an empty array" do
+        allow(described_class).to \
+          receive(:all).and_return(
+            [
+              described_class.new(date: Time.zone.today),
+              described_class.new(date: 1.day.from_now)
+            ]
+          )
+
+        expect(described_class.past).to eq([])
+      end
     end
   end
 

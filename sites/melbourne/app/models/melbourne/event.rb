@@ -39,8 +39,11 @@ module Melbourne
     end
 
     def self.next_event
-      next_event = all.last
-      next_event if next_event.today_or_in_the_future?
+      all.sort_by(&:date).find(&:today_or_in_the_future?)
+    end
+
+    def self.past(amount = nil)
+      all.sort_by(&:date).reject(&:today_or_in_the_future?).reverse.slice(0..amount&.-(1))
     end
 
     def self.last(amount = 1)
