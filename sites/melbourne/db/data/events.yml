@@ -1,4 +1,104 @@
 ---
+- uuid: 177e758b-899b-44ef-be97-9ae4a6841f80
+  date: '2025-11-27'
+  name: 'Ruby Melbourne: November 2025'
+  description: >-
+    Join us at Ruby Melbourne: November 2025
+  slug: 2025-11-27-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-on-rails-oceania-melbourne/events/305601924/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+
+- uuid: 77e5981c-3758-47e8-b65e-f730dbb1df36
+  date: '2025-10-30'
+  name: 'Ruby Melbourne: October 2025'
+  description: >-
+    Join us at Ruby Melbourne: October 2025
+  slug: 2025-10-30-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-on-rails-oceania-melbourne/events/305601923/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+
+- uuid: 48ebf8db-0fc4-4be0-b613-e6b9c03407ab
+  date: '2025-09-25'
+  name: 'Ruby Melbourne: September 2025'
+  description: >-
+    Join us at Ruby Melbourne: September 2025
+  slug: 2025-09-25-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-on-rails-oceania-melbourne/events/305601922/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+  talks:
+    - uuid: f7538e2b-65ba-4d73-8ffa-7884b9a7695d
+      title: 'How trustworthy is Rspec? How I Fell into an RSpec Pitfall'
+      description: |-
+        <p>
+          An interactive demo showing how RSpec silently ignore tests, and how it was found and
+          fixed.
+        </p>
+        <p>
+          I have written a
+          <a href="https://medium.com/@zztczcx/how-i-fell-into-an-rspec-pitfall-and-failed-the-interview-56a7d57ff631">
+            story about it
+          </a>
+          but want to show it with an example.
+        </p>
+      video_url: TBC
+      speakers:
+        - name: Chenxu Zhao
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - uuid: 1617a702-dc4d-4129-8015-f45c4516fb36
+      title: Scaling Databases at Buildkite
+      description: |-
+        <p>
+          From a single DB to replicas to sharding &mdash; how Buildkite scaled Rails + Postgres to
+          support giants like Uber, Shopify, and Slack.
+        </p>
+        <p>
+          Let's talk systems, stability, and the traps we all fall into. Join us for code,
+          community, and some top-tier chats.
+        </p>
+      video_url: TBC
+      speakers:
+        - name: David Barrell
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+
 - uuid: 2509d2e4-58fc-4e1a-b099-6ec1c26dabc2
   date: '2025-08-28'
   name: 'Ruby Melbourne: August 2025'

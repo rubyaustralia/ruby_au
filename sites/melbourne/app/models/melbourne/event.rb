@@ -22,7 +22,6 @@ module Melbourne
     validates :slug, presence: true
     validates :type, presence: true
     validates :venue, presence: true
-    validates :talks, presence: true
 
     def self.all
       @all ||= events_from_yaml_db.map do |event_data|
@@ -39,9 +38,12 @@ module Melbourne
       all.find { it.slug == slug }
     end
 
-    def self.next_event
-      next_event = all.last
-      next_event if next_event.today_or_in_the_future?
+    def self.upcoming(amount = nil)
+      all.select(&:today_or_in_the_future?).slice(0..amount&.-(1))
+    end
+
+    def self.past(amount = nil)
+      all.reject(&:today_or_in_the_future?).reverse.slice(0..amount&.-(1))
     end
 
     def self.last(amount = 1)
