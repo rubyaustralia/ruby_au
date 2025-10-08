@@ -54,6 +54,8 @@ class User < ApplicationRecord
   has_many :memberships, dependent: :destroy
   has_many :emails, dependent: :destroy
   has_many :access_requests, foreign_key: :recorder_id, dependent: :destroy, inverse_of: :recorder
+  has_many :nominations_received, class_name: 'Nomination', foreign_key: :nominee_id, inverse_of: :nominee
+  has_many :nominations_made, class_name: 'Nomination', foreign_key: :nominated_by, inverse_of: :nominated_by
 
   scope :seeking_work, -> { where(seeking_work: true).where.not(linkedin_url: [nil, ""]) }
   scope :unconfirmed, -> { where(confirmed_at: nil) }
