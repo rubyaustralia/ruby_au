@@ -18,7 +18,7 @@ RSpec.describe Election, type: :model do
     subject { election.elected_users }
 
     context 'when there are vacancies for nominees' do
-      let(:election) { create(:election, vacancies: 3) }
+      let(:election) { create(:election, :open, vacancies: 3) }
       let(:nomination_1) { create(:nomination, election: election) }
       let(:nomination_2) { create(:nomination, election: election) }
 
@@ -31,7 +31,7 @@ RSpec.describe Election, type: :model do
     end
 
     context 'when there are more nominees than vacancies' do
-      let(:election) { create(:election, vacancies: 2, point_scale: 10) }
+      let(:election) { create(:election, :open, vacancies: 2, point_scale: 10) }
       let(:nomination_1) { create(:nomination, election: election) }
       let(:nomination_2) { create(:nomination, election: election) }
       let(:nomination_3) { create(:nomination, election: election) }

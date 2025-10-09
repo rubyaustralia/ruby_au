@@ -16,6 +16,10 @@ class Election < ApplicationRecord
   has_many :votes, through: :nominations
   has_many :nominated_candidates, through: :nominations, source: :nominee
 
+  def open?
+    opened_at.present? && opened_at <= Time.current && (closed_at.nil? || closed_at > Time.current)
+  end
+
   def elected_users
     if nominated_candidates.count > vacancies
       top_scoring_candidates

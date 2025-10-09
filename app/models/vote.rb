@@ -22,4 +22,14 @@
 class Vote < ApplicationRecord
   belongs_to :nomination
   belongs_to :voter, class_name: 'User'
+
+  validate :election_must_be_open_validation
+
+  private
+
+  def election_must_be_open_validation
+    if !nomination.election.open?
+      errors.add(:base, "Election is not currently open")
+    end
+  end
 end
