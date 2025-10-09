@@ -12,6 +12,8 @@
 #  updated_at  :datetime         not null
 #
 class Election < ApplicationRecord
+  has_paper_trail
+
   has_many :nominations
   has_many :votes, through: :nominations
   has_many :nominated_candidates, through: :nominations, source: :nominee
