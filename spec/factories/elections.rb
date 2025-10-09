@@ -18,5 +18,19 @@ FactoryBot.define do
     opened_at { nil }
     point_scale { 10 }
     vacancies { 1 }
+
+    trait :open do
+      opened_at { 1.week.ago }
+      closed_at { 1.week.from_now }
+    end
+
+    trait :closed do
+      opened_at { 1.month.ago }
+      closed_at { 1.day.ago }
+    end
+
+    trait :pending do
+      opened_at { 1.week.from_now }
+    end
   end
 end
