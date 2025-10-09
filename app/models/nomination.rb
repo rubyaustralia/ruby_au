@@ -23,6 +23,8 @@
 #  fk_rails_...  (nominee_id => users.id)
 #
 class Nomination < ApplicationRecord
+  has_paper_trail
+
   has_many :votes
   belongs_to :election
   belongs_to :nominee, class_name: 'User'

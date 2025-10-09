@@ -22,5 +22,19 @@
 require 'rails_helper'
 
 RSpec.describe Vote, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'when edited' do
+    let(:vote) { create(:vote, score: 0) }
+
+    before do
+      vote.update(score: 10)
+    end
+
+    it 'leaves an audit trail of the update within the versions table' do
+      expect(vote.versions.last.event).to eq('update')
+    end
+
+    it 'preserves the original data' do
+      expect(vote.versions.last.reify.score).to eq(0)
+    end
+  end
 end
