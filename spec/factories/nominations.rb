@@ -24,7 +24,7 @@
 #
 FactoryBot.define do
   factory :nomination do
-    association :election
+    association :election, :open
     association :nominee, factory: :user
     association :nominated_by, factory: :user
   end
