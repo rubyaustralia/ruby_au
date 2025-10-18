@@ -44,6 +44,16 @@
                         { class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-ruby-red focus:ring focus:ring-ruby-red/20 text-sm sm:text-base" } %>
       </div>
 
+      <div class="space-y-1 sm:space-y-2">
+        <%= form.label :status, class: "block text-sm sm:text-base font-medium text-gray-700" %>
+        <%= form.select :status,
+                        Post.statuses.keys.map{ |key| [key.humanize, key] },
+                        {},
+                        { class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-ruby-red focus:ring focus:ring-ruby-red/20 text-sm sm:text-base" } %>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6">
       <% unless @post.published_at %>
         <div class="space-y-1 sm:space-y-2">
           <%= form.label :publish_scheduled_at, class: "block text-sm sm:text-base font-medium text-gray-700" %>

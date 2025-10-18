@@ -4,76 +4,31 @@ class UserManagementService
     @current_user = current_user
   end
 
-  def can_modify_user?
-    user != current_user
-  end
+  delegate :can_modify_user?, to: :deletion_service
 
-  def delete_user
-    return failure_result('You cannot delete your own account') unless can_modify_user?
+  delegate :delete_user, to: :deletion_service
 
-    dependencies = UserDependencyChecker.new(user).check_dependencies
-    return dependency_error(dependencies) if dependencies.any?
+  delegate :force_delete_user, to: :deletion_service
 
-    user.destroy!
-    success_result("#{user.full_name} has been deleted successfully")
-  rescue ActiveRecord::InvalidForeignKey => e
-    table_name = extract_table_from_error(e.message)
-    failure_result("Cannot delete #{user.full_name} - user has associated records in #{table_name}. Please contact a developer to resolve this.")
-  rescue StandardError
-    failure_result('Failed to delete user due to an unexpected error')
-  end
+  delegate :deactivate_user, to: :membership_service
 
-  def force_delete_user
-    return failure_result('You cannot delete your own account') unless can_modify_user?
+  delegate :update_role, to: :role_service
 
-    ActiveRecord::Base.transaction do
-      UserAssociationRemover.new(user).remove_all
-      user.destroy!
-    end
-
-    success_result("#{user.full_name} and all associated records have been force deleted")
-  rescue StandardError => e
-    failure_result("Failed to force delete user: #{e.message}")
-  end
-
-  def deactivate_user
-    return failure_result('You cannot deactivate your own account') unless can_modify_user?
-
-    current_memberships = user.memberships.where(left_at: nil)
-    current_memberships.each { |membership| membership.update!(left_at: Time.current) }
-
-    success_result("#{user.full_name}'s membership has been deactivated")
-  rescue StandardError
-    failure_result('Failed to deactivate user membership')
-  end
-
-  def update_role(committee_status)
-    if user.update(committee: committee_status)
-      success_result("#{user.full_name}'s role updated successfully")
-    else
-      failure_result('Failed to update user role')
-    end
-  end
+  delegate :remove_all, to: :membership_service
 
   private
 
   attr_reader :user, :current_user
 
-  def dependency_error(dependencies)
-    message = "Cannot delete #{user.full_name} - user has associated records: #{dependencies.join(', ')}. Consider deactivating the membership instead."
-    failure_result(message)
+  def deletion_service
+    @deletion_service ||= UserManagement::DeletionService.new(user, current_user)
   end
 
-  def success_result(message)
-    { success: true, message: message }
+  def role_service
+    @role_service ||= UserManagement::RoleService.new(user, current_user)
   end
 
-  def failure_result(message)
-    { success: false, message: message }
-  end
-
-  def extract_table_from_error(error_message)
-    match = error_message.match(/table "([^"]+)"/)
-    match ? match[1] : "unknown table"
+  def membership_service
+    @membership_service ||= UserManagement::MembershipService.new(user, current_user)
   end
 end

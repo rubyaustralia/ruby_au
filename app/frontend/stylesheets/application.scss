@@ -76,6 +76,7 @@
     @apply bg-white/40 px-2 rounded-lg text-white font-bold hover:text-pearl transition-colors underline;
   }
 
+  .prose a,
   .white-link {
     @apply text-ruby-red hover:text-red-400 transition-colors underline;
   }

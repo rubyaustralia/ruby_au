@@ -16,7 +16,10 @@ class Posts::Publisher
   private
 
   def should_publish?
-    @post.publishable? &&
-      (@post.status_before_last_save.blank? || @post.publish_scheduled_at_before_last_save.blank?)
+    return false unless @post.publishable?
+
+    return false if @post.scheduled?
+
+    @post.draft? && (@post.status_before_last_save.blank? || @post.publish_scheduled_at_before_last_save.blank?)
   end
 end
