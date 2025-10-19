@@ -1,0 +1,268 @@
+<% volunteer_form_url = "https://docs.google.com/forms/d/e/" \
+                        "1FAIpQLSfQxRvNtbVhXOzpeoEAPygPK1t1HbWxLbyQYY7RETh27nWUQA/" \
+                        "viewform?usp=preview" %>
+<div class="markdown max-w-full md:max-w-3xl lg:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+  <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 lg:p-8">
+    <header class="mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-gray-200">
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3">
+        Mentored Contributions Program
+      </h1>
+    </header>
+
+    <div class="prose prose-sm sm:prose lg:prose-lg max-w-none">
+      <p>
+        The Mentored Contributions Program is a new Ruby Australia initiative connecting
+        enthusiastic community members with experienced Rubyists.
+      </p>
+      <p>
+        It's designed to help new contributors gain open-source experience while keeping our
+        community projects active, welcoming, and well-maintained.
+      </p>
+      <p>
+        We're currently running the program as a <b>trial</b>, focused on learning what works best
+        before expanding it more broadly. During this phase, we're keeping administration light,
+        staying flexible, and gathering feedback from both mentors and mentees as we go.
+      </p>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h2>🎯 Program Goals</h2>
+      <ul>
+        <li>
+          Help new and emerging (and re-emerging) developers make meaningful open-source
+          contributions.
+        </li>
+        <li>
+          Offer light, structured mentoring opportunities for experienced Rubyists.
+        </li>
+        <li>
+          Build a sustainable pipeline of future Ruby Australia volunteers and maintainers.
+        </li>
+      </ul>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h2>🧩 How It Works</h2>
+
+      <h3>1. Register</h3>
+      <p>
+        Start by filling out the
+        <%= link_to "Mentored Contributions registration form", volunteer_form_url %>.
+        You can register as a <b>mentee</b> (new contributor) or <b>mentor</b>
+        (experienced Rubyist).
+      </p>
+      <p>
+        We'll get in touch through <%= link_to "Slack", "/slack" %> to help you find a good starting
+        point.
+      </p>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h3>2. Contribute</h3>
+      <p>
+        Mentees work on real issues from
+        <%= link_to "Ruby Australia projects",
+                    "https://github.com/orgs/rubyaustralia/projects/14" %>,
+        supported by their mentors.
+      </p>
+      <p>
+        Each mentee aims to complete four tasks per month (about one per week).
+      </p>
+      <ul>
+        <li>
+          Most tasks count as one credit.
+        </li>
+        <li>
+          Larger or ongoing tasks may count for more.
+        </li>
+        <li>
+          The number of credits can be adjusted based on experience level.
+        </li>
+      </ul>
+      <p>
+        If you're unsure what to work on, your mentor or a coordinator can help you pick something
+        suitable.
+      </p>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h3>3. Mentoring Support</h3>
+      <p>
+        Mentors offer around <strong>1 hour of support per month</strong>.
+      </p>
+      <p class="mb-2">
+        That time can be used however it's most useful:
+      </p>
+      <ul>
+        <li>
+          Talking through blockers on your current task
+        </li>
+        <li>
+          Reviewing pull requests
+        </li>
+        <li>
+          Discussing open-source workflows or Ruby projects
+        </li>
+        <li>
+          Exploring next steps for your learning
+        </li>
+      </ul>
+      <p>
+        Mentors guide&mdash;they don't do the work&mdash;but they're here to help you succeed.
+      </p>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h3>4. Tracking and Credits</h3>
+      <p class="mb-2">
+        To keep the trial lightweight:
+      </p>
+      <ul>
+        <li>
+          Mentees self-report completed tasks each month using a short form.
+        </li>
+        <li>
+          Credits are tracked in a shared spreadsheet by the program coordinator.
+        </li>
+        <li>
+          No one needs to log hours &mdash; we trust participants to be honest and communicative.
+        </li>
+      </ul>
+      <p>
+        After the trial, we'll review whether the credit model needs refinement before making it
+        permanent.
+      </p>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h3>5. Recognition</h3>
+      <p>
+        When your work is merged, we love celebrating contributors in the
+        <%= link_to "Ruby AU Slack", "/slack" %> and on social channels
+        &mdash; <em>only if you'd like us to</em>.
+      </p>
+      <p>
+        Likewise, mentors will be acknowledged publicly as part of the program
+        &mdash; <em>only if they want to be</em>.
+      </p>
+      <p>
+        Every contribution, big or small, is valued equally.
+      </p>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h3>🧭 Expectations</h3>
+
+      <h4>For Mentees</h4>
+      <ul>
+        <li>
+          Have a go first &mdash; mentors are there to support, not to solve everything.
+        </li>
+        <li>
+          Be respectful of mentor time and communicate clearly.
+        </li>
+        <li>
+          Complete up to four tasks a month, or let your mentor know if life gets busy.
+        </li>
+        <li>
+          Follow the Ruby Australia
+          <%= link_to "Code of Conduct", page_url("policies/code-of-conduct") %>.
+        </li>
+      </ul>
+
+      <h4>For Mentors</h4>
+      <ul>
+        <li>
+          Offer around an hour per month for guidance and feedback.
+        </li>
+        <li>
+          Encourage, review, and unblock &mdash; not rewrite.
+        </li>
+        <li>
+          Celebrate mentee progress and build their confidence.
+        </li>
+        <li>
+          Let the coordinator know if you need help or can't continue mentoring.
+        </li>
+        <li>
+          Follow the Ruby Australia
+          <%= link_to "Code of Conduct", page_url("policies/code-of-conduct") %>.
+        </li>
+      </ul>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h3>📅 Trial Phase</h3>
+      <p>
+        This pilot program will run for <strong>three months</strong>.
+      </p>
+      <p class="mb-2">
+        During this time, we'll review:
+      </p>
+      <ul class="mb-4">
+        <li>
+          How many participants stay engaged
+        </li>
+        <li>
+          How much mentoring time is typically used
+        </li>
+        <li>
+          How well the credit model fits different experience levels
+        </li>
+      </ul>
+      <p>Your feedback will shape the future of the program.</p>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h2>🧰 Before You Start</h2>
+      <p class="mb-2">
+        Please make sure you have:
+      </p>
+      <ul>
+        <li>
+          ✅ <%= link_to "Registered as a member", new_user_registration_path %>
+          of Ruby Australia
+        </li>
+        <li>
+          ✅ A <%= link_to "GitHub account", "https://github.com" %>
+        </li>
+        <li>
+          ✅ Joined the <%= link_to "Ruby Australia Slack", "/slack" %>
+        </li>
+      </ul>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h2>🙋 Ready to Get Started?</h2>
+      <p>
+        Fill out the <%= link_to "Mentored Contributions registration form", volunteer_form_url %>,
+        join the conversation in the #mentored-contributions Slack channel, and we'll help you get
+        started.
+      </p>
+      <p>
+        We're excited to have you on board. Together, we'll make Ruby Australia's projects stronger,
+        and help more people find their place in our community.
+      </p>
+    </div>
+  </div>
+</div>
