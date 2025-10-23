@@ -13,7 +13,7 @@ Add your profile to the [Ruby Australia Website - Committee Members](https://rub
 
 **Step 1**: Add your profile to the `config/data/committee.yml` file.
 
-**Step 2**: Add your photo to the `app/assets/images/committee-members/` directory. Create the photo with a filename including your first name and last name in lowercase, e.g. `example-lastname.jpg`
+**Step 2**: Add your photo to the `app/frontend/images/committee-members/` directory. Create the photo with a filename including your first name and last name in lowercase, e.g. `firstname-lastname.jpg`
 and ensure there's the hyphen between the first and last name. The file should be a square image, ideally 300x300 pixels.
 
 **Step 3** (optional): Remove any remaining outgoing committee members from the `config/data/committee.yml` file.
