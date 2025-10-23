@@ -1,0 +1,237 @@
+<% volunteer_form_url = "https://docs.google.com/forms/d/e/" \
+                        "1FAIpQLSfQxRvNtbVhXOzpeoEAPygPK1t1HbWxLbyQYY7RETh27nWUQA/" \
+                        "viewform?usp=preview" %>
+<div class="markdown max-w-full md:max-w-3xl lg:max-w-4xl
+            mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+  <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 lg:p-8">
+    <header class="mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-gray-200">
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3">
+        Get Involved with Ruby Australia
+      </h1>
+    </header>
+
+    <div class="prose prose-sm sm:prose lg:prose-lg max-w-none">
+      <p>
+        Ruby Australia is powered by volunteers &mdash; people like you who care about growing our
+        community and keeping it vibrant.
+      </p>
+      <p>
+        Whether you're a seasoned developer or just getting started, there are many ways to
+        contribute, learn, and connect.
+      </p>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h2>💎 The Mentored Contributions Program</h2>
+      <p>
+        Want to contribute to Ruby Australia but not sure where to start?
+      </p>
+      <p>
+        The Mentored Contributions Program helps connect enthusiastic community members with
+        experienced Rubyists &mdash; building skills, confidence, and lasting connections.
+      </p>
+      <p class="mb-2">
+        This program is open to anyone who wants to:
+      </p>
+      <ul>
+        <li>learn to contribute to open source projects (as a <em>mentee</em>), or</li>
+        <li>support others through their experience (as a <em>mentor</em>).</li>
+      </ul>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h3>👩‍💻 For Mentees (New Contributors)</h3>
+      <p>
+        Want to get your first contribution under your belt?<br />
+        We'll help you do it with structure and support.
+      </p>
+
+      <h4>How it works</h4>
+      <ol>
+        <li class="pl-1">
+          <strong class="inline-block pb-1">
+            Register as a volunteer
+          </strong><br />
+          <%= link_to "👉 Fill out our volunteer form", volunteer_form_url %>
+          it helps us match you with mentors and track your progress.
+        </li>
+        <li class="pl-1 mt-2">
+          <strong class="inline-block pb-1">
+            Find your first issue
+          </strong><br />
+          While we're matching you with a mentor, browse our
+          <%= link_to "GitHub project board", "https://github.com/orgs/rubyaustralia/projects/14" %>
+        </li>
+        <li class="pl-1 mt-2">
+          <strong class="inline-block pb-1">
+            Start contributing
+          </strong><br />
+          <span class="inline-block mb-1">
+            Each mentee aims to complete <strong>4 tasks per month.</strong>
+          </span>
+          <ul>
+            <li>Most issues count as one task (or "credit").</li>
+            <li>Larger or ongoing work can count for more.</li>
+            <li>Credits are adjusted fairly depending on your experience.</li>
+          </ul>
+        </li>
+        <li class="pl-1 mt-2">
+          <strong class="inline-block pb-1">
+            Ask for help when needed
+          </strong><br />
+          <span class="inline-block mb-1 text-pretty">
+            Mentors offer around 1 hour of support per month which you can use however best
+            supports your learning.
+          </span>
+          <ul>
+            <li>
+              Most mentees use this time for quick guidance on their current task.
+            </li>
+            <li>
+              But if you're making good progress, you can use it for other things, such as
+              discussing your personal projects or career advice.
+            </li>
+          </ul>
+        </li>
+        <li class="pl-1 mt-2">
+          <strong class="inline-block pb-1">
+            Submit your PR and celebrate
+          </strong><br />
+          When your work is merged/complete, we'd love to publicly celebrate your success
+          (only if you're comfortable with that).
+        </li>
+      </ol>
+      <%= link_to "Learn more about the Mentored Contributions Program",
+                  page_path("mentored_contributions"),
+                  class: %w[
+                    bg-ruby-red hover:bg-red-700
+                    text-white font-medium text-sm sm:text-base
+                    inline-flex items-center justify-center
+                    mt-4 py-2 px-4 sm:py-3 sm:px-6
+                    rounded-lg transition-colors shadow-md
+                  ] %>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h3>🧑‍🏫 For Mentors (Experienced Rubyists)</h3>
+      <p>
+        Mentors are the backbone of the program. By sharing your experience, you'll help new
+        contributors grow while keeping our community projects active and welcoming.
+      </p>
+
+      <h4>What's involved</h4>
+      <p>
+        Commit around 1 hour per month to review, answer questions, or offer short mentoring
+        sessions.
+      </p>
+      <p>
+        Help mentees understand contribution flow, testing, and communication practices.
+      </p>
+      <p>
+        Give constructive feedback and celebrate their wins.
+      </p>
+      <p>
+        Your time can be flexible &mdash; if your mentee doesn't need help on a task, you can use it
+        for broader discussions about their personal projects, open source, community projects, or
+        Ruby itself.
+      </p>
+      <p>
+        You don't need to be a core contributor or long-time maintainer. If you can review code,
+        explain a change, or help someone debug setup issues, you're perfect.
+      </p>
+
+      <h4>Recognition</h4>
+      <p>
+        Mentors will be publicly acknowledged (but only if they'd like to be).
+      </p>
+      <p>
+        <%= link_to "👉 Register as a mentor or mentee", volunteer_form_url %>
+      </p>
+      <%= link_to "Learn more about the Mentored Contributions Program",
+                  page_path("mentored_contributions"),
+                  class: %w[
+                    bg-ruby-red hover:bg-red-700
+                    text-white font-medium text-sm sm:text-base
+                    inline-flex items-center justify-center
+                    mt-4 py-2 px-4 sm:py-3 sm:px-6
+                    rounded-lg transition-colors shadow-md
+                  ] %>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h2>🤝 Other Ways to Contribute</h2>
+
+      <p class="mb-2">
+        You don't have to write code to make a difference. Ruby Australia volunteers also help by:
+      </p>
+      <ul class="mb-4">
+        <li>
+          <strong>Running events</strong>
+          &mdash; RubyConf, RailsCamp, Rail Girls, and local meetups.
+        </li>
+        <li>
+          <strong>Improving documentation</strong>
+          &mdash; making it easier for others to contribute.
+        </li>
+        <li>
+          <strong>Designing and writing</strong>
+          &mdash; updating our websites, content, and social media.
+        </li>
+        <li>
+          <strong>Community support</strong>
+          &mdash; welcoming new members or moderating discussions.
+        </li>
+      </ul>
+      <p>
+        If you're unsure where to begin, join the <%= link_to "Ruby Australia Slack", "/slack" %>
+        and introduce yourself in #general. There's always something happening!
+      </p>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h2>🧰 Before You Start</h2>
+      <p class="mb-2">
+        To participate in any Ruby Australia project, please make sure you have:
+      </p>
+      <ul class="mb-4">
+        <li>
+          ✅ <%= link_to "Registered as a member", new_user_registration_path %>
+          of Ruby Australia
+        </li>
+        <li>
+          ✅ A <%= link_to "GitHub account", "https://github.com" %>
+        </li>
+        <li>
+          ✅ Joined the <%= link_to "Ruby Australia Slack", "/slack" %>
+        </li>
+      </ul>
+      <p>
+        Once you've done these three things, you're ready to contribute!
+      </p>
+
+
+      <hr class="border-gray-200 my-4 sm:my-6" />
+
+
+      <h2>❤️ Thank You</h2>
+      <p>
+        Ruby Australia is entirely volunteer-run. Every contribution&mdash;big or small&mdash;helps
+        us support events, tools, and community spaces that bring Rubyists together across the
+        country.
+      </p>
+      <p>
+        We're glad you're here. Let's build something great together.
+      </p>
+    </div>
+  </div>
+</div>

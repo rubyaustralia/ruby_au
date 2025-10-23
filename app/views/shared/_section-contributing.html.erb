@@ -9,25 +9,44 @@
                            class: 'w-20 sm:w-24 md:w-28 lg:w-32 h-auto' %>
       </div>
 
-      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 text-white">Contributing to the site</h1>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 text-white">
+        Get involved with Ruby Australia
+      </h1>
 
       <div class="space-y-4 sm:space-y-5 md:space-y-6 max-w-prose mx-auto">
         <p class="text-sm sm:text-base md:text-lg text-white/90">
-          Would you like to help us build <a href="https://github.com/rubyaustralia/ruby_au/issues">features</a>
-          or <a href="https://github.com/rubyaustralia/ruby_au/issues">squash bugs</a>?
+          Want to make a difference in Australia's Ruby community?
         </p>
+
         <p class="text-sm sm:text-base md:text-lg text-white/90">
-          Please refer to the <%= link_to "README", "https://github.com/rubyaustralia/ruby_au/blob/main/README.md" %>
-          in our GitHub repository for more details and information, or join our Slack channel for support.
+          Whether you're new to coding or a seasoned developer, there are many ways to get involved
+          &mdash; from helping at events to contributing code and documentation.
+        </p>
+
+        <p class="text-sm sm:text-base md:text-lg text-white/90">
+          We've recently launched the Mentored Contributions Program, connecting new contributors
+          with experienced mentors to help you get started and grow your skills.
         </p>
       </div>
 
       <div class="mt-8 sm:mt-10 md:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6">
-        <%= link_to "View on GitHub", "https://github.com/rubyaustralia/ruby_au",
-                    class: "inline-flex items-center justify-center bg-white text-black hover:bg-gray-200 font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-colors shadow-md text-sm sm:text-base" %>
+        <%= link_to "Learn how to get involved", page_path("get-involved"),
+                    class: %w[
+                      bg-white hover:bg-gray-200
+                      text-black font-medium text-sm sm:text-base
+                      inline-flex items-center justify-center
+                      py-2 px-4 sm:py-3 sm:px-6
+                      rounded-lg transition-colors shadow-md
+                    ] %>
 
         <%= link_to "Join our Slack", "/slack",
-                    class: "inline-flex items-center justify-center bg-ruby-red hover:bg-red-700 text-white font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-colors shadow-md text-sm sm:text-base" %>
+                    class: %w[
+                      bg-ruby-red hover:bg-red-700
+                      text-white font-medium text-sm sm:text-base
+                      inline-flex items-center justify-center
+                      py-2 px-4 sm:py-3 sm:px-6
+                      rounded-lg transition-colors shadow-md
+                    ] %>
       </div>
     </div>
   </div>
