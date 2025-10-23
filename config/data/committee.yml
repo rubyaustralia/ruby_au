@@ -75,3 +75,16 @@
     gaming. Her 2025 personal goal is to do more sewing.
   github: hstonehouse
   linkedin: helen-stonehouse
+
+- name: Brendan Weibrecht
+  photo: brendan-weibrecht.jpg
+  position: General Member
+  github: ZimbiX
+  linkedin: brendanweibrecht
+  twitter: ZimbiX
+  bio: |
+    Ruby FP software craftsman, hacking enthusiast, Linux evangelist, and connoisseur of modern punk rock. Dislikes spicy food and chocolate.
+
+    A lifelong IT nerd, Brendan has been programming since primary school. He was introduced to Ruby in 2012 and has been passionate about the Ruby community ever since. From 2014, he's attended nearly every Ruby Melbourne meetup and every RubyConf AU, and became a Rails Girls mentor in recent years. Back at uni, he was President of the Swinburne Cyber Security Club for two years.
+
+    With a love of open source, Brendan became a maintainer of the [Que](https://github.com/que-rb/que) job system gem, and was instrumental in adding Ruby 3 support. He's not such a fan of Rails, and has a strong preference for Functional Programming patterns like [dry-rb](https://dry-rb.org).
