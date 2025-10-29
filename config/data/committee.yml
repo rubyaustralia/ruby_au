@@ -13,9 +13,10 @@
 
 - name: Lee Sheppard
   photo: lee-sheppard.jpg
-  position: General Member (2019 - ), Vice President (2023 - 2025)
+  position: General Member (2019 - present), Vice President (2023 - 2025)
   bio: |
-    Lee is a Ruby on Rails developer from Sydney, co-organiser of RoROSyd, contributor to the
+    Lee is a Ruby on Rails developer from Sydney, co-organiser of [Ruby Sydney Meetup]
+    (https://www.meetup.com/Ruby-On-Rails-Oceania-Sydney/), contributor to the
     [Rails](https://contributors.rubyonrails.org/contributors/lee-sheppard/commits) project and part
     of the organising committee for [Rails Girls Sydney](https://railsgirls.com/sydney). Previously
     working in the animation industry and as a [syndicated cartoonist](https://www.leesheppard.com).
@@ -40,24 +41,6 @@
     He is currently co-founder and CTO of [boardcycle](https://boardcycle.com) a SaaS product for company secretaries.
   github: perryn
   linkedin: perrynfowler
-
-- name: Mark Glossop
-  photo: mark-glossop.jpg
-  position: General Member
-  bio: |
-    Mark is a former-sysadmin-turned-developer with a lifelong interest in tech,
-    science and maths. He started his Ruby journey in 2008 with Rails. These
-    days, he uses Ruby and a handful of other languages - but Ruby is his staple
-    language, because of both the language itself and the community around it.
-    He is also keen to help the tech industry be a better and more inclusive
-    place, particularly for people with disabilities.
-
-    Outside of tech, he watches more TV than is probably healthy, manages to be
-    a halfway-decent home cook, and is keen to do more travelling.
-
-    Also [Perth Ruby Meetup](https://www.meetup.com/roro-perth/members/?op=leaders) co-organiser.
-  twitter: cueball_au
-  github: cueball
 
 - name: Daniel Nguyen
   photo: daniel-nguyen.jpg
