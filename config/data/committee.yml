@@ -30,6 +30,17 @@
   github: tarun-pacifica
   linkedin: tarunmookhey
 
+- name: Perryn Fowler
+  photo: perryn-fowler.jpg
+  position: Secretary
+  bio: |
+    Perryn is a software developer and agile afficionado with a career spanning from professional services consulting to startups. 
+    He has been a member of the Australian ruby community since 2006 and has been using rails professionally since v1.1
+
+    He is currently co-founder and CTO of [boardcycle](https://boardcycle.com) a SaaS product for company secretaries.
+  github: perryn
+  linkedin: perrynfowler
+
 - name: Mark Glossop
   photo: mark-glossop.jpg
   position: General Member
