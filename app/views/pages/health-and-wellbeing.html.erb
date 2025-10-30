@@ -1,0 +1,108 @@
+<section class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+  <main class="bg-white text-gray-800">
+    <section class="hero pt-16 text-center">
+      <div class="container mx-auto px-6">
+        <h1 class="text-4xl font-bold">Mental Health and Wellbeing</h1>
+        <p class="text-base sm:text-lg text-gray-700">
+          Supporting the wellbeing of our developer community across Australia.<br>
+          You are not alone - let's keep the conversation open and kind.
+        </p>
+      </div>
+    </section>
+    <section class="content container mx-auto px-6 py-6 space-y-16">
+      <div class="prose prose-sm sm:prose lg:prose-lg max-w-none">
+        <h2 class="text-2xl font-semibold mb-4">Why Mental Health Matters</h2>
+        <p class="text-sm sm:text-base md:text-lg font-normal">
+          Being a developer can be rewarding, creative, and challenging all at once.  
+          The nature of tech work - constant change, long hours, and remote environments -  
+          can make it difficult to switch off or stay connected.
+        </p>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Pressure to stay current with new frameworks and tools</li>
+          <li>Isolation from remote or solo work</li>
+          <li>Imposter syndrome or perfectionism</li>
+          <li>Stress and burnout from heavy workloads</li>
+        </ul>
+      </div>
+
+      <div class="bg-rose-100 rounded-2xl p-8">
+        <h2 class="text-2xl font-semibold text-rose-800 mb-4">If You Need Support</h2>
+        <p class="text-base sm:text-lg text-gray-700 mb-4">
+          These Australian services offer free and confidential help:
+        </p>
+        <ul class="text-gray-900 font-medium">
+          <li><strong>Lifeline</strong> - 13 11 14 - <%= link_to "lifeline.org.au", "https://www.lifeline.org.au", class: "underline text-rose-700" %></li>
+          <li><strong>Beyond Blue</strong> - 1300 22 4636 - <%= link_to "beyondblue.org.au", "https://www.beyondblue.org.au", class: "underline text-rose-700" %></li>
+          <li><strong>Suicide Callback Service</strong> - 1300 659 467 - <%= link_to "suicidecallbackservice.org.au", "https://www.suicidecallbackservice.org.au", class: "underline text-rose-700" %></li>
+          <li><strong>MensLine Australia</strong> - 1300 78 99 78 - <%= link_to "mensline.org.au", "https://mensline.org.au", class: "underline text-rose-700" %></li>
+          <li><strong>Head to Health</strong> - <%= link_to "headtohealth.gov.au", "https://www.headtohealth.gov.au", class: "underline text-rose-700" %></li>
+        </ul>
+        <p class="text-base sm:text-lg text-gray-700 my-4">If you're in immediate danger, please call <strong>000</strong>.</p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-rose-800 mb-4">Looking After Yourself</h2>
+        <ul class="list-disc list-inside text-gray-700">
+          <li>Take regular breaks - stretch, breathe, and rest your eyes.</li>
+          <li>Keep healthy boundaries between work and downtime.</li>
+          <li>Reach out to peers or the Ruby community for support.</li>
+          <li>Attend meetups or events to stay socially connected.</li>
+          <li>Remember: rest and recovery are part of productivity.</li>
+        </ul>
+      </div>
+
+      <div class="bg-rose-50 rounded-2xl p-8">
+        <h2 class="text-2xl font-semibold text-rose-800 mb-4">Supporting Each Other</h2>
+        <p class="text-base sm:text-lg text-gray-700 mb-3">
+          Ruby Australia is built on kindness, respect, and inclusivity.  
+          If you notice someone struggling, reach out - even a simple “R U OK?” can make a difference.
+        </p>
+        <p class="text-base sm:text-lg text-gray-700 mb-3">Event organisers and team leads can help by:</p>
+          <ul class="list-disc list-inside space-y-1">
+          <li>Encouraging open conversations about wellbeing</li>
+          <li>Creating low-pressure, welcoming spaces</li>
+          <li>
+              Maintaining a safe environment (see our 
+              <%= link_to "Code of Conduct", code_of_conduct_path, class: "underline text-rose-700" %>)
+            </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-rose-800 mb-4">Useful Resources</h2>
+        <ul class="space-y-2 text-gray-800">
+          <li>
+              <%= link_to "Black Dog Institute", "https://www.blackdoginstitute.org.au", class: "underline text-rose-700" %> - workplace mental health and research
+            </li>
+            <li>
+              <%= link_to "MindSpot", "https://www.mindspot.org.au", class: "underline text-rose-700" %> - free online mental health clinic
+            </li>
+            <li>
+              <%= link_to "Safe Work Australia", "https://www.safeworkaustralia.gov.au", class: "underline text-rose-700" %> - resources for managing psychosocial risks
+            </li>
+            <li>
+              <%= link_to "R U OK?", "https://www.ruok.org.au", class: "underline text-rose-700" %> - how to start supportive conversations
+            </li>
+            <li>
+              <%= link_to "Big Feels Club", "https://www.bigfeels.club/", class: "underline text-rose-700" %> - provides shared stories and experiences for people who have done 'all the right things' but still feel stuck.
+            </li>
+        </ul>
+      </div>
+
+      <div class="text-center py-8 border-t border-rose-200">
+        <h2 class="text-2xl font-semibold text-rose-800 mb-4">Get Involved</h2>
+        <p class="text-base sm:text-lg text-gray-700 mb-3">
+            We're working to make mental health awareness part of everyday Ruby community life.  
+            If you'd like to help - by sharing a story, running a wellbeing session, or suggesting new resources - we'd love to hear from you.
+          </p>
+          <%= mail_to "contact@ruby.org.au", "Contact Ruby AU", class: "inline-block bg-ruby-red text-white px-6 py-3 my-6 rounded-xl hover:bg-ruby-red/80 transition" %>
+        </div>
+
+        <p class="text-sm text-gray-600 text-center max-w-2xl mx-auto mt-8">
+          This page is for community awareness only and is not a substitute for professional help.  
+          If you're concerned about your mental health, please seek support from a qualified health professional. Talk to your GP.
+        </p>
+      </div>
+    </section>
+  </main>
+</section>
