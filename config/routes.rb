@@ -3,6 +3,11 @@ Rails.application.routes.draw do
     mount(Melbourne::Engine, at: "/")
   end
 
+  # Devise is causing a deprecation warning:
+  #   DEPRECATION WARNING: resource received a hash argument only. Please use a keyword instead.
+  #                        Support to hash argument will be removed in Rails 8.2.
+  # This intends to be solved in Devise 5.0, but no release date is set yet.
+  # See: https://github.com/heartcombo/devise/issues/5735
   devise_for :users, controllers: {
     registrations: 'registrations',
     passwords: 'devise/passwords'
