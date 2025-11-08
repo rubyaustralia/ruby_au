@@ -16,3 +16,11 @@
   bio: |
     Bluethumb's mission is to create the world's largest online art marketplace by transforming the way art is bought and sold. We connect artists with collectors nationwide and have recently expanded our platform to the US.
 
+- name: Bugbop
+  key: bugbop
+  url: https://bugbop.com/
+  images:
+    - 2025/bugbop.png
+  tier: Amber
+  bio: |
+    Bugbop is a platform for running Bug Bounty programs, where ethical hackers (the good kind!) test your app for vulnerabilities and report them to you. It's a safer, smarter, and often cheaper way to secure your app.
