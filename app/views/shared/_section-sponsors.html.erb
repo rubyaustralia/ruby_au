@@ -11,7 +11,7 @@
 
     <div class="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
       <% sponsors.each do |sponsor| %>
-        <div class="p-2 sm:p-3 md:p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+        <div class="p-2 sm:p-3 md:p-4 content-center bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
           <%= link_to "/sponsors/#{sponsor['key']}" do %>
             <%= vite_image_tag "images/sponsors/#{sponsor['images'].first}",
                                 alt: sponsor['name'],
