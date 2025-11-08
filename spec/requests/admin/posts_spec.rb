@@ -103,7 +103,7 @@ RSpec.describe 'Admin::PostsController', type: :request do
           post admin_posts_path, params: { post: invalid_attributes }
         end.not_to change(Post, :count)
 
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
         expect(response).to render_template(:new)
       end
     end
@@ -139,7 +139,7 @@ RSpec.describe 'Admin::PostsController', type: :request do
 
         post.reload
         expect(post.title).to eq(original_title)
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
         expect(response).to render_template(:edit)
       end
     end
