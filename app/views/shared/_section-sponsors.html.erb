@@ -11,23 +11,13 @@
 
     <div class="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
       <% sponsors.each do |sponsor| %>
-        <% if sponsor['key'] == 'up' %>
-          <div class="p-2 sm:p-3 md:p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <%= link_to "/sponsors/#{sponsor['key']}" do %>
-              <%= vite_image_tag "images/sponsors/#{sponsor['images'].first}",
-                                 alt: sponsor['name'],
-                                 class: "w-[120px] sm:w-[150px] md:w-[190px] h-auto object-contain" %>
-            <% end %>
-          </div>
-        <% else %>
-          <div class="p-2 sm:p-3 md:p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <%= link_to "/sponsors/#{sponsor['key']}" do %>
-              <%= vite_image_tag "images/sponsors/#{sponsor['images'].first}",
-                                 alt: sponsor['name'],
-                                 class: "w-[90px] sm:w-[120px] md:w-[150px] h-auto object-contain" %>
-            <% end %>
-          </div>
-        <% end %>
+        <div class="p-2 sm:p-3 md:p-4 content-center bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <%= link_to "/sponsors/#{sponsor['key']}" do %>
+            <%= vite_image_tag "images/sponsors/#{sponsor['images'].first}",
+                                alt: sponsor['name'],
+                                class: "w-[90px] sm:w-[120px] md:w-[150px] h-auto object-contain" %>
+          <% end %>
+        </div>
       <% end %>
     </div>
 
