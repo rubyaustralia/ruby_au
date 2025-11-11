@@ -57,6 +57,7 @@
       <% if user_signed_in? %>
         <%= link_to 'Profile', my_details_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
         <%= link_to "Upcoming Meetings", my_meetings_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+        <%= link_to 'Health and Wellbeing', "/health-and-wellbeing", class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
         <%= link_to "Member Register Access", my_access_requests_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
         <%= link_to 'Log out', destroy_user_session_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10", data: { turbo_method: :delete } %>
       <% else %>
@@ -79,12 +80,12 @@
         <div class="text-base sm:text-lg font-medium text-white mb-2 px-4 uppercase">Committee only</div>
         <div class="space-y-1 sm:space-y-2">
           <%= link_to "Dashboard", admin_dashboard_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+          <%= link_to "Posts", admin_posts_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
           <%= link_to "Analytics", admin_analytics_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
+          <%= link_to "Campaigns", admin_campaigns_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
           <%= link_to "Members", admin_memberships_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
           <%= link_to "Access Requests", admin_access_requests_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
           <%= link_to "Imported Members", admin_imported_members_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
-          <%= link_to "Campaigns", admin_campaigns_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
-          <%= link_to "Posts", admin_posts_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
         </div>
       </div>
     <% end %>

@@ -23,7 +23,7 @@ class Admin::PostsController < Admin::ApplicationController
       Posts::Publisher.call(@post)
       redirect_to admin_post_path(@post), notice: "Post was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_content
     end
   end
 
@@ -32,7 +32,7 @@ class Admin::PostsController < Admin::ApplicationController
       Posts::Publisher.call(@post)
       redirect_to admin_post_path(@post), notice: "Post was successfully updated."
     else
-      render :edit, status: :unprocessable_entity, alert: "Post could not be updated due to #{@post.errors.full_messages.to_sentence}."
+      render :edit, status: :unprocessable_content, alert: "Post could not be updated due to #{@post.errors.full_messages.to_sentence}."
     end
   end
 
