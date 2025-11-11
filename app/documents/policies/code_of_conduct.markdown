@@ -3,11 +3,21 @@ key: code-of-conduct
 status: published
 version: "0.7 (2018-05-17)"
 ---
-## Matz is nice, and we are nice.
+## Matz is nice, and so we are nice.
 
 > To report an incident, please review the [reporting guide](/policies/code-of-conduct-reporting) and email conduct@ruby.org.au.
 >
 > Reports will be handled with the process outlined in our [enforcement policy](/policies/code-of-conduct-enforcement).
+
+### The Short Version
+
+- Be kind to others. Do not insult or put down others. Behave professionally. Remember that harassment and sexist, racist, or exclusionary jokes are not appropriate for Ruby Australia events.
+- All communication should be appropriate for a professional audience including people of many different backgrounds. Sexual language and imagery are not appropriate.
+- Ruby Australia is dedicated to providing a harassment-free community for everyone, regardless of gender, sexual orientation, gender identity and expression, disability, physical appearance, body size, political views or affiliations, nationality, race, or religion. We do not tolerate harassment of community members in any form.
+
+Thank you for helping make our events a welcoming, friendly community for all.
+
+### The Long Version
 
 In the same way that Matz has written Ruby with a focus on developer happiness, we are focused on community happiness. The Australian Ruby community is full of wonderful people from a diverse range of backgrounds, and we want to ensure it remains a welcoming and safe environment to all who wish to be a part of it.
 
@@ -80,6 +90,6 @@ This Code of Conduct and its related procedures also applies to unacceptable beh
 conduct@ruby.org.au
 
 ## License and attribution
-This Code of Conduct is distributed under a Creative Commons Attribution-ShareAlike license.
+This Code of Conduct is distributed under a [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
-Portions of text derived from the Django Code of Conduct, the Geek Feminism Anti-Harassment Policy and the Ruby New Zealand Code of Conduct.
+Portions of text derived from the Django Code of Conduct, the Geek Feminism Anti-Harassment Policy and the Ruby New Zealand Code of Conduct. The short version is derived from the Xebia Code of Conduct and licensed under a [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/).
