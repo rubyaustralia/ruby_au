@@ -25,7 +25,7 @@
 class Nomination < ApplicationRecord
   has_paper_trail
 
-  has_many :votes
+  has_many :votes, dependent: :restrict_with_error
   belongs_to :election
   belongs_to :nominee, class_name: 'User'
   belongs_to :nominated_by, class_name: 'User'
