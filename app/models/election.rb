@@ -12,7 +12,7 @@
 #  updated_at  :datetime         not null
 #
 class Election < ApplicationRecord
-  has_many :nominations
+  has_many :nominations, dependent: :restrict_with_error
   has_many :votes, through: :nominations
   has_many :nominated_candidates, through: :nominations, source: :nominee
 
@@ -31,8 +31,8 @@ class Election < ApplicationRecord
   private
 
   def top_scoring_candidates
-    User.where(id:
-      nominations
+    User.where(
+      id: nominations
         .joins(:votes)
         .group('nominations.id')
         .order('SUM(votes.score) DESC')

@@ -28,8 +28,6 @@ class Vote < ApplicationRecord
   private
 
   def election_must_be_open_validation
-    if !nomination.election.open?
-      errors.add(:base, "Election is not currently open")
-    end
+    errors.add(:base, "Election is not currently open") unless nomination.election.open?
   end
 end
