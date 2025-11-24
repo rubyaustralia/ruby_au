@@ -38,19 +38,19 @@ RSpec.describe Election, type: :model do
       let(:nomination_denise) { create(:nomination, election: election) }
 
       before do
-        create(:vote, nomination: nomination_amir, score: 3)
-        create(:vote, nomination: nomination_amir, score: 1)
+        create(:vote, :for_nomination, votable: nomination_amir, score: 3)
+        create(:vote, :for_nomination, votable: nomination_amir, score: 1)
 
-        create(:vote, nomination: nomination_billie, score: 2)
-        create(:vote, nomination: nomination_billie, score: 8)
-        create(:vote, nomination: nomination_billie, score: 2)
+        create(:vote, :for_nomination, votable: nomination_billie, score: 2)
+        create(:vote, :for_nomination, votable: nomination_billie, score: 8)
+        create(:vote, :for_nomination, votable: nomination_billie, score: 2)
 
-        create(:vote, nomination: nomination_carol, score: 4)
-        create(:vote, nomination: nomination_carol, score: 10)
+        create(:vote, :for_nomination, votable: nomination_carol, score: 4)
+        create(:vote, :for_nomination, votable: nomination_carol, score: 10)
 
-        create(:vote, nomination: nomination_denise, score: 9)
-        create(:vote, nomination: nomination_denise, score: 1)
-        create(:vote, nomination: nomination_denise, score: 8)
+        create(:vote, :for_nomination, votable: nomination_denise, score: 9)
+        create(:vote, :for_nomination, votable: nomination_denise, score: 1)
+        create(:vote, :for_nomination, votable: nomination_denise, score: 8)
       end
 
       it 'returns the top scoring candidates required to fill the vacancies' do
