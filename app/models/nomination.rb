@@ -23,7 +23,7 @@
 #  fk_rails_...  (nominee_id => users.id)
 #
 class Nomination < ApplicationRecord
-  has_many :votes, dependent: :restrict_with_error
+  has_many :votes, as: :votable, dependent: :restrict_with_error
   belongs_to :election
   belongs_to :nominee, class_name: 'User'
   belongs_to :nominated_by, class_name: 'User'
