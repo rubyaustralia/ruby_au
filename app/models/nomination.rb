@@ -27,4 +27,8 @@ class Nomination < ApplicationRecord
   belongs_to :election
   belongs_to :nominee, class_name: 'User'
   belongs_to :nominated_by, class_name: 'User'
+
+  def score_given_by(user)
+    votes.where(voter: user).first.score
+  end
 end
