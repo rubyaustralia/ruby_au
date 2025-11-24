@@ -1,0 +1,20 @@
+<table class="w-full divide-y divide-gray-200">
+  <thead class="bg-gray-50">
+    <tr>
+      <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Nominee</th>
+      <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden lg:table-cell">Score given</th>
+    </tr>
+  </thead>
+  <tbody class="divide-y divide-gray-200 bg-white">
+    <% election.nominations.each do |nomination| %>
+      <tr class="hover:bg-gray-50 transition-colors">
+        <td class="px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm font-medium">
+          <%= nomination.nominee.full_name %>
+        </td>
+        <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden lg:table-cell">
+          <%= nomination.score_given_by(current_user) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -2,14 +2,15 @@
 #
 # Table name: elections
 #
-#  id          :bigint           not null, primary key
-#  closed_at   :datetime
-#  opened_at   :datetime
-#  point_scale :integer          default(10), not null
-#  position    :string           not null
-#  vacancies   :integer          default(1), not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id            :bigint           not null, primary key
+#  closed_at     :datetime
+#  maximum_score :integer          default(5), not null
+#  minimum_score :integer          default(-5), not null
+#  opened_at     :datetime
+#  title         :string           not null
+#  vacancies     :integer          default(1), not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 require 'rails_helper'
 
@@ -31,7 +32,7 @@ RSpec.describe Election, type: :model do
     end
 
     context 'when there are more nominees than vacancies' do
-      let(:election) { create(:election, :open, vacancies: 2, point_scale: 10) }
+      let(:election) { create(:election, :open, vacancies: 2, minimum_score: -5, maximum_score: 5) }
       let(:nomination_amir) { create(:nomination, election: election) }
       let(:nomination_billie) { create(:nomination, election: election) }
       let(:nomination_carol) { create(:nomination, election: election) }

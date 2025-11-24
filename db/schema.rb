@@ -130,9 +130,10 @@ ActiveRecord::Schema[8.1].define(version: 2025_10_08_023211) do
   create_table "elections", force: :cascade do |t|
     t.datetime "closed_at"
     t.datetime "created_at", null: false
+    t.integer "maximum_score", default: 5, null: false
+    t.integer "minimum_score", default: -5, null: false
     t.datetime "opened_at"
-    t.integer "point_scale", default: 10, null: false
-    t.string "position", null: false
+    t.string "title", null: false
     t.datetime "updated_at", null: false
     t.integer "vacancies", default: 1, null: false
   end

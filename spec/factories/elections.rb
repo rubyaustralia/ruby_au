@@ -2,21 +2,23 @@
 #
 # Table name: elections
 #
-#  id          :bigint           not null, primary key
-#  closed_at   :datetime
-#  opened_at   :datetime
-#  point_scale :integer          default(10), not null
-#  position    :string           not null
-#  vacancies   :integer          default(1), not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id            :bigint           not null, primary key
+#  closed_at     :datetime
+#  maximum_score :integer          default(5), not null
+#  minimum_score :integer          default(-5), not null
+#  opened_at     :datetime
+#  title         :string           not null
+#  vacancies     :integer          default(1), not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 FactoryBot.define do
   factory :election do
-    position { 'President' }
+    title { 'President' }
     closed_at { nil }
     opened_at { nil }
-    point_scale { 10 }
+    minimum_score { -5 }
+    maximum_score { 5 }
     vacancies { 1 }
 
     trait :open do
