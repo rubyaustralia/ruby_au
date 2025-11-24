@@ -1,0 +1,19 @@
+<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
+  <%= render @election %>
+
+  <div class="my-4 sm:my-5 lg:my-6 px-3 sm:px-4 lg:px-5 py-4 bg-white rounded-lg shadow-sm">
+    <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+      <%= link_to "Edit", edit_admin_election_path(@election), class: "inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+
+      <%= link_to "Delete", admin_election_path(@election),
+                  method: :delete,
+                  data: { confirm: 'Are you sure you want to delete this election?' },
+                  class: "inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" %>
+
+      <%= link_to "Add nomination", new_admin_election_nomination_path(@election), class: "inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+
+      <%= link_to "Back to elections", admin_elections_path,
+            class: "inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-600 border border-gray-300 rounded-md bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" %>
+    </div>
+  </div>
+</div>
