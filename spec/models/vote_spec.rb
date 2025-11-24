@@ -23,5 +23,28 @@
 require 'rails_helper'
 
 RSpec.describe Vote, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "when the election has already finished" do
+    let(:election) { create(:election, :closed) }
+    let(:nomination) { create(:nomination, election: election) }
+    let(:vote) { create(:vote, votable: nomination) }
+
+    it "raises a validation error" do
+      expect { vote }.to raise_error(ActiveRecord::RecordInvalid)
+    end
+  end
+
+  context "when the user has already voted" do
+    let(:election) { create(:election, :open) }
+    let(:voter) { create(:user) }
+    let(:nomination) { create(:nomination, election: election) }
+    let(:vote) { create(:vote, voter: voter, votable: nomination) }
+
+    before do
+      create(:vote, voter: voter, votable: nomination)
+    end
+
+    it "raises a validation error" do
+      expect { vote }.to raise_error(ActiveRecord::RecordInvalid)
+    end
+  end
 end
