@@ -392,12 +392,13 @@ ActiveRecord::Schema[8.1].define(version: 2025_10_08_023211) do
 
   create_table "votes", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.bigint "nomination_id", null: false
     t.integer "score", null: false
     t.datetime "updated_at", null: false
+    t.bigint "votable_id", null: false
+    t.string "votable_type", null: false
     t.bigint "voter_id", null: false
-    t.index ["nomination_id"], name: "index_votes_on_nomination_id"
-    t.index ["voter_id", "nomination_id"], name: "index_votes_on_voter_id_and_nomination_id", unique: true
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable"
+    t.index ["voter_id", "votable_id"], name: "index_votes_on_voter_id_and_votable_id", unique: true
     t.index ["voter_id"], name: "index_votes_on_voter_id"
   end
 
