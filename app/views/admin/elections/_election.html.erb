@@ -1,0 +1,89 @@
+<div id="<%= dom_id election %>">
+  <div class="bg-white rounded-lg shadow-md overflow-hidden my-6 sm:my-8">
+    <div class="px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+      <div class="px-4 sm:px-6 md:px-8 py-5 sm:py-6 bg-gray-50 border-b border-gray-200">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Election</h1>
+      </div>
+
+      <div class="space-y-6 sm:space-y-8">
+        <div class="bg-white p-3 sm:p-4 rounded shadow-sm">
+          <p class="block text-sm sm:text-base font-medium text-gray-700">Title</p>
+          <p class="text-gray-700"><%= election.title %></p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-white p-3 sm:p-4 rounded shadow-sm">
+            <p class="block text-sm sm:text-base font-medium text-gray-700">Vacancies</p>
+            <p class="text-gray-700"><%= election.vacancies %></p>
+          </div>
+
+          <div class="bg-white p-3 sm:p-4 rounded shadow-sm">
+            <p class="block text-sm sm:text-base font-medium text-gray-700">Point scale</p>
+            <p class="text-gray-700"><%= election.point_scale %></p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-white p-3 sm:p-4 rounded shadow-sm">
+            <p class="block text-sm sm:text-base font-medium text-gray-700">Opened at</p>
+            <p class="text-gray-700"><%= election.opened_at %></p>
+          </div>
+
+          <div class="bg-white p-3 sm:p-4 rounded shadow-sm">
+            <p class="block text-sm sm:text-base font-medium text-gray-700">Closed at</p>
+            <p class="text-gray-700"><%= election.closed_at %></p>
+          </div>
+        </div>
+
+        <div class="bg-white p-3 sm:p-4 rounded shadow-sm">
+          <p class="block text-sm sm:text-base font-medium text-gray-700">Created at</p>
+          <p class="text-gray-700"><%= election.created_at %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-lg shadow-md overflow-hidden my-6 sm:my-8">
+    <div class="px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+      <% if @nominations.none? %>
+        <div class="text-center py-10 sm:py-12 bg-gray-50 rounded-lg">
+          <p class="text-gray-600 text-lg">No nominations.</p>
+        </div>
+      <% else %>
+        <div class="px-4 sm:px-6 md:px-8 py-5 sm:py-6 bg-gray-50">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Nominations</h2>
+        </div>
+
+        <div class="space-y-6 sm:space-y-8">
+          <table class="w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+            <tr>
+              <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Name</th>
+              <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Email</th>
+              <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Nominated by</th>
+              <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">Created</th>
+            </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 bg-white">
+            <% @nominations.each do |nomination| %>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm"><%= nomination.nominee.full_name %></td>
+                <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm"><%= nomination.nominee.email %></td>
+                <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm"><%= nomination.nominated_by.email %></td>
+                <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden md:table-cell"><%= nomination.created_at.try(:strftime, "%Y-%m-%d") %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+
+          <%# <ul class="list-disc pl-5 space-y-1"> %>
+          <%#   <% @nominations.each do |nomination| %1> %>
+          <%#     <li><%= nomination.nominee.email %1></li> %>
+          <%#   <% end %1> %>
+          <%# </ul> %>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,7 @@
 #  closed_at   :datetime
 #  opened_at   :datetime
 #  point_scale :integer          default(10), not null
-#  position    :string           not null
+#  title       :string           not null
 #  vacancies   :integer          default(1), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -16,12 +16,20 @@ class Election < ApplicationRecord
   has_many :votes, through: :nominations
   has_many :nominated_candidates, through: :nominations, source: :nominee
 
+  scope :open, -> { where('opened_at <= ?', Time.current).where('closed_at > ? OR closed_at IS NULL', Time.current) }
+
+  validates_presence_of :title, :point_scale, :vacancies
+
   def open?
-    opened_at.present? && opened_at <= Time.current && (closed_at.nil? || closed_at > Time.current)
+    opened_at?.past? && !closed?
+  end
+
+  def closed?
+    closed_at?.past?
   end
 
   def elected_users
-    if nominated_candidates.count > vacancies
+    if voting_required?
       top_scoring_candidates
     else
       nominated_candidates
@@ -29,6 +37,10 @@ class Election < ApplicationRecord
   end
 
   private
+
+  def voting_required?
+    nominated_candidates.count > vacancies
+  end
 
   def top_scoring_candidates
     User.where(
