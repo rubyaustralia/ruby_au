@@ -1,0 +1,66 @@
+<div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10">
+  <div class="mb-6 sm:mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Elections</h1>
+
+    <%= link_to new_admin_election_path, class: "inline-flex items-center justify-center bg-ruby-red hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors shadow-sm text-sm sm:text-base" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+      </svg>
+      New Election
+    <% end %>
+  </div>
+
+  <% if @elections.none? %>
+    <div class="text-center py-10 sm:py-12 bg-gray-50 rounded-lg">
+      <p class="text-gray-600 text-lg">No elections.</p>
+    </div>
+  <% else %>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+      <div class="overflow-x-auto">
+        <table class="w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+          <tr>
+            <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">ID</th>
+            <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Point scale</th>
+            <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Title</th>
+            <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Vacancies</th>
+            <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">Created</th>
+            <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden xl:table-cell">Opened</th>
+            <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden lg:table-cell">Closed</th>
+          </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 bg-white">
+          <% @elections.each do |election| %>
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden md:table-cell"><%= election.id %></td>
+              <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm"><%= election.point_scale %></td>
+              <td class="px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm font-medium">
+                <%= link_to admin_election_path(election), class: "text-ruby-red hover:text-red-700 transition-colors" do %>
+                  <%= election.title %>
+                <% end %>
+              </td>
+              <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-700"><%= election.vacancies %></td>
+              <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden md:table-cell"><%= election.created_at.try(:strftime, "%Y-%m-%d") %></td>
+              <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden xl:table-cell"><%= election.opened_at.try(:strftime, "%Y-%m-%d") %></td>
+              <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden lg:table-cell"><%= election.closed_at.try(:strftime, "%Y-%m-%d") %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <% if @posts.respond_to?(:total_pages) && @posts.total_pages > 1 %>
+        <div class="border-t border-gray-200 px-4 py-4 bg-gray-50 sm:px-6">
+          <div class="flex justify-between items-center flex-wrap gap-4">
+            <div class="text-sm text-gray-700">
+              Showing page <%= @posts.current_page %> of <%= @posts.total_pages %>
+            </div>
+            <div class="pagination-container">
+              <%= paginate @posts %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

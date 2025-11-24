@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   draw(:melbourne)
+  resources :elections, only: [:show, :index]
 
   # Devise is causing a deprecation warning:
   #   DEPRECATION WARNING: resource received a hash argument only. Please use a keyword instead.
@@ -54,6 +55,9 @@ Rails.application.routes.draw do
     get 'posts/*slug', to: 'posts#show', as: :post
     patch 'posts/*slug', to: 'posts#update', as: :update_post
     resources :analytics, only: [:index]
+    resources :elections, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+      resources :nominations, only: [:new, :create, :destroy]
+    end
   end
 
   namespace :api do
