@@ -24,11 +24,14 @@ class Vote < ApplicationRecord
   belongs_to :votable, polymorphic: true
   belongs_to :voter, class_name: 'User'
 
+  validates :voter_id, uniqueness: { scope: :votable_id, message: "has already voted" }
+  validates :score, presence: true
+
   validate :election_must_be_open_validation
 
   private
 
   def election_must_be_open_validation
-    errors.add(:base, "Election is not currently open") if votable.is_a?(Election) && !votable.election.open?
+    errors.add(:base, "Election is not currently open") if votable.is_a?(Nomination) && !votable.election.open?
   end
 end
