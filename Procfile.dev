@@ -1,3 +1,3 @@
-web: thrust bin/rails server
+web: bin/rails server
 vite: bin/vite dev
 jobs: bin/jobs

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :elections, only: [:show, :index]
   constraints subdomain: "melbourne" do
     mount(Melbourne::Engine, at: "/")
   end
@@ -56,6 +57,9 @@ Rails.application.routes.draw do
     get 'posts/*slug', to: 'posts#show', as: :post
     patch 'posts/*slug', to: 'posts#update', as: :update_post
     resources :analytics, only: [:index]
+    resources :elections, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+      resources :nominations, only: [:new, :create, :destroy]
+    end
   end
 
   namespace :api do
