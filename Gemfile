@@ -12,7 +12,7 @@ gem 'createsend'
 gem 'decent_exposure'
 gem 'devise'
 gem 'devise-multi_email', github: 'rubyaustralia/devise-multi_email', branch: 'main'
-gem 'friendly_id', '~> 5.5.0'
+gem 'friendly_id', '>= 5.5'
 gem 'icalendar'
 gem "image_processing", "~> 1.13"
 gem 'inline_svg', '~> 1.10.0'
