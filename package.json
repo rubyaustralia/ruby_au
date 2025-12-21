@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.31.0",
+    "@herb-tools/linter": "^0.8.5",
     "@types/node": "^22.15.21",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.31.0",
@@ -54,7 +55,8 @@
     "test:run": "vitest run --config vitest.config.mts",
     "test:ui": "vitest --ui --config vitest.config.mts",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "herb:lint": "herb-lint"
   },
   "repository": {
     "type": "git",
