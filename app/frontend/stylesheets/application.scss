@@ -9,11 +9,14 @@
   --color-metal-darker: #1e1f28;
   /* primary colours */
   --color-deep-crimson: #DC143C;
-  --color-deeper-crimson: #C41E3A; /* deeper crimson for accents */
+  --color-deeper-crimson: #C41E3A;
+  /* deeper crimson for accents */
   --color-bright-gold: #FFD700;
   /* secondary colours */
-  --color-muted-gold: #B8860B; /* darker gold for text/borders */
-  --color-deep-maroon: #8B0000; /* shadows and depth */
+  --color-muted-gold: #B8860B;
+  /* darker gold for text/borders */
+  --color-deep-maroon: #8B0000;
+  /* shadows and depth */
   --color-orange-gold: #FFA500;
   /* neutral colours */
   --color-gunmetal-grey: #2F4F4F;
@@ -35,11 +38,13 @@
     font-style: normal;
   }
 
-  a, .underline {
+  a,
+  .underline {
     text-underline-offset: 2px;
   }
 
-  a:not(:is(:hover, :focus)), underline:not(:is(:hover, :focus)) {
+  a:not(:is(:hover, :focus)),
+  underline:not(:is(:hover, :focus)) {
     text-decoration-color: color-mix(in srgb, currentColor, transparent 75%);
   }
 
@@ -63,9 +68,7 @@
   }
 
   .nav-link {
-    @apply block py-2 px-4 text-white hover:text-ruby-red hover:bg-metal-dark hover:border-l-2
-    hover:border-ruby-red transition-colors border-l-2 border-transparent
-    hover:shadow-[inset_0_10px_10px_-10px_rgba(0,0,0,0.3)];
+    @apply block py-2 px-4 text-white hover:text-ruby-red hover:bg-metal-dark hover:border-l-2 hover:border-ruby-red transition-colors border-l-2 border-transparent hover:shadow-[inset_0_10px_10px_-10px_rgba(0, 0, 0, 0.3)];
   }
 
   .footer-link {
