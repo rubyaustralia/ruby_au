@@ -44,7 +44,7 @@
     "vitest": "^2.0.0"
   },
   "engines": {
-    "node": "22.x.x",
+    "node": "24.x.x",
     "yarn": "1.x.x"
   },
   "scripts": {
