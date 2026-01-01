@@ -52,7 +52,7 @@ class MailingList::Sync
   def mark_users_as_unsubscribed
     User.connection.execute <<~SQL
       UPDATE USERS
-      SET mailing_lists = jsonb_set(mailing_lists::jsonb, '{#{list.name}}', '"false"')::json
+      SET mailing_lists = jsonb_set(mailing_lists::jsonb, ARRAY[#{User.connection.quote(list.name)}]::text[], '"false"')::json
     SQL
   end
 end
