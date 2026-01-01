@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -43,9 +43,6 @@ jobs:
 
       - name: Install Node.js dependencies
         run: yarn install --frozen-lockfile
-
-      - name: Install Ruby dependencies
-        run: bundle install
 
       - name: Prepare assets
         run: |
