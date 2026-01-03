@@ -1,12 +1,55 @@
-<div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+<div
+  class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12"
+  data-controller="admin--memberships"
+>
   <div class="mb-8 sm:mb-10 md:mb-12">
     <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mb-4 sm:mb-6">
       Ruby Australia Members
     </h2>
 
-    <p class="text-gray-600 text-sm sm:text-base mb-6">
-      Showing <%= members.size %> of <%= members.total_count %> total members
-    </p>
+    <div class="flex items-center">
+      <p class="grow m-0 text-gray-600 text-sm sm:text-base">
+        Showing <%= members.size %> of <%= members.total_count %> total members
+      </p>
+
+      <div class="member-search">
+        <%= form_with(
+          url: admin_memberships_path,
+          method: :get,
+          class: "grid grid-cols-1 w-64",
+        ) do |form| %>
+          <%= form.text_field(
+            :q,
+            value: params[:q],
+            placeholder: "Search by name or email",
+            autocomplete: "off",
+            data: {
+              action: "admin--memberships#submitForm",
+              turbo_permanent: true
+            },
+            class: "
+              col-start-1 row-start-1 block w-full
+              bg-white dark:bg-white/5 dark:text-white
+              py-1.5 pr-3 pl-10 sm:pl-9
+              rounded-md shadow-sm
+              outline-1 -outline-offset-1 outline-gray-300 dark:outline-white/10
+              focus:outline-2 focus:-outline-offset-2 focus:outline-ruby-red
+              dark:focus:outline-indigo-500
+              text-base text-gray-900 placeholder:text-gray-400 dark:placeholder:text-gray-500
+              sm:text-sm/6
+            "
+          ) %>
+
+          <i
+            data-lucide="search"
+            class="
+              pointer-events-none col-start-1 row-start-1 ml-3 size-5
+              self-center text-gray-400 sm:size-4 dark:text-gray-500
+            "
+          ></i>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="bg-white rounded-lg shadow-md overflow-hidden">
