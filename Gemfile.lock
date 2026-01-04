@@ -358,7 +358,7 @@ GEM
     psych (5.3.1)
       date
       stringio
-    public_suffix (7.0.0)
+    public_suffix (7.0.1)
     puma (7.1.0)
       nio4r (~> 2.0)
     pygmentize (0.0.3)
@@ -476,7 +476,7 @@ GEM
       lint_roller (~> 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.47.1, < 2.0)
-    rubocop-rails (2.34.2)
+    rubocop-rails (2.34.3)
       activesupport (>= 4.2.0)
       lint_roller (~> 1.1)
       rack (>= 1.1)
@@ -552,7 +552,7 @@ GEM
     validates_email_format_of (1.8.2)
       i18n (>= 0.8.0)
       simpleidn
-    vite_rails (3.0.19)
+    vite_rails (3.0.20)
       railties (>= 5.1, < 9)
       vite_ruby (~> 3.0, >= 3.2.2)
     vite_ruby (3.9.2)
