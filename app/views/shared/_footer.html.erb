@@ -33,11 +33,19 @@
 
       <div class="text-center sm:text-left">
         <h3 class="font-bold text-base sm:text-lg mb-3">Events</h3>
-        <ul class="space-y-2">
+        <ul class="space-y-2 mb-8">
           <li><%= link_to "Ruby Retreat", "https://rails.camp", class: "footer-link" %></li>
           <li><%= link_to "RubyConf AU", "https://rubyconf.org.au", class: "footer-link" %></li>
           <li><%= link_to "Meetups", events_path, class: "footer-link" %></li>
           <li><%= link_to "Rails Girls", "/rails-girls", class: "footer-link" %></li>
+        </ul>
+        <h3 class="font-bold text-base sm:text-lg mb-3">Community</h3>
+        <ul class="space-y-2">
+          <li><%= link_to "Chat (Slack)", my_slack_invite_path, class: "white-link" %></li>
+          <li><%= link_to "Videos", videos_path, class: "white-link" %></li>
+          <li><%= link_to "RubyAU Merch", merch_path, class: "white-link" %></li>
+          <li><%= link_to "Ruby New Zealand", "https://ruby.nz/", class: "white-link" %></li>
+          <li><%= link_to "Ruby Central", "https://rubycentral.org/", class: "white-link" %></li>
         </ul>
       </div>
 
@@ -52,16 +60,12 @@
       </div>
 
       <div class="text-center sm:text-left">
-        <h3 class="font-bold text-base sm:text-lg mb-3">Community</h3>
+        <h3 class="font-bold text-base sm:text-lg mb-3">Links</h3>
         <ul class="space-y-2">
-          <li><%= link_to "Chat (Slack)", my_slack_invite_path, class: "white-link" %></li>
-          <li><%= link_to "Videos", videos_path, class: "white-link" %></li>
-          <li><%= link_to "RubyAU Merch", merch_path, class: "white-link" %></li>
-          <li><%= link_to "Ruby New Zealand", "https://ruby.nz/", class: "white-link" %></li>
-          <li><%= link_to "Ruby Central", "https://rubycentral.org/", class: "white-link" %></li>
           <li><%= link_to "Ruby on Rails", "https://rubyonrails.org/", class: "white-link" %></li>
           <li><%= link_to "RubyGems", "https://rubygems.org/", class: "white-link" %></li>
           <li><%= link_to "Ruby Language", "https://www.ruby-lang.org/", class: "white-link" %></li>
+          <li><%= link_to "Rails OWASP Cheat Sheet", "https://cheatsheetseries.owasp.org/cheatsheets/Ruby_on_Rails_Cheat_Sheet.html", class: "white-link" %></li>
         </ul>
       </div>
 
