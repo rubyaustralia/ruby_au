@@ -627,6 +627,7 @@ DEPENDENCIES
   meta-tags (~> 2.22)
   pg
   premailer-rails
+  pry-rails
   puma
   pygmentize
   rails (>= 8.0.0)

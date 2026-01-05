@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_09_22_132138) do
+ActiveRecord::Schema[8.1].define(version: 2025_10_08_023211) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -127,6 +127,16 @@ ActiveRecord::Schema[8.1].define(version: 2025_09_22_132138) do
     t.index ["rsvp_event_id"], name: "index_campaigns_on_rsvp_event_id"
   end
 
+  create_table "elections", force: :cascade do |t|
+    t.datetime "closed_at"
+    t.datetime "created_at", null: false
+    t.datetime "opened_at"
+    t.integer "point_scale", default: 10, null: false
+    t.string "title", null: false
+    t.datetime "updated_at", null: false
+    t.integer "vacancies", default: 1, null: false
+  end
+
   create_table "emails", force: :cascade do |t|
     t.datetime "confirmation_sent_at"
     t.string "confirmation_token"
@@ -163,6 +173,18 @@ ActiveRecord::Schema[8.1].define(version: 2025_09_22_132138) do
     t.datetime "updated_at", precision: nil, null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_memberships_on_user_id"
+  end
+
+  create_table "nominations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "election_id", null: false
+    t.bigint "nominated_by_id", null: false
+    t.bigint "nominee_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["election_id", "nominee_id"], name: "index_nominations_on_election_id_and_nominee_id", unique: true
+    t.index ["election_id"], name: "index_nominations_on_election_id"
+    t.index ["nominated_by_id"], name: "index_nominations_on_nominated_by_id"
+    t.index ["nominee_id"], name: "index_nominations_on_nominee_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -358,6 +380,28 @@ ActiveRecord::Schema[8.1].define(version: 2025_09_22_132138) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "versions", force: :cascade do |t|
+    t.datetime "created_at"
+    t.string "event", null: false
+    t.bigint "item_id", null: false
+    t.string "item_type", null: false
+    t.text "object"
+    t.string "whodunnit"
+    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "score", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "votable_id", null: false
+    t.string "votable_type", null: false
+    t.bigint "voter_id", null: false
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable"
+    t.index ["voter_id", "votable_id"], name: "index_votes_on_voter_id_and_votable_id", unique: true
+    t.index ["voter_id"], name: "index_votes_on_voter_id"
+  end
+
   add_foreign_key "access_requests", "users", column: "recorder_id"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
@@ -366,6 +410,9 @@ ActiveRecord::Schema[8.1].define(version: 2025_09_22_132138) do
   add_foreign_key "campaigns", "rsvp_events"
   add_foreign_key "emails", "users"
   add_foreign_key "memberships", "users"
+  add_foreign_key "nominations", "elections"
+  add_foreign_key "nominations", "users", column: "nominated_by_id"
+  add_foreign_key "nominations", "users", column: "nominee_id"
   add_foreign_key "rsvps", "memberships"
   add_foreign_key "rsvps", "rsvp_events"
   add_foreign_key "solid_queue_blocked_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
@@ -374,4 +421,5 @@ ActiveRecord::Schema[8.1].define(version: 2025_09_22_132138) do
   add_foreign_key "solid_queue_ready_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_recurring_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_scheduled_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
+  add_foreign_key "votes", "users", column: "voter_id"
 end
