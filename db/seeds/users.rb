@@ -23,12 +23,12 @@ puts "Created committee user: committee@example.com with password: password123"
 
 for i in 2..committee_users_to_create
   User.find_or_create_by(email: "committee_#{i}@example.com") { |user| update_user(user:, committee: true) }
-  puts "Created job seeker user: committee_#{i}@example.com"
+  puts "Created committee user: committee_#{i}@example.com"
 end
 
 # first job seeker
 User.find_or_create_by(email: "jobseeker@example.com") { |user| update_user(user:, seeking_work: true, password: "password123") }
-puts "Created committee user: committee@example.com with password: password123"
+puts "Created job seeker user: jobseeker@example.com with password: password123"
 
 for i in 2..job_seeking_users_to_create
   User.find_or_create_by(email: "jobseeker_#{i}@example.com") { |user| update_user(user:, seeking_work: true) }
