@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   draw(:melbourne)
-  resources :elections, only: [:show, :index]
+
+  resources :elections, only: [:show, :index] do
+    resources :ballots, only: [:create]
+  end
 
   # Devise is causing a deprecation warning:
   #   DEPRECATION WARNING: resource received a hash argument only. Please use a keyword instead.

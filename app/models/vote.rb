@@ -29,6 +29,6 @@ class Vote < ApplicationRecord
   private
 
   def election_must_be_open_validation
-    errors.add(:base, "Election is not currently open") if votable.is_a?(Election) && !votable.election.open?
+    errors.add(:base, "Election is not currently open") if votable.is_a?(Nomination) && !votable.election.open?
   end
 end

@@ -1,7 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<div class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+  <article class="bg-white rounded-lg shadow-md p-6 sm:p-8 md:p-10 mb-8 sm:mb-10 md:mb-12">
+    <%= render @election, ballot: @ballot %>
+  </article>
 
-<%= render @election %>
-
-<div>
-  <%= link_to "Back to elections", elections_path %>
+  <div class="flex justify-start">
+    <%= link_to elections_path, class: "inline-flex items-center px-4 py-2 text-sm sm:text-base rounded-full bg-gray-100 hover:bg-ruby-red hover:text-white transition-colors border border-gray-200 shadow-sm" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+      </svg>
+      Back to elections
+    <% end %>
+  </div>
 </div>
