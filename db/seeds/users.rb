@@ -10,6 +10,15 @@ def update_user(user:, committee: false, seeking_work: false, password: Faker::I
   user.mailing_lists = {}
   user.seeking_work = seeking_work
   user.linkedin_url = "https://www.linkedin.com/in/#{Faker::Lorem.word}" if seeking_work
+
+  unless user.emails.any?
+    user.emails.create!(
+      email: user.email,
+      primary: true,
+      confirmed_at: Time.current,
+      skip_trigger_after_confirmation: true
+    )
+  end
 end
 
 return if !Rails.env.development?
