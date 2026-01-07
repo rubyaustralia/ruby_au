@@ -3,11 +3,13 @@ class ElectionsController < ApplicationController
 
   # GET /elections or /elections.json
   def index
-    @elections = Election.all
+    @current_elections = Election.open
+    @closed_elections = Election.closed
   end
 
   # GET /elections/1 or /elections/1.json
   def show
+    @ballot = Ballot.new
   end
 
   # GET /elections/new
@@ -58,13 +60,14 @@ class ElectionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_election
-      @election = Election.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def election_params
-      params.fetch(:election, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_election
+    @election = Election.includes(nominations: :nominee).find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def election_params
+    params.fetch(:election, {})
+  end
 end

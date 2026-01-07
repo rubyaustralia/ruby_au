@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :elections, only: [:show, :index]
+  resources :elections, only: [:show, :index] do
+    resources :ballots, only: [:create]
+  end
   constraints subdomain: "melbourne" do
     mount(Melbourne::Engine, at: "/")
   end

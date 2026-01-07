@@ -1,17 +1,42 @@
 <div class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
-  <header class="mb-8 sm:mb-10 md:mb-12">
-    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-6 sm:mb-8 text-center sm:text-left">Elections</h1>
-  </header>
-</div>
+  <% if @current_elections.any? %>
+    <div class="space-y-6 sm:space-y-8 md:space-y-10 mb-8 sm:mb-10 md:mb-12">
+      <header class="mb-8 sm:mb-10 md:mb-12">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-6 sm:mb-8 text-center sm:text-left">Current elections</h1>
+      </header>
+      <table class="w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Election for</th>
+            <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden lg:table-cell">Closes in</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 bg-white">
+          <% @current_elections.each do |election| %>
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm font-medium">
+                <%= link_to election_path(election), class: "text-ruby-red hover:text-red-700 transition-colors" do %>
+                  <%= election.title %>
+                <% end %>
+              </td>
+              <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden lg:table-cell">
+                <%= time_ago_in_words(election.closed_at) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
 
-<div class="space-y-6 sm:space-y-8 md:space-y-10 mb-8 sm:mb-10 md:mb-12">
-  <% if @elections.any? %>
-    <% @elections.each do |election| %>
-      <%= link_to "Election: #{election.title}", election %>
-    <% end %>
-  <% else %>
-    <div class="text-center py-10 sm:py-12 bg-gray-50 rounded-lg">
-      <p class="text-gray-600 text-lg">No elections.</p>
+  <% if @closed_elections.open.any? %>
+    <div class="space-y-6 sm:space-y-8 md:space-y-10 mb-8 sm:mb-10 md:mb-12">
+      <header class="mb-8 sm:mb-10 md:mb-12">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-6 sm:mb-8 text-center sm:text-left">Previous elections</h1>
+      </header>
+      <% @closed_elections.each do |election| %>
+        <%= link_to "Current elections: #{election.title}", election %>
+      <% end %>
     </div>
   <% end %>
 </div>

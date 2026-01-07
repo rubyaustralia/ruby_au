@@ -17,15 +17,16 @@ class Election < ApplicationRecord
   has_many :nominated_candidates, through: :nominations, source: :nominee
 
   scope :open, -> { where('opened_at <= ?', Time.current).where('closed_at > ? OR closed_at IS NULL', Time.current) }
+  scope :closed, -> { where('closed_at <= ?', Time.current) }
 
   validates_presence_of :title, :point_scale, :vacancies
 
   def open?
-    opened_at?.past? && !closed?
+    opened_at.past? && !closed?
   end
 
   def closed?
-    closed_at?.past?
+    closed_at.past?
   end
 
   def elected_users
