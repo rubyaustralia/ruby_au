@@ -9,5 +9,4 @@
 # db/seeds.rb
 
 load Rails.root.join('db', 'seeds', 'users.rb')
-load Rails.root.join('db', 'seeds', 'job_seeking_users.rb')
 load Rails.root.join('db', 'seeds', 'posts.rb')
