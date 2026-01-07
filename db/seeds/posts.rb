@@ -34,7 +34,7 @@ end
 
 def post_content_simple
   content = Faker::Lorem.paragraph(sentence_count: 4, supplemental: true, random_sentences_to_add: 4)
-  content += " <a href='https://www.example.com'>#{Faker::Lorem.words.join(' ').titlecase}</a>"
+  content += " <a href='https://www.example.com'>#{heading}</a>"
   content
 end
 
