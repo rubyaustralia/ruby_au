@@ -19,7 +19,7 @@ end
 
 def post_attributes(category:, user:, draft: false, future_scheduled: false)
   title = heading
-  slug = title.gsub(/\s+/, '-').downcase # Initial slug, will be adjusted by FriendlyId
+  slug = title.parameterize # Initial slug, will be adjusted by FriendlyId
   content = rand(1..2) == 1 ? post_content_simple : post_content_enhanced
 
   {
