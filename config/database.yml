@@ -84,6 +84,5 @@ test:
 #
 production:
   <<: *default
-  database: ruby_au_production
-  username: ruby_au
-  password: <%= ENV['RUBY_AU_DATABASE_PASSWORD'] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  sslmode: require
