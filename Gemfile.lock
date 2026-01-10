@@ -284,6 +284,7 @@ GEM
     marcel (1.1.0)
     matrix (0.4.3)
     memo_wise (1.13.0)
+    memory_profiler (1.1.0)
     meta-tags (2.22.2)
       actionpack (>= 6.0.0, < 8.2)
     method_source (1.1.0)
@@ -365,6 +366,8 @@ GEM
     raabro (1.4.0)
     racc (1.8.1)
     rack (3.2.4)
+    rack-mini-profiler (4.0.1)
+      rack (>= 1.2.0)
     rack-proxy (0.7.7)
       rack
     rack-session (2.1.1)
@@ -523,6 +526,7 @@ GEM
     spring-watcher-listen (2.1.0)
       listen (>= 2.7, < 4.0)
       spring (>= 4)
+    stackprof (0.2.27)
     stringio (3.2.0)
     table_tennis (0.0.7)
       csv (~> 3.3)
@@ -624,11 +628,13 @@ DEPENDENCIES
   letter_opener
   letter_opener_web (~> 3.0)
   listen
+  memory_profiler
   meta-tags (~> 2.22)
   pg
   premailer-rails
   puma
   pygmentize
+  rack-mini-profiler
   rails (>= 8.0.0)
   rails-controller-testing
   rails_12factor
@@ -648,6 +654,7 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   spring-watcher-listen
+  stackprof
   thruster
   turbo-rails
   tzinfo-data

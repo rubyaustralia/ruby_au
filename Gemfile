@@ -34,6 +34,13 @@ gem 'solid_queue'
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
 
+# For performance profiling
+gem 'rack-mini-profiler', require: false
+# For memory profiling
+gem 'memory_profiler'
+# For call-stack profiling flamegraphs
+gem 'stackprof'
+
 group :production do
   gem 'rails_12factor'
 end
