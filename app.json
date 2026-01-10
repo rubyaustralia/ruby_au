@@ -6,6 +6,9 @@
       "url": "heroku/nodejs"
     },
     {
+      "url": "https://github.com/gaffneyc/heroku-buildpack-jemalloc"
+    },
+    {
       "url": "heroku/ruby"
     }
   ],
