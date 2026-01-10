@@ -14,4 +14,7 @@ bundle exec rspec sites
 echo "[ bin/tests ] Running Rubocop 👮"
 bundle exec rubocop
 
+echo "[ bin/tests ] Running Herb lint 👮"
+yarn herb:lint
+
 echo "[ bin/tests ] Done"
