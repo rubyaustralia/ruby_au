@@ -64,6 +64,13 @@ We welcome contributions of all kinds! See [CONTRIBUTING.md](CONTRIBUTING.md) fo
 
 All contributors must follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
+### CodeTriage
+
+Want to help out but not sure where to start?
+Subscribe via [CodeTriage](https://www.codetriage.com/rubyaustralia/ruby_au) to receive a regular email highlighting open issues you can help with.
+
+[![Open Source Helpers](https://www.codetriage.com/rubyaustralia/ruby_au/badges/users.svg)](https://www.codetriage.com/rubyaustralia/ruby_au)
+
 ## Known Issues / Gotchas
 
 There have been issues with implementing Trix, the JS file is temporarily in the <HEAD> from the CDN.
