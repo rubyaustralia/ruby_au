@@ -122,14 +122,10 @@ RSpec.describe "/posts", type: :request do
     end
 
     context "with special characters" do
-      let!(:post) do
+      before do
         create(:post, :published,
                content: "Content with <span>tags</span> & quotes \"test\"",
                published_at: 1.day.ago)
-      end
-
-      before do
-        post
 
         get "/posts/feed.rss"
       end
