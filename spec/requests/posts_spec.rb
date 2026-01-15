@@ -75,37 +75,32 @@ RSpec.describe "/posts", type: :request do
       draft_posts
       news_posts
       announcement_posts
+      get "/posts/feed.rss"
     end
 
     it "returns http success" do
-      get "/posts/feed.rss"
       expect(response).to be_successful
     end
 
     it "returns RSS content type" do
-      get "/posts/feed.rss"
       expect(response.content_type).to eq("application/rss+xml; charset=utf-8")
     end
 
     it "renders without layout" do
-      get "/posts/feed.rss"
       expect(response).to render_template(layout: false)
     end
 
     it "renders the feed template" do
-      get "/posts/feed.rss"
       expect(response).to render_template("posts/feed")
     end
 
     it "only shows published posts" do
-      get "/posts/feed.rss"
       expect(assigns(:posts)).to include(*announcement_posts)
       expect(assigns(:posts)).not_to include(*draft_posts)
     end
 
     it "includes post metadata for each item" do
       published_posts = news_posts + announcement_posts
-      get "/posts/feed.rss"
 
       published_posts.each do |post|
         expect(response.body).to include("<title>#{post.title}</title>")
@@ -115,7 +110,6 @@ RSpec.describe "/posts", type: :request do
     end
 
     it "includes publication dates in RFC822 format" do
-      get "/posts/feed.rss"
       news_posts.each do |post|
         expected_date = post.published_at.rfc822
         expect(response.body).to include("<pubDate>#{expected_date}</pubDate>")
@@ -123,7 +117,6 @@ RSpec.describe "/posts", type: :request do
     end
 
     it "includes post categories" do
-      get "/posts/feed.rss"
       expect(response.body).to include("<category>News</category>")
       expect(response.body).to include("<category>Announcements</category>")
     end
@@ -135,17 +128,19 @@ RSpec.describe "/posts", type: :request do
                published_at: 1.day.ago)
       end
 
-      it "includes correctly escaped content" do
-        get "/posts/feed.rss"
+      before do
+        post
 
+        get "/posts/feed.rss"
+      end
+
+      it "includes correctly escaped content" do
         expect(response.body).to include("Content with &lt;span&gt;tags&lt;/span&gt; &amp;amp; quotes \"test\"")
       end
 
       it "produces valid XML" do
-        get "/posts/feed.rss"
-
         # Check that XML can be parsed without errors
-        expect { Nokogiri::XML(response.body) { |config| config.strict } }.not_to raise_error
+        expect { Nokogiri::XML(response.body, &:strict) }.not_to raise_error
       end
     end
   end
