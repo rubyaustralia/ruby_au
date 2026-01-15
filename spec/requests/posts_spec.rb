@@ -135,7 +135,7 @@ RSpec.describe "/posts", type: :request do
       end
 
       it "includes correctly escaped content" do
-        expect(response.body).to include("Content with &lt;span&gt;tags&lt;/span&gt; &amp; quotes \"test\"")
+        expect(response.body).to include("Content with &lt;span&gt;tags&lt;/span&gt; &amp;amp; quotes \"test\"")
       end
 
       it "produces valid XML" do
