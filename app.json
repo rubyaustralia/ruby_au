@@ -1,13 +1,31 @@
 {
+  "name": "ruby-au",
+  "description": "Ruby Australia website",
   "buildpacks": [
     {
       "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/gaffneyc/heroku-buildpack-jemalloc"
     },
     {
       "url": "heroku/ruby"
     }
   ],
   "env": {
-    "NODE_OPTIONS": "--max-old-space-size=384"
+    "NODE_OPTIONS": "--max-old-space-size=384",
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "review": {
+      "addons": [
+        "heroku-postgresql:essential-0"
+      ],
+      "scripts": {
+        "postdeploy": "bundle exec rails db:prepare"
+      }
+    }
   }
 }

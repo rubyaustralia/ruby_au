@@ -73,6 +73,12 @@ group :development do
   gem 'letter_opener_web', '~> 3.0'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  # For performance profiling
+  gem 'rack-mini-profiler', require: false
+  # For memory profiling
+  gem 'memory_profiler'
+  # For call-stack profiling flamegraphs
+  gem 'stackprof'
 end
 
 group :test do

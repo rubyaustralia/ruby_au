@@ -1,4 +1,4 @@
-<% job_seekers = User.seeking_work.includes(:memberships).where(memberships: { left_at: nil }).order(created_at: :desc).limit(9) %>
+<% job_seekers = User.seeking_work.includes(:memberships).where(memberships: { left_at: nil }).order(created_at: :desc).limit(15) %>
 
 <% if job_seekers.any? %>
   <section id="job-seekers" class="py-12 sm:py-16 md:py-20">
@@ -9,13 +9,9 @@
 
       <div class="text-center mb-8">
         <p class="text-gray-700 mb-4">These members of Ruby Australia are currently seeking new opportunities.</p>
-        <p class="text-gray-700">
-          <% if user_signed_in? %>
-            Visit your <%= link_to "profile settings", edit_my_details_path, class: "text-ruby-red hover:text-red-700 underline" %> to add your LinkedIn profile and mark yourself as seeking work.
-          <% else %>
-            <%= link_to "Sign up", new_user_registration_path, class: "text-ruby-red hover:text-red-700 underline" %> or <%= link_to "log in", new_user_session_path, class: "text-ruby-red hover:text-red-700 underline" %> to add yourself to this list.
-          <% end %>
-        </p>
+        <% if user_signed_in? %>
+          <p class="text-xs sm:text-sm text-gray-500">Visit your <%= link_to "profile settings", edit_my_details_path, class: "text-ruby-red hover:text-red-700 underline" %> to add your LinkedIn profile and mark yourself as seeking work.</p>
+        <% end %>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -35,10 +31,10 @@
         <% end %>
       </div>
 
-      <% if job_seekers.count >= 9 %>
+      <% if job_seekers.count >= 15 %>
         <div class="text-center mt-8">
           <p class="text-gray-600">
-            Showing the most recent 9 members seeking work. More members may be available.
+            Showing the most recent 15 members seeking work. There are currently <%= User.seeking_work.count %> members seeking work.
           </p>
         </div>
       <% end %>

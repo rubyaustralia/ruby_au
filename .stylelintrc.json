@@ -1,0 +1,29 @@
+{
+    "extends": "stylelint-config-standard-scss",
+    "rules": {
+        "at-rule-no-unknown": null,
+        "scss/at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": [
+                    "tailwind",
+                    "apply",
+                    "variants",
+                    "responsive",
+                    "screen",
+                    "layer",
+                    "theme",
+                    "custom-variant",
+                    "utility"
+                ]
+            }
+        ],
+        "color-function-notation": "legacy",
+        "alpha-value-notation": "number",
+        "selector-class-pattern": null,
+        "declaration-block-single-line-max-declarations": null,
+        "no-descending-specificity": null,
+        "keyframes-name-pattern": null,
+        "color-function-alias-notation": null
+    }
+}
