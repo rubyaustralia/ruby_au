@@ -2,9 +2,7 @@ xml.instruct! :xml, version: "1.0"
 xml.rss version: "2.0" do
   xml.channel do
     xml.title "Ruby Australia - News Feed"
-    xml.description "We are an organisation that is dedicated to supporting the community and
-  events around Australia focused on the Ruby programming language. Providing financial and institutional support for
-  RubyConf AU, Ruby Retreats, RailsGirls, and the meetups across the country."
+    xml.description "We are an organisation that is dedicated to supporting the community and events around Australia focused on the Ruby programming language. Providing financial and institutional support for RubyConf AU, Ruby Retreats, RailsGirls, and the meetups across the country."
     xml.link root_url # Use full URLs, not relative paths
 
     @posts.each do |post|
