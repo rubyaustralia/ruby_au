@@ -9,6 +9,15 @@ class PostsController < ApplicationController
                  .page(params[:page])
   end
 
+  def feed
+    @posts = Post.published_with_associations
+
+    respond_to do |format|
+      format.html
+      format.rss { render layout: false }
+    end
+  end
+
   def show; end
 
   private

@@ -73,6 +73,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: [:index]
+  get 'posts/feed.rss', to: 'posts#feed', format: 'rss'
   get 'posts/*slug', to: 'posts#show', as: :post
 
   resources :mailing_lists, only: [] do
