@@ -9,8 +9,8 @@
             <p class="sponsor-logos">
               <% @sponsor['images'].each do |image| %>
                 <%= link_to @sponsor['url'], target: '_blank', rel: 'noopener', class: "sponsor-logo-no-border" do %>
-                  <%= vite_image_tag "images/sponsors/#{sponsor['images'].first}",
-                                alt: sponsor['name'],
+                  <%= vite_image_tag "images/sponsors/#{image}",
+                                alt: @sponsor['name'],
                                 class: "w-[150px] h-auto object-contain" %>
                 <% end %>
               <% end %>
