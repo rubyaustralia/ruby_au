@@ -1,32 +1,32 @@
-<%= content_for :heading do %>
-  <%= @sponsor['name'] %>
-<% end %>
+<div class="max-w-2xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 mb-16 sm:mb-24 md:mb-32">
+  <div class="text-center sm:text-left mb-8 sm:mb-10 md:mb-12">
+    <section class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
+      <article class="welcome">
+        <div class="markdown sponsor-standalone">
+          <div class="sponsor-header mb-6">
+            <h1><%= link_to @sponsor['name'], @sponsor['url'], target: '_blank', rel: 'noopener' %></h1>
 
-<section class="flex flex-1 flex-col border-l-2 border-grey-lighter md:mt-5">
-  <article class="welcome">
-    <div class="markdown sponsor-standalone">
-      <div class="sponsor-header mb-6">
-        <h1><%= link_to @sponsor['name'], @sponsor['url'], target: '_blank', rel: 'noopener' %></h1>
+            <p class="sponsor-logos">
+              <% @sponsor['images'].each do |image| %>
+                <%= link_to @sponsor['url'], target: '_blank', rel: 'noopener', class: "sponsor-logo-no-border" do %>
+                  <%= image_tag "sponsors/#{image}", class: "sponsor-logo sponsor-logo-standalone", alt: @sponsor['name'] %>
+                <% end %>
+              <% end %>
+            </p>
+          </div>
 
-        <p class="sponsor-logos">
-          <% @sponsor['images'].each do |image| %>
-            <%= link_to @sponsor['url'], target: '_blank', rel: 'noopener', class: "sponsor-logo-no-border" do %>
-              <%= image_tag "sponsors/#{image}", class: "sponsor-logo sponsor-logo-standalone", alt: @sponsor['name'] %>
-            <% end %>
-          <% end %>
-        </p>
-      </div>
+          <div class="sponsor-bio">
+            <%= markdown_to_html @sponsor['bio'] %>
+          </div>
 
-      <div class="sponsor-bio">
-        <%= markdown_to_html @sponsor['bio'] %>
-      </div>
-
-      <div class="sponsor-meta mt-6 pt-4 border-t border-gray-200">
-        <p><strong>Tier:</strong> <%= @sponsor['tier'] %></p>
-        <p class="mt-2">
-          <%= link_to "← Back to sponsorship", "/sponsorship", class: "text-red hover:underline" %>
-        </p>
-      </div>
-    </div>
-  </article>
-</section>
+          <div class="sponsor-meta mt-6 pt-4 border-t border-gray-200">
+            <p><strong>Tier:</strong> <%= @sponsor['tier'] %></p>
+            <p class="mt-2">
+              <%= link_to "← Back to sponsorship", "/sponsorship", class: "text-red hover:underline" %>
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>
