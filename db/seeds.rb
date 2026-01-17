@@ -8,5 +8,5 @@
 
 # db/seeds.rb
 
-load Rails.root.join('db', 'seeds', 'users.rb')
-load Rails.root.join('db', 'seeds', 'posts.rb')
+load Rails.root.join("db/seeds/users.rb")
+load Rails.root.join("db/seeds/posts.rb")
