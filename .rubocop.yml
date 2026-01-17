@@ -10,7 +10,8 @@ plugins:
 
 AllCops:
   Exclude:
-    - 'db/**/*'
+    - 'db/migrate/*'
+    - 'db/schema.rb'
     - 'bin/**/*'
     - 'vendor/**/*'
     - 'node_modules/**/*'
