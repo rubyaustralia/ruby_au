@@ -68,7 +68,7 @@ This starts Foreman with Vite (frontend assets), Puma (Rails server), and backgr
 | Account Type | Email | Password | Comments |
 | --- | --- | --- | --- | 
 | Comittee Member | `committee@example.com` | `password123` | Has access to administration features eg `Posts`, `Campaigns` |
-| Member | `jobseeker@example.com` | `password123` | in `Profile` has job seeking status of `Currently Seeking Work`|
+| Member | `jobseeker@example.com` | `password123` | In `Profile`, has job seeking status of `Currently Seeking Work` |
 
 ---
 
