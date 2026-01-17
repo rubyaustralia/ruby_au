@@ -23,7 +23,7 @@ def add_secondary_email_if_not_present(user:)
 
   secondary_email_address = user.email.gsub('@', "_secondary@")
   user.emails.create!(
-    email: user.email.gsub('@', "_secondary@"),
+    email: secondary_email_address,
     primary: false,
     confirmed_at: Time.current,
     skip_trigger_after_confirmation: true
