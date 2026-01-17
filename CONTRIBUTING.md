@@ -62,7 +62,7 @@ bin/dev
 
 This starts Foreman with Vite (frontend assets), Puma (Rails server), and background jobs.
 
-### Log In to access member only content   
+### Log In to access member-only content   
    Additional content is available to logged in users. You may create your own users, or use these seeded accounts:
 
 | Account Type | Email | Password | Comments |
