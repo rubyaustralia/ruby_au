@@ -65,7 +65,7 @@ This starts Foreman with Vite (frontend assets), Puma (Rails server), and backgr
 ### Log In to access member only content   
    Additional content is available to logged in users. You may create your own users, or use these seeded accounts:
 
-| Account Type | Username | Password | Comments |
+| Account Type | Email | Password | Comments |
 | --- | --- | --- | --- | 
 | Comittee Member | `committee@example.com` | `password123` | Has access to administration features eg `Posts`, `Campaigns` |
 | Member | `jobseeker@example.com` | `password123` | in `Profile` has job seeking status of `Currently Seeking Work`|
