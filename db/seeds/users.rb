@@ -57,4 +57,3 @@ seed_user(email: "jobseeker@example.com") { |user| update_user(user:, seeking_wo
 (2..job_seeking_users_to_create).each do |i|
   seed_user(email: "jobseeker_#{i}@example.com") { |user| update_user(user:, seeking_work: true) }
 end
-
