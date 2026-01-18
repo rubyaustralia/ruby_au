@@ -62,6 +62,14 @@ bin/dev
 
 This starts Foreman with Vite (frontend assets), Puma (Rails server), and background jobs.
 
+### Log In to access member-only content   
+   Additional content is available to logged in users. You may create your own users, or use these seeded accounts:
+
+| Account Type | Email | Password | Comments |
+| --- | --- | --- | --- | 
+| Committee Member | `committee@example.com` | `password123` | Has access to administration features eg `Posts`, `Campaigns` |
+| Member | `jobseeker@example.com` | `password123` | In `Profile`, has job seeking status of `Currently Seeking Work` |
+
 ---
 
 ## Development Workflow
