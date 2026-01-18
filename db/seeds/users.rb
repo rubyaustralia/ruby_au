@@ -1,7 +1,9 @@
 require 'faker'
 
-def update_user(user:, committee: false, seeking_work: false, password: Faker::Internet.password)
-  user.password = password
+def update_user(user:, committee: false, seeking_work: false, password: nil)
+  password_specified = password.present?
+  
+  user.password = password_specified ? password : Faker::Internet.password
   user.password_confirmation = password
   user.committee = committee
   user.full_name = Faker::Name.name # Required field
@@ -11,14 +13,28 @@ def update_user(user:, committee: false, seeking_work: false, password: Faker::I
   user.seeking_work = seeking_work
   user.linkedin_url = "https://www.linkedin.com/in/#{Faker::Lorem.word}" if seeking_work
 
-  unless user.emails.any?
-    user.emails.create!(
-      email: user.email,
-      primary: true,
-      confirmed_at: Time.current,
-      skip_trigger_after_confirmation: true
-    )
-  end
+  print "Created or updated user with primary email: #{user.email}"
+  print " and password: #{user.password}" if password_specified
+  print ". "
+end
+
+def add_secondary_email_if_not_present(user:)
+  return unless user.emails&.size == 1
+
+  secondary_email_address = user.email.gsub('@', "_secondary@")
+  user.emails.create!(
+    email: secondary_email_address,
+    primary: false,
+    confirmed_at: Time.current,
+    skip_trigger_after_confirmation: true
+  )
+  print "Secondary email: #{secondary_email_address} added."
+end
+
+def seed_user(email:, &block)
+  user = User.find_or_create_by!(email:, &block)
+  add_secondary_email_if_not_present(user:)
+  puts
 end
 
 return if !Rails.env.development?
@@ -27,19 +43,16 @@ committee_users_to_create = 4
 job_seeking_users_to_create = 4
 
 # first committee user, with credentials to be mentioned in README
-User.find_or_create_by(email: "committee@example.com") { |user| update_user(user:, committee: true, password: "password123") }
-puts "Created committee user: committee@example.com with password: password123"
+seed_user(email: "committee@example.com") { |user| update_user(user:, committee: true, password: "password123") }
 
 for i in 2..committee_users_to_create
-  User.find_or_create_by(email: "committee_#{i}@example.com") { |user| update_user(user:, committee: true) }
-  puts "Created committee user: committee_#{i}@example.com"
+  seed_user(email: "committee_#{i}@example.com") { |user| update_user(user:, committee: true) }
 end
 
-# first job seeker
-User.find_or_create_by(email: "jobseeker@example.com") { |user| update_user(user:, seeking_work: true, password: "password123") }
-puts "Created job seeker user: jobseeker@example.com with password: password123"
+# first job seeker, with credentials to be mentioned in README
+seed_user(email: "jobseeker@example.com") { |user| update_user(user:, seeking_work: true, password: "password123") }
 
 for i in 2..job_seeking_users_to_create
-  User.find_or_create_by(email: "jobseeker_#{i}@example.com") { |user| update_user(user:, seeking_work: true) }
-  puts "Created job seeker user: jobseeker_#{i}@example.com"
+  seed_user(email: "jobseeker_#{i}@example.com") { |user| update_user(user:, seeking_work: true) }
 end
+
