@@ -1,8 +1,9 @@
 require 'faker'
 
+# rubocop:disable Rails/Output, Metrics/MethodLength, Metrics/AbcSize
 def update_user(user:, committee: false, seeking_work: false, password: nil)
   password_specified = password.present?
-  
+
   user.password = password_specified ? password : Faker::Internet.password
   user.password_confirmation = password
   user.committee = committee
@@ -17,6 +18,7 @@ def update_user(user:, committee: false, seeking_work: false, password: nil)
   print " and password: #{user.password}" if password_specified
   print ". "
 end
+# rubocop:enable Rails/Output, Metrics/MethodLength, Metrics/AbcSize
 
 def add_secondary_email_if_not_present(user:)
   return unless user.emails&.size == 1
@@ -28,16 +30,16 @@ def add_secondary_email_if_not_present(user:)
     confirmed_at: Time.current,
     skip_trigger_after_confirmation: true
   )
-  print "Secondary email: #{secondary_email_address} added."
+  print "Secondary email: #{secondary_email_address} added." # rubocop:disable Rails/Output
 end
 
 def seed_user(email:, &block)
   user = User.find_or_create_by!(email:, &block)
   add_secondary_email_if_not_present(user:)
-  puts
+  puts # rubocop:disable Rails/Output
 end
 
-return if !Rails.env.development?
+return unless Rails.env.development?
 
 committee_users_to_create = 4
 job_seeking_users_to_create = 4
@@ -45,14 +47,13 @@ job_seeking_users_to_create = 4
 # first committee user, with credentials to be mentioned in README
 seed_user(email: "committee@example.com") { |user| update_user(user:, committee: true, password: "password123") }
 
-for i in 2..committee_users_to_create
+(2..committee_users_to_create).each do |i|
   seed_user(email: "committee_#{i}@example.com") { |user| update_user(user:, committee: true) }
 end
 
 # first job seeker, with credentials to be mentioned in README
 seed_user(email: "jobseeker@example.com") { |user| update_user(user:, seeking_work: true, password: "password123") }
 
-for i in 2..job_seeking_users_to_create
+(2..job_seeking_users_to_create).each do |i|
   seed_user(email: "jobseeker_#{i}@example.com") { |user| update_user(user:, seeking_work: true) }
 end
-
