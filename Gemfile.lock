@@ -99,7 +99,7 @@ GEM
     bindex (0.8.1)
     brakeman (7.1.2)
       racc
-    bugsnag (6.28.0)
+    bugsnag (6.29.0)
       concurrent-ruby (~> 1.0)
     builder (3.3.0)
     bullet (8.1.0)
@@ -155,7 +155,7 @@ GEM
     diff-lcs (1.6.2)
     docile (1.4.1)
     drb (2.2.3)
-    dry-cli (1.4.0)
+    dry-cli (1.4.1)
     erb (6.0.1)
     erubi (1.13.1)
     et-orbi (1.4.0)
@@ -165,7 +165,7 @@ GEM
     factory_bot_rails (6.5.1)
       factory_bot (~> 6.5)
       railties (>= 6.1.0)
-    faker (3.5.3)
+    faker (3.6.0)
       i18n (>= 1.8.11, < 2)
     ffi (1.17.3-aarch64-linux-gnu)
     ffi (1.17.3-aarch64-linux-musl)
@@ -360,7 +360,7 @@ GEM
       date
       stringio
     public_suffix (7.0.2)
-    puma (7.1.0)
+    puma (7.2.0)
       nio4r (~> 2.0)
     pygmentize (0.0.3)
     raabro (1.4.0)
