@@ -87,6 +87,7 @@ Rails.application.routes.draw do
   # Off-site Redirection routes
   get '/forum', to: redirect('https://forum.ruby.org.au'), as: :forum
   get '/mailing-list', to: redirect('https://confirmsubscription.com/h/j/3DDD74A0ACC3DB22'), as: :roro_mailing_list
+  get '/contributions', to: redirect('https://github.com/orgs/rubyaustralia/projects/14'), as: :community_contributions
   get '/slack', to: redirect("/my/slack_invite")
   get '/videos', to: redirect('https://www.youtube.com/@RubyAustralia'), as: :videos
   get '/merch', to: redirect('https://www.redbubble.com/people/ruby-au/explore'), as: :merch
