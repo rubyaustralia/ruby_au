@@ -39,14 +39,6 @@
           <li><%= link_to "Meetups", events_path, class: "footer-link" %></li>
           <li><%= link_to "Rails Girls", "/rails-girls", class: "footer-link" %></li>
         </ul>
-        <h3 class="font-bold text-base sm:text-lg mb-3">Community</h3>
-        <ul class="space-y-2">
-          <li><%= link_to "Chat (Slack)", my_slack_invite_path, class: "white-link" %></li>
-          <li><%= link_to "Videos", videos_path, class: "white-link" %></li>
-          <li><%= link_to "RubyAU Merch", merch_path, class: "white-link" %></li>
-          <li><%= link_to "Ruby New Zealand", "https://ruby.nz/", class: "white-link" %></li>
-          <li><%= link_to "Ruby Central", "https://rubycentral.org/", class: "white-link" %></li>
-        </ul>
       </div>
 
       <div class="text-center sm:text-left">
@@ -70,6 +62,21 @@
         </ul>
       </div>
 
+      <div class="text-center sm:text-left">
+        <h3 class="font-bold text-base sm:text-lg mb-3">Community</h3>
+        <ul class="space-y-2">
+          <li><%= link_to "Chat (Slack)", my_slack_invite_path, class: "white-link" %></li>
+          <li><%= link_to "Videos", videos_path, class: "white-link" %></li>
+          <li><%= link_to "RubyAU Merch", merch_path, class: "white-link" %></li>
+          <li><%= link_to "Ruby New Zealand", "https://ruby.nz/", class: "white-link" %></li>
+          <li><%= link_to "Ruby Central", "https://rubycentral.org/", class: "white-link" %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto px-4 sm:px-6 py-6 border-t border-gray-200">
+    <div class="text-center">
       <div class="flex justify-center sm:justify-start lg:justify-center gap-4 mt-6 lg:mt-0">
         <%= link_to "https://www.linkedin.com/company/ruby-australia/", class: "text-metal footer-link", aria: { label: "Visit Ruby Australia's LinkedIn page" } do %>
           <span class="fill-black hover:fill-ruby-red h-2 w-2 mr-8">
@@ -93,11 +100,6 @@
           </span>
         <% end %>
       </div>
-    </div>
-  </div>
-
-  <div class="max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto px-4 sm:px-6 py-6 border-t border-gray-200">
-    <div class="text-center">
       <p class="text-xs sm:text-sm text-gray-500 mb-2">
         &copy; <%= Time.current.year %> Ruby Australia. All rights reserved.
       </p>
