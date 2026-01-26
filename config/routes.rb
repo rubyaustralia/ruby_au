@@ -98,6 +98,8 @@ Rails.application.routes.draw do
 
   root to: 'pages#show', defaults: { id: 'welcome' }
 
+  get "/job-seekers" => 'job_seekers#index'
+
   get "/policies" => "policies#index", as: :policies
   get "/policies/*id" => "policies#show", as: :policy
 
