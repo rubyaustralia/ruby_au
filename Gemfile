@@ -18,6 +18,7 @@ gem "image_processing", "~> 1.13"
 gem 'inline_svg', '~> 1.10.0'
 gem 'jbuilder'
 gem 'kaminari'
+gem 'kamal'
 gem 'premailer-rails'
 gem 'pygmentize'
 gem 'redcarpet'
