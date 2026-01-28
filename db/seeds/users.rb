@@ -42,7 +42,7 @@ end
 return unless Rails.env.development?
 
 committee_users_to_create = 4
-job_seeking_users_to_create = 40
+job_seeking_users_to_create = 14
 
 # first committee user, with credentials to be mentioned in README
 seed_user(email: "committee@example.com") { |user| update_user(user:, committee: true, password: "password123") }
