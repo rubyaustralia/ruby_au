@@ -53,6 +53,17 @@ Hosted on Heroku with automatic deployment from the `main` branch.
 
 **Live site**: [ruby.org.au](https://ruby.org.au)
 
+## Releases and Versioning
+
+Versioning is automated via GitHub Actions when code is merged into `main`. We follow [Semantic Versioning](https://semver.org/).
+
+The version bump is determined by the commit messages:
+- **Major** `(x+1).0.0`: Add `#major` to your commit message (e.g., `Refactor user auth system #major`).
+- **Minor** `x.(y+1).0`: Add `#minor` to your commit message (e.g., `Add user profile page #minor`).
+- **Patch** `x.y.(z+1)`: Default behavior for all other commits.
+
+A new GitHub Release and Git Tag are automatically created for every push to `main` that successfully passes CI.
+
 ## Contributing
 
 We welcome contributions of all kinds! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
