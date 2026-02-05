@@ -38,18 +38,18 @@ def post_content_simple
 end
 
 def post_content_enhanced
-  content = "<strong>#{heading} #{Faker::Lorem.multibyte}</strong>"
-  content += "<br />"
+  content = "<strong>#{heading} #{Faker::Lorem.multibyte}</strong><br />"
   content += "<em>#{Faker::Lorem.paragraph(sentence_count: 4, supplemental: true, random_sentences_to_add: 4)}</em>"
   content += "<br /><br />"
 
-  content += "<strong>#{heading}</strong>"
-  content += "<br />"
+  content += "<strong>#{heading}</strong><br />"
 
   3.times do
     content += Faker::Lorem.paragraph(sentence_count: 8, supplemental: true, random_sentences_to_add: 4)
     content += "<br /><br />"
   end
+
+  content
 end
 
 def post_scheduling_attributes(draft: false, future_scheduled: false)
