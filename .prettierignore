@@ -1,0 +1,13 @@
+node_modules
+public/assets
+public/packs
+public/packs-test
+public/vite
+coverage
+tmp
+log
+vendor
+.bundle
+.yarn
+config/database.yml
+sites/*/db/data/*.yml
