@@ -1,21 +1,15 @@
-<% job_seekers = User.seeking_work.includes(:memberships).where(memberships: { left_at: nil }).order(created_at: :desc).limit(6) %>
 
-<% if job_seekers.any? %>
-  <section id="job-seekers" class="py-12 sm:py-16 md:py-20">
-    <div class="max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10 text-gray-900 text-center">
-        Members Seeking Work
-      </h2>
-
-      <div class="text-center mb-8">
-        <p class="text-gray-700 mb-4">These members of Ruby Australia are currently seeking new opportunities. <%= link_to "See more", job_seekers_path, class: "text-ruby-red hover:text-red-700 underline" %></p>
+<div class="max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+  <section class="max-w-none mb-8 sm:mb-10 md:mb-12">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8">Members Seeking Work</h1>
+      
+      <p>These members of Ruby Australia are currently seeking new opportunities.</p>
         <% if user_signed_in? %>
-          <p class="text-xs sm:text-sm text-gray-500">Visit your <%= link_to "profile settings", edit_my_details_path, class: "text-ruby-red hover:text-red-700 underline" %> to add your LinkedIn profile and mark yourself as seeking work.</p>
+          <p>Visit your <%= link_to "profile settings", edit_my_details_path, class: "white-link" %> to add your LinkedIn profile and mark yourself as seeking work.</p>
         <% end %>
-      </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        <% job_seekers.each do |user| %>
+        <% @open_to_work.take(@display_limit).each do |user| %>
           <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col">
             <div class="flex items-center">
               <div class="w-6 h-6 mr-2">
@@ -31,6 +25,14 @@
         <% end %>
       </div>
 
-    </div>
-  </section>
-<% end %>
+      <% if @open_to_work.count > @display_limit %>
+        <div class="text-center mt-8">
+          <p class="text-gray-600">
+            Showing the most recent <%= @display_limit %> members seeking work. There are currently <%= User.seeking_work.count %> members seeking work.
+          </p>
+        </div>
+      <% end %>
+
+
+</section>
+</div>
