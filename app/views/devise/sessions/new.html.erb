@@ -50,6 +50,7 @@
           </div>
         <% end %>
 
+        <% if devise_mapping.omniauthable? %>
         <div class="mt-6">
           <div class="relative">
             <div class="absolute inset-0 flex items-center">
@@ -61,15 +62,14 @@
           </div>
 
           <div class="mt-6 grid grid-cols-1 gap-3">
-            <% if devise_mapping.omniauthable? %>
-              <% resource_class.omniauth_providers.each do |provider| %>
-                <%= button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: "w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors" do %>
-                  <span>Sign in with <%= OmniAuth::Utils.camelize(provider) %></span>
-                <% end %>
+            <% resource_class.omniauth_providers.each do |provider| %>
+              <%= button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: "w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors" do %>
+                <span>Sign in with <%= OmniAuth::Utils.camelize(provider) %></span>
               <% end %>
             <% end %>
           </div>
         </div>
+        <% end %>
       </div>
     </div>
 
