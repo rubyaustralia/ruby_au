@@ -82,12 +82,6 @@ Subscribe via [CodeTriage](https://www.codetriage.com/rubyaustralia/ruby_au) to 
 
 [![Open Source Helpers](https://www.codetriage.com/rubyaustralia/ruby_au/badges/users.svg)](https://www.codetriage.com/rubyaustralia/ruby_au)
 
-## Known Issues / Gotchas
-
-There have been issues with implementing Trix, the JS file is temporarily in the <HEAD> from the CDN.
-
-Please also refer to [CONTRIBUTING.md](CONTRIBUTING.md)
-
 ## License
 
 - **Content**: Copyright 2016 by Ruby Australia, All rights reserved

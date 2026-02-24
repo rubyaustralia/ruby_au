@@ -1,2 +1,2 @@
 import "@rails/actiontext";
-import "trix";
+import "@37signals/lexxy"

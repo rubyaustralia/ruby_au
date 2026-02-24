@@ -51,11 +51,9 @@
   <%= vite_client_tag %>
   <%= vite_javascript_tag("rails", defer: true) %>
   <%= vite_javascript_tag("controllers", defer: true) %>
-  <%= vite_javascript_tag("trix", defer: true) %>
+  <%= vite_javascript_tag("actiontext", defer: true) %>
   <%= vite_javascript_tag("application") %>
   <%= vite_stylesheet_tag("application") %>
-  <!-- hack to use cdn since failed to import trix from production, no issue in dev, remove it once the issue is fixed -->
-  <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/trix@2.1.12/dist/trix.umd.min.js" %>
 </head>
 <body class="bg-pearl mt-16 sm:mt-20 md:mt-24">
 <%= render "shared/navigation" %>

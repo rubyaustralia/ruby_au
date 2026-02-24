@@ -23,7 +23,6 @@
     "sass": "^1.89.0",
     "signature_pad": "^5.0.7",
     "tailwindcss": "^4.1.4",
-    "trix": "^2.1.15",
     "vite-plugin-rails": "^0.5.0"
   },
   "devDependencies": {
