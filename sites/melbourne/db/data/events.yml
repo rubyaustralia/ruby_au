@@ -1,4 +1,247 @@
 ---
+- uuid: 15aacf2a-ee05-4caf-8aa5-88e6b32e1f70
+  date: '2026-11-26'
+  name: 'Ruby Melbourne: November 2026'
+  description: >-
+    Join us at Ruby Melbourne: November 2026
+  slug: 2026-11-26-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-melbourne/events/313408468/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+
+- uuid: 28cca666-e6fe-48bd-9d92-fa5e2cc472c9
+  date: '2026-10-29'
+  name: 'Ruby Melbourne: October 2026'
+  description: >-
+    Join us at Ruby Melbourne: October 2026
+  slug: 2026-10-29-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-melbourne/events/313408465/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+
+- uuid: 6fb9daa0-3d0f-48ea-985f-2ce53b97670d
+  date: '2026-09-24'
+  name: 'Ruby Melbourne: September 2026'
+  description: >-
+    Join us at Ruby Melbourne: September 2026
+  slug: 2026-09-24-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-melbourne/events/313408461/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+
+- uuid: a2b29a73-0fd3-417a-bfdd-c1171232687e
+  date: '2026-08-27'
+  name: 'Ruby Melbourne: August 2026'
+  description: >-
+    Join us at Ruby Melbourne: August 2026
+  slug: 2026-08-27-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-melbourne/events/313408459/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+
+- uuid: 070c899a-6ecb-4948-af54-b033c28b1c0d
+  date: '2026-07-30'
+  name: 'Ruby Melbourne: July 2026'
+  description: >-
+    Join us at Ruby Melbourne: July 2026
+  slug: 2026-07-30-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-melbourne/events/313408456/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+
+- uuid: 34441bfb-8e4b-4891-a6e9-c0572de0b89d
+  date: '2026-06-25'
+  name: 'Ruby Melbourne: June 2026'
+  description: >-
+    Join us at Ruby Melbourne: June 2026
+  slug: 2026-06-25-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-melbourne/events/313408452/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+
+- uuid: fae0c7e3-165f-4c6b-8a04-0431a3f8e17e
+  date: '2026-05-28'
+  name: 'Ruby Melbourne: May 2026'
+  description: >-
+    Join us at Ruby Melbourne: May 2026
+  slug: 2026-05-28-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-melbourne/events/313408450/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+
+- uuid: 4b2017b4-8d92-409c-a6db-9492ce90f7ce
+  date: '2026-04-30'
+  name: 'Ruby Melbourne: April 2026'
+  description: >-
+    Join us at Ruby Melbourne: April 2026
+  slug: 2026-04-30-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-melbourne/events/313408448/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+
+- uuid: e69e132a-a862-484f-95e9-22afa3751dc9
+  date: '2026-03-26'
+  name: 'Ruby Melbourne: March 2026'
+  description: >-
+    Join us at Ruby Melbourne: March 2026
+  slug: 2026-03-26-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-melbourne/events/313408409/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+
+- uuid: 79605ac9-3906-4f31-9395-17cca7729946
+  date: '2026-02-26'
+  name: 'Ruby Melbourne: February 2026'
+  description: >-
+    Join us at Ruby Melbourne: February 2026
+  slug: 2026-02-26-ruby-melbourne
+  registration_link: https://www.meetup.com/ruby-melbourne/events/313408208/
+  type: meetup
+  venue:
+    name: Ferocia
+    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
+    address:
+      street: Level 7/271 Collins St
+      locality: Melbourne
+      postal_code: '3000'
+      region: VIC
+      country: AU
+  talks:
+    - uuid: dd932ee2-92e9-42e4-99df-233606fb1572
+      title: 'The Ruby Gameboy Emulator — 10 Years Later'
+      description: |-
+        <p>
+          Ten years ago, I started building a Game Boy emulator in Ruby as a hobby project called
+          Waterfoul. I got it to a point where it could run basic games, but the performance left a
+          lot to be desired and reaching 100% completion would have taken way more work than I had
+          time for. So I moved on to other things. Recently though, with improvements to ruby-src
+          and tools like Claude Code, I figured I'd give it another shot and actually finish it.
+        </p>
+      video_url: TBC
+      speakers:
+        - name: Colby Swandale
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle: colby.fyi
+            mastodon_handle:
+            website:
+    - uuid: 1ec2683d-3921-4efb-bb81-533efc8be410
+      title: 'Moving from RSpec to Minitest for an AI-Friendly Codebase'
+      description: |-
+        <p>
+          I did some work recently at Stile Education to rewrite our test suite from RSpec to
+          Minitest on the theory that:
+        </p>
+        <ul>
+          <li>
+            It should work better with Sorbet types
+          </li>
+          <li>
+            It keeps test context closer together on the page
+          </li>
+          <li>
+            Starting again would allow me to "do it right" the first time and set up a pattern for
+            test helpers that would be more discoverable, safe and extensible.
+          </li>
+          <li>
+            The combination of the above factors should make it AI-friendly, allowing "vibe coding"
+            of test suites and a viable migration path.
+          </li>
+        </ul>
+        <p>
+          It's actually turned out as well as I'd hoped, and I wanted to share a bit of the pain of
+          the old test suite, why we rewrote and what testing is like now.
+        </p>
+        <p>
+          The takeaway message is that AI assistance can enable us to test our refactoring ideas
+          more quickly, and rewards us for writing the code that is strongly typed with
+          strongly-held, discoverable patterns. Using a "strangler pattern" can be a great way to
+          start immediately getting these benefits in large, legacy codebases.
+        </p>
+      video_url: TBC
+      speakers:
+        - name: Alex Finkel
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle: alexf101
+            bluesky_handle:
+            mastodon_handle:
+            website:
 - uuid: 177e758b-899b-44ef-be97-9ae4a6841f80
   date: '2025-11-27'
   name: 'Ruby Melbourne: November 2025'
@@ -16,6 +259,53 @@
       postal_code: '3000'
       region: VIC
       country: AU
+  talks:
+    - uuid: 9abc3441-4e3d-408f-bf25-3021fb02967f
+      title: 'Workshop: Hotwire 101: Building modern UIs with Turbo and Stimulus'
+      description: |-
+        <p>
+          Turbo and Hotwire can be some of the most effective tools to build user interfaces for the
+          web, specially when used with Rails. However, shifting paradigms from Javascript-first
+          frameworks like React back to server-side rendered HTML is not simple. The mental models,
+          tools and techniques are different.
+        </p>
+        <p>
+          In this workshop, we'll go back to the basics and revisit all the building blocks needed
+          to create modern user interfaces with Ruby on Rails using Turbo and Stimulus.
+        </p>
+        <p>
+          Throughout the workshop we'll build an example application that will be progressively
+          enhanced using different tools from Turbo and Stimulus. To do that, we'll learn how to
+          navigate Turbo and Stimulus' documentation, as well as the codebase for turbo-rails, which
+          provides extra documentation and insights into how some pieces work.
+        </p>
+        <p>
+          This will be a hands on workshop so you'll need to bring a laptop ready to go. Make sure
+          prior to the session you:
+        </p>
+        <ul>
+          <li>
+            Install Ruby 3.4.7
+          </li>
+          <li>
+            Install Rails 8.1.1
+          </li>
+          <li>
+            Charge your laptop to 100%!
+          </li>
+          <li>
+            set up your phone so you can tether for internet access. The venue does not provide public WIFI.
+          </li>
+      video_url: TBC
+      speakers:
+        - name: Julián Pinzón Eslava
+          contact_details:
+            github_username: pinzonjulian
+            x_handle: x.com/pinzonjulian
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website: julianpinzon.com
 
 - uuid: 77e5981c-3758-47e8-b65e-f730dbb1df36
   date: '2025-10-30'
@@ -34,6 +324,46 @@
       postal_code: '3000'
       region: VIC
       country: AU
+  talks:
+    - uuid: 7b897e46-48c6-40de-b016-ab5cd07c2075
+      title: 'Using PostgreSQL Tablespaces to Boost Performance'
+      description: |-
+        <p>
+          When my PostgreSQL outgrew local NVMe storage, I moved it to a remote volume—sacrificing
+          speed (50% read, 33% write performance). The solution? Using PostgreSQL tablespaces to
+          strategically place indexes on the local NVMe while keeping data on remote storage. This
+          hybrid approach nearly doubled SELECT performance on large tables, proving that smart
+          storage architecture can reclaim speed without massive hardware upgrades.
+        </p>
+      video_url: https://www.youtube.com/watch?v=W2SWRyHWx6E
+      speakers:
+        - name: Dan Milne
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - uuid: dbbe2d97-6f97-460b-b6e5-b89ac4402dfe
+      title: 'How Buildkite Broke Up (With) Its 56 TiB Database'
+      description: |-
+        <p>
+          Buildkite spent much of the last 3 years working towards the goal of migrating off of its
+          primary PostgreSQL database, to a series of smaller database shards. This is the story of
+          how we raced the clock to finish before the largest disk AWS could give us ran out of
+          space.
+        </p>
+      video_url: https://www.youtube.com/watch?v=G2xZTVUFfgM
+      speakers:
+        - name: David Barrell
+          contact_details:
+            github_username: dabarrell
+            x_handle:
+            linkedin_handle: dabarrell
+            bluesky_handle:
+            mastodon_handle:
+            website:
 
 - uuid: 48ebf8db-0fc4-4be0-b613-e6b9c03407ab
   date: '2025-09-25'
@@ -67,30 +397,9 @@
           </a>
           but want to show it with an example.
         </p>
-      video_url: TBC
+      video_url: https://www.youtube.com/watch?v=s_4eB7IRLP4
       speakers:
         - name: Chenxu Zhao
-          contact_details:
-            github_username:
-            x_handle:
-            linkedin_handle:
-            bluesky_handle:
-            mastodon_handle:
-            website:
-    - uuid: 1617a702-dc4d-4129-8015-f45c4516fb36
-      title: Scaling Databases at Buildkite
-      description: |-
-        <p>
-          From a single DB to replicas to sharding &mdash; how Buildkite scaled Rails + Postgres to
-          support giants like Uber, Shopify, and Slack.
-        </p>
-        <p>
-          Let's talk systems, stability, and the traps we all fall into. Join us for code,
-          community, and some top-tier chats.
-        </p>
-      video_url: TBC
-      speakers:
-        - name: David Barrell
           contact_details:
             github_username:
             x_handle:
@@ -143,7 +452,7 @@
           of how to use operations to transform messy, scattered business logic into elegant,
           composable workflows.
         </p>
-      video_url: TODO
+      video_url: https://www.youtube.com/watch?v=94ELQLqWjxM
       speakers:
         - name: Ryan Bigg
           contact_details:
@@ -169,7 +478,7 @@
           and affectionate look at the language we love, designed to spark a deeper conversation
           about its quirks and complexities.
         </p>
-      video_url: TODO
+      video_url: https://www.youtube.com/watch?v=7N2totuh4qU
       speakers:
         - name: Ankur Kothari
           contact_details:
