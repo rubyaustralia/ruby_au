@@ -1,5 +1,7 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+import "@37signals/lexxy"
+
 import SignaturePad from "signature_pad";
 import { createIcons, icons } from 'lucide';
 

@@ -266,6 +266,8 @@ GEM
       letter_opener (~> 1.9)
       railties (>= 6.1)
       rexml
+    lexxy (0.7.6.beta)
+      rails (>= 8.0.2)
     lint_roller (1.1.0)
     listen (3.10.0)
       logger
@@ -628,6 +630,7 @@ DEPENDENCIES
   kaminari
   letter_opener
   letter_opener_web (~> 3.0)
+  lexxy (~> 0.7.6.beta)
   listen
   memory_profiler
   meta-tags (~> 2.22)

@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "@37signals/lexxy": "^0.7.6-beta",
     "@amcharts/amcharts4": "^4.10.40",
     "@amcharts/amcharts4-geodata": "^4.1.30",
     "@hotwired/stimulus": "^3.2.2",
