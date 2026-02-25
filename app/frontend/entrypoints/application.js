@@ -1,5 +1,6 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+
 import SignaturePad from "signature_pad";
 import { createIcons, icons } from 'lucide';
 

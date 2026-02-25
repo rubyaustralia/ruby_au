@@ -18,7 +18,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@images': resolve(__dirname, 'app/frontend/images'),
-      '@': resolve(__dirname, 'app/frontend')
+      '@': resolve(__dirname, 'app/frontend'),
+      '@37signals/lexxy/dist/stylesheets/lexxy.css': resolve(__dirname, 'node_modules/@37signals/lexxy/dist/stylesheets/lexxy.css')
     },
     dedupe: ['lucide']
   },
