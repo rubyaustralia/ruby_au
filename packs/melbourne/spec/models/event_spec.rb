@@ -17,15 +17,11 @@ RSpec.describe Melbourne::Event do
     describe "validate YML db data" do
       it "is valid" do
         described_class.all.each do |event| # rubocop:disable Rails/FindEach
-          puts "Validating event: #{event.uuid}"
           expect(event.valid?).to be(true)
-          puts "Validating venue: #{event.venue.name}"
           expect(event.venue.valid?).to be(true)
           event.talks.each do |talk|
-            puts "Validating talk: #{talk.uuid}"
             expect(talk.valid?).to be(true)
             talk.speakers.each do |speaker|
-              puts "Validating speaker: #{speaker.name}"
               expect(speaker.valid?).to be(true)
             end
           end
