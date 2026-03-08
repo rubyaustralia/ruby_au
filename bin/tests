@@ -5,11 +5,8 @@ set -e
 echo "[ bin/tests ] Running migrations for Test env 🚨"
 bin/rails db:migrate RAILS_ENV=test
 
-echo "[ bin/tests ] Running Rspec tests for Ruby AU app 🚨🚨"
+echo "[ bin/tests ] Running Rspec tests 🚨🚨"
 bundle exec rspec
-
-echo "[ bin/tests ] Running Rspec tests for city sites 🚨🚨"
-bundle exec rspec sites
 
 echo "[ bin/tests ] Running Rubocop 👮"
 bundle exec rubocop

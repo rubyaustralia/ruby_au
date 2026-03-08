@@ -105,14 +105,11 @@ Please run these before submitting your PR. The git hooks will help catch issues
 **Always run tests before submitting a PR:**
 
 ```bash
-# Run full test suite (RSpec + Rubocop for main app and meetup sites)
+# Run full test suite (RSpec + Rubocop)
 bin/tests
 
 # Run only RSpec tests
 bin/rspec
-
-# Run tests for city site engines only
-bin/rspec sites
 
 # Run a specific test file
 bundle exec rspec spec/path/to/specific_spec.rb
@@ -124,22 +121,22 @@ All tests should pass before you submit your pull request.
 
 ## Project Architecture
 
-### Multi-Site Engine Pattern
+### City Packs
 
-This Rails application uses a "lean engines" pattern to manage multiple Ruby community sites:
+This Rails application uses [packs-rails](https://github.com/rubyatscale/packs-rails) with [automatic_namespaces](https://github.com/rubyatscale/automatic_namespaces) to manage multiple Ruby community sites:
 
 - **Main App**: Core Ruby Australia website (`ruby.org.au`)
-- **Site Engines**: City-specific sites in the `sites/` directory
-  - Example: `melbourne.ruby.org.au` → `sites/melbourne/`
+- **City Packs**: City-specific sites in the `packs/` directory
+  - Example: `melbourne.ruby.org.au` → `packs/melbourne/`
 
-Each site engine is a minimal Rails::Engine with:
+Each city pack is a self-contained module with:
 
-- Its own namespace (e.g., `Melbourne::`)
-- Its own routes in `sites/[city]/config/routes.rb`
-- Its own MVC structure in `sites/[city]/app/`
-- Engine definition in `sites/[city]/lib/[city]/engine.rb`
+- Automatic namespace isolation (e.g., `Melbourne::`) via `package.yml`
+- Its own routes in `packs/[city]/config/routes/[city].rb`
+- Its own MVC structure in `packs/[city]/app/`
+- Its own specs in `packs/[city]/spec/`
 
-Engines are mounted with subdomain constraints in the main app's `config/routes.rb`.
+Routes are drawn into the main app via `draw(:[city])` in `config/routes.rb` with subdomain constraints. See `packs/README.md` for full details.
 
 ### Technology Stack
 
@@ -173,7 +170,7 @@ Engines are mounted with subdomain constraints in the main app's `config/routes.
 - Generate migrations with `bin/rails generate migration`
 - Use `bin/rails db:migrate` to apply changes
 - Make sure migrations are reversible
-- City site engines can have their own migrations in `sites/[city]/db/migrate/`
+- City packs can have their own migrations in `packs/[city]/db/migrate/`
 
 ### Frontend Changes
 

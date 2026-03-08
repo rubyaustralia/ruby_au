@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  constraints subdomain: "melbourne" do
-    mount(Melbourne::Engine, at: "/")
-  end
+  draw(:melbourne)
 
   # Devise is causing a deprecation warning:
   #   DEPRECATION WARNING: resource received a hash argument only. Please use a keyword instead.

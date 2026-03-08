@@ -10,4 +10,4 @@ vendor
 .bundle
 .yarn
 config/database.yml
-sites/*/db/data/*.yml
+packs/*/db/data/*.yml

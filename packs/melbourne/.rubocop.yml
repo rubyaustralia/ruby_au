@@ -1,0 +1,10 @@
+inherit_from:
+  - ../../.rubocop.yml
+
+# optional, but often useful if your root config uses Exclude lists
+inherit_mode:
+  merge:
+    - Exclude
+
+RSpec/SpecFilePathFormat:
+  Enabled: false
