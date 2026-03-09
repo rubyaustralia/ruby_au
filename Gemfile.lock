@@ -93,18 +93,8 @@ GEM
       activerecord (>= 6.0.0)
       activesupport (>= 6.0.0)
     ast (2.4.3)
-    automatic_namespaces (0.5.3)
-      activesupport
-      packs-rails
     base64 (0.3.0)
     bcrypt (3.1.21)
-    better_html (2.2.0)
-      actionview (>= 7.0)
-      activesupport (>= 7.0)
-      ast (~> 2.0)
-      erubi (~> 1.4)
-      parser (>= 2.4)
-      smart_properties
     bigdecimal (4.0.1)
     bindex (0.8.1)
     brakeman (8.0.2)
@@ -133,18 +123,11 @@ GEM
       mail
     childprocess (5.1.0)
       logger (~> 1.5)
-    code_ownership (2.1.1-arm64-darwin)
-      code_teams (~> 1.0)
-      packs-specification
-      sorbet-runtime (>= 0.6.12763)
-    code_teams (1.3.0)
-      sorbet-runtime
     codeclimate-test-reporter (1.0.7)
       simplecov
     coderay (1.1.3)
     concurrent-ruby (1.3.6)
     connection_pool (3.0.2)
-    constant_resolver (0.3.0)
     crack (1.0.1)
       bigdecimal
       rexml
@@ -348,43 +331,11 @@ GEM
       shellany (~> 0.0)
     orm_adapter (0.5.0)
     ostruct (0.6.3)
-    packs (0.2.0)
-      bigdecimal
-      code_ownership (>= 1.33.0)
-      packs-specification
-      packwerk
-      parse_packwerk (>= 0.25.0)
-      rainbow
-      sorbet-runtime
-      thor
-      tty-prompt
-    packs-rails (0.1.0)
-      activesupport
-      packs
-      railties (>= 7)
-    packs-specification (0.0.11)
-      sorbet-runtime
-    packwerk (3.2.3)
-      activesupport (>= 6.0)
-      ast
-      better_html
-      bundler
-      constant_resolver (>= 0.3)
-      parallel
-      parser
-      prism (>= 0.25.0)
-      sorbet-runtime (>= 0.5.9914)
-      zeitwerk (>= 2.6.1)
     paint (2.3.0)
     parallel (1.27.0)
-    parse_packwerk (0.27.0)
-      bigdecimal
-      sorbet-runtime
     parser (3.3.10.2)
       ast (~> 2.4.1)
       racc
-    pastel (0.8.0)
-      tty-color (~> 0.5)
     pg (1.6.3)
     pg (1.6.3-aarch64-linux)
     pg (1.6.3-aarch64-linux-musl)
@@ -565,7 +516,6 @@ GEM
     simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
     simpleidn (0.2.3)
-    smart_properties (1.17.0)
     solid_queue (1.3.2)
       activejob (>= 7.1)
       activerecord (>= 7.1)
@@ -573,7 +523,6 @@ GEM
       fugit (~> 1.11)
       railties (>= 7.1)
       thor (>= 1.3.1)
-    sorbet-runtime (0.6.12942)
     spring (4.4.2)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -596,16 +545,6 @@ GEM
     thruster (0.1.18-x86_64-linux)
     timeout (0.6.0)
     tsort (0.2.0)
-    tty-color (0.6.0)
-    tty-cursor (0.7.1)
-    tty-prompt (0.23.1)
-      pastel (~> 0.8)
-      tty-reader (~> 0.8)
-    tty-reader (0.9.0)
-      tty-cursor (~> 0.7)
-      tty-screen (~> 0.8)
-      wisper (~> 2.0)
-    tty-screen (0.8.2)
     turbo-rails (2.0.23)
       actionpack (>= 7.1.0)
       railties (>= 7.1.0)
@@ -645,7 +584,6 @@ GEM
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    wisper (2.0.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.7.5)
@@ -665,7 +603,6 @@ PLATFORMS
 DEPENDENCIES
   ahoy_matey
   annotaterb
-  automatic_namespaces
   bcrypt
   brakeman
   bugsnag
@@ -697,7 +634,6 @@ DEPENDENCIES
   listen
   memory_profiler
   meta-tags (~> 2.22)
-  packs-rails
   pg
   premailer-rails
   puma
