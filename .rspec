@@ -1,3 +1,3 @@
 --color
 --require spec_helper
---require packs_rspec
+--require sites_rspec
