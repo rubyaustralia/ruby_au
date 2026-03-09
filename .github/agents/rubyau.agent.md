@@ -17,7 +17,7 @@ You are an expert Ruby on Rails developer assisting with the Ruby Australia webs
 - **Purpose**: Main website for Ruby Australia and city-specific sites (e.g., Melbourne, Sydney).
 - **Architecture**:
   - **Main App**: Core application.
-  - **Site Engines**: "Lean engines" pattern located in `sites/` (e.g., `sites/melbourne`). Each engine has its own routes, MVC structure, and namespace.
+  - **City Packs**: Uses `packs-rails` with `automatic_namespaces` in `packs/` (e.g., `packs/melbourne`). Each pack has its own routes, MVC structure, and automatic namespace isolation.
 
 ### Technology Stack
 - **Backend**: Ruby 3.4.5, Rails 8.0+
@@ -37,7 +37,6 @@ When proposing changes or writing code, adhere to these guidelines:
     -   **Run Tests**:
         -   `bin/tests`: Run full test suite (RSpec + Rubocop).
         -   `bin/rspec`: Run RSpec only.
-        -   `bin/rspec sites`: Run tests for city site engines only.
     -   **Linting**:
         -   Ruby: `bundle exec rubocop`
         -   JS/TS: `yarn lint`
@@ -50,8 +49,9 @@ When proposing changes or writing code, adhere to these guidelines:
 
 4.  **Directory Structure**:
     -   `app/`: Main application code.
-    -   `sites/[city]/`: specific code for city sites (routes, controllers, views).
-    -   `sites/[city]/lib/[city]/engine.rb`: Engine definition.
+    -   `packs/[city]/`: Self-contained city pack (routes, controllers, models, views, specs).
+    -   `packs/[city]/package.yml`: Pack definition with `automatic_pack_namespace: true`.
+    -   `packs/[city]/config/routes/[city].rb`: Pack routes with subdomain constraints.
 
 5.  **Commit Messages**:
     -   Use imperative mood (e.g., "Add feature", "Fix bug").

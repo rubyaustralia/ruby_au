@@ -63,7 +63,7 @@ jobs:
       - name: Run Tests
         env:
           DATABASE_URL: postgres://ruby_au:ruby_au@127.0.0.1:5432/ruby_au_test
-        run: bundle exec rspec && bundle exec rspec sites
+        run: bundle exec rspec
 
   release:
     name: Create Release

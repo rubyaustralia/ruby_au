@@ -34,6 +34,10 @@ gem 'solid_queue'
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
 
+# Meetups
+gem "automatic_namespaces"
+gem "packs-rails"
+
 group :production do
   gem 'rails_12factor'
 end
