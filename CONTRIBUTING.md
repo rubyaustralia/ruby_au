@@ -121,22 +121,22 @@ All tests should pass before you submit your pull request.
 
 ## Project Architecture
 
-### City Packs
+### City Sites
 
-This Rails application uses [packs-rails](https://github.com/rubyatscale/packs-rails) with [automatic_namespaces](https://github.com/rubyatscale/automatic_namespaces) to manage multiple Ruby community sites:
+This Rails application manages multiple Ruby community sites:
 
 - **Main App**: Core Ruby Australia website (`ruby.org.au`)
-- **City Packs**: City-specific sites in the `packs/` directory
-  - Example: `melbourne.ruby.org.au` → `packs/melbourne/`
+- **City Sites**: City-specific sites in the `sites/` directory
+  - Example: `melbourne.ruby.org.au` → `sites/melbourne/`
 
-Each city pack is a self-contained module with:
+Each city site is a self-contained module with:
 
-- Automatic namespace isolation (e.g., `Melbourne::`) via `package.yml`
-- Its own routes in `packs/[city]/config/routes/[city].rb`
-- Its own MVC structure in `packs/[city]/app/`
-- Its own specs in `packs/[city]/spec/`
+- Automatic namespace isolation (e.g., `Melbourne::`) via Zeitwerk
+- Its own routes in `sites/[city]/config/routes/[city].rb`
+- Its own MVC structure in `sites/[city]/app/`
+- Its own specs in `sites/[city]/spec/`
 
-Routes are drawn into the main app via `draw(:[city])` in `config/routes.rb` with subdomain constraints. See `packs/README.md` for full details.
+Routes are drawn into the main app via `draw(:[city])` in `config/routes.rb` with subdomain constraints. See `sites/README.md` for full details.
 
 ### Technology Stack
 
@@ -170,7 +170,7 @@ Routes are drawn into the main app via `draw(:[city])` in `config/routes.rb` wit
 - Generate migrations with `bin/rails generate migration`
 - Use `bin/rails db:migrate` to apply changes
 - Make sure migrations are reversible
-- City packs can have their own migrations in `packs/[city]/db/migrate/`
+- City sites can have their own migrations in `sites/[city]/db/migrate/`
 
 ### Frontend Changes
 

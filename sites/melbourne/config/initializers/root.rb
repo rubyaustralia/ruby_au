@@ -2,7 +2,7 @@
 
 module Melbourne
   def self.root
-    @root ||= Packs.find("packs/melbourne").path
+    @root ||= Rails.root.join("sites/melbourne")
   end
 
   module Routes

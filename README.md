@@ -16,10 +16,10 @@ Welcome to the Ruby Australia website repository! This project welcomes contribu
 
 ## Project Overview
 
-This is a Rails 8.0+ application using [packs-rails](https://github.com/rubyatscale/packs-rails) for managing multiple Ruby community sites:
+This is a Rails 8.0+ application managing multiple Ruby community sites:
 
 - **Main App**: Core Ruby Australia website at `ruby.org.au`
-- **City Packs**: City-specific sites in the `packs/` directory (e.g., `melbourne.ruby.org.au`)
+- **City Sites**: City-specific sites in the `sites/` directory (e.g., `melbourne.ruby.org.au`)
 
 **Tech Stack**: Rails + Vite + Hotwire + TailwindCSS + PostgreSQL
 

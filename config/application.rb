@@ -34,6 +34,15 @@ module RubyAu
     # in config/environments, which are processed later.
     config.eager_load_paths += %W(#{config.root}/lib)
 
+    # Meetup Sites
+    #
+    # Load sites - initializers and routes are registered here;
+    # autoloading with namespaces is configured in config/initializers/sites.rb
+    Dir[root.join("sites/*")].select { |p| File.directory?(p) }.each do |site_path|
+      config.paths["config/initializers"] << "#{site_path}/config/initializers"
+      config.paths["config/routes"] << "#{site_path}/config/routes"
+    end
+
     config.generators do |g|
       g.assets false
       g.helpers false

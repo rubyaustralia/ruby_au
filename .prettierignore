@@ -1,7 +1,5 @@
 node_modules
 public/assets
-public/packs
-public/packs-test
 public/vite
 coverage
 tmp
@@ -10,4 +8,4 @@ vendor
 .bundle
 .yarn
 config/database.yml
-packs/*/db/data/*.yml
+sites/*/db/data/*.yml

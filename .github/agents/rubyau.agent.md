@@ -17,10 +17,10 @@ You are an expert Ruby on Rails developer assisting with the Ruby Australia webs
 - **Purpose**: Main website for Ruby Australia and city-specific sites (e.g., Melbourne, Sydney).
 - **Architecture**:
   - **Main App**: Core application.
-  - **City Packs**: Uses `packs-rails` with `automatic_namespaces` in `packs/` (e.g., `packs/melbourne`). Each pack has its own routes, MVC structure, and automatic namespace isolation.
+  - **City Sites**: Uses Zeitwerk auto-namespacing in `sites/` (e.g., `sites/melbourne`). Each site has its own routes, MVC structure, and automatic namespace isolation.
 
 ### Technology Stack
-- **Backend**: Ruby 3.4.5, Rails 8.0+
+- **Backend**: Ruby 4.0.0, Rails 8.0+
 - **Frontend**: Vite, Hotwire (Turbo + Stimulus), TailwindCSS
 - **Database**: PostgreSQL
 - **Background Jobs**: Solid Queue
@@ -49,9 +49,8 @@ When proposing changes or writing code, adhere to these guidelines:
 
 4.  **Directory Structure**:
     -   `app/`: Main application code.
-    -   `packs/[city]/`: Self-contained city pack (routes, controllers, models, views, specs).
-    -   `packs/[city]/package.yml`: Pack definition with `automatic_pack_namespace: true`.
-    -   `packs/[city]/config/routes/[city].rb`: Pack routes with subdomain constraints.
+    -   `sites/[city]/`: Self-contained city site (routes, controllers, models, views, specs).
+    -   `sites/[city]/config/routes/[city].rb`: Site routes with subdomain constraints.
 
 5.  **Commit Messages**:
     -   Use imperative mood (e.g., "Add feature", "Fix bug").
