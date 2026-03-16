@@ -44,4 +44,19 @@ module ApplicationHelper
   def time_zones
     TIME_ZONES
   end
+
+  def title(text)
+    content_for(:title, text)
+    text
+  end
+
+  def page_title
+    if content_for?(:title)
+      "#{content_for(:title)} | Ruby Australia"
+    elsif content_for?(:heading)
+      "#{content_for(:heading)} | Ruby Australia"
+    else
+      "Ruby Australia"
+    end
+  end
 end

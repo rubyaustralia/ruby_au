@@ -1,3 +1,4 @@
+<% title "Register for Membership" %>
 <div class="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
   <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 md:p-10">
     <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 sm:mb-8">
@@ -92,7 +93,7 @@
               </div>
               <div class="ml-3 text-sm">
                 <%= f.label :visible, 'Visible on Members Registry', class: "font-medium text-gray-700" %>
-                <p class="text-gray-500">
+                <p class="text-gray-500 text-sm">
                   The registry is only viewable to other members, and <em>only</em> with <%= link_to "supervision from a committee member", policy_path("register-access"), class: "text-ruby-red hover:text-red-700 transition-colors" %>. Still, you can retract your details if you wish.
                 </p>
               </div>
