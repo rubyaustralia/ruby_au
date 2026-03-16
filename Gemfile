@@ -96,4 +96,4 @@ gem 'tzinfo-data', platforms: [:windows, :jruby]
 gem "meta-tags", "~> 2.22"
 gem "rouge"
 
-gem 'lexxy', '~> 0.7.6.beta'
+gem 'lexxy', '~> 0.8.0.beta'
