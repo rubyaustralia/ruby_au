@@ -16,7 +16,7 @@ $(document).ready(() => {
     {"range": "33-38", "count": 47},
     {"range": "39-46", "count": 33},
     {"range": "47-58", "count": 4},
-    {"range": "59+", "count": 0}
+    {"range": "59+", "count": 0},
   ]
 
   var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -46,13 +46,13 @@ $(document).ready(() => {
     {"id": "AU-SA",  "value": 5},
     {"id": "AU-TAS", "value": 1},
     {"id": "AU-VIC", "value": 63},
-    {"id": "AU-WA",  "value": 6}
+    {"id": "AU-WA",  "value": 6},
   ];
   polygonSeries.heatRules.push({
     "property": "fill",
     "target": polygonSeries.mapPolygons.template,
     "min": am4core.color("#F2EBFD"),
-    "max": am4core.color("#241146")
+    "max": am4core.color("#241146"),
   });
   map.series.push(polygonSeries);
 
@@ -72,7 +72,7 @@ $(document).ready(() => {
     {"type": "Bachelors", "count": 82},
     {"type": "Masters", "count": 18},
     {"type": "PhD", "count": 2},
-    {"type": "Other", "count": 3}
+    {"type": "Other", "count": 3},
   ]
 
   var pieSeries = chart.series.push(new am4charts.PieSeries());
@@ -93,7 +93,7 @@ $(document).ready(() => {
     {"type": "Director/Owner", "count": 9},
     {"type": "Student", "count": 5},
     {"type": "Unemployed", "count": 4},
-    {"type": "Other", "count": 1}
+    {"type": "Other", "count": 1},
   ]
 
   var pieSeries = chart.series.push(new am4charts.PieSeries());
@@ -109,7 +109,7 @@ $(document).ready(() => {
   chart.data = [
     {"type": "Entry-level/Junior", "count": 14},
     {"type": "Mid-level", "count": 26},
-    {"type": "Senior/Principal", "count": 84}
+    {"type": "Senior/Principal", "count": 84},
   ]
 
   var pieSeries = chart.series.push(new am4charts.PieSeries());
@@ -128,7 +128,7 @@ $(document).ready(() => {
     {"type": "Usually office, occasionally remote", "count": 57},
     {"type": "Usually remote, occasionally office", "count": 14},
     {"type": "Wherever", "count": 35},
-    {"type": "Other", "count": 1}
+    {"type": "Other", "count": 1},
   ]
 
   var pieSeries = chart.series.push(new am4charts.PieSeries());
@@ -145,7 +145,7 @@ $(document).ready(() => {
     {"range": "51-100", "count": 12},
     {"range": "101-500", "count": 28},
     {"range": "501-5000", "count": 15},
-    {"range": "5001+", "count": 3}
+    {"range": "5001+", "count": 3},
   ]
 
   var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -169,7 +169,7 @@ $(document).ready(() => {
     {"range": "5-10", "count": 40},
     {"range": "11-20", "count": 14},
     {"range": "21-50", "count": 14},
-    {"range": "50+", "count": 17}
+    {"range": "50+", "count": 17},
   ]
 
   var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -191,7 +191,7 @@ $(document).ready(() => {
     {"range": "0", "count": 26},
     {"range": "1-3", "count": 47},
     {"range": "4-10", "count": 21},
-    {"range": "11+", "count": 18}
+    {"range": "11+", "count": 18},
   ]
 
   var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -216,7 +216,7 @@ $(document).ready(() => {
     {"range": "4-6", "count": 22},
     {"range": "7-10", "count": 42},
     {"range": "11-15", "count": 30},
-    {"range": "16+", "count": 6}
+    {"range": "16+", "count": 6},
   ]
 
   var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -240,7 +240,7 @@ $(document).ready(() => {
     {"range": "2-4", "count": 22},
     {"range": "5-7", "count": 36},
     {"range": "8-10", "count": 30},
-    {"range": "11-16", "count": 20}
+    {"range": "11-16", "count": 20},
   ]
 
   var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -270,7 +270,7 @@ $(document).ready(() => {
     {"type": "Python", "count": 19},
     {"type": "Other (Functional languages)", "count": 17},
     {"type": "Other (OO languages)", "count": 14},
-    {"type": "Rust", "count": 10}
+    {"type": "Rust", "count": 10},
   ]
 
   var pieSeries = chart.series.push(new am4charts.PieSeries());
