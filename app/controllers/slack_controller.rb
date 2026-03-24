@@ -1,5 +1,5 @@
 class SlackController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token, only: :hook
 
   # Responds to POST requests from Slack Apps using the Events API https://api.slack.com/apis/connections/events-api
   def hook
