@@ -9,7 +9,7 @@ RSpec.describe "Invitations", type: :request do
 
       it "creates a new user and signs them in" do
         # Add stub for CreateSend API request
-        stub_request(:get, %r{https://api.createsend.com/api/v3.3/subscribers/.*})
+        stub_request(:get, %r{https://api\.createsend\.com/api/v3.3/subscribers/.*})
           .with(headers: { 'Content-Type' => 'application/json; charset=utf-8' })
           .to_return(
             status: 200,
