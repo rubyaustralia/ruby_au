@@ -27,7 +27,7 @@ gem 'warden' # use for auth
 gem 'vite_rails'
 gem 'ahoy_matey' # analytics
 gem 'geocoder' # geo location for ahoy
-gem 'herb', '~> 0.8.5'
+gem 'herb'
 # background jobs
 gem 'solid_queue'
 
@@ -96,4 +96,4 @@ gem 'tzinfo-data', platforms: [:windows, :jruby]
 gem "meta-tags", "~> 2.22"
 gem "rouge"
 
-gem 'lexxy', '~> 0.8.0.beta'
+gem 'lexxy'
