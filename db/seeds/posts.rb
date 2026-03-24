@@ -72,12 +72,16 @@ return unless Rails.env.development?
 users = User.where(committee: true)
 return if users.empty?
 
+post_attributes_list = generate_posts(users:)
+existing_posts_by_slug = Post.where(slug: post_attributes_list.map { |post_attrs| post_attrs[:slug] }).index_by(&:slug)
+
 # Create posts
-generate_posts(users:).each do |post_attrs|
-  Post.find_or_create_by(slug: post_attrs[:slug]) do |post|
+post_attributes_list.each do |post_attrs|
+  next if existing_posts_by_slug.key?(post_attrs[:slug])
+
+  Post.create!(post_attrs) do |post|
     # Handle rich text content
     post.content = post_attrs[:content]
-    post.assign_attributes(post_attrs.except(:content))
 
     puts "Created post: #{post.title}" # rubocop:disable Rails/Output
   end
