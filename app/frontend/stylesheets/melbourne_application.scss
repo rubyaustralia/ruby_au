@@ -2,6 +2,7 @@
 
 @custom-variant aria-current-page (&[aria-current="page"]);
 
+.prose a,
 .prose-link {
   @apply underline text-black hover:text-blue-800;
 }
