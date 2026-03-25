@@ -160,6 +160,42 @@
       postal_code: '3000'
       region: VIC
       country: AU
+  talks:
+    - uuid: c6dc0dfc-a538-4ef5-b927-e7630fc0cd9c
+      title: 'Exploring Fizzy inside and out'
+      description: |-
+        <p>
+          Basecamp has just released Fizzy and made it open source(-ish). Let's see how they write
+          their Ruby and Rails code there, what the app does, and how to run it locally.
+        </p>
+      video_url: TBC
+      speakers:
+        - name: John Sherwood
+          contact_details:
+            github_username:
+            x_handle: ponny
+            linkedin_handle: johnsherwooddeveloper
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - uuid: b389f798-45c6-42d3-8a7e-94e71b619a54
+      title: 'Ruby Workspace Manager'
+      description: |-
+        <p>
+          Sid has cooked up the most useless, vibe-coded ruby
+          <a href="https://github.com/sidbhatt11/ruby-workspace-manager">project</a>
+          for fun. Now he wants to waste your time by talking about it.
+        </p>
+      video_url: TBC
+      speakers:
+        - name: Siddharth Bhatt
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle: sidbhatt11
+            bluesky_handle:
+            mastodon_handle:
+            website:
 
 - uuid: 79605ac9-3906-4f31-9395-17cca7729946
   date: '2026-02-26'
