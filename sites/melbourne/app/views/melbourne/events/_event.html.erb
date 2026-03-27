@@ -2,7 +2,7 @@
 
 <%= link_to melbourne_event_path(event),
             class: class_names(presenter.container_base_classes, presenter.container_hover_classes),
-            id: presenter.dom_id do %>
+            id: dom_id(presenter) do %>
 
   <div class="flex gap-4 justify-between items-center w-full">
     <p class="font-medium text-xl line-clamp-2 text-balance"><%= presenter.name %></p>
