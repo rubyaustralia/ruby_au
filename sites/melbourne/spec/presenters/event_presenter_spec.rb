@@ -9,7 +9,7 @@ RSpec.describe Melbourne::EventPresenter do
     Melbourne::Event::Venue.new(
       name: "Test Venue",
       google_maps_url: "https://maps.google.com/test",
-      address: { street: "123 Test St", city: "Melbourne" }
+      address: { street: "123 Test St", locality: "Melbourne" }
     )
   end
 

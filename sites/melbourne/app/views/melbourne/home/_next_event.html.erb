@@ -30,7 +30,9 @@
             <p class="font-medium leading-5 text-black truncate whitespace-nowrap">
               <%= presenter.venue.name %>
             </p>
-            <p class="leading-5 text-gray-600 truncate whitespace-nowrap">Level 7/271 Collins St</p>
+            <p class="leading-5 text-gray-600 truncate whitespace-nowrap">
+              <%= presenter.venue.address.street %>
+            </p>
           </div>
         </div>
       <% end %>
