@@ -1,50 +1,27 @@
 # frozen_string_literal: true
 
 module Melbourne
-  class EventPresenter
-    attr_reader :event
-
-    delegate :name,
-             :description,
-             :open_graph_metadata,
-             :talks,
-             :registration_link,
-             to: :event
-
-    def initialize(event)
-      @event = event
-    end
+  class EventPresenter < SimpleDelegator
+    delegate :year, to: :date
 
     def formatted_day_number
-      event.date.strftime("%d")
+      date.strftime("%d")
     end
 
     def formatted_month_abbreviation
-      event.date.strftime("%b")
+      date.strftime("%b")
     end
 
     def year_is_different_from_current_year?
-      event.date.year != Date.current.year
+      date.year != Date.current.year
     end
 
     def formatted_full_date_with_weekday
-      event.date.strftime("%A, %d %B")
-    end
-
-    def year
-      event.date.year
-    end
-
-    def venue_name
-      event.venue.name
-    end
-
-    def venue_map_url
-      event.venue.google_maps_url
+      date.strftime("%A, %d %B")
     end
 
     def in_the_past?
-      event.date < Date.current
+      date.before?(Date.current)
     end
 
     def registration_status_title
@@ -60,7 +37,7 @@ module Melbourne
     end
 
     def formatted_date_for_card
-      formatted_date = event.date.strftime("%d %B")
+      formatted_date = date.strftime("%d %B")
       year_is_different_from_current_year? ? "#{formatted_date} #{year}" : formatted_date
     end
 
@@ -70,10 +47,6 @@ module Melbourne
 
     def container_hover_classes
       "hover:bg-[#0D37F2] hover:border-b-transparent hover:text-white hover:**:data-title:text-white hover:**:data-ascii-image:text-[#6A86FF] hover:inset-ring-transparent"
-    end
-
-    def dom_id
-      ActionView::RecordIdentifier.dom_id(event)
     end
   end
 end

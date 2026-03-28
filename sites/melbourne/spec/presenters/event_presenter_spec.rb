@@ -9,7 +9,7 @@ RSpec.describe Melbourne::EventPresenter do
     Melbourne::Event::Venue.new(
       name: "Test Venue",
       google_maps_url: "https://maps.google.com/test",
-      address: { street: "123 Test St", city: "Melbourne" }
+      address: { street: "123 Test St", locality: "Melbourne" }
     )
   end
 
@@ -45,18 +45,6 @@ RSpec.describe Melbourne::EventPresenter do
       type: "meetup",
       registration_link: "https://example.com/register"
     )
-  end
-
-  describe "#initialize" do
-    it "sets the event" do
-      expect(presenter.event).to eq(event)
-    end
-  end
-
-  describe "#name" do
-    it "returns the event name" do
-      expect(presenter.name).to eq("Ruby Melbourne Meetup")
-    end
   end
 
   describe "#formatted_day_number" do
@@ -105,12 +93,6 @@ RSpec.describe Melbourne::EventPresenter do
     end
   end
 
-  describe "#venue_name" do
-    it "returns the venue name" do
-      expect(presenter.venue_name).to eq("Test Venue")
-    end
-  end
-
   describe "#in_the_past?" do
     context "when event date is in the past" do
       let(:event_date) { Date.new(2025, 1, 15) }
@@ -140,18 +122,6 @@ RSpec.describe Melbourne::EventPresenter do
           expect(presenter.in_the_past?).to be(false)
         end
       end
-    end
-  end
-
-  describe "#description" do
-    it "returns the event description" do
-      expect(presenter.description).to eq("An awesome Ruby meetup event")
-    end
-  end
-
-  describe "#talks" do
-    it "returns the event talks" do
-      expect(presenter.talks).to eq(talks)
     end
   end
 
@@ -254,12 +224,6 @@ RSpec.describe Melbourne::EventPresenter do
     it "returns the hover CSS classes for the event container" do
       expected_classes = "hover:bg-[#0D37F2] hover:border-b-transparent hover:text-white hover:**:data-title:text-white hover:**:data-ascii-image:text-[#6A86FF] hover:inset-ring-transparent"
       expect(presenter.container_hover_classes).to eq(expected_classes)
-    end
-  end
-
-  describe "#dom_id" do
-    it "returns the DOM ID for the event" do
-      expect(presenter.dom_id).to eq("melbourne_event_event-1")
     end
   end
 end

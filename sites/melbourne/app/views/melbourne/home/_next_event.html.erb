@@ -19,7 +19,7 @@
       </div>
     </div>
     <div>
-      <%= link_to presenter.venue_map_url, target: "_blank", class: "group" do %>
+      <%= link_to presenter.venue.google_maps_url, target: "_blank", class: "group" do %>
         <div class="flex flex-row gap-4 items-center">
           <div class="w-13 h-13 aspect-square flex flex-col gap-0 justify-center items-center rounded bg-[#0D37F2] text-white">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -27,8 +27,12 @@
             </svg>
           </div>
           <div class="flex flex-col group-hover:underline">
-            <p class="font-medium leading-5 text-black truncate whitespace-nowrap"><%= presenter.venue_name %></p>
-            <p class="leading-5 text-gray-600 truncate whitespace-nowrap">Level 7/271 Collins St</p>
+            <p class="font-medium leading-5 text-black truncate whitespace-nowrap">
+              <%= presenter.venue.name %>
+            </p>
+            <p class="leading-5 text-gray-600 truncate whitespace-nowrap">
+              <%= presenter.venue.address.street %>
+            </p>
           </div>
         </div>
       <% end %>
@@ -51,12 +55,12 @@
 </div>
 
 <div class="mt-8">
-  <%= link_to presenter.venue_map_url, target: "_blank" do %>
+  <%= link_to presenter.venue.google_maps_url, target: "_blank" do %>
     <picture>
       <source srcset="<%= vite_asset_path('images/melbourne/ferocia_map-optimized.webp') %>" type="image/webp">
-      <%= vite_image_tag("images/melbourne/ferocia_map-optimized.png", 
-          class: "rounded w-full h-auto", 
-          width: 800, 
+      <%= vite_image_tag("images/melbourne/ferocia_map-optimized.png",
+          class: "rounded w-full h-auto",
+          width: 800,
           height: 600,
           alt: "Map showing location of Ferocia office",
           loading: "lazy") %>

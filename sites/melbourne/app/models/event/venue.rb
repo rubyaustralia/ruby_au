@@ -6,11 +6,17 @@ module Melbourne
 
       attribute :name
       attribute :google_maps_url
-      attribute :address, default: {}
+      attribute :address
 
       validates :name, presence: true
       validates :google_maps_url, presence: true
       validates :address, presence: true
+
+      def initialize(...)
+        super
+
+        self.address = Address.new(address)
+      end
 
       def schema
         Schema.new(self).to_h
