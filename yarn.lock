@@ -1159,21 +1159,21 @@
   integrity sha512-AowtCcCU/33lFlh1zRFf/u+12rfrhtNakj7UpaGEsmMwUKpKWMVvcktOGcwBBNiB4lWrZWc01LhiyyzVklJyaQ==
 
 "@rails/actioncable@>=7.0":
-  version "8.1.201"
-  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-8.1.201.tgz#12f51ea07cdb2ada6c33a227a9992d53e959a329"
-  integrity sha512-j4O7jn9jX3GtkVOO7KQDIRlBENwQiPNBAcaaa/FNMk7fPZjMUijGs+vk0PsB/VgZNDU2Y3C2hqVrXeLKy3iZ9g==
+  version "8.1.300"
+  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-8.1.300.tgz#bfd50813be0225a0403bddb11e8ba9a00b1fb135"
+  integrity sha512-zOENQsq3NM2jyBY6Z2qtZa3V/R/6OEqA+LGKixQbBMl7kk/J3FXDRcszPe74LsHNgB01jCl/DXu/xA8sHt4I/g==
 
 "@rails/actiontext@^8.0.200":
-  version "8.1.201"
-  resolved "https://registry.yarnpkg.com/@rails/actiontext/-/actiontext-8.1.201.tgz#0665d8585e9ca2d7d891fa8f2ae8386e422c54a1"
-  integrity sha512-Ol+2BCCjJWYwuByTXLBBaL4+iQCGSeNrVB5Tt9oiuZbxm43ay9bXtYKFLCiuZrZn5bn3OiAcLMB2CQna97YpwQ==
+  version "8.1.300"
+  resolved "https://registry.yarnpkg.com/@rails/actiontext/-/actiontext-8.1.300.tgz#0b6d0a40e8ca8ba2caf5a0077e10b5503183a044"
+  integrity sha512-KPbLfZTt6aFKbdeTlU7ZzmX0uSSNhhfZx3G+2lfa6HltQ/r23HDcJnJOEVt72WKJo13IS5C5HK0sYwplVMCdNw==
   dependencies:
     "@rails/activestorage" ">= 8.1.0-alpha"
 
 "@rails/activestorage@>= 8.1.0-alpha":
-  version "8.1.201"
-  resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-8.1.201.tgz#931260ade5dbc8ddf2a1f6602c37813e087c8758"
-  integrity sha512-7MY8hZRXK9WFJLu84Xu2SSirFCohu9bFPmeUdj+E8d96zxVCvMAlZ1MQABYYp2Yr+r36fUON0ld9FZABKX3iXw==
+  version "8.1.300"
+  resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-8.1.300.tgz#624a6f291e0414c07c3d02ed3d1e6ee85c94277b"
+  integrity sha512-AOv3zZrTJjQlzm4L9uzOQtCz6zaM4IqUyux6yzSqmS+PZ8EzwD1F2JAc4LlJNJAv4MSyNYriG+CaCm1QbQTjsA==
   dependencies:
     spark-md5 "^3.0.1"
 
@@ -2165,9 +2165,9 @@ cssstyle@^5.3.4:
     lru-cache "^11.2.4"
 
 cypress@^15.12.0:
-  version "15.12.0"
-  resolved "https://registry.yarnpkg.com/cypress/-/cypress-15.12.0.tgz#84be43a9d85cb390ca404e5b1d030568a06ab4eb"
-  integrity sha512-B2BRcudLfA4NZZP5QpA45J70bu1heCH59V1yKRLHAtiC49r7RV03X5ifUh7Nfbk8QNg93RAsc6oAmodm/+j0pA==
+  version "15.13.0"
+  resolved "https://registry.yarnpkg.com/cypress/-/cypress-15.13.0.tgz#e3c5487efd815e7f1e6f0ec76e4f7b4f9fe7cd21"
+  integrity sha512-hJ9sY++TUC/HlUzHVJpIrDyqKMjlhx5PTXl/A7eA91JNEtUWkJAqefQR5mo9AtLra/9+m+JJaMg2U5Qd0a74Fw==
   dependencies:
     "@cypress/request" "^3.0.10"
     "@cypress/xvfb" "^1.2.4"
@@ -2414,9 +2414,9 @@ ecc-jsbn@~0.1.1:
     safer-buffer "^2.1.0"
 
 electron-to-chromium@^1.5.263:
-  version "1.5.321"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.321.tgz#57a80554e2e7fd65e3689d320f52a64723472d5d"
-  integrity sha512-L2C7Q279W2D/J4PLZLk7sebOILDSWos7bMsMNN06rK482umHUrh/3lM8G7IlHFOYip2oAg5nha1rCMxr/rs6ZQ==
+  version "1.5.325"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.325.tgz#c2b3d510435a2b65dd65e891dde7eac0362edfb7"
+  integrity sha512-PwfIw7WQSt3xX7yOf5OE/unLzsK9CaN2f/FvV3WjPR1Knoc1T9vePRVV4W1EM301JzzysK51K7FNKcusCr0zYA==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -4983,9 +4983,9 @@ vite-plugin-rails@^0.5.0:
     vite-plugin-stimulus-hmr "^3.0.0"
 
 vite-plugin-ruby@^5.0.0, vite-plugin-ruby@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-ruby/-/vite-plugin-ruby-5.2.0.tgz#a033be47e0531e842d962df9ef394c6e7f940a6a"
-  integrity sha512-FoCaok2pV7GrcAqdxniI1r5XWBlSg9HwEwaxdQdXUVFfYkyINVakPeyrSK4PqOVhonBCuoc633g6bDTEC7wkcA==
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-ruby/-/vite-plugin-ruby-5.2.1.tgz#8422e2a69cd923b5d63f510744f0503a622bf4c6"
+  integrity sha512-wI3F/Yr4e4mEwiMff/cvNwGu8nZok5wrwUjHxO8we+h3y9+qCluO3Y5dzvz6vHJDBya9fKXkltoMwoJhaB2SRg==
   dependencies:
     obug "^2.0"
     tinyglobby "^0.2.12"
