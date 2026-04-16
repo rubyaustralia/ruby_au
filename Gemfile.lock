@@ -362,8 +362,6 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
       reline (>= 0.6.0)
-    pry-rails (0.3.11)
-      pry (>= 0.13.0)
     psych (5.3.1)
       date
       stringio
@@ -637,10 +635,9 @@ DEPENDENCIES
   lexxy
   listen
   memory_profiler
-  meta-tags (~> 2.22)
+  meta-tags
   pg
   premailer-rails
-  pry-rails
   puma
   pygmentize
   rack-mini-profiler
