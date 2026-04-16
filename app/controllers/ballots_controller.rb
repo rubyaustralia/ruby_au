@@ -4,7 +4,12 @@ class BallotsController < ApplicationController
 
     ballot_params.each do |nomination_id, score|
       nomination = nominations[nomination_id] || raise(ActiveRecord::RecordNotFound)
-      Vote.create!(voter: current_user, votable: nomination, score: score)
+      vote = Vote.find_or_initialize_by(
+        voter: current_user,
+        votable: nomination,
+      )
+      vote.score = score
+      vote.save!
     end
   end
 
