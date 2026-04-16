@@ -15,15 +15,18 @@ class ElectionsController < ApplicationController
   # GET /elections/new
   def new
     @election = Election.new
+    @ballot = Ballot.new
   end
 
   # GET /elections/1/edit
   def edit
+    @ballot = Ballot.new
   end
 
   # POST /elections or /elections.json
   def create
     @election = Election.new(election_params)
+    @ballot = Ballot.new
 
     respond_to do |format|
       if @election.save
@@ -68,6 +71,6 @@ class ElectionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def election_params
-    params.fetch(:election, {})
+    params.expect(election: [ :title, :vacancies, :point_scale, :opened_at, :closed_at ])
   end
 end

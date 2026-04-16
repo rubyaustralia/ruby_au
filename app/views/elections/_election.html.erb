@@ -5,9 +5,17 @@
     </h1>
     <div class="text-sm sm:text-base text-gray-600">
       <% if election.open? %>
-        Closes in <%= time_ago_in_words(election.closed_at) %>
+        <% if election.closed_at %>
+          Closes in <%= time_ago_in_words(election.closed_at) %>
+        <% else %>
+          Open
+        <% end %>
       <% else %>
-        Closed at <%= I18n.l(election.closed_at) %>
+        <% if election.closed_at %>
+          Closed at <%= I18n.l(election.closed_at) %>
+        <% else %>
+          Closed
+        <% end %>
       <% end %>
     </div>
   </header>

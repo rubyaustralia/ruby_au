@@ -22,11 +22,11 @@ class Election < ApplicationRecord
   validates_presence_of :title, :point_scale, :vacancies
 
   def open?
-    opened_at.past? && !closed?
+    opened_at&.past? && !closed?
   end
 
   def closed?
-    closed_at.past?
+    closed_at&.past? || false
   end
 
   def elected_users

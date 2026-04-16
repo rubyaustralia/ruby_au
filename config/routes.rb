@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   draw(:melbourne)
 
-  resources :elections, only: [:show, :index] do
+  resources :elections, only: [:index, :show] do
     resources :ballots, only: [:create]
   end
 

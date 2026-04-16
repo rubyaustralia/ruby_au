@@ -1,4 +1,4 @@
-<%= form_with(model: [election, ballot], class: "w-full mx-auto") do |form| %>
+<%= form_with(model: (controller.action_name == "show" ? [election, (ballot || Ballot.new)] : election), class: "w-full mx-auto") do |form| %>
   <% if election.errors.any? %>
     <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-md">
       <div class="flex items-start">
