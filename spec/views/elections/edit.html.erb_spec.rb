@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "elections/edit", type: :view do
-  let(:election) {
+  let(:election) do
     Election.create!(title: "Test Election", point_scale: 10, vacancies: 1)
-  }
+  end
 
-  before(:each) do
+  before do
     assign(:election, election)
     assign(:ballot, Ballot.new)
   end

@@ -19,7 +19,7 @@ class Election < ApplicationRecord
   scope :open, -> { where('opened_at <= ?', Time.current).where('closed_at > ? OR closed_at IS NULL', Time.current) }
   scope :closed, -> { where('closed_at <= ?', Time.current) }
 
-  validates_presence_of :title, :point_scale, :vacancies
+  validates :title, :point_scale, :vacancies, presence: true
 
   def open?
     opened_at&.past? && !closed?
@@ -46,11 +46,11 @@ class Election < ApplicationRecord
   def top_scoring_candidates
     User.where(
       id: nominations
-        .joins(:votes)
-        .group('nominations.id')
-        .order('SUM(votes.score) DESC')
-        .limit(vacancies)
-        .pluck(:nominee_id)
+          .joins(:votes)
+          .group('nominations.id')
+          .order('SUM(votes.score) DESC')
+          .limit(vacancies)
+          .pluck(:nominee_id)
     )
   end
 end

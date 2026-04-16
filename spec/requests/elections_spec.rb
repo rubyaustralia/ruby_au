@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "/elections", type: :request do
   let(:user) { User.create!(email: "test@example.com", password: "password", full_name: "Test User", address: "123 Test St") }
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     { title: "Test Election", point_scale: 10, vacancies: 1, opened_at: 1.day.ago, closed_at: 1.day.from_now }
-  }
+  end
 
   describe "GET /index" do
     it "renders a successful response" do

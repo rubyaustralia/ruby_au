@@ -6,21 +6,12 @@ class Admin::NominationsController < Admin::ApplicationController
   end
 
   def create
-    p params
-    nomination_attributes = build_nomination_attributes
+    @nomination = Nomination.new(build_nomination_attributes.merge(election: @election))
 
-    if nomination_attributes[:errors].present?
-      @nomination = Nomination.new
-      @nomination.errors.add(:base, nomination_attributes[:errors])
-      render :new, status: :unprocessable_entity
+    if @nomination.errors.empty? && @nomination.save
+      redirect_to admin_election_path(@election), notice: "Nomination was successfully created."
     else
-      @nomination = Nomination.new(nomination_attributes.merge(election: @election))
-
-      if @nomination.save
-        redirect_to admin_election_path(@election), notice: "Nomination was successfully created."
-      else
-        render :new, status: :unprocessable_content
-      end
+      render :new, status: @nomination.errors.include?(:base) ? :unprocessable_entity : :unprocessable_content
     end
   end
 
@@ -38,16 +29,15 @@ class Admin::NominationsController < Admin::ApplicationController
     nominated_member = Email.find_by(email: nomination_params[:member_email_address])&.user
     nominating_member = Email.find_by(email: nomination_params[:nominating_member_email_address])&.user
 
-    errors = []
-    errors << "Member not found" unless nominated_member
-    errors << "Nominating member not found" unless nominating_member
+    attributes = { nominee_id: nominated_member&.id, nominated_by_id: nominating_member&.id }
+    add_nomination_errors(nominated_member, nominating_member)
+    attributes
+  end
 
-    return { errors: errors.join(", ") } if errors.any?
-
-    {
-      nominee_id: nominated_member.id,
-      nominated_by_id: nominating_member.id
-    }
+  def add_nomination_errors(nominated_member, nominating_member)
+    @nomination = Nomination.new
+    @nomination.errors.add(:base, "Member not found") unless nominated_member
+    @nomination.errors.add(:base, "Nominating member not found") unless nominating_member
   end
 
   def nomination_params

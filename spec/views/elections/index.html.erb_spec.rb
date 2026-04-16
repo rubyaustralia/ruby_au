@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "elections/index", type: :view do
-  before(:each) do
+  before do
     assign(:current_elections, [
              FactoryBot.create(:election, :open, title: "Election 1"),
              FactoryBot.create(:election, :open, title: "Election 2")
@@ -13,8 +13,8 @@ RSpec.describe "elections/index", type: :view do
 
   it "renders a list of elections" do
     render
-    expect(rendered).to match /Election 1/
-    expect(rendered).to match /Election 2/
-    expect(rendered).to match /Closed Election/
+    expect(rendered).to match(/Election 1/)
+    expect(rendered).to match(/Election 2/)
+    expect(rendered).to match(/Closed Election/)
   end
 end

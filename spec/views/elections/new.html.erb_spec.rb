@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "elections/new", type: :view do
-  before(:each) do
+  before do
     assign(:election, Election.new(title: "New Election", point_scale: 10, vacancies: 1))
     assign(:ballot, Ballot.new)
   end

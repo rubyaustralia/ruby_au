@@ -1,5 +1,5 @@
 class ElectionsController < ApplicationController
-  before_action :set_election, only: %i[ show edit update destroy ]
+  before_action :set_election, only: %i[show edit update destroy]
 
   # GET /elections or /elections.json
   def index
@@ -28,14 +28,10 @@ class ElectionsController < ApplicationController
     @election = Election.new(election_params)
     @ballot = Ballot.new
 
-    respond_to do |format|
-      if @election.save
-        format.html { redirect_to @election, notice: "Election was successfully created." }
-        format.json { render :show, status: :created, location: @election }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @election.errors, status: :unprocessable_entity }
-      end
+    if @election.save
+      redirect_to @election, notice: "Election was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -71,6 +67,6 @@ class ElectionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def election_params
-    params.expect(election: [ :title, :vacancies, :point_scale, :opened_at, :closed_at ])
+    params.expect(election: [:title, :vacancies, :point_scale, :opened_at, :closed_at])
   end
 end
