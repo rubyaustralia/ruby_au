@@ -1,7 +1,9 @@
 class BallotsController < ApplicationController
   def create
+    nominations = Nomination.where(id: ballot_params.keys).index_by { |n| n.id.to_s }
+
     ballot_params.each do |nomination_id, score|
-      nomination = Nomination.find(nomination_id)
+      nomination = nominations[nomination_id] || raise(ActiveRecord::RecordNotFound)
       Vote.create!(voter: current_user, votable: nomination, score: score)
     end
   end
