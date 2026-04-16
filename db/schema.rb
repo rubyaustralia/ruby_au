@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_10_08_023211) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_16_104148) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -348,46 +348,46 @@ ActiveRecord::Schema[8.1].define(version: 2025_10_08_023211) do
 
   create_table "users", id: :serial, force: :cascade do |t|
     t.text "address"
+    t.string "availability"
+    t.text "bio"
+    t.string "city"
     t.boolean "committee", default: false, null: false
     t.datetime "confirmation_sent_at", precision: nil
     t.string "confirmation_token"
     t.datetime "confirmed_at", precision: nil
+    t.string "country"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "current_sign_in_at", precision: nil
     t.inet "current_sign_in_ip"
     t.datetime "deactivated_at", precision: nil
+    t.boolean "display_profile", default: false, null: false
     t.string "email"
     t.boolean "email_confirmed", default: false
     t.string "encrypted_password"
+    t.text "experience"
+    t.text "expertise"
     t.string "full_name"
     t.datetime "last_sign_in_at", precision: nil
     t.inet "last_sign_in_ip"
     t.string "linkedin_url"
     t.boolean "mailing_list", default: false, null: false
     t.json "mailing_lists", default: {}, null: false
+    t.text "preferred_environment"
     t.string "preferred_name"
     t.datetime "remember_created_at", precision: nil
     t.datetime "reset_password_sent_at", precision: nil
     t.string "reset_password_token"
+    t.string "role_title"
     t.boolean "seeking_work", default: false, null: false
     t.integer "sign_in_count", default: 0, null: false
     t.string "token"
     t.string "unconfirmed_email"
     t.datetime "updated_at", precision: nil, null: false
     t.boolean "visible", default: false, null: false
+    t.json "work_experiences", default: []
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "versions", force: :cascade do |t|
-    t.datetime "created_at"
-    t.string "event", null: false
-    t.bigint "item_id", null: false
-    t.string "item_type", null: false
-    t.text "object"
-    t.string "whodunnit"
-    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
   create_table "votes", force: :cascade do |t|
