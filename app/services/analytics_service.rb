@@ -58,8 +58,8 @@ class AnalyticsService
 
   def recent_visits
     Ahoy::Visit.includes(:events)
-                .where("started_at >= ?", 30.days.ago)
-                .order(started_at: :desc)
-                .limit(10)
+               .where("started_at >= ?", 30.days.ago)
+               .order(started_at: :desc)
+               .limit(10)
   end
 end

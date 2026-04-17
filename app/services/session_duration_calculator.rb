@@ -21,7 +21,7 @@ class SessionDurationCalculator
       # but for now let's just make it work correctly.
       visit = Ahoy::Visit.find_by(id: visit_id)
       duration = calculate_visit_duration(visit, last_event_time)
-      duration if duration && duration > 0
+      duration if duration&.positive?
     end
   end
 
