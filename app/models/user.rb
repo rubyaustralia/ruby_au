@@ -4,31 +4,41 @@
 #
 #  id                     :integer          not null, primary key
 #  address                :text
+#  availability           :string
+#  bio                    :text
+#  city                   :string
 #  committee              :boolean          default(FALSE), not null
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
+#  country                :string
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :inet
 #  deactivated_at         :datetime
+#  display_profile        :boolean          default(FALSE), not null
 #  email                  :string
 #  email_confirmed        :boolean          default(FALSE)
 #  encrypted_password     :string
+#  experience             :text
+#  expertise              :text
 #  full_name              :string
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :inet
 #  linkedin_url           :string
 #  mailing_list           :boolean          default(FALSE), not null
 #  mailing_lists          :json             not null
+#  preferred_environment  :text
 #  preferred_name         :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  role_title             :string
 #  seeking_work           :boolean          default(FALSE), not null
 #  sign_in_count          :integer          default(0), not null
 #  token                  :string
 #  unconfirmed_email      :string
 #  visible                :boolean          default(FALSE), not null
+#  work_experiences       :json
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -54,6 +64,8 @@ class User < ApplicationRecord
   has_many :memberships, dependent: :destroy
   has_many :emails, dependent: :destroy
   has_many :access_requests, foreign_key: :recorder_id, dependent: :destroy, inverse_of: :recorder
+  has_many :nominations_received, class_name: 'Nomination', foreign_key: :nominee_id, inverse_of: :nominee, dependent: :restrict_with_error
+  has_many :nominations_made, class_name: 'Nomination', foreign_key: :nominated_by, inverse_of: :nominated_by, dependent: :restrict_with_error
 
   scope :seeking_work, -> { where(seeking_work: true).where.not(linkedin_url: [nil, ""]) }
   scope :unconfirmed, -> { where(confirmed_at: nil) }

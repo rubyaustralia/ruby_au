@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   draw(:melbourne)
 
-  # Devise is causing a deprecation warning:
-  #   DEPRECATION WARNING: resource received a hash argument only. Please use a keyword instead.
-  #                        Support to hash argument will be removed in Rails 8.2.
-  # This intends to be solved in Devise 5.0, but no release date is set yet.
-  # See: https://github.com/heartcombo/devise/issues/5735
+  resources :elections, only: [:index, :show] do
+    resources :ballots, only: [:create]
+  end
+
   devise_for :users, controllers: {
     registrations: 'registrations',
     passwords: 'devise/passwords'
@@ -54,6 +53,9 @@ Rails.application.routes.draw do
     get 'posts/*slug', to: 'posts#show', as: :post
     patch 'posts/*slug', to: 'posts#update', as: :update_post
     resources :analytics, only: [:index]
+    resources :elections, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+      resources :nominations, only: [:new, :create, :destroy]
+    end
   end
 
   namespace :api do

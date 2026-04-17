@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_09_22_132138) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_16_104148) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -127,6 +127,16 @@ ActiveRecord::Schema[8.1].define(version: 2025_09_22_132138) do
     t.index ["rsvp_event_id"], name: "index_campaigns_on_rsvp_event_id"
   end
 
+  create_table "elections", force: :cascade do |t|
+    t.datetime "closed_at"
+    t.datetime "created_at", null: false
+    t.datetime "opened_at"
+    t.integer "point_scale", default: 10, null: false
+    t.string "title", null: false
+    t.datetime "updated_at", null: false
+    t.integer "vacancies", default: 1, null: false
+  end
+
   create_table "emails", force: :cascade do |t|
     t.datetime "confirmation_sent_at"
     t.string "confirmation_token"
@@ -163,6 +173,18 @@ ActiveRecord::Schema[8.1].define(version: 2025_09_22_132138) do
     t.datetime "updated_at", precision: nil, null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_memberships_on_user_id"
+  end
+
+  create_table "nominations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "election_id", null: false
+    t.bigint "nominated_by_id", null: false
+    t.bigint "nominee_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["election_id", "nominee_id"], name: "index_nominations_on_election_id_and_nominee_id", unique: true
+    t.index ["election_id"], name: "index_nominations_on_election_id"
+    t.index ["nominated_by_id"], name: "index_nominations_on_nominated_by_id"
+    t.index ["nominee_id"], name: "index_nominations_on_nominee_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -326,36 +348,58 @@ ActiveRecord::Schema[8.1].define(version: 2025_09_22_132138) do
 
   create_table "users", id: :serial, force: :cascade do |t|
     t.text "address"
+    t.string "availability"
+    t.text "bio"
+    t.string "city"
     t.boolean "committee", default: false, null: false
     t.datetime "confirmation_sent_at", precision: nil
     t.string "confirmation_token"
     t.datetime "confirmed_at", precision: nil
+    t.string "country"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "current_sign_in_at", precision: nil
     t.inet "current_sign_in_ip"
     t.datetime "deactivated_at", precision: nil
+    t.boolean "display_profile", default: false, null: false
     t.string "email"
     t.boolean "email_confirmed", default: false
     t.string "encrypted_password"
+    t.text "experience"
+    t.text "expertise"
     t.string "full_name"
     t.datetime "last_sign_in_at", precision: nil
     t.inet "last_sign_in_ip"
     t.string "linkedin_url"
     t.boolean "mailing_list", default: false, null: false
     t.json "mailing_lists", default: {}, null: false
+    t.text "preferred_environment"
     t.string "preferred_name"
     t.datetime "remember_created_at", precision: nil
     t.datetime "reset_password_sent_at", precision: nil
     t.string "reset_password_token"
+    t.string "role_title"
     t.boolean "seeking_work", default: false, null: false
     t.integer "sign_in_count", default: 0, null: false
     t.string "token"
     t.string "unconfirmed_email"
     t.datetime "updated_at", precision: nil, null: false
     t.boolean "visible", default: false, null: false
+    t.json "work_experiences", default: []
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "score", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "votable_id", null: false
+    t.string "votable_type", null: false
+    t.bigint "voter_id", null: false
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable"
+    t.index ["voter_id", "votable_id"], name: "index_votes_on_voter_id_and_votable_id", unique: true
+    t.index ["voter_id"], name: "index_votes_on_voter_id"
   end
 
   add_foreign_key "access_requests", "users", column: "recorder_id"
@@ -366,6 +410,9 @@ ActiveRecord::Schema[8.1].define(version: 2025_09_22_132138) do
   add_foreign_key "campaigns", "rsvp_events"
   add_foreign_key "emails", "users"
   add_foreign_key "memberships", "users"
+  add_foreign_key "nominations", "elections"
+  add_foreign_key "nominations", "users", column: "nominated_by_id"
+  add_foreign_key "nominations", "users", column: "nominee_id"
   add_foreign_key "rsvps", "memberships"
   add_foreign_key "rsvps", "rsvp_events"
   add_foreign_key "solid_queue_blocked_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
@@ -374,4 +421,5 @@ ActiveRecord::Schema[8.1].define(version: 2025_09_22_132138) do
   add_foreign_key "solid_queue_ready_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_recurring_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_scheduled_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
+  add_foreign_key "votes", "users", column: "voter_id"
 end
