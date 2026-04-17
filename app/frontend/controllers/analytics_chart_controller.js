@@ -118,4 +118,8 @@ export default class extends Controller {
       }
     })
   }
+
+  downloadReport() {
+    window.print()
+  }
 }

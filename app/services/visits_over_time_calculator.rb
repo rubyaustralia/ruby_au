@@ -19,7 +19,7 @@ class VisitsOverTimeCalculator
   def build_day_data(date, visits_by_day)
     {
       date: date.strftime("%b %d"),
-      visits: visits_by_day[date.to_s] || 0
+      visits: visits_by_day[date] || visits_by_day[date.to_s] || 0
     }
   end
 end
