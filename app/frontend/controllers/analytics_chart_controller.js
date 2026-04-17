@@ -29,6 +29,7 @@ export default class extends Controller {
 
   createLineChart(ctx) {
     const data = this.dataValue
+    if (!data || !Array.isArray(data)) return
 
     this.chart = new Chart(ctx, {
       type: 'line',
@@ -89,6 +90,7 @@ export default class extends Controller {
 
   createDoughnutChart(ctx) {
     const data = this.dataValue
+    if (!data || !data.labels || !data.data) return
 
     this.chart = new Chart(ctx, {
       type: 'doughnut',

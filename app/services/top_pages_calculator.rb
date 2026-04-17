@@ -9,6 +9,7 @@ class TopPagesCalculator
                .transform_values { |v| v.sum(&:last) }
                .sort_by { |_page, views| -views }
                .first(10)
+               .to_h
   end
 
   private

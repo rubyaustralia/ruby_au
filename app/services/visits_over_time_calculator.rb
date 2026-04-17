@@ -10,6 +10,7 @@ class VisitsOverTimeCalculator
     Ahoy::Visit.where("started_at >= ?", 30.days.ago)
                .group("DATE(started_at)")
                .count
+               .transform_keys { |k| k.is_a?(String) ? Date.parse(k) : k }
   end
 
   def date_range
@@ -19,7 +20,7 @@ class VisitsOverTimeCalculator
   def build_day_data(date, visits_by_day)
     {
       date: date.strftime("%b %d"),
-      visits: visits_by_day[date] || visits_by_day[date.to_s] || 0
+      visits: visits_by_day[date] || 0
     }
   end
 end
