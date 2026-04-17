@@ -1,0 +1,51 @@
+<%= render 'admin/dashboards/card', title: title do %>
+  <% if items.any? %>
+    <ul class="divide-y">
+      <% items.each do |item| %>
+        <li class="py-2">
+          <%
+            link_text = if item.respond_to?(:full_name) && item.full_name.present?
+                          item.full_name
+                        elsif item.respond_to?(:title)
+                          item.title
+                        elsif item.respond_to?(:subject)
+                          item.subject.presence || "Campaign ##{item.id}"
+                        else
+                          item.try(:email) || "Item ##{item.id}"
+                        end
+
+            link_url = if item.is_a?(User)
+                         "mailto:#{item.email}"
+                       elsif item.is_a?(Post)
+                         admin_post_path(item)
+                       elsif item.is_a?(Campaign)
+                         admin_campaign_path(item)
+                       end
+
+            timestamp = if local_assigns[:time_method]
+                          item.send(time_method)
+                        elsif item.respond_to?(:updated_at) && title.include?("Updated")
+                          item.updated_at
+                        elsif item.respond_to?(:last_sign_in_at) && title.include?("Logins")
+                          item.last_sign_in_at
+                        elsif item.respond_to?(:created_at)
+                          item.created_at
+                        end
+
+            time_label = local_assigns[:time_label] || (title.include?("Logins") ? "Logged in" : (title.include?("Updated") ? "Updated" : (title.include?("Posted") ? "Posted" : "Created")))
+          %>
+
+          <%= link_to link_text, link_url, class: "text-blue-600 hover:underline" %>
+
+          <% if timestamp %>
+            <span class="text-gray-500 text-sm block">
+              <%= time_label %> <%= time_ago_in_words(timestamp) %> ago
+            </span>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="text-gray-500"><%= local_assigns[:empty_message] || "No items found" %></p>
+  <% end %>
+<% end %>

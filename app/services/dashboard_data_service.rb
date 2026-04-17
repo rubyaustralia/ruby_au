@@ -14,8 +14,8 @@ class DashboardDataService
   def base_data
     {
       member_count: member_count,
-      inactive_members: inactive_members,
-      never_logged_in_members: never_logged_in_members,
+      inactive_members_count: inactive_members.count,
+      never_logged_in_members_count: never_logged_in_members.count,
       recently_updated_members: recently_updated_members,
       recently_logged_in_members: recently_logged_in_members,
       recent_posts: recent_posts,
