@@ -95,6 +95,14 @@
       <p class="mb-2">Total Members: <span class="font-bold"><%= @member_count %></span></p>
       <p class="mb-2">Inactive Members (2+ years): <span class="font-bold"><%= @inactive_members.count %></span></p>
       <p class="mb-2">Never Logged In: <span class="font-bold"><%= @never_logged_in_members.count %></span></p>
+
+      <div class="mt-4 pt-4 border-t border-gray-100">
+        <h3 class="text-lg font-medium mb-3">New Memberships</h3>
+        <p class="mb-2">This Month (<%= Time.current.strftime('%B') %>): <span class="font-bold"><%= @new_members_current_month %></span></p>
+        <p class="mb-2"><%= 1.month.ago.strftime('%B') %>: <span class="font-bold"><%= @new_members_prev_month %></span></p>
+        <p class="mb-2"><%= 2.months.ago.strftime('%B') %>: <span class="font-bold"><%= @new_members_two_months_ago %></span></p>
+        <p class="mb-2">Year to Date: <span class="font-bold"><%= @new_members_ytd %></span></p>
+      </div>
     </div>
 
     <div class="bg-white rounded-lg shadow p-6">

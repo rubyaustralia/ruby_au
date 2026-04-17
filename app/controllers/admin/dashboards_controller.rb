@@ -9,14 +9,9 @@ class Admin::DashboardsController < Admin::ApplicationController
   def load_dashboard_data
     data = DashboardDataService.new.call
 
-    @member_count = data[:member_count]
-    @inactive_members = data[:inactive_members]
-    @never_logged_in_members = data[:never_logged_in_members]
-    @recently_updated_members = data[:recently_updated_members]
-    @recently_logged_in_members = data[:recently_logged_in_members]
-    @recent_posts = data[:recent_posts]
-    @unpublished_posts = data[:unpublished_posts]
-    @recent_campaigns = data[:recent_campaigns]
+    data.each do |key, value|
+      instance_variable_set("@#{key}", value)
+    end
   end
 
   def load_users_for_management
