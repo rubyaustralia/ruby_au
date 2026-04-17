@@ -58,7 +58,6 @@
         <%= link_to 'Profile', my_details_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
         <%= link_to "Upcoming Meetings", my_meetings_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
         <%= link_to 'Health and Wellbeing', "/health-and-wellbeing", class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
-        <%= link_to "Member Register Access", my_access_requests_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
         <%= link_to 'Log out', destroy_user_session_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10", data: { turbo_method: :delete } %>
       <% else %>
         <%= link_to 'Join', new_user_registration_path, class: "nav-link text-sm sm:text-base block px-4 py-2 hover:bg-white/10" %>
