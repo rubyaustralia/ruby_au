@@ -13,7 +13,7 @@ class CampaignsMailer < ApplicationMailer
     attachments['event.ics'] = ics if ics.present?
 
     mail(
-      to: @membership.user.email,
+      to: @membership.user.primary_email,
       subject: campaign.subject
     )
   end
