@@ -54,12 +54,19 @@ Rails.application.routes.draw do
     get 'posts/*slug', to: 'posts#show', as: :post
     patch 'posts/*slug', to: 'posts#update', as: :update_post
     resources :analytics, only: [:index]
+    resources :elections, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+      resources :nominations, only: [:new, :create, :destroy]
+    end
   end
 
   namespace :api do
     namespace :youtube do
       get 'playlist/:id', to: 'playlists#show'
     end
+  end
+
+  resources :elections, only: [:index, :show] do
+    resources :ballots, only: [:create]
   end
 
   resources :invitations, only: [] do
