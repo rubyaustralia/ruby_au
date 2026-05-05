@@ -11,7 +11,6 @@
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :inet
 #  deactivated_at         :datetime
-#  email                  :string
 #  email_confirmed        :boolean          default(FALSE)
 #  encrypted_password     :string
 #  full_name              :string
@@ -20,6 +19,7 @@
 #  linkedin_url           :string
 #  mailing_list           :boolean          default(FALSE), not null
 #  mailing_lists          :json             not null
+#  meetup_admin           :boolean          default(FALSE), not null
 #  preferred_name         :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
@@ -35,17 +35,17 @@
 # Indexes
 #
 #  index_users_on_confirmation_token    (confirmation_token) UNIQUE
-#  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:unconfirmed_user) { create(:user, confirmed_at: nil) }
-  let(:committee_user) { create(:user, committee: true) }
   let(:user) { create(:user) }
 
   describe '.committee' do
+    let(:committee_user) { create(:user, committee: true) }
+
     before do
       committee_user
       unconfirmed_user
@@ -54,6 +54,20 @@ RSpec.describe User, type: :model do
     it 'returns users who are part of the committee' do
       expect(described_class.committee).to include(committee_user)
       expect(described_class.committee).not_to include(unconfirmed_user)
+    end
+  end
+
+  describe '.meetup_admin' do
+    let(:meetup_admin_user) { create(:user, meetup_admin: true) }
+
+    before do
+      meetup_admin_user
+      unconfirmed_user
+    end
+
+    it 'returns users who have meetup admin permission' do
+      expect(described_class.meetup_admin).to include(meetup_admin_user)
+      expect(described_class.meetup_admin).not_to include(unconfirmed_user)
     end
   end
 
