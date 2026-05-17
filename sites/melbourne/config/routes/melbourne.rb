@@ -7,6 +7,12 @@ Rails.application.routes.draw do
 
       resources :events, only: %i[index show], param: :slug
 
+      get "/events/upcoming", to: "upcoming_events#index", as: :upcoming_events
+      resources :upcoming_events, only: %i[index], param: :slug
+
+      # get "/events/past", to: "past_events#index", as: :past_events
+      # resources :past_events, only: %i[index], param: :slug
+
       get "/talks", to: redirect(
         "https://github.com/rubyaustralia/melbourne-ruby/issues", status: 302
       )
