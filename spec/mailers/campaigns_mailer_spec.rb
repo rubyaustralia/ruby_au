@@ -5,7 +5,7 @@ RSpec.describe CampaignsMailer, type: :mailer do
     it "sends to the user's primary email" do
       user = create(:user, email: 'old@example.com')
       membership = user.memberships.current.first!
-      user.emails.update_all(primary: false)
+      user.emails.find_each { |email| email.update!(primary: false) }
       create(
         :email,
         user: user,
