@@ -4,6 +4,14 @@ module Melbourne
   class EventPresenter < SimpleDelegator
     delegate :year, to: :date
 
+    def formatted_start_time
+      start_time.strftime("%l:%M %P")
+    end
+
+    def formatted_end_time
+      end_time&.strftime("%l:%M %P")
+    end
+
     def formatted_day_number
       date.strftime("%d")
     end
