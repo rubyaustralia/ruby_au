@@ -1,5 +1,11 @@
 <%= render "layouts/melbourne/navigation" %>
 <div class="container mx-auto my-16">
+  <div>
+    <div>
+      <%= link_to "Upcoming Events", melbourne_upcoming_events_path %>
+    </div>
+    <div class="font-bold">Past Events</div>
+  </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <%= render @events %>
   </div>
