@@ -55,6 +55,9 @@ jobs:
       - name: Lint Ruby code
         run: bundle exec rubocop
 
+      - name: Lint ERB code
+        run: yarn herb:lint
+
       - name: Wait for Database
         run: |
           until pg_isready --host=127.0.0.1 --port=5432 --username=ruby_au; do
