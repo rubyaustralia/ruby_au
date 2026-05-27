@@ -6,7 +6,12 @@ RSpec.describe Melbourne::PastEventsController, type: :request do
   end
 
   describe "index" do
-    let(:events) { Melbourne::Event.past }
+    let(:events) do
+      [
+        Melbourne::Event.new(name: "test event-1", date: Time.zone.today - 2, slug: "test-1 for controller", description: "past controller test-1"),
+        Melbourne::Event.new(name: "test event-1", date: Time.zone.today - 4, slug: "test-1 for controller", description: "past controller test-2")
+      ]
+    end
 
     before do
       allow(Melbourne::Event).to receive(:past).and_return(events)
@@ -18,9 +23,10 @@ RSpec.describe Melbourne::PastEventsController, type: :request do
     end
 
     it "renders the index view" do
-      event = events.first
       get melbourne_past_events_path
-      expect(response.body).to include(event.description)
+      events.each do |event|
+        expect(response.body).to include(event.description)
+      end
     end
   end
 end
