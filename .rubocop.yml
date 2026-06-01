@@ -17,7 +17,7 @@ AllCops:
     - 'node_modules/**/*'
     - 'tmp/**/*'
   DisplayCopNames: true
-  TargetRubyVersion: 3.4
+  TargetRubyVersion: 4.0
   NewCops: disable
 
 RSpec/DescribeClass:
