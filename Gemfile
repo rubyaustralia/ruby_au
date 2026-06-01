@@ -15,7 +15,6 @@ gem 'devise-multi_email'
 gem 'friendly_id', '>= 5.5'
 gem 'icalendar'
 gem "image_processing", "~> 1.13"
-gem 'inline_svg', '~> 1.10.0'
 gem 'jbuilder'
 gem 'kaminari'
 gem 'premailer-rails'
