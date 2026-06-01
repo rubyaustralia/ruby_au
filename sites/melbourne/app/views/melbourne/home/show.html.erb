@@ -1,8 +1,3 @@
-<%
-  formatter = Rouge::Formatters::HTML.new
-  lexer = Rouge::Lexers::Ruby.new
-%>
-
 <% set_meta_tags title: "Home",
                  description: "Ruby community in Melbourne hosting meetups, workshops, hack nights, Rails Girls and more events to learn Ruby and grow the community.",
                  keywords: "Ruby, Rails, Melbourne, Meetup",
@@ -20,14 +15,18 @@
     <div class="col-start-2">
       <div class="flex bg-[#0025CA] border border-blue-400/40 border-b-transparent rounded-t-lg h-full items-center px-4 overflow-auto">
         <code class="overflow-auto text-sm whitespace-nowrap highlight">
-          <%== formatter.format(lexer.lex("render @past_events")) %>
+          <span class="text-white italic">render</span>
+          <span class="text-orange-300">@past_events</span>
         </code>
       </div>
     </div>
     <div class="col-start-3">
       <div class="flex bg-[#0025CA] border border-blue-400/40 border-b-transparent rounded-t-lg h-full items-center px-4  overflow-auto">
         <code class="overflow-auto text-sm whitespace-nowrap highlight">
-          <%== formatter.format(lexer.lex("render \"home/next_event\", event: @next_event")) %>
+          <span class="text-white italic">render</span>
+          <span class="text-emerald-300">"home/next_event"</span><span class="text-white">,</span>
+          <span class="text-red-400">event:</span>
+          <span class="text-orange-300">@next_event</span>
         </code>
       </div>
     </div>

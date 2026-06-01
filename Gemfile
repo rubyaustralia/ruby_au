@@ -11,11 +11,10 @@ gem 'bugsnag'
 gem 'createsend'
 gem 'decent_exposure'
 gem 'devise'
-gem 'devise-multi_email', github: 'rubyaustralia/devise-multi_email', branch: 'main'
+gem 'devise-multi_email'
 gem 'friendly_id', '>= 5.5'
 gem 'icalendar'
 gem "image_processing", "~> 1.13"
-gem 'inline_svg', '~> 1.10.0'
 gem 'jbuilder'
 gem 'kaminari'
 gem 'premailer-rails'
@@ -27,16 +26,12 @@ gem 'warden' # use for auth
 gem 'vite_rails'
 gem 'ahoy_matey' # analytics
 gem 'geocoder' # geo location for ahoy
-gem 'herb'
+
 # background jobs
 gem 'solid_queue'
 
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
-
-group :production do
-  gem 'rails_12factor'
-end
 
 group :development, :test do
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
@@ -60,6 +55,7 @@ group :development do
   gem "annotaterb"
   gem "bullet"
   gem "callback_hell"
+  gem 'herb'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'listen'
   # Spring speeds up development by keeping your application running in the
@@ -94,6 +90,5 @@ end
 gem 'tzinfo-data', platforms: [:windows, :jruby]
 
 gem "meta-tags", "~> 2.22"
-gem "rouge"
 
 gem 'lexxy'
