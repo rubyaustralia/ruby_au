@@ -124,6 +124,45 @@
       postal_code: '3000'
       region: VIC
       country: AU
+  talks:
+    - uuid: e0ee19a0-9cfd-4c9e-909b-9a21a4250419
+      title: "Ruby, the stuff I've never used (a completely biased opinion)"
+      description: |-
+        <p>
+          Ruby has been around for a long time. In this talk I'll go through parts of the language
+          that:
+        </p>
+        <ul>
+          <li>I've never used for work OR</li>
+          <li>I've never ever EVER used!</li>
+        </ul>
+
+      video_url: TBC
+      speakers:
+        - name: Jerome Paul
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle: garden-gnome.bsky.social
+            mastodon_handle:
+            website:
+    - uuid: b9150868-8f3b-495f-acfa-f4746b68d217
+      title: 'AI side projects'
+      description: |-
+        <p>
+          Walking through some of my AI assisted side projects, how they work, and what I've learnt.
+        </p>
+      video_url: TBC
+      speakers:
+        - name: David Carlin
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
 
 - uuid: 4b2017b4-8d92-409c-a6db-9492ce90f7ce
   date: '2026-04-30'
@@ -142,6 +181,40 @@
       postal_code: '3000'
       region: VIC
       country: AU
+  talks:
+    - uuid: fc638af8-f6e0-43c3-8f73-cfee5ea284c0
+      title: 'Ruby is my favourite LISP?'
+      description: N/A
+      video_url: https://www.youtube.com/watch?v=21MJJ07SFTM
+      speakers:
+        - name: Ceels
+          contact_details:
+            github_username: ceels
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - uuid: 166e88de-f313-47ea-b9fa-fa8edfbeaf27
+      title: 'Writing Ruby native extensions in Rust'
+      description: |-
+        <p>
+          I replaced a large dependency, of which we only used a small fraction, that was built on a
+          native extension written in C with a Rust implementation of the bit that we used. This
+          gave us native extension speeds, without having to maintain C code, which we're super
+          unfamiliar with. I'll talk about the gotchas I ran into and where I want to go with things
+          from here.
+        </p>
+      video_url: https://www.youtube.com/watch?v=vxrp4ggeTzg
+      speakers:
+        - name: Nick Spain
+          contact_details:
+            github_username: nick96
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
 
 - uuid: e69e132a-a862-484f-95e9-22afa3751dc9
   date: '2026-03-26'
@@ -168,7 +241,7 @@
           Basecamp has just released Fizzy and made it open source(-ish). Let's see how they write
           their Ruby and Rails code there, what the app does, and how to run it locally.
         </p>
-      video_url: TBC
+      video_url: https://www.youtube.com/watch?v=LyRLdgL1CvY
       speakers:
         - name: John Sherwood
           contact_details:
@@ -186,7 +259,7 @@
           <a href="https://github.com/sidbhatt11/ruby-workspace-manager">project</a>
           for fun. Now he wants to waste your time by talking about it.
         </p>
-      video_url: TBC
+      video_url: https://www.youtube.com/watch?v=8XCp5kyuqaU
       speakers:
         - name: Siddharth Bhatt
           contact_details:
@@ -225,7 +298,7 @@
           time for. So I moved on to other things. Recently though, with improvements to ruby-src
           and tools like Claude Code, I figured I'd give it another shot and actually finish it.
         </p>
-      video_url: TBC
+      video_url: https://www.youtube.com/watch?v=ML8o19OeeRo
       speakers:
         - name: Colby Swandale
           contact_details:
@@ -268,7 +341,7 @@
           strongly-held, discoverable patterns. Using a "strangler pattern" can be a great way to
           start immediately getting these benefits in large, legacy codebases.
         </p>
-      video_url: TBC
+      video_url: https://www.youtube.com/watch?v=VCJOHznLqbo
       speakers:
         - name: Alex Finkel
           contact_details:
@@ -332,7 +405,7 @@
           <li>
             set up your phone so you can tether for internet access. The venue does not provide public WIFI.
           </li>
-      video_url: TBC
+      video_url: https://www.youtube.com/watch?v=po4BcSCogsA
       speakers:
         - name: Julián Pinzón Eslava
           contact_details:
