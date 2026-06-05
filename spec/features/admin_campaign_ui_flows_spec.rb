@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe "Admin campaign UI flows", type: :feature do
   let(:admin) { FactoryBot.create(:user, committee: true) }
-  let(:membership) { FactoryBot.create(:membership, user: admin) }
+  let!(:membership) { FactoryBot.create(:membership, user: admin) }
   let!(:campaign) { FactoryBot.create(:campaign, subject: "Test Campaign") }
 
   before do
@@ -13,6 +13,7 @@ RSpec.describe "Admin campaign UI flows", type: :feature do
   end
 
   scenario "sending a test email" do
+    membership # Ensure membership exists
     visit edit_admin_campaign_path(campaign)
     click_button "Send Test Email"
 
@@ -31,6 +32,7 @@ RSpec.describe "Admin campaign UI flows", type: :feature do
   end
 
   scenario "viewing recipients" do
+    membership # Ensure membership exists
     visit edit_admin_campaign_path(campaign)
     click_link "View Recipients"
 
