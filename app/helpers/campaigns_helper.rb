@@ -5,7 +5,6 @@ module CampaignsHelper
     markdown_to_html content
   end
 
-  # rubocop:disable Rails/OutputSafety
   def substitute_content(content, rsvp)
     return content if rsvp.nil?
 
@@ -18,7 +17,7 @@ module CampaignsHelper
 
   def substitute_member_vars(content, rsvp)
     content = content.gsub(/\{\{\s*member\.name\s*\}\}/, rsvp.membership.full_name)
-    content.gsub(/\{\{\s*unsubscribe_link\s*\}\}/, edit_my_details_url)
+    content.gsub(/\{\{\s*unsubscribe_link\s*}\}/, edit_my_details_url)
   end
 
   def substitute_event_vars(content, rsvp)
@@ -31,10 +30,12 @@ module CampaignsHelper
   def substitute_rsvp_links(content, rsvp)
     content.gsub(/\{\{\s*rsvp_links\s*\}\}/,
                  tag.p(
-                   "#{link_to 'Yes', confirm_rsvp_url(rsvp.token)} " \
-                   "#{link_to 'No', decline_rsvp_url(rsvp.token)}".html_safe,
+                   safe_join([
+                               link_to('Yes', confirm_rsvp_url(rsvp.token)),
+                               ' ',
+                               link_to('No', decline_rsvp_url(rsvp.token))
+                             ]),
                    class: 'button'
                  ))
   end
-  # rubocop:enable Rails/OutputSafety
 end
