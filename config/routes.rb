@@ -46,7 +46,13 @@ Rails.application.routes.draw do
     resources :memberships, only: [:index]
     resources :access_requests, except: [:destroy]
     resources :imported_members, only: [:index, :create]
-    resources :campaigns
+    resources :campaigns do
+      member do
+        post :send_test
+        post :deliver
+        get :recipients
+      end
+    end
     resources :posts, only: [:index, :new, :create]
     get 'posts/*slug/edit', to: 'posts#edit', as: :edit_post
     delete 'posts/*slug/edit', to: 'posts#destroy', as: :delete_post

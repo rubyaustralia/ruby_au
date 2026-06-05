@@ -57,20 +57,22 @@
           <h3 class="text-base sm:text-lg font-medium text-gray-900 mb-4">Campaign Actions</h3>
 
           <div class="space-y-3">
-            <button type="button" class="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors">
+            <%= button_to deliver_admin_campaign_path(campaign),
+                          data: { turbo_confirm: "Are you sure? This will send the campaign to all current members." },
+                          class: "w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors" do %>
               <i data-lucide="send" class="h-4 w-4 mr-1.5"></i>
               Send Campaign Now
-            </button>
+            <% end %>
 
-            <button type="button" class="w-full inline-flex justify-center items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors">
+            <%= button_to send_test_admin_campaign_path(campaign), class: "w-full inline-flex justify-center items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" do %>
               <i data-lucide="mail" class="h-4 w-4 mr-1.5"></i>
               Send Test Email
-            </button>
+            <% end %>
 
-            <button type="button" class="w-full inline-flex justify-center items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors">
+            <%= link_to recipients_admin_campaign_path(campaign), class: "w-full inline-flex justify-center items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" do %>
               <i data-lucide="users" class="h-4 w-4 mr-1.5"></i>
               View Recipients
-            </button>
+            <% end %>
           </div>
         </div>
       </div>

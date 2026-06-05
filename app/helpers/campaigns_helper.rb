@@ -9,6 +9,14 @@ module CampaignsHelper
   def substitute_content(content, rsvp)
     return content if rsvp.nil?
 
+    content = content.gsub('{{member.name}}', rsvp.membership.full_name)
+    content = content.gsub('{{unsubscribe_link}}', unsubscribe_invitation_url(rsvp.token))
+
+    if rsvp.rsvp_event
+      content = content.gsub('{{event.title}}', rsvp.rsvp_event.title)
+      content = content.gsub('{{event.date}}', rsvp.rsvp_event.happens_at.strftime('%B %d, %Y'))
+    end
+
     content.gsub(
       '{{ rsvp_links }}',
       tag.p(
