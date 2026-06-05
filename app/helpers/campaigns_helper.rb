@@ -16,19 +16,19 @@ module CampaignsHelper
   private
 
   def substitute_member_vars(content, rsvp)
-    content = content.gsub(/\{\{\s*member\.name\s*\}\}/, rsvp.membership.full_name)
-    content.gsub(/\{\{\s*unsubscribe_link\s*}\}/, edit_my_details_url)
+    content = content.gsub(/\{\{\s*member\.name\s*\}\}/, ERB::Util.html_escape(rsvp.membership.full_name))
+    content.gsub(/\{\{\s*unsubscribe_link\s*\}\}/, edit_my_details_url)
   end
 
   def substitute_event_vars(content, rsvp)
     return content unless rsvp.rsvp_event
 
-    content = content.gsub(/\{\{\s*event\.title\s*\}\}/, rsvp.rsvp_event.title)
+    content = content.gsub(/\{\{\s*event\.title\s*\}\}/, ERB::Util.html_escape(rsvp.rsvp_event.title))
     content.gsub(/\{\{\s*event\.date\s*\}\}/, rsvp.rsvp_event.happens_at.strftime('%B %d, %Y'))
   end
 
   def substitute_rsvp_links(content, rsvp)
-    content.gsub(/\{\{\s*rsvp_links\s*\}\}/,
+    content.gsub(/\{\{\s*rsvp_links\s*}\}/,
                  tag.p(
                    safe_join([
                                link_to('Yes', confirm_rsvp_url(rsvp.token)),

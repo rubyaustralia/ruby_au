@@ -49,5 +49,17 @@ RSpec.describe CampaignsHelper, type: :helper do
       content = '{{ unsubscribe_link }}'
       expect(helper.substitute_content(content, rsvp)).to include('http://test.host/my/details/edit')
     end
+
+    it 'escapes HTML in {{member.name}}' do
+      allow(membership).to receive(:full_name).and_return('<script>alert("XSS")</script> John')
+      content = 'Hello {{member.name}}'
+      expect(helper.substitute_content(content, rsvp)).to include('Hello &lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt; John')
+    end
+
+    it 'escapes HTML in {{event.title}}' do
+      allow(event).to receive(:title).and_return('<b>Malicious</b> Event')
+      content = 'Welcome to {{event.title}}'
+      expect(helper.substitute_content(content, rsvp)).to include('Welcome to &lt;b&gt;Malicious&lt;/b&gt; Event')
+    end
   end
 end
