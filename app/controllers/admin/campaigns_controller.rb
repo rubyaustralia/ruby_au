@@ -29,10 +29,27 @@ class Admin::CampaignsController < Admin::ApplicationController
 
   def update
     if campaign.update campaign_params
-      redirect_to admin_campaigns_path, notice: "Your campaign has been updated."
+      redirect_to edit_admin_campaign_path(campaign), notice: "Your campaign has been updated."
     else
       render :edit
     end
+  end
+
+  def send_test
+    membership = current_user.memberships.current.first
+    CampaignsMailer.campaign_email(campaign, membership, ics).deliver_now
+
+    redirect_to edit_admin_campaign_path(campaign), notice: "A test email has been sent to #{current_user.email}."
+  end
+
+  def deliver
+    Campaigns::Send.call(campaign)
+
+    redirect_to admin_campaigns_path, notice: "The campaign is being sent."
+  end
+
+  def recipients
+    @memberships = Membership.current.visible
   end
 
   def destroy
