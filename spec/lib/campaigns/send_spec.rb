@@ -10,7 +10,7 @@ RSpec.describe Campaigns::Send do
   before do
     mail_double = instance_double(ActionMailer::MessageDelivery, deliver_now: true)
 
-    allow(Membership).to receive(:current).and_return(memberships)
+    allow(Membership).to receive(:current).and_return(instance_double(ActiveRecord::Relation, includes: memberships))
     allow(send_campaigns).to receive(:delivery_for).with(membership).and_return(campaign_delivery)
     allow(campaign_delivery).to receive(:delivered_at=)
     allow(campaign_delivery).to receive(:save!)
@@ -37,7 +37,7 @@ RSpec.describe Campaigns::Send do
 
   context "when campaign is not delivered without memberships" do
     before do
-      allow(Membership).to receive(:current).and_return([])
+      allow(Membership).to receive(:current).and_return(instance_double(ActiveRecord::Relation, includes: []))
     end
 
     it "does not send email" do
