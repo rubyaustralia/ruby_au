@@ -50,13 +50,12 @@ class Admin::CampaignsController < Admin::ApplicationController
     if campaign.delivered?
       redirect_to edit_admin_campaign_path(campaign), alert: "This campaign has already been delivered."
     else
-      Campaigns::DeliverJob.perform_later(campaign)
-      redirect_to admin_campaigns_path, notice: "The campaign is being sent."
+      enqueue_delivery
     end
   end
 
   def recipients
-    @memberships = Membership.current.includes(:user)
+    @memberships = Membership.current.includes(:user).to_a
   end
 
   def destroy
@@ -66,6 +65,18 @@ class Admin::CampaignsController < Admin::ApplicationController
   end
 
   private
+
+  def enqueue_delivery
+    Campaign.transaction do
+      campaign.lock!
+      if campaign.delivered?
+        redirect_to edit_admin_campaign_path(campaign), alert: "This campaign has already been delivered."
+      else
+        Campaigns::DeliverJob.perform_later(campaign)
+        redirect_to admin_campaigns_path, notice: "The campaign is being sent."
+      end
+    end
+  end
 
   def campaign_params
     params.fetch(:campaign, {}).permit(:subject, :preheader, :content, :rsvp_event_id)

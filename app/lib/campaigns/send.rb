@@ -10,22 +10,26 @@ class Campaigns::Send
   end
 
   def call
-    return if campaign.delivered_at.present?
+    campaign.with_lock do
+      return if campaign.delivered_at.present?
 
-    memberships.each do |membership|
-      delivery = delivery_for membership
-      next if delivery.delivered_at.present?
+      memberships.each { |membership| send_to_membership(membership) }
 
-      CampaignsMailer.campaign_email(campaign, membership, ics).deliver_now
-
-      delivery.delivered_at = Time.current
-      delivery.save!
+      campaign.update! delivered_at: Time.current
     end
-
-    campaign.update delivered_at: Time.current
   end
 
   private
+
+  def send_to_membership(membership)
+    delivery = delivery_for membership
+    return if delivery.delivered_at.present?
+
+    CampaignsMailer.campaign_email(campaign, membership, ics).deliver_now
+
+    delivery.delivered_at = Time.current
+    delivery.save!
+  end
 
   attr_reader :campaign
 

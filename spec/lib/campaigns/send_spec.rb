@@ -10,11 +10,12 @@ RSpec.describe Campaigns::Send do
   before do
     mail_double = instance_double(ActionMailer::MessageDelivery, deliver_now: true)
 
+    allow(campaign).to receive(:with_lock).and_yield
     allow(Membership).to receive(:current).and_return(instance_double(ActiveRecord::Relation, includes: memberships))
     allow(send_campaigns).to receive(:delivery_for).with(membership).and_return(campaign_delivery)
     allow(campaign_delivery).to receive(:delivered_at=)
     allow(campaign_delivery).to receive(:save!)
-    allow(campaign).to receive(:update)
+    allow(campaign).to receive(:update!)
     allow(CampaignsMailer).to receive(:campaign_email)
       .with(campaign, membership, nil)
       .and_return(mail_double)
