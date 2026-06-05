@@ -37,19 +37,26 @@ class Admin::CampaignsController < Admin::ApplicationController
 
   def send_test
     membership = current_user.memberships.current.first
-    CampaignsMailer.campaign_email(campaign, membership, ics).deliver_now
 
-    redirect_to edit_admin_campaign_path(campaign), notice: "A test email has been sent to #{current_user.email}."
+    if membership
+      CampaignsMailer.campaign_email(campaign, membership, ics).deliver_now
+      redirect_to edit_admin_campaign_path(campaign), notice: "A test email has been sent to #{current_user.email}."
+    else
+      redirect_to edit_admin_campaign_path(campaign), alert: "You must have an active membership to send a test email."
+    end
   end
 
   def deliver
-    Campaigns::Send.call(campaign)
-
-    redirect_to admin_campaigns_path, notice: "The campaign is being sent."
+    if campaign.delivered?
+      redirect_to edit_admin_campaign_path(campaign), alert: "This campaign has already been delivered."
+    else
+      Campaigns::DeliverJob.perform_later(campaign)
+      redirect_to admin_campaigns_path, notice: "The campaign is being sent."
+    end
   end
 
   def recipients
-    @memberships = Membership.current.visible
+    @memberships = Membership.current.includes(:user)
   end
 
   def destroy

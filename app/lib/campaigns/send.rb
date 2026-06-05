@@ -39,7 +39,7 @@ class Campaigns::Send
   end
 
   def memberships
-    Membership.current
+    Membership.current.includes(:user)
   end
 
   def ics
