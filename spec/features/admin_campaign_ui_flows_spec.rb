@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe "Admin campaign UI flows", type: :feature do
   let(:admin) { FactoryBot.create(:user, committee: true) }
-  let!(:membership) { FactoryBot.create(:membership, user: admin) }
+  let!(:membership) { Membership.find_or_create_by!(user: admin) { |m| m.joined_at = Time.current } }
   let!(:campaign) { FactoryBot.create(:campaign, subject: "Test Campaign") }
 
   before do
