@@ -19,7 +19,7 @@ RSpec.describe "Invitations", type: :request do
 
         post "/invitations/#{imported_member.token}", params: { user: user_params }
 
-        expect(response).to redirect_to(root_path)
+        expect(response).to redirect_to(posts_path)
         expect(flash[:notice]).to eq("Your membership to Ruby Australia has been confirmed.")
         user = User.last
         expect(user.full_name).to eq("Test User")

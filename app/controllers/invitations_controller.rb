@@ -8,7 +8,7 @@ class InvitationsController < ApplicationController
 
       sign_in user
 
-      redirect_to root_path, notice: "Your membership to Ruby Australia has been confirmed."
+      redirect_to posts_path, notice: "Your membership to Ruby Australia has been confirmed."
     else
       render :new
     end
