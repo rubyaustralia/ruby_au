@@ -92,3 +92,7 @@ gem 'tzinfo-data', platforms: [:windows, :jruby]
 gem "meta-tags", "~> 2.22"
 
 gem 'lexxy'
+
+# PostHog analytics
+gem 'posthog-ruby'
+gem 'posthog-rails'

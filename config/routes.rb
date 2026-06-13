@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # See: https://github.com/heartcombo/devise/issues/5735
   devise_for :users, controllers: {
     registrations: 'registrations',
+    sessions: 'sessions',
     passwords: 'devise/passwords'
   }
 

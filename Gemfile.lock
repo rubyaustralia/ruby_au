@@ -337,6 +337,11 @@ GEM
     pg (1.6.3-x86_64-darwin)
     pg (1.6.3-x86_64-linux)
     pg (1.6.3-x86_64-linux-musl)
+    posthog-rails (3.11.0)
+      posthog-ruby (~> 3.11)
+      railties (>= 5.2.0)
+    posthog-ruby (3.11.0)
+      concurrent-ruby (~> 1)
     pp (0.6.3)
       prettyprint
     premailer (1.29.0)
@@ -622,6 +627,8 @@ DEPENDENCIES
   memory_profiler
   meta-tags (~> 2.22)
   pg
+  posthog-rails
+  posthog-ruby
   premailer-rails
   puma
   pygmentize

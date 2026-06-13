@@ -84,6 +84,20 @@ class User < ApplicationRecord
     emails.find_by(primary: true)&.email || email
   end
 
+  def posthog_distinct_id
+    email
+  end
+
+  def posthog_properties
+    {
+      email: email,
+      full_name: full_name,
+      committee: committee,
+      seeking_work: seeking_work,
+      date_joined: created_at&.iso8601
+    }
+  end
+
   def active_for_authentication?
     super && deactivated_at.nil?
   end

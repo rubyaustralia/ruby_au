@@ -10,6 +10,15 @@ class ReactivationsController < ApplicationController
 
       sign_in user
 
+      PostHog.identify(
+        distinct_id: user.posthog_distinct_id,
+        properties: user.posthog_properties
+      )
+      PostHog.capture(
+        distinct_id: user.posthog_distinct_id,
+        event: 'membership_reactivated'
+      )
+
       redirect_to root_path, notice: "Your membership to Ruby Australia has been reactivated."
     else
       flash[:notice] = "The provided details are not valid."

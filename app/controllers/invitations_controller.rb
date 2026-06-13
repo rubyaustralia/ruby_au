@@ -8,6 +8,15 @@ class InvitationsController < ApplicationController
 
       sign_in user
 
+      PostHog.identify(
+        distinct_id: user.posthog_distinct_id,
+        properties: user.posthog_properties
+      )
+      PostHog.capture(
+        distinct_id: user.posthog_distinct_id,
+        event: 'invitation_accepted'
+      )
+
       redirect_to posts_path, notice: "Your membership to Ruby Australia has been confirmed."
     else
       render :new

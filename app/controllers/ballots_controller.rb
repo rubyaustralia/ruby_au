@@ -10,6 +10,12 @@ class BallotsController < ApplicationController
       )
     end
 
+    PostHog.capture(
+      distinct_id: current_user.posthog_distinct_id,
+      event: 'ballot_submitted',
+      properties: { nominations_count: ballot_params.size }
+    )
+
     redirect_to elections_path, notice: "Your vote has been created."
   end
 

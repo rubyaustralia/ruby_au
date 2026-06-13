@@ -16,11 +16,23 @@ class RsvpsController < ApplicationController
   def confirm
     rsvp.update status: 'yes'
 
+    PostHog.capture(
+      distinct_id: rsvp.membership.user.posthog_distinct_id,
+      event: 'rsvp_confirmed',
+      properties: { event_title: rsvp.rsvp_event.title }
+    )
+
     redirect_to rsvp_path(rsvp.token), notice: "Thanks for confirming your attendance to #{rsvp.rsvp_event.title}."
   end
 
   def decline
     rsvp.update status: 'no'
+
+    PostHog.capture(
+      distinct_id: rsvp.membership.user.posthog_distinct_id,
+      event: 'rsvp_declined',
+      properties: { event_title: rsvp.rsvp_event.title }
+    )
 
     redirect_to rsvp_path(rsvp.token), notice: "We're sorry you can't make it to #{rsvp.rsvp_event.title}, but thanks for letting us know."
   end
