@@ -3,6 +3,8 @@
 module Melbourne
   class DatabaseEventsController < ApplicationController
     before_action :set_database_event, only: %i[show edit update destroy]
+    before_action :authenticate_user!, only: %i[new create edit update destroy]
+    before_action :confirm_is_meetup_admin!, only: %i[new create edit update destroy]
 
     def index
       @database_events = DatabaseEvent.all_by_date
@@ -55,6 +57,12 @@ module Melbourne
 
     def database_event_params
       params.expect(database_event: [:date, :description, :event_type, :name, :region, :registration_url, :start_time, :end_time, :venue_id])
+    end
+
+    def confirm_is_meetup_admin!
+      return if current_user.meetup_admin?
+
+      redirect_to root_path
     end
   end
 end
