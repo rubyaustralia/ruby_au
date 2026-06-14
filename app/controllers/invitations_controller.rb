@@ -3,24 +3,11 @@ class InvitationsController < ApplicationController
   expose(:imported_member) { ImportedMember.find_by token: params[:id] }
 
   def create
-    if user.valid?
-      user.save_as_confirmed!
+    return render :new unless user.valid?
 
-      sign_in user
+    confirm_membership_invitation
 
-      PostHog.identify(
-        distinct_id: user.posthog_distinct_id,
-        properties: user.posthog_properties
-      )
-      PostHog.capture(
-        distinct_id: user.posthog_distinct_id,
-        event: 'invitation_accepted'
-      )
-
-      redirect_to posts_path, notice: "Your membership to Ruby Australia has been confirmed."
-    else
-      render :new
-    end
+    redirect_to posts_path, notice: "Your membership to Ruby Australia has been confirmed."
   end
 
   def unsubscribe
@@ -40,5 +27,23 @@ class InvitationsController < ApplicationController
     hash[:email]     ||= imported_member.email
 
     hash
+  end
+
+  def confirm_membership_invitation
+    user.save_as_confirmed!
+    sign_in user
+
+    track_invitation_acceptance
+  end
+
+  def track_invitation_acceptance
+    PostHog.identify(
+      distinct_id: user.posthog_distinct_id,
+      properties: user.posthog_properties
+    )
+    PostHog.capture(
+      distinct_id: user.posthog_distinct_id,
+      event: 'invitation_accepted'
+    )
   end
 end

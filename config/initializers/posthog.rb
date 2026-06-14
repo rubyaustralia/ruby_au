@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-PostHog.client = PostHog::Client.new(
-  api_key: ENV.fetch('POSTHOG_PROJECT_TOKEN', nil),
-  host: ENV.fetch('POSTHOG_HOST', nil),
+Rails.application.config.posthog = {
+  api_key: Rails.application.credentials[:POSTHOG_PROJECT_TOKEN],
+  host: Rails.application.credentials[:POSTHOG_HOST],
   on_error: proc { |_status, msg| Rails.logger.error("PostHog error: #{msg}") },
   test_mode: Rails.env.test?
-)
+}
 
 PostHog::Rails.configure do |config|
   config.auto_capture_exceptions = true
