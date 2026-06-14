@@ -4,26 +4,11 @@ class ReactivationsController < ApplicationController
   end
 
   def create
-    if reactivate?
-      user.update deactivated_at: nil
-      user.memberships.create joined_at: Time.current
+    return invalid_reactivation unless reactivate?
 
-      sign_in user
+    reactivate_membership
 
-      PostHog.identify(
-        distinct_id: user.posthog_distinct_id,
-        properties: user.posthog_properties
-      )
-      PostHog.capture(
-        distinct_id: user.posthog_distinct_id,
-        event: 'membership_reactivated'
-      )
-
-      redirect_to root_path, notice: "Your membership to Ruby Australia has been reactivated."
-    else
-      flash[:notice] = "The provided details are not valid."
-      render :new
-    end
+    redirect_to root_path, notice: "Your membership to Ruby Australia has been reactivated."
   end
 
   private
@@ -34,5 +19,29 @@ class ReactivationsController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password)
+  end
+
+  def invalid_reactivation
+    flash[:notice] = "The provided details are not valid."
+    render :new
+  end
+
+  def reactivate_membership
+    user.update deactivated_at: nil
+    user.memberships.create joined_at: Time.current
+    sign_in user
+
+    track_reactivation
+  end
+
+  def track_reactivation
+    PostHog.identify(
+      distinct_id: user.posthog_distinct_id,
+      properties: user.posthog_properties
+    )
+    PostHog.capture(
+      distinct_id: user.posthog_distinct_id,
+      event: 'membership_reactivated'
+    )
   end
 end
