@@ -3,14 +3,14 @@ require 'json'
 
 class PostHogCustomClient
   def initialize
-    @api_key = Rails.application.credentials[:POSTHOG_PROJECT_TOKEN]
-    @project_id = Rails.application.credentials[:POSTHOG_UI_HOST]
+    @api_key = Rails.application.credentials[:POSTHOG_PERSONAL_API_KEY]
+    @project_id = Rails.application.credentials[:POSTHOG_PROJECT_ID]
     @host = Rails.application.credentials[:POSTHOG_HOST]
     validate_config!
   end
 
   def configured?
-    @api_key.present? && @project_id.present?
+    @api_key.present? && valid_project_id?
   end
 
   def query(hogql)
@@ -28,9 +28,13 @@ class PostHogCustomClient
 
   def validate_config!
     Rails.logger.warn("PostHog Warning: personal_api_key is missing from credentials. Analytics will not load.") if @api_key.blank?
-    return if @project_id.present?
+    return if valid_project_id?
 
-    Rails.logger.warn("PostHog Warning: project_id is missing from credentials. Analytics will not load.")
+    Rails.logger.warn("PostHog Warning: project_id is missing or invalid in credentials. Analytics will not load.")
+  end
+
+  def valid_project_id?
+    @project_id.present? && !@project_id.to_s.include?('http')
   end
 
   def post(path, body)
