@@ -29,6 +29,6 @@ class Nomination < ApplicationRecord
   belongs_to :nominated_by, class_name: 'User'
 
   def score_given_by(user)
-    votes.where(voter: user).first.score
+    votes.find_by(voter: user)&.score
   end
 end

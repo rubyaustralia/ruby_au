@@ -1,8 +1,9 @@
 class Admin::NominationsController < Admin::ApplicationController
-  before_action :set_election, only: %i[new create]
+  before_action :set_election, only: %i[new create destroy]
+  before_action :set_nomination, only: %i[destroy]
 
   def new
-    @nomination = Nomination.new
+    @nomination = Nomination.new(nominated_by: current_user)
   end
 
   def create
@@ -21,13 +22,18 @@ class Admin::NominationsController < Admin::ApplicationController
   end
 
   def destroy
-    raise NotImplementedError
+    @nomination.destroy!
+    redirect_to admin_election_path(@election), notice: "Nomination was successfully removed."
   end
 
   private
 
   def set_election
     @election = Election.find(params[:election_id])
+  end
+
+  def set_nomination
+    @nomination = @election.nominations.find(params[:id])
   end
 
   def build_nomination_attributes

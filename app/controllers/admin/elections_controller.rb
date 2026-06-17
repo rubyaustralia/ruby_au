@@ -1,5 +1,5 @@
 class Admin::ElectionsController < Admin::ApplicationController
-  before_action :set_election, only: %i[show edit update destroy]
+  before_action :set_election, only: %i[show edit update destroy call]
   before_action :set_election_nominations, only: %i[show]
 
   def index
@@ -36,6 +36,11 @@ class Admin::ElectionsController < Admin::ApplicationController
     raise NotImplementedError
   end
 
+  def call
+    @election.call!
+    redirect_to admin_election_path(@election), notice: "Election has been called and results are now finalised."
+  end
+
   private
 
   def set_election
@@ -47,6 +52,6 @@ class Admin::ElectionsController < Admin::ApplicationController
   end
 
   def election_params
-    params.expect(election: [:closed_at, :opened_at, :minimum_score, :maximum_score, :title, :vacancies])
+    params.expect(election: [:closed_at, :opened_at, :point_scale, :title, :vacancies])
   end
 end

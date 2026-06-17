@@ -38,6 +38,7 @@
             <%= form.range_field :nomination_id_scores,
               name: "ballot[nomination_id_scores][#{nomination.id}]",
               in: election.score_range,
+              value: 0,
               class: "w-full" %>
           </td>
         </tr>

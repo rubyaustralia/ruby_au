@@ -3,6 +3,7 @@
 # Table name: elections
 #
 #  id            :bigint           not null, primary key
+#  called_at     :datetime
 #  closed_at     :datetime
 #  maximum_score :integer          default(5), not null
 #  minimum_score :integer          default(-5), not null
@@ -17,8 +18,8 @@ FactoryBot.define do
     title { 'President' }
     closed_at { nil }
     opened_at { nil }
-    minimum_score { -5 }
     maximum_score { 5 }
+    minimum_score { -5 }
     vacancies { 1 }
 
     trait :open do

@@ -1,8 +1,11 @@
 <div id="<%= dom_id election %>">
   <div class="bg-white rounded-lg shadow-md overflow-hidden my-6 sm:my-8">
     <div class="px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-      <div class="px-4 sm:px-6 md:px-8 py-5 sm:py-6 bg-gray-50 border-b border-gray-200">
+      <div class="px-4 sm:px-6 md:px-8 py-5 sm:py-6 bg-gray-50 border-b border-gray-200 flex justify-between items-center">
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Election</h1>
+        <% if election.open? %>
+          <%= button_to "Call Election", call_admin_election_path(election), method: :post, data: { confirm: "Are you sure? This will immediately end the voting." }, class: "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-ruby-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" %>
+        <% end %>
       </div>
 
       <div class="space-y-6 sm:space-y-8">
@@ -18,13 +21,8 @@
           </div>
 
           <div class="bg-white p-3 sm:p-4 rounded shadow-sm">
-            <p class="block text-sm sm:text-base font-medium text-gray-700">Minimum score</p>
-            <p class="text-gray-700"><%= election.minimum_score %></p>
-          </div>
-
-          <div class="bg-white p-3 sm:p-4 rounded shadow-sm">
-            <p class="block text-sm sm:text-base font-medium text-gray-700">Maximum score</p>
-            <p class="text-gray-700"><%= election.maximum_score %></p>
+            <p class="block text-sm sm:text-base font-medium text-gray-700">Point scale</p>
+            <p class="text-gray-700"><%= election.point_scale %></p>
           </div>
         </div>
 
@@ -95,6 +93,7 @@
               <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Email</th>
               <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Nominated by</th>
               <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">Created</th>
+              <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider"></th>
             </tr>
             </thead>
             <tbody class="divide-y divide-gray-200 bg-white">
@@ -104,6 +103,9 @@
                 <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm"><%= nomination.nominee.email %></td>
                 <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm"><%= nomination.nominated_by.email %></td>
                 <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden md:table-cell"><%= nomination.created_at.try(:strftime, "%Y-%m-%d") %></td>
+                <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-right text-sm font-medium">
+                  <%= button_to "Remove", admin_election_nomination_path(election, nomination), method: :delete, data: { confirm: "Are you sure?" }, class: "text-red-600 hover:text-red-900" %>
+                </td>
               </tr>
             <% end %>
             </tbody>

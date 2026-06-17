@@ -25,5 +25,23 @@
 require 'rails_helper'
 
 RSpec.describe Nomination, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#score_given_by' do
+    let(:user) { create(:user) }
+    let(:election) { create(:election, :open) }
+    let(:nomination) { create(:nomination, election: election) }
+
+    context 'when no vote has been given' do
+      it 'returns nil' do
+        expect(nomination.score_given_by(user)).to be_nil
+      end
+    end
+
+    context 'when a vote has been given' do
+      before { create(:vote, voter: user, votable: nomination, score: 3) }
+
+      it 'returns the score' do
+        expect(nomination.score_given_by(user)).to eq(3)
+      end
+    end
+  end
 end

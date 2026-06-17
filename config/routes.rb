@@ -61,7 +61,15 @@ Rails.application.routes.draw do
     get 'posts/*slug', to: 'posts#show', as: :post
     patch 'posts/*slug', to: 'posts#update', as: :update_post
     resources :analytics, only: [:index]
+    resources :users, only: [] do
+      collection do
+        get :search
+      end
+    end
     resources :elections, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+      member do
+        post :call
+      end
       resources :nominations, only: [:new, :create, :destroy]
     end
   end

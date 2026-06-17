@@ -8,6 +8,7 @@
         <thead class="bg-gray-50">
           <tr>
             <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Election for</th>
+            <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">Nominees</th>
             <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden lg:table-cell">Closes in</th>
           </tr>
         </thead>
@@ -18,6 +19,9 @@
                 <%= link_to election, class: "text-ruby-red hover:text-red-700 transition-colors" do %>
                   <%= election.title %>
                 <% end %>
+              </td>
+              <td class="px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm text-gray-500 hidden sm:table-cell">
+                <%= election.nominated_candidates.map(&:full_name).to_sentence %>
               </td>
               <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden lg:table-cell">
                 <%= time_ago_in_words(election.closed_at) %>
@@ -38,6 +42,7 @@
         <thead class="bg-gray-50">
           <tr>
             <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Election for</th>
+            <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">Nominees</th>
             <th scope="col" class="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider hidden lg:table-cell">Elected nominee(s)</th>
           </tr>
         </thead>
@@ -48,6 +53,9 @@
                 <%= link_to election, class: "text-ruby-red hover:text-red-700 transition-colors" do %>
                   <%= election.title %>
                 <% end %>
+              </td>
+              <td class="px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm text-gray-500 hidden sm:table-cell">
+                <%= election.nominated_candidates.map(&:full_name).to_sentence %>
               </td>
               <td class="px-3 sm:px-4 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 hidden lg:table-cell">
                 <%= election.elected_users.map(&:full_name).join(', ') %>

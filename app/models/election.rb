@@ -3,6 +3,7 @@
 # Table name: elections
 #
 #  id            :bigint           not null, primary key
+#  called_at     :datetime
 #  closed_at     :datetime
 #  maximum_score :integer          default(5), not null
 #  minimum_score :integer          default(-5), not null
@@ -17,17 +18,21 @@ class Election < ApplicationRecord
   has_many :votes, through: :nominations
   has_many :nominated_candidates, through: :nominations, source: :nominee
 
-  scope :open, -> { where('opened_at <= ?', Time.current).where('closed_at > ? OR closed_at IS NULL', Time.current) }
-  scope :closed, -> { where('closed_at <= ?', Time.current) }
+  scope :open, -> { where('opened_at <= ?', Time.current).where('(closed_at > ? OR closed_at IS NULL) AND called_at IS NULL', Time.current) }
+  scope :closed, -> { where('closed_at <= ? OR called_at IS NOT NULL', Time.current) }
 
-  validates :title, :maximum_score, :minimum_score, :vacancies, presence: true
+  validates :title, :vacancies, presence: true
 
   def open?
-    opened_at.past? && !closed?
+    opened_at&.past? && !closed?
   end
 
   def closed?
-    closed_at.past?
+    (closed_at.present? && closed_at.past?) || called_at.present?
+  end
+
+  def call!
+    update!(called_at: Time.current)
   end
 
   def elected_users
@@ -38,12 +43,21 @@ class Election < ApplicationRecord
     end
   end
 
-  def score_range
-    minimum_score..maximum_score
+  def point_scale
+    maximum_score
+  end
+
+  def point_scale=(value)
+    self.maximum_score = value.to_i
+    self.minimum_score = -value.to_i
   end
 
   def voting_completed_for?(user)
     votes.where(voter: user).any?
+  end
+
+  def score_range
+    minimum_score..maximum_score
   end
 
   def results_summary

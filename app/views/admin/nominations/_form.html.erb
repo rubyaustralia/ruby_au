@@ -22,14 +22,34 @@
   <% end %>
 
   <div class="space-y-6 sm:space-y-8">
-    <div class="space-y-1 sm:space-y-2">
-      <%= form.label :member_email_address, class: "block text-sm sm:text-base font-medium text-gray-700" %>
-      <%= form.text_field :member_email_address, class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-ruby-red focus:border-ruby-red sm:text-sm" %>
+    <div class="space-y-1 sm:space-y-2" data-controller="autocomplete" data-autocomplete-url-value="<%= search_admin_users_path %>">
+      <%= form.label :member_email_address, "Nominated Member (Search by name)", class: "block text-sm sm:text-base font-medium text-gray-700" %>
+      <div class="relative">
+        <%= text_field_tag :member_name_lookup, nomination.nominee&.full_name,
+                          placeholder: "Start typing a name...",
+                          class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-ruby-red focus:border-ruby-red sm:text-sm",
+                          data: {
+                            autocomplete_target: "input",
+                            action: "input->autocomplete#onInput keydown->autocomplete#onKeydown focus->autocomplete#onInput"
+                          } %>
+        <%= form.hidden_field :member_email_address, data: { autocomplete_target: "hiddenInput" } %>
+        <div data-autocomplete-target="results" class="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 shadow-lg max-h-60 overflow-y-auto hidden"></div>
+      </div>
     </div>
 
-    <div class="space-y-1 sm:space-y-2">
-      <%= form.label :nominating_member_email_address, class: "block text-sm sm:text-base font-medium text-gray-700" %>
-      <%= form.text_field :nominating_member_email_address, class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-ruby-red focus:border-ruby-red sm:text-sm" %>
+    <div class="space-y-1 sm:space-y-2" data-controller="autocomplete" data-autocomplete-url-value="<%= search_admin_users_path %>">
+      <%= form.label :nominating_member_email_address, "Nominating Member (Search by name)", class: "block text-sm sm:text-base font-medium text-gray-700" %>
+      <div class="relative">
+        <%= text_field_tag :nominating_member_name_lookup, nomination.nominated_by&.full_name,
+                          placeholder: "Start typing a name...",
+                          class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-ruby-red focus:border-ruby-red sm:text-sm",
+                          data: {
+                            autocomplete_target: "input",
+                            action: "input->autocomplete#onInput keydown->autocomplete#onKeydown focus->autocomplete#onInput"
+                          } %>
+        <%= form.hidden_field :nominating_member_email_address, value: nomination.nominated_by&.email, data: { autocomplete_target: "hiddenInput" } %>
+        <div data-autocomplete-target="results" class="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 shadow-lg max-h-60 overflow-y-auto hidden"></div>
+      </div>
     </div>
 
     <div class="pt-4 sm:pt-6">

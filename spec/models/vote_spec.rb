@@ -33,18 +33,14 @@ RSpec.describe Vote, type: :model do
     end
   end
 
-  context "when the user has already voted" do
-    let(:election) { create(:election, :open) }
-    let(:voter) { create(:user) }
+  context "when the election has been called" do
+    let(:election) { create(:election, :open, called_at: Time.current) }
     let(:nomination) { create(:nomination, election: election) }
-    let(:vote) { create(:vote, voter: voter, votable: nomination) }
-
-    before do
-      create(:vote, voter: voter, votable: nomination)
-    end
+    let(:vote) { build(:vote, votable: nomination) }
 
     it "raises a validation error" do
-      expect { vote }.to raise_error(ActiveRecord::RecordInvalid)
+      expect(vote).not_to be_valid
+      expect(vote.errors[:base]).to include("Election is not currently open")
     end
   end
 end

@@ -12,15 +12,20 @@
     </div>
   </header>
 
-  <% if election.voting_completed_for?(current_user) %>
-    <div class="flex justify-center">
-      <p class="text-sm bg-red-100 p-4 w-fit rounded-md mb-10">You have already voted in this election.</p>
-    </div>
-    <%= render "ballot", election: election %>
-  <% else %>
+  <% if election.open? && !election.voting_completed_for?(current_user) %>
     <div class="flex justify-center">
       <p class="text-sm bg-blue-100 p-4 w-fit rounded-md mb-10">Give each nominee a score between <%= election.minimum_score %> and <%= election.maximum_score %>.</p>
     </div>
     <%= render "form", election: election, ballot: ballot %>
+  <% elsif election.voting_completed_for?(current_user) %>
+    <div class="flex justify-center">
+      <p class="text-sm bg-green-100 p-4 w-fit rounded-md mb-10">You have already voted in this election.</p>
+    </div>
+    <%= render "ballot", election: election %>
+  <% else %>
+    <div class="flex justify-center">
+      <p class="text-sm bg-blue-100 p-4 w-fit rounded-md mb-10">This election is closed.</p>
+    </div>
+    <%= render "ballot", election: election %>
   <% end %>
 </div>
