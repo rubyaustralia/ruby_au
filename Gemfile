@@ -20,6 +20,7 @@ gem 'kaminari'
 gem 'premailer-rails'
 gem 'pygmentize'
 gem 'redcarpet'
+gem 'sitemap_generator'
 gem 'turbo-rails'
 gem 'validates_email_format_of'
 gem 'warden' # use for auth
