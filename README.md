@@ -64,6 +64,20 @@ The version bump is determined by the commit messages:
 
 A new GitHub Release and Git Tag are automatically created for every push to `main` that successfully passes CI.
 
+## Good to know
+
+- We use Sitemaps to help search engines discover our content. You can generate a new sitemap by running `bin/rails sitemap:refresh`.
+- We use [GitHub Issues](https://github.com/rubyaustralia/ruby_au/issues) to track bugs, enhancements, and feature requests. Feel free to browse the issues and contribute.
+- Our issue labels include: `good first issue`, `help wanted`, `bug`, `enhancement`,
+and more. Check the [Issues](https://github.com/rubyaustralia/ruby_au/issues) for details.
+- We have a [Code of Conduct](CODE_OF_CONDUCT.md) that all contributors must follow to maintain a welcoming and inclusive community.
+- We encourage open communication and collaboration. If you have any questions or need help, don't hesitate to reach out on our Slack or open an issue.
+- We appreciate all contributions, whether it's code, documentation, bug reports, or just spreading the word about our project. Every contribution helps us grow and improve!
+- We have a [Mentored Contributions Program](https://ruby.org.au/pages/mentored_contributions) to support new contributors. If you're new to open source or want guidance, consider joining the program to get paired with an experienced mentor.
+- We use [GitHub Actions](https://github.com/features/actions) to automate our development workflow and ensure code quality standards are met.
+- We have a comprehensive [CONTRIBUTING.md](CONTRIBUTING.md) file that outlines our contribution guidelines, development workflow, and code quality standards. Please review it before submitting a pull request.
+- We encourage contributors to write clear and descriptive commit messages, as they help maintain a clean and understandable project history. A good commit message should explain the "what" and "why" of the changes being made.
+
 ## Contributing
 
 We welcome contributions of all kinds! See [CONTRIBUTING.md](CONTRIBUTING.md) for:

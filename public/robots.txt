@@ -3,3 +3,13 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-agent: *
 # Disallow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://ruby.org.au/sitemap.xml.gz
+
+Disallow: /admin
+Disallow: /my
+Disallow: /letter_opener
+Disallow: /elections
