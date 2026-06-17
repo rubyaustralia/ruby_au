@@ -32,6 +32,8 @@ module PostHogDataFormatter
       landing_page: row[2],
       browser: row[3],
       os: row[4],
+      device_type: row[5],
+      country: row[6],
       events: []
     )
   end

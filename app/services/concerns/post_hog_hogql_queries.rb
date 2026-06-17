@@ -17,10 +17,16 @@ module PostHogHogqlQueries
 
   def top_pages_hogql
     <<~SQL
-      SELECT properties.$path, count() as views
+      SELECT
+        coalesce(
+          nullIf(properties.$pathname, ''),
+          path(properties.$current_url),
+          '/'
+        ) as page_path,
+        count() as views
       FROM events
       WHERE event = '$pageview' AND timestamp >= 30d
-      GROUP BY properties.$path
+      GROUP BY page_path
       ORDER BY views DESC
       LIMIT 10
     SQL
@@ -28,7 +34,7 @@ module PostHogHogqlQueries
 
   def visits_over_time_hogql
     <<~SQL
-      SELECT toDate(timestamp) as date, count() as visits
+      SELECT toDate(timestamp) as date, count(DISTINCT distinct_id) as visits
       FROM events
       WHERE event = '$pageview' AND timestamp >= 30d
       GROUP BY date
@@ -38,16 +44,23 @@ module PostHogHogqlQueries
 
   def device_breakdown_hogql
     <<~SQL
-      SELECT properties.$device_type, count() as count
+      SELECT coalesce(nullIf(properties.$device_type, ''), 'Unknown') as device_type, count() as count
       FROM events
-      WHERE timestamp >= 30d
-      GROUP BY properties.$device_type
+      WHERE event = '$pageview' AND timestamp >= 30d
+      GROUP BY device_type
     SQL
   end
 
   def recent_visits_hogql
     <<~SQL
-      SELECT distinct_id, timestamp, properties.$path, properties.$browser, properties.$os
+      SELECT
+        distinct_id,
+        timestamp,
+        coalesce(nullIf(properties.$pathname, ''), path(properties.$current_url), '/') as page_path,
+        properties.$browser,
+        properties.$os,
+        coalesce(nullIf(properties.$device_type, ''), 'Unknown') as device_type,
+        nullIf(properties.$geoip_country_name, '') as country
       FROM events
       WHERE event = '$pageview' AND timestamp >= 30d
       ORDER BY timestamp DESC
