@@ -81,7 +81,7 @@ class User < ApplicationRecord
   validates :linkedin_url, format: { with: %r{\Ahttps://(www\.)?linkedin\.com/.*\z}i, message: "must be a valid LinkedIn URL" }, allow_blank: true
 
   def primary_email
-    emails.find_by(primary: true)&.email || email
+    emails.find_by(primary: true)&.email || email.presence || read_attribute_before_type_cast("email").presence
   end
 
   def posthog_distinct_id
