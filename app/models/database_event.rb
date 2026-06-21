@@ -66,6 +66,10 @@ class DatabaseEvent < ApplicationRecord
     "#{formatted_date}-ruby-#{region}-#{event_type}"
   end
 
+  def keywords
+    "Events, Ruby, Rails, #{region.capitalize}"
+  end
+
   def should_generate_new_friendly_id?
     date_changed? || region_changed? || event_type_changed? || super
   end

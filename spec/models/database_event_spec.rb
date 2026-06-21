@@ -222,6 +222,13 @@ RSpec.describe DatabaseEvent, type: :model do
     end
   end
 
+  describe "#keywords" do
+    it "generates keywords containing the region" do
+      event = FactoryBot.create(:database_event, :meetup, :melbourne)
+      expect(event.keywords).to eq("Events, Ruby, Rails, Melbourne")
+    end
+  end
+
   describe "DatabaseEvent" do
     it "differs from site Melbourne::Event" do
       events = Melbourne::Event.all
