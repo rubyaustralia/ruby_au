@@ -74,7 +74,7 @@ module Melbourne
       {
         title: "#{event.date} - #{event.name}",
         description: event.description,
-        keywords: "Events, Ruby, Rails, Melbourne",
+        keywords: event.keywords,
         og: {
           title: :title,
           description: :description,
