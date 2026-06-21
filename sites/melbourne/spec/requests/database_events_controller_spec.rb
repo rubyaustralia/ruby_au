@@ -83,7 +83,10 @@ RSpec.describe Melbourne::DatabaseEventsController, type: :request do
     it 'initializes a new event' do
       get new_melbourne_database_event_path
       expect(response).to have_http_status(:ok)
-      expect(assigns(:database_event)).to be_a_new(DatabaseEvent)
+      db_event = assigns(:database_event)
+      expect(db_event).to be_a_new(DatabaseEvent)
+      expect(db_event.region).to eq('melbourne')
+      expect(db_event.event_type).to eq('meetup')
     end
 
     context 'when not authenticated' do

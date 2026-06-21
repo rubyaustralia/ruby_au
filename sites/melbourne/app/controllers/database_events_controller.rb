@@ -1,5 +1,14 @@
 # frozen_string_literal: true
 
+MELBOURNE_EVENT_DEFAULTS = {
+  # TODO: As of 2026-06-21 the time zone is set up to Australia/Melbourne in config/application.rb:53.
+  # This might create problems in the future with meetups in other locations.
+  start_time: "6pm",
+  end_time: "8:30pm",
+  event_type: :meetup,
+  region: :melbourne
+}.freeze
+
 module Melbourne
   class DatabaseEventsController < ApplicationController
     before_action :set_database_event, only: %i[show edit update destroy]
@@ -11,7 +20,7 @@ module Melbourne
     end
 
     def new
-      @database_event = DatabaseEvent.new
+      @database_event = DatabaseEvent.new(MELBOURNE_EVENT_DEFAULTS)
     end
 
     def edit; end
