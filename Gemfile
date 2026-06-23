@@ -6,6 +6,7 @@ gem 'rails', '>= 8.0.0'
 gem 'pg'
 gem 'puma'
 
+gem 'aws-sdk-s3', require: false # Used for Cloudflare R2 instance
 gem 'bcrypt'
 gem 'bugsnag'
 gem 'createsend'
