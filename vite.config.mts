@@ -5,6 +5,7 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [
     ViteRails({
+      sri: { manifestPaths: ['.vite/manifest.json'] },
       fullReload: {
         additionalPaths: [
           'config/routes.rb',
