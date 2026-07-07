@@ -34,7 +34,7 @@ def add_secondary_email_if_not_present(user:)
 end
 
 def seed_user(email:, &block)
-  user = User.find_or_create_by!(email:, &block)
+  user = Email.find_by(email:)&.user || User.create!(email:, &block)
   add_secondary_email_if_not_present(user:)
   puts # rubocop:disable Rails/Output
 end
