@@ -11,7 +11,6 @@
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :inet
 #  deactivated_at         :datetime
-#  email                  :string
 #  email_confirmed        :boolean          default(FALSE)
 #  encrypted_password     :string
 #  full_name              :string
@@ -35,7 +34,6 @@
 # Indexes
 #
 #  index_users_on_confirmation_token    (confirmation_token) UNIQUE
-#  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
