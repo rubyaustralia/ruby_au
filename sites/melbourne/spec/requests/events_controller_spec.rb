@@ -13,7 +13,7 @@ RSpec.describe Melbourne::EventsController, type: :request do
         receive(:find_by_slug).and_return(event)
     end
 
-    it "displays the home page" do
+    it "displays the event page" do
       get melbourne_event_path("test-name-of-event")
       expect(Melbourne::Event).to \
         have_received(:find_by_slug).with("test-name-of-event")

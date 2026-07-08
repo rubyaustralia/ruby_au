@@ -41,7 +41,7 @@
         </div>
         <div>
           <%= link_to "All events",
-                      melbourne_upcoming_events_path,
+                      melbourne_database_events_path,
                       class: "block px-3.5 py-2.5 mt-4 w-full text-sm font-semibold text-center text-gray-900 bg-gray-200 rounded-md cursor-pointer shadow-xs hover:bg-gray-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" %>
         </div>
       </section>
@@ -51,10 +51,10 @@
         <h2 class="font-mono text-gray-700">Next event</h2>
         <% if @next_event %>
           <div class="mt-4">
-            <%= render "melbourne/home/next_event", event: @next_event %>
+            <%= render "melbourne/database_events_home/next_event", event: @next_event %>
           </div>
         <% else %>
-          <%= render "melbourne/home/no_upcoming_summary" %>
+          <%= render "melbourne/database_events_home/no_upcoming_summary" %>
         <% end %>
       </section>
     </div>

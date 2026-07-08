@@ -31,7 +31,7 @@
               <%= presenter.venue.name %>
             </p>
             <p class="leading-5 text-gray-600 truncate whitespace-nowrap">
-              <%= presenter.venue.address.street %>
+              <%= presenter.venue.address %>
             </p>
           </div>
         </div>
@@ -44,10 +44,10 @@
   <p><%= presenter.description %></p>
   <div class="flex gap-2 mt-2">
     <%= link_to "See details",
-                melbourne_event_path(event),
+                melbourne_database_event_path(event),
                 class: "block px-3.5 py-2.5 mt-4 w-full text-sm font-semibold text-center text-gray-900 bg-gray-200 rounded-md cursor-pointer shadow-xs hover:bg-gray-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" %>
     <%= link_to "Register",
-                presenter.registration_link,
+                presenter.registration_url,
                 class: "block px-3.5 py-2.5 mt-4 w-full text-sm font-semibold text-center text-white bg-[#0025CA] rounded-md cursor-pointer shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600",
                 target: "_blank" %>
 

@@ -1,6 +1,6 @@
-<% presenter = Melbourne::EventPresenter.new(event) %>
+<% presenter = Melbourne::EventPresenter.new(database_event) %>
 
-<%= link_to melbourne_event_path(event),
+<%= link_to melbourne_database_event_path(database_event),
             class: class_names(presenter.container_base_classes, presenter.container_hover_classes),
             id: dom_id(presenter) do %>
 
