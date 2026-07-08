@@ -1,4 +1,4 @@
-<% set_meta_tags @event_presenter.open_graph_metadata %>
+<% set_meta_tags @event_presenter.open_graph_metadata_new %>
 <%= render "layouts/melbourne/navigation" %>
 
 <article class="max-w-[80ch] mx-auto px-4 lg:px-0 mt-8 mb-16">
@@ -19,7 +19,8 @@
           <p class="font-medium leading-5 text-black">
             <%= @event_presenter.formatted_date_with_conditional_year %>
           </p>
-          <p class="leading-5 text-gray-600">6:30pm - 8:30pm</p>
+          <p class="leading-5 text-gray-600">
+            <%= @event_presenter.start_time %> - <%= @event_presenter.end_time %></p>
         </div>
       </div>
       <div class="flex flex-row gap-4 items-center">
@@ -33,7 +34,7 @@
             <%= @event_presenter.venue.name %>
           </p>
           <p class="leading-5 text-gray-600 truncate whitespace-nowrap">
-            <%= @event_presenter.venue.address.street %>
+            <%= @event_presenter.venue.address %>
           </p>
         </div>
       </div>
@@ -53,7 +54,7 @@
         <p class="px-4 pt-2 text-lg leading-6 text-black">To join the event please register using the link
           below. Spaces are limited, and it's on a first come, first served basis.</p>
         <%= link_to "Register",
-                    @event_presenter.registration_link,
+                    @event_presenter.registration_url,
                     class: "block px-3.5 py-2.5 mt-4 w-full text-sm font-semibold text-center text-white bg-[#0D37F2] rounded-md cursor-pointer shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600",
                     target: "_blank" %>
       <% end %>
@@ -68,7 +69,7 @@
       <div>
         <h4 class="pb-1 mb-1 text-gray-500 border-b border-gray-200">Talks</h4>
         <div class="flex flex-col gap-8 py-4">
-          <%= render collection: @event_presenter.talks, partial: "melbourne/events/talk" %>
+          <%= render collection: @event_presenter.talks, partial: "melbourne/database_events/talk" %>
         </div>
       </div>
     <% end %>
