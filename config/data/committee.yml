@@ -1,6 +1,8 @@
 - name: Nick Wolf
   photo: nick-wolf.jpg
   position: President
+  start: "2025-10-18"
+  end: "2026-10-17"
   twitter: quintrino
   github: quintrino
   website: https://nickwolf.com.au
