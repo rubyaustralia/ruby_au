@@ -11,6 +11,37 @@ module CommitteeHelper
     grouped.sort! { |a, b| b[:start][-1] <=> a[:start][-1] }
   end
 
+  def presidents_years
+    presidents_data = presidents
+
+    min_term = Date.parse(presidents_data[-1][:start][0])
+    max_term = Date.parse(presidents_data[0][:end][-1])
+    all_terms = max_term - min_term
+
+    { min_term: min_term, max_term: max_term, all: all_terms }
+  end
+
+  # term calculation to be used in view
+  # Offset: (the president start-date - min_term) / (max_term - min_term) * 100
+  # Width(duration): (the president end-date - the president start-date)/ (max_term - min_term) * 100
+
+  def president_terms(president)
+    starts = president[:start]
+    ends = president[:end]
+    all_terms = presidents_years[:all]
+    min = presidents_years[:min_term]
+
+    starts.each_with_index.map do |start_date, index|
+      start = Date.parse(start_date)
+      end_date = Date.parse(ends[index])
+
+      offset = (start - min) / all_terms * 100
+      presidency = (end_date - start) / all_terms * 100
+
+      { offset: offset.to_i, presidency: presidency.to_i }
+    end
+  end
+
   private
 
   def load_presidents

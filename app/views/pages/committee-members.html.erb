@@ -1,8 +1,22 @@
 <% title "Committee Members" %>
 
 <% presidents.each do |president| %>
-    <div><%= president %></div>
+    <div class="flex">
+      <div><%= president[:name] %></div>
+      <% president_terms(president).each do |t| %>
+      <div class="absolute bg-ruby-red" style="left: <%= t[:offset] %>%;
+                  width: <%= t[:presidency] %>%">
+        &nbsp;
+      </div>
+      <% end %>
+    </div>
 <% end %>
+  <div class="beginning">
+    <%= presidents_years[:min_term].year %>
+  </div>
+  <div class="end">
+    <%= presidents_years[:max_term].year %>
+  </div>
 
 <section class="container mx-auto px-4 py-10">
   <h1 class="text-center">Committee Members</h1>
