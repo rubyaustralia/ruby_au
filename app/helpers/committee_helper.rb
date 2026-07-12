@@ -6,9 +6,9 @@ module CommitteeHelper
   def presidents
     president_list = load_presidents
 
-    group_presidents(president_list)
+    grouped = group_presidents(president_list)
 
-    president_list.sort! { |a, b| b[:start][-1] <=> a[:start][-1] }
+    grouped.sort! { |a, b| b[:start][-1] <=> a[:start][-1] }
   end
 
   private
@@ -29,11 +29,11 @@ module CommitteeHelper
 
       if other
         combine_records(other, record)
-        president_list.delete(record)
       else
         grouped << record
       end
     end
+    grouped
   end
 
   def combine_records(other, record)
