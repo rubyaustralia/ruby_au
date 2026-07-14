@@ -1,0 +1,80 @@
+<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+  <div class="flex flex-row items-center justify-between mb-6 sm:mb-8">
+    <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-0">Events</h2>
+
+    <%= link_to new_admin_rsvp_event_path, class: "inline-flex items-center justify-center rounded-md bg-ruby-red px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-ruby-red focus:ring-offset-2 transition-colors" do %>
+      <i data-lucide="plus" class="w-4 h-4 mr-1.5"></i>
+      <span>New Event</span>
+    <% end %>
+  </div>
+
+  <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead>
+          <tr class="bg-gray-50">
+            <th scope="col" class="px-4 sm:px-6 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Title</th>
+            <th scope="col" class="px-4 sm:px-6 py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Happens At</th>
+            <th scope="col" class="px-4 sm:px-6 py-3 text-right text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <% if @events.any? %>
+            <% @events.each do |event| %>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="px-4 sm:px-6 py-4 whitespace-normal">
+                  <div class="text-sm sm:text-base font-medium text-gray-900 line-clamp-2"><%= event.title %></div>
+                </td>
+
+                <td class="px-4 sm:px-6 py-4 whitespace-nowrap">
+                  <div class="text-sm sm:text-base text-gray-700">
+                    <time datetime="<%= event.happens_at.iso8601 %>">
+                      <%= event.happens_at.strftime("%b %d, %Y") %>
+                    </time>
+                  </div>
+                </td>
+
+                <td class="px-4 sm:px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center space-x-2 sm:space-x-3 justify-end">
+                    <%= link_to admin_rsvp_event_path(event), target: "_blank", class: "rounded bg-white p-1.5 text-gray-700 hover:bg-gray-100 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-colors", title: "Preview" do %>
+                      <i data-lucide="eye" class="h-4 w-4"></i>
+                      <span class="sr-only">Preview</span>
+                    <% end %>
+
+                    <% if event.upcoming? %>
+                      <%= link_to edit_admin_rsvp_event_path(event), class: "rounded bg-white p-1.5 text-gray-700 hover:bg-gray-100 hover:text-ruby-red focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ruby-red transition-colors", title: "Edit" do %>
+                        <i data-lucide="edit-2" class="h-4 w-4"></i>
+                        <span class="sr-only">Edit</span>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          <% else %>
+            <tr>
+              <td colspan="4" class="px-4 sm:px-6 py-8 text-center text-sm text-gray-500">
+                <div class="flex flex-col gap-y-2 items-center">
+                  <i data-lucide="mail" class="h-10 w-10 text-gray-400"></i>
+                  <p class="mb-[unset]">No events found</p>
+                  <p class="mb-[unset] text-xs text-gray-400">Create a new event to get started</p>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <% if @events.respond_to?(:total_pages) && @events.total_pages > 1 %>
+      <div class="border-t border-gray-200 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between flex-col sm:flex-row bg-gray-50">
+        <div class="text-sm text-gray-700 mb-4 sm:mb-0">
+          Showing page <%= @events.current_page %> of <%= @events.total_pages %>
+        </div>
+        <div>
+          <%= paginate @events, window: 2, class: "pagination flex gap-2" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -10,8 +10,19 @@
 #  updated_at :datetime         not null
 #
 class RsvpEvent < ApplicationRecord
-  validates :title,      presence: true
-  validates :happens_at, presence: true
+  validates :title,
+            presence: true
 
-  scope :upcoming, -> { where('happens_at > NOW()') }
+  validates :happens_at,
+            presence: true,
+            comparison: {
+              greater_than: ->(_record) { Time.current },
+              message: "can't be in the past"
+            }
+
+  scope :upcoming, -> { where('happens_at > ?', Time.current) }
+
+  def upcoming?
+    Time.current < happens_at
+  end
 end
