@@ -11,7 +11,6 @@
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :inet
 #  deactivated_at         :datetime
-#  email                  :string
 #  email_confirmed        :boolean          default(FALSE)
 #  encrypted_password     :string
 #  full_name              :string
@@ -35,7 +34,6 @@
 # Indexes
 #
 #  index_users_on_confirmation_token    (confirmation_token) UNIQUE
-#  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
@@ -68,12 +66,6 @@ class User < ApplicationRecord
     )
   }
   scope :committee, -> { where(committee: true) }
-  scope :without_emails, lambda {
-    left_outer_joins(:emails)
-      .where(emails: { id: nil })
-      .where.not(email: nil)
-  }
-
   attr_accessor :skip_subscriptions
 
   validates :full_name, presence: true
@@ -109,22 +101,6 @@ class User < ApplicationRecord
   def save_as_confirmed!
     self.confirmed_at ||= Time.current
     save!
-  end
-
-  def update_emails
-    existing_email = read_attribute_before_type_cast('email')
-    return if existing_email.blank?
-
-    return if emails.where(email: existing_email).exists?
-
-    new_email = Email.new(email: existing_email, user: self, primary: true, skip_trigger_after_confirmation: true)
-    new_email.skip_confirmation!
-
-    if new_email.save
-      logger.info "Email updated for user #{id}: #{existing_email}"
-    else
-      logger.error "Failed to update email for user #{id}: #{new_email.errors.full_messages.join(', ')}"
-    end
   end
 
   def update_mailing_list_and_memberships(email_update: false)
