@@ -16,9 +16,9 @@ module CommitteeHelper
 
     min_term = Date.parse(presidents_data[-1][:start][0])
     max_term = Date.parse(presidents_data[0][:end][-1])
-    all_terms = max_term - min_term
+    # all_terms = max_term - min_term , all: all_terms
 
-    { min_term: min_term, max_term: max_term, all: all_terms }
+    { min_term: min_term, max_term: max_term }
   end
 
   # term calculation to be used in view
@@ -28,17 +28,11 @@ module CommitteeHelper
   def president_terms(president)
     starts = president[:start]
     ends = president[:end]
-    all_terms = presidents_years[:all]
+    all_terms = presidents_years[:max_term] - presidents_years[:min_term]
     min = presidents_years[:min_term]
 
-    starts.each_with_index.map do |start_date, index|
-      start = Date.parse(start_date)
-      end_date = Date.parse(ends[index])
-
-      offset = (start - min) / all_terms * 100
-      presidency = (end_date - start) / all_terms * 100
-
-      { offset: offset.to_i, presidency: presidency.to_i }
+    starts.map.each_with_index do |start_date, index|
+      calc_each_term(start_date, ends[index], min, all_terms)
     end
   end
 
@@ -79,5 +73,15 @@ module CommitteeHelper
 
   def to_array(term)
     term.is_a?(Array) ? term : [term]
+  end
+
+  def calc_each_term(start_date, end_date, min_term, all_terms)
+    start_d = Date.parse(start_date)
+    end_d = Date.parse(end_date)
+
+    offset = (start_d - min_term) / all_terms * 100
+    presidency = (end_d - start_d) / all_terms * 100
+
+    { offset: offset.to_f, presidency: presidency.to_f }
   end
 end
