@@ -13,35 +13,37 @@ RSpec.describe Melbourne::EventPresenter do
     )
   end
 
-  let(:talks) do
-    [
-      Talk.new(
-        title: "First Talk",
-        description: "A great talk about Ruby",
-        video_url: "https://example.com/video1",
-        speakers: ""
-      ),
-      Talk.new(
-        title: "Second Talk",
-        description: "Another great talk about Rails",
-        video_url: "https://example.com/video2",
-        speakers: ""
-      )
-    ]
-  end
-
   let(:event_date) { Date.new(2025, 3, 15) }
   let(:event) do
-    DatabaseEvent.new(
+    DatabaseEvent.create!(
       name: "Ruby Melbourne Meetup",
       date: event_date,
       venue: venue,
       description: "An awesome Ruby meetup event",
-      talks: talks,
-      slug: "ruby-melbourne-meetup",
-      event_type: "meetup",
+      event_type: :meetup,
+      region: :melbourne,
+      start_time: "6pm",
       registration_url: "https://example.com/register"
     )
+  end
+
+  let(:talks) do
+    [
+      Talk.create!(
+        title: "First Talk",
+        description: "A great talk about Ruby",
+        video_url: "https://example.com/video1",
+        speakers: "",
+        event: event
+      ),
+      Talk.create!(
+        title: "Second Talk",
+        description: "Another great talk about Rails",
+        video_url: "https://example.com/video2",
+        speakers: "",
+        event: event
+      )
+    ]
   end
 
   describe "#formatted_day_number" do
@@ -235,7 +237,7 @@ RSpec.describe Melbourne::EventPresenter do
                title: :title,
                description: :description,
                image: "/vite-test/assets/ruby_melbourne_og-DV58EnLN.png",
-               url: "http://melbourne.localhost:3000/events/ruby-melbourne-meetup",
+               url: "http://melbourne.localhost:3000/events/2025-03-15-ruby-melbourne-meetup",
              },
              twitter: {
                card: "summary",
