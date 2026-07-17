@@ -190,6 +190,38 @@ RSpec.describe DatabaseEvent, type: :model do
     end
   end
 
+  describe "#slug" do
+    subject(:event) { FactoryBot.create(:database_event, :meetup, :melbourne, date: Time.zone.local(2026, 7, 21)) }
+
+    it "generates a slug" do
+      expect(event.slug).to eq("2026-07-21-ruby-melbourne-meetup")
+    end
+
+    context "when the region changes" do
+      it "regenerates the slug" do
+        event.region = :sydney
+        event.save
+        expect(event.slug).to eq("2026-07-21-ruby-sydney-meetup")
+      end
+    end
+
+    context "when the event type changes" do
+      it "regenerates the slug" do
+        event.event_type = :conference
+        event.save
+        expect(event.slug).to eq("2026-07-21-ruby-melbourne-conference")
+      end
+    end
+
+    context "when the date changes" do
+      it "regenerates the slug" do
+        event.date = Time.zone.local(2026, 8, 1)
+        event.save
+        expect(event.slug).to eq("2026-08-01-ruby-melbourne-meetup")
+      end
+    end
+  end
+
   describe "DatabaseEvent" do
     it "differs from site Melbourne::Event" do
       events = Melbourne::Event.all
