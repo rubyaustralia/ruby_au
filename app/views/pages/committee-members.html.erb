@@ -1,24 +1,34 @@
 <% title "Committee Members" %>
 
-<% presidents.each do |president| %>
-    <div class="flex">
-      <div><%= president[:name] %></div>
-      <% president_terms(president).each do |t| %>
-      <div class="absolute bg-ruby-red" style="left: <%= t[:offset] %>%;
-                  width: <%= t[:presidency] %>%">
-        &nbsp;
-      </div>
-      <% end %>
-    </div>
-<% end %>
-  <div class="beginning">
-    <%= presidents_years[:min_term].year %>
-  </div>
-  <div class="end">
-    <%= presidents_years[:max_term].year %>
-  </div>
-
 <section class="container mx-auto px-4 py-10">
+  <div class="mb-8">
+    <h1 class="text-center text-2xl mb-4">Presidents Timeline</h1>
+    <% presidents.each do |president| %>
+        <div class="flex items-stretch">
+          <div class="w-48 flex-shrink-0 text-lg font-semibold "><%= president[:name] %></div>
+          <div class="flex-1">
+            <div class="relative">
+              <% president_terms(president).each do |t| %>
+                <div class="absolute bg-ruby-red" style="left: <%= t[:offset] %>%;
+                            width: <%= t[:presidency] %>%">
+                  &nbsp;
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+
+   <div class="flex">
+    <div class="w-48 flex-shrink-0"> &nbsp;</div>
+    <% chart_years.each do |y| %>
+      <div style="width: <%= year_length %>%">
+        <%= y %>
+      </div>
+    <% end %>
+  </div>
+</div>
+  
   <h1 class="text-center">Committee Members</h1>
   <div id="committee" class="flex flex-wrap justify-center gap-6 mt-8">
     <% committee.each do |member| %>
