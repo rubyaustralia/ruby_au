@@ -1,16 +1,16 @@
 <% title "Committee Members" %>
 
 <section class="container mx-auto px-4 py-10">
-  <div class="mb-8">
+  <div class="mb-8 bg-ruby-red/6 p-[0.5rem] border border-ruby-red/20 rounded-md">
     <h1 class="text-center text-2xl mb-4">Presidents Timeline</h1>
     <% presidents.each do |president| %>
         <div class="flex items-stretch">
-          <div class="w-48 flex-shrink-0 text-lg font-semibold "><%= president[:name] %></div>
+          <div class="sm:w-48 w-24 flex-shrink-0 text-lg font-semibold"><%= president[:name] %></div>
           <div class="flex-1">
-            <div class="relative">
+            <div class="relative min-h-6">
               <% president_terms(president).each do |t| %>
-                <div class="absolute bg-ruby-red" style="left: <%= t[:offset] %>%;
-                            width: <%= t[:presidency] %>%">
+                <div class="absolute h-full bg-ruby-red" style="left: <%= t[:offset] %>%;
+                            width: calc(<%= t[:presidency] %>% + 1px);">
                   &nbsp;
                 </div>
               <% end %>
@@ -20,9 +20,9 @@
     <% end %>
 
    <div class="flex">
-    <div class="w-48 flex-shrink-0"> &nbsp;</div>
+    <div class="sm:w-48 w-24 flex-shrink-0"> &nbsp;</div>
     <% chart_years.each do |y| %>
-      <div style="width: <%= year_length %>%">
+      <div class="sm:text-sm text-xs" style="width: <%= year_length %>%">
         <%= y %>
       </div>
     <% end %>
