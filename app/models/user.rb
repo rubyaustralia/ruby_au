@@ -66,6 +66,11 @@ class User < ApplicationRecord
     )
   }
   scope :committee, -> { where(committee: true) }
+  scope :search, lambda { |query|
+    search_term = "%#{query}%"
+    email_matches = Email.where("email ILIKE ?", search_term).select(:user_id)
+    where("full_name ILIKE ? OR preferred_name ILIKE ? OR id IN (?)", search_term, search_term, email_matches)
+  }
   attr_accessor :skip_subscriptions
 
   validates :full_name, presence: true

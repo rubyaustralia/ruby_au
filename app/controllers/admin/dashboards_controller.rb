@@ -35,11 +35,7 @@ class Admin::DashboardsController < Admin::ApplicationController
   end
 
   def apply_search_filter(query)
-    search_term = "%#{@users_search}%"
-    query.where(
-      "full_name ILIKE ? OR preferred_name ILIKE ? OR email ILIKE ?",
-      search_term, search_term, search_term
-    )
+    query.search(@users_search)
   end
 
   def apply_role_filter(query)
