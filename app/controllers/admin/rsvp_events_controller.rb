@@ -10,29 +10,13 @@ class Admin::RsvpEventsController < Admin::ApplicationController
   end
 
   def create
-    tz = ActiveSupport::TimeZone[rsvp_event_params[:time_zone]]
-
-    if tz.nil?
-      @event = RsvpEvent.new(rsvp_event_params.except(:time_zone))
-      @event.errors.add(:time_zone, "is not a valid time zone")
-      return render :new, status: :unprocessable_entity
-    end
-
-    @event = Time.use_zone(tz) do
-      RsvpEvent.new(rsvp_event_params.except(:time_zone))
-    end
+    @event = RsvpEvent.new(rsvp_event_params)
 
     if @event.save
-      redirect_to admin_rsvp_event_path(@event), notice: "Event created"
+      redirect_to admin_rsvp_events_path, notice: "Event created"
     else
       render :new, status: :unprocessable_entity
     end
-  rescue ArgumentError
-    @event ||= Time.use_zone(tz || Time.zone) do
-      RsvpEvent.new(rsvp_event_params.except(:time_zone))
-    end
-    @event.errors.add(:happens_at, "is not a valid date/time")
-    render :new, status: :unprocessable_entity
   end
 
   def edit
