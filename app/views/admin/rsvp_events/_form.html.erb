@@ -32,22 +32,22 @@
   <%= form.label :happens_at, class: "text-lg font-medium" %>
   <div class="flex md:flex-row md:flex-wrap items-center justify-start gap-x-2 overflow-hidden py-1">
     <%= form.datetime_select :happens_at,
-                            { selected: Time.current, start_year: Time.current.year },
+                            { selected: event.happens_at&.utc || Time.current.in_time_zone("Australia/Sydney"), start_year: Time.current.year },
                             {
                               required: true,
                               class: "px-1 py-0.5 rounded-sm border-gray-300 shadow-sm focus:border-ruby-red focus:ring focus:ring-ruby-red focus:ring-opacity-50 text-sm sm:text-base" } %>
 
     <%= form.time_zone_select :time_zone,
                               ActiveSupport::TimeZone.country_zones("AU"),
-                              { required: true, default: "Sydney" },
+                              { required: true, default: event.happens_at.present? ? "UTC" : "Sydney" },
                               { class: "px-1 py-0.5 rounded-sm border-gray-300 shadow-sm focus:border-ruby-red focus:ring focus:ring-ruby-red focus:ring-opacity-50 text-sm sm:text-base" } %>
   </div>
 </div>
 
 <div class="flex flex-row gap-x-4 items-center justify-between py-0.5">
-  <%= form.submit "Create Event", class: "py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-ruby-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" %>
-
   <%= link_to "Cancel", admin_rsvp_events_path,
               class: "py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" %>
+
+  <%= form.submit "Submit", class: "py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-ruby-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ruby-red transition-colors" %>
 </div>
 <% end %>
