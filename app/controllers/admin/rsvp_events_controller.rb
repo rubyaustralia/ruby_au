@@ -1,4 +1,6 @@
 class Admin::RsvpEventsController < Admin::ApplicationController
+  before_action :set_rsvp_event, only: %i[edit update]
+
   def index
     @events = RsvpEvent.order(happens_at: :desc).page(params[:page])
   end
@@ -8,16 +10,16 @@ class Admin::RsvpEventsController < Admin::ApplicationController
   end
 
   def create
-    tz = ActiveSupport::TimeZone[new_event_params[:time_zone]]
+    tz = ActiveSupport::TimeZone[rsvp_event_params[:time_zone]]
 
     if tz.nil?
-      @event = RsvpEvent.new(new_event_params.except(:time_zone))
+      @event = RsvpEvent.new(rsvp_event_params.except(:time_zone))
       @event.errors.add(:time_zone, "is not a valid time zone")
       return render :new, status: :unprocessable_entity
     end
 
     @event = Time.use_zone(tz) do
-      RsvpEvent.new(new_event_params.except(:time_zone))
+      RsvpEvent.new(rsvp_event_params.except(:time_zone))
     end
 
     if @event.save
@@ -27,7 +29,7 @@ class Admin::RsvpEventsController < Admin::ApplicationController
     end
   rescue ArgumentError
     @event ||= Time.use_zone(tz || Time.zone) do
-      RsvpEvent.new(new_event_params.except(:time_zone))
+      RsvpEvent.new(rsvp_event_params.except(:time_zone))
     end
     @event.errors.add(:happens_at, "is not a valid date/time")
     render :new, status: :unprocessable_entity
@@ -41,7 +43,13 @@ class Admin::RsvpEventsController < Admin::ApplicationController
 
   private
 
-  def new_event_params
+  def set_rsvp_event
+    @event = RsvpEvent.find(params.expect(:id))
+  rescue ActiveRecord::RecordNotFound
+    redirect_to admin_rsvp_events_path, alert: 'Event not found'
+  end
+
+  def rsvp_event_params
     params.require(:rsvp_event).permit(
       :title,
       :time_zone,
