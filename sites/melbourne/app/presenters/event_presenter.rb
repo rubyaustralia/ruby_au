@@ -4,6 +4,14 @@ module Melbourne
   class EventPresenter < SimpleDelegator
     delegate :year, to: :date
 
+    def formatted_start_time
+      start_time.strftime("%l:%M %P")
+    end
+
+    def formatted_end_time
+      end_time&.strftime("%l:%M %P")
+    end
+
     def formatted_day_number
       date.strftime("%d")
     end
@@ -47,6 +55,47 @@ module Melbourne
 
     def container_hover_classes
       "hover:bg-[#0D37F2] hover:border-b-transparent hover:text-white hover:**:data-title:text-white hover:**:data-ascii-image:text-[#6A86FF] hover:inset-ring-transparent"
+    end
+
+    def open_graph_metadata_new
+      OpenGraphMetadataNew.new(self).to_meta_tags
+    end
+  end
+
+  class OpenGraphMetadataNew
+    include ViteRails::TagHelpers
+    include ActionView::Helpers::AssetUrlHelper
+
+    def initialize(event)
+      @event = event
+    end
+
+    def to_meta_tags # rubocop:disable Metrics/MethodLength
+      {
+        title: "#{event.date} - #{event.name}",
+        description: event.description,
+        keywords: event.keywords,
+        og: {
+          title: :title,
+          description: :description,
+          image: vite_asset_url("images/melbourne/ruby_melbourne_og.png"),
+          url: event_url
+        },
+        twitter: {
+          card: "summary",
+          site: "@rubyau",
+          title: :title,
+          description: :description,
+        }
+      }
+    end
+
+    private
+
+    attr_reader :event
+
+    def event_url
+      Routes.url_helpers.melbourne_event_url(event, **Routes::DEFAULT_URL_OPTIONS)
     end
   end
 end
