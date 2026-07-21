@@ -29,18 +29,16 @@
                 <td class="px-4 sm:px-6 py-4 whitespace-nowrap">
                   <div class="text-sm sm:text-base text-gray-700">
                     <time datetime="<%= event.happens_at.iso8601 %>">
-                      <%= event.happens_at.strftime("%b %d, %Y") %>
+                      <%= event.happens_at.utc.strftime("%d %b %Y, %H:%M UTC") %>
+                    </time>
+                    <br>
+                    <time datetime="<%= event.happens_at.iso8601 %>" data-controller="local-time">
                     </time>
                   </div>
                 </td>
 
                 <td class="px-4 sm:px-6 py-4 whitespace-nowrap">
                   <div class="flex items-center space-x-2 sm:space-x-3 justify-end">
-                    <%= link_to admin_rsvp_event_path(event), target: "_blank", class: "rounded bg-white p-1.5 text-gray-700 hover:bg-gray-100 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-colors", title: "Preview" do %>
-                      <i data-lucide="eye" class="h-4 w-4"></i>
-                      <span class="sr-only">Preview</span>
-                    <% end %>
-
                     <% if event.upcoming? %>
                       <%= link_to edit_admin_rsvp_event_path(event), class: "rounded bg-white p-1.5 text-gray-700 hover:bg-gray-100 hover:text-ruby-red focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ruby-red transition-colors", title: "Edit" do %>
                         <i data-lucide="edit-2" class="h-4 w-4"></i>
