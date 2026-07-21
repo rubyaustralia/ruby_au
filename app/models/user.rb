@@ -50,7 +50,6 @@ class User < ApplicationRecord
          :trackable
 
   has_many :memberships, dependent: :destroy
-  has_many :emails, dependent: :destroy
   has_many :access_requests, foreign_key: :recorder_id, dependent: :destroy, inverse_of: :recorder
   has_many :nominations_received, class_name: 'Nomination', foreign_key: :nominee_id, inverse_of: :nominee, dependent: :restrict_with_error
   has_many :nominations_made, class_name: 'Nomination', foreign_key: :nominated_by, inverse_of: :nominated_by, dependent: :restrict_with_error
@@ -67,9 +66,11 @@ class User < ApplicationRecord
   }
   scope :committee, -> { where(committee: true) }
   scope :search, lambda { |query|
-    search_term = "%#{query}%"
+    search_term = "%#{ActiveRecord::Base.sanitize_sql_like(query)}%"
     email_matches = Email.where("email ILIKE ?", search_term).select(:user_id)
-    where("full_name ILIKE ? OR preferred_name ILIKE ? OR id IN (?)", search_term, search_term, email_matches)
+    where("full_name ILIKE ?", search_term)
+      .or(where("preferred_name ILIKE ?", search_term))
+      .or(where(id: email_matches))
   }
   attr_accessor :skip_subscriptions
 

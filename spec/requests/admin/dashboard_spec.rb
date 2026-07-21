@@ -22,6 +22,16 @@ RSpec.describe 'Admin::Dashboard', type: :request do
         expect(response).to have_http_status(:ok)
         expect(assigns(:users_for_management)).to include(user)
       end
+
+      it 'does not treat _ as a wildcard' do
+        create(:user, full_name: 'Nick Wolf') # This matches 'Nick_Wolf' if _ is a wildcard
+        user_with_underscore = create(:user, full_name: 'Nick_Wolf')
+
+        get admin_dashboard_path, params: { users_search: 'Nick_Wolf' }
+
+        expect(assigns(:users_for_management)).to include(user_with_underscore)
+        expect(assigns(:users_for_management)).not_to include(user)
+      end
     end
   end
 end
