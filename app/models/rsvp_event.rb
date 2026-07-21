@@ -23,12 +23,15 @@ class RsvpEvent < ApplicationRecord
 
   validate :time_zone_must_be_valid
 
+  validates :happens_at, presence: true
+  # Only guard *scheduling* a new event — an existing event legitimately ages
+  # into the past, and must stay valid/editable once it does.
   validates :happens_at,
-            presence: true,
             comparison: {
               greater_than: ->(_record) { Time.current },
               message: "can't be in the past"
-            }
+            },
+            on: :create
 
   scope :upcoming, -> { where('happens_at > ?', Time.current) }
 
