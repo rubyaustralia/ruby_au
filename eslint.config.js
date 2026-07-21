@@ -73,5 +73,14 @@ export default [
       // Allow console.log in tests
       'no-console': 'off'
     }
+  },
+  {
+    ignores: [
+      "node_modules/**",
+      "coverage/**",
+      "public/**",
+      "tmp/**",
+      "lib/**"
+    ]
   }
 ]
