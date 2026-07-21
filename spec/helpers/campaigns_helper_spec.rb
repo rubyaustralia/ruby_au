@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CampaignsHelper, type: :helper do
+RSpec.describe CampaignsHelper, time_travel_to: '2026-06-01', type: :helper do
   describe '#substitute_content' do
     let(:membership) { instance_double(Membership, full_name: 'John Doe') }
     let(:event) { create(:rsvp_event, title: 'Ruby Meeting', happens_at: Time.zone.parse('2026-06-10 18:00')) }
