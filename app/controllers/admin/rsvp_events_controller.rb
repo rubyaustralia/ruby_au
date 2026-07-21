@@ -19,10 +19,14 @@ class Admin::RsvpEventsController < Admin::ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
+    if @event.update(rsvp_event_params)
+      redirect_to admin_rsvp_events_path, notice: "Event updated"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
