@@ -47,7 +47,7 @@ Rails.application.routes.draw do
     resources :memberships, only: [:index]
     resources :access_requests, except: [:destroy]
     resources :imported_members, only: [:index, :create]
-    resources :rsvp_events, only: [:index, :new, :create, :show, :edit, :update]
+    resources :rsvp_events, only: [:index, :new, :create, :edit, :update]
     resources :campaigns do
       member do
         post :send_test

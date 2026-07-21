@@ -33,9 +33,6 @@ class Admin::RsvpEventsController < Admin::ApplicationController
     render :new, status: :unprocessable_entity
   end
 
-  def show
-  end
-
   def edit
   end
 
