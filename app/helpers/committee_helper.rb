@@ -4,11 +4,9 @@ module CommitteeHelper
   end
 
   def presidents
-    president_list = load_presidents
+    grouped_presidents = group_presidents(load_presidents)
 
-    grouped = group_presidents(president_list)
-
-    grouped.sort! { |a, b| b[:start][-1] <=> a[:start][-1] }
+    grouped_presidents.sort! { |a, b| b[:start][-1] <=> a[:start][-1] }
   end
 
   def presidents_years
@@ -26,7 +24,7 @@ module CommitteeHelper
     all_terms = presidents_years[:max_term] - presidents_years[:min_term]
     min = presidents_years[:min_term]
 
-    starts.map.each_with_index do |start_date, index|
+    starts.map.with_index do |start_date, index|
       calc_each_term(start_date, ends[index], min, all_terms)
     end
   end
@@ -36,7 +34,7 @@ module CommitteeHelper
   end
 
   def year_length
-    100.0 / (presidents_years[:max_term].year - presidents_years[:min_term].year)
+    100.0 / chart_years.count
   end
 
   private
