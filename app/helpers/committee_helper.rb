@@ -4,18 +4,11 @@ module CommitteeHelper
   end
 
   def presidents
-    grouped_presidents = group_presidents(load_presidents)
+    @presidents ||= begin
+      grouped_presidents = group_presidents(load_presidents)
 
-    grouped_presidents.sort! { |a, b| b[:start][-1] <=> a[:start][-1] }
-  end
-
-  def presidents_years
-    presidents_data = presidents
-
-    min_term = Date.parse(presidents_data[-1][:start][0])
-    max_term = Date.parse(presidents_data[0][:end][-1])
-
-    { min_term: min_term, max_term: max_term }
+      grouped_presidents.sort! { |a, b| b[:start][-1] <=> a[:start][-1] }
+    end
   end
 
   def president_terms(president)
@@ -74,6 +67,17 @@ module CommitteeHelper
 
   def to_array(term)
     term.is_a?(Array) ? term : [term]
+  end
+
+  def presidents_years
+    @presidents_years ||= begin
+      presidents_data = presidents
+
+      min_term = Date.parse(presidents_data[-1][:start][0])
+      max_term = Date.parse(presidents_data[0][:end][-1])
+
+      { min_term: min_term, max_term: max_term }
+    end
   end
 
   def calc_each_term(start_date, end_date, min_term, all_terms)
