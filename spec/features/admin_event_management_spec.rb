@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-feature "Admin Event Management" do
+feature "Admin Event Management", time_travel_to: "2026-01-01" do
   let(:admin) { FactoryBot.create(:user, committee: true) }
 
   before do
