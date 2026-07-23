@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Campaigns::Event do
+RSpec.describe Campaigns::Event, time_travel_to: '2024-12-01' do
   describe ".call" do
     let(:rsvp_event) { build_stubbed(:rsvp_event) }
 
