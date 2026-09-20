@@ -57,9 +57,7 @@ class PostHogAnalyticsProvider
     return mock_visits_over_time if mock_mode?
 
     results = @client.query(visits_over_time_hogql)
-    return [] unless results['results']
-
-    results['results'].map { |row| format_visit_row(row) }
+    format_visits_over_time(results['results'])
   end
 
   def device_breakdown

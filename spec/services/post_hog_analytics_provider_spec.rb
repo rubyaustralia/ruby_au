@@ -36,9 +36,10 @@ RSpec.describe PostHogAnalyticsProvider do
   end
 
   describe '#avg_session_duration' do
-    it 'queries session duration over the last 30 days using valid interval syntax' do
+    it 'queries session duration over the last 30 days using valid interval syntax and properties.$session_id' do
       allow(client).to receive(:query) do |query|
         expect(query).to include('timestamp >= now() - INTERVAL 30 DAY')
+        expect(query).to include('properties.$session_id')
         expect(query).not_to include('30d')
         { 'results' => [[150]] }
       end
@@ -65,21 +66,37 @@ RSpec.describe PostHogAnalyticsProvider do
   end
 
   describe '#visits_over_time' do
-    it 'queries visits over time with valid 30-day interval' do
+    it 'queries visits over time with valid 30-day interval and formats a full 30-day timeline' do
+      test_date = Time.zone.today - 2.days
+
       allow(client).to receive(:query) do |query|
         expect(query).to include('timestamp >= now() - INTERVAL 30 DAY')
+        expect(query).to include('properties.$session_id')
         expect(query).not_to include('30d')
         {
           'results' => [
-            ['2026-06-01', 10, 8, 25]
+            [test_date.to_s, 10, 8, 25]
           ]
         }
       end
 
-      expect(provider.visits_over_time).to eq(
-        [
-          { date: 'Jun 01', visits: 10, unique_visitors: 8, page_views: 25 }
-        ]
+      visits = provider.visits_over_time
+      expect(visits.size).to eq(30)
+
+      matched_day = visits.find { |v| v[:date] == test_date.strftime('%b %d') }
+      expect(matched_day).to eq(
+        date: test_date.strftime('%b %d'),
+        visits: 10,
+        unique_visitors: 8,
+        page_views: 25
+      )
+
+      other_day = visits.find { |v| v[:date] == (Time.zone.today - 5.days).strftime('%b %d') }
+      expect(other_day).to eq(
+        date: (Time.zone.today - 5.days).strftime('%b %d'),
+        visits: 0,
+        unique_visitors: 0,
+        page_views: 0
       )
     end
   end
