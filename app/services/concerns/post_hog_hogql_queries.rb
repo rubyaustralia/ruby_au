@@ -7,9 +7,9 @@ module PostHogHogqlQueries
     <<~SQL
       SELECT avg(session_duration)
       FROM (
-        SELECT session_id, max(timestamp) - min(timestamp) as session_duration
+        SELECT properties.$session_id as session_id, max(timestamp) - min(timestamp) as session_duration
         FROM events
-        WHERE session_id IS NOT NULL AND timestamp >= now() - INTERVAL 30 DAY
+        WHERE properties.$session_id IS NOT NULL AND timestamp >= now() - INTERVAL 30 DAY
         GROUP BY session_id
       )
     SQL
@@ -36,7 +36,7 @@ module PostHogHogqlQueries
     <<~SQL
       SELECT
         toDate(timestamp) as date,
-        count(DISTINCT coalesce(nullIf(session_id, ''), distinct_id)) as visits,
+        count(DISTINCT coalesce(nullIf(properties.$session_id, ''), distinct_id)) as visits,
         count(DISTINCT distinct_id) as unique_visitors,
         count() as page_views
       FROM events

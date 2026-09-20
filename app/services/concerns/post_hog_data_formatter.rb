@@ -3,12 +3,38 @@
 module PostHogDataFormatter
   private
 
-  def format_visit_row(row)
+  def format_visits_over_time(results)
+    results_by_date = index_results_by_date(results)
+    timeline_date_range.map do |date|
+      build_timeline_day(date, results_by_date[date])
+    end
+  end
+
+  def timeline_date_range
+    29.days.ago.to_date..Time.zone.today
+  end
+
+  def index_results_by_date(results)
+    (results || []).each_with_object({}) do |row, hash|
+      date_key = Time.zone.parse(row[0].to_s)&.to_date
+      hash[date_key] = extract_visit_metrics(row) if date_key
+    end
+  end
+
+  def extract_visit_metrics(row)
     {
-      date: Time.zone.parse(row[0].to_s).strftime("%b %d"),
-      visits: row[1] || 0,
-      unique_visitors: row[2] || row[1] || 0,
-      page_views: row[3] || row[1] || 0
+      visits: row[1].to_i,
+      unique_visitors: (row[2] || row[1]).to_i,
+      page_views: (row[3] || row[1]).to_i
+    }
+  end
+
+  def build_timeline_day(date, data)
+    {
+      date: date.strftime("%b %d"),
+      visits: data&.fetch(:visits, 0) || 0,
+      unique_visitors: data&.fetch(:unique_visitors, 0) || 0,
+      page_views: data&.fetch(:page_views, 0) || 0
     }
   end
 
