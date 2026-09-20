@@ -2,7 +2,7 @@
 
 module Melbourne
   module Data
-    class LLMCaller # rubocop:disable Metrics/ClassLength:
+    class LLMCaller # rubocop:disable Metrics/ClassLength
       def initialize(openai_api_key:)
         # Define the request URL
         uri = URI('https://api.openai.com/v1/responses')
