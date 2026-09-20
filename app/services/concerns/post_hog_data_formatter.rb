@@ -6,7 +6,9 @@ module PostHogDataFormatter
   def format_visit_row(row)
     {
       date: Time.zone.parse(row[0].to_s).strftime("%b %d"),
-      visits: row[1]
+      visits: row[1] || 0,
+      unique_visitors: row[2] || row[1] || 0,
+      page_views: row[3] || row[1] || 0
     }
   end
 
@@ -46,7 +48,7 @@ module PostHogDataFormatter
     elsif seconds < 60
       "#{seconds.round(0)}s"
     else
-      "#{(seconds / 60).round(1)}m"
+      "#{(seconds.to_f / 60).round(1)}m"
     end
   end
 end

@@ -32,9 +32,12 @@ module PostHogMockData
 
   def mock_visits_over_time
     (0..29).map do |i|
+      visits = rand(20..100)
       {
         date: (Time.zone.today - (29 - i)).strftime("%b %d"),
-        visits: rand(20..100)
+        visits: visits,
+        unique_visitors: (visits * 0.75).round,
+        page_views: (visits * 2.5).round
       }
     end
   end

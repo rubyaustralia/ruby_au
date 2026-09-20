@@ -12,21 +12,21 @@ class PostHogAnalyticsProvider
   def total_visits
     return mock_total_visits if mock_mode?
 
-    results = @client.query("SELECT count() FROM events WHERE event = '$pageview' AND {filters}")
+    results = @client.query("SELECT count() FROM events WHERE event = '$pageview'")
     extract_single_value(results)
   end
 
   def unique_visitors
     return mock_unique_visitors if mock_mode?
 
-    results = @client.query("SELECT count(DISTINCT distinct_id) FROM events WHERE {filters}")
+    results = @client.query("SELECT count(DISTINCT distinct_id) FROM events")
     extract_single_value(results)
   end
 
   def visits_today
     return mock_visits_today if mock_mode?
 
-    results = @client.query("SELECT count() FROM events WHERE event = '$pageview' AND timestamp >= today() AND {filters}")
+    results = @client.query("SELECT count() FROM events WHERE event = '$pageview' AND timestamp >= today()")
     extract_single_value(results)
   end
 

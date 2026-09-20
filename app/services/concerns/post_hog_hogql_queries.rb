@@ -9,7 +9,7 @@ module PostHogHogqlQueries
       FROM (
         SELECT session_id, max(timestamp) - min(timestamp) as session_duration
         FROM events
-        WHERE session_id IS NOT NULL AND timestamp >= 30d
+        WHERE session_id IS NOT NULL AND timestamp >= now() - INTERVAL 30 DAY
         GROUP BY session_id
       )
     SQL
@@ -25,7 +25,7 @@ module PostHogHogqlQueries
         ) as page_path,
         count() as views
       FROM events
-      WHERE event = '$pageview' AND timestamp >= 30d
+      WHERE event = '$pageview' AND timestamp >= now() - INTERVAL 30 DAY
       GROUP BY page_path
       ORDER BY views DESC
       LIMIT 10
@@ -34,9 +34,13 @@ module PostHogHogqlQueries
 
   def visits_over_time_hogql
     <<~SQL
-      SELECT toDate(timestamp) as date, count(DISTINCT distinct_id) as visits
+      SELECT
+        toDate(timestamp) as date,
+        count(DISTINCT coalesce(nullIf(session_id, ''), distinct_id)) as visits,
+        count(DISTINCT distinct_id) as unique_visitors,
+        count() as page_views
       FROM events
-      WHERE event = '$pageview' AND timestamp >= 30d
+      WHERE event = '$pageview' AND timestamp >= now() - INTERVAL 30 DAY
       GROUP BY date
       ORDER BY date ASC
     SQL
@@ -46,7 +50,7 @@ module PostHogHogqlQueries
     <<~SQL
       SELECT coalesce(nullIf(properties.$device_type, ''), 'Unknown') as device_type, count() as count
       FROM events
-      WHERE event = '$pageview' AND timestamp >= 30d
+      WHERE event = '$pageview' AND timestamp >= now() - INTERVAL 30 DAY
       GROUP BY device_type
     SQL
   end
@@ -62,7 +66,7 @@ module PostHogHogqlQueries
         coalesce(nullIf(properties.$device_type, ''), 'Unknown') as device_type,
         nullIf(properties.$geoip_country_name, '') as country
       FROM events
-      WHERE event = '$pageview' AND timestamp >= 30d
+      WHERE event = '$pageview' AND timestamp >= now() - INTERVAL 30 DAY
       ORDER BY timestamp DESC
       LIMIT 10
     SQL

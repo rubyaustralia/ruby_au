@@ -3,8 +3,18 @@ import Chart from "chart.js/auto"
 
 export default class extends Controller {
   static values = {
-    type: String,
-    data: Object
+    type: String
+  }
+
+  get dataValue() {
+    const raw = this.element.getAttribute("data-analytics-chart-data-value") || this.element.dataset.analyticsChartDataValue
+    if (!raw) return null
+
+    try {
+      return JSON.parse(raw)
+    } catch {
+      return null
+    }
   }
 
   connect() {
