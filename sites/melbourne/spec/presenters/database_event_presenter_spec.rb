@@ -1,0 +1,251 @@
+# frozen_string_literal: true
+
+require "rails_helper"
+
+RSpec.describe Melbourne::EventPresenter do
+  subject(:presenter) { described_class.new(event) }
+
+  let(:venue) do
+    Venue.new(
+      name: "Test Venue",
+      google_maps_url: "https://maps.google.com/test",
+      address: "123 Test St, Melbourne"
+    )
+  end
+
+  let(:event_date) { Date.new(2025, 3, 15) }
+  let(:event) do
+    DatabaseEvent.create!(
+      name: "Ruby Melbourne Meetup",
+      date: event_date,
+      venue: venue,
+      description: "An awesome Ruby meetup event",
+      event_type: :meetup,
+      region: :melbourne,
+      start_time: "6pm",
+      registration_url: "https://example.com/register"
+    )
+  end
+
+  let(:talks) do
+    [
+      Talk.create!(
+        title: "First Talk",
+        description: "A great talk about Ruby",
+        video_url: "https://example.com/video1",
+        speakers: "",
+        event: event
+      ),
+      Talk.create!(
+        title: "Second Talk",
+        description: "Another great talk about Rails",
+        video_url: "https://example.com/video2",
+        speakers: "",
+        event: event
+      )
+    ]
+  end
+
+  describe "#formatted_day_number" do
+    it "returns the day number formatted as a string" do
+      expect(presenter.formatted_day_number).to eq("15")
+    end
+  end
+
+  describe "#formatted_month_abbreviation" do
+    it "returns the month abbreviation" do
+      expect(presenter.formatted_month_abbreviation).to eq("Mar")
+    end
+  end
+
+  describe "#year_is_different_from_current_year?" do
+    context "when event year is different from current year" do
+      let(:event_date) { Date.new(2026, 3, 15) }
+
+      it "returns true" do
+        travel_to Date.new(2025, 1, 1) do
+          expect(presenter.year_is_different_from_current_year?).to be(true)
+        end
+      end
+    end
+
+    context "when event year is the same as current year" do
+      let(:event_date) { Date.new(2025, 3, 15) }
+
+      it "returns false" do
+        travel_to Date.new(2025, 1, 1) do
+          expect(presenter.year_is_different_from_current_year?).to be(false)
+        end
+      end
+    end
+  end
+
+  describe "#formatted_full_date_with_weekday" do
+    it "returns the full date with weekday" do
+      expect(presenter.formatted_full_date_with_weekday).to eq("Saturday, 15 March")
+    end
+  end
+
+  describe "#year" do
+    it "returns the event year" do
+      expect(presenter.year).to eq(2025)
+    end
+  end
+
+  describe "#in_the_past?" do
+    context "when event date is in the past" do
+      let(:event_date) { Date.new(2025, 1, 15) }
+
+      it "returns true" do
+        travel_to Date.new(2025, 3, 1) do
+          expect(presenter.in_the_past?).to be(true)
+        end
+      end
+    end
+
+    context "when event date is today" do
+      let(:event_date) { Date.new(2025, 3, 1) }
+
+      it "returns false" do
+        travel_to Date.new(2025, 3, 1) do
+          expect(presenter.in_the_past?).to be(false)
+        end
+      end
+    end
+
+    context "when event date is in the future" do
+      let(:event_date) { Date.new(2025, 4, 15) }
+
+      it "returns false" do
+        travel_to Date.new(2025, 3, 1) do
+          expect(presenter.in_the_past?).to be(false)
+        end
+      end
+    end
+  end
+
+  describe "#registration_status_title" do
+    context "when event is in the past" do
+      let(:event_date) { Date.new(2025, 1, 15) }
+
+      it "returns Registration Closed" do
+        travel_to Date.new(2025, 3, 1) do
+          expect(presenter.registration_status_title).to eq("Registration Closed")
+        end
+      end
+    end
+
+    context "when event is not in the past" do
+      let(:event_date) { Date.new(2025, 4, 15) }
+
+      it "returns Registration" do
+        travel_to Date.new(2025, 3, 1) do
+          expect(presenter.registration_status_title).to eq("Registration")
+        end
+      end
+    end
+  end
+
+  describe "#past_event_message" do
+    context "when event year is the same as current year" do
+      let(:event_date) { Date.new(2025, 3, 15) }
+
+      it "returns message without year" do
+        travel_to Date.new(2025, 4, 1) do
+          expect(presenter.past_event_message).to eq("This event took place on Saturday, 15 March.")
+        end
+      end
+    end
+
+    context "when event year is different from current year" do
+      let(:event_date) { Date.new(2024, 3, 15) }
+
+      it "returns message with year" do
+        travel_to Date.new(2025, 4, 1) do
+          expect(presenter.past_event_message).to eq("This event took place on Friday, 15 March 2024.")
+        end
+      end
+    end
+  end
+
+  describe "#formatted_date_with_conditional_year" do
+    context "when event year is the same as current year" do
+      let(:event_date) { Date.new(2025, 3, 15) }
+
+      it "returns formatted date without year" do
+        travel_to Date.new(2025, 4, 1) do
+          expect(presenter.formatted_date_with_conditional_year).to eq("Saturday, 15 March")
+        end
+      end
+    end
+
+    context "when event year is different from current year" do
+      let(:event_date) { Date.new(2024, 3, 15) }
+
+      it "returns formatted date with year" do
+        travel_to Date.new(2025, 4, 1) do
+          expect(presenter.formatted_date_with_conditional_year).to eq("Friday, 15 March 2024")
+        end
+      end
+    end
+  end
+
+  describe "#formatted_date_for_card" do
+    context "when event year is the same as current year" do
+      let(:event_date) { Date.new(2025, 3, 15) }
+
+      it "returns formatted date without year" do
+        travel_to Date.new(2025, 4, 1) do
+          expect(presenter.formatted_date_for_card).to eq("15 March")
+        end
+      end
+    end
+
+    context "when event year is different from current year" do
+      let(:event_date) { Date.new(2024, 3, 15) }
+
+      it "returns formatted date with year" do
+        travel_to Date.new(2025, 4, 1) do
+          expect(presenter.formatted_date_for_card).to eq("15 March 2024")
+        end
+      end
+    end
+  end
+
+  describe "#container_base_classes" do
+    it "returns the base CSS classes for the event container" do
+      expected_classes = "rounded cursor-pointer flex flex-col gap-1 border-b border-b-gray-200 px-4 pb-4 pt-3 transition-colors bg-white text-gray-500 **:data-title:text-black **:data-ascii-image:text-gray-300 hover:bg-blue-700 inset-ring-4 inset-ring-white"
+      expect(presenter.container_base_classes).to eq(expected_classes)
+    end
+  end
+
+  describe "#container_hover_classes" do
+    it "returns the hover CSS classes for the event container" do
+      expected_classes = "hover:bg-[#0D37F2] hover:border-b-transparent hover:text-white hover:**:data-title:text-white hover:**:data-ascii-image:text-[#6A86FF] hover:inset-ring-transparent"
+      expect(presenter.container_hover_classes).to eq(expected_classes)
+    end
+  end
+
+  describe "#open_graph_metadata_new" do
+    it "returns the event open graph metadata" do
+      expect(presenter.open_graph_metadata_new).to \
+        eq({
+             title: "2025-03-15 - Ruby Melbourne Meetup",
+             description: "An awesome Ruby meetup event",
+             keywords: "Events, Ruby, Rails, Melbourne",
+             og: {
+               title: :title,
+               description: :description,
+               image: "/vite-test/assets/ruby_melbourne_og-DV58EnLN.png",
+               url: "http://melbourne.localhost:3000/events/2025-03-15-ruby-melbourne-meetup",
+             },
+             twitter: {
+               card: "summary",
+               site: "@rubyau",
+               title: :title,
+               description: :description,
+             }
+           })
+    end
+  end
+end
