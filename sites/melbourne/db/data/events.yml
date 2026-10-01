@@ -34,24 +34,58 @@
       postal_code: '3000'
       region: VIC
       country: AU
-
-- uuid: 6fb9daa0-3d0f-48ea-985f-2ce53b97670d
-  date: '2026-09-24'
-  name: 'Ruby Melbourne: September 2026'
-  description: >-
-    Join us at Ruby Melbourne: September 2026
-  slug: 2026-09-24-ruby-melbourne
-  registration_link: https://www.meetup.com/ruby-melbourne/events/313408461/
-  type: meetup
-  venue:
-    name: Ferocia
-    google_maps_url: https://maps.app.goo.gl/9xvvwpdw9BkByKqy9
-    address:
-      street: Level 7/271 Collins St
-      locality: Melbourne
-      postal_code: '3000'
-      region: VIC
-      country: AU
+  talks:
+    - uuid: 377f76c6-2aa0-4977-a8ac-6ba2865ad26a
+      title: "Experiments in Engineering without reading"
+      description: |-
+        <p>
+          This year I've been trying to figure out whether it's possible to do high quality Engineering work without
+          reading code. In 2025, using Vibe Coding, our Science Writers built 50 new interactive websites that help high
+          school students understand Science. This was great, but it put a large burden on our engineering team. So
+          we've started building automated systems to improve the quality of this work. This talk is about that process,
+          and some other ways that I'm playing around with these ideas.
+        </p>
+        <p>
+          I've previously delivered versions of this talk for AI Engineer, YOW! Tech Leaders, MelbJS, and PyConAU. I'll
+          customise and update the talk for the Melbourne Ruby audience.
+        </p>
+      video_url: TODO
+      speakers:
+        - name: Ben Taylor
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle: taybenlor
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - uuid: 87ea812b-1b35-44d4-967f-ddc49cb2df5e
+      title: "Returning to Ruby, what's changed and what's different"
+      description: |-
+        <p>
+          After many years, I've been having fun building out a few ruby based apps. This talk is about the lessons I've
+          been learning along the way and how I've been tackling the problems encountered. It's a high level talk rather
+          than going deep onto any specific topic involved.
+        </p>
+        <ul>
+          <li>Why Rails really isn't the answer.</li>
+          <li>Databases and storage.</li>
+          <li>Authentication and Authorisation.</li>
+          <li>Docker for local development.</li>
+          <li>Hosting in production.</li>
+          <li>What to tackle and leave out.</li>
+          <li>Marketing and getting users.</li>
+        </ul>
+      video_url: TODO
+      speakers:
+        - name: Amy Delves
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle: "@amy@social.delightfulapps.co"
+            website:
 
 - uuid: a2b29a73-0fd3-417a-bfdd-c1171232687e
   date: '2026-08-27'
@@ -70,6 +104,60 @@
       postal_code: '3000'
       region: VIC
       country: AU
+  talks:
+    - uuid: ca5517dd-8cfd-4b7e-8d3d-42bbe8feb0aa
+      title: "TUI like it's 2026"
+      description: |-
+        <p>
+          Terminal-based agentic workflow I use daily to get shit done. I was CPU & memory bound for a many years, not
+          being able to run cursor and the likes. This pushed me to come up with a workflow that would work in the
+          terminal. Everywhere
+        </p>
+      video_url: unknown
+      speakers:
+        - name: Kevin Garcia-Fernandez
+          contact_details:
+            github_username:
+            x_handle: optimistic_updt
+            linkedin_handle: kevgarciaf
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - uuid: 36c2c909-5051-46d7-84fe-29b80f313f40
+      title: "Sum Types in Ruby"
+      description: |-
+        <p>I will talk about sum-types and how we can simulate them in plain Ruby!</p>
+      video_url: TODO
+      speakers:
+        - name: Siddharth Bhatt
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle: sidbhatt11
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - uuid: d8662f1c-298c-4b1b-a089-920cf541dc7e
+      title: "Making the most of Mise"
+      description: |-
+        <p>
+          I was working on improving our onboarding and README, in preparation for welcoming a new-starter at work, and
+          realised that Mise has accumulated a ton of new features since I was last paying attention.
+        </p>
+        <p>
+          Let's do a bit of misemaxxing on a Ruby project, and see how smooth we can make onboarding and day-to-day
+          development by using as many Mise features as possible.
+        </p>
+      video_url: TODO
+      speakers:
+        - name: Matt Hood
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website:
 
 - uuid: 070c899a-6ecb-4948-af54-b033c28b1c0d
   date: '2026-07-30'
@@ -88,6 +176,37 @@
       postal_code: '3000'
       region: VIC
       country: AU
+  talks:
+    - uuid: 44e42b40-132e-419c-9616-d661ba8741c9
+      title: "Give Your Coding Agent Production"
+      description: |-
+        <p>
+          Give Your Coding Agent Production Access. A read-only MCP endpoint, and the system behind it that stores the
+          traces, events and logs your agent needs to fix your code.
+        </p>
+      video_url: https://youtu.be/S-EpuNx20v8?si=LM0gcTEte_fqA8ti
+      speakers:
+        - name: Dan Milne
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle: https://ruby.social/@dkam
+            website:
+    - uuid: 50b7199c-ceae-404c-8023-5da97655b4f7
+      title: "Packing the Modern Toolbelt: Staying Competitive in the AI Era"
+      description: "N/A"
+      video_url: https://youtu.be/FDr44zAQL9g?si=YXWYmYjFcbrttozw
+      speakers:
+        - name: Anton Katunin
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle:
+            website: https://antulik.com
 
 - uuid: 34441bfb-8e4b-4891-a6e9-c0572de0b89d
   date: '2026-06-25'
@@ -106,6 +225,88 @@
       postal_code: '3000'
       region: VIC
       country: AU
+  talks:
+    - uuid: dae40d0c-7d8a-4fb9-946b-1e9edaf4c083
+      title: "Music Services and UPnP with Ruby"
+      description: |-
+        <p>
+          A bit of a recap on what I've learnt from using Ruby to interact with Sonos speakers and music service APIs.
+        </p>
+      video_url: https://youtu.be/61ZxS68y1OQ?si=DjfWiffDcDhR_PMp
+      speakers:
+        - name: Pat Allan
+          contact_details:
+            github_username:
+            x_handle:
+            linkedin_handle:
+            bluesky_handle:
+            mastodon_handle: https://hachyderm.io/@pat
+            website:
+    - uuid: eb79871c-4366-4bd5-9f3e-94c167dbf10c
+      title: "In Praise of Throwing Information Away"
+      description: |-
+        <p>
+          Your cleverest code is probably overfitting. A simple rule that ignores almost everything routinely beats a
+          sophisticated model that uses all the data — and it's not a fluke, it's a theorem. We'll trace the same maths
+          that explains overfitting in machine learning straight back to how minds make good decisions, and figure out
+          what it says about every premature abstraction you've ever written. A talk about why throwing information away
+          is sometimes the smartest thing you can do.
+        </p>
+      video_url: https://youtu.be/nKgcnSwq6Jc?si=liAXndBaxFhO0NwE
+      speakers:
+        - name: Adam Rice
+          contact_details:
+            github_username: HashNotAdam
+            x_handle:
+            linkedin_handle: HashNotAdam
+            bluesky_handle:
+            mastodon_handle:
+            website:
+    - uuid: a73763a7-b7ca-4ebc-88ff-759a5494a978
+      title: "I Became the Agent — AI as Master Controller"
+      description: |-
+        <blockquote>
+          <p>"The dream loop was too long."</p>
+        </blockquote>
+        <p>
+          Most of us have used AI to write code. This talk is about what happens when you go further — when AI stops
+          being a coding assistant and starts being the orchestrator of your life.
+        </p>
+        <p>Covering a journey from:</p>
+        <ul>
+          <li>
+            <strong>Scout documents</strong> — badge writeups, risk assessments, hike plans (boring but effective)
+          </li>
+          <li>
+            <strong>Code</strong> — mass refactoring, security analysis, decoupling (yes yes, we've all done it)
+          </li>
+          <li>
+            <strong>Electronics</strong> — where it gets weird. AI directing hardware projects, component purchases at
+            2am, and backyard chemistry experiments that got slightly out of hand
+          </li>
+          <li>
+            <strong>Music composition</strong> — AI writes a four-part recorder arrangement; you negotiate with your
+            children to perform it
+          </li>
+        </ul>
+        <p>
+          The thesis: <strong>you are the agent, AI is the master controller.</strong> The dream-to-execution loop has
+          collapsed. The question is whether you're comfortable being the one who has to physically show up.
+        </p>
+        <p>
+          Live demo: a short Ruby script (AI-written, naturally) feeds this very talk into Gemini's video API and
+          returns key takeaways, best moments, and a summary for anyone who fell asleep.
+        </p>
+      video_url: https://youtu.be/Bmpg_K7UO1Q?si=EjRwscuUh-l2mARa
+      speakers:
+        - name: Michael Milewski
+          contact_details:
+            github_username: saramic
+            x_handle: saramic
+            linkedin_handle: michael-milewski
+            bluesky_handle:
+            mastodon_handle:
+            website: https://failure-driven.com/
 
 - uuid: fae0c7e3-165f-4c6b-8a04-0431a3f8e17e
   date: '2026-05-28'
