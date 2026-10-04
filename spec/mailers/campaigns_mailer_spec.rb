@@ -22,9 +22,7 @@ RSpec.describe CampaignsMailer, type: :mailer do
 
     it "falls back to the user's default email if no primary email exists" do
       user = create(:user, email: 'fallback@example.com').tap do |record|
-        record[:email] = 'fallback@example.com'
-        record.save!
-        record.emails.destroy_all
+        record.emails.update_all(primary: false)
       end
       membership = user.memberships.current.first || create(:membership, user: user)
       campaign = create(:campaign, subject: 'Test campaign')
