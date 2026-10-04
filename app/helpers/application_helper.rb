@@ -34,7 +34,7 @@ module ApplicationHelper
   end
 
   def password_errors?(user)
-    user.errors.keys.grep(/password/).any?
+    user.errors.attribute_names.grep(/password/).any?
   end
 
   def previous

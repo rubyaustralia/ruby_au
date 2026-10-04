@@ -169,3 +169,10 @@
 .aspect-video {
   aspect-ratio: 16 / 9;
 }
+  
+.presidents {
+  h2 {
+    @apply text-2xl font-extrabold text-ruby-red mb-10;
+    font-family: "Merriweather", serif;
+  }
+}
