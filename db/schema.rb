@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_08_005301) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_21_021825) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -151,6 +151,22 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_08_005301) do
     t.bigint "user_id"
     t.index ["email"], name: "index_emails_on_email", unique: true
     t.index ["user_id"], name: "index_emails_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.date "date", null: false
+    t.text "description", null: false
+    t.datetime "end_time"
+    t.string "event_type", null: false
+    t.string "name", null: false
+    t.string "region", null: false
+    t.string "registration_url"
+    t.string "slug", null: false
+    t.datetime "start_time", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "venue_id"
+    t.index ["venue_id"], name: "index_events_on_venue_id"
   end
 
   create_table "imported_members", force: :cascade do |t|
@@ -348,6 +364,17 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_08_005301) do
     t.index ["key"], name: "index_solid_queue_semaphores_on_key", unique: true
   end
 
+  create_table "talks", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.text "description", null: false
+    t.bigint "event_id", null: false
+    t.string "speakers"
+    t.string "title", null: false
+    t.datetime "updated_at", null: false
+    t.string "video_url", default: "unknown", null: false
+    t.index ["event_id"], name: "index_talks_on_event_id"
+  end
+
   create_table "users", id: :serial, force: :cascade do |t|
     t.text "address"
     t.boolean "committee", default: false, null: false
@@ -366,6 +393,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_08_005301) do
     t.string "linkedin_url"
     t.boolean "mailing_list", default: false, null: false
     t.json "mailing_lists", default: {}, null: false
+    t.boolean "meetup_admin", default: false, null: false
     t.string "preferred_name"
     t.datetime "remember_created_at", precision: nil
     t.datetime "reset_password_sent_at", precision: nil
@@ -378,6 +406,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_08_005301) do
     t.boolean "visible", default: false, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string "address", null: false
+    t.datetime "created_at", null: false
+    t.string "google_maps_url", null: false
+    t.string "name", null: false
+    t.text "notes"
+    t.datetime "updated_at", null: false
   end
 
   create_table "votes", force: :cascade do |t|

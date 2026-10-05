@@ -1,7 +1,7 @@
 require 'faker'
 
 # rubocop:disable Rails/Output, Metrics/MethodLength, Metrics/AbcSize
-def update_user(user:, committee: false, seeking_work: false, password: nil)
+def update_user(user:, committee: false, seeking_work: false, meetup_admin: false, password: nil)
   password_specified = password.present?
 
   user.password = password_specified ? password : Faker::Internet.password
@@ -13,6 +13,7 @@ def update_user(user:, committee: false, seeking_work: false, password: nil)
   user.mailing_lists = {}
   user.seeking_work = seeking_work
   user.linkedin_url = "https://www.linkedin.com/in/#{Faker::Lorem.word}" if seeking_work
+  user.meetup_admin = meetup_admin
 
   print "Created or updated user with primary email: #{user.email}"
   print " and password: #{user.password}" if password_specified
@@ -44,16 +45,19 @@ return unless Rails.env.development?
 committee_users_to_create = 4
 job_seeking_users_to_create = 14
 
-# first committee user, with credentials to be mentioned in README
+# first committee user, with credentials to be mentioned in CONTRIBUTING.md
 seed_user(email: "committee@example.com") { |user| update_user(user:, committee: true, password: "password123") }
 
 (2..committee_users_to_create).each do |i|
   seed_user(email: "committee_#{i}@example.com") { |user| update_user(user:, committee: true) }
 end
 
-# first job seeker, with credentials to be mentioned in README
+# first job seeker, with credentials to be mentioned in CONTRIBUTING.md
 seed_user(email: "jobseeker@example.com") { |user| update_user(user:, seeking_work: true, password: "password123") }
 
 (2..job_seeking_users_to_create).each do |i|
   seed_user(email: "jobseeker_#{i}@example.com") { |user| update_user(user:, seeking_work: true) }
 end
+
+# meetup_admin, with credentials to be mentioned in CONTRIBUTING.md
+seed_user(email: "meetup_admin@example.com") { |user| update_user(user:, meetup_admin: true, password: "password123") }
