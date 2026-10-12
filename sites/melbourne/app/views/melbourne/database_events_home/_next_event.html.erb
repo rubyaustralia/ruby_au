@@ -7,15 +7,13 @@
         <span class="font-mono"><%= presenter.formatted_day_number %></span>
         <span class="-mt-1 font-mono text-xs">
           <%= presenter.formatted_month_abbreviation %>
-          <% if presenter.year_is_different_from_current_year? %>
-          <% end %>
         </span>
       </div>
       <div class="flex flex-col">
         <p class="font-medium leading-5 text-black">
           <%= presenter.formatted_date_with_conditional_year %>
         </p>
-        <p class="leading-5 text-gray-600">6:30pm - 8:30pm</p>
+        <p class="leading-5 text-gray-600"><%= presenter.formatted_start_time %> - <%= presenter.formatted_end_time %></p>
       </div>
     </div>
     <div>
