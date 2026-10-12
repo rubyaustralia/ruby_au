@@ -1,6 +1,6 @@
 DATABASE_EVENT_DEFAULTS = {
   region: 'melbourne',
-  start_time: '6:30pm',
+  start_time: '6pm',
   end_time: '8:30pm'
 }.freeze
 
