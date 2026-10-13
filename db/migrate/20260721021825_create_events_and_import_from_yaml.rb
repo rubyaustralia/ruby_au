@@ -1,6 +1,6 @@
+DEFAULT_EVENT_START_TIME = {hour: 18}
 DATABASE_EVENT_DEFAULTS = {
   region: 'melbourne',
-  start_time: '6pm',
   end_time: '8:30pm'
 }.freeze
 
@@ -16,8 +16,7 @@ class CreateEventsAndImportFromYaml < ActiveRecord::Migration[8.1]
     end
 
     create_table :events do |t|
-      t.date :date, null: false
-      t.datetime :start_time, null: false
+      t.datetime :start_datetime, null: false
       t.datetime :end_time
       t.string :name, null: false
       t.string :slug, null: false, index: { unique: true }
@@ -75,10 +74,11 @@ class CreateEventsAndImportFromYaml < ActiveRecord::Migration[8.1]
 
   def build_db_event(event)
     DatabaseEvent.new(
-      **event.slice(:date, :description, :name, :slug),
+      **event.slice(:description, :name, :slug),
       event_type: event.type,
       registration_url: event.registration_link,
       venue: build_db_venue(event),
+      start_datetime: merge_date_and_start_time(event.date),
       **DATABASE_EVENT_DEFAULTS
     )
   end
@@ -97,6 +97,10 @@ class CreateEventsAndImportFromYaml < ActiveRecord::Migration[8.1]
         end
       end
     end
+  end
+
+  def merge_date_and_start_time(date)
+    date.in_time_zone('Australia/Melbourne').change(DEFAULT_EVENT_START_TIME)
   end
 
   def set_seeds_meetup_admin

@@ -28,13 +28,8 @@
     </div>
 
     <div class="space-y-1 sm:space-y-2">
-      <%= form.label :date, class: "block text-sm sm:text-base font-medium text-gray-700" %>
-      <%= form.date_select :date, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-ruby-red focus:ring focus:ring-ruby-red/20 text-sm sm:text-base" %>
-    </div>
-
-    <div class="space-y-1 sm:space-y-2">
-      <%= form.label :start_time, class: "block text-sm sm:text-base font-medium text-gray-700" %>
-      <%= form.time_select :start_time, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-ruby-red focus:ring focus:ring-ruby-red/20 text-sm sm:text-base" %>
+      <%= form.label :start_datetime, class: "block text-sm sm:text-base font-medium text-gray-700" %>
+      <%= form.datetime_local_field :start_datetime, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-ruby-red focus:ring focus:ring-ruby-red/20 text-sm sm:text-base" %>
     </div>
 
     <div class="space-y-1 sm:space-y-2">

@@ -22,7 +22,6 @@
 #
 FactoryBot.define do
   factory :database_event do
-    date { 1.month.from_now }
     sequence :description do |n|
       "description_#{n}"
     end
@@ -32,7 +31,7 @@ FactoryBot.define do
     sequence :slug do |n|
       "slug-#{n}"
     end
-    start_time { '6:30pm' }
+    start_datetime { 1.month.from_now + 18.hours }
     venue
 
     trait :meetup do
