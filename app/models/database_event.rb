@@ -28,7 +28,7 @@ class DatabaseEvent < ApplicationRecord
   has_rich_text :description
 
   has_many   :talks, dependent: :destroy, inverse_of: :event
-  belongs_to :venue
+  belongs_to :venue, optional: true
 
   scope :all_by_date, -> { order(date: :desc) }
   scope :today_or_in_the_future, -> { order(date: :asc).where('date >= ?', Time.zone.today) }

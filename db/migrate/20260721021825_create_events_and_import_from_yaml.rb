@@ -20,16 +20,16 @@ class CreateEventsAndImportFromYaml < ActiveRecord::Migration[8.1]
       t.datetime :start_time, null: false
       t.datetime :end_time
       t.string :name, null: false
-      t.string :slug, null: false
+      t.string :slug, null: false, index: { unique: true }
       t.string :event_type, null: false
       t.string :region, null: false
-      t.references :venue
+      t.references :venue, foreign_key: true
       t.string :registration_url
       t.timestamps
     end
 
     create_table :talks do |t|
-      t.references :event, null: false
+      t.references :event, null: false, foreign_key: true
       t.string :title, null: false
       t.string :speakers
       t.string :video_url, default: "unknown", null: false
@@ -97,15 +97,15 @@ class CreateEventsAndImportFromYaml < ActiveRecord::Migration[8.1]
         end
       end
     end
+  end
 
-    def set_seeds_meetup_admin
-      if (user = User.find_by_email("meetup_admin@example.com"))
-        user.meetup_admin = true
-        if user.save
-          Rails.logger.info "Set user #{user.email} to have meetup_admin rights"
-        else
-          Rails.logger.error "Failed to update user #{user.email} to have meetup_admin rights: #{user.errors.full_messages.to_sentence}"
-        end
+  def set_seeds_meetup_admin
+    if (user = User.find_by_email("meetup_admin@example.com"))
+      user.meetup_admin = true
+      if user.save
+        Rails.logger.info "Set user #{user.email} to have meetup_admin rights"
+      else
+        Rails.logger.error "Failed to update user #{user.email} to have meetup_admin rights: #{user.errors.full_messages.to_sentence}"
       end
     end
   end

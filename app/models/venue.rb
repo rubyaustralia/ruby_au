@@ -11,7 +11,7 @@
 #  updated_at      :datetime         not null
 #
 class Venue < ApplicationRecord
-  has_many :events, class_name: "DatabaseEvent", dependent: :destroy
+  has_many :events, class_name: "DatabaseEvent", dependent: :restrict_with_error
 
   validates :name, presence: true
   validates :google_maps_url, presence: true
