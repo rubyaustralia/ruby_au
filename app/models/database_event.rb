@@ -4,7 +4,6 @@
 #
 #  id               :bigint           not null, primary key
 #  date             :date             not null
-#  description      :text             not null
 #  end_time         :datetime
 #  event_type       :string           not null
 #  name             :string           not null
@@ -26,6 +25,8 @@ class DatabaseEvent < ApplicationRecord
   extend FriendlyId
   friendly_id :date_region_event_type, use: :slugged
 
+  has_rich_text :description
+
   has_many   :talks, dependent: :destroy, inverse_of: :event
   belongs_to :venue
 
@@ -34,7 +35,6 @@ class DatabaseEvent < ApplicationRecord
   scope :before_today, -> { all_by_date.where('date < ?', Time.zone.today) }
 
   validates :date, presence: true
-  validates :description, presence: true
   validates :event_type, presence: true
   validates :name, presence: true
   validates :region, presence: true

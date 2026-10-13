@@ -3,7 +3,6 @@
 # Table name: talks
 #
 #  id          :bigint           not null, primary key
-#  description :text             not null
 #  speakers    :string
 #  title       :string           not null
 #  video_url   :string           default("unknown"), not null

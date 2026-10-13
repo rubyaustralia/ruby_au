@@ -3,7 +3,7 @@
   <p class="font-medium leading-5 text-black"><%= talk.speakers %></p>
 
   <div class="text-black prose">
-    <%= sanitize talk.description %>
+    <%= talk.description %>
   </div>
 
   <% if talk.youtube_video_id.present? %>

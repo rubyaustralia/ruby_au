@@ -65,6 +65,7 @@ module Melbourne
   class OpenGraphMetadataNew
     include ViteRails::TagHelpers
     include ActionView::Helpers::AssetUrlHelper
+    include ActionView::Helpers::SanitizeHelper
 
     def initialize(event)
       @event = event
@@ -73,7 +74,7 @@ module Melbourne
     def to_meta_tags # rubocop:disable Metrics/MethodLength
       {
         title: "#{event.date} - #{event.name}",
-        description: event.description,
+        description: sanitize(event.description.to_plain_text),
         keywords: event.keywords,
         og: {
           title: :title,

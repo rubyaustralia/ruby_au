@@ -4,7 +4,6 @@
 #
 #  id               :bigint           not null, primary key
 #  date             :date             not null
-#  description      :text             not null
 #  end_time         :datetime
 #  event_type       :string           not null
 #  name             :string           not null

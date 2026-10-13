@@ -156,7 +156,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_21_021825) do
   create_table "events", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date", null: false
-    t.text "description", null: false
     t.datetime "end_time"
     t.string "event_type", null: false
     t.string "name", null: false
@@ -366,7 +365,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_21_021825) do
 
   create_table "talks", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.text "description", null: false
     t.bigint "event_id", null: false
     t.string "speakers"
     t.string "title", null: false

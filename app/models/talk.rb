@@ -3,7 +3,6 @@
 # Table name: talks
 #
 #  id          :bigint           not null, primary key
-#  description :text             not null
 #  speakers    :string
 #  title       :string           not null
 #  video_url   :string           default("unknown"), not null
@@ -16,9 +15,10 @@
 #  index_talks_on_event_id  (event_id)
 #
 class Talk < ApplicationRecord
+  has_rich_text :description
+
   belongs_to :event, class_name: "DatabaseEvent"
 
-  validates :description, presence: true
   validates :event_id, presence: true
   validates :title, presence: true
   validates :video_url, presence: true

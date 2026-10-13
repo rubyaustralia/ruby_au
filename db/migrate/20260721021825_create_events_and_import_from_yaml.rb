@@ -20,7 +20,6 @@ class CreateEventsAndImportFromYaml < ActiveRecord::Migration[8.1]
       t.datetime :start_time, null: false
       t.datetime :end_time
       t.string :name, null: false
-      t.text :description, null: false
       t.string :slug, null: false
       t.string :event_type, null: false
       t.string :region, null: false
@@ -32,7 +31,6 @@ class CreateEventsAndImportFromYaml < ActiveRecord::Migration[8.1]
     create_table :talks do |t|
       t.references :event, null: false
       t.string :title, null: false
-      t.text :description, null: false
       t.string :speakers
       t.string :video_url, default: "unknown", null: false
       t.timestamps
@@ -66,10 +64,11 @@ class CreateEventsAndImportFromYaml < ActiveRecord::Migration[8.1]
   def build_db_talks(event, db_event)
     event.talks&.each do |talk|
       db_talk = Talk.find_or_create_by!(
-        **talk.slice(:title, :description, :video_url),
+        **talk.slice(:title, :video_url),
         event: db_event,
         speakers: talk.speakers.map(&:name).join
       )
+      db_talk.description = talk.description
       db_talk.save
     end
   end
