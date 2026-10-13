@@ -39,7 +39,8 @@ module Melbourne
       if @database_event.update(database_event_params)
         redirect_to melbourne_database_event_path(@database_event), notice: "Event was successfully updated."
       else
-        render :edit, status: :unprocessable_content, alert: "Event could not be updated due to #{@database_event.errors.full_messages.to_sentence}."
+        flash.now[:alert] = "Event could not be updated due to #{@database_event.errors.full_messages.to_sentence}."
+        render :edit, status: :unprocessable_content
       end
     end
 
