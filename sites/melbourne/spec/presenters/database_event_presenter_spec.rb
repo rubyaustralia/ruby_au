@@ -13,16 +13,15 @@ RSpec.describe Melbourne::EventPresenter do
     )
   end
 
-  let(:event_date) { Date.new(2025, 3, 15) }
+  let(:event_date) { Time.zone.local(2025, 3, 15, 18, 0) }
   let(:event) do
     DatabaseEvent.create!(
       name: "Ruby Melbourne Meetup",
-      date: event_date,
+      start_datetime: event_date,
       venue: venue,
       description: "An awesome Ruby meetup event",
       event_type: :meetup,
       region: :melbourne,
-      start_time: "6pm",
       registration_url: "https://example.com/register"
     )
   end
@@ -46,6 +45,12 @@ RSpec.describe Melbourne::EventPresenter do
     ]
   end
 
+  describe "#formatted_start_time" do
+    it "returns the start time" do
+      expect(presenter.formatted_start_time).to eq(" 6:00 pm")
+    end
+  end
+
   describe "#formatted_day_number" do
     it "returns the day number formatted as a string" do
       expect(presenter.formatted_day_number).to eq("15")
@@ -60,20 +65,20 @@ RSpec.describe Melbourne::EventPresenter do
 
   describe "#year_is_different_from_current_year?" do
     context "when event year is different from current year" do
-      let(:event_date) { Date.new(2026, 3, 15) }
+      let(:event_date) { Time.zone.local(2026, 3, 15, 18, 0) }
 
       it "returns true" do
-        travel_to Date.new(2025, 1, 1) do
+        travel_to Time.zone.local(2025, 1, 1) do
           expect(presenter.year_is_different_from_current_year?).to be(true)
         end
       end
     end
 
     context "when event year is the same as current year" do
-      let(:event_date) { Date.new(2025, 3, 15) }
+      let(:event_date) { Time.zone.local(2025, 3, 15, 18, 0) }
 
       it "returns false" do
-        travel_to Date.new(2025, 1, 1) do
+        travel_to Time.zone.local(2025, 1, 1) do
           expect(presenter.year_is_different_from_current_year?).to be(false)
         end
       end
@@ -94,30 +99,30 @@ RSpec.describe Melbourne::EventPresenter do
 
   describe "#in_the_past?" do
     context "when event date is in the past" do
-      let(:event_date) { Date.new(2025, 1, 15) }
+      let(:event_date) { Time.zone.local(2025, 1, 15, 18, 0) }
 
       it "returns true" do
-        travel_to Date.new(2025, 3, 1) do
+        travel_to Time.zone.local(2025, 3, 1) do
           expect(presenter.in_the_past?).to be(true)
         end
       end
     end
 
     context "when event date is today" do
-      let(:event_date) { Date.new(2025, 3, 1) }
+      let(:event_date) { Time.zone.local(2025, 3, 1, 18, 0) }
 
       it "returns false" do
-        travel_to Date.new(2025, 3, 1) do
+        travel_to Time.zone.local(2025, 3, 1) do
           expect(presenter.in_the_past?).to be(false)
         end
       end
     end
 
     context "when event date is in the future" do
-      let(:event_date) { Date.new(2025, 4, 15) }
+      let(:event_date) { Time.zone.local(2025, 4, 15, 18, 0) }
 
       it "returns false" do
-        travel_to Date.new(2025, 3, 1) do
+        travel_to Time.zone.local(2025, 3, 1) do
           expect(presenter.in_the_past?).to be(false)
         end
       end
@@ -126,20 +131,20 @@ RSpec.describe Melbourne::EventPresenter do
 
   describe "#registration_status_title" do
     context "when event is in the past" do
-      let(:event_date) { Date.new(2025, 1, 15) }
+      let(:event_date) { Time.zone.local(2025, 1, 15, 18, 0) }
 
       it "returns Registration Closed" do
-        travel_to Date.new(2025, 3, 1) do
+        travel_to Time.zone.local(2025, 3, 1) do
           expect(presenter.registration_status_title).to eq("Registration Closed")
         end
       end
     end
 
     context "when event is not in the past" do
-      let(:event_date) { Date.new(2025, 4, 15) }
+      let(:event_date) { Time.zone.local(2025, 4, 15, 18, 0) }
 
       it "returns Registration" do
-        travel_to Date.new(2025, 3, 1) do
+        travel_to Time.zone.local(2025, 3, 1) do
           expect(presenter.registration_status_title).to eq("Registration")
         end
       end
@@ -148,20 +153,20 @@ RSpec.describe Melbourne::EventPresenter do
 
   describe "#past_event_message" do
     context "when event year is the same as current year" do
-      let(:event_date) { Date.new(2025, 3, 15) }
+      let(:event_date) { Time.zone.local(2025, 3, 15, 18, 0) }
 
       it "returns message without year" do
-        travel_to Date.new(2025, 4, 1) do
+        travel_to Time.zone.local(2025, 4, 1) do
           expect(presenter.past_event_message).to eq("This event took place on Saturday, 15 March.")
         end
       end
     end
 
     context "when event year is different from current year" do
-      let(:event_date) { Date.new(2024, 3, 15) }
+      let(:event_date) { Time.zone.local(2024, 3, 15, 18, 0) }
 
       it "returns message with year" do
-        travel_to Date.new(2025, 4, 1) do
+        travel_to Time.zone.local(2025, 4, 1) do
           expect(presenter.past_event_message).to eq("This event took place on Friday, 15 March 2024.")
         end
       end
@@ -170,20 +175,20 @@ RSpec.describe Melbourne::EventPresenter do
 
   describe "#formatted_date_with_conditional_year" do
     context "when event year is the same as current year" do
-      let(:event_date) { Date.new(2025, 3, 15) }
+      let(:event_date) { Time.zone.local(2025, 3, 15, 18, 0) }
 
       it "returns formatted date without year" do
-        travel_to Date.new(2025, 4, 1) do
+        travel_to Time.zone.local(2025, 4, 1) do
           expect(presenter.formatted_date_with_conditional_year).to eq("Saturday, 15 March")
         end
       end
     end
 
     context "when event year is different from current year" do
-      let(:event_date) { Date.new(2024, 3, 15) }
+      let(:event_date) { Time.zone.local(2024, 3, 15, 18, 0) }
 
       it "returns formatted date with year" do
-        travel_to Date.new(2025, 4, 1) do
+        travel_to Time.zone.local(2025, 4, 1) do
           expect(presenter.formatted_date_with_conditional_year).to eq("Friday, 15 March 2024")
         end
       end
@@ -192,20 +197,20 @@ RSpec.describe Melbourne::EventPresenter do
 
   describe "#formatted_date_for_card" do
     context "when event year is the same as current year" do
-      let(:event_date) { Date.new(2025, 3, 15) }
+      let(:event_date) { Time.zone.local(2025, 3, 15, 18, 0) }
 
       it "returns formatted date without year" do
-        travel_to Date.new(2025, 4, 1) do
+        travel_to Time.zone.local(2025, 4, 1) do
           expect(presenter.formatted_date_for_card).to eq("15 March")
         end
       end
     end
 
     context "when event year is different from current year" do
-      let(:event_date) { Date.new(2024, 3, 15) }
+      let(:event_date) { Time.zone.local(2024, 3, 15, 18, 0) }
 
       it "returns formatted date with year" do
-        travel_to Date.new(2025, 4, 1) do
+        travel_to Time.zone.local(2025, 4, 1) do
           expect(presenter.formatted_date_for_card).to eq("15 March 2024")
         end
       end

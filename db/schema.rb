@@ -154,17 +154,17 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_21_021825) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.date "date", null: false
+    t.datetime "start_datetime", null: false
     t.datetime "end_time"
-    t.string "event_type", null: false
     t.string "name", null: false
-    t.string "region", null: false
-    t.string "registration_url"
     t.string "slug", null: false
-    t.datetime "start_time", null: false
-    t.datetime "updated_at", null: false
+    t.string "event_type", null: false
+    t.string "region", null: false
     t.bigint "venue_id"
+    t.string "registration_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_events_on_slug", unique: true
     t.index ["venue_id"], name: "index_events_on_venue_id"
   end
 

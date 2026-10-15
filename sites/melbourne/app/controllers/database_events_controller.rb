@@ -3,7 +3,7 @@
 MELBOURNE_EVENT_DEFAULTS = {
   # TODO: As of 2026-06-21 the time zone is set up to Australia/Melbourne in config/application.rb:53.
   # This might create problems in the future with meetups in other locations.
-  start_time: "6pm",
+  start_datetime: "6pm",
   end_time: "8:30pm",
   event_type: :meetup,
   region: :melbourne
@@ -66,7 +66,7 @@ module Melbourne
     end
 
     def database_event_params
-      params.expect(database_event: [:date, :description, :event_type, :name, :region, :registration_url, :start_time, :end_time, :venue_id])
+      params.expect(database_event: [:description, :event_type, :name, :region, :registration_url, :start_datetime, :end_time, :venue_id])
     end
 
     def confirm_is_meetup_admin!

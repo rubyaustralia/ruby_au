@@ -3,14 +3,13 @@
 # Table name: events
 #
 #  id               :bigint           not null, primary key
-#  date             :date             not null
 #  end_time         :datetime
 #  event_type       :string           not null
 #  name             :string           not null
 #  region           :string           not null
 #  registration_url :string
 #  slug             :string           not null
-#  start_time       :datetime         not null
+#  start_datetime   :datetime         not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  venue_id         :bigint
@@ -21,29 +20,34 @@
 #
 require 'rails_helper'
 
-RSpec.describe DatabaseEvent, type: :model do
-  describe '.today_or_in_the_future' do
-    let(:last_month_event) { create(:database_event, :meetup, :melbourne, date: 1.month.ago) }
-    let(:today_event)      { create(:database_event, :meetup, :melbourne, date: Date.current) }
-    let(:next_month_event) { create(:database_event, :meetup, :melbourne, date: 1.month.from_now) }
+RSpec.describe DatabaseEvent, time_travel_to: "2026-10-13 12:00", type: :model do
+  let(:two_months_ago) { Time.zone.local(2026, 8, 13, 18, 0) }
+  let(:last_month)     { Time.zone.local(2026, 9, 13, 18, 0) }
+  let(:today)          { Time.zone.local(2026, 10, 13, 0, 0) }
+  let(:next_month)     { Time.zone.local(2026, 11, 13, 18, 0) }
+  let(:two_months)     { Time.zone.local(2026, 12, 13, 18, 0) }
 
+  describe '.today_or_in_the_future' do
     it "returns today and future events" do
-      expect(described_class.today_or_in_the_future).to include(next_month_event)
-      expect(described_class.today_or_in_the_future).to include(today_event)
+      last_month_event = create(:database_event, :meetup, :melbourne, start_datetime: last_month)
+      today_event      = create(:database_event, :meetup, :melbourne, start_datetime: today)
+      next_month_event = create(:database_event, :meetup, :melbourne, start_datetime: next_month)
+
+      expect(described_class.today_or_in_the_future).to include(next_month_event, today_event)
       expect(described_class.today_or_in_the_future).not_to include(last_month_event)
     end
   end
 
   describe ".all_by_date" do
     before do
-      create(:database_event, :meetup, :melbourne, date: 1.month.from_now)
-      create(:database_event, :meetup, :melbourne, date: Date.current)
+      create(:database_event, :meetup, :melbourne, start_datetime: next_month)
+      create(:database_event, :meetup, :melbourne, start_datetime: today)
     end
 
     it "returns all events, sorted by date descending" do
       events = described_class.all_by_date
       expect(events.count).to eq(2)
-      expect(events[0].date).to eq(1.month.from_now.to_date)
+      expect(events.map(&:start_datetime)).to eq([next_month, today])
     end
   end
 
@@ -54,82 +58,74 @@ RSpec.describe DatabaseEvent, type: :model do
     end
   end
 
+  describe "#date" do
+    it "returns the date part of start_datetime in the app time zone" do
+      event = described_class.new(start_datetime: Time.zone.local(2026, 10, 13, 18, 0))
+      expect(event.date).to eq(Date.new(2026, 10, 13))
+    end
+  end
+
+  describe "#start_time" do
+    it "returns start_datetime" do
+      event = described_class.new(start_datetime: Time.zone.local(2026, 10, 13, 18, 0))
+      expect(event.start_time).to eq(Time.zone.local(2026, 10, 13, 18, 0))
+    end
+  end
+
   describe ".upcoming" do
     before do
-      create(:database_event, :meetup, :melbourne, date: 2.months.from_now)
-      create(:database_event, :meetup, :melbourne, date: 1.month.from_now)
-      create(:database_event, :meetup, :melbourne, date: 1.month.ago)
-      create(:database_event, :meetup, :melbourne, date: Date.current)
+      create(:database_event, :meetup, :melbourne, start_datetime: two_months)
+      create(:database_event, :meetup, :melbourne, start_datetime: next_month)
+      create(:database_event, :meetup, :melbourne, start_datetime: last_month)
+      create(:database_event, :meetup, :melbourne, start_datetime: today)
     end
 
     it "returns all events scheduled for today and in the future" do
-      expect(described_class.upcoming.map(&:date)).to eq(
-        [
-          Date.current,
-          1.month.from_now.to_date,
-          2.months.from_now.to_date
-        ]
-      )
+      expect(described_class.upcoming.map(&:start_datetime)).to eq([today, next_month, two_months])
     end
 
     context "when it is called with an amount" do
       it "returns that many events" do
-        expect(described_class.upcoming(2).map(&:date)).to eq(
-          [
-            Date.current,
-            1.month.from_now.to_date
-          ]
-        )
+        expect(described_class.upcoming(2).map(&:start_datetime)).to eq([today, next_month])
       end
     end
 
     context "when there are no upcoming events" do
       it "returns an empty array" do
-        travel_to 3.months.from_now do
-          expect(described_class.upcoming).to eq([])
-        end
+        travel_to Time.zone.local(2027, 1, 13)
+        expect(described_class.upcoming).to eq([])
       end
     end
   end
 
   describe ".past" do
     before do
-      create(:database_event, :meetup, :melbourne, date: 1.month.from_now)
-      create(:database_event, :meetup, :melbourne, date: 2.months.ago)
-      create(:database_event, :meetup, :melbourne, date: 1.month.ago)
-      create(:database_event, :meetup, :melbourne, date: Date.current)
+      create(:database_event, :meetup, :melbourne, start_datetime: next_month)
+      create(:database_event, :meetup, :melbourne, start_datetime: two_months_ago)
+      create(:database_event, :meetup, :melbourne, start_datetime: last_month)
+      create(:database_event, :meetup, :melbourne, start_datetime: today)
     end
 
     it "returns all events scheduled in the past" do
-      expect(described_class.past.map(&:date)).to eq(
-        [
-          1.month.ago.to_date,
-          2.months.ago.to_date
-        ]
-      )
+      expect(described_class.past.map(&:start_datetime)).to eq([last_month, two_months_ago])
     end
 
     context "when it is called with an amount" do
       it "returns that many events" do
-        expect(described_class.past(1).map(&:date)).to eq(
-          [
-            1.month.ago.to_date
-          ]
-        )
+        expect(described_class.past(1).map(&:start_datetime)).to eq([last_month])
       end
     end
 
     context "when there are no past events" do
       it "returns an empty array" do
-        travel_to 3.months.ago do
-          expect(described_class.past).to eq([])
-        end
+        travel_to Time.zone.local(2026, 7, 13)
+        expect(described_class.past).to eq([])
       end
     end
   end
 
   describe "#slug" do
-    subject(:event) { FactoryBot.create(:database_event, :meetup, :melbourne, date: Time.zone.local(2026, 7, 21)) }
+    subject(:event) { FactoryBot.create(:database_event, :meetup, :melbourne, start_datetime: Time.zone.local(2026, 7, 21)) }
 
     it "generates a slug" do
       expect(event.slug).to eq("2026-07-21-ruby-melbourne-meetup")
@@ -153,7 +149,7 @@ RSpec.describe DatabaseEvent, type: :model do
 
     context "when the date changes" do
       it "regenerates the slug" do
-        event.date = Time.zone.local(2026, 8, 1)
+        event.start_datetime = Time.zone.local(2026, 8, 1)
         event.save
         expect(event.slug).to eq("2026-08-01-ruby-melbourne-meetup")
       end

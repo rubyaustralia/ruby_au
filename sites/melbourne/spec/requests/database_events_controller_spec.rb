@@ -8,8 +8,8 @@ RSpec.describe Melbourne::DatabaseEventsController, type: :request do
   end
 
   describe 'GET /database_events' do
-    let!(:past_event) { FactoryBot.create(:database_event, :meetup, :melbourne, date: 1.month.ago) }
-    let!(:current_event) { FactoryBot.create(:database_event, :meetup, :melbourne, date: 1.day.from_now) }
+    let!(:past_event) { FactoryBot.create(:database_event, :meetup, :melbourne, start_datetime: 1.month.ago) }
+    let!(:current_event) { FactoryBot.create(:database_event, :meetup, :melbourne, start_datetime: 1.day.from_now) }
 
     it 'displays events in correct order' do
       get melbourne_database_events_path
@@ -123,8 +123,8 @@ RSpec.describe Melbourne::DatabaseEventsController, type: :request do
   describe 'POST /database_events' do
     let(:venue) { FactoryBot.create(:venue) }
     let(:database_event_attributes) do
-      { date: 1.month.from_now, description: 'description', slug: 'event-slug',
-        name: 'name', start_time: 1.month.from_now, venue_id: venue.id, event_type: :meetup, region: :melbourne }
+      { description: 'description', slug: 'event-slug',
+        name: 'name', start_datetime: 1.month.from_now, venue_id: venue.id, event_type: :meetup, region: :melbourne }
     end
 
     before { sign_in meetup_admin }
