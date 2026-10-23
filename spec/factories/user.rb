@@ -25,6 +25,10 @@ FactoryBot.define do
       committee { true }
     end
 
+    trait :meetup_admin do
+      meetup_admin { true }
+    end
+
     trait :deactivated do
       deactivated_at { Time.current }
 
