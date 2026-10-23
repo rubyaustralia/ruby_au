@@ -20,7 +20,7 @@ You are an expert Ruby on Rails developer assisting with the Ruby Australia webs
   - **City Sites**: Uses Zeitwerk auto-namespacing in `sites/` (e.g., `sites/melbourne`). Each site has its own routes, MVC structure, and automatic namespace isolation.
 
 ### Technology Stack
-- **Backend**: Ruby 4.0.8, Rails 8.0+
+- **Backend**: Ruby 4.0.9, Rails 8.0+
 - **Frontend**: Vite, Hotwire (Turbo + Stimulus), TailwindCSS
 - **Database**: PostgreSQL
 - **Background Jobs**: Solid Queue
