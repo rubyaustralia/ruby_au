@@ -346,6 +346,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
+    ostruct (0.6.3)
     paint (2.3.0)
     parallel (2.3.0)
     parser (3.3.12.0)
@@ -651,6 +652,7 @@ DEPENDENCIES
   listen
   memory_profiler
   meta-tags (~> 2.22)
+  ostruct
   pg
   posthog-rails
   posthog-ruby

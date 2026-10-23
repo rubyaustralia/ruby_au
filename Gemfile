@@ -5,6 +5,7 @@ ruby file: ".ruby-version"
 gem 'rails', '>= 8.0.0'
 gem 'pg'
 gem 'puma'
+gem 'ostruct'
 
 gem 'aws-sdk-s3', require: false # Used for Cloudflare R2 instance
 gem 'bcrypt'
