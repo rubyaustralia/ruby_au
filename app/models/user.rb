@@ -19,6 +19,7 @@
 #  linkedin_url           :string
 #  mailing_list           :boolean          default(FALSE), not null
 #  mailing_lists          :json             not null
+#  meetup_admin           :boolean          default(FALSE), not null
 #  preferred_name         :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
@@ -72,6 +73,8 @@ class User < ApplicationRecord
       .or(where("preferred_name ILIKE ?", search_term))
       .or(where(id: email_matches))
   }
+  scope :meetup_admin, -> { where(meetup_admin: true) }
+
   attr_accessor :skip_subscriptions
 
   validates :full_name, presence: true
