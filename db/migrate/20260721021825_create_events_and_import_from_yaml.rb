@@ -44,6 +44,11 @@ class CreateEventsAndImportFromYaml < ActiveRecord::Migration[8.1]
         import_yaml_events
         set_seeds_meetup_admin
       end
+
+      direction.down do
+        Talk.destroy_all
+        DatabaseEvent.destroy_all
+      end
     end
   end
 
