@@ -1,3 +1,17 @@
+- name: Helen Stonehouse
+  photo: helen-stonehouse.jpg
+  position: General Member
+  bio: |
+    Helen spent 6 years helping attorneys file patents before she discovered how much she loved
+    programming during lockdown. After completing a software engineering bootcamp, she landed
+    a role working with Ruby on Rails and has been working with Rails ever since.
+    She mentored at [Rails Girls Melbourne](https://railsgirls.com/melbourne) and is passionate about making tech a more welcoming
+    space for women and gender-diverse individuals.
+
+    In her free time Helen enjoys gaming, bouldering, and reading.
+  github: hstonehouse
+  linkedin: helen-stonehouse
+
 - name: Mark Glossop
   photo: mark-glossop.jpg
   position: General Member
